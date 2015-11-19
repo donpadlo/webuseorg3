@@ -3,48 +3,52 @@
 // Изначальный автор данного кода - Грибов Павел
 // http://грибовы.рф
 
-$time_start = microtime(true);                  // засекаем когда начали выполнять скрипт
+define('INCLUDED', true);
+define('ROOT', dirname(__FILE__));
 
-include_once ("config.php");                    // загружаем первоначальные настройки
+$time_start = microtime(true);                   // Засекаем время начала выполнения скрипта
 
-// загружаем классы
+include_once(ROOT.'/config.php');                // Загружаем первоначальные настройки
 
-include_once("class/sql.php");                  // загружаем классы работы с БД
-include_once("class/config.php");		// загружаем классы настроек
-include_once("class/users.php");		// загружаем классы работы с пользователями
-include_once("class/mod.php");                  // класс работы с модулями
-include_once("class/cconfig.php");             // класс работы с пользовательскими настройками
-include_once("class/bp.php");                  // класс работы с БП
-include_once("class/class.phpmailer.php");	// класс управления почтой
-include_once("class/menu.php");                  // класс работы с меню
+# Загружаем классы
+include_once(ROOT.'/class/sql.php');             // Класс работы с БД
+include_once(ROOT.'/class/config.php');          // Класс настроек
+include_once(ROOT.'/class/users.php');           // Класс работы с пользователями
+include_once(ROOT.'/class/mod.php');             // Класс работы с модулями
+include_once(ROOT.'/class/cconfig.php');         // Класс работы с пользовательскими настройками
+include_once(ROOT.'/class/bp.php');              // Класс работы с БП
+include_once(ROOT.'/class/class.phpmailer.php'); // Класс управления почтой
+include_once(ROOT.'/class/menu.php');            // Класс работы с меню
 
+# Загружаем все что нужно для работы движка
+include_once(ROOT.'/inc/connect.php');           // Соединяемся с БД, получаем $mysql_base_id
+include_once(ROOT.'/inc/config.php');            // Подгружаем настройки из БД, получаем заполненый класс $cfg
+include_once(ROOT.'/inc/functions.php');         // Загружаем функции
+include_once(ROOT.'/inc/login.php');             // Проверяем вход пользователя
+include_once(ROOT.'/inc/autorun.php');           // Запускаем сторонние скрипты
 
-// загружаем все что нужно для работы движка
-
-include_once("inc/connect.php");		// соеденяемся с БД, получаем $mysql_base_id
-
-include_once("inc/config.php");                 // подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once("inc/functions.php");		// загружаем функции
-include_once("inc/login.php");			// проверяем вход пользователя
-include_once("inc/autorun.php");		// запускаем сторонние скрипты
-
-// инициализируем заполнение меню
-$gmenu=new Tmenu();
-$gmenu->GetFromFiles("inc/menu");
+# Инициализируем заполнение меню
+$gmenu = new Tmenu();
+$gmenu->GetFromFiles(ROOT.'/inc/menu');
 
 // если content_page не задан, то принудительно присваиваем
-if (isset($_GET["content_page"])==FALSE){$_GET["content_page"]="home";}
+//if (isset($_GET["content_page"])==FALSE){$_GET["content_page"]="home";}
+$content_page = (isset($_GET['content_page'])) ? $_GET['content_page'] : 'home';
 
-// загружаем и выполняем сначала modules/$content_page.php , затем client/themes/$cfg->theme/$content_page.php
-// если таких файлов нет, то принудительно выполняем только client/themes/$cfg->theme/home.php
-if (isset($_GET["content_page"])) {
-    $content_page=$_GET["content_page"];
-    if (is_file("controller/client/themes/$cfg->theme/$content_page.php")==FALSE){$content_page="home";$err[]="Вы попытались открыть раздел которого нет!";};     
-    if (is_file("modules/$content_page.php")==FALSE) {include_once("modules/home.php");} else {include_once("modules/$content_page.php");}
-    include_once("controller/client/themes/$cfg->theme/index.php");            // загружаем главный файл темы, который разруливает что отображать на экране
+// Загружаем и выполняем сначала /modules/$content_page.php, затем /controller/client/themes/$cfg->theme/$content_page.php
+// Если таких файлов нет, то принудительно выполняем только /controller/client/themes/$cfg->theme/home.php
+if (!is_file(ROOT."/controller/client/themes/{$cfg->theme}/$content_page.php")) {
+	$content_page = 'home';
+	$err[] = 'Вы попытались открыть несуществующий раздел!';
+};
+if (!is_file(ROOT."/modules/$content_page.php")) {
+	include_once(ROOT.'/modules/home.php');
+} else {
+	include_once(ROOT."/modules/$content_page.php");
 }
+include_once(ROOT."/controller/client/themes/{$cfg->theme}/index.php"); // Загружаем главный файл темы, который разруливает что отображать на экране
 
-include_once("inc/footerrun.php");		// запускаем сторонние скрипты
+include_once(ROOT.'/inc/footerrun.php'); // Запускаем сторонние скрипты
 
 unset($gmenu);
 ?>
