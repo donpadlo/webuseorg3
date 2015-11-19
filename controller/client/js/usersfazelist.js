@@ -1,0 +1,1 @@
+$("#usersfazelist").load("controller/server/common/getlistusersfazes.php");
