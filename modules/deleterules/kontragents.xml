@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<tables>
+    <entertable name="contract" comment="Заключенные договора" key="id">
+        <reqtable name="files_contract" comment="Прикрепленные файлы" is_delete="yes" key="idcontract"></reqtable>
+    </entertable>
+    <entertable name="knt" comment="Список конрагентов" key="id">
+        <reqtable name="contract" comment="Заключенные договора" is_delete="no" key="kntid"></reqtable>
+    </entertable>    
+</tables>

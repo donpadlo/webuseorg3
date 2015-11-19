@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bp>
+    <name>БП "Забраковка"</name>
+    <step>
+        <node>1</node>
+        <title>Дополнительные сведения</title>
+        <comment>В комментариях укажите причину отказа в сертификации</comment>
+        <user>6</user>
+	<accept>24</accept>	
+        <timer>1</timer>
+        <top>0px</top>
+        <left>0px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                
+    </step>    
+    <step>
+        <node>24</node>
+        <title>Продолжить работу с БП "Брак"?</title>
+        <comment></comment>
+        <user>3</user>
+	<no>-1</no>	
+	<yes>25</yes>
+        <timer>1</timer>
+        <top>202px</top>
+        <left>50px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                        
+    </step>
+    
+    <step>
+        <node>25</node>
+        <title>Переместить ТМЦ</title>
+        <comment>Переместить Брак на склад Брака</comment>
+        <user>4</user>
+	<accept>5</accept>
+        <thinking>24</thinking>
+        <timer>1</timer>
+        <top>34px</top>
+        <left>312px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                        
+    </step>        
+    <step>
+        <node>5</node>
+        <title>Чей это брак? 1) Брак производства 2) Брак постащика</title>
+        <comment>1) Брак производства 2) Брак постащика</comment>
+        <user>6</user>
+        <one>7</one>
+        <two>6</two>
+        <thinking>24</thinking>
+        <timer>1</timer>
+        <top>235px</top>
+        <left>398px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                        
+    </step>
+    <step>
+        <node>6</node>
+        <title>Что будем делать с браком?        
+        1)Использовать невозможно
+        2)Использовать возможно с мероприятиями
+        </title>
+        <comment></comment>
+        <user>6</user>	
+        <one>10</one>
+        <two>9</two>
+        <thinking>5</thinking>
+        <timer>1</timer>
+        <top>360px</top>
+        <left>523px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>10</node>
+        <title>Бухгалтерской службе необходимо переместить ТМЦ на склад невозвратного брака. Это сделано?</title>
+        <comment></comment>
+        <user>8</user>	
+        <yes>11</yes>
+        <thinking>6</thinking>
+        <timer>1</timer>
+        <top>490px</top>
+        <left>431px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>11</node>
+        <title>Снабжению необходимо вернуть ТМЦ производителю. Это сделано?</title>
+        <comment></comment>
+        <user>5</user>	
+        <yes>-1</yes>
+        <no>60</no>
+        <thinking>10</thinking>
+        <timer>14</timer>
+        <top>650px</top>
+        <left>455px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>9</node>
+        <title>Будем делать вывод ТМЦ в годный ресурс?
+        1) До получения компенсации
+        2) После получения компенсации        
+        </title>
+        <comment></comment>
+        <user>3</user>	
+        <one>12</one>
+        <two>14</two>
+        <thinking>6</thinking>
+        <timer>1</timer>
+        <top>462px</top>
+        <left>930px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>12</node>
+        <title>ТМЦ переведено в годный ресурс?</title>
+        <comment></comment>
+        <user>6</user>	
+        <yes>13</yes>
+        <no>6</no>
+        <timer>5</timer>
+        <top>592px</top>
+        <left>750px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>13</node>
+        <title>Компенсация от поставщика получена?</title>
+        <comment></comment>
+        <user>5</user>	
+        <yes>-1</yes>
+        <no>60</no>
+        <timer>14</timer>
+        <top>1138px</top>
+        <left>1013px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>14</node>
+        <title>Компенсация от поставщика получена?</title>
+        <comment></comment>
+        <user>5</user>	
+        <yes>15</yes>
+        <no>60</no>
+        <timer>14</timer>
+        <top>807px</top>
+        <left>850px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>15</node>
+        <title>ТМЦ переведен в годный ресурс?</title>
+        <comment></comment>
+        <user>6</user>	
+        <yes>-1</yes>
+        <no>6</no>
+        <timer>5</timer>
+        <top>980px</top>
+        <left>815px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>7</node>
+        <title>Что будем делать с браком?
+        1) Использовать с мероприятиями (исправление)
+        2) Использовать невозможно</title>
+        <comment></comment>
+        <user>3</user>	
+        <one>17</one>
+        <two>16</two>
+        <thinking>5</thinking>        
+        <timer>1</timer>
+        <top>106px</top>
+        <left>610px</left>
+        <width>200px</width>
+        <heigth>100px</heigth>                                
+    </step>
+    <step>
+        <node>17</node>
+        <title>ТМЦ выведено (переведено) в годный ресурс?</title>
+        <comment></comment>
+        <user>6</user>	
+        <yes>18</yes>
+        <no>7</no>
+        <timer>5</timer>
+        <top>71px</top>
+        <left>1224px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>18</node>
+        <title>Расчитать финансовые потери от переделки брака. Расчитано?</title>
+        <comment></comment>
+        <user>11</user>	
+        <yes>19</yes>
+        <no>17</no>
+        <timer>2</timer>
+        <top>222px</top>
+        <left>1297px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>19</node>
+        <title>Финансовые потери компенсированы?</title>
+        <comment></comment>
+        <user>5</user>	
+        <yes>-1</yes>
+        <no>18</no>
+        <timer>14</timer>
+        <top>414px</top>
+        <left>1380px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>16</node>
+        <title>Переместить брак на склад невозвратного брака. Перемещено?</title>
+        <comment></comment>
+        <user>8</user>	
+        <yes>20</yes>
+        <no>7</no>
+        <timer>1</timer>
+        <top>230px</top>
+        <left>980px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>20</node>
+        <title>Списать по бухучету. Списано?</title>
+        <comment></comment>
+        <user>8</user>	
+        <yes>21</yes>
+        <no>16</no>
+        <timer>1</timer>
+        <top>370px</top>
+        <left>1137px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>21</node>
+        <title>Посчитать потери предприятия. Посчитано?</title>
+        <comment></comment>
+        <user>11</user>	
+        <yes>22</yes>
+        <no>20</no>
+        <timer>2</timer>
+        <top>622px</top>
+        <left>1180px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>22</node>
+        <title>Компенсировать затраты. Компенсировано??</title>
+        <comment></comment>
+        <user>5</user>	
+        <yes>23</yes>
+        <no>21</no>
+        <timer>14</timer>
+        <top>790px</top>
+        <left>1180px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+    <step>
+        <node>23</node>
+        <title>Утилизировать ТМЦ. Утилизировано?</title>
+        <comment></comment>
+        <user>5</user>	
+        <yes>-1</yes>
+        <no>22</no>
+        <timer>14</timer>
+        <top>950px</top>
+        <left>1256px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>                        
+    <step>
+        <node>60</node>
+        <title>БП зашел в тупик. Будем запускать новый цикл?</title>
+        <comment></comment>
+        <user>3</user>
+	<no>-1</no>	
+	<yes>24</yes>
+        <timer>1</timer>
+        <top>1131px</top>
+        <left>422px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>                                
+    </step>
+   <step>
+        <node>-1</node>
+        <title>БП Завершен</title>
+        <top>1010px</top>
+        <left>146px</left>
+        <width>80px</width>
+        <heigth>40px</heigth>                
+    </step>        
+    
+</bp>    

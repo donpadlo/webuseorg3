@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bp>
+    <name>ТЕСТ БП</name>
+    <step>
+        <node>1</node>
+        <title>Тестовый процесс</title>
+        <comment>Описание</comment>
+        <user>2</user>
+	<yes>-1</yes>	
+        <timer>1</timer>
+        <top>1px</top>
+        <left>1px</left>       
+        <width>180px</width>
+        <heigth>80px</heigth>                
+        
+    </step>    
+    <step>
+        <node>-1</node>
+        <title>БП завершен</title>
+        <top>150px</top>
+        <left>100px</left>
+        <width>80px</width>
+        <heigth>40px</heigth>                
+    </step>    
+    
+</bp>    

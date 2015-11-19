@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<tables>
+    <entertable name="equipment" comment="Реестр ТМЦ" key="id">
+        <reqtable name="eq_param" comment="Параметры ТМЦ" is_delete="yes" key="eqid"></reqtable>
+        <reqtable name="move" comment="Перемещения ТМЦ" is_delete="yes" key="eqid"></reqtable>        
+        <reqtable name="repair" comment="Ремонты ТМЦ" is_delete="yes" key="eqid"></reqtable>                
+    </entertable>
+</tables>

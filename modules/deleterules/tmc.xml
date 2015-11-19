@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<tables>
+    <entertable name="nome" comment="Номенклатура" key="id">
+        <reqtable name="equipment" comment="Список ТМЦ" is_delete="no" key="nomeid"></reqtable>    
+    </entertable>
+    <entertable name="group_nome" comment="Группы номенклатуры" key="id">
+        <reqtable name="nome" comment="Список ТМЦ" is_delete="no" key="groupid"></reqtable>    
+        <reqtable name="group_param" comment="Парметры группы" is_delete="yes" key="groupid"></reqtable>    
+    </entertable>
+    <entertable name="vendor" comment="производители" key="id">
+        <reqtable name="nome" comment="Список ТМЦ" is_delete="no" key="vendorid"></reqtable>    
+    </entertable>    
+</tables>

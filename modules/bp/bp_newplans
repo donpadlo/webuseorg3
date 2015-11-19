@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bp>
+    <name>Планы производства</name>
+    <step>
+        <node>1</node>
+        <title>Внести в 1С УПП планы производства</title>
+        <comment>Нажмите Да, как выполните</comment>
+        <top>1px</top>
+        <left>1px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>
+        <user>18</user>
+        <timer>1</timer>
+	<yes>-1</yes>
+    </step>        
+   <step>
+        <node>-1</node>
+        <title>БП Завершен</title>
+        <top>150px</top>
+        <left>100px</left>
+        <width>80px</width>
+        <heigth>40px</heigth>        
+    </step>        
+</bp>

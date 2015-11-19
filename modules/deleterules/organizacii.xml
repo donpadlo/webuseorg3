@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<tables>
+    <entertable name="org" comment="Список организаций" key="id">
+        <reqtable name="equipment" comment="Список ТМЦ" is_delete="no" key="orgid"></reqtable>
+        <reqtable name="places" comment="Помещения" is_delete="no" key="orgid"></reqtable>
+        <reqtable name="users" comment="Пользователи" is_delete="no" key="orgid"></reqtable>
+    </entertable>
+</tables>

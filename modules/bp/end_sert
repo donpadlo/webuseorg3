@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bp>
+    <name>Устранить просрочки сертификатов</name>
+    <step>
+        <node>1</node>
+        <title>Запустить БП устранения просрочки по выпущеным серификатам?</title>
+        <comment>Нажмите Да или Нет</comment>
+        <top>10px</top>
+        <left>80px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>
+        <user>3</user>
+        <timer>2</timer>
+	<yes>2</yes>
+        <no>-1</no>
+    </step>        
+    <step>
+        <node>2</node>
+        <title>Устранить просрочки по выпущеным серификатам</title>
+        <comment>Нажмите Да, как выполните</comment>
+        <top>200px</top>
+        <left>300px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>
+        <user>6</user>
+        <timer>2</timer>
+	<yes>-1</yes>
+    </step>        
+   <step>
+        <node>-1</node>
+        <title>БП Завершен</title>
+        <top>250px</top>
+        <left>100px</left>
+        <width>80px</width>
+        <heigth>40px</heigth>        
+    </step>        
+</bp>

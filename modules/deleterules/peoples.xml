@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<tables>
+    <entertable name="users" comment="Сотрудники" key="id">
+        <reqtable name="equipment" comment="Список ТМЦ" is_delete="no" key="usersid"></reqtable>    
+        <reqtable name="users_profile" comment="Профиль пользователя" is_delete="yes" key="usersid"></reqtable>
+        <reqtable name="places_users" comment="Ответственность по помещениям" is_delete="yes" key="userid"></reqtable>
+        <reqtable name="post_users" comment="Должности организации" is_delete="yes" key="userid"></reqtable>
+        <reqtable name="move" comment="Перемещения ТМЦ" is_delete="yes" key="useridto"></reqtable>
+    </entertable>
+</tables>

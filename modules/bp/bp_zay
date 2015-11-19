@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bp>
+    <name>Ввести данные по приходу комплектующих</name>
+    <step>
+        <node>1</node>
+        <title>Данные по приходу введены?</title>
+        <comment>Нажмите Да или Нет</comment>
+        <top>10px</top>
+        <left>80px</left>
+        <width>180px</width>
+        <heigth>80px</heigth>
+        <user>27</user>
+        <user>28</user>
+        <timer>2</timer>
+	<yes>-1</yes>
+        <no>1</no>
+    </step>        
+   <step>
+        <node>-1</node>
+        <title>БП Завершен</title>
+        <top>250px</top>
+        <left>100px</left>
+        <width>80px</width>
+        <heigth>40px</heigth>        
+    </step>        
+</bp>
