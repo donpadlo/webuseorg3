@@ -1585,7 +1585,7 @@ if ($cfg->version=="3.65") {
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1";
     $result = $sqlcn->ExecuteSQL($sql);                   
-    if ($result=='') die('(111)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
+    if ($result=='') die('(116)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
     echo "--ok</br>";
 
     echo "- добавляю таблицу для хранения распайки волокон в муфте</br>";
@@ -1596,10 +1596,11 @@ if ($cfg->version=="3.65") {
   `lib_line_id` int(11) NOT NULL COMMENT 'ссылка на волокно из справочника',
   `start_id` int(11) NOT NULL COMMENT 'идентификатор стыковки начала волокна',
   `end_id` int(11) NOT NULL COMMENT 'идентификатор конца волокна',
-  `type_obj` varchar(20) NOT NULL
+  `type_obj` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8";
     $result = $sqlcn->ExecuteSQL($sql);                   
-    if ($result=='') die('(111)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
+    if ($result=='') die('(117)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
     echo "--ok</br>";
 
     
@@ -1607,7 +1608,7 @@ if ($cfg->version=="3.65") {
     echo "-обновляю нумерацию версии движка до $vr</br>";
     $sql="UPDATE config SET version='$vr'";
     $result = $sqlcn->ExecuteSQL($sql);               
-    if ($result=='') die('(115)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
+    if ($result=='') die('(118)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
     echo "--ok</br>";
     $cfg->version=$vr;    
 };
@@ -1618,13 +1619,13 @@ if ($cfg->version=="3.66") {
     echo "- добавляю поле для хранения цвета кнопки устройства</br>";
     $sql="ALTER TABLE  `devnames` ADD  `bcolor` VARCHAR( 50 ) NOT NULL";
     $result = $sqlcn->ExecuteSQL($sql);                   
-    if ($result=='') die('(111)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
+    if ($result=='') die('(119)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
     echo "--ok</br>";
     
     echo "-обновляю нумерацию версии движка до $vr</br>";
     $sql="UPDATE config SET version='$vr'";
     $result = $sqlcn->ExecuteSQL($sql);               
-    if ($result=='') die('(115)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
+    if ($result=='') die('(120)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
     echo "--ok</br>";
     $cfg->version=$vr;    
 };
@@ -1635,13 +1636,13 @@ if ($cfg->version=="3.67") {
     echo "- добавляю поле комментария к каждому волокну</br>";
     $sql="ALTER TABLE  `lib_lines_in_muft` ADD  `comment` VARCHAR( 255 ) NOT NULL";
     $result = $sqlcn->ExecuteSQL($sql);                   
-    if ($result=='') die('(116)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
+    if ($result=='') die('(121)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
     echo "--ok</br>";
     
     echo "-обновляю нумерацию версии движка до $vr</br>";
     $sql="UPDATE config SET version='$vr'";
     $result = $sqlcn->ExecuteSQL($sql);               
-    if ($result=='') die('(117)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
+    if ($result=='') die('(122)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
     echo "--ok</br>";
     $cfg->version=$vr;    
 };
@@ -1651,13 +1652,13 @@ if ($cfg->version=="3.68") {
     echo "- добавляю еще один цвет к модулю</br>";
     $sql="ALTER TABLE  `lib_cable_modules` ADD  `color1` VARCHAR( 20 ) NOT NULL";
     $result = $sqlcn->ExecuteSQL($sql);                   
-    if ($result=='') die('(118)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
+    if ($result=='') die('(123)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
     echo "--ok</br>";
     
     echo "-обновляю нумерацию версии движка до $vr</br>";
     $sql="UPDATE config SET version='$vr'";
     $result = $sqlcn->ExecuteSQL($sql);               
-    if ($result=='') die('(119)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
+    if ($result=='') die('(124)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
     echo "--ok</br>";
     $cfg->version=$vr;    
 };
@@ -1667,13 +1668,13 @@ if ($cfg->version=="3.69") {
     echo "- добавляю поле zindex для обьектов карты</br>";
     $sql="ALTER TABLE  `lanb_maps` ADD  `zindex` INT NOT NULL";
     $result = $sqlcn->ExecuteSQL($sql);                   
-    if ($result=='') die('(120)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
+    if ($result=='') die('(125)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
     echo "--ok</br>";
     
     echo "-обновляю нумерацию версии движка до $vr</br>";
     $sql="UPDATE config SET version='$vr'";
     $result = $sqlcn->ExecuteSQL($sql);               
-    if ($result=='') die('(121)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
+    if ($result=='') die('(126)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
     echo "--ok</br>";
     $cfg->version=$vr;    
 };
@@ -1684,22 +1685,22 @@ if ($cfg->version=="3.70") {
     echo "- добавляю поле state для фиксации обьектов карты</br>";
     $sql="ALTER TABLE  `lanb_maps_coor` ADD  `state` INT NOT NULL";
     $result = $sqlcn->ExecuteSQL($sql);                   
-    if ($result=='') die('(122)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
+    if ($result=='') die('(127)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
     echo "--ok</br>";
     
     echo "-обновляю нумерацию версии движка до $vr</br>";
     $sql="UPDATE config SET version='$vr'";
     $result = $sqlcn->ExecuteSQL($sql);               
-    if ($result=='') die('(123)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
+    if ($result=='') die('(128)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
     echo "--ok</br>";
     $cfg->version=$vr;    
 };
 
-// обновляем до 3.72
-if ($cfg->version=="3.71") {
-    $vr="3.72";
-    echo "- таблицу для создания меню</br>";
-    $sql="CREATE TABLE IF NOT EXISTS `menu` (
+# Обновляем до 3.72
+if ($cfg->version == '3.71') {
+	$vr = '3.72';
+	echo '- добавляю таблицу для создания меню</br>';
+	$sql = "CREATE TABLE IF NOT EXISTS `menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Уникальный идентификатор',
   `parents` int(11) NOT NULL COMMENT 'Родитель',
   `sort_id` int(11) NOT NULL COMMENT 'Сортировка',
@@ -1708,23 +1709,20 @@ if ($cfg->version=="3.71") {
   `uid` varchar(50) NOT NULL COMMENT 'некий идентификатор (можно использовать для автосоздания менюшек)',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1";
-    $result = $sqlcn->ExecuteSQL($sql);                   
-    if ($result=='') die('(124)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
-    echo "--ok</br>";
-    
-    echo "-обновляю нумерацию версии движка до $vr</br>";
-    $sql="UPDATE config SET version='$vr'";
-    $result = $sqlcn->ExecuteSQL($sql);               
-    if ($result=='') die('(125)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));        
-    echo "--ok</br>";
-    $cfg->version=$vr;    
+	$result = $sqlcn->ExecuteSQL($sql);
+	if ($result == '') die('(124)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));
+	echo '--ok</br>';
+
+	echo "-обновляю нумерацию версии движка до $vr</br>";
+	$sql = "UPDATE config SET version='$vr'";
+	$result = $sqlcn->ExecuteSQL($sql);
+	if ($result == '') die('(129)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));
+	echo '--ok</br>';
+	$cfg->version = $vr;
 };
 
-
-echo "Обновление закончено.</br>";
-echo "Если сообщений об ошибках нет, удалите файл update.php.</br>";
+echo 'Обновление закончено.</br>';
+echo 'Если сообщений об ошибках нет, удалите файл update.php.</br>';
 ?>
 </body>
 </html>
-
-
