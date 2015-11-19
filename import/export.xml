@@ -1,0 +1,3533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orguse>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет производства</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/57</buhname>
+    <invnum>0710110949</invnum>
+    <shtrihkod>8668655008482</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/57</buhname>
+    <invnum>222623</invnum>
+    <shtrihkod>2808234774453</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/57</buhname>
+    <invnum>3003684</invnum>
+    <shtrihkod>2653585528864</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/57</buhname>
+    <invnum>0710110951</invnum>
+    <shtrihkod>2731058674812</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>KX-TS2365RUW</nomename>
+    <buhname>телефон.апп. Панасоник КХ-ТS2363</buhname>
+    <invnum>2046608667</invnum>
+    <shtrihkod>4567574735533</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория - рецептура</namehouses>
+    <nomename>KX-TS2365RUW</nomename>
+    <buhname>телефон.апп. Панасоник КХ-ТS2363</buhname>
+    <invnum>1014283</invnum>
+    <shtrihkod>2703040481638</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Дробильный участок</namehouses>
+    <nomename>KX-TS2365RUW</nomename>
+    <buhname>телефон.апп. Панасоник КХ-ТS2365</buhname>
+    <invnum>1014285</invnum>
+    <shtrihkod>1664422803545</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Материальный склад</namehouses>
+    <nomename>KX-TS2365RUW</nomename>
+    <buhname></buhname>
+    <invnum>3634</invnum>
+    <shtrihkod>0558687085883</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная/склад</namehouses>
+    <nomename>KX-TS2365RUW</nomename>
+    <buhname>телефон.апп. Панасоник КХ-ТS2363</buhname>
+    <invnum>3005162</invnum>
+    <shtrihkod>8130746763522</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>LG Flatron W1943SB LCD</nomename>
+    <buhname>монитор 17 LG Flatron W 194 3 SB</buhname>
+    <invnum>890020119</invnum>
+    <shtrihkod>1486403421664</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>KX-T7630 системный</nomename>
+    <buhname>телефон системный Панасоник КХ-Т7633</buhname>
+    <invnum>8955</invnum>
+    <shtrihkod>8703050378717</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>KX-T7630 системный</nomename>
+    <buhname>телефон системный Панасоник КХ-Т7633</buhname>
+    <invnum>6278</invnum>
+    <shtrihkod>1633423073638</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Калькулятор CDC-888tii</nomename>
+    <buhname>калькулятор Citizen</buhname>
+    <invnum>3009774</invnum>
+    <shtrihkod>1510251525388</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>компьютер P-4 1600E 256k 17LG Studioworks</buhname>
+    <invnum>300020119</invnum>
+    <shtrihkod>6435386008656</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Сервер Intel Core2Duo-E6300 инв/н 424800800</buhname>
+    <invnum>424800800</invnum>
+    <shtrihkod>7351300863436</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Финансовый директор</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Сервер Intel Core2Duo-2.4 GHz инв/н 424800800</buhname>
+    <invnum>424800800_1</invnum>
+    <shtrihkod>5628825647566</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>20048008916</invnum>
+    <shtrihkod>8243112118564</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Проходная</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>компьютер P-4 2000/256/80 ATX</buhname>
+    <invnum>730020119</invnum>
+    <shtrihkod>2600058067782</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>компьютер P-4 2000/256/80 ATX</buhname>
+    <invnum>740020119</invnum>
+    <shtrihkod>8783632302362</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>компьютер P-4 2000/256/80 ATX</buhname>
+    <invnum>290020119</invnum>
+    <shtrihkod>5266056261072</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок комп</buhname>
+    <invnum>690020119</invnum>
+    <shtrihkod>8244587540855</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Каморка Жаркова</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>2507110837</invnum>
+    <shtrihkod>3330417348605</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>3245346</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория - рецептура</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>компьютер P-4 1600E 256k/32Mb/Flatron</buhname>
+    <invnum>2907111640</invnum>
+    <shtrihkod>3308834685672</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория - рецептура</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>компьютер P-4 2000/256Mb 17 LG Flatron F700B</buhname>
+    <invnum>151855</invnum>
+    <shtrihkod>8588616230160</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Материальный склад</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1800E/256/40/Lan10/100</buhname>
+    <invnum>710020119</invnum>
+    <shtrihkod>7311661587000</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1800E/256/40/Lan10/100</buhname>
+    <invnum>800020119</invnum>
+    <shtrihkod>5630450655088</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1800E/256/40/Lan10/100</buhname>
+    <invnum>280020119</invnum>
+    <shtrihkod>2670330028257</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>19092011141856</invnum>
+    <shtrihkod>1131625325035</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория - рецептура</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>611316</invnum>
+    <shtrihkod>4418672808100</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория - рецептура</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>358805</invnum>
+    <shtrihkod>3385130535575</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Материальный склад</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>234425</invnum>
+    <shtrihkod>4553201878024</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>700576</invnum>
+    <shtrihkod>6534453234214</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>088744</invnum>
+    <shtrihkod>5824727438348</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Управляющий склада</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>805460</invnum>
+    <shtrihkod>5434635768883</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Серверная/склад РС</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname></buhname>
+    <invnum>3009341</invnum>
+    <shtrihkod>8805151855234</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Серверная/склад РС</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname></buhname>
+    <invnum>3009340</invnum>
+    <shtrihkod>3570057608874</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3004404</invnum>
+    <shtrihkod>4277156083717</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Управляющий склада</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3009337</invnum>
+    <shtrihkod>4567574735533</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Серверная/склад РС</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname></buhname>
+    <invnum>3004406</invnum>
+    <shtrihkod>8306243872838</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория - рецептура</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3009334</invnum>
+    <shtrihkod>1232852815754</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3004415</invnum>
+    <shtrihkod>1038037766188</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Cisco AiroNet 802.11</nomename>
+    <buhname>точка доступа 802</buhname>
+    <invnum>3003035</invnum>
+    <shtrihkod>4251306521718</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>LG Flatron L1730S LCD</nomename>
+    <buhname>монитор 17 LG Flatron L1730SQ 12 ms</buhname>
+    <invnum>280020119_1</invnum>
+    <shtrihkod>4805460032813</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>LG Flatron L1730S LCD</nomename>
+    <buhname>монитор 17 LG Flatron L1730SQ 12 ms</buhname>
+    <invnum>450020119</invnum>
+    <shtrihkod>1730165266283</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Материальный склад</namehouses>
+    <nomename>HP LaserJet 1100</nomename>
+    <buhname>принтер HP Lazer Jet-1000 A</buhname>
+    <invnum>570020119</invnum>
+    <shtrihkod>4144488307014</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>HP LaserJet 1320</nomename>
+    <buhname>принтер HP Lazer Jet 1320</buhname>
+    <invnum>2307111130</invnum>
+    <shtrihkod>5637102053545</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Монитор Acer 233H</nomename>
+    <buhname>Монитор 23 "ACER V233HAOb</buhname>
+    <invnum>257111590</invnum>
+    <shtrihkod>4586841458210</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>UniFi WiFI</nomename>
+    <buhname>Точка доступа UniFi  WiFi 802.11 g/n</buhname>
+    <invnum>AP5</invnum>
+    <shtrihkod>8703050378717</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>UniFi WiFI</nomename>
+    <buhname>Точка доступа UniFi  WiFi 802.11 g/n</buhname>
+    <invnum>AP4</invnum>
+    <shtrihkod>3303355057856</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>LincSys WiFi</nomename>
+    <buhname></buhname>
+    <invnum>3013349</invnum>
+    <shtrihkod>6164211663457</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>Диктофон Panasonic RQ-L36</nomename>
+    <buhname>диктофон Панасоник RR-US 360</buhname>
+    <invnum>456757</invnum>
+    <shtrihkod>0738072063866</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Управляющий склада</namehouses>
+    <nomename>Canon PowerShot Pro1</nomename>
+    <buhname>фотокамера цифров.Canon PowerShot Pro1</buhname>
+    <invnum>473553</invnum>
+    <shtrihkod>1344031101742</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный энергетик</namehouses>
+    <nomename>LG Flatron F700B ЭЛТ</nomename>
+    <buhname>монитор 17 LG Flatron F 700B</buhname>
+    <invnum>390020119</invnum>
+    <shtrihkod>4826200034276</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>LG Flatron F700B ЭЛТ</nomename>
+    <buhname>монитор 17 LG Flatron F 700B</buhname>
+    <invnum>470020119</invnum>
+    <shtrihkod>5028311748067</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>LG Flatron F700B ЭЛТ</nomename>
+    <buhname>монитор 17 LG Flatron F 700B</buhname>
+    <invnum>410020119</invnum>
+    <shtrihkod>4127056204304</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Panasonic KX-FT932 факс</nomename>
+    <buhname>Факсимильный аппаратКХ-FТ932RU-В</buhname>
+    <invnum>9679</invnum>
+    <shtrihkod>8351407066446</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Canon LaserShot LBP-1120</nomename>
+    <buhname>принтер Canon LBP-1210(лазер)</buhname>
+    <invnum>550020119</invnum>
+    <shtrihkod>7223771684641</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>HP DekJet 3050 Color</nomename>
+    <buhname>Принтер струйный HP DJ 3050</buhname>
+    <invnum>111020111114</invnum>
+    <shtrihkod>7826722184406</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Epson 3200 Photo</nomename>
+    <buhname>сканер Epson Perfection 3200 Photo</buhname>
+    <invnum>820020119</invnum>
+    <shtrihkod>0810646508122</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Проходная</namehouses>
+    <nomename>ViewSonic VX2739VM 27" LCD</nomename>
+    <buhname>Монитор 27 "ViewSonic VX2739wm</buhname>
+    <invnum>347744</invnum>
+    <shtrihkod>6510445877531</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Проходная</namehouses>
+    <nomename>ИБП MGE Ellipse 800</nomename>
+    <buhname></buhname>
+    <invnum>538703</invnum>
+    <shtrihkod>8427848674567</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>Benq ET-0005-NASenseye+photo</nomename>
+    <buhname>монитор 17 Beng FP71G</buhname>
+    <invnum>870020119</invnum>
+    <shtrihkod>8846405233137</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>HP LaserJet P3005dn</nomename>
+    <buhname>Принтер лазерный HP LJ P3005DN инв/н 424800800</buhname>
+    <invnum>20100996</invnum>
+    <shtrihkod>2134128037583</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>UPS Brother Pro 1200</nomename>
+    <buhname></buhname>
+    <invnum>20020119</invnum>
+    <shtrihkod>8120860046217</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Автосекретарь ICON AA456</nomename>
+    <buhname>Автосекретарь ICON-AA456</buhname>
+    <invnum>050378</invnum>
+    <shtrihkod>3602215042424</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>ATC Panasonic KX-TDA 100</nomename>
+    <buhname>АТС мини КХ-TDA 100</buhname>
+    <invnum>3005194</invnum>
+    <shtrihkod>0206672336577</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Cisco 1800</nomename>
+    <buhname>Маршрутизатор CISCО 1811/К9</buhname>
+    <invnum>20628</invnum>
+    <shtrihkod>4463672337147</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Cisco 2800</nomename>
+    <buhname>Маршрутизатор CISCO 2811 Security Bundle.Adv</buhname>
+    <invnum>717784</invnum>
+    <shtrihkod>0056177662130</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная/склад</namehouses>
+    <nomename>BayStack 350F</nomename>
+    <buhname>коммутатор  3C 1670800 (FNSW - 2400)</buhname>
+    <invnum>774476</invnum>
+    <shtrihkod>4044724538154</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>BayStack 205</nomename>
+    <buhname>коммутатор  BN-AL-2012 B02</buhname>
+    <invnum>165514</invnum>
+    <shtrihkod>0735414165241</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>HardLink HS-224HF</nomename>
+    <buhname>коммутатор  HS-224 RFM</buhname>
+    <invnum>864034</invnum>
+    <shtrihkod>2318111854048</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>Свич 16 портовый</nomename>
+    <buhname></buhname>
+    <invnum>216641</invnum>
+    <shtrihkod>7047673083646</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>LG Flatron F720P ЭЛТ</nomename>
+    <buhname>монитор 17 LG Flatron F 720B</buhname>
+    <invnum>430020119</invnum>
+    <shtrihkod>2432528433845</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Smart-UPS 3000XLM</nomename>
+    <buhname>Блок бесперебойного питания АРС Smart-UPS XL</buhname>
+    <invnum>3006674</invnum>
+    <shtrihkod>6376453078043</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Сервер HP Blade стойка</nomename>
+    <buhname></buhname>
+    <invnum>3011704</invnum>
+    <shtrihkod>7752138475438</shtrihkod>
+    <spisano>0</spisano>
+    <os>1</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>MS 1690 ручной</nomename>
+    <buhname>Сканер 2D,RS-232,БП кабель подставка ЕГАИС</buhname>
+    <invnum>9935</invnum>
+    <shtrihkod>2432306137635</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>HP LaserJet M1120MFP</nomename>
+    <buhname>принтер HP Lazer Jet-1220/сканер,копир/</buhname>
+    <invnum>610020119</invnum>
+    <shtrihkod>6242073632260</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>Samsung SyncMaster 171N LCD</nomename>
+    <buhname>монитор 17 Самсунг 171N(SAB) TFT</buhname>
+    <invnum>640020091</invnum>
+    <shtrihkod>0678004838473</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Planet FNSW-2400</nomename>
+    <buhname>коммутатор  BN-HI-2012 B02</buhname>
+    <invnum>171835</invnum>
+    <shtrihkod>0402100021040</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Конструкторский отдел</namehouses>
+    <nomename>Samsung SyncMaster E2220N LCD</nomename>
+    <buhname>Монитор 21,5" Samsung E2220N</buhname>
+    <invnum>260911110</invnum>
+    <shtrihkod>8274640083648</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Охрана труда</namehouses>
+    <nomename>Philips TFT 196V3LSB/01 18.5" LCD</nomename>
+    <buhname>Монитор 18.5 Phillips</buhname>
+    <invnum>1664151</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>HP Proliant DL 160G5</nomename>
+    <buhname>Сервер ЕГАИС 2009 для ГН (Proliant DL 160G5)</buhname>
+    <invnum>410201293553</invnum>
+    <shtrihkod>7523823716845</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Управляющий склада</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/57</buhname>
+    <invnum>0710110952</invnum>
+    <shtrihkod>3880766224161</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный механник</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/57</buhname>
+    <invnum>0710110953</invnum>
+    <shtrihkod>1447212844600</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/55</buhname>
+    <invnum>0710110954</invnum>
+    <shtrihkod>2218254072740</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/55</buhname>
+    <invnum>0710110955</invnum>
+    <shtrihkod>1424526202315</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Юристы</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/55</buhname>
+    <invnum>0710110956</invnum>
+    <shtrihkod>7501602113605</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>KX-TS2365RUW</nomename>
+    <buhname>телефон.апп. Панасоник КХ-ТS2363</buhname>
+    <invnum>746400</invnum>
+    <shtrihkod>3000056377382</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 2000E 512k</buhname>
+    <invnum>370020091</invnum>
+    <shtrihkod>1832707608172</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 2400E/512/80/CD-Rom 52</buhname>
+    <invnum>790020119</invnum>
+    <shtrihkod>0005836367564</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет производства</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>700020119</invnum>
+    <shtrihkod>6754704080042</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>670020119</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет производства</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок комп</buhname>
+    <invnum>720020119</invnum>
+    <shtrihkod>4851221754683</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок 17020119</buhname>
+    <invnum>17020119</invnum>
+    <shtrihkod>5632377634120</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1700E</buhname>
+    <invnum>250020091</invnum>
+    <shtrihkod>7612881826133</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный механник</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1700E</buhname>
+    <invnum>2507111230</invnum>
+    <shtrihkod>2786318834387</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1700E</buhname>
+    <invnum>2048008651</invnum>
+    <shtrihkod>0630482752642</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1700E</buhname>
+    <invnum>533554</invnum>
+    <shtrihkod>6575281787647</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1600E 256k</buhname>
+    <invnum>670020119</invnum>
+    <shtrihkod>1186103268556</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Охрана труда</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1600E</buhname>
+    <invnum>200020119</invnum>
+    <shtrihkod>7036882413718</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1600E</buhname>
+    <invnum>7400200119</invnum>
+    <shtrihkod>0838752135606</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок P-4 1500E 256k</buhname>
+    <invnum>270020119b</invnum>
+    <shtrihkod>4237008371462</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок KM PRO P4-531(3000)/i</buhname>
+    <invnum>260020119b</invnum>
+    <shtrihkod>7700506811358</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок ADM 1400/256Mb</buhname>
+    <invnum>0508111655</invnum>
+    <shtrihkod>5258616628758</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>компьютер P-4 1600E 256k/32Mb/Flatron</buhname>
+    <invnum>490020119b</invnum>
+    <shtrihkod>8413882244601</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок 607380</buhname>
+    <invnum>607380</invnum>
+    <shtrihkod>5851173525842</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабженцы - 2 (бывший Вагрон-Маркет)</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок 780020119</buhname>
+    <invnum>780020119</invnum>
+    <shtrihkod>4530008377173</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет производства</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>380165</invnum>
+    <shtrihkod>0157671135615</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет производства</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>206715</invnum>
+    <shtrihkod>1135828526305</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>540173</invnum>
+    <shtrihkod>0424451504478</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>786126</invnum>
+    <shtrihkod>2663824633367</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>733672</invnum>
+    <shtrihkod>1454675841157</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный механник</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>527865</invnum>
+    <shtrihkod>1665586437573</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Ликерный цех</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>042652</invnum>
+    <shtrihkod>0623604044700</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>545058</invnum>
+    <shtrihkod>8172487682015</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>523181</invnum>
+    <shtrihkod>1381285522826</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>303882</invnum>
+    <shtrihkod>3512522788728</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>836487</invnum>
+    <shtrihkod>2431455686683</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Юристы</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>511777</invnum>
+    <shtrihkod>2768627303556</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>086343</invnum>
+    <shtrihkod>3053350305241</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>031101</invnum>
+    <shtrihkod>7165712374424</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>856507</invnum>
+    <shtrihkod>2057660640535</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабженцы - 2 (бывший Вагрон-Маркет)</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>145056</invnum>
+    <shtrihkod>1271617687648</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>288256</invnum>
+    <shtrihkod>8504028227518</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3004398</invnum>
+    <shtrihkod>1363002027466</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3003932</invnum>
+    <shtrihkod>6526013226837</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3004411</invnum>
+    <shtrihkod>8230784438865</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3009331</invnum>
+    <shtrihkod>2620805218118</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Ликерный цех</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3004411</invnum>
+    <shtrihkod>7067058178802</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>HP LaserJet 1100</nomename>
+    <buhname>принтер HP Lazer Jet-1000 A</buhname>
+    <invnum>940020091</invnum>
+    <shtrihkod>8435856336542</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная/склад</namehouses>
+    <nomename>HP LaserJet 1100</nomename>
+    <buhname>принтер HP LJ 1100</buhname>
+    <invnum>620020119</invnum>
+    <shtrihkod>8045766208661</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>HP LaserJet 1100</nomename>
+    <buhname></buhname>
+    <invnum>590020119</invnum>
+    <shtrihkod>0885751008802</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>UniFi WiFI</nomename>
+    <buhname>Точка доступа UniFi  WiFi 802.11 g/n</buhname>
+    <invnum>AP3</invnum>
+    <shtrihkod>7636686718733</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>UniFi WiFI</nomename>
+    <buhname></buhname>
+    <invnum>AP1</invnum>
+    <shtrihkod>2818217417230</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>UniFi WiFI</nomename>
+    <buhname></buhname>
+    <invnum>AP2</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>LG Flatron F700B ЭЛТ</nomename>
+    <buhname></buhname>
+    <invnum>25002009</invnum>
+    <shtrihkod>1685803826224</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный механник</namehouses>
+    <nomename>LG Flatron F700B ЭЛТ</nomename>
+    <buhname></buhname>
+    <invnum>520020091</invnum>
+    <shtrihkod>0348640571410</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>LG Flatron F700B ЭЛТ</nomename>
+    <buhname></buhname>
+    <invnum>350020119</invnum>
+    <shtrihkod>4133641288765</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>LG Flatron F700B ЭЛТ</nomename>
+    <buhname></buhname>
+    <invnum>440020119</invnum>
+    <shtrihkod>2303242383733</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>BayStack 205</nomename>
+    <buhname></buhname>
+    <invnum>120020119</invnum>
+    <shtrihkod>2886061245372</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Kyosera KM-2550</nomename>
+    <buhname>Принтер Кyocera КМ-2550</buhname>
+    <invnum>3001548</invnum>
+    <shtrihkod>6070026406885</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Управляющий склада</namehouses>
+    <nomename>UPS APC 300</nomename>
+    <buhname></buhname>
+    <invnum>180020119b</invnum>
+    <shtrihkod>4641013002138</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>HP LaserJet P3015</nomename>
+    <buhname>принтер HP Lazer Jet А4 3015 LPT USB</buhname>
+    <invnum>00000046</invnum>
+    <shtrihkod>6862441417473</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>D-Link 1005D 5-типортовый</nomename>
+    <buhname></buhname>
+    <invnum>241627</invnum>
+    <shtrihkod>0721012153366</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный механник</namehouses>
+    <nomename>D-Link 1005D 5-типортовый</nomename>
+    <buhname></buhname>
+    <invnum>654482</invnum>
+    <shtrihkod>2014084256858</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Cisco 7921 WiFi -телефон</nomename>
+    <buhname>Телефон Cisco IP Беспроводный WI-FI7921</buhname>
+    <invnum>0710110948</invnum>
+    <shtrihkod>6603417067445</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Cisco 7921 WiFi -телефон</nomename>
+    <buhname>Телефон Cisco IP Беспроводный WI-FI7921</buhname>
+    <invnum>016526</invnum>
+    <shtrihkod>5718618351611</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>HP LaserJet M1214nfh MFP</nomename>
+    <buhname>Принтер НР LaserJet V 1214nfh</buhname>
+    <invnum>672213</invnum>
+    <shtrihkod>1645272147323</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>UPS APC 1000</nomename>
+    <buhname></buhname>
+    <invnum>288644</invnum>
+    <shtrihkod>2850326054672</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>UPS APC 1000</nomename>
+    <buhname>Источник бесперебойного питания APC Back UPS RS 100 BR 1000I</buhname>
+    <invnum>187014</invnum>
+    <shtrihkod>3717376257867</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный механник</namehouses>
+    <nomename>HP LaserJet 4300</nomename>
+    <buhname>принтер HP Lazer Jet 4300</buhname>
+    <invnum>560020119</invnum>
+    <shtrihkod>1440272754807</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Kyosera 1118MFT</nomename>
+    <buhname>копировальный аппарат FS-101MFP</buhname>
+    <invnum>4248008002</invnum>
+    <shtrihkod>1281134200858</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>Kyosera 1118MFT</nomename>
+    <buhname>Копировальный аппарат FS-11118 MFP</buhname>
+    <invnum>102053</invnum>
+    <shtrihkod>1331536204802</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория - рецептура</namehouses>
+    <nomename>Samsung SyncMaster 743 LCD</nomename>
+    <buhname>Монитор Samsung 743N</buhname>
+    <invnum>480020119</invnum>
+    <shtrihkod>2643228241740</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Benq G700AD Senseye+photo</nomename>
+    <buhname>монитор 17 Beng G700 AD</buhname>
+    <invnum>930020119</invnum>
+    <shtrihkod>4734280200843</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Samsung SyncMaster 710N LCD</nomename>
+    <buhname>монитор 17 Самсунг SyncMaster TFT 17""713N</buhname>
+    <invnum>660020091</invnum>
+    <shtrihkod>7748054434183</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>Cisco LinkSys Spa 2102</nomename>
+    <buhname>Линкс 1-Port Router with 2 Phone Ports</buhname>
+    <invnum>3003701</invnum>
+    <shtrihkod>0131224136660</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Samsung SyncMaster 740 LCD</nomename>
+    <buhname>монитор 17 Самсунг 740N</buhname>
+    <invnum>490020119</invnum>
+    <shtrihkod>0171860588480</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>LG Flatron L1750LQ LCD</nomename>
+    <buhname>монитор LG TFT 17 L1750 SQ-SN silver 8ms</buhname>
+    <invnum>720638</invnum>
+    <shtrihkod>0173876628121</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Серверная/склад РС</namehouses>
+    <nomename>Kyosera KM-1650</nomename>
+    <buhname></buhname>
+    <invnum>3010217</invnum>
+    <shtrihkod>6844588588753</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>Станция KX-TDA0155 DECT</nomename>
+    <buhname>КХ -TDAO155CE /базовая станция DECT</buhname>
+    <invnum>661344</invnum>
+    <shtrihkod>2725838056042</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>TP-Link TL-SF1005D свич 5 портов</nomename>
+    <buhname></buhname>
+    <invnum>47744534</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>Kyosera 1035MFT</nomename>
+    <buhname>Принтер Кyocera FS-1035MFP/DP</buhname>
+    <invnum>12456757</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Конструкторский отдел</namehouses>
+    <nomename>3 com 8 port (3C1570800A)</nomename>
+    <buhname></buhname>
+    <invnum>456757231</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>HP Proliant Dl 360G5</nomename>
+    <buhname>Сервер HP Proliant Dl 360G5</buhname>
+    <invnum>410201293515</invnum>
+    <shtrihkod>5537764715748</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/55</buhname>
+    <invnum>237716</invnum>
+    <shtrihkod>7503553180234</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/55</buhname>
+    <invnum>184406</invnum>
+    <shtrihkod>1326471278656</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Финансовый директор</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/55</buhname>
+    <invnum>113635</invnum>
+    <shtrihkod>7054616288165</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный инженер</namehouses>
+    <nomename>Cisco 7911</nomename>
+    <buhname>Телефон IP- Cisco IP Phone 7911G10210090/210311/0005801/55</buhname>
+    <invnum>3004549</invnum>
+    <shtrihkod>6368300887607</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная/склад</namehouses>
+    <nomename>KX-TS2365RUW</nomename>
+    <buhname>телефон.апп. Панасоник КХ-ТS2363</buhname>
+    <invnum>7958</invnum>
+    <shtrihkod>1411461710524</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок 2010111517</buhname>
+    <invnum>2010111517</invnum>
+    <shtrihkod>2421406083647</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>компьютер P-4 2000/256/80 ATX</buhname>
+    <invnum>210020119</invnum>
+    <shtrihkod>8827268431633</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок комп. Intel Pentium в комп.с монит. инв/н 424800800</buhname>
+    <invnum>2048008903</invnum>
+    <shtrihkod>6122048166507</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>4102013122029</invnum>
+    <shtrihkod>5583418616488</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Сервер Klondike President 2000 17"</buhname>
+    <invnum>281120111099</invnum>
+    <shtrihkod>5364004444330</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок комп. Intel Pentium в комп.с монит. инв/н 424800800</buhname>
+    <invnum>424800800_1</invnum>
+    <shtrihkod>2283537546323</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>34900</invnum>
+    <shtrihkod>7514415526772</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>компьютер P-4 2000/256/80 ATX</buhname>
+    <invnum>291120111415</invnum>
+    <shtrihkod>6078103448447</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>сист блок Эконом класс</buhname>
+    <invnum>291120111416</invnum>
+    <shtrihkod>2677853465830</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок 300020119</buhname>
+    <invnum>300020119</invnum>
+    <shtrihkod>4437356107157</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Серверная/склад РС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>34900</invnum>
+    <shtrihkod>1500336371700</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>5037871</invnum>
+    <shtrihkod>1778477447616</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Финансовый директор</namehouses>
+    <nomename>E-machines E200HV</nomename>
+    <buhname>Монитор 20 "ACER E200HVb</buhname>
+    <invnum>841458</invnum>
+    <shtrihkod>3105352844544</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Юристы</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3004398</invnum>
+    <shtrihkod>0345132644428</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3009338</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Тонкий клиент HP Compag t5135</buhname>
+    <invnum>3009339</invnum>
+    <shtrihkod>4567574735533</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный энергетик</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname>Системный блок HP5135</buhname>
+    <invnum>3004892</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>LG Flatron L1730S LCD</nomename>
+    <buhname></buhname>
+    <invnum>460020119</invnum>
+    <shtrihkod>8625216240718</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Монитор Acer 233H</nomename>
+    <buhname>Монитор 23 "ACER V233HAOb</buhname>
+    <invnum>070664</invnum>
+    <shtrihkod>1011680100172</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет директора</namehouses>
+    <nomename>HP LaserJet 1200</nomename>
+    <buhname>принтер лаз. HP LJ 1200</buhname>
+    <invnum>630020119</invnum>
+    <shtrihkod>4465434062410</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная/склад</namehouses>
+    <nomename>Smart-UPS 3000XLM</nomename>
+    <buhname>Блок бесперебойного питания АРС Smart-UPS XL</buhname>
+    <invnum>51120128360</invnum>
+    <shtrihkod>6884272768856</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Серверная/склад РС</namehouses>
+    <nomename>Smart-UPS 3000XLM</nomename>
+    <buhname></buhname>
+    <invnum>477445</invnum>
+    <shtrihkod>8652738877455</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>MS 1690 ручной</nomename>
+    <buhname>Комплекс ЕГАИС(Лазерный ручной сканер)</buhname>
+    <invnum>281120111049</invnum>
+    <shtrihkod>4651210442476</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>D-Link 1005D 5-типортовый</nomename>
+    <buhname></buhname>
+    <invnum></invnum>
+    <shtrihkod></shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Ликерный цех</namehouses>
+    <nomename>D-Link 1005D 5-типортовый</nomename>
+    <buhname></buhname>
+    <invnum>166415</invnum>
+    <shtrihkod>1025152538864</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Охрана труда</namehouses>
+    <nomename>Kyosera 1018MFT</nomename>
+    <buhname>копировальный аппарат FS-101MFP</buhname>
+    <invnum>310020119</invnum>
+    <shtrihkod>1756323371047</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Benq G700AD Senseye+photo</nomename>
+    <buhname></buhname>
+    <invnum>281120111059</invnum>
+    <shtrihkod>3667362828750</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>Samsung SyncMaster 710N LCD</nomename>
+    <buhname>Монитор 21,5</buhname>
+    <invnum>510201375459</invnum>
+    <shtrihkod>8418312355544</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет директора</namehouses>
+    <nomename>Cisco LinkSys Spa 2102</nomename>
+    <buhname>Линкс 1-Port Router with 2 Phone Ports</buhname>
+    <invnum>243112</invnum>
+    <shtrihkod>1821600373444</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение - начальник отдела</namehouses>
+    <nomename>Kyosera FS-3900DN</nomename>
+    <buhname>Принтер Кyocera FS392DN ч/б лаз.А4 40ppm 1200dpi</buhname>
+    <invnum>3011232</invnum>
+    <shtrihkod>2363858328683</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>HardLink HS-224RFM</nomename>
+    <buhname>коммутатор  HS-224 RFM</buhname>
+    <invnum>826722</invnum>
+    <shtrihkod>8458051537506</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет директора</namehouses>
+    <nomename>Плазменная панель Samsung 46" (TV)</nomename>
+    <buhname>Телевизор плазменный Samsung,1366*768,1500</buhname>
+    <invnum>3005347</invnum>
+    <shtrihkod>3673550406306</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет директора</namehouses>
+    <nomename>Tandberg TTC7-02</nomename>
+    <buhname>Видеоконференция</buhname>
+    <invnum>3013319</invnum>
+    <shtrihkod>1676068264447</shtrihkod>
+    <spisano>0</spisano>
+    <os>1</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет директора</namehouses>
+    <nomename>Cisco 7962</nomename>
+    <buhname>Телефон  Cisco IP Phone 7962 (10210090/070611/0014493/27,КИТАЙ)</buhname>
+    <invnum>118564</invnum>
+    <shtrihkod>5722888556528</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Диктофон SONY ICD-P28</nomename>
+    <buhname>диктофон SONY ICD-P28</buhname>
+    <invnum>482620</invnum>
+    <shtrihkod>6786277755566</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный инженер</namehouses>
+    <nomename>Kyosera FS-3920DN</nomename>
+    <buhname>Принтер сетевой лазерный с дуплексом КМ FS 3</buhname>
+    <invnum>464586</invnum>
+    <shtrihkod>0282663804685</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Asus GX 100SB свич</nomename>
+    <buhname></buhname>
+    <invnum>2610111140</invnum>
+    <shtrihkod>0684628544783</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>TP-Link TL-SF1005D свич 5 портов</nomename>
+    <buhname></buhname>
+    <invnum>2610111200</invnum>
+    <shtrihkod>0611180126437</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>АТС Samsung</nomename>
+    <buhname>АТС Samsung</buhname>
+    <invnum>846417</invnum>
+    <shtrihkod>1134881607747</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Cisco Catalys 3750</nomename>
+    <buhname>Cisco Catalyst 3750</buhname>
+    <invnum>116634</invnum>
+    <shtrihkod>4567574735533</shtrihkod>
+    <spisano>0</spisano>
+    <os>1</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>DataMax I-Class 4208</nomename>
+    <buhname>Принтер DataMax инв/н 424800801</buhname>
+    <invnum>424800801</invnum>
+    <shtrihkod>2204072066576</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Холодный склад (2-эт)</namehouses>
+    <nomename>DataMax I-Class 4208</nomename>
+    <buhname></buhname>
+    <invnum>281120111198</invnum>
+    <shtrihkod>3433537087001</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>МХ-6622 Шкаф напольный 22U, 600х600х1196мм</nomename>
+    <buhname>МХ-6622 Шкаф напольный 22U, 600х600х1196мм</buhname>
+    <invnum>281120111113</invnum>
+    <shtrihkod>5202851365713</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Огнетушитель ОУ</nomename>
+    <buhname>Огнетушитель ОУ 2/3л/</buhname>
+    <invnum>281120111119</invnum>
+    <shtrihkod>3140562426087</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Огнетушитель ОУ</nomename>
+    <buhname>Огнетушитель ОУ 3/5л/</buhname>
+    <invnum>281120111199</invnum>
+    <shtrihkod>1083312488831</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Холодный склад (2-эт)</namehouses>
+    <nomename>Kyosera KM-2540</nomename>
+    <buhname>Принтер Кyocera КМ-2540</buhname>
+    <invnum>281120111124</invnum>
+    <shtrihkod>5550056766631</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Проектор  Epson EB-W10</nomename>
+    <buhname>Проектор  Epson EB-W10</buhname>
+    <invnum>281120111133</invnum>
+    <shtrihkod>8010025445308</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>HHP IT 3800</nomename>
+    <buhname>сканер HP-5H выч ком</buhname>
+    <invnum>281120111141</invnum>
+    <shtrihkod>1136354121577</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Стеллаж</nomename>
+    <buhname>Стеллаж</buhname>
+    <invnum>281120111143</invnum>
+    <shtrihkod>3355404265223</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>Шкаф ком.расп. наст.выч.ком</nomename>
+    <buhname>Шкаф ком.расп. наст.выч.ком инв/н 204800010</buhname>
+    <invnum>204800010</invnum>
+    <shtrihkod>0887407760328</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Шкаф ком.расп. наст.выч.ком</nomename>
+    <buhname>Шкаф ком.расп. наст.выч.комп  инв/н 204800010</buhname>
+    <invnum>204800010_1</invnum>
+    <shtrihkod>0585231813038</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Шкаф серверный</nomename>
+    <buhname>Шкаф серверный</buhname>
+    <invnum>281120111155</invnum>
+    <shtrihkod>1516406548822</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение - начальник отдела</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>387030</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>177847</invnum>
+    <shtrihkod>7447616551486</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Ликерный цех</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>1456757</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Юристы</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>778477</invnum>
+    <shtrihkod>3870305037871</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Конструкторский отдел</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>447616</invnum>
+    <shtrihkod>5514864034216</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>641510</invnum>
+    <shtrihkod>2515253886435</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>386008</invnum>
+    <shtrihkod>6561131625325</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>035880</invnum>
+    <shtrihkod>5151855234425</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Финансовый директор</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>456757234345</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Конструкторский отдел</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>477445333</invnum>
+    <shtrihkod>3870305037871</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Конструкторский отдел</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>73478477</invnum>
+    <shtrihkod>4476165514864</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>WEB камера Logitech</nomename>
+    <buhname></buhname>
+    <invnum>744761</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>Наушники Logitech с микрофоном</nomename>
+    <buhname></buhname>
+    <invnum>655148</invnum>
+    <shtrihkod>6403421664151</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>LG Flatron L1930S LCD</nomename>
+    <buhname>Монитор 19" LG</buhname>
+    <invnum>6155148</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Юристы</namehouses>
+    <nomename>Philips TFT 196V3LSB/01 18.5" LCD</nomename>
+    <buhname>Монитор 18.5 Phillips</buhname>
+    <invnum>1778471</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Управляющий склада</namehouses>
+    <nomename>Philips TFT 196V3LSB/01 18.5" LCD</nomename>
+    <buhname>Монитор 18.5 Phillips</buhname>
+    <invnum>7447611</invnum>
+    <shtrihkod>6551486403421</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>LG Flatron L1734SS 17"LCD</nomename>
+    <buhname></buhname>
+    <invnum>3870301</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>DataMax DMX H-4212 TT</nomename>
+    <buhname></buhname>
+    <invnum>483010061</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>1</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Смотчик Proton REW-1</nomename>
+    <buhname></buhname>
+    <invnum>4774451</invnum>
+    <shtrihkod>3870305037871</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Кондиционер QUATROCLIMAT QV-F12WA/QN-F12WA (комплект2 шт) </nomename>
+    <buhname>Кондиционер QUATROCLIMAT QV-F12WA/QN-F12WA (комплект2 шт)</buhname>
+    <invnum>45675723</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>1</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Шкаф архивный с замком</nomename>
+    <buhname>Шкаф архивный с замком</buhname>
+    <invnum>477445134</invnum>
+    <shtrihkod>3870305037871</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Начальник сл.без. / АТС</namehouses>
+    <nomename>Ламинатор Fellowes Mars A4</nomename>
+    <buhname></buhname>
+    <invnum>45675712</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>D-Link Switch DES-1005A 10/100 5-типортовый</nomename>
+    <buhname></buhname>
+    <invnum></invnum>
+    <shtrihkod></shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная/склад</namehouses>
+    <nomename>D-Link Switch DES-1005A 10/100 5-типортовый</nomename>
+    <buhname></buhname>
+    <invnum>472347445</invnum>
+    <shtrihkod>3870305037871</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Kyocera FS-1370DN</nomename>
+    <buhname></buhname>
+    <invnum>510201363947</invnum>
+    <shtrihkod>1474216442768</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Свич 32 портовый</nomename>
+    <buhname></buhname>
+    <invnum>640342</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>4234577445</invnum>
+    <shtrihkod>3870305037871</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>310201271945</invnum>
+    <shtrihkod>8443682487676</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Касса и директор</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>6381</invnum>
+    <shtrihkod>5747876256252</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Конструкторский отдел</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>41201375428</invnum>
+    <shtrihkod>8847875854684</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Финансовый директор</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>56201371717</invnum>
+    <shtrihkod>6818416644235</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок 2048008903</buhname>
+    <invnum>2048008903</invnum>
+    <shtrihkod>4144388411538</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>372013125534</invnum>
+    <shtrihkod>3734676368358</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет директора</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname>Системный блок Стандарт класс 15.03</buhname>
+    <invnum>372013125612</invnum>
+    <shtrihkod>8247772761342</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Управляющий склада</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>392013105948</invnum>
+    <shtrihkod>1851616448778</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>592013115532</invnum>
+    <shtrihkod>8875716147866</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>592013115537</invnum>
+    <shtrihkod>1437428853373</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный инженер</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>21020131184</invnum>
+    <shtrihkod>4477113252871</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет производства</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>2112013121149</invnum>
+    <shtrihkod>8857744258383</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>311201312456</invnum>
+    <shtrihkod>1443836553334</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>HP 5135</nomename>
+    <buhname></buhname>
+    <invnum>3009341</invnum>
+    <shtrihkod>8563368821674</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Smart-UPS 3000XLM</nomename>
+    <buhname></buhname>
+    <invnum>592013115427</invnum>
+    <shtrihkod>6851476817175</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Кладова напротив ЕГАИС</namehouses>
+    <nomename>UPS APC 1000</nomename>
+    <buhname></buhname>
+    <invnum>23454</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>UPS APC 1000</nomename>
+    <buhname></buhname>
+    <invnum>1220134450</invnum>
+    <shtrihkod>6482622374158</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>UPS APC 500</nomename>
+    <buhname></buhname>
+    <invnum>РС000924</invnum>
+    <shtrihkod>2001000001755</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>UPS APC 500</nomename>
+    <buhname></buhname>
+    <invnum>РС000295</invnum>
+    <shtrihkod>2001000005722</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Samsung SyncMaster 710N LCD</nomename>
+    <buhname></buhname>
+    <invnum>5920139477</invnum>
+    <shtrihkod>5223442341661</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение - начальник отдела</namehouses>
+    <nomename>Cisco 7962</nomename>
+    <buhname>Телефон  Cisco IP Phone 7962 (10210090/070611/0014493/27,КИТАЙ)</buhname>
+    <invnum>152013115223</invnum>
+    <shtrihkod>4634674375214</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный инженер</namehouses>
+    <nomename>Cisco 7962</nomename>
+    <buhname>Телефон  Cisco IP Phone 7962 (10210090/070611/0014493/27,КИТАЙ)</buhname>
+    <invnum>39201311568</invnum>
+    <shtrihkod>3331565558822</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>DataMax I-Class 4208</nomename>
+    <buhname></buhname>
+    <invnum>592013114325</invnum>
+    <shtrihkod>3744544211537</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>03434re216</invnum>
+    <shtrihkod>6415102515253</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Охрана труда</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>212013102625</invnum>
+    <shtrihkod>6356348858428</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>21201310262</invnum>
+    <shtrihkod>6184554138428</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>212013102425</invnum>
+    <shtrihkod>5311568756581</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Cisco 6901</nomename>
+    <buhname>Телефон  Cisco IP Phone 6901</buhname>
+    <invnum>24201342957</invnum>
+    <shtrihkod>1473153551276</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>Kyosera 1035MFT</nomename>
+    <buhname>Принтер Кyocera FS-1035MFP/DP</buhname>
+    <invnum>1220134363</invnum>
+    <shtrihkod>6851443886467</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Kyosera 1035MFT</nomename>
+    <buhname>Принтер Кyocera FS-1035MFP/DP</buhname>
+    <invnum>12201343558</invnum>
+    <shtrihkod>2673343543186</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Конструкторский отдел</namehouses>
+    <nomename>Kyosera 1035MFT</nomename>
+    <buhname>Принтер Кyocera FS-1035MFP/DP</buhname>
+    <invnum>12201343552</invnum>
+    <shtrihkod>8762118441253</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Бухгалтерия</namehouses>
+    <nomename>Kyosera 1035MFT</nomename>
+    <buhname>Принтер Кyocera FS-1035MFP/DP</buhname>
+    <invnum>12201343532</invnum>
+    <shtrihkod>7178211667267</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Kyosera 1035MFT</nomename>
+    <buhname>Принтер Кyocera FS-1035MFP/DP</buhname>
+    <invnum>212013102123</invnum>
+    <shtrihkod>3551661456822</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Финансовый директор</namehouses>
+    <nomename>Kyosera 1035MFT</nomename>
+    <buhname>МФУ лазерное  FS-1035MFP/DPA4</buhname>
+    <invnum>5620138245</invnum>
+    <shtrihkod>2487824518712</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>Toshiba TEC B-EX4T1</nomename>
+    <buhname></buhname>
+    <invnum>483010070</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>1</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Benq FP737s</nomename>
+    <buhname></buhname>
+    <invnum>4563453757</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>1</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Монитор Acer 223HQV</nomename>
+    <buhname>Монитор 20 &amp;quot;ACER E200HVb</buhname>
+    <invnum>32456757</invnum>
+    <shtrihkod>4735533280823</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Управляющий склада</namehouses>
+    <nomename>Lumix FX550</nomename>
+    <buhname></buhname>
+    <invnum>302013113255</invnum>
+    <shtrihkod>3261457857787</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>3</orgid>
+    <namehouses>Серверная/склад РС</namehouses>
+    <nomename>Dlink DNS-325</nomename>
+    <buhname></buhname>
+    <invnum></invnum>
+    <shtrihkod>4342362445337</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Конструкторский отдел</namehouses>
+    <nomename>Acer S220HQLbbd 21"</nomename>
+    <buhname>Монитор 21 Acer S220</buhname>
+    <invnum>4120137528</invnum>
+    <shtrihkod>4256466768722</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Canon EOS 1100D kit</nomename>
+    <buhname></buhname>
+    <invnum>3120135224</invnum>
+    <shtrihkod>8772131832158</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>WD My Book Studio II (2 Трб)</nomename>
+    <buhname></buhname>
+    <invnum>12201344153</invnum>
+    <shtrihkod>3668746237462</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>WD My Book Studio II (2 Трб)</nomename>
+    <buhname></buhname>
+    <invnum>1220134418</invnum>
+    <shtrihkod>2865355153571</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>ASUS RT-G32 WiFi</nomename>
+    <buhname>Маршрутизатор ASUS RT-G32 WiFi</buhname>
+    <invnum>43201364913</invnum>
+    <shtrihkod>7571118511655</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>Монитор 21,5" Acer S220</nomename>
+    <buhname>Монитор 21,5&amp;quot; Acer S221</buhname>
+    <invnum>43201365135</invnum>
+    <shtrihkod>8538474364728</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Монитор Philips 226Vla 21&amp;quot;</nomename>
+    <buhname>Монитор 21.5 Phillips</buhname>
+    <invnum>37201374345</invnum>
+    <shtrihkod>6436133566118</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет директора</namehouses>
+    <nomename>Монитор Philips 226Vla 21&amp;quot;</nomename>
+    <buhname>Монитор 21.5 Phillips</buhname>
+    <invnum>372013125644</invnum>
+    <shtrihkod>6738767356326</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>Монитор Philips 226Vla 21&amp;quot;</nomename>
+    <buhname>Монитор 21.5 Phillips</buhname>
+    <invnum>38201353922</invnum>
+    <shtrihkod>4851855486347</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Монитор 21&amp;quot; Maestro 225DXL</nomename>
+    <buhname>Монитор 21,5" Acer V225 PACKARD BELL</buhname>
+    <invnum>392013105810</invnum>
+    <shtrihkod>5222133267252</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Сервер Intel</nomename>
+    <buhname>Сервер 000000098  сер. № BZOW 30800020, 483010112</buhname>
+    <invnum>483010112</invnum>
+    <shtrihkod>7725818725874</shtrihkod>
+    <spisano>0</spisano>
+    <os>1</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная</namehouses>
+    <nomename>Сервер Intel</nomename>
+    <buhname>Сервер 000000098 сер. № BZOW 30800015, 483010113</buhname>
+    <invnum>483010113</invnum>
+    <shtrihkod>7784447217457</shtrihkod>
+    <spisano>0</spisano>
+    <os>1</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Спиртоприемник</namehouses>
+    <nomename>Свич 5-ти портовый</nomename>
+    <buhname></buhname>
+    <invnum>51020137409</invnum>
+    <shtrihkod>4878545311176</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Приемная</namehouses>
+    <nomename>Свич 5-ти портовый</nomename>
+    <buhname></buhname>
+    <invnum>5102013101055</invnum>
+    <shtrihkod>8314651611262</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение</namehouses>
+    <nomename>LG Flatron 1942</nomename>
+    <buhname>Монитор 18.5 LG</buhname>
+    <invnum>510201383450</invnum>
+    <shtrihkod>8416778232764</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Планшет ACER IKONIA Tab</nomename>
+    <buhname>Планшет ACER IKONIA Tab</buhname>
+    <invnum>5102013122157</invnum>
+    <shtrihkod>8624865516214</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Блок питания IP Phone power transformer for the 7900 phone series</nomename>
+    <buhname>Блок питания IP Phone power transformer for the 7900 phone series</buhname>
+    <invnum>1102013114913</invnum>
+    <shtrihkod>2442266134368</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Блок питания IP Phone power transformer for the 7900 phone series</nomename>
+    <buhname>Блок питания IP Phone power transformer for the 7900 phone series</buhname>
+    <invnum>5102013123538</invnum>
+    <shtrihkod>2424173482666</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Прозвонка с генератором CT-NT001 (TGP-2)</nomename>
+    <buhname>Прозвонка с генератором CT-NT001 (TGP-2)</buhname>
+    <invnum>1102013115030</invnum>
+    <shtrihkod>4242775382263</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный инженер</namehouses>
+    <nomename>Acer G206HL</nomename>
+    <buhname>Монитор 21,5" Acer S221</buhname>
+    <invnum>210201311619</invnum>
+    <shtrihkod>7234588233328</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет производства</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 22" Acer V226</buhname>
+    <invnum>211201312117</invnum>
+    <shtrihkod>2118247822313</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Финансовый директор</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 21,5" Acer V226</buhname>
+    <invnum>3112013124413</invnum>
+    <shtrihkod>3717716845133</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный энергетик</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 21,5" Acer V226</buhname>
+    <invnum>43201475341</invnum>
+    <shtrihkod>2547336286724</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение - начальник отдела</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 21,5" Acer V226</buhname>
+    <invnum>43201475634</invnum>
+    <shtrihkod>1674536168724</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный инженер</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 21,5" Acer V226</buhname>
+    <invnum>43201475727</invnum>
+    <shtrihkod>8136666671653</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Управляющий склада</namehouses>
+    <nomename>МФУ Kyocera M2035DN</nomename>
+    <buhname></buhname>
+    <invnum>42201471320</invnum>
+    <shtrihkod>1123228765455</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Юристы</namehouses>
+    <nomename>МФУ Kyocera M2035DN</nomename>
+    <buhname></buhname>
+    <invnum>42201471925</invnum>
+    <shtrihkod>5525286828624</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кабинет производства</namehouses>
+    <nomename>МФУ Kyocera M2035DN</nomename>
+    <buhname></buhname>
+    <invnum>4220147203</invnum>
+    <shtrihkod>6788765463353</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>МФУ Kyocera M2035DN</nomename>
+    <buhname></buhname>
+    <invnum>42201472052</invnum>
+    <shtrihkod>3632485885484</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>МФУ Kyocera M2035DN</nomename>
+    <buhname></buhname>
+    <invnum>42201472115</invnum>
+    <shtrihkod>6512588468562</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Конструкторский отдел</namehouses>
+    <nomename>Kyocera FS-6970DN</nomename>
+    <buhname></buhname>
+    <invnum>42201471113</invnum>
+    <shtrihkod>4357221568213</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>WD Original 4TB WDBVHT0040JCH-EESN My Book Live Duo</nomename>
+    <buhname></buhname>
+    <invnum>4220147934</invnum>
+    <shtrihkod>6263337121165</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Серверная/склад</namehouses>
+    <nomename>Cisco 2921 PVDM3-32</nomename>
+    <buhname></buhname>
+    <invnum>4220147733</invnum>
+    <shtrihkod>4255187683521</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Телефон IP Cisco CP-6921-C-K9</nomename>
+    <buhname>Телефон IP Cisco CP-6921-C-K9</buhname>
+    <invnum>13201443613</invnum>
+    <shtrihkod>8415388555565</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>CB436A для МФУ HP LaserJet M1120</nomename>
+    <buhname></buhname>
+    <invnum>242014134554</invnum>
+    <shtrihkod>2001000003520</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Лаболатория</namehouses>
+    <nomename>Ноутбук Acer V5-132P-10192G32nbb (HD/Touch)</nomename>
+    <buhname></buhname>
+    <invnum>55201483121</invnum>
+    <shtrihkod>2001000002288</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Юристы</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>43201474947</invnum>
+    <shtrihkod>3173717485768</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>13201412592</invnum>
+    <shtrihkod>7275841871154</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Гл.бухгалтер/Зам/Марки</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>13201413023</invnum>
+    <shtrihkod>7225264266211</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный энергетик</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>1320141315</invnum>
+    <shtrihkod>1861288475642</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение - начальник отдела</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>13201413134</invnum>
+    <shtrihkod>6657848537644</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Главный инженер</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>13201413213</invnum>
+    <shtrihkod>7738781661422</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>5520146226</invnum>
+    <shtrihkod>2001000005579</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>55201462230</invnum>
+    <shtrihkod>2001000001540</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Системный блок</nomename>
+    <buhname></buhname>
+    <invnum>55201462254</invnum>
+    <shtrihkod>2001000007863</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Кладовка напротив ЕГАИС</namehouses>
+    <nomename>UPS APC 500</nomename>
+    <buhname>ИБП АРС Back-UPS CS500VA</buhname>
+    <invnum>452014112457</invnum>
+    <shtrihkod>2001000002226</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабженцы - 2 (бывший Вагрон-Маркет)</namehouses>
+    <nomename>UPS APC 500</nomename>
+    <buhname>ИБП АРС Back-UPS CS500VA</buhname>
+    <invnum></invnum>
+    <shtrihkod>2001000002233</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>DataMax DMX H-4212 TT</nomename>
+    <buhname></buhname>
+    <invnum>55201463342</invnum>
+    <shtrihkod>2001000003223</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 21,5" Acer V226</buhname>
+    <invnum>25201455935</invnum>
+    <shtrihkod>2001000007719</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 21,5" Acer V226</buhname>
+    <invnum>25201472426</invnum>
+    <shtrihkod>2001000005562</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 21,5" Acer V226</buhname>
+    <invnum>25201472537</invnum>
+    <shtrihkod>2001000004756</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 21,5" Acer V226</buhname>
+    <invnum>252014985</invnum>
+    <shtrihkod>2001000001632</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 21,5" Acer V223</buhname>
+    <invnum>25201495442</invnum>
+    <shtrihkod>2001000005852</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение - начальник отдела</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname>Монитор 20  Acer G206</buhname>
+    <invnum>25201495529</invnum>
+    <shtrihkod>2001000002660</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабженцы - 2 (бывший Вагрон-Маркет)</namehouses>
+    <nomename>Монитор Acer V226HQLAbd 21.5&amp;quot;</nomename>
+    <buhname></buhname>
+    <invnum>2520149563</invnum>
+    <shtrihkod>2001000003865</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Datamax I-4212e</nomename>
+    <buhname></buhname>
+    <invnum>2520145273</invnum>
+    <shtrihkod>2001000007726</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>25201453246</invnum>
+    <shtrihkod>2001000001816</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>25201453321</invnum>
+    <shtrihkod>2001000001632</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабжение - начальник отдела</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>25201453344</invnum>
+    <shtrihkod>2001000003285</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Снабженцы - 2 (бывший Вагрон-Маркет)</namehouses>
+    <nomename>Pentagon Saishiat2</nomename>
+    <buhname></buhname>
+    <invnum>25201453425</invnum>
+    <shtrihkod>2001000002714</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Ручной сканер 1900 xenon</nomename>
+    <buhname>honeywell (metrologic) 1900 xenon</buhname>
+    <invnum>55201471150</invnum>
+    <shtrihkod>2001000003230</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>ЕГАИС</namehouses>
+    <nomename>Ручной сканер 1900 xenon</nomename>
+    <buhname>honeywell (metrologic) 1900 xenon</buhname>
+    <invnum>55201471459</invnum>
+    <shtrihkod>2001000002875</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>АСУ</namehouses>
+    <nomename>Ручной сканер Motorola DS4208-SR</nomename>
+    <buhname>сканер Motorola DS4208-SR</buhname>
+    <invnum>5520147171</invnum>
+    <shtrihkod>2001000007634</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+  <orgtehnika>
+    <orgid>1</orgid>
+    <namehouses>Цех Розлива</namehouses>
+    <nomename>Ручной сканер Motorola DS4208-SR</nomename>
+    <buhname>сканер Motorola DS4208-SR</buhname>
+    <invnum>55201471749</invnum>
+    <shtrihkod>2001000008563</shtrihkod>
+    <spisano>0</spisano>
+    <os>0</os>
+  </orgtehnika>
+</orguse>

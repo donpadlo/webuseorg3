@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<export>
+	<employees><faza>Работает</faza><fio>Румянцева Ольга Николаевна</fio><code>88000446</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Трубин Александр Васильевич</fio><code>88000451</code><enddate>01.01.0001 0:00:00</enddate><post>Специалист по снабжению</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Жарков Владимир Николаевич</fio><code>88000365</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер-механик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кочнева Марина Алексеевна</fio><code>88000368</code><enddate>01.01.0001 0:00:00</enddate><post>Заведующая Центральной Химической Лабораторией</post>
+	</employees>
+	<employees><faza>В отпуске по уходу за ребенком</faza><fio>Зайченко Юлия Юрьевна</fio><code>88000359</code><enddate>18.10.2015 0:00:00</enddate><post>Юрисконсульт</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Роднина Наталия Васильевна</fio><code>88000268</code><enddate>01.01.0001 0:00:00</enddate><post>Главный бухгалтер</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Паламарчук Валентин Владимирович</fio><code>88000327</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-сантехник 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Чернякова Мария Даниловна</fio><code>88000287</code><enddate>01.01.0001 0:00:00</enddate><post>Заместитель Директора по производству</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Турушин Валерий Александрович</fio><code>88000305</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Филичева Ольга Юрьевна</fio><code>88000340</code><enddate>01.01.0001 0:00:00</enddate><post>(рс) Мастер ликерного участка</post>
+	</employees>
+	<employees><faza>В ежегодном отпуске</faza><fio>Алексеев Александр Васильевич</fio><code>88000320</code><enddate>07.07.2014 0:00:00</enddate><post>Наладчик оборудования в производстве пищевой продукции</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Балашов Борис Васильевич</fio><code>782977</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 4 разряда</post>
+	</employees>
+	<employees><faza>В ежегодном отпуске</faza><fio>Воробьева Наталия Леонидовна</fio><code>88000306</code><enddate>07.07.2014 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Головкин Андрей Юрьевич</fio><code>88000310</code><enddate>01.01.0001 0:00:00</enddate><post>Наладчик оборудования в производстве пищевой продукции</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Желновач Ирина Николаевна</fio><code>88000264</code><enddate>01.01.0001 0:00:00</enddate><post>Начальник юридического отдела</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кочуров Лев Валентинович</fio><code>88000363</code><enddate>01.01.0001 0:00:00</enddate><post>Кладовщик</post>
+	</employees>
+	<employees><faza>В ежегодном отпуске</faza><fio>Крутов Алексей Леонидович</fio><code>88000332</code><enddate>30.06.2014 0:00:00</enddate><post>Механик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Зязина Надежда Терентьевна</fio><code>88000366</code><enddate>01.01.0001 0:00:00</enddate><post>Начальник цеха розлива</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Иванов Рудольф Васильевич</fio><code>88000313</code><enddate>01.01.0001 0:00:00</enddate><post>Электромонтер по ремонту и обслуживанию аппаратуры и устройства связи</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кириллова Лариса Васильевна</fio><code>88000298</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кузьминский Владислав Николаевич</fio><code>88000314</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кучеров Владимир Борисович</fio><code>88000285</code><enddate>01.01.0001 0:00:00</enddate><post>Фрезеровщик 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Суворова Валентина Геннадьевна</fio><code>88000304</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Мишарина Наталья Владимировна</fio><code>88000381</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Пачина Анжелика Викторовна</fio><code>88000296</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Лохмоткина Елена Юрьевна</fio><code>88000277</code><enddate>01.01.0001 0:00:00</enddate><post>Бухгалтер по расчетам с покупателями</post>
+	</employees>
+	<employees><faza>В ежегодном отпуске</faza><fio>Алексеева Ирина Михайловна</fio><code>88000274</code><enddate>01.07.2014 0:00:00</enddate><post>Бухгалтер по работе с поставщиками</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Межуев Василий Викторович</fio><code>88000322</code><enddate>01.01.0001 0:00:00</enddate><post>Водитель-экспедитор</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Панева Ирина Леонидовна</fio><code>88000302</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Гладков Сергей Витальевич</fio><code>88000441</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Геркулесова Вера Константиновна</fio><code>88000514</code><enddate>01.01.0001 0:00:00</enddate><post>Рабочий (сортировщик)</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Никеров Алексей Валерьевич</fio><code>88000537</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер по охране труда и технике безопасности</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Солина Ирина Валентиновна</fio><code>88000518</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Григорьев Сергей Владимирович</fio><code>88000444</code><enddate>01.01.0001 0:00:00</enddate><post>Управляющий складом</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Зыкова Светлана Васильевна</fio><code>88000443</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>В отпуске по уходу за ребенком</faza><fio>Бушманова Ольга Николаевна</fio><code>88000417</code><enddate>28.01.2017 0:00:00</enddate><post>Инженер-химик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Широков Андрей Александрович</fio><code>780835</code><enddate>01.01.0001 0:00:00</enddate><post>Генеральный директор</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Березина Наталья Алексеевна</fio><code>88000430</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Пастухова Татьяна Александровна</fio><code>88000725</code><enddate>01.01.0001 0:00:00</enddate><post>Специалист по персоналу</post>
+	</employees>
+	<employees><faza>В отпуске по уходу за ребенком</faza><fio>Сухарева Ольга Николаевна</fio><code>88000519</code><enddate>11.03.2017 0:00:00</enddate><post>Мастер спиртоприемного участка</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Балдина Юлия Сергеевна</fio><code>88000521</code><enddate>01.01.0001 0:00:00</enddate><post>Мастер посудного участка</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Черкасова Елена Викторовна</fio><code>88000746</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Пикулин Евгений Николаевич</fio><code>88000509</code><enddate>01.01.0001 0:00:00</enddate><post>Юрисконсульт</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Бараева Ольга Витальевна</fio><code>88000597</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Жукова Татьяна Владимировна</fio><code>88000453</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Супрунова Наталья Александровна</fio><code>88000447</code><enddate>01.01.0001 0:00:00</enddate><post>Специалист по персоналу</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Зуйков Юрий Николаевич</fio><code>88000535</code><enddate>01.01.0001 0:00:00</enddate><post>(рс) Специалист отдела ВЭД</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Коломоец  Александр  Викторович</fio><code>773319</code><enddate>01.01.0001 0:00:00</enddate><post>Главный инженер</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Сайкин Игорь Валерьевич</fio><code>88000641</code><enddate>01.01.0001 0:00:00</enddate><post>Водитель автопогрузчика</post>
+	</employees>
+	<employees><faza>В ежегодном отпуске</faza><fio>Правдина Елена Александровна</fio><code>88000488</code><enddate>01.07.2014 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Шуркина Светлана Геннадьевна</fio><code>88000455</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Жилицкая Эльвира Наильевна</fio><code>88000459</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Голубева Марина Борисовна</fio><code>88000486</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Теплякова Ирина Анатольевна</fio><code>88000454</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Громова Наталья Владимировна</fio><code>88000377</code><enddate>01.01.0001 0:00:00</enddate><post>Специалист внешнего контроля</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Чижикова Юлия Валерьевна</fio><code>88000373</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер по экологии и метрологии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Лебедева Анастасия Викторовна</fio><code>88000411</code><enddate>01.01.0001 0:00:00</enddate><post>(рс) Ведущий бухгалтер по спиртам</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Попова Татьяна Николаевна</fio><code>88000408</code><enddate>01.01.0001 0:00:00</enddate><post>Приемосдатчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кучкарев Роман Рафаилович</fio><code>88000523</code><enddate>01.01.0001 0:00:00</enddate><post>Заместитель  управляющего складом</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Верещагина Анна Васильевна</fio><code>88000633</code><enddate>01.01.0001 0:00:00</enddate><post>Специалист по работе с федеральными  специальными  марками</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Грибов Павел Игоревич</fio><code>88000280</code><enddate>01.01.0001 0:00:00</enddate><post>Начальник отдела</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кулимина Наталья Владимировна</fio><code>88000420</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Гаджиева Людмила Анатольевна</fio><code>88000393</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кондакова Надежда Леонидовна</fio><code>88000412</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Петровский Юрий Иванович</fio><code>88000406</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 4 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кукушкина Анна Юрьевна</fio><code>88000413</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Борисова Ирина Борисовна</fio><code>88000415</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Макова Людмила Витальевна</fio><code>88000404</code><enddate>01.01.0001 0:00:00</enddate><post>Рабочий (сортировщик)</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Тигина Кира Аркадьевна</fio><code>88000416</code><enddate>01.01.0001 0:00:00</enddate><post>Рабочий (сортировщик)</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Лепихина Надежда Акиндиновна</fio><code>88000407</code><enddate>01.01.0001 0:00:00</enddate><post>Рабочий (сортировщик)</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Демидова Юлия Вадимовна</fio><code>88000409</code><enddate>01.01.0001 0:00:00</enddate><post>Секретарь</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Шуйский Сергей Александрович</fio><code>88000403</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь КИПи А 4 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Баталова Лариса Алексеевна</fio><code>88000384</code><enddate>01.01.0001 0:00:00</enddate><post>Мастер очистного участка</post>
+	</employees>
+	<employees><faza>В ежегодном отпуске</faza><fio>Погодина Марина Алексеевна</fio><code>88000399</code><enddate>02.07.2014 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Назаров Андрей Алексеевич</fio><code>88000401</code><enddate>01.01.0001 0:00:00</enddate><post>Электросварщик ручной сварки 4 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Котова Ирина Владимировна</fio><code>88000392</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер по качеству</post>
+	</employees>
+	<employees><faza>В ежегодном отпуске</faza><fio>Куликова Наталья Алексеевна</fio><code>88000434</code><enddate>29.06.2014 0:00:00</enddate><post>Рабочий (сортировщик)</post>
+	</employees>
+	<employees><faza>В отпуске по уходу за ребенком</faza><fio>Финашина  Анастасия Юрьевна</fio><code>88000429</code><enddate>19.11.2016 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Богомолов Артем Алексеевич</fio><code>88000428</code><enddate>01.01.0001 0:00:00</enddate><post>Кладовщик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Беляев Тимур Анатольевич</fio><code>88000427</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>В ежегодном отпуске</faza><fio>Кузнецова Галина Александровна</fio><code>88000422</code><enddate>29.06.2014 0:00:00</enddate><post>Учетчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Жуковская Илона Евгеньевна</fio><code>88000438</code><enddate>01.01.0001 0:00:00</enddate><post>Ведущий специалист по снабжению</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Ельдецов Владимир Анатольевич</fio><code>88000426</code><enddate>01.01.0001 0:00:00</enddate><post>Водитель автопогрузчика</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Позднякова Марина Владимировна</fio><code>88000458</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Шалимов Владимир Владимирович</fio><code>770572</code><enddate>01.01.0001 0:00:00</enddate><post>Директор по экономике</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Сухарев Вадим Андреевич</fio><code>88000810</code><enddate>01.01.0001 0:00:00</enddate><post>Мастер спиртоприемного участка</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Холомков Денис Сергеевич</fio><code>88000811</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Киселев Сергей Леонидович</fio><code>88000826</code><enddate>01.01.0001 0:00:00</enddate><post>Водитель автопогрузчика</post>
+	</employees>
+	<employees><faza>В командировке</faza><fio>Коломоец Наталья Александровна</fio><code>88000812</code><enddate>29.06.2014 0:00:00</enddate><post>Ведущий специалист по работе с ФСМ</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Зашляхтин Евгений Владимирович</fio><code>88000820</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Пачев Павел Андреевич</fio><code>88000481</code><enddate>01.01.0001 0:00:00</enddate><post>(рс) Инженер по автоматизации и механизации производственных  процессов</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Никитин Николай Михайлович</fio><code>88000817</code><enddate>01.01.0001 0:00:00</enddate><post>Конструктор</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Свистунова  Светлана Николаевна</fio><code>88000634</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Титовская Елена Валерьевна</fio><code>88000726</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер по качеству</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Малахов Вадим Валериевич</fio><code>88000357</code><enddate>01.01.0001 0:00:00</enddate><post>Специалист по ЕГАИС</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Крылова Галина Юрьевна</fio><code>88000376</code><enddate>01.01.0001 0:00:00</enddate><post>(рс) Бухгалтер по отгрузкам</post>
+	</employees>
+	<employees><faza>В отпуске по уходу за ребенком</faza><fio>Ярушкина Инна Викторовна</fio><code>88000375</code><enddate>25.02.2017 0:00:00</enddate><post>Бухгалтер по заработной плате</post>
+	</employees>
+	<employees><faza>В отпуске по уходу за ребенком</faza><fio>Изюмова Лариса Николаевна</fio><code>88000495</code><enddate>10.06.2015 0:00:00</enddate><post>Бухгалтер по заработной плате</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Жаравина Ольга Викторовна</fio><code>904929</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Платонова Анастасия Владимировна</fio><code>88000889</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Богданов Владимир Анатольевич</fio><code>88000901</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Ларькина Татьяна Евгеньевна</fio><code>88000601</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Захаров Евгений Петрович</fio><code>88000604</code><enddate>01.01.0001 0:00:00</enddate><post>Специалист по снабжению</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Колесникова Светлана Леонидовна</fio><code>88000632</code><enddate>01.01.0001 0:00:00</enddate><post>Ведущий экономист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Савченко Сергей Анатольевич</fio><code>88000591</code><enddate>01.01.0001 0:00:00</enddate><post>Электросварщик ручной сварки 4 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Титовский Сергей Иванович</fio><code>551682</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер по  организации  управления  производством</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Музалев Антон Валериевич</fio><code>550094</code><enddate>01.01.0001 0:00:00</enddate><post>Главный механик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Музалёва Татьяна Юрьевна</fio><code>88000626</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер по качеству</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Миронец Лилия Николаевна</fio><code>550124</code><enddate>01.01.0001 0:00:00</enddate><post>Главный технолог</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Федулин Сергей Владимирович</fio><code>88000534</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Теребков Леонид Сергеевич</fio><code>88000622</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Соколова Галина Александровна</fio><code>88000527</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Агеев Сергей Александрович</fio><code>88000611</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Чернов Алексей Валентинович</fio><code>88000592</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь КИП и А 6 разряда</post>
+	</employees>
+	<employees><faza>В отпуске по уходу за ребенком</faza><fio>Митишева Светлана Сергеевна</fio><code>88000553</code><enddate>31.01.2017 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Манушичева Юлия Николаевна</fio><code>88000742</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Саблин Александр Николаевич (осн.)</fio><code>88000728</code><enddate>01.01.0001 0:00:00</enddate><post>Кладовщик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Мухин Александр Викторович</fio><code>88000524</code><enddate>01.01.0001 0:00:00</enddate><post>Дворник</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Маслова Лариса Георгиевна</fio><code>88000821</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Вахрушев Андрей Витальевич</fio><code>88000782</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Артюгина Юлия Николаевна</fio><code>88000813</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Голубев Андрей Михайлович</fio><code>88000837</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Першина Людмила Александровна</fio><code>88000836</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Федянина Наталья Валерьевна</fio><code>88000841</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Тихомирова Ирина Сергеевна</fio><code>88000839</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Баранова Эльвира Леонидовна</fio><code>88000832</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Киркина Валерия Вениаминовна</fio><code>88000840</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Горюнова Ольга Алексеевна</fio><code>88000865</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Андреева Елена Игоревна</fio><code>88000838</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Жилина Светлана Вячеславовна</fio><code>88000833</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Ануфриев Богдан Владимирович</fio><code>88000756</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Жохова Евгения Валентиновна</fio><code>88000843</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Грибова Юлия Евгеньевна</fio><code>88000860</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Хребтова Анастасия Николаевна</fio><code>88000875</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Давыдов Александр Геннадьевич</fio><code>88000835</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Шлыкова Татьяна Кузьмична</fio><code>88000844</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Соколов Дмитрий Вячеславович</fio><code>88000842</code><enddate>01.01.0001 0:00:00</enddate><post>Мастер спиртоприемного участка</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Бобров Евгений Игоревич</fio><code>88000829</code><enddate>01.01.0001 0:00:00</enddate><post>Кладовщик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Курицына Виктория Анатольевна</fio><code>88000807</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер-химик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Пандышева Алена Олеговна</fio><code>88000763</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер-химик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Васильев Юрий Михайлович</fio><code>88000791</code><enddate>01.01.0001 0:00:00</enddate><post>Специалист по снабжению</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Вострякова Татьяна Николаевна</fio><code>88000744</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Пелевин Кирилл Валентинович</fio><code>88000475</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Созонов Альберт Полиевктович</fio><code>88000456</code><enddate>01.01.0001 0:00:00</enddate><post>Главный энергетик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Гаджиев Имдат -</fio><code>88000496</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Горбунова Елена Витальевна</fio><code>88000513</code><enddate>01.01.0001 0:00:00</enddate><post>Специалист по печати акцизных марок</post>
+	</employees>
+	<employees><faza>В ежегодном отпуске</faza><fio>Попов Александр Сергеевич</fio><code>88000500</code><enddate>05.07.2014 0:00:00</enddate><post>Электромонтер по ремонту и обслуживанию аппаратуры и устройства связи</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Проворова Виталия Олеговна</fio><code>88000827</code><enddate>01.01.0001 0:00:00</enddate><post>(рс) Бухгалтер по отгрузкам</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Сайкина Татьяна Евгеньевна</fio><code>88000819</code><enddate>01.01.0001 0:00:00</enddate><post>Рабочий (сортировщик)</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Лебедева Ольга Сергеевна</fio><code>88000736</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Муромцева Татьяна Александровна</fio><code>88000823</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Пинигин Антон Андреевич</fio><code>88000824</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Шуванова Марина Николаевна</fio><code>88000828</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Ляпина Юлия Евгеньевна</fio><code>88000825</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Комкова Юлия Сергеевна</fio><code>88000830</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Бондар Александр Константинович</fio><code>88000831</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Шиборина Зоя Ивановна</fio><code>88000822</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Верещагина Наталья Александровна</fio><code>88000809</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Рогалева Ирина Федоровна</fio><code>88000806</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Попов Федор Всеволодович</fio><code>88000834</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Черкашина Виктория Николаевна</fio><code>88000745</code><enddate>01.01.0001 0:00:00</enddate><post>Бухгалтер по заработной плате</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Улитина Елена Алексеевна</fio><code>88000588</code><enddate>01.01.0001 0:00:00</enddate><post>Бухгалтер по учету материалов</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Ильюк Светлана Михайловна</fio><code>88000733</code><enddate>01.01.0001 0:00:00</enddate><post>Заместитель главного бухгалтера</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Шаров Владимир Игоревич</fio><code>88000818</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Дворцов Василий Михайлович</fio><code>88000855</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Чистяков Евгений Парменович</fio><code>88000861</code><enddate>01.01.0001 0:00:00</enddate><post>Электромонтер по ремонту и обслуживанию аппаратуры и устройства связи</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Вахрушев Виктор Владимирович</fio><code>88000846</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Черепанов Андрей Николаевич</fio><code>88000749</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Сайкина Татьяна Васильевна</fio><code>88000851</code><enddate>01.01.0001 0:00:00</enddate><post>Рабочий (сортировщик)</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Балашова Надежда Александровна</fio><code>88000848</code><enddate>01.01.0001 0:00:00</enddate><post>Рабочий (сортировщик)</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Самойлова Лариса Павловна</fio><code>88000755</code><enddate>01.01.0001 0:00:00</enddate><post>Рабочий (сортировщик)</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Ефремов Александр Юрьевич</fio><code>88000856</code><enddate>01.01.0001 0:00:00</enddate><post>Начальник службы безопасности</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Готовцева Надежда Николаевна</fio><code>88000849</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер-химик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Некипелова Валентина Анатольевна</fio><code>88000862</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер-химик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Климова Елена Евгеньевна</fio><code>88000869</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Маслова Ирина Витальевна</fio><code>88000871</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Комарова Надежда Николаевна</fio><code>88000878</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Лихацкая Елена Александровна</fio><code>88000870</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Федоров Владимир Александрович</fio><code>88000816</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кривовский Андрей Анатольевич</fio><code>88000876</code><enddate>01.01.0001 0:00:00</enddate><post>Электромонтер по ремонту и обслуживанию аппаратуры и устройства связи</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Балашов Александр Геннадьевич</fio><code>88000730</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Солдатов Роман Андреевич</fio><code>88000864</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь КИП и А 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Юшков Сергей Александрович</fio><code>88000877</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кругликов Юрий Николаевич</fio><code>88000872</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Антонов Василий Федорович</fio><code>88000881</code><enddate>01.01.0001 0:00:00</enddate><post>Грузчик</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Есипов Денис Николаевич</fio><code>88000885</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Воробьёв Алексей Александрович</fio><code>88000882</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Литова Татьяна Андреевна</fio><code>88000880</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Майстренко Геннадий Станиславович</fio><code>88000502</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Большаков Алексей Валерьевич</fio><code>88000845</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Мазалецкая Екатерина Владимировна</fio><code>88000741</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Белоусова Марина Ивановна</fio><code>99999917</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Тисленок Виктория Михайловна</fio><code>99999918</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Ломтева Любовь Юрьевна</fio><code>88000645</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Галактионова Людмила Николаевна</fio><code>88000886</code><enddate>01.01.0001 0:00:00</enddate><post>Оператор линии</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Александрович Татьяна Валерьевна (осн.)</fio><code>88000739</code><enddate>01.01.0001 0:00:00</enddate><post></post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Кокарева Марина Валентиновна</fio><code>88000891</code><enddate>01.01.0001 0:00:00</enddate><post>Купажист</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Коковашин Вячеслав Александрович</fio><code>88000517</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 4 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Данилюк Евгений Борисович</fio><code>88000590</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Скородулин Вадим Вадимович</fio><code>88000596</code><enddate>01.01.0001 0:00:00</enddate><post>Слесарь-ремонтник 6 разряда</post>
+	</employees>
+	<employees><faza>Работает</faza><fio>Булах Людмила Владимировна</fio><code>551065</code><enddate>01.01.0001 0:00:00</enddate><post>Инженер по качеству</post>
+	</employees>
+</export>

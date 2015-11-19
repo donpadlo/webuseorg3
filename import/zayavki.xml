@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<export>
+	<zay><num>000000313</num><from>ООО "Реф-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Реф-Авто"</carrier_name><gruz>Поддоны</gruz>
+	</zay>
+	<zay><num>000000314</num><from>ООО "Реф-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Реф-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000315</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000316</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000317</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000318</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000319</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000320</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000321</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000322</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000323</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000324</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000326</num><from>ООО ТК "Русский путь"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО ТК "Русский путь"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000327</num><from>ООО "Трассавто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Трассавто"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000328</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>спирт</gruz>
+	</zay>
+	<zay><num>000000329</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000330</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000331</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000332</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000336</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000337</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая Бутылка</gruz>
+	</zay>
+	<zay><num>000000338</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая Бутылка</gruz>
+	</zay>
+	<zay><num>000000339</num><from>ООО "МОНОПОЛИЯ"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "МОНОПОЛИЯ"</carrier_name><gruz>Пустая Бутылка</gruz>
+	</zay>
+	<zay><num>000000340</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000341</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая Бутылка</gruz>
+	</zay>
+	<zay><num>000000342</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая Бутылка</gruz>
+	</zay>
+	<zay><num>000000343</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая Бутылка</gruz>
+	</zay>
+	<zay><num>000000344</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000345</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>минеральная вода</gruz>
+	</zay>
+	<zay><num>000000346</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000347</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000348</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000349</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000350</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000351</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000352</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000353</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000354</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000355</num><from>ООО "МОНОПОЛИЯ"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "МОНОПОЛИЯ"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000356</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000357</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000358</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000359</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000360</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000361</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000362</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000366</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000367</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000368</num><from>ООО "Трассавто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Трассавто"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000369</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000370</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000372</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Термоплёнка</gruz>
+	</zay>
+	<zay><num>000000373</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая Бутылка</gruz>
+	</zay>
+	<zay><num>000000374</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая Бутылка</gruz>
+	</zay>
+	<zay><num>000000375</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая Бутылка</gruz>
+	</zay>
+	<zay><num>000000376</num><from>ООО "Невский берег"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Невский берег"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000377</num><from>ООО "Невский берег"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Невский берег"</carrier_name><gruz>спирт</gruz>
+	</zay>
+	<zay><num>000000378</num><from>ООО "Невский берег"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Невский берег"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000379</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000380</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000381</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000382</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000383</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000384</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Гофрорешетка</gruz>
+	</zay>
+	<zay><num>000000385</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000386</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000388</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000389</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000390</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000391</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000392</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000393</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000394</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000395</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000396</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000397</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000399</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000400</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000401</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000402</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000403</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000404</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000405</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000406</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000407</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000408</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000409</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000410</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000412</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000413</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000414</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000415</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000416</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000417</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000418</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000419</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000420</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000421</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000422</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000423</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>МИНЕРАЛЬНАЯ ВОДА</gruz>
+	</zay>
+	<zay><num>000000424</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Водка</gruz>
+	</zay>
+	<zay><num>000000425</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000427</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000428</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000430</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000431</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000432</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000433</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000434</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000435</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000436</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000437</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000438</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000439</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000440</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000441</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000442</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000443</num><from>ООО "КРАФТЕР"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "КРАФТЕР"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000444</num><from>ООО "КРАФТЕР"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "КРАФТЕР"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000445</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000446</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000447</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000448</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000449</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000450</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000451</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000452</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000453</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000454</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000455</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000457</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000458</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000459</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000460</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000462</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000463</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000464</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000465</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000466</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000467</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000468</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000469</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000470</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000471</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000472</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000473</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000474</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000475</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000476</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000477</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000478</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000479</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000480</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000481</num><from>ООО "Реф-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Реф-Авто"</carrier_name><gruz>Поддоны</gruz>
+	</zay>
+	<zay><num>000000482</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000483</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>минеральная вода</gruz>
+	</zay>
+	<zay><num>000000484</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000485</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000486</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000487</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000488</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000489</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000490</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000491</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000492</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000493</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000494</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000495</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000496</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000497</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000498</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000499</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000500</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000502</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000503</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000505</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000507</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000508</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000509</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000510</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000511</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000512</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000513</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000514</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000516</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000517</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000518</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>минеральная вода</gruz>
+	</zay>
+	<zay><num>000000519</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000520</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>минеральная вода</gruz>
+	</zay>
+	<zay><num>000000521</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000522</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000523</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000524</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000685</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000686</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000687</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000688</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000689</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000690</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000691</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000698</num><from>ООО "МОНОПОЛИЯ"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "МОНОПОЛИЯ"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000699</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>минеральная вода</gruz>
+	</zay>
+	<zay><num>000000700</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000701</num><from>ООО "МОНОПОЛИЯ"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "МОНОПОЛИЯ"</carrier_name><gruz>пустая бутылука</gruz>
+	</zay>
+	<zay><num>000000702</num><from>ООО "МОНОПОЛИЯ"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "МОНОПОЛИЯ"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000703</num><from>ООО "МОНОПОЛИЯ"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "МОНОПОЛИЯ"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000705</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000736</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000737</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>спирт</gruz>
+	</zay>
+	<zay><num>000000738</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000739</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000740</num><from>ООО "ТранКо"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ТранКо"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000741</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000742</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000743</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000744</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000745</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000746</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>спирт</gruz>
+	</zay>
+	<zay><num>000000747</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000754</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000755</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000756</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000757</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000758</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000759</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Сахар</gruz>
+	</zay>
+	<zay><num>000000760</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000761</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000762</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000763</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000764</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000765</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000766</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000767</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Поддоны</gruz>
+	</zay>
+	<zay><num>000000768</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000769</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000771</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000772</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000773</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000774</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000526</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Гофрорешетка</gruz>
+	</zay>
+	<zay><num>000000527</num><from>ООО "КРАФТЕР"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "КРАФТЕР"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000528</num><from>ООО "КРАФТЕР"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "КРАФТЕР"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000529</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000530</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000531</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000532</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000534</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000535</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000536</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000537</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000538</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000539</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000540</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000541</num><from>ООО "Дельта Плюс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Дельта Плюс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000542</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000543</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000544</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000546</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000547</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000548</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000549</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000550</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000551</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000552</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000553</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000554</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000555</num><from>ООО "Магна"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Магна"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000556</num><from>ООО "Раут"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Раут"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000557</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000558</num><from>ООО ТК "Русский путь"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО ТК "Русский путь"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000559</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000560</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000561</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000563</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000564</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000565</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000566</num><from>ООО "Магна"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Магна"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000567</num><from>ООО "Магна"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Магна"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000568</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000569</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000570</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000571</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000574</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000575</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000576</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000577</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000578</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>гофрорешётка</gruz>
+	</zay>
+	<zay><num>000000579</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Кварцевые трубки</gruz>
+	</zay>
+	<zay><num>000000580</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Сахвар-песок</gruz>
+	</zay>
+	<zay><num>000000581</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Сахвар-песок</gruz>
+	</zay>
+	<zay><num>000000696</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000697</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000613</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000614</num><from>ФП Евглевський Ю.В., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ФП Евглевський Ю.В., Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000615</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000616</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000617</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Поддоны</gruz>
+	</zay>
+	<zay><num>000000618</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000619</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000620</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000621</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000622</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000623</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000624</num><from>ООО "Космос" г.Днепропетровск</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Космос" г.Днепропетровск</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000625</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000626</num><from>ООО "Космос" г.Днепропетровск</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Космос" г.Днепропетровск</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000627</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000629</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000630</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000631</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000632</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000633</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>спирт</gruz>
+	</zay>
+	<zay><num>000000636</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000637</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>спирт</gruz>
+	</zay>
+	<zay><num>000000638</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000639</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000641</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000642</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000658</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000659</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000660</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000661</num><from>ООО "ГеоАвтоТранс"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ГеоАвтоТранс"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000663</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000590</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000591</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000592</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000593</num><from>ООО "Раут"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Раут"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000594</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000595</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Гофра,решетка</gruz>
+	</zay>
+	<zay><num>000000596</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000598</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000599</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000601</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000602</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000603</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000604</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000605</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000606</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000607</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000608</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000609</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000610</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Сахар</gruz>
+	</zay>
+	<zay><num>000000611</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Сахар</gruz>
+	</zay>
+	<zay><num>000000612</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000582</num><from>ООО "Авто-обоз 52"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Авто-обоз 52"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000572</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральная вода</gruz>
+	</zay>
+	<zay><num>000000573</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пластиковые поддоны</gruz>
+	</zay>
+	<zay><num>000000692</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000693</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000694</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000695</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000665</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000666</num><from>ЧП Журавель С.Н., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП Журавель С.Н., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000667</num><from>ЧП Журавель С.Н., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП Журавель С.Н., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000668</num><from>ФЛП Чипко С.В., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ФЛП Чипко С.В., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000669</num><from>ЧП "ТРАНС-СЕРВИС", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП "ТРАНС-СЕРВИС", Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000670</num><from>ЧП Журавель С.Н., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП Журавель С.Н., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000671</num><from>ЧП "ТРАНС-СЕРВИС", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП "ТРАНС-СЕРВИС", Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000672</num><from>ЧП "ТРАНС-СЕРВИС", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП "ТРАНС-СЕРВИС", Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000673</num><from>ЧП Журавель С.Н., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП Журавель С.Н., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000674</num><from>ЧП Журавель С.Н., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП Журавель С.Н., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000675</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000676</num><from>ФЛП Чипко С.В., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ФЛП Чипко С.В., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000677</num><from>ФЛП Чипко С.В., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ФЛП Чипко С.В., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000678</num><from>ФЛП Чипко С.В., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ФЛП Чипко С.В., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000679</num><from>ФЛП Чипко С.В., Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ФЛП Чипко С.В., Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000680</num><from>ЧП "ТРАНС-СЕРВИС", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП "ТРАНС-СЕРВИС", Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000681</num><from>ЧП "ТРАНС-СЕРВИС", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ЧП "ТРАНС-СЕРВИС", Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000682</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000683</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000583</num><from>ООО "Раут"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Раут"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000584</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000585</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000586</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000587</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000588</num><from>ООО "Хорс Транс", Украина</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Хорс Транс", Украина</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000589</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Минеральня вода</gruz>
+	</zay>
+	<zay><num>000000664</num><from>ООО "Альянс-Авто"(ТЕСТ!)</from><to>г. Вологда ЛВЗ(ТЕСТ!)</to><carrier_name>ООО "Альянс-Авто"(ТЕСТ!)</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000706</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>ЛВП, рекламная продукция</gruz>
+	</zay>
+	<zay><num>000000707</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Поддон</gruz>
+	</zay>
+	<zay><num>000000708</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000709</num><from>ООО "Дентро"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Дентро"</carrier_name><gruz>поддоны</gruz>
+	</zay>
+	<zay><num>000000710</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000711</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>Пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000713</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000714</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>минеральная вода</gruz>
+	</zay>
+	<zay><num>000000715</num><from>ООО "Лаборатория Логистики"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Лаборатория Логистики"</carrier_name><gruz>Мин.вода</gruz>
+	</zay>
+	<zay><num>000000716</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>фанера</gruz>
+	</zay>
+	<zay><num>000000717</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000718</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000719</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000720</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000721</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000722</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000723</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000724</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000725</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000726</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000727</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000728</num><from>ООО "ТранКо"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "ТранКо"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000729</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>Спирт</gruz>
+	</zay>
+	<zay><num>000000730</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000731</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>ЛВП</gruz>
+	</zay>
+	<zay><num>000000732</num><from>ООО "Транс Алко"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Транс Алко"</carrier_name><gruz>спирт</gruz>
+	</zay>
+	<zay><num>000000733</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+	<zay><num>000000734</num><from>ООО "Альянс-Авто"</from><to>г. Вологда ЛВЗ</to><carrier_name>ООО "Альянс-Авто"</carrier_name><gruz>пустая бутылка</gruz>
+	</zay>
+</export>
