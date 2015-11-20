@@ -25,7 +25,7 @@ jQuery("#list2").jqGrid({
                     
                 },        
 	autowidth: true,			
-   	rowNum:10,	   	
+	rowNum: 20,
    	pager: '#pager2',
    	sortname: 'id',
 	scroll:1,

@@ -47,7 +47,8 @@ if ($oper=='')
 	if ($page > $total_pages) $page=$total_pages;
 
 	$start = $limit*$page - $limit;
-	$SQL = "SELECT places_users.id AS plid,placesid,userid,users.login as name FROM places_users INNER JOIN users ON users.id=userid WHERE placesid='$placesid' ORDER BY $sidx $sord LIMIT $start , $limit";
+	/*$SQL = "SELECT places_users.id AS plid,placesid,userid,users.login as name FROM places_users INNER JOIN users ON users.id=userid WHERE placesid='$placesid' ORDER BY $sidx $sord LIMIT $start , $limit";*/
+	$SQL = "SELECT places_users.id AS plid, placesid, userid, users_profile.fio as name FROM places_users INNER JOIN users_profile ON users_profile.usersid=userid WHERE placesid='$placesid' ORDER BY $sidx $sord LIMIT $start , $limit";
         //echo "!$SQL!";
         //die();
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу выбрать список помещений/пользователей!".mysqli_error($sqlcn->idsqlconnection));
