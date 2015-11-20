@@ -40,18 +40,18 @@ if ($eqid==""){
 if ($oper=='')
 {
 	if(!$sidx) $sidx =1;
-	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count,mv.id, mv.eqid, mv.dt, mv.orgname1, org.name AS orgname2, mv.place1, places.name AS place2, mv.user1, users.login AS user2,move.comment as comment
+	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count,mv.id, mv.eqid, mv.dt, mv.orgname1, org.name AS orgname2, mv.place1, places.name AS place2, mv.user1, users_profile.fio AS user2,move.comment as comment
             FROM move
             INNER JOIN (
-            SELECT move.id, move.eqid, move.dt AS dt, org.name AS orgname1, places.name AS place1, users.login AS user1
+            SELECT move.id, move.eqid, move.dt AS dt, org.name AS orgname1, places.name AS place1, users_profile.fio AS user1
             FROM move
             INNER JOIN org ON org.id = orgidfrom
             INNER JOIN places ON places.id = placesidfrom
-            INNER JOIN users ON users.id = useridfrom
+            INNER JOIN users_profile ON users_profile.usersid = useridfrom
             ) AS mv ON move.id = mv.id
             INNER JOIN org ON org.id = move.orgidto
             INNER JOIN places ON places.id = placesidto
-            INNER JOIN users ON users.id = useridto ".$where);
+            INNER JOIN users_profile ON users_profile.usersid = useridto ".$where);
 	$row = mysqli_fetch_array($result);
 	$count = $row['count'];
 
@@ -59,19 +59,19 @@ if ($oper=='')
 	if ($page > $total_pages) $page=$total_pages;
 
 	$start = $limit*$page - $limit;
-	$SQL = "SELECT mv.id, mv.eqid, nome.name,mv.nomeid,mv.dt, mv.orgname1, org.name AS orgname2, mv.place1, places.name AS place2, mv.user1, users.login AS user2,move.comment as comment
+	$SQL = "SELECT mv.id, mv.eqid, nome.name,mv.nomeid,mv.dt, mv.orgname1, org.name AS orgname2, mv.place1, places.name AS place2, mv.user1, users_profile.fio AS user2,move.comment as comment
             FROM move
             INNER JOIN (
-            SELECT move.id, move.eqid, equipment.nomeid,move.dt AS dt, org.name AS orgname1, places.name AS place1, users.login AS user1
+            SELECT move.id, move.eqid, equipment.nomeid,move.dt AS dt, org.name AS orgname1, places.name AS place1, users_profile.fio AS user1
             FROM move
             INNER JOIN org ON org.id = orgidfrom
             INNER JOIN places ON places.id = placesidfrom
-            INNER JOIN users ON users.id = useridfrom
+            INNER JOIN users_profile ON users_profile.usersid = useridfrom
             INNER JOIN equipment ON equipment.id = eqid
             ) AS mv ON move.id = mv.id
             INNER JOIN org ON org.id = move.orgidto
             INNER JOIN places ON places.id = placesidto
-            INNER JOIN users ON users.id = useridto
+            INNER JOIN users_profile ON users_profile.usersid = useridto
             INNER JOIN nome ON nome.id = mv.nomeid ".$where."
             ORDER BY $sidx $sord LIMIT $start , $limit";
         //echo "!$SQL!";

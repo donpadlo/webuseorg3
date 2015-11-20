@@ -73,7 +73,7 @@ if ($oper=='')
 {
 	if(!$sidx) $sidx =1;
 	$result = $sqlcn->ExecuteSQL("SELECT count(*) as count,equipment.dtendgar, knt.name,getvendorandgroup.grnomeid,equipment.id AS eqid,equipment.orgid AS eqorgid, org.name AS orgname, getvendorandgroup.vendorname AS vname, 
-            getvendorandgroup.groupname AS grnome, places.name AS placesname, users.login AS userslogin, 
+            getvendorandgroup.groupname AS grnome, places.name AS placesname, users_profile.fio AS fio, 
             getvendorandgroup.nomename AS nomename, buhname, sernum, invnum, shtrihkod, datepost, cost, currentcost, os, equipment.mode AS eqmode,equipment.mapyet AS eqmapyet,equipment.comment AS eqcomment, equipment.active AS eqactive,equipment.repair AS eqrepair
 	FROM equipment
 	INNER JOIN (
@@ -84,7 +84,7 @@ if ($oper=='')
 	) AS getvendorandgroup ON getvendorandgroup.nomeid = equipment.nomeid
 	INNER JOIN org ON org.id = equipment.orgid
 	INNER JOIN places ON places.id = equipment.placesid
-	INNER JOIN users ON users.id = equipment.usersid
+	INNER JOIN users_profile ON users_profile.usersid = equipment.usersid
 	LEFT JOIN knt ON knt.id = equipment.kntid ".$where." ");
 	$row = mysqli_fetch_array($result);
 	$count = $row['count'];
@@ -103,7 +103,7 @@ if ($oper=='')
           die();  
         };
 	$SQL = "SELECT equipment.dtendgar,tmcgo, knt.name as kntname,getvendorandgroup.grnomeid,equipment.id AS eqid,equipment.orgid AS eqorgid, org.name AS orgname, getvendorandgroup.vendorname AS vname, 
-            getvendorandgroup.groupname AS grnome, places.name AS placesname, users.login AS userslogin, 
+            getvendorandgroup.groupname AS grnome, places.name AS placesname, users_profile.fio AS fio, 
             getvendorandgroup.nomename AS nomename, buhname, sernum, invnum, shtrihkod, datepost, cost, currentcost, os, equipment.mode AS eqmode,equipment.mapyet AS eqmapyet,equipment.comment AS eqcomment, equipment.active AS eqactive,equipment.repair AS eqrepair
 	FROM equipment
 	INNER JOIN (
@@ -114,7 +114,7 @@ if ($oper=='')
 	) AS getvendorandgroup ON getvendorandgroup.nomeid = equipment.nomeid
 	INNER JOIN org ON org.id = equipment.orgid
 	INNER JOIN places ON places.id = equipment.placesid
-	INNER JOIN users ON users.id = equipment.usersid
+	INNER JOIN users_profile ON users_profile.usersid = equipment.usersid
 	LEFT JOIN knt ON knt.id = equipment.kntid ".$where." 
 	ORDER BY $sidx $sord LIMIT $start , $limit";
 	//echo "!$SQL!";die();
@@ -138,7 +138,7 @@ if ($oper=='')
 		$responce->rows[$i]['cell']=array(
 		$active,$row['eqid'],$row['placesname'],$row['nomename'],
 		$row['grnome'],$row['tmcgo'],$row['vname'],$row['buhname'],$row['sernum'],$row['invnum'],
-		$row['shtrihkod'],$row['orgname'],$row['userslogin'],$dtpost,$row['cost'],$row['currentcost'],$os,$eqmode,$row['eqmapyet'],$row['eqcomment'],$row['eqrepair'],
+		$row['shtrihkod'],$row['orgname'],$row['fio'],$dtpost,$row['cost'],$row['currentcost'],$os,$eqmode,$row['eqmapyet'],$row['eqcomment'],$row['eqrepair'],
                 $dtendgar,$row['kntname']                    
 		);
 	    $i++;

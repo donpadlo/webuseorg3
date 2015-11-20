@@ -37,7 +37,7 @@ function LoadTable()
                 {name:'invnum',index:'invnum', width:100,editable:true},
                 {name:'shtrihkod',index:'shtrihkod', width:100,editable:true},
                 {name:'org.name',index:'org.name', width:155,hidden:true},
-                {name:'users.login',index:'users.login', width:100},                
+                {name:'fio',index:'fio', width:100},                
                 {name:'datepost',index:'datepost', width:80},
                 {name:'cost',index:'cost', width:55,editable:true,hidden:true},
                 {name:'currentcost',index:'currentcost', width:55,editable:true,hidden:true},
