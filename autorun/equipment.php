@@ -8,5 +8,5 @@
  */
 
 
-$cfg->quickmenu[]="<a href=index.php?content_page=equipment>Журнал ТМЦ</a></li>";
+$cfg->quickmenu[]="<a href=index.php?content_page=equipment>Имущество</a></li>";
 $cfg->quickmenu[]="<a href=index.php?content_page=eq_list>ТМЦ на рабочем месте</a></li>";

@@ -193,9 +193,9 @@ function LoadTable()
 			datatype: "json",
 			colNames: ['Id','Наименование','Параметр',''],
 			colModel: [
-				{name:"id",index:"num",width:80,key:true},
-				{name:"name",index:"item",width:130},
-				{name:"param",index:"qty",width:130,editable:true},
+				{name:"id",index:"num",width:60,key:true},
+				{name:"name",index:"item",width:150},
+				{name:"param",index:"qty",width:310,editable:true},
                                 {name: 'myac', width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true}}
 			],
                         editurl:"controller/server/equipment/paramlist.php?eqid="+row_id,

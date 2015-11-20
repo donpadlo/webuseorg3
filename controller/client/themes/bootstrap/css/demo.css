@@ -55,13 +55,11 @@ nav:not(.mm-menu)
 	left: 10px;
 }
 .quickmenu{
-position: absolute;
-top: 10px;
-left: 50px;  
-	font-size: 18px;
-	font-weight: bold;
-text-decoration: underline;	
-
+position:absolute;
+top:10px;
+left:50px;
+font-size:18px;
+font-weight:bold;
+text-decoration:underline;
+cursor:pointer;
 }
-
-
