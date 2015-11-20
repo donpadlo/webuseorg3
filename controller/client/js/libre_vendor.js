@@ -23,4 +23,5 @@ jQuery("#list2").jqGrid({
 var addOptions={
     top: 0, left: 0, width: 500
 };
+jQuery("#list2").jqGrid('setGridHeight',$(window).innerHeight()/2);
 jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:true,del:false,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true});

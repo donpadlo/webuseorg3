@@ -42,6 +42,7 @@ jQuery("#list2").jqGrid({
     editurl:"controller/server/users/libre_users.php?org_status=edit",
     caption:"Справочник пользователей"
 });
+jQuery("#list2").jqGrid('setGridHeight',$(window).innerHeight()/2);
 jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:false,del:false,search:false});
 jQuery("#list2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
 

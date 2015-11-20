@@ -50,7 +50,7 @@ jQuery("#list2").jqGrid({
 		}
 	}    
 });
-
+jQuery("#list2").jqGrid('setGridHeight',$(window).innerHeight()/2);
 var addOptions={
     top: 0, left: 0, width: 500
 };

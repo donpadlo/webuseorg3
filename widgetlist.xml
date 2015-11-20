@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rsp stat="ok">
+<list>
+<widget id="nStreamLmod">
+    <title>nStreamLmod</title>
+    <compression size="800222" type="zip" />
+    <description />
+    <download>http://192.168.1.84/tt.zip</download>
+</widget>
+</list>
+</rsp>
+
+   

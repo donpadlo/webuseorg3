@@ -38,6 +38,7 @@ jQuery("#list2").jqGrid({
 		}
 	}    
 });
+jQuery("#list2").jqGrid('setGridHeight',$(window).innerHeight()/2);
 jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:true,del:false,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true});
 
 jQuery("#list10_d").jqGrid({

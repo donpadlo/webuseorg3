@@ -228,7 +228,7 @@ function LoadTable()
     editurl:"controller/server/equipment/equipment.php?sorgider="+defaultorgid,
     caption:"Оргтехника"
 });
-
+jQuery("#tbl_equpment").jqGrid('setGridHeight',$(window).innerHeight()/2);
 jQuery("#tbl_equpment").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
 jQuery("#tbl_equpment").jqGrid('bindKeys',''); 
 jQuery("#tbl_equpment").jqGrid('navGrid','#pg_nav',{edit:false,add:false,del:false,search:false});

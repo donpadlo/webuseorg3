@@ -122,6 +122,7 @@ jQuery("#list3").jqGrid('navGrid','#pager3',{edit:true,add:true,del:false,search
 }
 
 });
+jQuery("#list2").jqGrid('setGridHeight',$(window).innerHeight()/2);
 jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:true,del:false,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true} );
 jQuery("#list2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
 jQuery("#list2").jqGrid('bindKeys',''); 

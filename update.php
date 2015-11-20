@@ -1665,12 +1665,12 @@ if ($cfg->version=="3.68") {
 // обновляем до 3.70
 if ($cfg->version=="3.69") {
     $vr="3.70";
-    echo "- добавляю поле zindex для обьектов карты</br>";
+   /* echo "- добавляю поле zindex для обьектов карты</br>";
     $sql="ALTER TABLE  `lanb_maps` ADD  `zindex` INT NOT NULL";
     $result = $sqlcn->ExecuteSQL($sql);                   
     if ($result=='') die('(125)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
     echo "--ok</br>";
-    
+    */
     echo "-обновляю нумерацию версии движка до $vr</br>";
     $sql="UPDATE config SET version='$vr'";
     $result = $sqlcn->ExecuteSQL($sql);               

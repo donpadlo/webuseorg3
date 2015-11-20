@@ -26,6 +26,7 @@ jQuery("#o_list").jqGrid({
     caption:"Справочник организаций"
 });
 
+jQuery("#o_list").jqGrid('setGridHeight',$(window).innerHeight()/2);
 
 jQuery("#o_list").jqGrid('navGrid','#o_pager',{edit:false,add:true,del:false,search:false},{},{},{},{multipleSearch:false},{closeOnEscape:true} );
 
