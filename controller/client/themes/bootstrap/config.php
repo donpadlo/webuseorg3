@@ -9,10 +9,10 @@ if ($user->mode==1){
 ?>
 <div class="row-fluid">
 <div class="alert alert-info">
-  Ваша версия программы:  <?php echo "$cfg->version";?><br>	
-  Актуальные версии ПО :<a href="https://sourceforge.net/projects/webuseorg3/files/">sourceforge.net</a></br>
-  Документация :<a href="http://www.грибовы.рф">здесь</a></br>
-</div>	    
+	Ваша версия программы: <?php echo "$cfg->version";?><br>
+	Актуальные версии ПО: <a href="https://github.com/donpadlo/webuseorg3/releases" target="_blank">github.com</a><br>
+	Документация: <a href="http://www.грибовы.рф/?page_id=1202" target="_blank">здесь</a>
+</div>
 <form action="?content_page=config&config=save" method="post" name="form1" target="_self">
 <div class="well">        
  <input name="form_sitename" type="text" id="form_sitename" value="<?php echo "$cfg->sitename";?>" class="span12" placeholder="Название сайта..." size=80><br>    
