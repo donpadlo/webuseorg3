@@ -1682,12 +1682,12 @@ if ($cfg->version=="3.69") {
 // обновляем до 3.71
 if ($cfg->version=="3.70") {
     $vr="3.71";
-    echo "- добавляю поле state для фиксации обьектов карты</br>";
+   /* echo "- добавляю поле state для фиксации обьектов карты</br>";
     $sql="ALTER TABLE  `lanb_maps_coor` ADD  `state` INT NOT NULL";
     $result = $sqlcn->ExecuteSQL($sql);                   
     if ($result=='') die('(127)Не удалось обновить БД по причине: ' . mysqli_error($sqlcn->idsqlconnection));    
     echo "--ok</br>";
-    
+    */
     echo "-обновляю нумерацию версии движка до $vr</br>";
     $sql="UPDATE config SET version='$vr'";
     $result = $sqlcn->ExecuteSQL($sql);               
