@@ -11,7 +11,7 @@
   $mhome->Register("lastmoved", "Последние перемещения ТМЦ", "Грибов Павел"); 
   $mhome->Register("usersfaze", "Где сотрудник?", "Грибов Павел"); 
   $mhome->Register("whoonline", "Кто на сайте?", "Грибов Павел"); 
-  
+$mhome->Register('commits-widget', 'Виджет разработки на github.com на главной странице', 'Солодягин Сергей');
 ?>
 <div class="content">
 <div class="row-fluid">
@@ -104,8 +104,14 @@
         <?php
         };
         ?>
-      
-      
+<?php
+if ($mhome->IsActive('commits-widget') == 1) {
+?>
+		<span class="label label-info">Разработка</span>
+		<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=donpadlo&repo=webuseorg3&limit=5" allowtransparency="true" frameborder="0" scrolling="no" width="400px" height="250px"></iframe>
+<?php
+};
+?>
   </div>
 </div>
 </div>   
