@@ -106,11 +106,12 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
         ?>
 <?php
 if ($mhome->IsActive('commits-widget') == 1) {
+    if ($user->mode==1){
 ?>
-		<span class="label label-info">Разработка</span>
+		<span class="label label-info">Разработка</span></br>
 		<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=donpadlo&repo=webuseorg3&limit=5" allowtransparency="true" frameborder="0" scrolling="no" width="400px" height="250px"></iframe>
 <?php
-};
+};};
 ?>
   </div>
 </div>

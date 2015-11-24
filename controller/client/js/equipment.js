@@ -10,8 +10,7 @@ $("#orgs").change(function(){
 
 //jQuery.extend(jQuery.jgrid.defaults, {ajaxSelectOptions: { cache: false }});
 
-function LoadTable()
-{
+function LoadTable(){
  var lastsel3;
  jQuery("#tbl_equpment").jqGrid({
    	url:'controller/server/equipment/equipment.php?sorgider='+defaultorgid,

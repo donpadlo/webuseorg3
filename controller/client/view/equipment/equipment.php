@@ -306,9 +306,10 @@ examples.push(function (){
 
     $("#dtpost").datepicker();
     $("#dtpost").datepicker( "option", "dateFormat", "dd.mm.yy");
+    
     if (step!="edit") {$("#dtpost").datepicker( "setDate" , "0");} else {$("#dtpost").datepicker( "setDate" , dtpost);}
     if (step!="edit") {$("#dtendgar").datepicker( "setDate" , "0");} else {$("#dtendgar").datepicker( "setDate" , dtendgar);}
-    
+    $( "#sernum" ).focus();
     $( "#pg_add_edit" ).dialog({
         close: function() {$( "#dtpost" ).datepicker( "destroy" );}
     });    

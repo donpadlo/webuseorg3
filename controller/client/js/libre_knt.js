@@ -22,7 +22,7 @@ jQuery("#list2").jqGrid({
 		{name:'myac', width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true},search: false}
    	],
 	autowidth: true,		
-   	rowNum:20,	
+   	rowNum:200,	
    	rowList:[20,40,60],
    	pager: '#pager2',
    	sortname: 'id',

@@ -30,9 +30,9 @@ jQuery("#list2").jqGrid({
 		}
 	},            
 	autowidth: true,		
-	height: 200,
+	//height: 200,
 	scroll:1,
-   	rowNum:10,	
+   	rowNum:200,	
    	rowList:[10,20,30],
    	pager: '#pager2',
    	sortname: 'id',
