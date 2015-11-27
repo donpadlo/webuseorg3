@@ -105,7 +105,7 @@ jQuery("#list3").jqGrid({
 	autowidth: true,				
    	url:'controller/server/users/usersroles.php?userid=',
 	datatype: "json",
-   	colNames:['Id', 'Человек', 'Действия'],        
+   	colNames:['Id', 'Роль', 'Действия'],        
    	colModel:[
    		{name:'places_users.id',index:'places_users.id', width:55},
    		{name:'role',index:'role', width:200,editable:true,edittype:"select",editoptions:{

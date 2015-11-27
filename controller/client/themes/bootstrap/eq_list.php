@@ -9,7 +9,7 @@ if (($user->mode==1) or ($user->mode==0)){
 <div class="well">    
     <ul class="nav nav-tabs" id="myTab">
       <li><a href="#plc" data-toggle="tab">Помещение</a></li>
-      <li><a href="#mto" data-toggle="tab">Ответственость</a></li>
+      <li><a href="#mto" data-toggle="tab">Ответственность</a></li>
     </ul>
     <div class="row-fluid">
         <div class="span2">          
