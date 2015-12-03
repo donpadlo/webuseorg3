@@ -57,7 +57,7 @@ function LoadTable(){
                 jQuery("#tbl_move").jqGrid({
                      url:'controller/server/equipment/getmoveinfo.php?eqid='+ids,
                      datatype: "json",
-                     colNames:['Id','Дата','Организация','Помещение','Человек','Организация','Помещение','Человек','','Комментарий',''],
+                     colNames:['Id','Дата','Организация','Помещение','Сотрудник','Организация','Помещение','Сотрудник','','Комментарий',''],
                      colModel:[
                      	{name:'id',index:'id', width:25,hidden:true},
                         {name:'dt',index:'dt', width:95},
