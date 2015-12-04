@@ -43,7 +43,6 @@ if (isset($_GET['login_step'])) {
 		if ($enter_user_pass == '') {
 			$err[] = 'Пароль не может быть пустым!';
 		}
-
 		if (count($err) == 0) { // если буфер ошибок пустой, то ищем пользователя такого
 			$user->GetByLoginPass($enter_user_login, $enter_user_pass);
 			if ($user->randomid != '') { // если нашли, то ставим печеньки

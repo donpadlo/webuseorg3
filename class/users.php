@@ -7,10 +7,12 @@
 class Tusers {
 
 	var $id; // идентификатор пользователя
-	var $randomid; // случайны идентификатор (время от времени может менятся)
+	var $randomid; // случайный идентификатор (время от времени может менятся)
 	var $orgid; // принадлежность к организации
 	var $login; // логин
 	var $pass; // пароль
+	var $password; // хешированный пароль
+	var $salt; // соль для хеширования пароль
 	var $email; // электронная почта
 	var $mode; // 0 - пользователь 1- админ
 	var $lastdt; // дата и время последнего посещения
@@ -76,7 +78,8 @@ class Tusers {
 	function Update() {
 		global $sqlcn;
 		$sqlcn->ExecuteSQL("UPDATE users SET orgid='$this->orgid', login='$this->login',"
-						." pass='$this->pass', email='$this->email', mode='$this->mode',"
+						." pass='$this->pass', `password`='$this->password', salt='$this->salt',"
+						." email='$this->email', mode='$this->mode',"
 						." active='$this->active' WHERE id='$this->id'")
 				or die('Неверный запрос Tusers.Update (1): '.mysqli_error($sqlcn->idsqlconnection));
 		$sqlcn->ExecuteSQL("UPDATE users_profile SET fio='$this->fio',"
@@ -105,6 +108,8 @@ class Tusers {
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
 			$this->pass = $myrow['pass'];
+			$this->password = $myrow['password'];
+			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
 			$this->mode = $myrow['mode'];
 			$this->lastdt = $myrow['lastdt'];
@@ -126,10 +131,16 @@ class Tusers {
 	 */
 	function GetByLoginPass($login, $pass) {
 		global $sqlcn;
+		/* $result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
+		  users.id AS sid FROM users
+		  INNER JOIN users_profile ON users_profile.usersid=users.id
+		  WHERE users.login='$login' AND users.pass='$pass'")
+		  or die('Неверный запрос Tusers.GetByLoginPass: '.mysqli_error($sqlcn->idsqlconnection));
+		 */
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
 			INNER JOIN users_profile ON users_profile.usersid=users.id
-			WHERE users.login='$login' AND users.pass='$pass'")
+			WHERE users.login='$login' AND users.`password`=SHA1(CONCAT(SHA1('$pass'), users.salt))")
 				or die('Неверный запрос Tusers.GetByLoginPass: '.mysqli_error($sqlcn->idsqlconnection));
 		while ($myrow = mysqli_fetch_array($result)) {
 			$this->id = $myrow['sid'];
@@ -137,6 +148,8 @@ class Tusers {
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
 			$this->pass = $myrow['pass'];
+			$this->password = $myrow['password'];
+			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
 			$this->mode = $myrow['mode'];
 			$this->lastdt = $myrow['lastdt'];
@@ -168,6 +181,8 @@ class Tusers {
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
 			$this->pass = $myrow['pass'];
+			$this->password = $myrow['password'];
+			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
 			$this->mode = $myrow['mode'];
 			$this->lastdt = $myrow['lastdt'];
@@ -201,6 +216,8 @@ class Tusers {
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
 			$this->pass = $myrow['pass'];
+			$this->password = $myrow['password'];
+			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
 			$this->mode = $myrow['mode'];
 			$this->lastdt = $myrow['lastdt'];
@@ -224,7 +241,7 @@ class Tusers {
 	 */
 	function GetByRandomIdNoProfile($id) {
 		global $sqlcn;
-		$result = $sqlcn->ExecuteSQL("SELECT * FROM users WHERE randomid ='$id'")
+		$result = $sqlcn->ExecuteSQL("SELECT * FROM users WHERE randomid='$id'")
 				or die('Неверный запрос Tusers.GetByRandomId: '.mysqli_error($sqlcn->idsqlconnection));
 		while ($myrow = mysqli_fetch_array($result)) {
 			$this->id = $myrow['id'];
@@ -232,6 +249,8 @@ class Tusers {
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
 			$this->pass = $myrow['pass'];
+			$this->password = $myrow['password'];
+			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
 			$this->mode = $myrow['mode'];
 			$this->lastdt = $myrow['lastdt'];
@@ -247,9 +266,13 @@ class Tusers {
 	 */
 	function Add() {
 		global $sqlcn;
-		$sql = "INSERT INTO users (id, randomid, orgid, login, pass, email, 
-			mode,lastdt,active) VALUES (NULL, '$this->randomid',"
+		// хешируем пароль
+		$this->salt = generateSalt();
+		$this->password = sha1(sha1($this->pass).$this->salt);
+		$sql = "INSERT INTO users (id, randomid, orgid, login, pass, `password`, salt,
+			email, mode, lastdt, active) VALUES (NULL, '$this->randomid',"
 				." '$this->orgid', '$this->login', '$this->pass',"
+				." '$this->password', '$this->salt', "
 				." '$this->email', '$this->mode', NOW(), 1)";
 		$sqlcn->ExecuteSQL($sql)
 				or die('Неверный запрос Tusers.Add (1): '.mysqli_error($sqlcn->idsqlconnection));
@@ -296,6 +319,8 @@ class Tusers {
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
 			$this->pass = $myrow['pass'];
+			$this->password = $myrow['password'];
+			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
 			$this->mode = $myrow['mode'];
 			$this->lastdt = $myrow['lastdt'];
