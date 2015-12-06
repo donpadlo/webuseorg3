@@ -9,7 +9,8 @@ define('ROOT', dirname(__FILE__));
 
 $time_start = microtime(true); // Засекаем время начала выполнения скрипта
 // Загружаем первоначальные настройки. Если не получилось - запускаем инсталлятор
-if (@include_once(ROOT.'/config.php')==false) {
+$rez=@include_once(ROOT.'/config.php');
+if ($rez==false) {
   include_once(ROOT.'/install.php');
   die();
 };        
