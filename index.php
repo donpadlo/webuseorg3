@@ -8,8 +8,11 @@ define('INCLUDED', true);
 define('ROOT', dirname(__FILE__));
 
 $time_start = microtime(true); // Засекаем время начала выполнения скрипта
-
-include_once(ROOT.'/config.php'); // Загружаем первоначальные настройки
+// Загружаем первоначальные настройки. Если не получилось - запускаем инсталлятор
+if (@include_once(ROOT.'/config.php')==false) {
+  include_once(ROOT.'/install.php');
+  die();
+};        
 // Загружаем классы
 include_once(ROOT.'/class/sql.php'); // Класс работы с БД
 include_once(ROOT.'/class/config.php'); // Класс настроек
