@@ -16,3 +16,5 @@
 /controller/client/js/lanbilling/
 /console.php
 /updatelb.php
+/photos/*.jpg
+/photos/*.png
