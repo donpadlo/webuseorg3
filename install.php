@@ -24,7 +24,7 @@ define('ROOT', dirname(__FILE__));
     <link href="favicon.ico" type="image/ico" rel="shortcut icon" />    
     <link rel="stylesheet" type="text/css" href="controller/client/themes/bootstrap3/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="controller/client/themes/bootstrap3/css/bootstrap.min.css">         
-    <script type="text/javascript" src="controller/client/themes/bootstrap3/js/jquery-2.1.4.min.js"></script>        
+    <script type="text/javascript" src="controller/client/themes/bootstrap3/js/jquery-1.11.0.min.js"></script>        
     <script type="text/javascript" src="controller/client/themes/bootstrap3/js/bootstrap.min.js"></script>    
     <script type='text/javascript' src='js/jquery.form.js'></script>    
 </head>
