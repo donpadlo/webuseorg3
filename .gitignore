@@ -18,3 +18,7 @@
 /updatelb.php
 /photos/*.jpg
 /photos/*.png
+/data
+/notify.mp3
+/notify.ogg
+/notify.wav
