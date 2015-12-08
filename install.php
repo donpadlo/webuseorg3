@@ -9,6 +9,12 @@
 
 define('INCLUDED', true);
 define('ROOT', dirname(__FILE__));
+
+$action = (isset($_GET['action'])) ? $_GET['action'] : '';
+if ($action == 'install') {
+	include_once(ROOT.'/inc/install.php');
+	die();
+}
 ?>
 <!-- saved from url=(0014)about:internet -->
 <!DOCTYPE html>
@@ -81,7 +87,7 @@ define('ROOT', dirname(__FILE__));
         <div class="panel panel-primary">
             <div class="panel-heading">Инсталляция "Учет ТМЦ"</div>
             <div class="panel-body" id='prim'>
-            <form role="form" name='myform' id='myform' action="/inc/install.php?action=install" method="post" target="_self">
+            <form role="form" name='myform' id='myform' action="install.php?action=install" method="post" target="_self">
               <div class="form-group">
                 <label for="host">Сервер MySQL</label>
                 <input type="host" class="form-control" name="host" id="host" placeholder="localhost" value="localhost">
