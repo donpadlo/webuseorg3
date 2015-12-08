@@ -14,7 +14,7 @@ include_once(ROOT.'/inc/functions.php'); // Класс работы с БД
 $host = _POST('host');
 $basename = _POST('basename');
 $baseusername = _POST('baseusername');
-$passbase = _POST('bassbase');
+$passbase = _POST('passbase');
 $orgname = _POST('orgname');
 $login = _POST('login');
 $pass = _POST('pass');
