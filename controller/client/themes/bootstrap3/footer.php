@@ -14,6 +14,5 @@ $time = $time_end - $time_start;
                 </div>
               </div>
       </footer>
-
 </body>
 </html>

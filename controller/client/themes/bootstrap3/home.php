@@ -11,11 +11,11 @@
   $mhome->Register("lastmoved", "Последние перемещения ТМЦ", "Грибов Павел"); 
   $mhome->Register("usersfaze", "Где сотрудник?", "Грибов Павел"); 
   $mhome->Register("whoonline", "Кто на сайте?", "Грибов Павел"); 
-$mhome->Register('commits-widget', 'Виджет разработки на github.com на главной странице', 'Солодягин Сергей');
+  $mhome->Register('commits-widget', 'Виджет разработки на github.com на главной странице', 'Солодягин Сергей');
 ?>
-<div class="content">
-<div class="row-fluid">
-    <div class="span4">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6 col-md-4 col-sm-4">
         <span class="label label-info">Пользователь</span>
         <div class="well">
             <?php include_once("login.php");  // форма входа или профиль?>
@@ -25,7 +25,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
             <?php include_once("memenu.php");  // личное меню?>            
         </div>   
     </div>
-    <div class="span4">
+    <div class="col-xs-6 col-md-4 col-sm-4">
         <?php
         // Если новости "активны", то тогда показываем этот блок
         if ($mhome->IsActive("news")==1) {
@@ -85,7 +85,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
                     
         ?>                                        
     </div>
-  <div class="span4">
+  <div class="col-xs-6 col-md-4 col-sm-4">
         <?php
         // Если закрепленные новости "активны", то тогда показываем этот блок
         if ($mhome->IsActive("stiknews")==1) {
