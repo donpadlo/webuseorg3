@@ -12,7 +12,7 @@ if (isset($_GET['config']) == 'save') {
 	$cfg->ldap = $_POST['form_cfg_ldap'];
 	$cfg->domain1 = $_POST['form_cfg_domain1'];
 	$cfg->domain2 = $_POST['form_cfg_domain2'];
-	$cfg->theme = $_POST['form_cfg_theme'];
+	$cfg->theme = $_POST['form_cfg_theme_sl'];
 	$cfg->emailadmin = $_POST['form_emailadmin'];
 	$cfg->smtphost = $_POST['form_smtphost'];                                           // Сервер SMTP
 	$cfg->smtpauth = (isset($_POST['form_smtpauth'])) ? $_POST['form_smtpauth'] : 0;    // Требуется утенфикация?

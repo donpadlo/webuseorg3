@@ -4,10 +4,8 @@
 // Разработчики: Грибов Павел, Сергей Солодягин (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-// Запрещаем прямой вызов скрипта.
-defined('INCLUDED') or die('Restricted access');
-
-include_once(ROOT.'/inc/functions.php'); // Класс работы с БД
+define('ROOT', dirname(__FILE__));
+include_once(ROOT.'/functions.php'); // Класс работы с БД
 $host = _POST('host');
 $basename = _POST('basename');
 $baseusername = _POST('baseusername');
@@ -22,7 +20,7 @@ if (mysqli_connect_errno()) {
 	echo "<div class='alert alert-danger'>Ошибка БД: $serr</div>";
 	die();
 }
-$handle = file_get_contents(ROOT.'/webuser.sql', 'r');
+$handle = file_get_contents(ROOT.'/../webuser.sql', 'r');
 if ($handle == false) {
 	echo "<div class='alert alert-danger'>Ошибка открытия файла: webuser.sql</div>";
 	die();
