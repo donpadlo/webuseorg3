@@ -18,12 +18,9 @@ nav:not(.mm-menu)
 .header,
 .footer
 {
-	background: #cccccc;
 	font-size: 16px;
 	font-weight: bold;	
 	line-height: 40px;
-
-
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;	
 	width: 100%;
@@ -45,8 +42,7 @@ nav:not(.mm-menu)
 .header a
 {
 	background: center center no-repeat transparent;
-	background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC );
-
+	background-image: url('images/menu.png');
 	display: block;
 	width: 40px;
 	height: 40px;
@@ -55,11 +51,11 @@ nav:not(.mm-menu)
 	left: 10px;
 }
 .quickmenu{
-position:absolute;
-top:10px;
-left:50px;
-font-size:18px;
-font-weight:bold;
-text-decoration:underline;
-cursor:pointer;
+    position:absolute;
+    top:10px;
+    left:50px;
+    font-size:18px;
+    font-weight:bold;
+    text-decoration:underline;
+    cursor:pointer;
 }

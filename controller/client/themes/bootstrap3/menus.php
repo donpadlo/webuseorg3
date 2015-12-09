@@ -8,7 +8,7 @@
                 $('#menu').mmenu({
                         extensions	: [ "effect-zoom-menu", "effect-zoom-panels", 'pageshadow',"iconbar" ],
                         header		: true,
-                        searchfield	: true,
+                        searchfield	: false,
                         counters	: true,
                         dragOpen        : true,
                         navbar          : {title:"Меню",panelTitle:"Меню"},

@@ -16,106 +16,112 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-6 col-md-4 col-sm-4">
-        <span class="label label-info">Пользователь</span>
-        <div class="well">
-            <?php include_once("login.php");  // форма входа или профиль?>
-        </div>    
-        <span class="label label-info">Личное меню</span>
-        <div class="well form-inline">
-            <?php include_once("memenu.php");  // личное меню?>            
-        </div>   
+        <div class="panel panel-primary">
+            <div class="panel-heading">Пользователь</div>
+            <div class="panel-body">
+             <?php include_once("login.php");  // форма входа или профиль?>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Личное меню</div>
+            <div class="panel-body">
+             <?php include_once("memenu.php");  // личное меню?>            
+            </div>
+        </div>
     </div>
     <div class="col-xs-6 col-md-4 col-sm-4">
         <?php
         // Если новости "активны", то тогда показываем этот блок
         if ($mhome->IsActive("news")==1) {
         ?>
-                    <span class="label label-info">Новости,обьявления</span>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Новости,обьявления</div>
+            <div class="panel-body">
                     <div class="well" id=newslist></div>    
                     <ul class="pager">
                         <li class="previous"><a href="#" id=newsprev name=newsprev>&larr; Назад</a></li>
                         <li class="next"><a href="#" id=newsnext name=newsnext>Вперед &rarr;</a></li>
                     </ul>      
                     <script type="text/javascript" src="controller/client/js/news_main.js"></script>                    
+            </div>
+        </div>
         <?php
         // Если задачи "активны", то тогда показываем этот блок
         if ($mhome->IsActive("tasks")==1) {
         ?>
-        <span class="label label-info">Постановка задачи</span>
-        <div class="well form-inline">
-            <?php include_once("tasks.php");  // задачи ?>            
-        </div>           
+        <div class="panel panel-primary">
+            <div class="panel-heading">Постановка задачи</div>
+            <div class="panel-body">
+                <?php include_once("tasks.php");  // задачи ?>            
+            </div>
+        </div>
         <?php };?>
                     
         <?php
         };        
         if ($mhome->IsActive("usersfaze")==1) {
         ?>
-                    <span class="label label-info">Состояние сотрудников</span>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Состояние сотрудников</div>
+            <div class="panel-body">
                     <div class="well" id=usersfazelist></div>   
                     <script type="text/javascript" src="controller/client/js/usersfazelist.js"></script>                    
+            </div>
+        </div>
         <?php
         };                
         if ($mhome->IsActive("whoonline")==1) {
-                           echo '<span class="label label-info">Кто онлайн</span>';
-                            echo '<div class="well" id=usersfazelist>';
-                            $crd=date("Y-m-d H:i:s");
-                            $SQL = "SELECT unix_timestamp('$crd')-unix_timestamp(lastdt) as res,users_profile.fio as fio,users_profile.jpegphoto FROM users inner join users_profile on users_profile.usersid=users.id";
-                            $result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу выбрать список заходов пользователей!".mysqli_error($sqlcn->idsqlconnection));
-                                    echo "<ul class=thumbnails>";                            
-                            while($row = mysqli_fetch_array($result)) {                                
-                                $res=$row["res"];                                
-                                $fio=$row["fio"];                                
-                                $jpegphoto=$row["jpegphoto"];                                
-                                if ($res<10000){                                    
-
-                                    echo "<li class=span2>";
-                                    echo "<div class=thumbnail>";
-                                    echo "<img src=photos/$jpegphoto>";
-                                    echo "<p align=center>$fio</p>";
-                                    echo "</div>";
-                                    echo "</li>";
-
-                                };                                
-                            };
-                            echo "</ul>";                                
-                            echo "</div> ";
-            
-        };                
-                    
-        ?>                                        
+        ?>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Кто онлайн</div>
+            <div class="panel-body">
+                <?php include_once("whoonline.php");  // задачи ?>            
+            </div>
+        </div>
+        <?php 
+         };
+        ?>
     </div>
   <div class="col-xs-6 col-md-4 col-sm-4">
         <?php
         // Если закрепленные новости "активны", то тогда показываем этот блок
         if ($mhome->IsActive("stiknews")==1) {
         ?>
-      
-      <span class="label label-info"><?php $stiker=GetStiker();echo $stiker["title"];?></span>
-      <div class="well"><?php $stiker=GetStiker();echo $stiker["body"];?></div>
+        <div class="panel panel-primary">
+            <div class="panel-heading"><?php $stiker=GetStiker();echo $stiker["title"];?></div>
+            <div class="panel-body">
+                <?php $stiker=GetStiker();echo $stiker["body"];?>
+            </div>
+        </div>      
         <?php
         };
         if ($mhome->IsActive("lastmoved")==1) {
         ?>
-                    <span class="label label-info">Последние перемещения ТМЦ</span>                    
+        <div class="panel panel-primary">
+            <div class="panel-heading">Последние перемещения ТМЦ</div>
+            <div class="panel-body">
                       <table id="tbl_move"></table><div id="mv_nav"></div>
                       <script type="text/javascript" src="controller/client/js/lastmoved.js"></script>                    
-                      </br>
-        <?php
+            </div>
+        </div>
+            <?php
+        };
+        if ($mhome->IsActive('commits-widget') == 1) {
+            if ($user->mode==1){
+            ?>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Разработка</div>
+                    <div class="panel-body">
+                    <iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=donpadlo&repo=webuseorg3&limit=5" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="250px"></iframe>            
+                    </div>
+                </div>
+            <?php
+            };        
         };
         ?>
-<?php
-if ($mhome->IsActive('commits-widget') == 1) {
-    if ($user->mode==1){
-?>
-		<span class="label label-info">Разработка</span></br>
-		<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=donpadlo&repo=webuseorg3&limit=5" allowtransparency="true" frameborder="0" scrolling="no" width="400px" height="250px"></iframe>
-<?php
-};};
-?>
   </div>
 </div>
 </div>   
 <?php
-unset($mhome);
+unset($mhome);  
 ?>
