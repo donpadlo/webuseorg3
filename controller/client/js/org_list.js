@@ -19,7 +19,7 @@ jQuery("#o_list").jqGrid({
    	rowList:[10,20,30],
    	pager: '#o_pager',
    	sortname: 'id',
-	scroll:1,
+	scroll:1,        
     viewrecords: true,
     sortorder: "asc",
     editurl:"controller/server/common/libre_org.php?org_status=edit",

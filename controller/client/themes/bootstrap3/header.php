@@ -18,13 +18,14 @@
     <link href="favicon.ico" type="image/ico" rel="icon" />
     <link href="favicon.ico" type="image/ico" rel="shortcut icon" />    
     <link rel="stylesheet" type="text/css" href="controller/client/themes/<?php echo "$cfg->theme"; ?>/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="controller/client/themes/<?php echo "$cfg->theme"; ?>/css/bootstrap-theme.min.css">         
+    <!--<link rel="stylesheet" type="text/css" href="controller/client/themes/<?php echo "$cfg->theme"; ?>/css/bootstrap-theme.min.css"> -->        
      
     <?php
-    echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/ui.jqgrid.css'>";
+    //echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/ui.jqgrid.css'>";
     echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/jquery-ui.min.css'>";    
     echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/jquery.mmenu.all.css'>";
     echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/mmenu.css'>";
+    echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/ui.jqgrid-bootstrap.css'>";
     echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery-1.11.0.min.js'></script>"; 
     echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery-ui.js'></script>";
     echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/i18n/grid.locale-ru.js'></script>";    
@@ -34,8 +35,13 @@
     ?>
     <script type="text/javascript" src="controller/client/themes/<?php echo "$cfg->theme";?>/js/bootstrap.min.js"></script>    
     <?php echo "<script>defaultorgid=$cfg->defaultorgid;</script>";?>
-    <?php //echo "<script>defaultuserid=$user->id;</script>";?>
-    <?php echo "<script>theme='$cfg->theme';</script>";?>
+    <?php echo "<script>defaultuserid=$user->id;</script>";?>
+    <?php echo "<script>theme='$cfg->theme';</script>";?>    
+    <script>
+                    $.jgrid.defaults.width = 780;
+                    $.jgrid.defaults.responsive = true;		
+                    $.jgrid.defaults.styleUI = 'Bootstrap';
+    </script>    
 </head>
 <body>   
 <?php if ($printable==false){?>    
