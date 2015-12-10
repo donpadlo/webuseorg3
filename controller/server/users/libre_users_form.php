@@ -75,7 +75,7 @@ if ($step == 'edit') {
 	if (count($err) == 0) {
 		$id = $_GET['id'];
 		$sql = "UPDATE users SET orgid='$orgid', login='$login', pass='$pass',"
-				. " `password`=SHA1(CONCAT(SHA1('$pass'), salt)), email='$email', mode='$mode' WHERE id='$id'";
+				. " password=SHA1(CONCAT(SHA1('$pass'), salt)), email='$email', mode='$mode' WHERE id='$id'";
 		$result = $sqlcn->ExecuteSQL($sql, $cfg->base_id);
 		if ($result == '') {
 			die('Не смог изменить пользователя!: '.mysqli_error($sqlcn->idsqlconnection));

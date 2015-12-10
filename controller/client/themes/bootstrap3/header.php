@@ -26,14 +26,17 @@
     echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/jquery.mmenu.all.css'>";
     echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/mmenu.css'>";
     echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/ui.jqgrid-bootstrap.css'>";
+    echo "<link rel='stylesheet' href='controller/client/themes/$cfg->theme/css/chosen.css'>";
     echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery-1.11.0.min.js'></script>"; 
     echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery-ui.js'></script>";
     echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/i18n/grid.locale-ru.js'></script>";    
     echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery.jqGrid.min.js'></script>";
+    echo "<script src='js/chosen.jquery.js' type='text/javascript'></script>";
     echo "<script src='js/jquery.mmenu.min.all.js' type='text/javascript'></script>";
     
     ?>
     <script type="text/javascript" src="controller/client/themes/<?php echo "$cfg->theme";?>/js/bootstrap.min.js"></script>    
+    <script type='text/javascript' src='js/jquery.form.js'>
     <?php 
     echo "<script>defaultorgid=$cfg->defaultorgid;</script>";
     if ($user->id!="") echo "<script>defaultuserid=$user->id;</script>";
@@ -47,6 +50,13 @@
                     $.jgrid.styleUI.Bootstrap.base.rowTable = "table table-bordered table-condensed";
                     $.jgrid.styleUI.Bootstrap.base.footerTable = "table table-bordered table-condensed";
                     $.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";                    
+                    var config = {
+                      '.chosen-select'           : {},
+                      '.chosen-select-deselect'  : {allow_single_deselect:true},
+                      '.chosen-select-no-single' : {disable_search_threshold:10},
+                      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+                      '.chosen-select-width'     : {width:"95%"}
+                    }                            
     </script>    
 </head>
 <body>   

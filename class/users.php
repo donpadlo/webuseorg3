@@ -269,11 +269,12 @@ class Tusers {
 		// хешируем пароль
 		$this->salt = generateSalt();
 		$this->password = sha1(sha1($this->pass).$this->salt);
-		$sql = "INSERT INTO users (id, randomid, orgid, login, pass, `password`, salt,
+		$sql = "INSERT INTO users (id, randomid, orgid, login, pass,password, salt,
 			email, mode, lastdt, active) VALUES (NULL, '$this->randomid',"
 				." '$this->orgid', '$this->login', '$this->pass',"
 				." '$this->password', '$this->salt', "
 				." '$this->email', '$this->mode', NOW(), 1)";
+                //echo "$sql!";
 		$sqlcn->ExecuteSQL($sql)
 				or die('Неверный запрос Tusers.Add (1): '.mysqli_error($sqlcn->idsqlconnection));
 		$fio = $this->fio;

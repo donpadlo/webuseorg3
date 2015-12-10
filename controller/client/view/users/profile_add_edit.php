@@ -58,29 +58,28 @@ if ($user->mode=="1") {
                 unset($tmpuser);
 	   
 ?>
+<div class="container-fluid">
+<div class="row">            
 <div id="messenger"></div>    
-<form id="myForm" class="well" ENCTYPE="multipart/form-data" action="controller/server/users/libre_profile_users_form.php?<?php echo "userid=$userid"; ?>" method="post" name="form1" target="_self">
+<form role="form" id="myForm"  ENCTYPE="multipart/form-data" action="controller/server/users/libre_profile_users_form.php?<?php echo "userid=$userid"; ?>" method="post" name="form1" target="_self">
     <div class="row-fluid">
-        <div class="span6">
-            <span class="help-block">ФИО</span>
-            <input placeholder="ФИО" name="fio" id="fio" value="<?php echo "$fio";?>">
-            <span class="help-block">Табельный</span>     
-            <input placeholder="Табельный номер" name="code" id="code" value="<?php echo "$code";?>">
-            <span class="help-block">Должность</span>            
-            <input placeholder="Должность" name="post" id="post" value="<?php echo "$post";?>">
-            <span class="help-block">Сотовый:</span>            
-            <input placeholder="Сотовый телефон" name="phone1" id="phone1" value="<?php echo "$phone1";?>">
-            <span class="help-block">Стационарный:</span>            
-            <input placeholder="Стационарный телефон" name="phone2" id="phone2" value="<?php echo "$phone2";?>">
-
-            
+        <div class="col-xs-6 col-md-6 col-sm-6">
+            <div class="form-group">         
+                <label for="fio">ФИО</label>
+                <input class="form-control" placeholder="ФИО" name="fio" id="fio" value="<?php echo "$fio";?>">
+                <label for="code">Табельный</label>
+                <input class="form-control" placeholder="Табельный номер" name="code" id="code" value="<?php echo "$code";?>">
+                <label for="post">Должность</label>
+                <input class="form-control" placeholder="Должность" name="post" id="post" value="<?php echo "$post";?>">
+                <label for="phone1">Сотовый:</label>
+                <input class="form-control" placeholder="Сотовый телефон" name="phone1" id="phone1" value="<?php echo "$phone1";?>">
+                <label for="phone2">Стационарный:</label>
+                <input class="form-control" placeholder="Стационарный телефон" name="phone2" id="phone2" value="<?php echo "$phone2";?>">            
+            </div>
         </div>
-        <div class="span6">
-         <ul class="thumbnails">
-          <li class="span12">
-              
+        <div class="col-xs-6 col-md-6 col-sm-6">              
                                         <div id="userpic" class="userpic">
-                                            <div class="js-preview userpic__preview">
+                                            <div class="js-preview userpic__preview thumbnail">
                                                 <img src="photos/<?php echo "$photo";?>">
                                             </div>
 						<div class="btn btn-success js-fileapi-wrapper">
@@ -94,13 +93,15 @@ if ($user->mode=="1") {
 							</div>
 						</div>
 					</div>              
-              <input name=picname id=picname TYPE=HIDDEN value="<?php echo "$photo";?>">    
-           </li> 
-        </ul>
+              <input name=picname id=picname TYPE=HIDDEN value="<?php echo "$photo";?>">                       
         </div>
     </div>
-<div align=center><input type="submit"  name="Submit" value="Сохранить"></div> 
+<div class="form-group">         
+    <input class="form-control" type="submit"  name="Submit" value="Сохранить">
+</div> 
 </form>
+</div>
+</div>    
 <div id="popup" class="popup" style="display: none;">
 		<div class="popup__body"><div class="js-img"></div></div>
 		<div style="margin: 0 0 5px; text-align: center;">
@@ -123,8 +124,12 @@ examples.push(function (){
 								},
 								progress: '.js-progress'
 							},
-                                                        onFileComplete: function (evt, uiEvt){                                                              
-                                                              $("#picname").val(uiEvt.result.msg);
+                                                        onFileComplete: function (evt, uiEvt){                                                            
+                                                            if (uiEvt.result.msg=="error"){
+                                                                $("#messenger").html("Ошибка загрузки фото");  
+                                                            } else {
+                                                                $("#picname").val(uiEvt.result.msg);
+                                                            };
                                                         },                                                        
 							onSelect: function (evt, ui){
 								var file = ui.files[0];

@@ -14,7 +14,6 @@ include_once("../../../class/config.php");		// загружаем классы �
 include_once("../../../class/users.php");		// загружаем классы работы с пользователями
 include_once("../../../class/employees.php");		// загружаем классы работы с профилем пользователя
 
-
 // загружаем все что нужно для работы движка
 
 include_once("../../../inc/connect.php");		// соеденяемся с БД, получаем $mysql_base_id
@@ -35,7 +34,6 @@ $uploadfile = $uploaddir.$userfile_name;
 
 $sr=$_FILES['filedata']['tmp_name'];
 $dest=$uploadfile;
-
 $res=move_uploaded_file($sr,$dest);
 if ($res!=false){
      //echo "$userfile_name";
@@ -46,8 +44,5 @@ if ($res!=false){
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить фото!".mysqli_error($sqlcn->idsqlconnection));
         };
      } else {$rs = array("msg" => "error");};
-
-
 echo  json_encode($rs);
-
 ?>

@@ -88,31 +88,39 @@ $(document).ready(function() {
         }); 
         
 </script>
+<div class="container-fluid">
+<div class="row">            
 <div id="messenger"></div>    
-<form id="myForm" class="well" ENCTYPE="multipart/form-data" action="controller/server/users/libre_users_form.php?step=<?php echo "$step&id=$id"; ?>" method="post" name="form1" target="_self">
- <span class="help-block">Организация:</span>
- <select name=orgid>
-<?php
-  $morgs=GetArrayOrgs();
-  for ($i = 0; $i < count($morgs); $i++) { 
-   $idorg=$morgs[$i]["id"];
-   $nameorg=$morgs[$i]["name"];
- ?>  
-   <option <?php if ($idorg==$cfg->defaultorgid){echo "selected";}; ?> value=<?php echo "$idorg";?>><?php echo "$nameorg"; ?></option>
- <?php };?>     
- </select>
-         <select name=mode>
-            <option value=0 <?php if ($mode==0) {echo "selected";};?>>Пользователь</option>
-            <option value=1 <?php if ($mode==1) {echo "selected";};?>>Администратор</option>
-        </select>
- 
- <div class="well form-inline">
-    <input placeholder="Логин" name="login" id="login" value="<?php echo "$login";?>">
-    <input placeholder="Пароль" name="pass" id="pass"  TYPE=PASSWORD value="<?php echo "$pass";?>">
-    <input placeholder="Email" name="email" id="email" size=16 value="<?php echo "$email";?>"> 
- </div>
- <div align=center><input type="submit"  name="Submit" value="Сохранить"></div> 
+<form role="form" id="myForm" ENCTYPE="multipart/form-data" action="controller/server/users/libre_users_form.php?step=<?php echo "$step&id=$id"; ?>" method="post" name="form1" target="_self">
+    <div class="form-group">         
+     <label for="orgid">Организация</label>
+     <select class="form-control" name="orgid" id="orgid">
+    <?php
+      $morgs=GetArrayOrgs();
+      for ($i = 0; $i < count($morgs); $i++) { 
+       $idorg=$morgs[$i]["id"];
+       $nameorg=$morgs[$i]["name"];
+     ?>  
+       <option <?php if ($idorg==$cfg->defaultorgid){echo "selected";}; ?> value=<?php echo "$idorg";?>><?php echo "$nameorg"; ?></option>
+     <?php };?>     
+     </select>
+     <label for="mode">Организация</label>     
+             <select name="mode" id="mode" class="form-control">
+                <option value=0 <?php if ($mode==0) {echo "selected";};?>>Пользователь</option>
+                <option value=1 <?php if ($mode==1) {echo "selected";};?>>Администратор</option>
+            </select>
+    </div> 
+     <div class="form-group">         
+        <input class="form-control" placeholder="Логин" name="login" id="login" value="<?php echo "$login";?>">
+        <input class="form-control" placeholder="Пароль" name="pass" id="pass"  TYPE=PASSWORD value="<?php echo "$pass";?>">
+        <input class="form-control" placeholder="Email" name="email" id="email" size=16 value="<?php echo "$email";?>"> 
+     </div>
+     <div align=center>
+         <input class="btn btn-default" type="submit"  name="Submit" value="Сохранить">
+     </div>     
 </form> 
+</div>
+</div>    
 <?php    
 } else echo "Нужны права администратора!";
 ?>

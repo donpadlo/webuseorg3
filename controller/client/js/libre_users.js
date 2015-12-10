@@ -3,14 +3,14 @@ jQuery("#list2").jqGrid({
 	datatype: "json",
    	colNames:[' ','Id','Организация','Логин','Пароль','E-mail','Админ',''],
    	colModel:[
-   		{name:'active',index:'active', width:20,search: false},
-   		{name:'users.id',index:'users.id', width:55},
+   		{name:'active',index:'active', width:10,search: false},
+   		{name:'users.id',index:'users.id', width:55,hidden:true},
    		{name:'org.id',index:'org.id', width:100},
-   		{name:'login',index:'login', width:100,editable:true},
-   		{name:'pass',index:'pass', width:100,editable:true,edittype:"password",search: false},
-   		{name:'email',index:'email', width:100,editable:true},		
+   		{name:'login',index:'login', width:45,editable:true},
+   		{name:'pass',index:'pass', width:45,editable:true,edittype:"password",search: false},
+   		{name:'email',index:'email', width:45,editable:true},		
    		{name:'mode',index:'mode', width:45,editable:true,edittype:"checkbox",editoptions: {value:"Да:Нет"},search: false},
-		{name: 'myac', width:55, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true},search: false}
+		{name: 'myac', width:60, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true},search: false}
    	],
 	onSelectRow: function(ids) {                
 		if(ids == null) {
@@ -30,7 +30,6 @@ jQuery("#list2").jqGrid({
 		}
 	},            
 	autowidth: true,		
-	//height: 200,
 	scroll:1,
    	rowNum:200,	
    	rowList:[10,20,30],
@@ -45,12 +44,18 @@ jQuery("#list2").jqGrid({
 jQuery("#list2").jqGrid('setGridHeight',$(window).innerHeight()/2);
 jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:false,del:false,search:false});
 jQuery("#list2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
-
+jQuery("#list2").jqGrid('navButtonAdd','#pager2',{
+    caption: '<img src="controller/client/themes/' + theme + '/ico/tag.png">',
+    title: "Выбор колонок",
+    onClickButton : function (){
+        jQuery("#list2").jqGrid('columnChooser');
+    }
+});
 jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/client/themes/"+theme+"/ico/user_add.png'>",                              
         title: "Добавить",    
 	onClickButton:function(){
              //$("#add_edit" ).dialog( "destroy" );
-            $("#add_edit").dialog({autoOpen: false,height: 340,width: 550,modal:true,title: "Добавление пользователя" });
+            $("#add_edit").dialog({autoOpen: false,height: 380,width: 400,modal:true,title: "Добавление пользователя" });
             $("#add_edit" ).dialog( "open" );
             $("#add_edit").load("controller/client/view/users/user_add_edit.php?step=add");	
 	} 
@@ -60,7 +65,7 @@ jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/
 	onClickButton:function(){
 		var gsr = jQuery("#list2").jqGrid('getGridParam','selrow');
 		if(gsr){                          
-                          $("#add_edit").dialog({autoOpen: false,height: 340,width: 550,modal:true,title: "Редактирование пользователя" });
+                          $("#add_edit").dialog({autoOpen: false,height: 380,width: 400,modal:true,title: "Редактирование пользователя" });
                           $("#add_edit" ).dialog( "open" );                     
        $("#add_edit").load("controller/client/view/users/user_add_edit.php?step=edit&id="+gsr);
 		} else {

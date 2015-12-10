@@ -15,7 +15,7 @@
 ?>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-2 col-sm-4">
+    <div class="col-xs-12 col-md-4 col-sm-4">
         <div class="panel panel-primary">
             <div class="panel-heading">Пользователь</div>
             <div class="panel-body">
@@ -82,7 +82,7 @@
          };
         ?>
     </div>
-  <div class="col-xs-12 col-md-6 col-sm-4">
+  <div class="col-xs-12 col-md-4 col-sm-4">
         <?php
         // Если закрепленные новости "активны", то тогда показываем этот блок
         if ($mhome->IsActive("stiknews")==1) {
