@@ -34,13 +34,19 @@
     
     ?>
     <script type="text/javascript" src="controller/client/themes/<?php echo "$cfg->theme";?>/js/bootstrap.min.js"></script>    
-    <?php echo "<script>defaultorgid=$cfg->defaultorgid;</script>";?>
-    <?php echo "<script>defaultuserid=$user->id;</script>";?>
-    <?php echo "<script>theme='$cfg->theme';</script>";?>    
+    <?php 
+    echo "<script>defaultorgid=$cfg->defaultorgid;</script>";
+    if ($user->id!="") echo "<script>defaultuserid=$user->id;</script>";
+    echo "<script>theme='$cfg->theme';</script>";
+    ?>    
     <script>
                     $.jgrid.defaults.width = 780;
                     $.jgrid.defaults.responsive = true;		
                     $.jgrid.defaults.styleUI = 'Bootstrap';
+                    $.jgrid.styleUI.Bootstrap.base.headerTable = "table table-bordered table-condensed";
+                    $.jgrid.styleUI.Bootstrap.base.rowTable = "table table-bordered table-condensed";
+                    $.jgrid.styleUI.Bootstrap.base.footerTable = "table table-bordered table-condensed";
+                    $.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";                    
     </script>    
 </head>
 <body>   

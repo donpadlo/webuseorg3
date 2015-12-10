@@ -7,7 +7,7 @@
 ?>
 
             Организация:
-            <select name="orgs" id="orgs">
+            <select class="form-control" name="orgs" id="orgs">
                 <?php 
                    for ($i = 0; $i < count($morgs); $i++) { 
                        $idorg=$morgs[$i]["id"];

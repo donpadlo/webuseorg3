@@ -13,7 +13,9 @@ if ($user->mode==1){
 	<script src="js/jquery.fileapi.js"></script>
 	<script src="js/jcrop/jquery.Jcrop.min.js"></script>
 	<script src="js/statics/jquery.modal.js"></script>
-<div class="well">
+<div class="container-fluid">
+<div class="row">            
+<div class="col-xs-12 col-md-12 col-sm-12">
     <table id="o_list"></table>
     <div id="o_pager"></div>
         <div id="simple-btn" class="btn btn-success js-fileapi-wrapper" style="visibility:hidden">
@@ -28,6 +30,8 @@ if ($user->mode==1){
         </div>
     <div id="pg_add_edit"></div>    
 </div>
+</div>
+</div>    
 <script type="text/javascript" src="controller/client/js/org_list.js"></script>
 <?php
 }

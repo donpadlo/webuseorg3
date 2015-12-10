@@ -15,8 +15,6 @@ jQuery("#o_list").jqGrid({
             $('#simple-btn').fileapi('data', { geteqid: ids });
         },                
 	autowidth: true,		
-   	rowNum:10,	
-   	rowList:[10,20,30],
    	pager: '#o_pager',
    	sortname: 'id',
 	scroll:1,        
