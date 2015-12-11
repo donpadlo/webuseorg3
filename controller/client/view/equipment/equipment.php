@@ -144,33 +144,35 @@ if ($step=="edit"){
            
        };
 ?>
+<div class="container-fluid">
+<div class="row">            
 <div id="messenger"></div>    
-<form id="myForm" class="well form-inline" ENCTYPE="multipart/form-data" action="controller/server/equipment/equipment_form.php?step=<?php echo "$step&id=$id"; ?>" method="post" name="form1" target="_self">
+<form role="form" id="myForm" ENCTYPE="multipart/form-data" action="controller/server/equipment/equipment_form.php?step=<?php echo "$step&id=$id"; ?>" method="post" name="form1" target="_self">
   <div class="row-fluid">
-  <div class="span4">
- <label>Когда/Куда/Кому:</label><br>      
- <input name=dtpost id=dtpost value="<?php echo "$dtpost"; ?>" size=14>       
-     <div id=sorg>
-    <select class='chosen-select' name=sorgid id=sorgid>
-    <?php
-        $result = $sqlcn->ExecuteSQL("SELECT * FROM org WHERE active=1 order by name;");
-        while ($myrow = mysqli_fetch_array($result)){
-            echo "<option value=".$myrow["id"];
-            if ($myrow['id']==$orgid){echo " selected";};
-            $nm=$myrow['name'];
-            echo ">$nm</option>";
-           };
-    ?>
-    </select>
+  <div class="col-xs-4 col-md-4 col-sm-4">     
+  <div class="form-group">      
+          <label>Когда/Куда/Кому:</label><br>      
+          <input class="form-control" name=dtpost id=dtpost value="<?php echo "$dtpost"; ?>">       
+            <div id=sorg>
+           <select class='chosen-select' name=sorgid id=sorgid>
+           <?php
+               $result = $sqlcn->ExecuteSQL("SELECT * FROM org WHERE active=1 order by name;");
+               while ($myrow = mysqli_fetch_array($result)){
+                   echo "<option value=".$myrow["id"];
+                   if ($myrow['id']==$orgid){echo " selected";};
+                   $nm=$myrow['name'];
+                   echo ">$nm</option>";
+                  };
+           ?>
+           </select>
+           </div>
+           <div id=splaces>идет загрузка..</div>
+           <div id=susers>идет загрузка..</div>                 
+           <input class="form-control" placeholder="Серийный номер" name=sernum value="<?php echo "$sernum";?>">               
+           <input class="form-control" placeholder="Статический IP" name=ip id=ip value="<?php echo "$ip"; ?>"> 
     </div>
-    <div id=splaces>идет загрузка..</div>
-    <div id=susers>идет загрузка..</div>      
-    <label>Серийный номер:</label>
-    <input name=sernum value="<?php echo "$sernum";?>" size=14>    
-    <label>Статический IP:</label>
-    <input name=ip id=ip value="<?php echo "$ip"; ?>" size=14> 
   </div>
-  <div class="span4">
+  <div class="col-xs-4 col-md-4 col-sm-4">     
     <label>От кого/Что:</label><br>      
         <select class='chosen-select' name=kntid id=kntid>
                 <?php
@@ -199,20 +201,21 @@ if ($step=="edit"){
     <div id=svendors>идет загрузка..</div>
     <div id=snomes>идет загрузка..</div> 
     <label>Инвентарный номер: </label>
-    <input id=invnum name=invnum value="<?php echo "$invnum";?>" size=14><button class="btn btn-primary" name=binv id=binv>Создать</button><br>    
+    <input  class="form-control"  id=invnum name=invnum value="<?php echo "$invnum";?>" >
+    <button class="btn btn-primary" name=binv id=binv>Создать</button><br>    
     <label class="checkbox">
         <input type="checkbox" name="os" value="1" <?php if ($os=="1") {echo "checked";};?>> Основные ср-ва
     </label>    
   </div>
-  <div class="span4">
+  <div class="col-xs-4 col-md-4 col-sm-4">     
      <label>Гарантия до:</label><br>      
-     <input name=dtendgar id=dtendgar value="<?php echo "$dtendgar"; ?>" size=14>            
+     <input  class="form-control"  name=dtendgar id=dtendgar value="<?php echo "$dtendgar"; ?>">            
      <label>Имя по бухгалтерии:</label>
-     <input name=buhname value="<?php $buhname=htmlspecialchars($buhname);echo "$buhname";?>" size=30>           
-     <input name=cost value="<?php echo "$cost";?>" placeholder="Начальная стоимость" >
-     <input name=currentcost value="<?php echo "$currentcost";?>" placeholder="Текущая стоимость">
+     <input name=buhname value="<?php $buhname=htmlspecialchars($buhname);echo "$buhname";?>">           
+     <input class="form-control" name=cost value="<?php echo "$cost";?>" placeholder="Начальная стоимость" >
+     <input class="form-control" name=currentcost value="<?php echo "$currentcost";?>" placeholder="Текущая стоимость">
      <label>Штрихкод:</label>
-     <input name=shtrihkod id=shtrihkod value="<?php echo "$shtrihkod";?>" size=14><button class="btn btn-primary" name=bshtr id=bshtr>Создать</button><br>     
+     <input class="form-control" name=shtrihkod id=shtrihkod value="<?php echo "$shtrihkod";?>" size=14><button class="btn btn-primary" name=bshtr id=bshtr>Создать</button><br>     
     <label class="checkbox">
         <input type="checkbox" name="mode" value="1" <?php if ($mode=="1") {echo "checked";};?>> Списано
     </label>    
@@ -222,7 +225,7 @@ if ($step=="edit"){
   </div>
 </div>
 <div class="row-fluid">
-  <div class="span4">
+  <div class="col-xs-4 col-md-4 col-sm-4">     
                                         <div id="userpic" class="userpic">
                                             <div class="js-preview userpic__preview">
                                                 <img src="photos/<?php echo "$photo";?>">
@@ -240,18 +243,22 @@ if ($step=="edit"){
 					</div>         
     <input name=picname id=picname TYPE=HIDDEN value="<?php echo "$photo";?>">    
   </div>
-  <div class="span8">        
-        <textarea class="span12" name=comment rows="8"><?php echo "$comment";?></textarea>
-        <div align=center><input type="submit" class="btn btn-primary" name="Submit" value="Сохранить"></div>       
+  <div class="col-xs-8 col-md-8 col-sm-8">     
+        <textarea class="form-control" name=comment rows="8"><?php echo "$comment";?></textarea>
+        <div align=center>
+            <input type="submit" class="form-control btn btn-primary" name="Submit" value="Сохранить">
+        </div>       
   </div>
 </div> 
 </form>
+</div>
+</div>    
 <div id="popup" class="popup" style="display: none;">
 		<div class="popup__body"><div class="js-img"></div></div>
 		<div style="margin: 0 0 5px; text-align: center;">
 			<div class="js-upload btn btn_browse btn_browse_small">Загрузить</div>
 		</div>
-	</div>
+</div>
  <script>
 examples.push(function (){
 						$('#userpic').fileapi({
@@ -313,23 +320,32 @@ examples.push(function (){
     $( "#pg_add_edit" ).dialog({
         close: function() {$( "#dtpost" ).datepicker( "destroy" );}
     });    
-    
+    function UpdateChosen(){
+        for (var selector in config) {
+            $(selector).chosen({ width: '100%' });
+            $(selector).chosen(config[selector]);
+        };        
+    };
     function GetListPlaces(orgid,placesid){
        url="controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid;
        $("#splaces").load(url);
+       UpdateChosen();
     };
     function GetListUsers(orgid,userid){
        //alert(userid+"!!");
      $("#susers").load("controller/server/common/getlistusers.php?orgid="+orgid+"&userid="+userid);
+     UpdateChosen();
     };
     function GetListGroups(groupid){
       $("#sgroups").load("controller/server/common/getlistgroupname.php?groupid="+groupid);
+      UpdateChosen();
     };
     function GetListNome(groupid,vendorid,nmd){
 	 $.ajax({
      			url: "controller/server/common/getlistnomes.php?groupid="+groupid+"&vendorid="+vendorid+"&nomeid="+nmd,
      			success: function(answ){
        			$("#snomes").html(answ);
+                        UpdateChosen();
        			//GetListNome($("#sgroupname :selected").val(),$("#svendid :selected").val());
 		        }
     		});

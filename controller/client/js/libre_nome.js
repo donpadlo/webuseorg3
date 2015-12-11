@@ -4,11 +4,11 @@ jQuery("#list2").jqGrid({
    	colNames:[' ','Id','Группа','Производитель','Наименование',''],
    	colModel:[
    		{name:'active',index:'active', width:20,search: false},
-                {name:'nomeid',index:'nomeid', width:55},
+                {name:'nomeid',index:'nomeid', width:55,hidden:true},
    		{name:'group_nome.name',index:'group_nome.name', width:200},
    		{name:'vendor.name',index:'vendor.name', width:200},
    		{name:'nomename',index:'nome.name', width:200,editable:true},
-		{name: 'myac', width:55, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true},search: false}
+		{name: 'myac', width:70, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true},search: false}
    	],
 	autowidth: true,		
 	height: 200,	
@@ -21,8 +21,9 @@ jQuery("#list2").jqGrid({
    	pager: '#pager2',
    	sortname: 'nomeid',
     viewrecords: true,
+    autowidth: true,	
     rowNum:1000,
-    shrinkToFit: false,        
+    //shrinkToFit: false,        
     scroll:1,
     sortorder: "asc",
     editurl:"controller/server/tmc/libre_nome.php",
@@ -36,7 +37,7 @@ jQuery("#list2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : fals
 
 jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/client/themes/"+theme+"/ico/computer_add.png'>",                              
 	onClickButton:function(){            
-            $("#add_edit").dialog({autoOpen: false,height: 380,width: 680,modal:true,title: "Добавление номенклатуры" });
+            $("#add_edit").dialog({autoOpen: false,height: 280,width: 640,modal:true,title: "Добавление номенклатуры" });
             $("#add_edit" ).dialog( "open" );
             $("#add_edit").load("controller/client/view/tmc/nome_add_edit.php?step=add");	
 	} 
@@ -45,7 +46,7 @@ jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/
 	onClickButton:function(){
 		var gsr = jQuery("#list2").jqGrid('getGridParam','selrow');
 		if(gsr){
-                          $("#add_edit").dialog({autoOpen: false,height: 380,width: 680,modal:true,title: "Редактирование номенклатуры" });
+                          $("#add_edit").dialog({autoOpen: false,height: 280,width: 640,modal:true,title: "Редактирование номенклатуры" });
                           $("#add_edit" ).dialog( "open" );                     
 			  $("#add_edit").load("controller/client/view/tmc/nome_add_edit.php?step=edit&id="+gsr);
 		} else {

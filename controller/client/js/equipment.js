@@ -4,7 +4,8 @@ $('#orgs').change(function() {
 	orgid = $('#orgs :selected').val();
 	defaultorgid = orgid;
 	document.cookie = 'defaultorgid=' + orgid + '; path=/; expires=' + exdate.toUTCString();
-	$('#tbl_equpment').jqGrid('GridUnload');
+	//$('#tbl_equpment').jqGrid('GridUnload');
+        $.jgrid.gridUnload("#tbl_equpment");
 	LoadTable();
 });
 
@@ -98,7 +99,8 @@ function LoadTable() {
 					{startColumnName: 'orgname2', numberOfColumns: 3, titleText: 'Куда'}
 				]
 			});
-			$('#tbl_rep').jqGrid('GridUnload');
+			//$('#tbl_rep').jqGrid('GridUnload');
+                        $.jgrid.gridUnload("#tbl_rep");
 			jQuery("#tbl_rep").jqGrid('setGridParam', {url: 'controller/server/equipment/getrepinfo.php?eqid=' + ids});
 			jQuery("#tbl_rep").jqGrid({
 				url: 'controller/server/equipment/getrepinfo.php?eqid=' + ids,
@@ -315,7 +317,6 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid('setFrozenColumns');
 }
 
-LoadTable();
 
 function GetListUsers(orgid, userid) {
 	$('#susers').load('controller/server/getlistusers.php?orgid=' + orgid + '&userid=' + userid);
@@ -324,3 +325,10 @@ function GetListUsers(orgid, userid) {
 function GetListPlaces(orgid, placesid) {
 	$('#splaces').load('controller/server/getlistplaces.php?orgid=' + orgid + '&placesid=' + placesid);
 }
+
+    $( document ).ready(function() {
+        for (var selector in config) {
+            $(selector).chosen(config[selector]);
+        };
+        LoadTable();
+    });

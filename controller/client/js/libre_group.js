@@ -7,7 +7,7 @@ jQuery("#list2").jqGrid({
    	colNames:[' ','Id','Имя','Комментарий','Действия'],
    	colModel:[
    		{name:'active',index:'active', width:20},
-   		{name:'id',index:'id', width:55},
+   		{name:'id',index:'id', width:55,hidden:true},
    		{name:'name',index:'name', width:200,editable:true},
    		{name:'comment',index:'comment', width:200,editable:true},
 		{name: 'myac', width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true}}
@@ -49,7 +49,7 @@ jQuery("#list10_d").jqGrid({
    	colNames:[' ','Id', 'Параметр', 'Действия'],
    	colModel:[
    		{name:'active',index:'active', width:20},
-   		{name:'id',index:'id', width:55},
+   		{name:'id',index:'id', width:55,hidden:true},
    		{name:'name',index:'name', width:200,editable:true},
 		{name: 'myac', width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true}}   		
    	],

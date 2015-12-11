@@ -88,50 +88,57 @@ $(document).ready(function() {
         }); 
     
 </script>
-
-<hr>
-<div id="messenger"></div>    
-<form id='myForm' class="well" ENCTYPE="multipart/form-data" action="controller/server/tmc/add_edit_tmc.php?step=<?php echo "$step&id=$id"; ?>" method="post" name="form1" target="_self">
-<div class="row-fluid">    
-<div class="span6">    
- <span class="help-block">Группа:</span>
- <select name=groupid>
-<?php
-  $result = $sqlcn->ExecuteSQL("SELECT * FROM group_nome WHERE active=1 order by name;",$cfg->base_id);
-    while ($myrow = mysqli_fetch_array($result))
-    { $vl=$myrow['id'];
-      echo "<option value=$vl";
-      if ($myrow['id']==$groupid){echo " selected";};
-      $nm=$myrow['name'];
-      echo ">$nm</option>";
-    };
-?>   
- </select>
-</div> 
-<div class="span6">    
- <span class="help-block">Производитель:</span>
- <select name=vendorid>
-<?php
-  $result = $sqlcn->ExecuteSQL("SELECT * FROM vendor WHERE active=1 order by name;",$cfg->base_id);
-    while ($myrow = mysqli_fetch_array($result))
-    {$vl=$myrow['id'];
-      echo "<option value=$vl";
-      if ($myrow['id']==$vendorid){echo " selected";};
-      $nm=$myrow['name'];
-      echo ">$nm</option>";
-    };
-?>   
- </select>
- </div>
+<div class="container-fluid">
+<div class="row">            
+    <div id="messenger"></div>    
+    <form role="form" id='myForm' ENCTYPE="multipart/form-data" action="controller/server/tmc/add_edit_tmc.php?step=<?php echo "$step&id=$id"; ?>" method="post" name="form1" target="_self">
+    <div class="row-fluid">    
+    <div class="col-xs-6 col-md-6 col-sm-6">     
+      <label for="groupid">Группа</label></br>
+     <select class='chosen-select' class="form-control" name=groupid id="groupid">
+    <?php
+      $result = $sqlcn->ExecuteSQL("SELECT * FROM group_nome WHERE active=1 order by name;",$cfg->base_id);
+        while ($myrow = mysqli_fetch_array($result))
+        { $vl=$myrow['id'];
+          echo "<option value=$vl";
+          if ($myrow['id']==$groupid){echo " selected";};
+          $nm=$myrow['name'];
+          echo ">$nm</option>";
+        };
+    ?>   
+     </select>
+    </div> 
+    <div class="col-xs-6 col-md-6 col-sm-6">     
+     <label for="vendorid">Производитель</label></br>
+     <select class='chosen-select' class="form-control" name=vendorid id="vendorid">
+    <?php
+      $result = $sqlcn->ExecuteSQL("SELECT * FROM vendor WHERE active=1 order by name;",$cfg->base_id);
+        while ($myrow = mysqli_fetch_array($result))
+        {$vl=$myrow['id'];
+          echo "<option value=$vl";
+          if ($myrow['id']==$vendorid){echo " selected";};
+          $nm=$myrow['name'];
+          echo ">$nm</option>";
+        };
+    ?>   
+     </select>
+     </div>
+    </div>        
+    <script>
+        for (var selector in config) {
+            $(selector).chosen(config[selector]);
+        }
+    </script>        
+    <div class="form-group">                 
+         <label for="namenome">Наименование</label>
+        <input class="form-control" placeholder="Введите наименование номенклатуры" name="namenome" id="namenome" size=100 value="<?php echo "$name";?>">    
+    </div>    
+     <div class="form-group">         
+         <input class="form-control" type="submit"  name="Submit" value="Сохранить">
+     </div> 
+    </form> 
 </div>    
-<span class="help-block">Наименование:</span>
-<input class="span6" placeholder="Введите наименование номенклатуры" name="namenome" id="namenome" size=100 value="<?php echo "$name";?>">    
-
- <div align=center><input type="submit"  name="Submit" value="Сохранить"></div> 
-</form> 
-<?php
-
-    
-} else echo "Нужны права администратора!";
-
+</div>        
+<?php    
+ } else echo "Нужны права администратора!";
 ?>
