@@ -6,8 +6,8 @@ jQuery("#list_post_users").jqGrid({
                         datatype: "json",
                         colNames:['','Id','Должность','Пользователь','Действие'],
                         colModel:[
-                            {name:'active',index:'active', width:20, search: false,frozen : true},
-                            {name:'id',index:'id', width:25},
+                            {name:'active',index:'active', width:10, search: false,frozen : true},
+                            {name:'id',index:'id', width:25,hidden:true},
                             {name:'post',index:'post', width:100,sortable:false,editable: true},
                             {name:'userlogin',index:'userlogin', editable: true, width:100,edittype:"select",sortable:false,
                                 editoptions:{

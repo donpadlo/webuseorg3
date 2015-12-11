@@ -41,9 +41,6 @@ echo "<script>placesid1='".$tmptmc->placesid."'</script>";
 $userid=$tmptmc->usersid;
 echo "<script>userid1='".$tmptmc->usersid."'</script>";
 
-
-
-
 ?>
 <script>
 $(document).ready(function() { 

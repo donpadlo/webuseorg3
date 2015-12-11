@@ -7,8 +7,8 @@ jQuery("#list2").jqGrid({
 	datatype: "json",
    	colNames:[' ','Id','Подразделение','Наименование','Комментарий','Действия'],
    	colModel:[
-   		{name:'active',index:'active', width:20},
-   		{name:'id',index:'id', width:55},
+   		{name:'active',index:'active', width:10},
+   		{name:'id',index:'id', width:55,hidden:true},
                 {name:'opgroup',index:'opgroup', width:100,editable:true},
    		{name:'name',index:'name', width:200,editable:true},
    		{name:'comment',index:'comment', width:200,editable:true},
@@ -67,7 +67,7 @@ jQuery("#list10_d").jqGrid({
 	datatype: "json",
    	colNames:['Id', 'Человек', 'Действия'],        
    	colModel:[
-   		{name:'places_users.id',index:'places_users.id', width:55},
+   		{name:'places_users.id',index:'places_users.id', width:10,hidden:true},
    		{name:'name',index:'name', width:200,editable:true,edittype:"select",editoptions:{
                     editrules: { required: true },
                     dataUrl: 'controller/server/common/getlistusers.php?orgid='+defaultorgid

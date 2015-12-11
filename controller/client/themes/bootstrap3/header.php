@@ -36,15 +36,12 @@
     
     ?>
     <script type="text/javascript" src="controller/client/themes/<?php echo "$cfg->theme";?>/js/bootstrap.min.js"></script>    
-    <script type='text/javascript' src='js/jquery.form.js'>
-    <?php 
-    echo "<script>\n";
-    if ($user->id!="") echo "defaultuserid=$user->id;\n";
-    echo "</script>\n";
-    ?>    
+    <script type='text/javascript' src='js/jquery.form.js'></script>    
     <script>
-                    defaultorgid=<?php echo "$cfg->defaultorgid;"; ?>
-                    theme=<?php echo "'$cfg->theme';";?>
+                    defaultorgid=<?php echo "$cfg->defaultorgid;"; ?>;
+                    defaultorgid=<?php echo "$cfg->defaultorgid;\n"; ?>
+                    theme=<?php echo "'$cfg->theme';\n";?>
+                    defaultuserid=<?php if ($user->id!="") {echo "$user->id;\n";} else {echo "-1;\n";};?>
                     $.jgrid.defaults.width = 780;
                     $.jgrid.defaults.responsive = true;		
                     $.jgrid.defaults.styleUI = 'Bootstrap';

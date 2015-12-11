@@ -10,10 +10,10 @@ jQuery("#list2").jqGrid({
    	colNames:[' ','Id','Имя','Инн','Кпп','Пок','Прод','Контролировать','ERPCode','Комментарий','Действия'],
    	colModel:[
    		{name:'active',index:'active', width:20,search: false},
-   		{name:'id',index:'id', width:55,search: false},
+   		{name:'id',index:'id', width:55,search: false,hidden:true},
    		{name:'name',index:'name', width:200,editable:true},
                 {name:'INN',index:'INN', width:100,editable:true},
-                {name:'KPP',index:'KPP', width:100,editable:true},
+                {name:'KPP',index:'KPP', width:100,editable:true,hidden:true},
                 {name:'bayer',index:'bayer', width:50,editable:true,formatter: 'checkbox',edittype: 'checkbox', editoptions: {value: 'Yes:No'},search: false,hidden:true},
                 {name:'supplier',index:'supplier', width:50,editable:true,formatter: 'checkbox',edittype: 'checkbox', editoptions: {value: 'Yes:No'},search: false,hidden:true},
                 {name:'dog',index:'dog', width:50,editable:true,formatter: 'checkbox',edittype: 'checkbox', editoptions: {value: 'Yes:No'},search: false},
@@ -21,11 +21,9 @@ jQuery("#list2").jqGrid({
    		{name:'comment',index:'comment', width:200,editable:true},
 		{name:'myac', width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true},search: false}
    	],
-	autowidth: true,		
-   	rowNum:200,	
-   	rowList:[20,40,60],
+	autowidth: true,		        
    	pager: '#pager2',
-   	sortname: 'id',
+   	sortname: 'id',        
 	scroll:1,
         viewrecords: true,
         sortorder: "asc",
@@ -45,7 +43,7 @@ jQuery("#list3").jqGrid({
    	colNames:[' ','Id','Номер','Название','Начало','Конец','Рабочий','Комментарий','Действия'],
    	colModel:[
    		{name:'active',index:'active', width:20},
-   		{name:'id',index:'id', width:55},
+   		{name:'id',index:'id', width:55,hidden:true},
                 {name:'num',index:'num', width:50,editable:true},
    		{name:'name',index:'name', width:100,editable:true},
                 {name:'datestart',index:'datestart', width:100,editable:true,editoptions:
@@ -77,8 +75,6 @@ jQuery("#list3").jqGrid({
    	],
         
 	autowidth: true,		
-   	rowNum:10,	
-   	rowList:[10,20,30],
    	pager: '#pager3',
    	sortname: 'id',
 	scroll:1,
@@ -99,14 +95,12 @@ jQuery("#list3").jqGrid({
                         datatype: "json",
                         colNames:['Id','Имя файла','Действия'],
                         colModel:[
-                            {name:'id',index:'id', width:55},
+                            {name:'id',index:'id', width:55,hidden:true},
                             {name:'filename',index:'filename', width:100},
                             {name:'myac',  width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true},search: false}
    	],
-        	autowidth: true,		
-                rowNum:10,
+        	autowidth: true,		                
                 height:100,
-                rowList:[10,20,30],
                 pager: '#pager4',
                 sortname: 'id',
                 scroll:1,
@@ -122,7 +116,7 @@ jQuery("#list3").jqGrid('navGrid','#pager3',{edit:true,add:true,del:false,search
 }
 
 });
-jQuery("#list2").jqGrid('setGridHeight',$(window).innerHeight()/2);
+jQuery("#list2").jqGrid('setGridHeight',$(window).innerHeight()/3);
 jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:true,del:false,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true} );
 jQuery("#list2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
 jQuery("#list2").jqGrid('bindKeys',''); 
@@ -130,7 +124,15 @@ jQuery("#list2").jqGrid('navButtonAdd','#pager2',{
     caption: "<img src='controller/client/themes/"+theme+"/ico/tag.png'>",
     title: "Выбор колонок",
     onClickButton : function (){
-        jQuery("#list2").jqGrid('columnChooser');
+        jQuery("#list2").jqGrid('columnChooser',{
+            "done": function(perm) {
+                             if (perm) {
+                                 this.jqGrid("remapColumns", perm, true);
+                                 var outerwidth = $('#grid').width();
+                                 $('#list2').setGridWidth(outerwidth);                                 
+                             }
+                         }
+        });        
     }
 });
 
@@ -142,7 +144,9 @@ $('#simple-btn').fileapi({
                         maxSize: 20 * FileAPI.MB,
                         autoUpload: true,
                          onFileComplete: function (evt, uiEvt){                                                              
-                             if (uiEvt.result.msg!="error") {jQuery("#list4").jqGrid().trigger('reloadGrid');};                             
+                             if (uiEvt.result.msg!="error") {
+                                 jQuery("#list4").jqGrid().trigger('reloadGrid');
+                             } else {alert("Ошибка загрузки файла!");};                             
                           },                         
                           elements: {
                                 size: '.js-size',

@@ -26,6 +26,7 @@ $contractid=$_POST['contractid'];
 $uploaddir = '../../../files/';
 
 $userfile_name=basename($_FILES['filedata']['name']);
+//var_dump($_FILES);
 //$sr=$userfile_name;
 $orig_file=$_FILES['filedata']['name'];
 $len=strlen($userfile_name);
@@ -37,8 +38,8 @@ $uploadfile = $uploaddir.$userfile_name;
 $sr=$_FILES['filedata']['tmp_name'];
 $dest=$uploadfile;
 
-$res=move_uploaded_file($sr,$dest);
-//echo "$sr,$dest,!$res";
+$res=@move_uploaded_file($sr,$dest);
+//echo "sr=$sr\n,dest=$dest\n,!$res\n";
 if ($res!=false){
      //echo "$userfile_name";
      //echo "$geteqid!";
