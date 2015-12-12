@@ -104,28 +104,30 @@ $(document).ready(function() {
             }); 
         }); 
 </script>
+<div class="container-fluid">
+<div class="row-fluid">       
 <div id="messenger"></div>    
-<form id="myForm" class="well" ENCTYPE="multipart/form-data" action="controller/server/bp/bp_xml_form_addedit.php?step=<?php echo "$step&id=$bpid"; ?>" method="post" name="form1" target="_self">
+<form role="form" id="myForm" ENCTYPE="multipart/form-data" action="controller/server/bp/bp_xml_form_addedit.php?step=<?php echo "$step&id=$bpid"; ?>" method="post" name="form1" target="_self">
 <?php
-     if ($status==0) { echo "<input name=dt id=dt readonly=true value='$dt' size=14>";};
+     if ($status==0) { echo "<input class=form-control name=dt id=dt readonly=true value='$dt' >";};
 ?>     
      <label>Заголовок:</label>
      <?php
-     if ($status==0) { echo "<input placeholder='Введите задачу БП' name=title id=title value='$title' class='input-xxlarge'>";} else
+     if ($status==0) { echo "<input placeholder='Введите задачу БП' name=title id=title value='$title' class=form-control>";} else
          {echo "<p>$title</p>";};
       ?>   
      <label>Пояснение:</label>
      <?php
      if ($status==0) {
      ?>
-     <textarea placeholder='Подробное описание задачи' class='input-xxlarge' name=bodytxt><?php echo "$bodytxt";?></textarea>
+     <textarea placeholder='Подробное описание задачи' class=form-control name=bodytxt><?php echo "$bodytxt";?></textarea>
      <?php } else {echo "<p>$bodytxt</p>";};
       ?>   
         <label>Статус БП</label>
         <?php
          if ($status==0) {
         ?>
-            <select name="status" id="status">
+            <select class="form-control" name="status" id="status">
                 <option value=0 <?php if ($status=="0"){echo "selected";};?>>Подготовка</option>
                 <option value=1 <?php if ($status=="1"){echo "selected";};?>>В работе</option>
                 <option value=3 <?php if ($status=="3"){echo "selected";};?>>Отменен</option>
@@ -134,7 +136,7 @@ $(document).ready(function() {
          <?php
          } else {
          ?>
-            <select name="status" id="status" disabled>
+            <select class="form-control" name="status" id="status" disabled>
                 <option value=0 <?php if ($status=="0"){echo "selected";};?>>Подготовка</option>
                 <option value=1 <?php if ($status=="1"){echo "selected";};?>>В работе</option>
                 <option value=2 <?php if ($status=="2"){echo "selected";};?>>Утвержден</option>
@@ -147,7 +149,7 @@ $(document).ready(function() {
          $bpl=GetListBpXml();
          // показываем какая схема БП
          if ($status==0) {
-         echo " <select name=bpshema id=bpshema>";
+         echo " <select class=form-control name=bpshema id=bpshema>";
           for ($i = 0; $i < count($bpl); $i++){
                         $bpname=$bpl[$i]['name'];
                         $bpfile=$bpl[$i]['file'];
@@ -169,5 +171,7 @@ $(document).ready(function() {
             <div align=center><input type="submit" class="btn btn-primary" name="Submit" value="Сохранить"></div>      
           <?php }; ?>
 </form>
+</div>
+</div>    
 <script>status='<?php echo "$status";?>';</script>
 

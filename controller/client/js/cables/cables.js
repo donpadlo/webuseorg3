@@ -13,7 +13,7 @@ function ViewFibre(module_id){
             datatype: "json",
             colNames:['Id','Номер','Цвет 1','Цвет 2','Действия'],
             colModel:[   		
-                    {name:'id',index:'id', width:55},
+                    {name:'id',index:'id', width:55,hidden:true},
                     {name:'number',index:'number', width:200,editable:true},
                     {name:'color1',index:'color1', width:200,editable:true,edittype:"select",editoptions:{
                         editrules: { required: true },
@@ -35,6 +35,7 @@ function ViewFibre(module_id){
             height: 140,
         viewrecords: true,
         sortorder: "asc",
+        shrinkToFit: true,
             onSelectRow: function(ids) {                             
                            //         ViewModules(ids);
             },           
@@ -44,8 +45,10 @@ function ViewFibre(module_id){
     jQuery("#list4").jqGrid('navGrid','#pager4',{edit:true,add:true,del:true,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true} );        
 };
 function ViewModules(cable_id){
-    $('#list4').jqGrid('GridUnload');      
-    $('#list3').jqGrid('GridUnload');      
+    //$('#list4').jqGrid('GridUnload');      
+    //$('#list3').jqGrid('GridUnload');      
+    $.jgrid.gridUnload("#list4");
+    $.jgrid.gridUnload("#list3");
     jQuery("#list3").jqGrid({
             url:'controller/server/cables/cable_modules.php?orgid='+defaultorgid+"&cable_id="+cable_id,
             datatype: "json",

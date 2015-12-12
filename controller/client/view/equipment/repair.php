@@ -71,44 +71,46 @@ $(document).ready(function() {
         }); 
     
 </script>
-
+<div class="container-fluid">
+<div class="row">            
 <div id="messenger"></div>    
-
-<form id="myForm" ENCTYPE="multipart/form-data" action="controller/server/equipment/repair.php?step=add&eqid=<?php echo "$eqid" ?>" method="post" name="form1" target="_self">
-    <label>Кто ремонтирует:</label>
-    <div id=sorg1>
-        <select class='chosen-select' name=kntid id=kntid>
-                <?php
-                    $morgs=GetArrayKnt();
-                    for ($i = 0; $i < count($morgs); $i++) {           
-                        $nid=$morgs[$i]["id"];$nm=$morgs[$i]["name"];
-                        echo "<option value=$nid>$nm</option>";
-                    };
-                ?>
-     </select>   
-    </div>            
-    <div class="row-fluid">         
-    <div class="span6">  
-        <label>Начало ремонта:</label>        
-        <input name=dtpost id=dtpost size=14>
-        <label>Конец ремонта:</label>
-        <input name=dt id=dt size=14>
-    </div>
-    <div class="span6">            
-        <label>Стоимость ремонта:</label>
-        <input name=cst id=cst size=14>        
-        <label>Статус:</label>
-        <select name=status id=status>
-            <option value='1'>В ремонте</option>
-           <option value='0'>Ремонт завершен</option>            
-        </select>
-    </div>    
-    </div>            
-    <label>Комментарии:</label>
-    <textarea class="span6" name=comment></textarea>
-    <div align=center><input type="submit"  name="Submit" value="Сохранить"></div>           
-</form>
-
+        <form id="myForm" ENCTYPE="multipart/form-data" action="controller/server/equipment/repair.php?step=add&eqid=<?php echo "$eqid" ?>" method="post" name="form1" target="_self">
+            <label>Кто ремонтирует:</label>
+            <div id=sorg1>
+                <select class='chosen-select' name=kntid id=kntid>
+                        <?php
+                            $morgs=GetArrayKnt();
+                            for ($i = 0; $i < count($morgs); $i++) {           
+                                $nid=$morgs[$i]["id"];$nm=$morgs[$i]["name"];
+                                echo "<option value=$nid>$nm</option>";
+                            };
+                        ?>
+             </select>   
+            </div>            
+            <div class="row-fluid">         
+            <div class="col-xs-6 col-md-6 col-sm-6">
+                <label>Начало ремонта:</label>        
+                <input class="form-control" name=dtpost id=dtpost size=14>
+                <label>Конец ремонта:</label>
+                <input class="form-control" name=dt id=dt size=14>
+            </div>
+            <div class="col-xs-6 col-md-6 col-sm-6">           
+                <label>Стоимость ремонта:</label>
+                <input class="form-control" name=cst id=cst>        
+                <label>Статус:</label>
+                <select class="form-control" name=status id=status>
+                    <option value='1'>В ремонте</option>
+                   <option value='0'>Ремонт завершен</option>            
+                </select>            
+            </div>            
+            <label>Комментарии:</label>
+            <textarea class="form-control" name=comment></textarea>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="submit"  name="Submit" value="Сохранить">
+            </div>           
+        </form>
+</div>
 <script>
     
     $("#dtpost").datepicker();
@@ -122,6 +124,7 @@ $(document).ready(function() {
        $("#dt").datepicker("show");
     });  
     for (var selector in config) {
+      $(selector).chosen({ width: '100%' });   
       $(selector).chosen(config[selector]);
     };  
 </script>    

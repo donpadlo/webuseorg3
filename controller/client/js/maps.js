@@ -11,10 +11,21 @@ function GetArrayEq(orgid){
     );       
 };
 
+function UpdateChosen(){
+    for (var selector in config) {
+        $(selector).chosen({ width: '100%' });
+        $(selector).chosen(config[selector]);
+    };        
+};    
 // Получаем список помещений в выбранной организации
 function GetListPlaces(orgid,placesid){
        url="controller/server/map/getlistplacesmap.php?orgid="+orgid+"&placesid="+placesid+"&addnone=false";
-       $("#sel_pom").load(url);       
+//       $("#sel_pom").load(url);       
+        $.get(url, function(data){
+           $("#sel_pom").html(data);
+           UpdateChosen()
+       });
+       
 };
 
 

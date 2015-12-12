@@ -168,8 +168,8 @@ if ($step=="edit"){
            </div>
            <div id=splaces>идет загрузка..</div>
            <div id=susers>идет загрузка..</div>                 
-           <input class="form-control" placeholder="Серийный номер" name=sernum value="<?php echo "$sernum";?>">               
-           <input class="form-control" placeholder="Статический IP" name=ip id=ip value="<?php echo "$ip"; ?>"> 
+           <input title="Серийный номер" class="form-control" placeholder="Серийный номер" name=sernum value="<?php echo "$sernum";?>">               
+           <input title="Статический IP" class="form-control" placeholder="Статический IP" name=ip id=ip value="<?php echo "$ip"; ?>"> 
     </div>
   </div>
   <div class="col-xs-4 col-md-4 col-sm-4">     
@@ -199,35 +199,37 @@ if ($step=="edit"){
         ?>
     </div>    
     <div id=svendors>идет загрузка..</div>
-    <div id=snomes>идет загрузка..</div> 
-    <label>Инвентарный номер: </label>
-    <input  class="form-control"  id=invnum name=invnum value="<?php echo "$invnum";?>" >
-    <button class="btn btn-primary" name=binv id=binv>Создать</button><br>    
-    <label class="checkbox">
-        <input type="checkbox" name="os" value="1" <?php if ($os=="1") {echo "checked";};?>> Основные ср-ва
-    </label>    
+    <div id=snomes>идет загрузка..</div>     
+    <input  title="Инвентарный номер" class="form-control"  placeholder="Инвентарный номер" id=invnum name=invnum value="<?php echo "$invnum";?>" >
+    <button class="form-control" class="btn btn-primary" name=binv id=binv>Создать</button>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="os" value="1" <?php if ($os=="1") {echo "checked";};?>> Основные ср-ва
+        </label>    
+    </div>
   </div>
   <div class="col-xs-4 col-md-4 col-sm-4">     
      <label>Гарантия до:</label><br>      
-     <input  class="form-control"  name=dtendgar id=dtendgar value="<?php echo "$dtendgar"; ?>">            
-     <label>Имя по бухгалтерии:</label>
-     <input name=buhname value="<?php $buhname=htmlspecialchars($buhname);echo "$buhname";?>">           
-     <input class="form-control" name=cost value="<?php echo "$cost";?>" placeholder="Начальная стоимость" >
-     <input class="form-control" name=currentcost value="<?php echo "$currentcost";?>" placeholder="Текущая стоимость">
-     <label>Штрихкод:</label>
-     <input class="form-control" name=shtrihkod id=shtrihkod value="<?php echo "$shtrihkod";?>" size=14><button class="btn btn-primary" name=bshtr id=bshtr>Создать</button><br>     
-    <label class="checkbox">
-        <input type="checkbox" name="mode" value="1" <?php if ($mode=="1") {echo "checked";};?>> Списано
-    </label>    
-    <label class="checkbox">
-        <input type="checkbox" name="mapyet" value="1" <?php if ($mapyet=="1") {echo "checked";};?>> Есть на карте
-    </label>         
+     <input  class="form-control"  name=dtendgar id=dtendgar value="<?php echo "$dtendgar"; ?>">                 
+     <input title="Имя по бухгалтерии" class="form-control" placeholder="Имя по бухгалтерии" name=buhname value="<?php $buhname=htmlspecialchars($buhname);echo "$buhname";?>">           
+     <input title="Стоимость покупки" class="form-control" name=cost value="<?php echo "$cost";?>" placeholder="Начальная стоимость" >
+     <input title="Текущая стоимость" class="form-control" name=currentcost value="<?php echo "$currentcost";?>" placeholder="Текущая стоимость">     
+     <input title="Штрихкод" class="form-control" placeholder="Штрихкод" name=shtrihkod id=shtrihkod value="<?php echo "$shtrihkod";?>">
+     <button class="form-control" class="btn btn-primary" name=bshtr id=bshtr>Создать</button>    
+     <div class="checkbox">
+        <label>
+            <input type="checkbox" name="mode" value="1" <?php if ($mode=="1") {echo "checked";};?>> Списано
+        </label>    
+        <label>
+            <input type="checkbox" name="mapyet" value="1" <?php if ($mapyet=="1") {echo "checked";};?>> Есть на карте
+        </label>         
+    </div>     
   </div>
 </div>
 <div class="row-fluid">
   <div class="col-xs-4 col-md-4 col-sm-4">     
                                         <div id="userpic" class="userpic">
-                                            <div class="js-preview userpic__preview">
+                                            <div class="js-preview userpic__preview thumbnail">
                                                 <img src="photos/<?php echo "$photo";?>">
                                             </div>
 						<div class="btn btn-success js-fileapi-wrapper">

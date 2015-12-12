@@ -55,7 +55,7 @@ function ListEqByPlaces(oid,pid,plpid){
 			rownumbers: true,
 			autowidth: true,
 			height: "auto",
-			shrinkToFit: false, 
+//			shrinkToFit: false, 
 			pager: '#pager2',
 			sortname: 'plname',
 			viewrecords: true,
@@ -130,14 +130,30 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel){
 	jQuery('#lnkDwnldLnk')[0].click();
 	document.body.removeChild(link);
 }
+function UpdateChosen(){
+    for (var selector in config) {
+        $(selector).chosen({ width: '100%' });
+        $(selector).chosen(config[selector]);
+    };        
+};    
 
 function GetListPlaces(orgid,placesid){
        url="controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid+"&addnone=true";
-       $("#sel_pom").load(url);
+       //$("#sel_pom").load(url);
+        $.get(url, function(data){
+           $("#sel_pom").html(data);
+           UpdateChosen()
+       });
+       
 };
 
 function GetListUsers(orgid,userid){
-     $("#sel_plp").load("controller/server/common/getlistusers.php?orgid="+orgid+"&userid="+userid+"&addnone=true");
+     //$("#sel_plp").load("controller/server/common/getlistusers.php?orgid="+orgid+"&userid="+userid+"&addnone=true");
+        url="controller/server/common/getlistusers.php?orgid="+orgid+"&userid="+userid+"&addnone=true";
+        $.get(url, function(data){
+           $("#sel_plp").html(data);
+           UpdateChosen()
+        });
     };
 
 $("#sel_orgid").change(function(){
@@ -146,7 +162,8 @@ $("#sel_orgid").change(function(){
 });
 
 $("#sbt").click(function() {// обрабатываем отправку формы
-    jQuery("#list2").GridUnload("#list2");
+    //jQuery("#list2").GridUnload("#list2");
+    $.jgrid.gridUnload("#list2");
     ListEqByPlaces($("#sel_orgid :selected").val(),$("#splaces :selected").val(),$("#suserid :selected").val())
     return false;
 });

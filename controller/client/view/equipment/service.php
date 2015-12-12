@@ -96,10 +96,11 @@ $(document).ready(function() {
         }); 
     
 </script>
-
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="col-xs-12 col-md-12 col-sm-12">    
 <div id="messenger"></div>    
-
-<form id="myForm" ENCTYPE="multipart/form-data" action="controller/server/equipment/service.php?step=<?php echo "$step";?>&eqid=<?php echo "$eqid" ?>" method="post" name="form1" target="_self">
+<form role="form" id="myForm" ENCTYPE="multipart/form-data" action="controller/server/equipment/service.php?step=<?php echo "$step";?>&eqid=<?php echo "$eqid" ?>" method="post" name="form1" target="_self">
     <label>Кто ремонтирует:</label>
     <div id=sorg1>
         <select class='chosen-select' name=kntid id=kntid>
@@ -115,15 +116,15 @@ $(document).ready(function() {
      </select>   
     </div>            
     <div class="row-fluid">         
-    <div class="span6">  
+    <div class="col-xs-6 col-md-6 col-sm-6">    
         <label>Начало ремонта:</label>        
-        <input name=dtpost id=dtpost size=14 value="<?php echo "$dtpost"?>">
+        <input class="form-control" name=dtpost id=dtpost value="<?php echo "$dtpost"?>">
         <label>Конец ремонта:</label>
-        <input name=dt id=dt size=14 value="<?php echo "$dt"?>">
+        <input class="form-control" name=dt id=dt value="<?php echo "$dt"?>">
         <label>Стоимость ремонта:</label>
-        <input name=cst id=cst size=14 value="<?php echo "$cost"?>">           
+        <input class="form-control" name=cst id=cst value="<?php echo "$cost"?>">           
     </div>
-    <div class="span6"> 
+    <div class="col-xs-6 col-md-6 col-sm-6">    
         <label>Отправитель:</label>
         <div id=susers1>
         <?php
@@ -159,7 +160,7 @@ $(document).ready(function() {
         ?>
         </div>             
         <label>Статус:</label>
-        <select name=status id=status>
+        <select class="form-control" name=status id=status>
             <option value='1' <?php if ($status=='1'){echo "selected";}; ?>>В сервисе</option>
            <option value='0' <?php if ($status=='0'){echo "selected";}; ?>>Работает</option>            
            <option value='2' <?php if ($status=='2'){echo "selected";}; ?>>Есть заявка</option>            
@@ -168,13 +169,23 @@ $(document).ready(function() {
     </div>    
     </div>            
     <label>Документы:</label>
-    <input name=doc id=doc size=14 class="span6" value="<?php echo "$doc"?>">        
+    <input class="form-control" name=doc id=doc size=14 class="span6" value="<?php echo "$doc"?>">        
     <label>Комментарии:</label>
-    <textarea class="span6" name=comment><?php echo "$comment"?></textarea>
-    <div align=center><input type="submit"  name="Submit" value="Сохранить"></div>           
+    <textarea class="form-control" name=comment><?php echo "$comment"?></textarea>
+    <div align=center>
+        <input class="form-control" type="submit"  name="Submit" value="Сохранить">
+    </div>           
 </form>
-
+</div>
+</div>
+</div>    
 <script>
+function UpdateChosen(){
+    for (var selector in config) {
+        $(selector).chosen({ width: '100%' });
+        $(selector).chosen(config[selector]);
+    };        
+};    
 
     $("#dt").datepicker();
     $("#dt").datepicker( "option", "dateFormat", "dd.mm.yy");
@@ -188,7 +199,5 @@ $(document).ready(function() {
     $("#status").change(function(){       
        $("#dt").datepicker("show");
     });  
-    for (var selector in config) {
-      $(selector).chosen(config[selector]);
-    };  
+    UpdateChosen();
 </script>    

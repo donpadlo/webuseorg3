@@ -5,7 +5,8 @@
  * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
  */
 function ViewFileList(keyme){
-                $('#cloud_files').jqGrid('GridUnload');
+                //$('#cloud_files').jqGrid('GridUnload');
+                $.jgrid.gridUnload("#cloud_files");
                 jQuery("#cloud_files").jqGrid({
                      url:'controller/server/cloud/listfiles.php?cloud_dirs_id='+keyme,
                      datatype: "json",

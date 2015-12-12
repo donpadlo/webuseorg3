@@ -2,7 +2,12 @@
 function GetListTmc(placesid){
       //alert('S');
        url="controller/server/map/getlisttmc.php?placesid="+placesid+"&addnone=false";
-       $("#sel_tmc").load(url);
+       //$("#sel_tmc").load(url);
+        $.get(url, function(data){
+           $("#sel_tmc").html(data);
+           UpdateChosen()
+       });
+       
 };
 
 // при выборе помещения

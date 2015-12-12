@@ -191,14 +191,15 @@ jQuery("#list2").jqGrid('setFrozenColumns');
 
 
 $('#myTab a:first').click(function (e) {
-	jQuery("#list2").GridUnload("#list2");	
+	//jQuery("#list2").GridUnload("#list2");	
+        $.jgrid.gridUnload("#list2");
 	ListEqByPlaces("#list2","pager2");
 });
 
 $('#myTab a:last').click(function (e) {
-	jQuery("#list2").GridUnload("#list2");	
+	//jQuery("#list2").GridUnload("#list2");	
+        $.jgrid.gridUnload("#list2");
 	ListEqByMat("#list2","pager2");
 });
-
 $('#myTab a:first').tab('show'); // Выбор первой вкладки
 ListEqByPlaces("#list2","pager2");

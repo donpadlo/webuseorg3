@@ -57,59 +57,82 @@ $(document).ready(function() {
             }); 
         }); 
 </script>    
+<div class="container-fluid">
+<div class="row">            
 <div id="messenger"></div>    
-<form id="myForm" ENCTYPE="multipart/form-data" action="controller/server/equipment/equipment_form.php?step=move&id=<?php echo "$id" ?>" method="post" name="form1" target="_self">
-<div class="row-fluid"> 
-  <div class="span12">
-    <label>Организация (куда):</label>
-        <div id=sorg>
-         <select class="span12" name=sorgid id=sorgid >
-            <?php
-                $morgs=GetArrayOrgs();
-                for ($i = 0; $i < count($morgs); $i++) {           
-                    $nid=$morgs[$i]["id"];
-                    $nm=$morgs[$i]["name"];
-                    if ($nid==$user->orgid){$sl=" selected";} else {$sl="";};
-                    echo "<option value=$nid $sl>$nm</option>";
-                };
-            ?>
-         </select>
-        </div>
-        <label>Помещение:</label>
-        <div name=splaces id=splaces>идет загрузка..</div>
-        <label>Человек:</label>
-        <div name=susers id=susers>идет загрузка..</div>      
-        <label class="checkbox">
-            <input type="checkbox" id=tmcgo name=tmcgo>ТМЦ в "пути"
-        </label>
-        
-  </div>
+    <form id="myForm" ENCTYPE="multipart/form-data" action="controller/server/equipment/equipment_form.php?step=move&id=<?php echo "$id" ?>" method="post" name="form1" target="_self">
+        <div class="row-fluid"> 
+          <div class="col-xs-12 col-md-12 col-sm-12">
+              <div class="form-group">
+                <label>Организация (куда):</label>
+                <div id=sorg>
+                    <select class='chosen-select' name=sorgid id=sorgid >
+                       <?php
+                           $morgs=GetArrayOrgs();
+                           for ($i = 0; $i < count($morgs); $i++) {           
+                               $nid=$morgs[$i]["id"];
+                               $nm=$morgs[$i]["name"];
+                               if ($nid==$user->orgid){$sl=" selected";} else {$sl="";};
+                               echo "<option value=$nid $sl>$nm</option>";
+                           };
+                       ?>
+                    </select>
+                </div>
+                <label>Помещение:</label>
+                <div name=splaces id=splaces>идет загрузка..</div>
+                <label>Человек:</label>
+                <div name=susers id=susers>идет загрузка..</div>      
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id=tmcgo name=tmcgo>ТМЦ в "пути"
+                    </label>
+                </div>    
+          </div>
+          </div>    
+        </div>    
+        <div class="row-fluid">
+          <div class="col-xs-12 col-md-12 col-sm-12">
+              <div class="form-group">
+                <label>Комментарии: </label>
+                <textarea class="form-control" name=comment><?php echo "$comment";?></textarea>                
+                <input class="form-control" type="submit"  name="Submit" value="Сохранить">
+              </div>
+          </div>  
+        </div> 
+    </form>
+</div>
 </div>    
-<div class="row-fluid">
-  <div class="span12">
-    <label>Комментарии: </label>
-    <textarea class="span12" name=comment><?php echo "$comment";?></textarea>      
-  </div>
-</div    
-<div align=center><input type="submit"  name="Submit" value="Сохранить"></div> 
-</form>
 <script>
-    function GetListUsers(orgid,userid){
-     $("#susers").load("controller/server/common/getlistusers.php?orgid="+orgid+"&userid="+userid);
+    function UpdateChosen(){
+        for (var selector in config) {
+            $(selector).chosen({ width: '100%' });
+            $(selector).chosen(config[selector]);
+        };        
+    };    
+    function GetListUsers(orgid,userid){     
+        $.get("controller/server/common/getlistusers.php?orgid="+orgid+"&userid="+userid, function(data){
+           $("#susers").html(data);
+           UpdateChosen()
+       });
     };
     function GetListPlaces(orgid,placesid){
-       url="controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid;
-       $("#splaces").load(url);       
+        $.get("controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid, function(data){
+           $("#splaces").html(data);
+           UpdateChosen()
+       });
+
     };
     $("#sorgid").click(function(){
       $("#splaces").html="идет загрузка.."; // заглушка. Зачем?? каналы счас быстрые
       $("#susers").html="идет загрузка..";
       GetListPlaces($("#sorgid :selected").val(),''); // перегружаем список помещений организации
       GetListUsers($("#sorgid :selected").val(),'') // перегружаем пользователей организации
+      UpdateChosen();
     });
     
  GetListUsers(orgid,userid);
  GetListPlaces(orgid,placesid);
+ UpdateChosen();
 </script>    
 <?
 ?>

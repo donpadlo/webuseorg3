@@ -29,13 +29,11 @@ $eqid=$_GET['eqid'];
         $photo=$row["photo"];
 	};
 ?>
-<ul class="thumbnails">
-  <li class="span12">
+<div class="thumbnails">  
     <a href="#" class="thumbnail">
 <?php        
   if ($photo!="") {echo "<img src=photos/$photo>";} else 
   {echo "<img src=controller/client/themes/$cfg->theme/img/noimage.jpg>";};
 ?>        
-</a>
-  </li>  
-</ul>
+</a>  
+</div>

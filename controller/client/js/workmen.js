@@ -102,7 +102,8 @@ jQuery("#workmen").jqGrid({
    	],
         onSelectRow: function(ids) {        
          $("#photoid").load("controller/server/equipment/getphoto.php?eqid="+ids);         
-                $('#tbl_rep').jqGrid('GridUnload');
+                //$('#tbl_rep').jqGrid('GridUnload');
+                $.jgrid.gridUnload("#tbl_rep");
                 jQuery("#tbl_rep").jqGrid('setGridParam',{url:"controller/server/equipment/getrepinfo.php?eqid="+ids});              
                 jQuery("#tbl_rep").jqGrid({
                      url:'controller/server/equipment/getrepinfo.php?eqid='+ids,
@@ -181,7 +182,8 @@ jQuery("#workmen").jqGrid({
                         });         
          
         },
-	autowidth: true,		
+        autowidth: true,
+        shrinkToFit: true,		
 	height: 200,	
    	grouping:true,
    	groupingView : {
@@ -192,8 +194,9 @@ jQuery("#workmen").jqGrid({
    	pager: '#workmen_footer',
    	sortname: 'orgname',
     viewrecords: true,
-    rowNum:1000,
-    shrinkToFit: false,        
+    autowidth: true,
+    shrinkToFit: true,		    
+    rowNum:1000,    
     scroll:1,
     sortorder: "asc",
     editurl:"controller/server/tmc/workmen.php",

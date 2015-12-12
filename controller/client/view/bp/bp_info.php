@@ -30,16 +30,14 @@ $u=new Tusers;
 $u->GetById($bp->userid);
 ?>
     <div class="row-fluid">
-        <div class="span2">          
-         <ul class="thumbnails">
-          <li class="span12">
+        <div class="col-xs-2 col-md-2 col-sm-2">  
+        <div class="thumbnail">          
             <a href="#" class="thumbnail">
                 <img src="photos/<?php echo "$u->jpegphoto";?>" alt="">
             </a>
-           </li> 
-        </ul>
         </div>
-        <div class="span10">
+        </div>    
+        <div class="col-xs-10 col-md-10 col-sm-10">  
             <div class="alert alert-success">
             <h4><?php echo "$bp->title";?></h4>
             <?php echo "<strong>Пояснение: </strong>$bp->bodytxt";?>

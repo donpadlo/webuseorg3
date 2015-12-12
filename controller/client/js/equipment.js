@@ -30,7 +30,7 @@ function LoadTable() {
 				searchoptions: {dataUrl: 'controller/server/equipment/getlistgroupname.php?addnone=true'}},
 			{name: 'tmcgo', index: 'tmcgo', width: 80, search: true, stype: 'select',
 				searchoptions: {dataUrl: 'controller/server/equipment/getlisttmcgo.php?addnone=true'},
-				formatter: 'checkbox', edittype: 'checkbox', editoptions: {value: 'Yes:No'}, editable: true
+				formatter: 'checkbox', edittype: 'checkbox', editoptions: {value: 'Yes:No'}, editable: true,hiddem:true
 			},
 			{name: 'getvendorandgroup.vendorname', index: 'getvendorandgroup.vendorname', width: 60},
 			{name: 'buhname', index: 'buhname', width: 155, editable: true},
@@ -43,17 +43,17 @@ function LoadTable() {
 			{name: 'cost', index: 'cost', width: 55, editable: true, hidden: true},
 			{name: 'currentcost', index: 'currentcost', width: 55, editable: true, hidden: true},
 			{name: 'os', index: 'os', width: 35, editable: true, formatter: 'checkbox', edittype: 'checkbox',
-				editoptions: {value: 'Yes:No'}, search: false},
+				editoptions: {value: 'Yes:No'}, search: false, hidden: true},
 			{name: 'mode', index: 'equipment.mode', width: 55, editable: true, formatter: 'checkbox', edittype: 'checkbox',
-				editoptions: {value: 'Yes:No'}, search: false},
+				editoptions: {value: 'Yes:No'}, search: false, hidden: true},
 			{name: 'eqmapyet', index: 'eqmapyet', width: 55, editable: true, formatter: 'checkbox', edittype: 'checkbox',
 				editoptions: {value: 'Yes:No'}, search: false, hidden: true},
 			{name: 'comment', index: 'equipment.comment', width: 200, editable: true, edittype: 'textarea',
-				editoptions: {rows: '3', cols: '10'}, search: false},
+				editoptions: {rows: '3', cols: '10'}, search: false, hidden: true},
 			{name: 'eqrepair', hidden: true, index: 'eqrepair', width: 35, editable: true, formatter: 'checkbox', edittype: 'checkbox',
 				editoptions: {value: 'Yes:No'}, search: false},
-			{name: 'dtendgar', index: 'dtendgar', width: 55, editable: false, hidden: true, search: false},
-			{name: 'kntname', index: 'kntname', width: 55, editable: false, hidden: true, search: false},
+			{name: 'dtendgar', index: 'dtendgar', width: 55, editable: false, hidden: true, search: false, hidden: true},
+			{name: 'kntname', index: 'kntname', width: 55, editable: false, hidden: true, search: false, hidden: true},
 			{name: 'myac', width: 80, fixed: true, sortable: false, resize: false, formatter: 'actions',
 				formatoptions: {keys: true}, search: false}
 		],
@@ -144,7 +144,7 @@ function LoadTable() {
 				pager: '#rp_nav',
 				sortname: 'dt',
 				scroll: 1,
-				shrinkToFit: true,
+				//shrinkToFit: true,
 				viewrecords: true,
 				height: 200,
 				sortorder: 'desc',
@@ -208,10 +208,9 @@ function LoadTable() {
 			jQuery('#' + subgrid_table_id).remove();
 		},
 		subGrid: true,
-		multiselect: true,
-		height: 'auto',
+		multiselect: true,		
 		autowidth: true,
-		shrinkToFit: false,
+		shrinkToFit: true,
 		pager: '#pg_nav',
 		sortname: 'equipment.id',
 		rowNum: 20,
@@ -222,7 +221,7 @@ function LoadTable() {
 		editurl: '/route/controller/server/equipment/equipment.php?sorgider=' + defaultorgid,
 		caption: 'Оргтехника'
 	});
-	jQuery('#tbl_equpment').jqGrid('setGridHeight', $(window).innerHeight() / 2);
+	jQuery('#tbl_equpment').jqGrid('setGridHeight', $(window).innerHeight() / 3);
 	jQuery('#tbl_equpment').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: false});
 	jQuery('#tbl_equpment').jqGrid('bindKeys', '');
 	jQuery('#tbl_equpment').jqGrid('navGrid', '#pg_nav', {edit: false, add: false, del: false, search: false});
@@ -238,7 +237,7 @@ function LoadTable() {
 		caption: '<img src="controller/client/themes/' + theme + '/ico/computer_add.png">',
 		title: "Добавить ТМЦ",
 		onClickButton: function() {
-			$('#pg_add_edit').dialog({autoOpen: false, height: 700, width: 780, modal: true, title: 'Добавление имущества'});
+			$('#pg_add_edit').dialog({autoOpen: false, height: 600, width: 780, modal: true, title: 'Добавление имущества'});
 			$('#pg_add_edit').dialog('open');
 			$('#pg_add_edit').load('controller/client/view/equipment/equipment.php?step=add&id=');
 		}
@@ -249,7 +248,7 @@ function LoadTable() {
 		onClickButton: function() {
 			var gsr = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 			if (gsr) {
-				$('#pg_add_edit').dialog({autoOpen: false, height: 700, width: 780, modal: true, title: 'Редактирование имущества'});
+				$('#pg_add_edit').dialog({autoOpen: false, height: 600, width: 780, modal: true, title: 'Редактирование имущества'});
 				$('#pg_add_edit').dialog('open');
 				$('#pg_add_edit').load('controller/client/view/equipment/equipment.php?step=edit&id=' + gsr);
 			} else {
