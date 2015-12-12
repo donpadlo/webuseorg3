@@ -31,10 +31,10 @@ if ($action == 'install') {
     <meta name="keywords" content="учет тмц" />
     <link href="favicon.ico" type="image/ico" rel="icon" />
     <link href="favicon.ico" type="image/ico" rel="shortcut icon" />    
-    <link rel="stylesheet" type="text/css" href="controller/client/themes/bootstrap3/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="controller/client/themes/bootstrap3/css/bootstrap.min.css">         
-    <script type="text/javascript" src="controller/client/themes/bootstrap3/js/jquery-1.11.0.min.js"></script>        
-    <script type="text/javascript" src="controller/client/themes/bootstrap3/js/bootstrap.min.js"></script>    
+    <link rel="stylesheet" type="text/css" href="controller/client/themes/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="controller/client/themes/bootstrap/css/bootstrap.min.css">         
+    <script type="text/javascript" src="controller/client/themes/bootstrap/js/jquery-1.11.0.min.js"></script>        
+    <script type="text/javascript" src="controller/client/themes/bootstrap/js/bootstrap.min.js"></script>    
     <script type='text/javascript' src='js/jquery.form.js'></script>    
 </head>
 <body>   

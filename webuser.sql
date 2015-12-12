@@ -1,3 +1,44 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.1
+-- http://www.phpmyadmin.net
+--
+-- Хост: 127.0.0.1
+-- Время создания: Дек 12 2015 г., 11:37
+-- Версия сервера: 5.5.25
+-- Версия PHP: 5.3.13
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- База данных: `webuser`
+--
+
+DELIMITER $$
+--
+-- Процедуры
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetRandomId`()
+    DETERMINISTIC
+BEGIN  
+		UPDATE entropia SET cnt=cnt+1;
+		SELECT cnt FROM entropia;
+	END$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `bp_accept`
+--
+
 CREATE TABLE IF NOT EXISTS `bp_accept` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
@@ -201,13 +242,13 @@ INSERT INTO `config_common` (`id`, `nameparam`, `valueparam`) VALUES
 (74, 'modulename_workmen', '1'),
 (75, 'modulecomment_workmen', 'Менеджер по обслуживанию '),
 (76, 'modulecopy_workmen', 'Грибов Павел'),
-(77, 'modulename_news', '0'),
+(77, 'modulename_news', '1'),
 (78, 'modulecomment_news', 'Модуль новостей'),
 (79, 'modulecopy_news', 'Грибов Павел'),
-(80, 'modulename_stiknews', '0'),
+(80, 'modulename_stiknews', '1'),
 (81, 'modulecomment_stiknews', 'Закрепленные новости'),
 (82, 'modulecopy_stiknews', 'Грибов Павел'),
-(83, 'modulename_lastmoved', '0'),
+(83, 'modulename_lastmoved', '1'),
 (84, 'modulecomment_lastmoved', 'Последние перемещения ТМЦ'),
 (85, 'modulecopy_lastmoved', 'Грибов Павел'),
 (86, 'modulename_usersfaze', '0'),
@@ -265,23 +306,6 @@ CREATE TABLE IF NOT EXISTS `devices` (
   `stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `child` int(11) NOT NULL,
   `active` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `devices_snmp`
---
-
-CREATE TABLE IF NOT EXISTS `devices_snmp` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idbase` varchar(10) COLLATE utf8_bin NOT NULL,
-  `deviceid` varchar(10) COLLATE utf8_bin NOT NULL,
-  `ip` varchar(30) COLLATE utf8_bin NOT NULL,
-  `mac` varchar(30) COLLATE utf8_bin NOT NULL,
-  `port` varchar(10) COLLATE utf8_bin NOT NULL,
-  `vlan` varchar(10) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
@@ -675,7 +699,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 --
 
 INSERT INTO `news` (`id`, `dt`, `title`, `body`, `stiker`) VALUES
-(26, '2014-03-04 00:00:00', 'Учет оргтехники в WEB 3.0', '<p>Добро пожаловать!</p>\n<p>Представляю вам демо ПО для учета оргтехники в небольшой организации. Ну и плюс еще несколько "плюшек".</p>\n<p>Вход для "теста: &nbsp;логин <strong>test</strong> пароль <strong>test</strong></p>\n<p>Отредакировать пользователя <strong>test</strong> и название организации.</p>', 0);
+(26, '2015-12-12 00:00:00', 'Учет оргтехники в WEB 3.xx', '<p>Добро пожаловать!</p><p>Представляю вам демо ПО для учета оргтехники в небольшой организации. Ну и плюс еще несколько "плюшек".</p><p>Домашняя страница проекта:&nbsp;<a href="http://xn--90acbu5aj5f.xn--p1ai/?page_id=1202">http://грибовы.рф</a></p><p>Контакты: skype: pvtuning icq:207074753</p>', 0);
 
 -- --------------------------------------------------------
 
@@ -718,7 +742,7 @@ CREATE TABLE IF NOT EXISTS `org` (
 --
 
 INSERT INTO `org` (`id`, `name`, `picmap`, `active`) VALUES
-(1, 'Рога и копыта', '06716875881465578757.PNG', 1);
+(1, 'ООО Рога и Копыта', '06716875881465578757.PNG', 1);
 
 -- --------------------------------------------------------
 
@@ -907,7 +931,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `randomid`, `orgid`, `login`, `pass`, `password`, `salt`, `email`, `mode`, `lastdt`, `active`) VALUES
-(1, '534742080754244214882660638232114002258853163157700475856647', 1, 'test', 'test', 'b85c92f772b5d0efe3f98bd9898e4923e529266d', 'ae6344054c', 'test@gmail.com', 1, '2015-12-06 21:15:05', 1);
+(1, '534742080754244214882660638232114002258853163157700475856647', 1, 'admin', '1979', '706a87383246fcccdef9ca163123c615ecc6d00e', '[`az;', 'test@gmail.com', 1, '2015-12-12 11:37:11', 1);
 
 -- --------------------------------------------------------
 
@@ -1037,3 +1061,7 @@ INSERT INTO `vendor` (`id`, `name`, `comment`, `active`) VALUES
 (51, 'Western Digital', '', 1),
 (52, 'FunkWerk', '', 1),
 (53, 'Pascard Bell', '', 1);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

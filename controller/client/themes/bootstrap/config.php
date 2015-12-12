@@ -14,6 +14,8 @@ if ($user->mode==1){
                 Ваша версия программы: <?php echo "$cfg->version";?><br>
                 Актуальные версии ПО: <a href="https://github.com/donpadlo/webuseorg3/releases" target="_blank">github.com</a><br>
                 Документация: <a href="http://www.грибовы.рф/?page_id=1202" target="_blank">здесь</a>
+                </br>
+                <iframe src="https://money.yandex.ru/embed/donate.xml?account=410012866830556&amp;quickpay=donate&amp;payment-type-choice=on&amp;default-sum=50&amp;targets=%D0%A0%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&amp;target-visibility=on&amp;project-name=%D0%A3%D1%87%D0%B5%D1%82+%D0%BE%D1%80%D0%B3%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8+%D0%B8+%D0%A2%D0%9C%D0%A6+%D0%B2+%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B5&amp;project-site=http%3A%2F%2F%D0%B3%D1%80%D0%B8%D0%B1%D0%BE%D0%B2%D1%8B.%D1%80%D1%84%2F%3Fpage_id%3D1202&amp;button-text=01&amp;successURL=" width="523" height="134" frameborder="0" scrolling="no"></iframe>                
             </div>
             <form role="form" action="?content_page=config&config=save" method="post" name="form1" target="_self">                            
                 <div class="form-group">
