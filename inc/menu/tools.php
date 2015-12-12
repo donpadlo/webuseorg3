@@ -18,10 +18,12 @@ if ($md->IsActive("bprocess")==1) {
     $this->Add("tools","Мои БП","Бизнеспроцессы",3,"tools/mybp","mybp");
 }; 
 
+$md->Register("ical", "Календарь", "Грибов Павел"); 
 if ($md->IsActive("ical")==1) {
    $this->Add("tools","<img src=controller/client/themes/$cfg->theme/ico/date.png> Мой календарь","Мой календарь",3,"tools/myical","myical");
 } 
 
+$md->Register("tasks", "Задачи", "Грибов Павел"); 
 if ($md->IsActive("tasks")==1) {
     $this->Add("tools","Мои задачи","Мои задачи",3,"tools/mytasks","mytasks");
 } 
