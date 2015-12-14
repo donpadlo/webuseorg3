@@ -47,12 +47,14 @@ jQuery("#list2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : fals
 jQuery("#list2").jqGrid('navButtonAdd','#pager2',{
     caption: '<img src="controller/client/themes/' + theme + '/ico/tag.png">',
     title: "Выбор колонок",
+    buttonicon: "none",
     onClickButton : function (){
-        jQuery("#list2").jqGrid('columnChooser');
+        jQuery("#list2").jqGrid('columnChooser');        
     }
 });
 jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/client/themes/"+theme+"/ico/user_add.png'>",                              
         title: "Добавить",    
+        buttonicon: "none",
 	onClickButton:function(){
              //$("#add_edit" ).dialog( "destroy" );
             $("#add_edit").dialog({autoOpen: false,height: 380,width: 400,modal:true,title: "Добавление пользователя" });
@@ -62,6 +64,7 @@ jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/
 });        
 jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/client/themes/"+theme+"/ico/user_edit.png'>",
         title: "Изменить данные",    
+        buttonicon: "none",
 	onClickButton:function(){
 		var gsr = jQuery("#list2").jqGrid('getGridParam','selrow');
 		if(gsr){                          
@@ -74,7 +77,8 @@ jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/
 	} 
 });
 jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/client/themes/"+theme+"/ico/user_comment.png'>",
-        title: "Профиль",    
+        title: "Профиль",  
+        buttonicon: "none",
 	onClickButton:function(){
 		var gsr = jQuery("#list2").jqGrid('getGridParam','selrow');
 		if(gsr){                          
@@ -88,6 +92,7 @@ jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/
 });
 jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/client/themes/"+theme+"/ico/vcard.png'>",
         title: "Бейджик",
+        buttonicon: "none",
 	onClickButton:function(){
               var gsr = jQuery("#list2").jqGrid('getGridParam','selrow');
 		if(gsr){

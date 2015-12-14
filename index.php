@@ -23,7 +23,6 @@ if ($rez == false) {
 include_once(ROOT.'/class/sql.php'); // Класс работы с БД
 include_once(ROOT.'/class/config.php'); // Класс настроек
 include_once(ROOT.'/class/users.php'); // Класс работы с пользователями
-
 // Получаем маршрут
 if (isset($_GET['route'])) {
 	$route = $_GET['route'];
@@ -43,7 +42,7 @@ if (isset($_GET['route'])) {
 	} else {
 		die('На сервере отсутствует указанный путь');
 	}
-} else {
+} else {    
 	// Загружаем классы
 	include_once(ROOT.'/class/mod.php'); // Класс работы с модулями
 	include_once(ROOT.'/class/cconfig.php'); // Класс работы с пользовательскими настройками
@@ -76,6 +75,7 @@ if (isset($_GET['route'])) {
 	} else {
 		include_once(ROOT."/modules/$content_page.php");
 	}
+        $zz="/controller/client/themes/$cfg->theme/$content_page.php";        
 	// Загружаем главный файл темы, который разруливает что отображать на экране
 	include_once(ROOT."/controller/client/themes/$cfg->theme/index.php");
 

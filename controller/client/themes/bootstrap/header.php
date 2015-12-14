@@ -22,17 +22,18 @@
      
     <?php
     //echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/ui.jqgrid.css'>";
-    echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/jquery-ui.min.css'>";    
-    echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/jquery.mmenu.all.css'>";
-    echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/mmenu.css'>";
-    echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/ui.jqgrid-bootstrap.css'>";
-    echo "<link rel='stylesheet' href='controller/client/themes/$cfg->theme/css/chosen.css'>";
-    echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery-1.11.0.min.js'></script>"; 
-    echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery-ui.js'></script>";
-    echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/i18n/grid.locale-ru.js'></script>";    
-    echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery.jqGrid.min.js'></script>";
-    echo "<script src='js/chosen.jquery.js' type='text/javascript'></script>";
-    echo "<script src='js/jquery.mmenu.min.all.js' type='text/javascript'></script>";
+    echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/jquery-ui.min.css'>\n";    
+    echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/jquery.mmenu.all.css'>\n";
+    echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/mmenu.css'>\n";
+    if ($cfg->style=="Bootstrap"){echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/ui.jqgrid-bootstrap.css'>\n";};
+    if ($cfg->style=="Normal"){echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/ui.jqgrid.css'>\n";};
+    echo "<link rel='stylesheet' href='controller/client/themes/$cfg->theme/css/chosen.css'>\n";
+    echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery-1.11.0.min.js'></script>\n"; 
+    echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery-ui.js'></script>\n";
+    echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/i18n/grid.locale-ru.js'></script>\n";    
+    echo "<script type='text/javascript' src='controller/client/themes/$cfg->theme/js/jquery.jqGrid.min.js'></script>\n";
+    echo "<script src='js/chosen.jquery.js' type='text/javascript'></script>\n";
+    echo "<script src='js/jquery.mmenu.min.all.js' type='text/javascript'></script>\n";
     
     ?>
     <script type="text/javascript" src="controller/client/themes/<?php echo "$cfg->theme";?>/js/bootstrap.min.js"></script>    
@@ -44,11 +45,13 @@
                     defaultuserid=<?php if ($user->id!="") {echo "$user->id;\n";} else {echo "-1;\n";};?>
                     $.jgrid.defaults.width = 780;
                     $.jgrid.defaults.responsive = true;		
+<?php if ($cfg->style=="Bootstrap"){ ?>                   
                     $.jgrid.defaults.styleUI = 'Bootstrap';
                     $.jgrid.styleUI.Bootstrap.base.headerTable = "table table-bordered table-condensed";
                     $.jgrid.styleUI.Bootstrap.base.rowTable = "table table-bordered table-condensed";
                     $.jgrid.styleUI.Bootstrap.base.footerTable = "table table-bordered table-condensed";
                     $.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";                    
+<?php };?>                    
                     var config = {
                       '.chosen-select'           : {},
                       '.chosen-select-deselect'  : {allow_single_deselect:true},
