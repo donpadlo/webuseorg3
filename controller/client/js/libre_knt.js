@@ -123,6 +123,7 @@ jQuery("#list2").jqGrid('bindKeys','');
 jQuery("#list2").jqGrid('navButtonAdd','#pager2',{
     caption: "<img src='controller/client/themes/"+theme+"/ico/tag.png'>",
     title: "Выбор колонок",
+    buttonicon: 'none',
     onClickButton : function (){
         jQuery("#list2").jqGrid('columnChooser',{
             "done": function(perm) {

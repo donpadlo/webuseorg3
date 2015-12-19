@@ -155,6 +155,7 @@ function LoadTable() {
 			jQuery('#tbl_rep').jqGrid('navButtonAdd', '#rp_nav', {
 				caption: '<img src="controller/client/themes/' + theme + '/ico/computer_error.png">',
 				title: 'Отдать в ремонт ТМЦ',
+                                buttonicon: 'none',
 				onClickButton: function() {
 					var id = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 					if (id) { // если выбрана строка ТМЦ который уже в ремонте, открываем список с фильтром по этому ТМЦ
@@ -229,6 +230,7 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<img src="controller/client/themes/' + theme + '/ico/tag.png">',
 		title: 'Выбор колонок',
+                buttonicon: 'none',
 		onClickButton: function() {
 			jQuery('#tbl_equpment').jqGrid('columnChooser');
 		}
@@ -236,6 +238,7 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<img src="controller/client/themes/' + theme + '/ico/computer_add.png">',
 		title: "Добавить ТМЦ",
+                buttonicon: 'none',
 		onClickButton: function() {
 			$('#pg_add_edit').dialog({autoOpen: false, height: 600, width: 780, modal: true, title: 'Добавление имущества'});
 			$('#pg_add_edit').dialog('open');
@@ -245,6 +248,7 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<img src="controller/client/themes/' + theme + '/ico/computer_edit.png">',
 		title: 'Редактировать ТМЦ',
+                buttonicon: 'none',
 		onClickButton: function() {
 			var gsr = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 			if (gsr) {
@@ -259,6 +263,7 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<img src="controller/client/themes/' + theme + '/ico/computer_go.png">',
 		title: 'Переместить ТМЦ',
+                buttonicon: 'none',
 		onClickButton: function() {
 			var gsr = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 			if (gsr) {
@@ -273,6 +278,7 @@ function LoadTable() {
 	jQuery("#tbl_equpment").jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<img src="controller/client/themes/' + theme + '/ico/computer_error.png">',
 		title: 'Отдать в ремонт ТМЦ',
+                buttonicon: 'none',
 		onClickButton: function() {
 			var id = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 			if (id) { // если выбрана строка ТМЦ который уже в ремонте, открываем список с фильтром по этому ТМЦ
@@ -288,6 +294,7 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<img src="controller/client/themes/' + theme + '/ico/table.png">',
 		title: 'Вывести штрихкоды ТМЦ',
+                buttonicon: 'none',
 		onClickButton: function() {
 			var gsr = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 			if (gsr) {
@@ -302,6 +309,7 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<img src="controller/client/themes/' + theme + '/ico/report.png">',
 		title: 'Отчеты',
+                buttonicon: 'none',
 		onClickButton: function() {
 			newWin2 = window.open('?content_page=report_tmc', 'printWindow2');
 		}
@@ -309,6 +317,7 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<img src="controller/client/themes/' + theme + '/ico/disk.png">',
 		title: 'Экспорт XML',
+                buttonicon: 'none',
 		onClickButton: function() {
 			newWin2 = window.open('controller/server/equipment/export_xml.php', 'printWindow4');
 		}

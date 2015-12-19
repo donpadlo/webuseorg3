@@ -35,14 +35,14 @@ jQuery("#list2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : fals
 
 
 
-jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/client/themes/"+theme+"/ico/computer_add.png'>",                              
+jQuery("#list2").jqGrid('navButtonAdd','#pager2',{buttonicon: 'none',caption:"<img src='controller/client/themes/"+theme+"/ico/computer_add.png'>",                              
 	onClickButton:function(){            
             $("#add_edit").dialog({autoOpen: false,height: 280,width: 640,modal:true,title: "Добавление номенклатуры" });
             $("#add_edit" ).dialog( "open" );
             $("#add_edit").load("controller/client/view/tmc/nome_add_edit.php?step=add");	
 	} 
 });        
-jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"<img src='controller/client/themes/"+theme+"/ico/computer_edit.png'>",
+jQuery("#list2").jqGrid('navButtonAdd','#pager2',{buttonicon: 'none',caption:"<img src='controller/client/themes/"+theme+"/ico/computer_edit.png'>",
 	onClickButton:function(){
 		var gsr = jQuery("#list2").jqGrid('getGridParam','selrow');
 		if(gsr){
