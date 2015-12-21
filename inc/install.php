@@ -7,9 +7,9 @@
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-defined('INCLUDED') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
+defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-include_once(ROOT.'/inc/functions.php'); // Класс работы с БД
+include_once(WUO_ROOT.'/inc/functions.php'); // Класс работы с БД
 
 $host = _POST('host');
 $basename = _POST('basename');
@@ -25,7 +25,7 @@ if (mysqli_connect_errno()) {
 	echo "<div class='alert alert-danger'>Ошибка БД: $serr</div>";
 	die();
 }
-$handle = file_get_contents(ROOT.'/webuser.sql', 'r');
+$handle = file_get_contents(WUO_ROOT.'/webuser.sql', 'r');
 if ($handle == false) {
 	echo "<div class='alert alert-danger'>Ошибка открытия файла: webuser.sql</div>";
 	die();

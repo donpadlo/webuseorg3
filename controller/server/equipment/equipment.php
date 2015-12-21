@@ -7,7 +7,7 @@
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-defined('INCLUDED') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
+defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 if (isset($_GET['page']))       {$page = $_GET['page'];}
 if (isset($_GET['rows']))       {$limit = $_GET['rows'];}
