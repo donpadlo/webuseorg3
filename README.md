@@ -6,6 +6,13 @@
 
 Любые вопросы по skype: pvtuning или ICQ 207074753
 
+### Требования
+1. Apache 2
+  - mod_rewrite
+2. PHP 5
+  - extension=php_mysqli.dll
+3. MySQL или MariaDB
+
 ### Установка
 
 1. Запустить инсталлятор _http://адрессайта/install.php_
