@@ -33,8 +33,7 @@ nav:not(.mm-menu)
 	top: 0;
 	left: 0;
 }
-.footer.fixed
-{
+.footer.fixed {
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -53,8 +52,8 @@ nav:not(.mm-menu)
 .quickmenu{
     position:absolute;
     top:10px;
-    left:50px;
-    font-size:18px;
+    left:60px;
+    font-size: large;
     font-weight:bold;
     text-decoration:underline;
     cursor:pointer;

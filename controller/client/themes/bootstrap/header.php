@@ -71,15 +71,21 @@
 <div class="header">
         <a href="#menu"></a>             
  </div>
-<?php       
-    if (count($cfg->quickmenu)!=0){
-        echo '<div id="blob" data-placement="bottom" class="quickmenu" rel="popover">';  
+        <div id="blob" data-placement="bottom" class="quickmenu" rel="popover">
+<?php                      
         $mm="";
         for ($i=0;$i<count($cfg->quickmenu);$i++){            
             $mm=$mm.$cfg->quickmenu[$i]."</br>";
         };
-        echo '<strong>'.$cfg->sitename.'</strong><span class="caret"></span></div>';
-        echo '<script>$("#blob").popover({title:"Быстрые ссылки",delay: { "show": 500, "hide": 100 },html:true,content:"'.$mm.'"});</script>';
-    };
+?>        
+        <strong>
+            <?php echo "$cfg->sitename"; ?>
+        </strong>
+            <span class="caret"></span>
+        </div>
+        <script>
+            $("#blob").popover({title:"Быстрые ссылки",delay: { "show": 500, "hide": 100 },html:true,content:"<?php echo "$mm"; ?>"});
+        </script>
+<?php    
 };   
 ?>                        
