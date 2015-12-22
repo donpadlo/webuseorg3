@@ -7,12 +7,11 @@
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-define('INCLUDED', true);
-define('ROOT', dirname(__FILE__));
+define('WUO_ROOT', dirname(__FILE__));
 
 $action = (isset($_GET['action'])) ? $_GET['action'] : '';
 if ($action == 'install') {
-	include_once(ROOT.'/inc/install.php');
+	include_once(WUO_ROOT.'/inc/install.php');
 	die();
 }
 ?>

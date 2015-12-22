@@ -10,8 +10,6 @@ jQuery("#list2").jqGrid({
 		{name: 'myac', width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true}}
    	],
 	autowidth: true,		
-   	rowNum:10,	
-   	rowList:[10,20,30],
    	pager: '#pager2',
    	sortname: 'id',
 	scroll:1,

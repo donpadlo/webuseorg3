@@ -5,6 +5,8 @@
 //   Сергей Солодягин (solodyagin@gmail.com)
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
+
+define('WUO_ROOT', dirname(__FILE__));
 ?>
 <!DOCTYPE html>
 <html lang="ru-RU">
@@ -21,14 +23,14 @@
 </head>
 <body>
 <?php
-include_once('config.php'); // загружаем первоначальные настройки
+include_once(WUO_ROOT.'/config.php'); // загружаем первоначальные настройки
 // загружаем классы
-include_once('class/sql.php'); // загружаем классы работы с БД
-include_once('class/config.php'); // загружаем классы настроек
+include_once(WUO_ROOT.'/class/sql.php'); // загружаем классы работы с БД
+include_once(WUO_ROOT.'/class/config.php'); // загружаем классы настроек
 // загружаем все что нужно для работы движка
-include_once('inc/connect.php'); // соеденяемся с БД, получаем $mysql_base_id
-include_once('inc/config.php'); // подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once('inc/functions.php'); // загружаем функции
+include_once(WUO_ROOT.'/inc/connect.php'); // соединяемся с БД, получаем $mysql_base_id
+include_once(WUO_ROOT.'/inc/config.php'); // подгружаем настройки из БД, получаем заполненый класс $cfg
+include_once(WUO_ROOT.'/inc/functions.php'); // загружаем функции
 
 /**
  * Обёртка для запроса к базе
@@ -1113,7 +1115,7 @@ if ($cfg->version == '3.71') {
 	UpdateVer($vr, '162');
 }
 
-// Обновляем до 3.72
+// Обновляем до 3.73
 if ($cfg->version == '3.72') {
 	$vr = '3.73';
 	$log = '- добавляю поля для хеширования пароля';
@@ -1126,6 +1128,15 @@ if ($cfg->version == '3.72') {
 	$sql = "UPDATE users SET `password`=SHA1(CONCAT(SHA1(pass), salt)) WHERE `password`=''";
 	ExecSQL($log, $sql, '164.2');
 	UpdateVer($vr, '165');
+}
+
+// Обновляем до 3.74
+if ($cfg->version == '3.73') {
+	$vr = '3.74';
+	$log = '- удаляю поле pass из таблицы users';
+	$sql = 'ALTER TABLE `users` DROP COLUMN `pass`';
+	ExecSQL($log, $sql, '166');
+	UpdateVer($vr, '167');
 }
 
 echo 'Обновление закончено.<br>';
