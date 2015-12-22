@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tables>
+    <entertable name="group_param" comment="Параметры ТМЦ" key="id">
+        <reqtable name="eq_param" comment="Параметры в журнале ТМЦ" is_delete="yes" key="paramid"></reqtable>    
+    </entertable>
+</tables>
