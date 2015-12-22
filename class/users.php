@@ -1,7 +1,10 @@
 <?php
 
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 class Tusers {
@@ -10,9 +13,8 @@ class Tusers {
 	var $randomid; // случайный идентификатор (время от времени может менятся)
 	var $orgid; // принадлежность к организации
 	var $login; // логин
-	var $pass; // пароль
 	var $password; // хешированный пароль
-	var $salt; // соль для хеширования пароль
+	var $salt; // соль для хеширования пароля
 	var $email; // электронная почта
 	var $mode; // 0 - пользователь 1- админ
 	var $lastdt; // дата и время последнего посещения
@@ -78,7 +80,7 @@ class Tusers {
 	function Update() {
 		global $sqlcn;
 		$sqlcn->ExecuteSQL("UPDATE users SET orgid='$this->orgid', login='$this->login',"
-						." pass='$this->pass', `password`='$this->password', salt='$this->salt',"
+						." `password`='$this->password', salt='$this->salt',"
 						." email='$this->email', mode='$this->mode',"
 						." active='$this->active' WHERE id='$this->id'")
 				or die('Неверный запрос Tusers.Update (1): '.mysqli_error($sqlcn->idsqlconnection));
@@ -107,7 +109,6 @@ class Tusers {
 			$this->randomid = $myrow['randomid'];
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
-			$this->pass = $myrow['pass'];
 			$this->password = $myrow['password'];
 			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
@@ -131,12 +132,6 @@ class Tusers {
 	 */
 	function GetByLoginPass($login, $pass) {
 		global $sqlcn;
-		/* $result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
-		  users.id AS sid FROM users
-		  INNER JOIN users_profile ON users_profile.usersid=users.id
-		  WHERE users.login='$login' AND users.pass='$pass'")
-		  or die('Неверный запрос Tusers.GetByLoginPass: '.mysqli_error($sqlcn->idsqlconnection));
-		 */
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
 			INNER JOIN users_profile ON users_profile.usersid=users.id
@@ -147,7 +142,6 @@ class Tusers {
 			$this->randomid = $myrow['randomid'];
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
-			$this->pass = $myrow['pass'];
 			$this->password = $myrow['password'];
 			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
@@ -180,7 +174,6 @@ class Tusers {
 			$this->randomid = $myrow['randomid'];
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
-			$this->pass = $myrow['pass'];
 			$this->password = $myrow['password'];
 			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
@@ -215,7 +208,6 @@ class Tusers {
 			$this->randomid = $myrow['randomid'];
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
-			$this->pass = $myrow['pass'];
 			$this->password = $myrow['password'];
 			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
@@ -248,7 +240,6 @@ class Tusers {
 			$this->randomid = $myrow['randomid'];
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
-			$this->pass = $myrow['pass'];
 			$this->password = $myrow['password'];
 			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
@@ -262,19 +253,29 @@ class Tusers {
 
 	/**
 	 * Добавляем пользователя с текущими данными
-	 * @global type $sqlcn
+	 * @global type $sqlcn4
+	 * @param string $randomid
+	 * @param string $orgid
+	 * @param string $login
+	 * @param string $pass Открытый пароль
+	 * @param string $email
+	 * @param string $mode
 	 */
-	function Add() {
+	function Add($randomid, $orgid, $login, $pass, $email, $mode) {
 		global $sqlcn;
-		// хешируем пароль
+		$this->randomid = $randomid;
+		$this->orgid = $orgid;
+		$this->login = $login;
+		// Хешируем пароль
 		$this->salt = generateSalt();
-		$this->password = sha1(sha1($this->pass).$this->salt);
-		$sql = "INSERT INTO users (id, randomid, orgid, login, pass,password, salt,
+		$this->password = sha1(sha1($pass).$this->salt);
+		$this->email = $email;
+		$this->mode = $mode;
+		$sql = "INSERT INTO users (id, randomid, orgid, login, password, salt,
 			email, mode, lastdt, active) VALUES (NULL, '$this->randomid',"
-				." '$this->orgid', '$this->login', '$this->pass',"
+				." '$this->orgid', '$this->login', "
 				." '$this->password', '$this->salt', "
 				." '$this->email', '$this->mode', NOW(), 1)";
-                //echo "$sql!";
 		$sqlcn->ExecuteSQL($sql)
 				or die('Неверный запрос Tusers.Add (1): '.mysqli_error($sqlcn->idsqlconnection));
 		$fio = $this->fio;
@@ -319,7 +320,6 @@ class Tusers {
 			$this->randomid = $myrow['randomid'];
 			$this->orgid = $myrow['orgid'];
 			$this->login = $myrow['login'];
-			$this->pass = $myrow['pass'];
 			$this->password = $myrow['password'];
 			$this->salt = $myrow['salt'];
 			$this->email = $myrow['email'];
