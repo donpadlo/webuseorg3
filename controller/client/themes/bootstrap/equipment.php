@@ -11,7 +11,7 @@ if ($user->TestRoles('1,4,5,6')):
 <div class="container-fluid">
 	<div class="row">            
 		<div class="col-xs-12 col-md-12 col-sm-12">                 
-			<select class='chosen-select' class="form-control" name="orgs" id="orgs">
+			<select class="chosen-select" class="form-control" name="orgs" id="orgs">
 <?php
 $morgs = GetArrayOrgs(); // список активных организаций
 for ($i = 0; $i < count($morgs); $i++) {
@@ -27,7 +27,7 @@ for ($i = 0; $i < count($morgs); $i++) {
 			<div id="pg_add_edit"></div>
 			<div class="row-fluid">
 				<div class="col-xs-2 col-md-2 col-sm-2">     
-					<div id=photoid></div>
+					<div id="photoid"></div>
 				</div>
 				<div class="col-xs-10 col-md-10 col-sm-10">     
 					<table id="tbl_move"></table>
@@ -39,9 +39,6 @@ for ($i = 0; $i < count($morgs); $i++) {
 		</div>
 	</div>
 </div>
-<script>
-var route = ('<?php echo $userewrite; ?>' == '1') ? '/route/' : '?route=/';
-</script>
 <script src="controller/client/js/equipment.js"></script>
 <?php else: ?>
 <div class="alert alert-error">

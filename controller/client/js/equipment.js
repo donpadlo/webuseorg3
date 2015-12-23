@@ -52,8 +52,8 @@ function LoadTable() {
 				editoptions: {rows: '3', cols: '10'}, search: false, hidden: true},
 			{name: 'eqrepair', hidden: true, index: 'eqrepair', width: 35, editable: true, formatter: 'checkbox', edittype: 'checkbox',
 				editoptions: {value: 'Yes:No'}, search: false},
-			{name: 'dtendgar', index: 'dtendgar', width: 55, editable: false, hidden: true, search: false, hidden: true},
-			{name: 'kntname', index: 'kntname', width: 55, editable: false, hidden: true, search: false, hidden: true},
+			{name: 'dtendgar', index: 'dtendgar', width: 55, editable: false, hidden: true, search: false},
+			{name: 'kntname', index: 'kntname', width: 55, editable: false, hidden: true, search: false},
 			{name: 'myac', width: 80, fixed: true, sortable: false, resize: false, formatter: 'actions',
 				formatoptions: {keys: true}, search: false}
 		],

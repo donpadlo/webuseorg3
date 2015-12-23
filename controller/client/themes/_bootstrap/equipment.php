@@ -9,7 +9,6 @@
 if ($user->TestRoles('1,4,5,6')):
 ?>
 <div class="well">
-	Подразделение:
 	<select name="orgs" id="orgs">
 <?php
 $morgs = GetArrayOrgs(); // список активных организаций
@@ -36,9 +35,6 @@ for ($i = 0; $i < count($morgs); $i++) {
 		</div>
 	</div>
 </div>
-<script>
-var route = ('<?php echo $userewrite; ?>' == '1') ? '/route/' : '?route=/';
-</script>
 <script src="controller/client/js/equipment.js"></script>
 <?php else: ?>
 <div class="alert alert-error">
