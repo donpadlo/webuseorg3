@@ -24,7 +24,7 @@ include_once(WUO_ROOT.'/class/users.php'); // Класс работы с пол�
 
 // Получаем маршрут
 if (isset($_GET['route'])) {
-	$route = $_GET['route'];
+	$route = strtok($_GET['route'], '?');
 	if (is_file(WUO_ROOT.$route)) {
 		// Загружаем классы
 		include_once(WUO_ROOT.'/class/employees.php'); // Класс работы с профилем пользователя
