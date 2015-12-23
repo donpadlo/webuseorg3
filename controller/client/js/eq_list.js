@@ -86,9 +86,8 @@ function ListEqByPlaces(list, pager) {
 				sortorder: 'desc',
 				caption: 'История перемещений'
 			}).trigger('reloadGrid');
-			;
-			jQuery("#tbl_move").jqGrid('destroyGroupHeader');
-			jQuery("#tbl_move").jqGrid('setGroupHeaders', {
+			jQuery('#tbl_move').jqGrid('destroyGroupHeader');
+			jQuery('#tbl_move').jqGrid('setGroupHeaders', {
 				useColSpanStyle: true,
 				groupHeaders: [
 					{startColumnName: 'orgname1', numberOfColumns: 3, titleText: 'Откуда'},

@@ -64,6 +64,5 @@ if ($oper=='')
 	    $i++;
 	}
 	echo json_encode($responce);
-};
-
+}
 ?>
