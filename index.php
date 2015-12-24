@@ -37,7 +37,7 @@ if (isset($_GET['route'])) {
 	}
 	// Получаем маршрут и параметры
 	list($route, $ps) = array_pad(explode('?', $uri, 2), 2, null);
-	$PARAMS = [];
+	$PARAMS = array();
 	if ($ps) {
 		parse_str($ps, $PARAMS);
 	}
