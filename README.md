@@ -2,9 +2,15 @@
 
 Система предназначена для учёта оргтехники в небольших организациях и будет полезна в основном инженерам IT отдела, ведущими учёт без фанатизма.
 
-Домашняя страница проекта: [http://грибовы.рф/](http://xn--90acbu5aj5f.xn--p1ai/?page_id=1202)
+Домашняя страница проекта: [http://грибовы.рф/?page_id=1202](http://xn--90acbu5aj5f.xn--p1ai/?page_id=1202)
 
-Любые вопросы по skype: pvtuning или ICQ 207074753
+DEMO: [http://demo.грибовы.рф/webuseorg3-master/index.php](http://demo.xn--90acbu5aj5f.xn--p1ai/webuseorg3-master/index.php)  
+Вход: test/test  
+База обнуляется раз в час.
+
+> Любые вопросы  
+> Skype: pvtuning  
+> ICQ: 207074753
 
 ### Требования
 1. Apache 2
