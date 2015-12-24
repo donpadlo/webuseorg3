@@ -1,5 +1,4 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
 //   Грибов Павел,
@@ -7,22 +6,12 @@
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-include_once('../../../config.php'); // загружаем первоначальные настройки
+defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-// загружаем классы
-include_once('../../../class/sql.php'); // загружаем классы работы с БД
-include_once('../../../class/config.php'); // загружаем классы настроек
-include_once('../../../class/users.php'); // загружаем классы работы с пользователями
-include_once('../../../class/employees.php'); // загружаем классы работы с профилем пользователя
-
-// загружаем все что нужно для работы движка
-include_once('../../../inc/connect.php'); // соеденяемся с БД, получаем $mysql_base_id
-include_once('../../../inc/config.php'); // подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once('../../../inc/functions.php'); // загружаем функции
-include_once('../../../inc/login.php'); // загружаем функции
+// Массив $PARAMS получен в index.php
 
 // Получаем переменные, проверяем на правильность заполнения
-$step = _GET('step');
+$step = (isset($PARAMS['step'])) ? $PARAMS['step'] : '';
 $orgid = _POST('orgid');
 if ($orgid == '') {
 	$err[] = 'Не выбрана организация!';
@@ -70,7 +59,7 @@ if ($step == 'add') {
 
 if ($step == 'edit') {
 	if (count($err) == 0) {
-		$id = $_GET['id'];
+		$id = $PARAMS['id'];
 		$ps = ($pass != '') ? " password=SHA1(CONCAT(SHA1('$pass'), salt))," : '';
 		$sql = "UPDATE users SET orgid='$orgid', login='$login',$ps email='$email', mode='$mode' WHERE id='$id'";
 		$sqlcn->ExecuteSQL($sql, $cfg->base_id) or

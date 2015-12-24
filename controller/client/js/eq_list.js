@@ -122,7 +122,7 @@ function ListEqByMat(list, pager) {
 	}
 	//alert(tmp);
 	jQuery(list).jqGrid({
-		url: 'controller/server/equipment/eq_list_mat.php?curuserid=' + curuserid,
+		url: route + 'controller/server/equipment/eq_list_mat.php?curuserid=' + curuserid,
 		datatype: 'json',
 		colNames: ['Id', 'Помещение', 'Наименование', 'Группа', 'Инвентарник', 'Серийник', 'Штрихкод', 'Списан', 'ОС', 'Цена', 'Тек.стоим', 'Бух.имя'],
 		colModel: [

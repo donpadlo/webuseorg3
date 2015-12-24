@@ -1,5 +1,4 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
 //   Грибов Павел,
@@ -7,23 +6,14 @@
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-include_once('../../../config.php'); // загружаем первоначальные настройки
-// загружаем классы
-include_once('../../../class/sql.php'); // загружаем классы работы с БД
-include_once('../../../class/config.php'); // загружаем классы настроек
-include_once('../../../class/users.php'); // загружаем классы работы с пользователями
-include_once('../../../class/employees.php'); // загружаем классы работы с профилем пользователя
-// загружаем все что нужно для работы движка
-include_once('../../../inc/connect.php'); // соединяемся с БД, получаем $mysql_base_id
-include_once('../../../inc/config.php'); // подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once('../../../inc/functions.php'); // загружаем функции
-include_once('../../../inc/login.php'); // загружаем функции
+defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-$page = (isset($_GET['page'])) ? $_GET['page'] : '';
-$limit = (isset($_GET['rows'])) ? $_GET['rows'] : '';
-$sidx = (isset($_GET['sidx'])) ? $_GET['sidx'] : '';
-$sord = (isset($_GET['sord'])) ? $_GET['sord'] : '';
-$filters = (isset($_GET['filters'])) ? $_GET['filters'] : '';
+// Массив $PARAMS получен в index.php
+$page = (isset($PARAMS['page'])) ? $PARAMS['page'] : '';
+$limit = (isset($PARAMS['rows'])) ? $PARAMS['rows'] : '';
+$sidx = (isset($PARAMS['sidx'])) ? $PARAMS['sidx'] : '1';
+$sord = (isset($PARAMS['sord'])) ? $PARAMS['sord'] : '';
+$filters = (isset($PARAMS['filters'])) ? $PARAMS['filters'] : '';
 $orgid = (isset($_POST['orgid'])) ? $_POST['orgid'] : '';
 $oper = (isset($_POST['oper'])) ? $_POST['oper'] : '';
 $id = (isset($_POST['id'])) ? $_POST['id'] : '';
@@ -50,25 +40,16 @@ if ($oper == '') {
 	if ($where != '') {
 		$where = 'WHERE '.$where;
 	}
-
-	if (!$sidx) {
-		$sidx = 1;
-	}
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count, org.id AS orgid,"
 			." users.id, users.orgid, users.login, users.password, users.email,"
 			." users.mode, users.active, org.name AS orgname"
 			." FROM users INNER JOIN org ON users.orgid=org.id ".$where);
 	$row = mysqli_fetch_array($result);
 	$count = $row['count'];
-
-	if ($count > 0) {
-		$total_pages = ceil($count / $limit);
-	} else {
-		$total_pages = 0;
-	}
-	if ($page > $total_pages)
+	$total_pages = ($count > 0) ? ceil($count / $limit) : 0;
+	if ($page > $total_pages) {
 		$page = $total_pages;
-
+	}
 	$start = $limit * $page - $limit;
 	$SQL = "SELECT org.id AS orgid, users.id, users.orgid, users.login,"
 			." users.password, users.email, users.mode, users.active,"
@@ -85,12 +66,19 @@ if ($oper == '') {
 		$responce->rows[$i]['id'] = $row['id'];
 		$mode = ($row['mode'] == '1') ? 'Да' : 'Нет';
 		if ($row['active'] == '1') {
-			$responce->rows[$i]['cell'] = array('<img src="controller/client/themes/'.$cfg->theme.'/ico/accept.png">', $row['id'], $row['orgname'], $row['login'], 'скрыто', $row['email'], $mode);
+			$responce->rows[$i]['cell'] = array(
+				'<img src="controller/client/themes/'.$cfg->theme.'/ico/accept.png">',
+				$row['id'], $row['orgname'], $row['login'], 'скрыто', $row['email'], $mode
+			);
 		} else {
-			$responce->rows[$i]['cell'] = array('<img src="controller/client/themes/'.$cfg->theme.'/ico/cancel.png">', $row['id'], $row['orgname'], $row['login'], 'скрыто', $row['email'], $mode);
+			$responce->rows[$i]['cell'] = array(
+				'<img src="controller/client/themes/'.$cfg->theme.'/ico/cancel.png">',
+				$row['id'], $row['orgname'], $row['login'], 'скрыто', $row['email'], $mode
+			);
 		}
 		$i++;
 	}
+	header('Content-type: application/json');
 	echo json_encode($responce);
 }
 

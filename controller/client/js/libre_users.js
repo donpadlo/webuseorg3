@@ -1,5 +1,5 @@
 jQuery('#list2').jqGrid({
-	url: 'controller/server/users/libre_users.php?org_status=list',
+	url: route + 'controller/server/users/libre_users.php?org_status=list',
 	datatype: 'json',
 	colNames: [' ', 'Id', 'Организация', 'Логин', 'Пароль', 'E-mail', 'Админ', ''],
 	colModel: [
@@ -37,7 +37,7 @@ jQuery('#list2').jqGrid({
 	multiselect: true,
 	viewrecords: true,
 	sortorder: 'asc',
-	editurl: 'controller/server/users/libre_users.php?org_status=edit',
+	editurl: route + 'controller/server/users/libre_users.php?org_status=edit',
 	caption: 'Справочник пользователей'
 });
 jQuery('#list2').jqGrid('setGridHeight', $(window).innerHeight() / 2);

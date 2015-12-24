@@ -8,8 +8,6 @@
 
 define('WUO_ROOT', dirname(__FILE__));
 
-$time_start = microtime(true); // Засекаем время начала выполнения скрипта
-
 // Загружаем первоначальные настройки. Если не получилось - запускаем инсталлятор
 $rez = @include_once(WUO_ROOT.'/config.php');
 if ($rez == false) {
@@ -17,14 +15,33 @@ if ($rez == false) {
 	die();
 }
 
+$time_start = microtime(true); // Засекаем время начала выполнения скрипта
+
+header('Content-Type: text/html; charset=utf-8');
+
 // Загружаем классы
 include_once(WUO_ROOT.'/class/sql.php'); // Класс работы с БД
 include_once(WUO_ROOT.'/class/config.php'); // Класс настроек
 include_once(WUO_ROOT.'/class/users.php'); // Класс работы с пользователями
 
-// Получаем маршрут
+// Получаем маршрут и параметры
 if (isset($_GET['route'])) {
-	$route = strtok($_GET['route'], '?');
+	$uri = $_SERVER['REQUEST_URI'];
+	// Удаляем лишнее
+	if (strpos($uri, '/index.php?route=') === 0) {
+		$uri = substr($uri, 17);
+	} else if (strpos($uri, '/?route=') === 0) {	
+		$uri = substr($uri, 8);	
+	} else if (strpos($uri, '/route') === 0) {
+		$uri = substr($uri, 6);
+	}
+	// Получаем маршрут и параметры
+	list($route, $ps) = array_pad(explode('?', $uri, 2), 2, null);
+	$PARAMS = [];
+	if ($ps) {
+		parse_str($ps, $PARAMS);
+	}
+	// Подключаем запрашиваемый скрипт
 	if (is_file(WUO_ROOT.$route)) {
 		// Загружаем классы
 		include_once(WUO_ROOT.'/class/employees.php'); // Класс работы с профилем пользователя
