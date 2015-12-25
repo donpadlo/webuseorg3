@@ -1,12 +1,10 @@
 <?php
-
-/* 
- * (с) 2011-2015 Грибов Павел
- * http://грибовы.рф * 
- * Если исходный код найден в сети - значит лицензия GPL v.3 * 
- * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
- */
-
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
 
@@ -25,7 +23,7 @@ include_once("../../../inc/config.php");              // подгружаем н
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
 
-$astra_id=_GET('astra_id');
+$astra_id=GetDef('astra_id');
 echo '<span class="label label-success">Мониторинг НОС</span>';
 echo "<div class='alert alert-success'><ul>";
 echo "<li><a onclick='openMonurl($astra_id)'>Посмотреть</a></li>";

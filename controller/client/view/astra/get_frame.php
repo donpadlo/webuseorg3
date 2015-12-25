@@ -1,11 +1,10 @@
 <?php
-
-/* 
- * (с) 2014 Грибов Павел
- * http://грибовы.рф * 
- * Если исходный код найден в сети - значит лицензия GPL v.3 * 
- * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
- */
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
 
 include_once ("../../../../config.php");                    // загружаем первоначальные настройки
 
@@ -26,7 +25,7 @@ include_once("../../../../inc/login.php");		// логинимся
 
 echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/upload.css'>";    
 
-$frame_id=_GET("frame_id");
+$frame_id=GetDef("frame_id");
 
 $sql="SELECT * FROM astra_info where id='$frame_id'";
 $result = $sqlcn->ExecuteSQL( $sql ) or die("Не могу выбрать список серверов LanBilling!".mysqli_error($sqlcn->idsqlconnection));

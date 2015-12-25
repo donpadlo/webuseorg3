@@ -11,13 +11,13 @@ defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещае
 
 include_once(WUO_ROOT.'/inc/functions.php'); // Класс работы с БД
 
-$host = _POST('host');
-$basename = _POST('basename');
-$baseusername = _POST('baseusername');
-$passbase = _POST('passbase');
-$orgname = _POST('orgname');
-$login = _POST('login');
-$pass = _POST('pass');
+$host = PostDef('host');
+$basename = PostDef('basename');
+$baseusername = PostDef('baseusername');
+$passbase = PostDef('passbase');
+$orgname = PostDef('orgname');
+$login = PostDef('login');
+$pass = PostDef('pass');
 
 $idsqlconnection = @new mysqli($host, $baseusername, $passbase, $basename);
 if (mysqli_connect_errno()) {

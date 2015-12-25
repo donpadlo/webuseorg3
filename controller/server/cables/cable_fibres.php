@@ -1,11 +1,10 @@
 <?php
-
-/* 
- * (с) 2011-2015 Грибов Павел
- * http://грибовы.рф * 
- * Если исходный код найден в сети - значит лицензия GPL v.3 * 
- * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
- */
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
 
@@ -24,17 +23,17 @@ include_once("../../../inc/config.php");              // подгружаем н
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
 
-$oper= _POST('oper');
-$number= _POST('number');
-$color1= _POST('color1');
-$color2= _POST('color2');
-$module_id= _GET('module_id');
-$id= _POST('id');
+$oper= PostDef('oper');
+$number= PostDef('number');
+$color1= PostDef('color1');
+$color2= PostDef('color2');
+$module_id= GetDef('module_id');
+$id= PostDef('id');
 
-$page = _GET('page');
-$limit = _GET('rows');
-$sidx = _GET('sidx'); 
-$sord = _GET('sord'); 
+$page = GetDef('page');
+$limit = GetDef('rows');
+$sidx = GetDef('sidx'); 
+$sord = GetDef('sord'); 
 
 
 if ($oper==''){

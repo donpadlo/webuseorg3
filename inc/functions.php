@@ -1,8 +1,43 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
+
+/**
+ * Массив переданных скритпу параметров при загрузке его через index.php
+ * Например, index.php?route=/script.php?name=value
+ * $PARAMS['name']
+ */
+$PARAMS = array();
+
+/**
+ * Возвращает значение $_GET[$name] или $def
+ * @param string $name
+ * @param string $def
+ * @return string
+ */
+function GetDef($name, $def = '') {
+	if (isset($_GET[$name])) {
+		return $_GET[$name];
+	} else if (isset($PARAMS[$name])) {
+		return $PARAMS[$name];
+	} else {
+		return $def;
+	}
+}
+
+/**
+ * Возвращает значение $_POST[$name] или $def
+ * @param string $name
+ * @param string $def
+ * @return string
+ */
+function PostDef($name, $def = '') {
+	return (isset($_POST[$name])) ? $_POST[$name] : $def;
+}
 
 /** Проверка, а есть ли содержимое $_GET[] и присвоение пустого значения или содержимого
  * @param type $name

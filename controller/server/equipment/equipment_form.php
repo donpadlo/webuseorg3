@@ -22,10 +22,10 @@ function SendEmailByPlaces($plid, $title, $txt) {
 	}
 }
 
-$step = (isset($PARAMS['step'])) ? $PARAMS['step'] : '';
-$sorgid = (isset($_POST['sorgid'])) ? $_POST['sorgid'] : '';
-$splaces = (isset($_POST['splaces'])) ? $_POST['splaces'] : '';
-$suserid = (isset($_POST['suserid'])) ? $_POST['suserid'] : '';
+$step = GetDef('step');
+$sorgid = PostDef('sorgid');
+$splaces = PostDef('splaces');
+$suserid = PostDef('suserid');
 
 // Выполняем только при наличии у пользователя соответствующей роли
 if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
@@ -60,9 +60,9 @@ if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
 		if ($kntid == '') {
 			$err[] = 'Не выбран поставщик!';
 		}
-		$os = (isset($_POST['os'])) ? $_POST['os'] : '0';
-		$mode = (isset($_POST['mode'])) ? $_POST['mode'] : '0';
-		$mapyet = (isset($_POST['mapyet'])) ? $_POST['mapyet'] : '0';
+		$os = PostDef('os', '0');
+		$mode = PostDef('mode', '0');
+		$mapyet = PostDef('mapyet', '0');
 		$buhname = $_POST['buhname'];
 		$sernum = $_POST['sernum'];
 		$invnum = $_POST['invnum'];
@@ -110,7 +110,7 @@ if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
 
 	if ($step == 'edit') {
 		if (count($err) == 0) {
-			$id = $PARAMS['id'];
+			$id = GetDef('id');
 			$buhname = mysqli_real_escape_string($sqlcn->idsqlconnection, $buhname);
 			$sql = "UPDATE equipment SET usersid='$suserid', nomeid='$snomeid', buhname='$buhname',
 				datepost='$dtpost', cost='$cost', currentcost='$currentcost', sernum='$sernum', invnum='$invnum',
@@ -123,7 +123,7 @@ if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
 
 	if ($step == 'move') {
 		if (count($err) == 0) {
-			$id = $PARAMS['id'];
+			$id = GetDef('id');
 			$etmc = new Tequipment;
 			$etmc->GetById($id);
 			$sql = "UPDATE equipment SET tmcgo='$tmcgo', mapmoved=1, orgid='$sorgid',

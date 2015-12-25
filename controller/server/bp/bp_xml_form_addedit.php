@@ -1,7 +1,9 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
@@ -36,15 +38,15 @@ function Send_mail_BP_userlist($randomid,$title,$txt){
 };
 
 
-$step=_GET("step");
-$id=_GET("id");
+$step=GetDef("step");
+$id=GetDef("id");
 
-$title=_POST("title");
+$title=PostDef("title");
 if ($title==""){$err[]="Нет заголовка!";};  	        
-$bodytxt=_POST("bodytxt");
+$bodytxt=PostDef("bodytxt");
 if ($bodytxt==""){$err[]="Нет пояснения!";};  
-$status=_POST("status");
-$bpshema=_POST("bpshema");                
+$status=PostDef("status");
+$bpshema=PostDef("bpshema");                
 
 // Добавляем родимую
 if ($step=="add") {

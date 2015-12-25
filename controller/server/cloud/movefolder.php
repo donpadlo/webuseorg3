@@ -1,11 +1,10 @@
 <?php
-
-/* 
- * (с) 2014 Грибов Павел
- * http://грибовы.рф * 
- * Если исходный код найден в сети - значит лицензия GPL v.3 * 
- * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
- */
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
 
@@ -24,8 +23,8 @@ include_once("../../../inc/config.php");              // подгружаем н
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
 
-$nodekey=_GET('nodekey'); 
-$srnodekey=_GET('srnodekey'); 
+$nodekey=GetDef('nodekey'); 
+$srnodekey=GetDef('srnodekey'); 
 
 $sql="UPDATE cloud_dirs SET parent='$nodekey' where id='$srnodekey'";
 $result3 = $sqlcn->ExecuteSQL($sql) or die("Не могу обновить терево папок!".mysqli_error($sqlcn->idsqlconnection));        

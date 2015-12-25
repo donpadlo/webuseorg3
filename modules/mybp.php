@@ -1,14 +1,16 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 //include_once("class/mod.php");                  // класс работы с модулями
 
- $bp_xml_id = _GET('bp_xml_id');
- $step = _POST('sub');
- $comment = _POST('comment');
+ $bp_xml_id = GetDef('bp_xml_id');
+ $step = PostDef('sub');
+ $comment = PostDef('comment');
   // таки двигаем процесс по пользователю
  if ($bp_xml_id!=""){
     $SQL="SELECT * FROM bp_xml_userlist WHERE id='$bp_xml_id'";    

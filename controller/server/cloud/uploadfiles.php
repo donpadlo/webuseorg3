@@ -1,55 +1,44 @@
 <?php
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
 
-/* 
- * (с) 2014 Грибов Павел
- * http://грибовы.рф * 
- * Если исходный код найден в сети - значит лицензия GPL v.3 * 
- * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
- */
+defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-include_once ("../../../config.php");                    // загружаем первоначальные настройки
+$dis = array('.htaccess'); // Запрещённые для загрузки файлы
 
-// загружаем классы
+$selectedkey = $_POST['selectedkey'];
+$uploaddir = WUO_ROOT.'/files/';
 
-include_once("../../../class/sql.php");               // загружаем классы работы с БД
-include_once("../../../class/config.php");		// загружаем классы настроек
-include_once("../../../class/users.php");		// загружаем классы работы с пользователями
-include_once("../../../class/employees.php");		// загружаем классы работы с профилем пользователя
+$userfile_name = basename($_FILES['filedata']['name']);
+if (in_array($userfile_name, $dis)) {
+	$rs = array('msg' => 'error');	
+} else {
+	$orig_file = $_FILES['filedata']['name'];
+	$len = strlen($userfile_name);
+	//$ext_file = substr($userfile_name, $len - 4, $len);
+	$userfile_name = GetRandomId(5).$userfile_name;
+	$uploadfile = $uploaddir.$userfile_name;
 
+	$sr = $_FILES['filedata']['tmp_name'];
+	$dest = $uploadfile;
 
-// загружаем все что нужно для работы движка
+	$res = move_uploaded_file($sr, $dest);
+	if ($res != false) {
+		$rs = array('msg' => "$userfile_name");
+		if ($selectedkey != '') {
+			$SQL = "INSERT INTO cloud_files (id, cloud_dirs_id, title, filename, dt, sz)
+				VALUES (null, '$selectedkey', '$orig_file', '$userfile_name', NOW(), 0)";
+			$sqlcn->ExecuteSQL($SQL) or
+					die('Не могу добавить файл! '.mysqli_error($sqlcn->idsqlconnection));
+		}
+	} else {
+		$rs = array('msg' => 'error');
+	}
+}
 
-include_once("../../../inc/connect.php");		// соеденяемся с БД, получаем $mysql_base_id
-include_once("../../../inc/config.php");              // подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once("../../../inc/functions.php");		// загружаем функции
-include_once("../../../inc/login.php");		// загружаем функции
-
-$selectedkey=$_POST['selectedkey'];
-$uploaddir = '../../../files/';
-
-$userfile_name=basename($_FILES['filedata']['name']);
-//$sr=$userfile_name;
-$orig_file=$_FILES['filedata']['name'];
-$len=strlen($userfile_name);
-$ext_file=substr($userfile_name,$len-4,$len);
-$tmp=GetRandomId(5);
-$userfile_name=$tmp.$userfile_name;
-$uploadfile = $uploaddir.$userfile_name;
-
-$sr=$_FILES['filedata']['tmp_name'];
-$dest=$uploadfile;
-
-$res=move_uploaded_file($sr,$dest);
-//echo "$sr,$dest,!$res";
-if ($res!=false){
-     //echo "$userfile_name";
-     //echo "$geteqid!";
-        $rs = array("msg" => "$userfile_name");    
-        if ($selectedkey!=""){
-     	$SQL = "INSERT INTO cloud_files (id,cloud_dirs_id,title,filename,dt,sz) VALUES (null,'$selectedkey','$orig_file','$userfile_name',now(),0)";
-	$result =$sqlcn->ExecuteSQL($SQL) or die("Не могу добавитьфайл!".mysqli_error($sqlcn->idsqlconnection));
-        };
-     } else {        $rs = array("msg" => 'error');    };
+header('Content-type: application/json');
 echo json_encode($rs);
- ?>
-

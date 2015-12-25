@@ -35,7 +35,7 @@ function ViewFileList(keyme){
 };
 
 $('#simple-btn').fileapi({
-                        url: 'controller/server/cloud/uploadfiles.php',
+                        url: route + 'controller/server/cloud/uploadfiles.php',
                         data: {'geteqid':0},
                         multiple: true,
                         maxSize: 20 * FileAPI.MB,

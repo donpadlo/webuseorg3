@@ -1,7 +1,9 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 include_once ("../../../../config.php");                    // загружаем первоначальные настройки
@@ -22,9 +24,9 @@ include_once("../../../../inc/config.php");              // подгружаем
 include_once("../../../../inc/functions.php");		// загружаем функции
 include_once("../../../../inc/login.php");		// логинимся
 
- $step=_GET('mode');
+ $step=GetDef('mode');
  $randomid=GetRandomId(60);
- $mybpid=_GET('mybpid');
+ $mybpid=GetDef('mybpid');
  $result = $sqlcn->ExecuteSQL("SELECT * FROM bp_xml_userlist WHERE id='$mybpid'");
  while ($myrow = mysqli_fetch_array($result)){
   $bpid=$myrow['bpid'];   

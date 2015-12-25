@@ -1,7 +1,9 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
@@ -21,15 +23,15 @@ include_once("../../../inc/config.php");              // подгружаем н
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
 
-$page = _GET('page');
-$limit = _GET('rows');
-$sidx = _GET('sidx'); 
-$sord = _GET('sord'); 
-$oper= _POST('oper');
-$groupid = _GET('groupid');
-if ($groupid=="") {$groupid = _POST('groupid');};
-$id = _POST('id');
-$name= _POST('name');
+$page = GetDef('page');
+$limit = GetDef('rows');
+$sidx = GetDef('sidx'); 
+$sord = GetDef('sord'); 
+$oper= PostDef('oper');
+$groupid = GetDef('groupid');
+if ($groupid=="") {$groupid = PostDef('groupid');};
+$id = PostDef('id');
+$name= PostDef('name');
 // если выбрана группа, то обрабатываем, иначе ничего
 //echo "!$groupid!";
 if ($oper=='')

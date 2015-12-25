@@ -25,17 +25,17 @@ include_once("../../../inc/functions.php");		// загружаем функци�
 include_once("../../../inc/login.php");		// загружаем функции
 
 
-$page = _GET('page');
-$limit = _GET('rows');
-$sidx = _GET('sidx'); 
-$sord = _GET('sord'); 
-$oper= _POST('oper');
-$id = _POST('id');
-$sname=_POST('sname');
-$host=_POST('host');
-$basename=_POST('basename');
-$username=_POST('username');
-$pass=_POST('pass');
+$page = GetDef('page');
+$limit = GetDef('rows');
+$sidx = GetDef('sidx'); 
+$sord = GetDef('sord'); 
+$oper= PostDef('oper');
+$id = PostDef('id');
+$sname=PostDef('sname');
+$host=PostDef('host');
+$basename=PostDef('basename');
+$username=PostDef('username');
+$pass=PostDef('pass');
 
 if ($oper==''){
     //создадим структуру модуля..

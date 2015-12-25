@@ -9,13 +9,12 @@
 
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-// Массив $PARAMS получен в index.php
-if (isset($PARAMS['page']))       {$page = $PARAMS['page'];}
-if (isset($PARAMS['rows']))       {$limit = $PARAMS['rows'];}
-$sidx = (isset($PARAMS['sidx'])) ? $PARAMS['sidx'] : '1';
-if (isset($PARAMS['sord']))       {$sord = $PARAMS['sord'];}
-$oper = (isset($_POST['oper'])) ? $oper = $_POST['oper'] : '';
-$sorgider = (isset($PARAMS['sorgider'])) ? $PARAMS['sorgider'] : $cfg->defaultorgid;
+$page = GetDef('page');
+$limit = GetDef('rows');
+$sidx = GetDef('sidx', '1');
+$sord = GetDef('sord');
+$oper = PostDef('oper');
+$sorgider = GetDef('sorgider', $cfg->defaultorgid);
 if (isset($_POST['id']))        {$id = $_POST['id'];}
 if (isset($_POST['ip']))        {$ip = $_POST['ip'];}
 if (isset($_POST['name']))      {$name = $_POST['name'];}
@@ -30,14 +29,14 @@ if (isset($_POST['os']))        {$os = $_POST['os'];}
 if (isset($_POST['tmcgo']))        {$tmcgo = $_POST['tmcgo'];}
 if (isset($_POST['mode']))      {$mode = $_POST['mode'];}
 if (isset($_POST['mapyet']))    {$mapyet = $_POST['mapyet'];}
-$mapyet = (isset($_POST['eqmapyet'])) ? $_POST['eqmapyet'] : '';
+$mapyet = PostDef('eqmapyet');
 $orgid = $cfg->defaultorgid;
 
 /////////////////////////////
 // вычисляем фильтр
 /////////////////////////////
 // получаем наложенные поисковые фильтры
-$filters = (isset($PARAMS['filters'])) ? $PARAMS['filters'] : '';
+$filters = GetDef('filters');
 $flt = json_decode($filters, true);
 $cnt = count($flt['rules']);
 $where = '';

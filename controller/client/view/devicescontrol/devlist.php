@@ -1,7 +1,9 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 include_once ("../../../../config.php");                    // загружаем первоначальные настройки
@@ -22,7 +24,7 @@ include_once("../../../../inc/functions.php");		// загружаем функц
 include_once("../../../../inc/login.php");		// логинимся
 include_once("../../../../inc/lbfunc.php");		// загружаем функции
 
-$devid=_GET("devid");
+$devid=GetDef("devid");
 
 $SQL = "SELECT id,dname,command,bcolor FROM devnames WHERE devid='$devid' ";
 $result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу выбрать список устройств!".mysqli_error($sqlcn->idsqlconnection));

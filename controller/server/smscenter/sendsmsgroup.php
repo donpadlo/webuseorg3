@@ -1,3 +1,11 @@
+<?php
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
+?>
 </br>
 <label>Результат отправки:</label>
 </br>
@@ -30,9 +38,9 @@ $sms=new SmsAgent;
 $sms->Login();
 
 
-$ids = _POST('ids');
-$txtsms = _POST('txtsms');
-$billingid = _POST('billingid');
+$ids = PostDef('ids');
+$txtsms = PostDef('txtsms');
+$billingid = PostDef('billingid');
 $sms->sender=GetSMSSender($billingid,$sms->sender);
 
 $idmass=explode(";",$ids);

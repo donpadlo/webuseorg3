@@ -8,27 +8,22 @@
 
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-// Массив $PARAMS получен в index.php
-
 // Получаем переменные, проверяем на правильность заполнения
-$step = (isset($PARAMS['step'])) ? $PARAMS['step'] : '';
-$orgid = _POST('orgid');
+$step = GetDef('step');
+$orgid = PostDef('orgid');
 if ($orgid == '') {
 	$err[] = 'Не выбрана организация!';
 }
-$login = _POST('login');
+$login = PostDef('login');
 if ($login == '') {
 	$err[] = 'Не задан логин!';
 }
-$pass = _POST('pass');
-if ($pass == '' && $step == 'add') { // пароль не может быть пустым при добавлении пользователя
-	$err[] = 'Не задан пароль!';
-}
-$email = _POST('email');
+$pass = PostDef('pass');
+$email = PostDef('email');
 if ($email == '') {
 	$err[] = 'Не задан E-mail!';
 }
-$mode = _POST('mode');
+$mode = PostDef('mode');
 if ($mode == '') {
 	$err[] = 'Не задан режим!';
 }
@@ -37,6 +32,9 @@ if (!preg_match('/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9\._-]+\.[a-zA-Z]{2,4}$/', $email))
 }
 
 if ($step == 'add') {
+	if ($pass == '') { // пароль не может быть пустым при добавлении пользователя
+		$err[] = 'Не задан пароль!';
+	}
 	if (DoubleLogin($login) != 0) {
 		$err[] = 'Такой логин уже есть в базе!';
 	}
@@ -59,7 +57,7 @@ if ($step == 'add') {
 
 if ($step == 'edit') {
 	if (count($err) == 0) {
-		$id = $PARAMS['id'];
+		$id = GetDef('id');
 		$ps = ($pass != '') ? " password=SHA1(CONCAT(SHA1('$pass'), salt))," : '';
 		$sql = "UPDATE users SET orgid='$orgid', login='$login',$ps email='$email', mode='$mode' WHERE id='$id'";
 		$sqlcn->ExecuteSQL($sql, $cfg->base_id) or

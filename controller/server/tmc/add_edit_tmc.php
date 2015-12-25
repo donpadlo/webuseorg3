@@ -1,7 +1,9 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
@@ -21,16 +23,16 @@ include_once("../../../inc/config.php");              // подгружаем н
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
 
-$step=_GET("step");
-$id = _GET('id');
-$name= _POST('name');
-$comment= _POST('comment');
+$step=GetDef("step");
+$id = GetDef('id');
+$name= PostDef('name');
+$comment= PostDef('comment');
 
-    $groupid=_POST("groupid");
+    $groupid=PostDef("groupid");
     if ($groupid==""){$err[]="Не выбрана группа!";};
-    $vendorid=_POST("vendorid");
+    $vendorid=PostDef("vendorid");
     if ($vendorid==""){$err[]="Не задан производитель!";};
-    $namenome=_POST("namenome");
+    $namenome=PostDef("namenome");
     if ($namenome==""){$err[]="Не задано наименование!";};
 
 if (count($err)==0){               

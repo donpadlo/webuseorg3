@@ -8,20 +8,21 @@
 
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-// Массив $PARAMS получен в index.php
-$page = (isset($PARAMS['page'])) ? $PARAMS['page'] : '';
-$limit = (isset($PARAMS['rows'])) ? $PARAMS['rows'] : '';
-$sidx = (isset($PARAMS['sidx'])) ? $PARAMS['sidx'] : '1';
-$sord = (isset($PARAMS['sord'])) ? $PARAMS['sord'] : '';
-$oper = _POST('oper');
-$curuserid = (isset($PARAMS['curuserid'])) ? $PARAMS['curuserid'] : '';
-$id = _POST('id');
+$page = GetDef('page');
+$limit = GetDef('rows');
+$sidx = GetDef('sidx', '1');
+$sord = GetDef('sord');
+$oper = PostDef('oper');
+$curuserid = GetDef('curuserid');
+$id = PostDef('id');
 
 if ($oper == '') {
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count, name as grname, res2.* FROM group_nome
 		INNER JOIN (SELECT places.name as plname, res.* FROM places INNER JOIN(
 		SELECT name AS namenome, nome.groupid as grpid, eq.*  FROM nome INNER JOIN (
-		SELECT equipment.id AS eqid, equipment.placesid AS plid, equipment.nomeid AS nid, equipment.buhname AS bn, equipment.cost AS cs, equipment.currentcost AS curc, equipment.invnum, equipment.sernum, equipment.shtrihkod, equipment.mode, equipment.os FROM equipment INNER JOIN (
+		SELECT equipment.id AS eqid, equipment.placesid AS plid, equipment.nomeid AS nid,
+		equipment.buhname AS bn, equipment.cost AS cs, equipment.currentcost AS curc, equipment.invnum,
+		equipment.sernum, equipment.shtrihkod, equipment.mode, equipment.os FROM equipment INNER JOIN (
 		SELECT placesid FROM places_users WHERE userid='$curuserid') AS pl ON pl.placesid=equipment.placesid
 		WHERE equipment.active=1)
 		AS eq ON nome.id=eq.nid)
@@ -36,11 +37,14 @@ if ($oper == '') {
 	$SQL = "SELECT name as grname,res2.* FROM group_nome
 		INNER JOIN (SELECT places.name as plname, res.* FROM places INNER JOIN (
 		SELECT name AS namenome, nome.groupid as grpid, eq.*  FROM nome INNER JOIN (
-		SELECT equipment.id AS eqid, equipment.placesid AS plid, equipment.nomeid AS nid, equipment.buhname AS bn, equipment.cost AS cs, equipment.currentcost AS curc, equipment.invnum, equipment.sernum, equipment.shtrihkod, equipment.mode, equipment.os FROM equipment INNER JOIN (
+		SELECT equipment.id AS eqid, equipment.placesid AS plid, equipment.nomeid AS nid,
+		equipment.buhname AS bn, equipment.cost AS cs, equipment.currentcost AS curc,
+		equipment.invnum, equipment.sernum, equipment.shtrihkod, equipment.mode,
+		equipment.os FROM equipment INNER JOIN (
 		SELECT placesid FROM places_users WHERE userid='$curuserid') AS pl ON pl.placesid=equipment.placesid
 		WHERE equipment.active=1)
 		AS eq ON nome.id=eq.nid)
-		AS res ON places.id=res.plid ORDER BY $sidx $sord LIMIT $start , $limit)  AS res2 ON group_nome.id=res2.grpid";
+		AS res ON places.id=res.plid ORDER BY $sidx $sord LIMIT $start, $limit) AS res2 ON group_nome.id=res2.grpid";
 	$result = $sqlcn->ExecuteSQL($SQL)
 			or die('Не могу выбрать сформировать список по оргтехнике/помещениям/пользователю!'.
 					mysqli_error($sqlcn->idsqlconnection));

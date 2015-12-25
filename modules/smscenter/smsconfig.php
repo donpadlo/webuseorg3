@@ -1,8 +1,15 @@
 <?php
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
+
 if (isset($_GET["config"])=="save"){
-    $loginsms=_POST("loginsms");
-    $passsms=_POST("passsms");   
-    $smsdiffres=_POST("smsdiffres");   
+    $loginsms=PostDef("loginsms");
+    $passsms=PostDef("passsms");   
+    $smsdiffres=PostDef("smsdiffres");   
     $result = $sqlcn->ExecuteSQL("SELECT * FROM config_common WHERE nameparam ='smstowerlogin'");        
     $row = mysqli_fetch_array($result);
     $cnt=count($row);

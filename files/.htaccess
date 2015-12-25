@@ -1,0 +1,9 @@
+Options All -ExecCGI -Indexes -Includes FollowSymLinks
+
+#php_flag engine off
+
+RemoveHandler .php .cgi .pl .fcgi .fpl .phtml .shtml .php2 .php3 .php4 .php5 .asp .jsp
+AddType application/x-httpd-php-source .php .cgi .pl .fcgi .fpl .phtml .shtml .php2 .php3 .php4 .php5 .asp .jsp
+
+RemoveHandler .htm .html
+AddType application/x-httpd-php-source .htm .html

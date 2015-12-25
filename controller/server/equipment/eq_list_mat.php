@@ -8,14 +8,13 @@
 
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-// Массив $PARAMS получен в index.php
-$page = (isset($PARAMS['page'])) ? $PARAMS['page'] : '';
-$limit = (isset($PARAMS['rows'])) ? $PARAMS['rows'] : '';
-$sidx = (isset($PARAMS['sidx'])) ? $PARAMS['sidx'] : '1';
-$sord = (isset($PARAMS['sord'])) ? $PARAMS['sord'] : '';
-$oper = _POST('oper');
-$curuserid = (isset($PARAMS['curuserid'])) ? $PARAMS['curuserid'] : '';
-$id = _POST('id');
+$page = GetDef('page');
+$limit = GetDef('rows');
+$sidx = GetDef('sidx', '1');
+$sord = GetDef('sord');
+$oper = PostDef('oper');
+$curuserid = GetDef('curuserid');
+$id = PostDef('id');
 
 if ($oper == '') {
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count, name as grname, res2.* FROM group_nome
@@ -53,7 +52,10 @@ if ($oper == '') {
 	$i = 0;
 	while ($row = mysqli_fetch_array($result)) {
 		$responce->rows[$i]['id'] = $row['eqid'];
-		$responce->rows[$i]['cell'] = array($row['eqid'], $row['plname'], $row['namenome'], $row['grname'], $row['invnum'], $row['sernum'], $row['shtrihkod'], $row['mode'], $row['os'], $row['cs'], $row['curc'], $row['bn']);
+		$responce->rows[$i]['cell'] = array($row['eqid'], $row['plname'],
+			$row['namenome'], $row['grname'], $row['invnum'], $row['sernum'],
+			$row['shtrihkod'], $row['mode'], $row['os'], $row['cs'],
+			$row['curc'], $row['bn']);
 		$i++;
 	}
 	header('Content-type: application/json');

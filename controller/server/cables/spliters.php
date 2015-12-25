@@ -1,11 +1,10 @@
 <?php
-
-/* 
- * (с) 2011-2015 Грибов Павел
- * http://грибовы.рф * 
- * Если исходный код найден в сети - значит лицензия GPL v.3 * 
- * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
- */
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
 
@@ -24,15 +23,15 @@ include_once("../../../inc/config.php");              // подгружаем н
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
 
-$oper= _POST('oper');
-$name= _POST('name');
-$exitcount= _POST('exitcount');
-$id= _POST('id');
+$oper= PostDef('oper');
+$name= PostDef('name');
+$exitcount= PostDef('exitcount');
+$id= PostDef('id');
 
-$page = _GET('page');
-$limit = _GET('rows');
-$sidx = _GET('sidx'); 
-$sord = _GET('sord'); 
+$page = GetDef('page');
+$limit = GetDef('rows');
+$sidx = GetDef('sidx'); 
+$sord = GetDef('sord'); 
 
 
 if ($oper==''){

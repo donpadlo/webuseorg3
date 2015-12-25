@@ -1,11 +1,10 @@
 <?php
-
-/* 
- * (с) 2011-2015 Грибов Павел
- * http://грибовы.рф * 
- * Если исходный код найден в сети - значит лицензия GPL v.3 * 
- * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
- */
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
 
@@ -24,7 +23,7 @@ include_once("../../../inc/config.php");              // подгружаем н
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
 
-$id=_GET("astra_id");
+$id=GetDef("astra_id");
 $sql="select INET_NTOA(ip) as ip from astra_servers where id=$id";
 $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать список страниц!".mysqli_error($sqlcn->idsqlconnection));            
 $ip="localhost";

@@ -1,7 +1,9 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
@@ -28,7 +30,7 @@ if (isset($_GET["sidx"]))       {$sidx = $_GET['sidx']; }   else {$sidx="";};
 if (isset($_GET["sord"]))       {$sord = $_GET['sord']; }   else {$sord="";};
 if (isset($_POST["oper"]))      {$oper= $_POST['oper'];}    else {$oper="";};
 
-$nome_group=_GET("nome_group");
+$nome_group=GetDef("nome_group");
 include_once("config.php");  
 
 function GetData($idc, $txt){

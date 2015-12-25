@@ -1,7 +1,9 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
@@ -22,9 +24,9 @@ include_once("../../../inc/functions.php");		// загружаем функци�
 include_once("../../../inc/login.php");		// загружаем функции
 
 
-$userid=_GET('userid');
-$addnone=_GET('addnone');
-$orgid=_GET('orgid');
+$userid=GetDef('userid');
+$addnone=GetDef('addnone');
+$orgid=GetDef('orgid');
 
     $SQL = "SELECT * FROM users WHERE active=1 and orgid='$orgid'  ORDER BY login";
     $result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу выбрать список пользователей!".mysqli_error($sqlcn->idsqlconnection));

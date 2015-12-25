@@ -8,19 +8,18 @@
 
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-// Массив $PARAMS получен в index.php
-$page = (isset($PARAMS['page'])) ? $PARAMS['page'] : '';
-$limit = (isset($PARAMS['rows'])) ? $PARAMS['rows'] : '';
-$sidx = (isset($PARAMS['sidx'])) ? $PARAMS['sidx'] : '1';
-$sord = (isset($PARAMS['sord'])) ? $PARAMS['sord'] : '';
-$filters = (isset($PARAMS['filters'])) ? $PARAMS['filters'] : '';
-$orgid = (isset($_POST['orgid'])) ? $_POST['orgid'] : '';
-$oper = (isset($_POST['oper'])) ? $_POST['oper'] : '';
-$id = (isset($_POST['id'])) ? $_POST['id'] : '';
-$login = (isset($_POST['login'])) ? $_POST['login'] : '';
-$pass = (isset($_POST['pass'])) ? $_POST['pass'] : '';
-$email = (isset($_POST['email'])) ? $_POST['email'] : '';
-$mode = (isset($_POST['mode'])) ? $_POST['mode'] : '';
+$page = GetDef('page');
+$limit = GetDef('rows');
+$sidx = GetDef('sidx', '1');
+$sord = GetDef('sord');
+$filters = GetDef('filters');
+$orgid = PostDef('orgid');
+$oper = PostDef('oper');
+$id = PostDef('id');
+$login = PostDef('login');
+$pass = PostDef('pass');
+$email = PostDef('email');
+$mode = PostDef('mode');
 
 if ($oper == '') {
 	$flt = json_decode($filters, true);
