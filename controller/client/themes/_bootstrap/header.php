@@ -49,7 +49,7 @@ echo "<script src='js/docsupport/prism.js' charset='utf-8'></script>";
 	defaultorgid = <?php echo $cfg->defaultorgid; ?>;
 	defaultuserid = <?php echo $user->id; ?>;
 	theme = '<?php echo $cfg->theme; ?>';
-	route = '<?php echo ($userewrite == 1) ? '/route/' : '?route=/'; ?>';
+	route = '<?php echo ($userewrite == 1) ? '/route/' : '/?route=/'; ?>';
 
 	var config = {
 		'.chosen-select'           : {},

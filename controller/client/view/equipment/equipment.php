@@ -1,7 +1,9 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 include_once ("../../../../config.php");                    // загружаем первоначальные настройки
@@ -147,7 +149,7 @@ if ($step=="edit"){
 <div class="container-fluid">
 <div class="row">            
 <div id="messenger"></div>    
-<form role="form" id="myForm" ENCTYPE="multipart/form-data" action="controller/server/equipment/equipment_form.php?step=<?php echo "$step&id=$id"; ?>" method="post" name="form1" target="_self">
+<form role="form" id="myForm" enctype="multipart/form-data" action="/?route=/controller/server/equipment/equipment_form.php?step=<?php echo "$step&id=$id"; ?>" method="post" name="form1" target="_self">
   <div class="row-fluid">
   <div class="col-xs-4 col-md-4 col-sm-4">     
   <div class="form-group">      

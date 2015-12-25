@@ -30,8 +30,8 @@ if (isset($_GET['route'])) {
 	// Удаляем лишнее
 	if (strpos($uri, '/index.php?route=') === 0) {
 		$uri = substr($uri, 17);
-	} else if (strpos($uri, '/?route=') === 0) {	
-		$uri = substr($uri, 8);	
+	} else if (strpos($uri, '/?route=') === 0) {
+		$uri = substr($uri, 8);
 	} else if (strpos($uri, '/route') === 0) {
 		$uri = substr($uri, 6);
 	}
@@ -56,9 +56,9 @@ if (isset($_GET['route'])) {
 		}
 		include_once(WUO_ROOT.$route);
 	} else {
-		die('На сервере отсутствует указанный путь');
+		die("На сервере отсутствует указанный путь '$route'");
 	}
-} else {    
+} else {
 	// Загружаем классы
 	include_once(WUO_ROOT.'/class/mod.php'); // Класс работы с модулями
 	include_once(WUO_ROOT.'/class/cconfig.php'); // Класс работы с пользовательскими настройками
@@ -92,7 +92,7 @@ if (isset($_GET['route'])) {
 		include_once(WUO_ROOT."/modules/$content_page.php");
 	}
 
-	$zz = "/controller/client/themes/$cfg->theme/$content_page.php";        
+	//$zz = "/controller/client/themes/$cfg->theme/$content_page.php";
 
 	// Загружаем главный файл темы, который разруливает что отображать на экране
 	include_once(WUO_ROOT."/controller/client/themes/$cfg->theme/index.php");
