@@ -47,7 +47,7 @@ echo "<script src='js/jquery.mmenu.min.all.js'></script>\n";
 	defaultorgid = <?php echo $cfg->defaultorgid; ?>;
 	theme = '<?php echo $cfg->theme; ?>';
 	defaultuserid = <?php echo ($user->id != '') ? $user->id : '-1'; ?>;
-	route = '<?php echo ($userewrite == 1) ? '/route/' : '/?route=/'; ?>';
+	route = '<?php echo ($userewrite == 1) ? '/route/' : 'index.php?route=/'; ?>';
 
 	$.jgrid.defaults.width = 780;
 	$.jgrid.defaults.responsive = true;

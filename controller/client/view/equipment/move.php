@@ -62,7 +62,7 @@ $(document).ready(function() {
 <div class="container-fluid">
 <div class="row">            
 <div id="messenger"></div>    
-    <form id="myForm" enctype="multipart/form-data" action="/?route=/controller/server/equipment/equipment_form.php?step=move&id=<?php echo "$id" ?>" method="post" name="form1" target="_self">
+    <form id="myForm" enctype="multipart/form-data" action="index.php?route=/controller/server/equipment/equipment_form.php?step=move&id=<?php echo "$id" ?>" method="post" name="form1" target="_self">
         <div class="row-fluid"> 
           <div class="col-xs-12 col-md-12 col-sm-12">
               <div class="form-group">
