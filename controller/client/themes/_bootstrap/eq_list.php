@@ -6,7 +6,7 @@
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-if (in_array($user->mode, [0, 1])):
+if (in_array($user->mode, array(0, 1))):
 ?>
 <div class="well">    
 	<ul class="nav nav-tabs" id="myTab">
