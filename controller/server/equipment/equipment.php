@@ -9,12 +9,13 @@
 
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-if (isset($_GET['page']))       {$page = $_GET['page'];}
-if (isset($_GET['rows']))       {$limit = $_GET['rows'];}
-if (isset($_GET['sidx']))       {$sidx = $_GET['sidx'];}
-if (isset($_GET['sord']))       {$sord = $_GET['sord'];}
+// Массив $PARAMS получен в index.php
+if (isset($PARAMS['page']))       {$page = $PARAMS['page'];}
+if (isset($PARAMS['rows']))       {$limit = $PARAMS['rows'];}
+$sidx = (isset($PARAMS['sidx'])) ? $PARAMS['sidx'] : '1';
+if (isset($PARAMS['sord']))       {$sord = $PARAMS['sord'];}
 $oper = (isset($_POST['oper'])) ? $oper = $_POST['oper'] : '';
-$sorgider = (isset($_GET['sorgider'])) ? $_GET['sorgider'] : $cfg->defaultorgid;
+$sorgider = (isset($PARAMS['sorgider'])) ? $PARAMS['sorgider'] : $cfg->defaultorgid;
 if (isset($_POST['id']))        {$id = $_POST['id'];}
 if (isset($_POST['ip']))        {$ip = $_POST['ip'];}
 if (isset($_POST['name']))      {$name = $_POST['name'];}
@@ -36,7 +37,7 @@ $orgid = $cfg->defaultorgid;
 // вычисляем фильтр
 /////////////////////////////
 // получаем наложенные поисковые фильтры
-$filters = (isset($_GET['filters'])) ? $_GET['filters'] : '';
+$filters = (isset($PARAMS['filters'])) ? $PARAMS['filters'] : '';
 $flt = json_decode($filters, true);
 $cnt = count($flt['rules']);
 $where = '';
@@ -67,9 +68,6 @@ if ($where == '') {
 /////////////////////////////
 
 if ($oper == '') {
-	if (!$sidx) {
-		$sidx = 1;
-	}
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) as count, equipment.dtendgar,
 		knt.name, getvendorandgroup.grnomeid, equipment.id AS eqid,
 		equipment.orgid AS eqorgid, org.name AS orgname,
@@ -129,10 +127,10 @@ if ($oper == '') {
 	INNER JOIN places ON places.id = equipment.placesid
 	INNER JOIN users_profile ON users_profile.usersid = equipment.usersid
 	LEFT JOIN knt ON knt.id = equipment.kntid ".$where." 
-	ORDER BY $sidx $sord LIMIT $start , $limit";
-	//echo "!$SQL!";die();
+	ORDER BY $sidx $sord LIMIT $start, $limit";
 	$result = $sqlcn->ExecuteSQL($SQL)
-			or die('Не получилось выбрать список оргтехники!'.mysqli_error($sqlcn->idsqlconnection).' sql='.$SQL);
+			or die('Не получилось выбрать список оргтехники!'.
+					mysqli_error($sqlcn->idsqlconnection).' sql='.$SQL);
 	$responce->page = $page;
 	$responce->total = $total_pages;
 	$responce->records = $count;
@@ -167,8 +165,10 @@ if ($oper == '') {
 		);
 		$i++;
 	}
+	header('Content-type: application/json');
 	echo json_encode($responce);
 }
+
 if ($oper == 'edit') {
 	$os = ($os == 'Yes') ? 1 : 0;
 	$tmcgo = ($tmcgo == 'Yes') ? 1 : 0;
@@ -182,14 +182,15 @@ if ($oper == 'edit') {
 	$sqlcn->ExecuteSQL($SQL)
 			or die('Не смог обновить оргтехнику!'.mysqli_error($sqlcn->idsqlconnection));
 }
+
 if ($oper == 'add') {
 	$SQL = "INSERT INTO places (id,orgid,name,comment,active) VALUES (null,'$orgid','$name','$comment',1)";
 	$sqlcn->ExecuteSQL($SQL)
 			or die('Не смог вставить оргтехнику!'.mysqli_error($sqlcn->idsqlconnection));
 }
+
 if ($oper == 'del') {
 	$SQL = "UPDATE equipment SET active=not active WHERE id='$id'";
 	$sqlcn->ExecuteSQL($SQL)
 			or die('Не смог пометить на удаление оргтехнику!'.mysqli_error($sqlcn->idsqlconnection));
 }
-?>

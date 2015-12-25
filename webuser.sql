@@ -24,7 +24,7 @@ DELIMITER $$
 --
 -- Процедуры
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetRandomId`()
+CREATE  PROCEDURE `GetRandomId`()
     DETERMINISTIC
 BEGIN  
 		UPDATE entropia SET cnt=cnt+1;

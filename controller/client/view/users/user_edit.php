@@ -75,7 +75,7 @@ if ($user->mode == '1'):
 </script>
 <div class="container-fluid">
 	<div class="row">
-		<form role="form" id="myForm" enctype="multipart/form-data" action="controller/server/users/libre_users_form.php?step=edit&id=<?php echo $id; ?>" method="post" name="form1" target="_self">
+		<form role="form" id="myForm" enctype="multipart/form-data" action="index.php?route=/controller/server/users/libre_users_form.php?step=edit&id=<?php echo $id; ?>" method="post" name="form1" target="_self">
 			<div class="form-group">
 				<label for="orgid">Организация</label>
 				<select class="form-control" name="orgid" id="orgid">

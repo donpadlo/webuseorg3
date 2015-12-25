@@ -1,0 +1,14 @@
+php_value post_max_size 520M
+
+## Uncomment these rules if you want to have nice URLs using
+## And set $userewrite=1 in config.php
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^route/(.*) index.php?route=/$1 [QSA,L]
+
+## Not all installations will require the following line.  If you do,
+## change "/webuseorg" to the path to your webuseorg directory relative
+## to your document root.
+#RewriteBase /webuseorg
+#RewriteBase /
