@@ -20,8 +20,9 @@ $PARAMS = array();
  * @return string
  */
 function GetDef($name, $def = '') {
-	if (isset($_GET[$name])) {
-		return $_GET[$name];
+    global $_GET,$PARAMS;
+	if (isset($_GET["$name"])) {
+		return $_GET["$name"];
 	} else if (isset($PARAMS[$name])) {
 		return $PARAMS[$name];
 	} else {
@@ -36,6 +37,7 @@ function GetDef($name, $def = '') {
  * @return string
  */
 function PostDef($name, $def = '') {
+        global $_POST,$PARAMS;
 	return (isset($_POST[$name])) ? $_POST[$name] : $def;
 }
 

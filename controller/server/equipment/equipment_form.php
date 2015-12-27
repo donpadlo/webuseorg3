@@ -26,9 +26,8 @@ $step = GetDef('step');
 $sorgid = PostDef('sorgid');
 $splaces = PostDef('splaces');
 $suserid = PostDef('suserid');
-
 // Выполняем только при наличии у пользователя соответствующей роли
-if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
+if (($user->TestRoles('1,4,5,6')) && ($step != '')) {    
 	if ($step != 'move') {
 		$dtpost = DateToMySQLDateTime2($_POST['dtpost'].' 00:00:00');
 		$dtendgar = DateToMySQLDateTime2($_POST['dtendgar'].' 00:00:00');
