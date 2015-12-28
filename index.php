@@ -48,7 +48,7 @@ if (isset($_GET['route'])) {
 		parse_str($ps, $PARAMS);
 	}
 	// Маленькая защита :)
-	if (strpos($route, '..') !== false) {
+	if ((strpos($route, '..') !== false) || (strpos($route, 'files') !== false)) {
 		die("На сервере отсутствует указанный путь '$route'");
 	}
 	// Подключаем запрашиваемый скрипт		
