@@ -47,7 +47,11 @@ if (isset($_GET['route'])) {
 	if ($ps) {
 		parse_str($ps, $PARAMS);
 	}
-	// Подключаем запрашиваемый скрипт
+	// Маленькая защита :)
+	if (strpos($route, '..') !== false) {
+		die("На сервере отсутствует указанный путь '$route'");
+	}
+	// Подключаем запрашиваемый скрипт		
 	if (is_file(WUO_ROOT.$route)) {
 		// Загружаем необходимые классы
 		include_once(WUO_ROOT.'/class/employees.php'); // Класс работы с профилем пользователя

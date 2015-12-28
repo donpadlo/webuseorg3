@@ -82,7 +82,7 @@ jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controll
 		if (gsr) {
 			$('#add_edit').dialog({autoOpen: false, height: 440, width: 550, modal: true, title: 'Редактирование профиля'});
 			$('#add_edit').dialog('open');
-			$('#add_edit').load('controller/client/view/users/profile_add_edit.php?userid=' + gsr);
+			$('#add_edit').load('index.php?route=/controller/client/view/users/profile_add_edit.php?userid=' + gsr);
 		} else {
 			alert('Сначала выберите строку!');
 		}
