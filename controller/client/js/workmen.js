@@ -92,7 +92,7 @@ jQuery("#workmen").jqGrid({
                 searchoptions:{dataUrl: 'controller/server/common/getlistorgs.php?addnone=true'}},
                 {name:'placename',index:'placename', width:150,search: false},
    		{name:'groupnomename',index:'groupnomename', width:150,stype:'select',
-                    searchoptions:{dataUrl: 'controller/server/equipment/getlistgroupname.php?addnone=true'}},
+                    searchoptions:{dataUrl: route + 'controller/server/equipment/getlistgroupname.php?addnone=true'}},
                 {name:'idnome',index:'idnome', width:50},
                 {name:'invnum',index:'invnum', width:100},
    		{name:'nomename',index:'nomename', width:200},
@@ -101,7 +101,7 @@ jQuery("#workmen").jqGrid({
                 {name:'byear',index:'byear', width:50,search: false}		
    	],
         onSelectRow: function(ids) {        
-         $("#photoid").load("controller/server/equipment/getphoto.php?eqid="+ids);         
+         $("#photoid").load(route + "controller/server/equipment/getphoto.php?eqid="+ids);         
                 //$('#tbl_rep').jqGrid('GridUnload');
                 $.jgrid.gridUnload("#tbl_rep");
                 jQuery("#tbl_rep").jqGrid('setGridParam',{url:"controller/server/equipment/getrepinfo.php?eqid="+ids});              
@@ -182,8 +182,8 @@ jQuery("#workmen").jqGrid({
                         });         
          
         },
-        autowidth: true,
-        shrinkToFit: true,		
+	autowidth: true,
+	shrinkToFit: true,		
 	height: 200,	
    	grouping:true,
    	groupingView : {
@@ -194,8 +194,6 @@ jQuery("#workmen").jqGrid({
    	pager: '#workmen_footer',
    	sortname: 'orgname',
     viewrecords: true,
-    autowidth: true,
-    shrinkToFit: true,		    
     rowNum:1000,    
     scroll:1,
     sortorder: "asc",

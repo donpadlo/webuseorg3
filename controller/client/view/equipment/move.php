@@ -118,7 +118,7 @@ $(document).ready(function() {
        });
     };
     function GetListPlaces(orgid,placesid){
-        $.get("controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid, function(data){
+        $.get(route + "controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid, function(data){
            $("#splaces").html(data);
            UpdateChosen()
        });

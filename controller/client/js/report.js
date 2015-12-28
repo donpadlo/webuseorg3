@@ -138,7 +138,7 @@ function UpdateChosen(){
 };    
 
 function GetListPlaces(orgid,placesid){
-       url="controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid+"&addnone=true";
+       url= route + "controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid+"&addnone=true";
        //$("#sel_pom").load(url);
         $.get(url, function(data){
            $("#sel_pom").html(data);

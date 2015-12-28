@@ -58,11 +58,11 @@ function ListEqByPlaces(list, pager) {
 			{name: 'mode', index: 'mode', width: 55, formatter: 'checkbox', edittype: 'checkbox'}
 		],
 		onSelectRow: function(ids) {
-			$('#photoid').load('controller/server/equipment/getphoto.php?eqid=' + ids);
+			$('#photoid').load(route + 'controller/server/equipment/getphoto.php?eqid=' + ids);
 			$('#geteqid').val(ids);
-			jQuery('#tbl_move').jqGrid('setGridParam', {url: 'controller/server/equipment/getmoveinfo.php?eqid=' + ids});
+			jQuery('#tbl_move').jqGrid('setGridParam', {url: route + 'controller/server/equipment/getmoveinfo.php?eqid=' + ids});
 			jQuery('#tbl_move').jqGrid({
-				url: 'controller/server/equipment/getmoveinfo.php?eqid=' + ids,
+				url: route + 'controller/server/equipment/getmoveinfo.php?eqid=' + ids,
 				datatype: 'json',
 				colNames: ['Id', 'Дата', 'Организация', 'Помещение', 'Сотрудник', 'Организация', 'Помещение', 'Сотрудник', 'Комментарий'],
 				colModel: [
@@ -140,11 +140,11 @@ function ListEqByMat(list, pager) {
 			{name: 'bn', index: 'bn', width: 100}
 		],
 		onSelectRow: function(ids) {
-			$('#photoid').load('controller/server/equipment/getphoto.php?eqid=' + ids);
+			$('#photoid').load(route + 'controller/server/equipment/getphoto.php?eqid=' + ids);
 			$('#geteqid').val(ids);
-			jQuery('#tbl_move').jqGrid('setGridParam', {url: 'controller/server/equipment/getmoveinfo.php?eqid=' + ids});
+			jQuery('#tbl_move').jqGrid('setGridParam', {url: route + 'controller/server/equipment/getmoveinfo.php?eqid=' + ids});
 			jQuery('#tbl_move').jqGrid({
-				url: 'controller/server/equipment/getmoveinfo.php?eqid=' + ids,
+				url: route + 'controller/server/equipment/getmoveinfo.php?eqid=' + ids,
 				datatype: 'json',
 				colNames: ['Id', 'Дата', 'Организация', 'Помещение', 'Человек', 'Организация', 'Помещение', 'Человек', 'Комментарий'],
 				colModel: [

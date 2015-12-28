@@ -48,8 +48,8 @@ if (isset($_GET['route'])) {
 		parse_str($ps, $PARAMS);
 	}
 	// Маленькая защита :)
-	if ((strpos($route, '..') !== false) || (strpos($route, 'files') !== false)) {
-		die("На сервере отсутствует указанный путь '$route'");
+	if ((strpos($route, '..') !== false) || (strpos($route, '/files/') !== false)) {
+		die("Запрещён доступ к '$route'");
 	}
 	// Подключаем запрашиваемый скрипт		
 	if (is_file(WUO_ROOT.$route)) {

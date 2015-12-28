@@ -24,12 +24,12 @@ function LoadTable() {
 			{name: 'active', index: 'active', width: 20, search: false, frozen: true},
 			{name: 'equipment.id', index: 'equipment.id', width: 55, search: false, frozen: true, hidden: true},
 			{name: 'placesid', index: 'placesid', width: 155, stype: 'select', frozen: true,
-				searchoptions: {dataUrl: 'controller/server/equipment/getlistplaces.php?addnone=true'}},
+				searchoptions: {dataUrl: route + 'controller/server/equipment/getlistplaces.php?addnone=true'}},
 			{name: 'nomename', index: 'getvendorandgroup.nomename', width: 155, frozen: true},
 			{name: 'getvendorandgroup.groupname', index: 'getvendorandgroup.grnomeid', width: 100, stype: 'select',
-				searchoptions: {dataUrl: 'controller/server/equipment/getlistgroupname.php?addnone=true'}},
+				searchoptions: {dataUrl: route + 'controller/server/equipment/getlistgroupname.php?addnone=true'}},
 			{name: 'tmcgo', index: 'tmcgo', width: 80, search: true, stype: 'select',
-				searchoptions: {dataUrl: 'controller/server/equipment/getlisttmcgo.php?addnone=true'},
+				searchoptions: {dataUrl: route + 'controller/server/equipment/getlisttmcgo.php?addnone=true'},
 				formatter: 'checkbox', edittype: 'checkbox', editoptions: {value: 'Yes:No'}, editable: true,hiddem:true
 			},
 			{name: 'getvendorandgroup.vendorname', index: 'getvendorandgroup.vendorname', width: 60},
@@ -58,10 +58,10 @@ function LoadTable() {
 				formatoptions: {keys: true}, search: false}
 		],
 		onSelectRow: function(ids) {
-			$('#photoid').load('controller/server/equipment/getphoto.php?eqid=' + ids);
-			jQuery('#tbl_move').jqGrid('setGridParam', {url: 'controller/server/equipment/getmoveinfo.php?eqid=' + ids});
+			$('#photoid').load(route + 'controller/server/equipment/getphoto.php?eqid=' + ids);
+			jQuery('#tbl_move').jqGrid('setGridParam', {url: route + 'controller/server/equipment/getmoveinfo.php?eqid=' + ids});
 			jQuery('#tbl_move').jqGrid({
-				url: 'controller/server/equipment/getmoveinfo.php?eqid=' + ids,
+				url: route + 'controller/server/equipment/getmoveinfo.php?eqid=' + ids,
 				datatype: 'json',
 				colNames: ['Id', 'Дата', 'Организация', 'Помещение',
 					'Сотрудник', 'Организация', 'Помещение', 'Сотрудник', '',
@@ -88,7 +88,7 @@ function LoadTable() {
 				viewrecords: true,
 				height: 200,
 				sortorder: 'desc',
-				editurl: 'controller/server/equipment/getmoveinfo.php?eqid=' + ids,
+				editurl: route + 'controller/server/equipment/getmoveinfo.php?eqid=' + ids,
 				caption: 'История перемещений'
 			}).trigger('reloadGrid');
 			jQuery('#tbl_move').jqGrid('destroyGroupHeader');
@@ -330,7 +330,7 @@ function GetListUsers(orgid, userid) {
 }
 
 function GetListPlaces(orgid, placesid) {
-	$('#splaces').load('controller/server/getlistplaces.php?orgid=' + orgid + '&placesid=' + placesid);
+	$('#splaces').load(route + 'controller/server/getlistplaces.php?orgid=' + orgid + '&placesid=' + placesid);
 }
 
 $(document).ready(function() {

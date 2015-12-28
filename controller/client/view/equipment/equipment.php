@@ -331,7 +331,7 @@ examples.push(function (){
         };        
     };
     function GetListPlaces(orgid,placesid){
-       url="controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid;
+       url= route + "controller/server/common/getlistplaces.php?orgid="+orgid+"&placesid="+placesid;
        $("#splaces").load(url);
        UpdateChosen();
     };
@@ -341,7 +341,7 @@ examples.push(function (){
      UpdateChosen();
     };
     function GetListGroups(groupid){
-      $("#sgroups").load("controller/server/common/getlistgroupname.php?groupid="+groupid);
+      $("#sgroups").load(route + "controller/server/common/getlistgroupname.php?groupid="+groupid);
       UpdateChosen();
     };
     function GetListNome(groupid,vendorid,nmd){
