@@ -1,15 +1,27 @@
 <?php
 
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 class Tsql {
 
-	// Идентификатор соединения с БД
-	var $idsqlconnection;
+	var $idsqlconnection; // Идентификатор соединения с БД
+	var $query_result; // Результат запроса
+	var $num_queries = 0; // Количество запросов
 
-	// Соединяемся с БД и выбираем таблицу, получаем $idsqlconnection
+	/**
+	 * Соединяемся с БД и выбираем таблицу, получаем $idsqlconnection
+	 * @global type $codemysql
+	 * @param type $host
+	 * @param type $name
+	 * @param type $pass
+	 * @param type $base
+	 * @return type
+	 */
 	function connect($host, $name, $pass, $base) {
 		global $codemysql;
 		$this->idsqlconnection = new mysqli($host, $name, $pass, $base);
@@ -18,8 +30,8 @@ class Tsql {
 			echo "Error connect to Mysql or select base: $serr";
 			return $serr;
 		} else {
-			$result = mysqli_query($this->idsqlconnection, "SET NAMES $codemysql");
-			$result = mysqli_query($this->idsqlconnection, "SET sql_mode=''");
+			mysqli_query($this->idsqlconnection, "SET NAMES $codemysql");
+			mysqli_query($this->idsqlconnection, "SET sql_mode=''");
 			mysqli_set_charset($this->idsqlconnection, "$codemysql");
 		}
 	}
@@ -31,7 +43,21 @@ class Tsql {
 		//	echo mysqli_connect_error();
 		//}
 		//return $result;
-		return mysqli_query($this->idsqlconnection, $sql);
+		$this->query_result = mysqli_query($this->idsqlconnection, $sql);
+		if ($this->query_result) {
+			++$this->num_queries;
+			return $this->query_result;
+		} else {
+			return false;
+		}
+	}
+
+	function get_num_queries() {
+		return $this->num_queries;
+	}
+
+	function escape($str) {
+		return mysqli_real_escape_string($this->idsqlconnection, $str);
 	}
 
 	function start_transaction() {
@@ -50,7 +76,14 @@ class Tsql {
 	}
 
 	function close() {
-		return mysqli_close($this->idsqlconnection);
+		if ($this->idsqlconnection) {
+			if ($this->query_result) {
+				mysqli_free_result($this->query_result);
+			}
+			return mysqli_close($this->idsqlconnection);
+		} else {
+			return false;
+		}
 	}
 
 }

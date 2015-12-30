@@ -79,6 +79,7 @@ class Tusers {
 	 */
 	function Update() {
 		global $sqlcn;
+		// ToDo $sqlcn->escape() все параметры
 		$sqlcn->ExecuteSQL("UPDATE users SET orgid='$this->orgid', login='$this->login',"
 						." `password`='$this->password', salt='$this->salt',"
 						." email='$this->email', mode='$this->mode',"
@@ -99,6 +100,7 @@ class Tusers {
 	 */
 	function GetByLogin($login) {
 		global $sqlcn;
+		$login = $sqlcn->escape($login);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
 			INNER JOIN users_profile ON users_profile.usersid = users.id
@@ -121,7 +123,9 @@ class Tusers {
 			$this->fio = $myrow['fio'];
 			$this->tab_num = $myrow['code'];
 			$this->post = $myrow['post'];
+			return true;
 		}
+		return false;
 	}
 
 	/**
@@ -132,6 +136,8 @@ class Tusers {
 	 */
 	function GetByLoginPass($login, $pass) {
 		global $sqlcn;
+		$login = $sqlcn->escape($login);
+		$pass = $sqlcn->escape($pass);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
 			INNER JOIN users_profile ON users_profile.usersid=users.id
@@ -154,7 +160,9 @@ class Tusers {
 			$this->fio = $myrow['fio'];
 			$this->tab_num = $myrow['code'];
 			$this->post = $myrow['post'];
+			return true;
 		}
+		return false;
 	}
 
 	/**
@@ -164,6 +172,7 @@ class Tusers {
 	 */
 	function GetById($idz) {
 		global $sqlcn;
+		$idz = $sqlcn->escape($idz);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
 			INNER JOIN users_profile ON users_profile.usersid=users.id
@@ -186,7 +195,9 @@ class Tusers {
 			$this->fio = $myrow['fio'];
 			$this->tab_num = $myrow['code'];
 			$this->post = $myrow['post'];
+			return true;
 		}
+		return false;
 	}
 
 	/**
@@ -197,6 +208,7 @@ class Tusers {
 	 */
 	function GetByRandomId($id) {
 		global $sqlcn;
+		$id = $sqlcn->escape($id);
 		//$result = $sqlcn->ExecuteSQL("SELECT * FROM users WHERE randomid='$id'");
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
@@ -233,6 +245,7 @@ class Tusers {
 	 */
 	function GetByRandomIdNoProfile($id) {
 		global $sqlcn;
+		$id = $sqlcn->escape($id);
 		$result = $sqlcn->ExecuteSQL("SELECT * FROM users WHERE randomid='$id'")
 				or die('Неверный запрос Tusers.GetByRandomId: '.mysqli_error($sqlcn->idsqlconnection));
 		while ($myrow = mysqli_fetch_array($result)) {
@@ -310,6 +323,7 @@ class Tusers {
 	 */
 	function GetByCode($code) {
 		global $sqlcn;
+		$code = $sqlcn->escape($code);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*
 			FROM users_profile
 			INNER JOIN users ON users_profile.usersid=users.id
