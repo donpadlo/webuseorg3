@@ -26,7 +26,7 @@ include_once("../../../inc/functions.php");		// загружаем функци�
 include_once("../../../inc/login.php");		// загружаем функции
 
 
-$SQL = "SELECT count(*) as cnt FROM smslist where status='send'";
+$SQL = "SELECT count(*) as cnt FROM sms_by_list where status='send'";
 $result = $sqlcn->ExecuteSQL($SQL) or die("Не могу выбрать список для отсылки СМС!".mysqli_error($sqlcn->idsqlconnection));
 while($row = mysqli_fetch_array($result)) {
     $cnt=$row["cnt"];

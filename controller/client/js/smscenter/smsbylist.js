@@ -10,12 +10,13 @@ function GetGrid(){
     jQuery("#list2").jqGrid({
             url:'controller/server/smscenter/getsmslist.php?orgid='+defaultorgid,
             datatype: "json",
-            colNames:['Id','Номер телефона','Текст сообщения','Статус','Действия'],
+            colNames:['Id','Номер телефона','Текст сообщения','Статус','Дата','Действия'],
             colModel:[   		
-                    {name:'id',index:'id', width:55},
+                    {name:'id',index:'id', width:55, hidden:true},
                     {name:'mobile',index:'mobile', width:100,editable:true},
                     {name:'smstxt',index:'smstxt', width:200,editable:true},
                     {name:'status',index:'status', width:100,editable:true},
+		    {name:'dt',index:'dt', width:100,editable:true},
                     {name: 'myac', width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true}}
             ],
             autowidth: true,			
@@ -37,6 +38,7 @@ function GetGrid(){
 
     jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/icon_currency.gif'> Загрузить список",                              
             title: "Загрузить список телефонов и текстов СМС",
+	    buttonicon: 'none',
             onClickButton:function(){
               $( "#dialog-load" ).dialog("open" );                             
             } 
@@ -44,6 +46,7 @@ function GetGrid(){
 
     jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/icon_currency.gif'> Очистить",                              
             title: "Очистить список",
+	    buttonicon: 'none',
             onClickButton:function(){
                 $.get('controller/server/smscenter/dellist.php', function( data ) {
                   jQuery("#list2").jqGrid().trigger('reloadGrid');                     
@@ -52,6 +55,7 @@ function GetGrid(){
     });
     jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/comment.png'> СМС ",                              
          title: "Отправить СМС",
+	 buttonicon: 'none',
 	onClickButton:function(){
          $( "#dialog-confirm" ).dialog("open" );                                  
 	} 
@@ -66,13 +70,13 @@ $( document ).ready(function() {
     $( "#dialog-load" ).dialog({
           autoOpen: false,        
           resizable: false,
-          height:540,
-          width: 1000,
+          height:400,
+          width: 640,
           modal: true,
           buttons: {
             "Ok": function() {
                 $("#message_send").html("<img src=controller/client/themes/"+theme+"/img/loading.gif><br>*выполнение запроса может занять некоторое время..");        
-                $.post('controller/server/smscenter/uploadlist.php?blibase='+$("#blibase").val(),
+                $.post('controller/server/smscenter/uploadlist.php',
                     {
                         pdata: $("#smstext").val()
                     },
@@ -105,7 +109,7 @@ $( document ).ready(function() {
                 // запускаю рассылку СМС
                 $.get("controller/server/smscenter/smsglistsend.php?orgid="+defaultorgid, {blibase:$("#blibase").val()} , function(data){                
                     clearInterval(timer);
-                    GetGrid();            
+                    jQuery("#list2").jqGrid().trigger('reloadGrid');                               
                 });            
         }        
       }

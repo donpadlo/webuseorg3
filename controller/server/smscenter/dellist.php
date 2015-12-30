@@ -24,7 +24,7 @@ include_once("../../../inc/config.php");              // подгружаем н
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
 
-$SQL = "delete from smslist";        
-$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу удалить список!".mysqli_error($sqlcn->idsqlconnection));
+$SQL = "delete from sms_by_list";        
+$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу удалить список СМС!".mysqli_error($sqlcn->idsqlconnection));
 
 ?>

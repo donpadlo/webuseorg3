@@ -18,12 +18,8 @@ include_once ("inc/lbfunc.php");                    // загружаем фун
 //            6="Удаление"
 
 if ($user->TestRoles("1,3")==true){
-    
-?>
-<div class="container-fluid">
-<div class="row-fluid">
-  <div class="col-xs-12 col-md-12 col-sm-12">    
-        <?php 
+	$md=new Tmod; // обьявляем переменную для работы с классом модуля
+	if ($md->IsActive("lanbilling")==1) {	
             $period=false;
             $seconddate=false;
             $agent=false;
@@ -31,28 +27,25 @@ if ($user->TestRoles("1,3")==true){
             $period=false;
             $fill=false;
             include("controller/client/themes/bootstrap/lanbilling/reports/head.php");                       
+	};  
         ?>
-       
+<div class="container-fluid">
+<div class="row-fluid">
+  <div class="col-xs-12 col-md-12 col-sm-12">    
+	    <div id="message_send"></div>
             <table id="list2"></table>
-            <div id="pager2"></div>                    
-            
-        <div id="dialog-load" title="Загрузка списка телефонов и текста СМС">          
-            <div class="container-fluid">
-            <div class="row-fluid">            
-            <div class="col-xs-12 col-md-12 col-sm-12">    
+            <div id="pager2"></div>                                
+	<div id="dialog-load" title="Загрузка списка телефонов и текста СМС">          
                 <label for="smstext">Вставьте список:</label></br>
-                <textarea rows="8" class="col-xs-12 col-md-12 col-sm-12" name="smstext" id="smstext"></textarea>
-                <div id="message_send"></div>
-            </div>
-            </div>    
-            </div>                    
+                <textarea rows="8" class="form-control" name="smstext" id="smstext"></textarea>                
+		Скопируйте сюда список в формате: номер телефона;текст СМС
         </div>
         <div id="dialog-confirm" title="Разослать СМС по списку?">
           <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
           После нажатия кнопки "ДА" произойдет рассылка СМС по всем телефонам находящимся в таблице.
           </br><strong>Вы уверены?</strong>
         </div>                        
-</div>        
+    </div>        
 </div>        
 </div>            
 

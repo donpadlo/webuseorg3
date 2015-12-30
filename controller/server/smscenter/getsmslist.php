@@ -1,10 +1,11 @@
 <?php
-// Данный код создан и распространяется по лицензии GPL v3
-// Разработчики:
-//   Грибов Павел,
-//   Сергей Солодягин (solodyagin@gmail.com)
-//   (добавляйте себя если что-то делали)
-// http://грибовы.рф
+
+/* 
+ * (с) 2011-2015 Грибов Павел
+ * http://грибовы.рф * 
+ * Если исходный код найден в сети - значит лицензия GPL v.3 * 
+ * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
+ */
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
 
@@ -24,20 +25,19 @@ include_once("../../../inc/functions.php");		// загружаем функци�
 include_once("../../../inc/login.php");		// загружаем функции
 
 
-$page = GetDef('page');
-$limit = GetDef('rows');
-$sidx = GetDef('sidx'); 
-$sord = GetDef('sord'); 
-$oper= PostDef('oper');
-$id = PostDef('id');
-$mobile=PostDef('mobile');
-$smstxt=PostDef('smstxt');
-$status=PostDef('status');
+$page = _GET('page');
+$limit = _GET('rows');
+$sidx = _GET('sidx'); 
+$sord = _GET('sord'); 
+$oper= _POST('oper');
+$id = _POST('id');
+$mobile=_POST('mobile');
+$smstxt=_POST('smstxt');
+$status=_POST('status');
 
-if ($oper=='')
-{
+if ($oper==''){
 	if(!$sidx) $sidx =1;
-	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count FROM smslist");
+	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count FROM sms_by_list");
 	$row = mysqli_fetch_array($result);
 	$count = $row['count'];
 
@@ -45,7 +45,7 @@ if ($oper=='')
 	if ($page > $total_pages) $page=$total_pages;
 
 	$start = $limit*$page - $limit;
-	$SQL = "SELECT * FROM smslist ORDER BY $sidx $sord LIMIT $start , $limit";
+	$SQL = "SELECT * FROM sms_by_list ORDER BY $sidx $sord LIMIT $start , $limit";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу выбрать список групп!".mysqli_error($sqlcn->idsqlconnection));
         $responce=new stdClass();
 	$responce->page = $page;
@@ -54,26 +54,23 @@ if ($oper=='')
 	$i=0;
 	while($row = mysqli_fetch_array($result)) {
                 $responce->rows[$i]['id']=$row['id'];
-	    	$responce->rows[$i]['cell']=array($row['id'],$row['mobile'],$row['smstxt'],$row['status']);		
+	    	$responce->rows[$i]['cell']=array($row['id'],$row['mobile'],$row['smstxt'],$row['status'],$row['dt']);		
                 $i++;
 	}
 	echo json_encode($responce);
 };
-if ($oper=='edit')
-{
-	$SQL = "UPDATE smslist SET mobile='$mobile',smstxt='$smstxt',status='$status' WHERE id='$id'";
+if ($oper=='edit'){
+	$SQL = "UPDATE sms_by_list SET mobile='$mobile',smstxt='$smstxt',status='$status' WHERE id='$id'";
         //echo "!$SQL!";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные!".mysqli_error($sqlcn->idsqlconnection));
 };
-if ($oper=='add')
-{
-	$SQL = "INSERT INTO smslist (mobile,smstxt,status) VALUES ('$mobile','$smstxt','$status')";        
+if ($oper=='add'){
+	$SQL = "INSERT INTO sms_by_list (mobile,smstxt,status) VALUES ('$mobile','$smstxt','$status')";        
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу добавить агента!".mysqli_error($sqlcn->idsqlconnection));
 
 };
-if ($oper=='del')
-{
-	$SQL = "delete FROM smslist WHERE id='$id'";
+if ($oper=='del'){
+	$SQL = "delete FROM sms_by_list WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу удалить!".mysqli_error($sqlcn->idsqlconnection));
 };
 

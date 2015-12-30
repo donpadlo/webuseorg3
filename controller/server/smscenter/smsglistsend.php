@@ -1,10 +1,10 @@
 <?php
-// Данный код создан и распространяется по лицензии GPL v3
-// Разработчики:
-//   Грибов Павел,
-//   Сергей Солодягин (solodyagin@gmail.com)
-//   (добавляйте себя если что-то делали)
-// http://грибовы.рф
+/* 
+ * (с) 2011-2015 Грибов Павел
+ * http://грибовы.рф * 
+ * Если исходный код найден в сети - значит лицензия GPL v.3 * 
+ * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
+ */
 
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
 
@@ -27,21 +27,22 @@ include_once("../../../inc/lbfunc.php");		// загружаем функции
 
 //include_once("../../../class/smstower.class.php");
 include_once("../../../autorun/sms.php");		// запускаем сторонние скрипты
+
 //$sms=new SMSTowers;
 //$sms->GetLoginPassSMSTowerFromBase();
 $sms=new SmsAgent;
 $sms->Login();
+$md=new Tmod; // обьявляем переменную для работы с классом модуля
 
-$blibase = GetDef('blibase');
-$sms->sender=GetSMSSender($blibase,$sms->sender);
-//echo "$sms->sender\n";
-
+$blibase = _GET('blibase');
+if ($md->IsActive("lanbilling")==1) {
+    $sms->sender=GetSMSSender($blibase,$sms->sender);
+};
 $lg=new Tlog();
 $lg->Save(2,"Стартовал групповую отправку СМС");
-
-$sql="select * from smslist where status<>'send'";
+$sql="select * from sms_by_list where status<>'send'";
 $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать!".mysqli_error($sqlcn->idsqlconnection));   
-while($row = mysqli_fetch_array($result)) {
+while($row = mysqli_fetch_array($result)) {    
   $id=$row["id"];  
   $mobile=$row["mobile"];  
   $smstxt=$row["smstxt"];  
@@ -56,12 +57,11 @@ while($row = mysqli_fetch_array($result)) {
       $cost=$res[0]["smsPrice"];
       $lg->Save('2',$mobile."/".$smstxt."(group)",$cost,$blibase);  
       $res="ok";  
-      $sql="update smslist set status='send' where id='$id'";
+      $sql="update sms_by_list set status='send',dt=now() where id='$id'";
       $result2 = $sqlcn->ExecuteSQL($sql) or die("Не могу обновить статус!".mysqli_error($sqlcn->idsqlconnection));   
     };
     //sleep(10);
 };    
-
 $lg->Save(2,"Закончил групповую отправку СМС");
 
 ?>
