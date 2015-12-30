@@ -76,7 +76,8 @@ jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controll
 			$('#add_edit').dialog('open');
 			$('#add_edit').load('controller/client/view/users/user_edit.php?id=' + gsr);
 		} else {
-			alert('Сначала выберите строку!');
+			//alert('Сначала выберите строку!');
+			$().toastmessage('showWarningToast', 'Сначала выберите строку!');
 		}
 	}
 });
@@ -90,7 +91,8 @@ jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controll
 			$('#add_edit').dialog('open');
 			$('#add_edit').load('index.php?route=/controller/client/view/users/profile_add_edit.php?userid=' + gsr);
 		} else {
-			alert('Сначала выберите строку!');
+			//alert('Сначала выберите строку!');
+			$().toastmessage('showWarningToast', 'Сначала выберите строку!');
 		}
 	}
 });
@@ -103,7 +105,8 @@ jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controll
 			var s = jQuery('#list2').jqGrid('getGridParam', 'selarrrow');
 			newWin = window.open('inc/stikerprint.php?mass=' + s, 'printWindow');
 		} else {
-			alert('Сначала выберите строку!');
+			//alert('Сначала выберите строку!');
+			$().toastmessage('showWarningToast', 'Сначала выберите строку!');
 		}
 	}
 });

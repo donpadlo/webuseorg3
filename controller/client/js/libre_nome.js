@@ -50,7 +50,8 @@ jQuery("#list2").jqGrid('navButtonAdd','#pager2',{buttonicon: 'none',caption:"<i
                           $("#add_edit" ).dialog( "open" );                     
 			  $("#add_edit").load("controller/client/view/tmc/nome_add_edit.php?step=edit&id="+gsr);
 		} else {
-			alert("Сначала выберите строку!")
+			//alert("Сначала выберите строку!");
+			$().toastmessage('showWarningToast', 'Сначала выберите строку!');
 		}							
 	} 
 });

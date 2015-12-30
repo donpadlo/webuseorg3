@@ -42,7 +42,8 @@ jQuery("#list2").jqGrid('navButtonAdd','#pager2',{caption:"Отредактир�
                        $("#pg_add_edit" ).dialog( "open" );                                   
                        $("#pg_add_edit").load("controller/client/view/news/news.php?step=edit&id="+gsr);
                        } else {
-			alert("Сначала выберите строку!")
+			//alert("Сначала выберите строку!");
+			$().toastmessage('showWarningToast', 'Сначала выберите строку!');
 		}							
 	}
 });        

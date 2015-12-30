@@ -144,12 +144,14 @@ GetTree();
 
 $('#newfolder').click(function() {
 	if ($('#foldername').val() == '') {
-		alert('Введите имя папки!');
+		//alert('Введите имя папки!');
+		$().toastmessage('showWarningToast', 'Введите имя папки!');
 	} else {
 		$('#tree').dynatree('destroy');
 		$.get('controller/server/cloud/addfolder.php?foldername=' + $('#foldername').val(), function(data) {
 			if (data != '') {
-				alert(data);
+				//alert(data);
+				$().toastmessage('showWarningToast', data);
 			}
 			GetTree();
 		});
@@ -158,13 +160,15 @@ $('#newfolder').click(function() {
 
 $('#delfolder').click(function() {
 	if (selectedkey == '') {
-		alert('Не выбрана папка!');
+		//alert('Не выбрана папка!');
+		$().toastmessage('showWarningToast', 'Не выбрана папка!');
 	} else {
 		if (confirm('Вы подтверждаете удаление?')) {
 			$('#tree').dynatree('destroy');
 			$.get('controller/server/cloud/delfolder.php?folderkey=' + selectedkey, function(data) {
 				if (data != '') {
-					alert(data);
+					//alert(data);
+					$().toastmessage('showWarningToast', data);
 				}
 				GetTree();
 			});

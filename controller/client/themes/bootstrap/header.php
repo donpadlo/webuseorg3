@@ -33,6 +33,9 @@ if ($cfg->style == 'Normal') {
 	echo "<link rel='stylesheet' href='controller/client/themes/$cfg->theme/css/ui.jqgrid.css'>\n";
 }
 echo "<link rel='stylesheet' href='controller/client/themes/$cfg->theme/css/chosen.css'>\n";
+?>
+<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/jquery.toastmessage-min.css">
+<?php
 echo "<script src='controller/client/themes/$cfg->theme/js/jquery-1.11.0.min.js'></script>\n"; 
 echo "<script src='controller/client/themes/$cfg->theme/js/jquery-ui.js'></script>\n";
 echo "<script src='controller/client/themes/$cfg->theme/js/i18n/grid.locale-ru.js'></script>\n";
@@ -42,6 +45,7 @@ echo "<script src='js/jquery.mmenu.min.all.js'></script>\n";
 ?>
 <script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/bootstrap.min.js"></script>
 <script src='js/jquery.form.js'></script>
+<script src="js/jquery.toastmessage-min.js"></script>
 <script>
 	defaultorgid = <?php echo $cfg->defaultorgid; ?>;
 	defaultorgid = <?php echo $cfg->defaultorgid; ?>;

@@ -164,7 +164,8 @@ function LoadTable() {
 						$('#pg_add_edit').dialog('open');
 						$('#pg_add_edit').load('controller/client/view/equipment/repair.php?step=add&eqid=' + id);
 					} else {
-						alert('Выберите ТМЦ для ремонта!');
+						//alert('Выберите ТМЦ для ремонта!');
+						$().toastmessage('showWarningToast', 'Выберите ТМЦ для ремонта!');
 					}
 				}
 			});
@@ -256,7 +257,8 @@ function LoadTable() {
 				$('#pg_add_edit').dialog('open');
 				$('#pg_add_edit').load('controller/client/view/equipment/equipment.php?step=edit&id=' + gsr);
 			} else {
-				alert('Сначала выберите строку!')
+				//alert('Сначала выберите строку!');
+				$().toastmessage('showWarningToast', 'Сначала выберите строку!');
 			}
 		}
 	});
@@ -271,7 +273,8 @@ function LoadTable() {
 				$('#pg_add_edit').dialog('open');
 				$('#pg_add_edit').load('controller/client/view/equipment/move.php?step=move&id=' + gsr);
 			} else {
-				alert('Сначала выберите строку!');
+				//alert('Сначала выберите строку!');
+				$().toastmessage('showWarningToast', 'Сначала выберите строку!');
 			}
 		}
 	});
@@ -287,7 +290,8 @@ function LoadTable() {
 				$('#pg_add_edit').dialog('open');
 				$('#pg_add_edit').load('controller/client/view/equipment/repair.php?step=add&eqid=' + id);
 			} else {
-				alert('Сначала выберите строку!');
+				//alert('Сначала выберите строку!');
+				$().toastmessage('showWarningToast', 'Сначала выберите строку!');
 			}
 		}
 	});
@@ -302,7 +306,8 @@ function LoadTable() {
 				s = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selarrrow');
 				newWin = window.open('inc/ean13print.php?mass=' + s, 'printWindow');
 			} else {
-				alert('Сначала выберите строку!');
+				//alert('Сначала выберите строку!');
+				$().toastmessage('showWarningToast', 'Сначала выберите строку!');
 			}
 		}
 	});
