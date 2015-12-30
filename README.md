@@ -4,7 +4,7 @@
 
 Домашняя страница проекта: <a href="http://xn--90acbu5aj5f.xn--p1ai/?page_id=1202" target="_blank">http://грибовы.рф/?page_id=1202</a>
 
-DEMO: <a href="http://demo.xn--90acbu5aj5f.xn--p1ai/webuseorg3-master/index.php" target="_blank">http://demo.грибовы.рф/webuseorg3-master/index.php</a>  
+DEMO: [http://demo.грибовы.рф/webuseorg3-master/index.php](http://demo.xn--90acbu5aj5f.xn--p1ai/webuseorg3-master/index.php)  
 Логин: `test`  
 Пароль: `test`  
 База обнуляется раз в час.
