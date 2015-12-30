@@ -87,20 +87,19 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 		</div>
 		<div class="span4">
 			<?php if ($mhome->IsActive('stiknews') == 1): ?>
-				<!-- [Закреплённые новости] -->
-				<span class="label label-info">
-					<?php
-					$stiker = GetStiker();
-					echo $stiker['title'];
+				<?php
+				$stiker = GetStiker();
+				if ($stiker['title'] != ''):
 					?>
-				</span>
-				<div class="well">
-					<?php
-					//$stiker = GetStiker();
-					echo $stiker['body'];
-					?>
-				</div>
-				<!-- [/Закреплённые новости] -->
+					<!-- [Закреплённые новости] -->
+					<span class="label label-info">
+						<?php echo $stiker['title']; ?>
+					</span>
+					<div class="well">
+						<?php echo $stiker['body']; ?>
+					</div>
+					<!-- [/Закреплённые новости] -->
+				<?php endif; ?>
 			<?php endif; ?>
 			<?php if (($mhome->IsActive("lastmoved") == 1) && ($user->id != '')): ?>
 				<!-- [Последние перемещения ТМЦ] -->
