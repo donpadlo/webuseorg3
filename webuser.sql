@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 12 2015 г., 11:37
+-- Время создания: Дек 31 2015 г., 13:12
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -15,25 +15,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-
---
--- База данных: `webuser`
---
-
-DELIMITER $$
---
--- Процедуры
---
-CREATE  PROCEDURE `GetRandomId`()
-    DETERMINISTIC
-BEGIN  
-		UPDATE entropia SET cnt=cnt+1;
-		SELECT cnt FROM entropia;
-	END$$
-
-DELIMITER ;
-
--- --------------------------------------------------------
 
 --
 -- Структура таблицы `bp_accept`
@@ -182,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `config` (
 --
 
 INSERT INTO `config` (`id`, `ad`, `domain1`, `domain2`, `ldap`, `usercanregistrate`, `useraddfromad`, `theme`, `sitename`, `emailadmin`, `smtphost`, `smtpauth`, `smtpport`, `smtpusername`, `smtppass`, `emailreplyto`, `sendemail`, `version`, `urlsite`) VALUES
-(1, 0, '', '', '', 1, 1, 'bootstrap', 'Учет ТМЦ в организации', '', '', 0, '25', '', '', '', 0, '3.73', 'http://localhost');
+(1, 0, '', '', '', 1, 1, 'bootstrap', 'Учет ТМЦ в организации', '', '', 0, '25', '', '', '', 0, '3.74', 'http://localhost');
 
 -- --------------------------------------------------------
 
@@ -195,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `config_common` (
   `nameparam` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `valueparam` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=89 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=95 ;
 
 --
 -- Дамп данных таблицы `config_common`
@@ -253,7 +234,13 @@ INSERT INTO `config_common` (`id`, `nameparam`, `valueparam`) VALUES
 (85, 'modulecopy_lastmoved', 'Грибов Павел'),
 (86, 'modulename_usersfaze', '0'),
 (87, 'modulecomment_usersfaze', 'Где сотрудник?'),
-(88, 'modulecopy_usersfaze', 'Грибов Павел');
+(88, 'modulecopy_usersfaze', 'Грибов Павел'),
+(89, 'modulename_ical', '0'),
+(90, 'modulecomment_ical', 'Календарь'),
+(91, 'modulecopy_ical', 'Грибов Павел'),
+(92, 'modulename_tasks', '0'),
+(93, 'modulecomment_tasks', 'Задачи'),
+(94, 'modulecopy_tasks', 'Грибов Павел');
 
 -- --------------------------------------------------------
 
@@ -916,7 +903,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `randomid` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `orgid` int(11) NOT NULL,
   `login` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `pass` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` char(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `salt` char(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -930,8 +916,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `randomid`, `orgid`, `login`, `pass`, `password`, `salt`, `email`, `mode`, `lastdt`, `active`) VALUES
-(1, '534742080754244214882660638232114002258853163157700475856647', 1, 'admin', '1979', '706a87383246fcccdef9ca163123c615ecc6d00e', '[`az;', 'test@gmail.com', 1, '2015-12-12 11:37:11', 1);
+INSERT INTO `users` (`id`, `randomid`, `orgid`, `login`, `password`, `salt`, `email`, `mode`, `lastdt`, `active`) VALUES
+(1, '534742080754244214882660638232114002258853163157700475856647', 1, 'admin', '706a87383246fcccdef9ca163123c615ecc6d00e', '[`az;', 'test@gmail.com', 1, '2015-12-31 13:12:37', 1);
 
 -- --------------------------------------------------------
 

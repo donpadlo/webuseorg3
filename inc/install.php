@@ -29,20 +29,48 @@ $handle = file_get_contents(WUO_ROOT.'/webuser.sql', 'r');
 if ($handle == false) {
 	echo "<div class='alert alert-danger'>Ошибка открытия файла: webuser.sql</div>";
 	die();
+};
+if (mysqli_multi_query($idsqlconnection, $handle)) {
+    do {
+        if ($result = mysqli_store_result($idsqlconnection)) {
+            mysqli_free_result($result);
+        }
+        if (mysqli_more_results($idsqlconnection)) {
+        }        
+    } while (mysqli_next_result($idsqlconnection));
 }
-//ну и теперь меняю название организации и логин/пароль пользователя 
-$orgname = mysqli_real_escape_string($idsqlconnection, $orgname);
-$sql = "UPDATE org SET name='$orgname';";
-$handle = $handle.$sql;
-$salt = generateSalt();
-$password = sha1(sha1($pass).$salt);
-$sql = "UPDATE users SET pass='$pass',password='$password',salt='$salt',login='$login' WHERE id=1;";
-$handle = $handle.$sql;
-$result = mysqli_multi_query($idsqlconnection, $handle);
+/*$result = mysqli_multi_query($idsqlconnection, $handle);
 if ($result == '') {
 	$serr = mysqli_error($idsqlconnection);
 	echo "<div class='alert alert-danger'>Ошибка БД: $serr</div>";
 	die();
-}
+};
+*/
+//ну и теперь меняю название организации и логин/пароль пользователя 
+$orgname = mysqli_real_escape_string($idsqlconnection, $orgname);
+$sql = "UPDATE org SET name='$orgname';";
+$result = mysqli_query($idsqlconnection, $sql);
+if ($result == '') {
+	$serr = mysqli_error($idsqlconnection);
+	echo "<div class='alert alert-danger'>Ошибка БД (1): $serr</div>";
+	die();
+};
+$salt = generateSalt();
+$password = sha1(sha1($pass).$salt);
+$sql = "UPDATE users SET password='$password',salt='$salt',login='$login' WHERE id=1;";
+$result = mysqli_query($idsqlconnection, $sql);
+if ($result == '') {
+	$serr = mysqli_error($idsqlconnection);
+	echo "<div class='alert alert-danger'>Ошибка БД (2): $serr</div>";
+	die();
+};
+
+//чета не доверяю я проверке на ошибки.. Проверю ка руками!
+$sql="select * from config";
+$result = mysqli_query($idsqlconnection, $sql);
+if ($result==false){
+	echo "<div class='alert alert-danger'>Что-то пошло не так (с). Попробуйте залить дамп webuser.sql в базу в ручном режиме. Затем переименуйте файл config.dist в config.php и отредактируйте!</div>";
+	die();    
+};
 echo 'ok';
 ?>
