@@ -55,6 +55,7 @@ if ($user->TestRoles("1,4,5,6")==true){
   };  
     if ($step=='list'){          
             $page = $_GET['page']; // get the requested page
+            if ($page==0){$page=1;};
             $limit = $_GET['rows']; // get how many rows we want to have into the grid
             $sidx = $_GET['sidx']; // get index row - i.e. user click to sort
             $sord = $_GET['sord']; // get the direction

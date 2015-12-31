@@ -24,6 +24,7 @@ include_once("../../../inc/login.php");		// загружаем функции
 
 
 if (isset($_GET["page"]))       {$page = $_GET['page'];}    else {$page="";};
+if ($page==0){$page=1;};
 if (isset($_GET["rows"]))       {$limit = $_GET['rows'];}   else {$limit="";};
 if (isset($_GET["sidx"]))       {$sidx = $_GET['sidx']; }   else {$sidx="";};
 if (isset($_GET["sord"]))       {$sord = $_GET['sord']; }   else {$sord="";};

@@ -31,6 +31,7 @@ $module_id= GetDef('module_id');
 $id= PostDef('id');
 
 $page = GetDef('page');
+if ($page==0){$page=1;};
 $limit = GetDef('rows');
 $sidx = GetDef('sidx'); 
 $sord = GetDef('sord'); 

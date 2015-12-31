@@ -10,6 +10,7 @@
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 $page = GetDef('page');
+if ($page==0){$page=1;};
 $limit = GetDef('rows');
 $sidx = GetDef('sidx', '1');
 $sord = GetDef('sord');
@@ -67,7 +68,7 @@ if ($where == '') {
 /////////////////////////////
 
 if ($oper == '') {
-	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) as count, equipment.dtendgar,
+        $sql="SELECT COUNT(*) as count, equipment.dtendgar,
 		knt.name, getvendorandgroup.grnomeid, equipment.id AS eqid,
 		equipment.orgid AS eqorgid, org.name AS orgname,
 		getvendorandgroup.vendorname AS vname, 
@@ -88,15 +89,17 @@ if ($oper == '') {
 	INNER JOIN org ON org.id = equipment.orgid
 	INNER JOIN places ON places.id = equipment.placesid
 	INNER JOIN users_profile ON users_profile.usersid = equipment.usersid
-	LEFT JOIN knt ON knt.id = equipment.kntid ".$where." ");
+	LEFT JOIN knt ON knt.id = equipment.kntid ".$where." ";        
+	$result = $sqlcn->ExecuteSQL($sql);
 	$row = mysqli_fetch_array($result);
-	$count = $row['count'];
+	$count = $row['count'];        
 	$total_pages = ($count > 0) ? ceil($count / $limit) : 0;
 	if ($page > $total_pages) {
 		$page = $total_pages;
 	}
 	$responce = new stdClass();
 	$start = $limit * $page - $limit;
+        //echo "$limit * $page - $limit\n";
 	if ($start < 0) {
 		$responce->page = 0;
 		$responce->total = 0;
@@ -130,6 +133,7 @@ if ($oper == '') {
 	$result = $sqlcn->ExecuteSQL($SQL)
 			or die('Не получилось выбрать список оргтехники!'.
 					mysqli_error($sqlcn->idsqlconnection).' sql='.$SQL);
+        //echo "$SQL\n";
 	$responce->page = $page;
 	$responce->total = $total_pages;
 	$responce->records = $count;

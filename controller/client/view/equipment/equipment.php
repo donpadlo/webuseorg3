@@ -67,7 +67,7 @@ $(document).ready(function() {
                     $( "#dtpost" ).datepicker( "destroy" );
                     $("#pg_add_edit" ).html("");
                     $("#pg_add_edit" ).dialog( "destroy" );
-                    jQuery("#tbl_equpment").jqGrid().trigger('reloadGrid');
+                    jQuery("#tbl_equpment").jqGrid().trigger('reloadGrid');                    
                 };
                 
             }); 

@@ -29,6 +29,7 @@ $exitcount= PostDef('exitcount');
 $id= PostDef('id');
 
 $page = GetDef('page');
+if ($page==0){$page=1;};
 $limit = GetDef('rows');
 $sidx = GetDef('sidx'); 
 $sord = GetDef('sord'); 

@@ -24,6 +24,7 @@ include_once("../../../inc/functions.php");		// загружаем функци�
 include_once("../../../inc/login.php");		// загружаем функции
 
 $page = GetDef('page');
+if ($page==0){$page=1;};
 $limit = GetDef('rows');
 $sidx = GetDef('sidx'); 
 $sord = GetDef('sord'); 
