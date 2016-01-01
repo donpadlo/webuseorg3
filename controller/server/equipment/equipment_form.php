@@ -10,6 +10,7 @@
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 include_once(WUO_ROOT.'/class/class.phpmailer.php'); // Класс управления почтой
+include_once(WUO_ROOT.'/class/equipment.php'); // Класс управления почтой
 
 function SendEmailByPlaces($plid, $title, $txt) {
 	global $sqlcn;
