@@ -24,6 +24,7 @@ include_once("../../../inc/login.php");		// загружаем функции
 
 
 function cuttingimg($zoom,$fn,$sz){
+    @mkdir("../../../photos/maps");
     $img=imagecreatefrompng("../../../photos/maps/".'0-0-0-'.$fn);  // получаем идентификатор загруженного изрбражения которое будем резать
     $info=getimagesize("../../../photos/maps/".'0-0-0-'.$fn);                          // получаем в массив информацию об изображении
     $w=$info[0];$h=$info[1];    // ширина и высота исходного изображения
