@@ -8,6 +8,7 @@ DEMO: [http://demo.грибовы.рф/webuseorg3-master/index.php](http://demo.
 Логин: `test`  
 Пароль: `test`  
 База обнуляется раз в час.
+Wiki: [http://грибовы.рф/wiki/doku.php/start](http://грибовы.рф/wiki/doku.php/start)
 
 Любые вопросы:  
 Skype: `pvtuning`  
