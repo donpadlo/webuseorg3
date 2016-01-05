@@ -80,7 +80,7 @@ for ($i = 0; $i < count($morgs); $i++) {
 }
 ?>
 				</select>
-				<label for="mode">Роль</label>
+				<label for="mode">Права</label>
 				<select name="mode" id="mode" class="form-control">
 					<option value="0" selected>Пользователь</option>
 					<option value="1">Администратор</option>
