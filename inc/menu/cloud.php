@@ -11,7 +11,7 @@ $md=new Tmod; // обьявляем переменную для работы с 
 $md->Register("cloud", "Хранилище документов", "Грибов Павел"); 
 if ($md->IsActive("cloud")==1) {
 unset($md);
-    $this->Add("main","<img src=controller/client/themes/$cfg->theme/ico/eye.png> Хранилище","Хранилище",2,"cloud","cloud/cloud");
+    $this->Add("main","<i class='fa fa-cloud fa-fw'> </i>Хранилище","Хранилище",2,"cloud","cloud/cloud");
     unset($mm);    
 };
 ?>

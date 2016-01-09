@@ -35,6 +35,7 @@ if ($cfg->style == 'Normal') {
 echo "<link rel='stylesheet' href='controller/client/themes/$cfg->theme/css/chosen.css'>\n";
 ?>
 <link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/jquery.toastmessage-min.css">
+<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/font-awesome.min.css">
 <?php
 echo "<script src='controller/client/themes/$cfg->theme/js/jquery-1.11.0.min.js'></script>\n"; 
 echo "<script src='controller/client/themes/$cfg->theme/js/jquery-ui.js'></script>\n";

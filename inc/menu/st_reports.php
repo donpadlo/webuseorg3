@@ -9,7 +9,7 @@
 
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 
-$this->Add("main","<img src=controller/client/themes/$cfg->theme/ico/chart_pie.png> Отчеты","Отчеты",3,"reports","");
+$this->Add("main","<i class='fa fa-bar-chart fa-fw'> </i>Отчеты","Отчеты",3,"reports","");
 
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 // регистрируем модуль. Если он уже зарегистрирован, то повторно он не зарегистрируется
@@ -32,9 +32,10 @@ if ($md->IsActive("worktime")==1) {
     $this->Add("reports","График работы","График работы",3,"reports/users_info","users_info");    
 };
 if ($md->IsActive("zabbix-mon")==1) {
-    $this->Add("reports","Dashboard Zabbix","Dashboard Zabbix",3,"reports/zabbix_mon","zabbix_mon");        
+    $this->Add("reports","<i class='fa fa-plug fa-fw'> </i>Dashboard Zabbix","Dashboard Zabbix",3,"reports/zabbix_mon","zabbix_mon");        
 };
-$this->Add("reports","Размещение ТМЦ на карте","Размещение ТМЦ на карте",3,"reports/map","map");        
+$this->Add("reports","<i class='fa fa-map fa-fw'> </i>Размещение ТМЦ на карте","Размещение ТМЦ на карте",3,"reports/map","map");        
+$this->Add("reports","<i class='fa fa-empire fa-fw'> </i>Имущество","Отчеты по имуществу",3,"reports/report_tmc","report_tmc");        
 
 unset($md);
 /*

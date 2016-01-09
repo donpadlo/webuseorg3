@@ -11,7 +11,7 @@ $md=new Tmod; // обьявляем переменную для работы с 
 $md->Register("devicescontrol", "Управление устройствами", "Грибов Павел"); 
 if ($md->IsActive("devicescontrol")==1) {
 unset($md);
-  $this->Add("main","<img src=controller/client/themes/$cfg->theme/ico/connect.png> Управление устройствами","Управление устройствами",3,"devicescontrol","");
-    $this->Add("devicescontrol","Управление устройствами","Управление устройствами",3,"devicescontrol/deviceslist","devicescontrol/deviceslist");
-    $this->Add("devicescontrol","Настройка устройств","Настройка устройств",3,"devicescontrol/devicesconfig","devicescontrol/devicesconfig");
+  $this->Add("main","<i class='fa fa-usb fa-fw'> </i>Управление устройствами","Управление устройствами",3,"devicescontrol","");
+    $this->Add("devicescontrol","<i class='fa fa-list fa-fw'> </i>Управление устройствами","Управление устройствами",3,"devicescontrol/deviceslist","devicescontrol/deviceslist");
+    $this->Add("devicescontrol","<i class='fa fa-cog fa-fw'> </i>Настройка устройств","Настройка устройств",3,"devicescontrol/devicesconfig","devicescontrol/devicesconfig");
 };    
