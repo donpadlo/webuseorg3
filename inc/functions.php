@@ -7,7 +7,7 @@
 // http://грибовы.рф
 
 /**
- * Массив переданных скритпу параметров при загрузке его через index.php
+ * Массив переданных скрипту параметров при загрузке его через index.php
  * Например, index.php?route=/script.php?name=value
  * $PARAMS['name']
  */
@@ -473,4 +473,10 @@ function generateSalt() {
 		$salt .= chr(rand(33, 126)); // символ из ASCII-table
 	}
 	return $salt;
+}
+
+function jsonExit($data) {
+	header('Content-type: application/json; charset=utf-8');
+	echo json_encode($data);
+	exit;
 }
