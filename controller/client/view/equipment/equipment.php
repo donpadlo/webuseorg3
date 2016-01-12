@@ -361,7 +361,8 @@ examples.push(function (){
      			success: function(answ){
        			$("#svendors").html(answ);
        			GetListNome($("#sgroupname :selected").val(),$("#svendid :selected").val(),nomeid);
-			      $("#svendid").click(function(){
+			//      $("#svendid").click(function(){
+                        $('#svendid').on('change', function(evt, params) {                                                  
 			          $("#snomes").html="идет загрузка.."; // заглушка. Зачем?? каналы счас быстрые
 				      GetListNome($("#sgroupname :selected").val(),$("#svendid :selected").val());
 				    });
@@ -402,6 +403,7 @@ examples.push(function (){
     // выбираем производителя по группе
     //$("#sgroupname").click(function(){        
     $('#sgroupname').on('change', function(evt, params) {                
+      console.log("--обработка выбора группы номенклатуры");  
       $("#svendors").html="идет загрузка.."; // заглушка. Зачем?? каналы счас быстрые
       GetListVendors($("#sgroupname :selected").val()); // перегружаем список vendors
     });
