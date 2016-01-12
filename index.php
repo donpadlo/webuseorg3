@@ -43,12 +43,12 @@ if (isset($_GET['route'])) {
 		}
 	}
 	// Получаем путь до скрипта ($route) и переданные ему параметры ($PARAMS)
-	list($route, $ps) = array_pad(explode('?', $uri, 2), 2, null);
-	if ($ps) {
-		parse_str($ps, $PARAMS);
+	list($route, $p) = array_pad(explode('?', $uri, 2), 2, null);
+	if ($p) {
+		parse_str($p, $PARAMS);
 	}
-	// Маленькая защита :)
-	if ((strpos($route, '..') !== false) || (strpos($route, '/files/') !== false)) {
+	// Разрешаем подключать php-скрипты только из каталога /controller
+	if ((strpos($route, '/controller') !== 0) || (strpos($route, '..') !== false)) {
 		die("Запрещён доступ к '$route'");
 	}
 	// Подключаем запрашиваемый скрипт		
@@ -92,8 +92,6 @@ if (!is_file(WUO_ROOT."/modules/$content_page.php")) {
 } else {
 	include_once(WUO_ROOT."/modules/$content_page.php");
 }
-
-//$zz = "/controller/client/themes/$cfg->theme/$content_page.php";
 
 // Загружаем главный файл темы, который разруливает что отображать на экране
 include_once(WUO_ROOT."/controller/client/themes/$cfg->theme/index.php");
