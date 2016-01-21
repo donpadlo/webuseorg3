@@ -33,7 +33,7 @@ class Tusers {
 	 * Роли:  
 	 *            1="Полный доступ"
 	 *            2="Просмотр финансовых отчетов"
-	 *            3="Просмотр количественных отчетов"
+	 *            3="Просмотр"
 	 *            4="Добавление"
 	 *            5="Редактирование"
 	 *            6="Удаление"
@@ -48,7 +48,7 @@ class Tusers {
 
 	function TestRoles($roles) {
 		global $sqlcn;
-		$rol = explode(',', $roles);
+		/*$rol = explode(',', $roles);
 		$rz = false;
 		foreach ($rol as $key) {
 			$sql = "SELECT * FROM usersroles WHERE userid='$this->id' AND role='$key'";
@@ -58,7 +58,11 @@ class Tusers {
 				$rz = true;
 			}
 		}
-		return $rz;
+		return $rz;*/
+		$sql = "SELECT * FROM usersroles WHERE userid='$this->id' AND role IN ($roles)";
+		$result = $sqlcn->ExecuteSQL($sql)
+			or die('Неверный запрос Tusers.TestRoles: '.mysqli_error($sqlcn->idsqlconnection));
+		return (mysqli_num_rows($result) > 0);
 	}
 
 	/**

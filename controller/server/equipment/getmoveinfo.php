@@ -10,7 +10,9 @@
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 $page = GetDef('page');
-if ($page==0){$page=1;};
+if (empty($page)) {
+	$page = 1;
+}
 $limit = GetDef('rows');
 $sidx = GetDef('sidx', '1');
 $sord = GetDef('sord');
@@ -67,7 +69,6 @@ if ($oper == '') {
 			INNER JOIN users_profile ON users_profile.usersid = useridto
 			INNER JOIN nome ON nome.id = mv.nomeid ".$where."
 			ORDER BY $sidx $sord LIMIT $start, $limit";
-	//echo "!$SQL!";
 	$result = $sqlcn->ExecuteSQL($SQL)
 			or die('Не могу выбрать список перемещений!'.mysqli_error($sqlcn->idsqlconnection));
 	$responce = new stdClass();
@@ -82,17 +83,23 @@ if ($oper == '') {
 			$row['place2'], $row['user2'], $row['name'], $row['comment']);
 		$i++;
 	}
-	header('Content-type: application/json');
-	echo json_encode($responce);
+	jsonExit($responce);
 }
 
 if ($oper == 'edit') {
+	// Проверяем может ли пользователь редактировать?
+	$user->TestRoles('1,5') or die('Недостаточно прав');
+
 	$SQL = "UPDATE move SET comment='$comment' WHERE id='$id'";
 	$sqlcn->ExecuteSQL($SQL)
 			or die('Не могу обновить комментарий!'.mysqli_error($sqlcn->idsqlconnection));
+	exit;
 }
 
 if ($oper == 'del') {
+	// Проверяем может ли пользователь удалять?
+	$user->TestRoles('1,6') or die('Недостаточно прав');
+
 	$SQL = "DELETE FROM move WHERE id='$id'";
 	$sqlcn->ExecuteSQL($SQL)
 			or die('Не могу удалить запись о перемещении!'.mysqli_error($sqlcn->idsqlconnection));

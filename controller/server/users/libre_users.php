@@ -1,4 +1,5 @@
 <?php
+
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
 //   Грибов Павел,
@@ -9,7 +10,9 @@
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 $page = GetDef('page');
-if ($page==0){$page=1;};
+if (empty($page)) {
+	$page = 1;
+}
 $limit = GetDef('rows');
 $sidx = GetDef('sidx', '1');
 $sord = GetDef('sord');
@@ -23,6 +26,9 @@ $email = PostDef('email');
 $mode = PostDef('mode');
 
 if ($oper == '') {
+	// Разрешаем при наличии ролей "Полный доступ" и "Просмотр"
+	$user->TestRoles('1,3') or die('Недостаточно прав');
+
 	$flt = json_decode($filters, true);
 	$cnt = count($flt['rules']);
 	$where = '';
@@ -78,26 +84,37 @@ if ($oper == '') {
 		}
 		$i++;
 	}
-	header('Content-type: application/json');
-	echo json_encode($responce);
+	jsonExit($responce);
 }
 
 if ($oper == 'edit') {
+	// Только с полными правами можно редактировать пользователя!
+	$user->TestRoles('1') or die('Недостаточно прав');
+
 	$imode = ($mode == 'Да') ? 1 : 0;
 	$ps = ($pass != 'скрыто') ? "`password`=SHA1(CONCAT(SHA1('$pass'), salt))," : '';
 	$SQL = "UPDATE users SET mode='$imode', login='$login',$ps email='$email' WHERE id='$id'";
 	$sqlcn->ExecuteSQL($SQL)
 			or die('Не могу обновить данные по пользователю!'.mysqli_error($sqlcn->idsqlconnection));
+	exit;
 }
 
 if ($oper == 'add') {
+	// Только с полными правами можно добавлять пользователя!
+	$user->TestRoles('1') or die('Недостаточно прав');
+
 	$SQL = "INSERT INTO knt (id, name, comment, active) VALUES (null, '$name', '$comment', 1)";
 	$sqlcn->ExecuteSQL($SQL)
 			or die('Не могу добавить пользователя!'.mysqli_error($sqlcn->idsqlconnection));
+	exit;
 }
 
 if ($oper == 'del') {
+	// Только с полными правами можно удалять пользователя!
+	$user->TestRoles('1') or die('Недостаточно прав');
+
 	$SQL = "UPDATE users SET active=not active WHERE id='$id'";
 	$sqlcn->ExecuteSQL($SQL)
 			or die('Не могу обновить данные по пользователю!'.mysqli_error($sqlcn->idsqlconnection));
+	exit;
 }

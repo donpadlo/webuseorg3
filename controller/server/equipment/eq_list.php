@@ -1,4 +1,5 @@
 <?php
+
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
 //   Грибов Павел,
@@ -9,7 +10,9 @@
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 $page = GetDef('page');
-if ($page==0){$page=1;};
+if (empty($page)) {
+	$page = 1;
+}
 $limit = GetDef('rows');
 $sidx = GetDef('sidx', '1');
 $sord = GetDef('sord');
@@ -61,6 +64,5 @@ if ($oper == '') {
 			$row['shtrihkod'], $row['mode']);
 		$i++;
 	}
-	header('Content-type: application/json');
-	echo json_encode($responce);
+	jsonExit($responce);
 }
