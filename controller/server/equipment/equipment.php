@@ -71,7 +71,7 @@ if ($where == '') {
 
 if ($oper == '') {
 	// Проверяем может ли пользователь просматривать?
-	$user->TestRoles('1,3') or die('Недостаточно прав');
+	$user->TestRoles('1,3,4,5,6') or die('Недостаточно прав');
 
 	$sql = "SELECT COUNT(*) as count, equipment.dtendgar,
 		knt.name, getvendorandgroup.grnomeid, equipment.id AS eqid,
@@ -173,6 +173,16 @@ if ($oper == '') {
 	jsonExit($responce);
 }
 
+if ($oper == 'add') {
+	// Проверяем может ли пользователь добавлять?
+	$user->TestRoles('1,4') or die('Недостаточно прав');
+
+	$SQL = "INSERT INTO places (id,orgid,name,comment,active) VALUES (null,'$orgid','$name','$comment',1)";
+	$sqlcn->ExecuteSQL($SQL)
+			or die('Не смог вставить оргтехнику!'.mysqli_error($sqlcn->idsqlconnection));
+	exit;
+}
+
 if ($oper == 'edit') {
 	// Проверяем может ли пользователь редактировать?
 	$user->TestRoles('1,5') or die('Недостаточно прав');
@@ -188,16 +198,6 @@ if ($oper == 'edit') {
 			." mapyet='$mapyet',comment='$comment',tmcgo='$tmcgo' WHERE id='$id'";
 	$sqlcn->ExecuteSQL($SQL)
 			or die('Не смог обновить оргтехнику!'.mysqli_error($sqlcn->idsqlconnection));
-	exit;
-}
-
-if ($oper == 'add') {
-	// Проверяем может ли пользователь добавлять?
-	$user->TestRoles('1,4') or die('Недостаточно прав');
-
-	$SQL = "INSERT INTO places (id,orgid,name,comment,active) VALUES (null,'$orgid','$name','$comment',1)";
-	$sqlcn->ExecuteSQL($SQL)
-			or die('Не смог вставить оргтехнику!'.mysqli_error($sqlcn->idsqlconnection));
 	exit;
 }
 

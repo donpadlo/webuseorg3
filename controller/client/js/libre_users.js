@@ -122,7 +122,7 @@ function GetSubGrid() {
 		datatype: 'json',
 		colNames: ['Id', 'Роль', 'Действия'],
 		colModel: [
-			{name: 'places_users.id', index: 'places_users.id', width: 55},
+			{name: 'places_users.id', index: 'places_users.id', width: 55, fixed: true},
 			{name: 'role', index: 'role', width: 200, editable: true, edittype: 'select', editoptions: {
 					editrules: {required: true},
 					dataUrl: 'controller/server/users/getlistroles.php?orgid=' + defaultorgid
