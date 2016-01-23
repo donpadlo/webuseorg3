@@ -2,9 +2,9 @@
 // Разработчки: Грибов Павел, (добавляйте себя если что-то делали))
 // http://грибовы.рф
 
-
-jQuery("#list_chat_users").jqGrid({
-   	url:'controller/server/chat/get_sites_users.php',
+alert(route);
+jQuery("#list_chat_users").jqGrid({    
+   	url: route + 'controller/server/chat/get_sites_users.php?',
 	datatype: "json",
    	colNames:['Id','Имя','Логин','Привязка к сайтам','Действия'],
    	colModel:[
@@ -20,7 +20,7 @@ jQuery("#list_chat_users").jqGrid({
 	scroll:1,
     viewrecords: true,
     sortorder: "asc",
-    editurl:'controller/server/chat/get_sites_users.php',
+    editurl: route + 'controller/server/chat/get_sites_users.php?',
     caption:"Привязка пользователей к сайтам"
 });
 var addOptions={

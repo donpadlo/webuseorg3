@@ -61,7 +61,7 @@ if (isset($_GET['route'])) {
 		}
 		include_once(WUO_ROOT.$route);
 	} else {
-		die("На сервере отсутствует указанный путь '$route'");
+		die("На сервере отсутствует указанный путь '".WUO_ROOT."$route'");
 	}
 	exit();
 }
