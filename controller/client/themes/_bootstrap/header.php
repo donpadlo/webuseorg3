@@ -79,7 +79,7 @@ if (count($cfg->quickmenu) != 0) {
 	echo '<div id="blob" data-placement="bottom" class="quickmenu" rel="popover">';  
 	$mm = '';
 	for ($i = 0; $i < count($cfg->quickmenu); $i++) {
-		$mm .= $cfg->quickmenu[$i].'<br>';
+		$mm .= $cfg->quickmenu[$i];
 	}
 	echo '<strong>'.$cfg->sitename.'</strong><span class="caret"></span></div>';
 	echo "<script>$('#blob').popover({title: 'Быстрые ссылки', delay: {'show': 500, 'hide': 100}, html: true, content: '$mm'});</script>";
