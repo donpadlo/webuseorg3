@@ -1,10 +1,11 @@
 <?php
 
-/**
- * (с) 2011-2015 Грибов Павел
- * http://грибовы.рф * 
- * Если исходный код найден в сети - значит лицензия GPL v.3 * 
- * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
- */
-$cfg->quickmenu[] = '<a href="index.php?content_page=equipment">Имущество</a></li>';
-$cfg->quickmenu[] = '<a href="index.php?content_page=eq_list">ТМЦ на рабочем месте</a></li>';
+// Данный код создан и распространяется по лицензии GPL v3
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
+// http://грибовы.рф
+
+$cfg->quickmenu[] = '<div><a href="index.php?content_page=equipment">Имущество</a></div>';
+$cfg->quickmenu[] = '<div><a href="index.php?content_page=eq_list">ТМЦ на рабочем месте</a></div>';

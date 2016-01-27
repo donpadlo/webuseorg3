@@ -86,7 +86,7 @@ echo "<script src='js/jquery.mmenu.min.all.js'></script>\n";
 <?php
 $mm = '';
 for ($i = 0; $i < count($cfg->quickmenu); $i++) {
-	$mm .= $cfg->quickmenu[$i].'<br>';
+	$mm .= $cfg->quickmenu[$i];
 }
 ?>
 		<strong><?php echo $cfg->sitename; ?></strong>
