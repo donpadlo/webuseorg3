@@ -46,8 +46,8 @@ while($row = mysqli_fetch_array($result)) {
 <script src="js/statics/jquery.modal.js"></script>
 <div id="messenger"></div>
 <form id="myForm" class="well form-inline" ENCTYPE="multipart/form-data" action="controller/server/astra/astra_save_form.php?frame_id=<?php echo "$frame_id"; ?>" method="post" name="form1" target="_self">
-<label>Титры:</label>
-<textarea rows="3" class="span12" name="tbody" id="tbody">
+<label>Титры:</label></br>
+<textarea rows="3" class="form-control" name="tbody" id="tbody">
 <?php echo "$tbody";?>
 </textarea></br>    
 <span class="help-block">Время жизни фрейма:</span>        
@@ -57,7 +57,7 @@ while($row = mysqli_fetch_array($result)) {
 <label>Фото:</label>
 
                                         <div id="userpic">
-                                            <div class="js-preview span12">
+                                            <div class="js-preview">
                                                 <?php
                                                 if ($pic_file!="") {echo "<img src='photos/$pic_file'>";};                                                
                                                 ?>        

@@ -61,7 +61,7 @@ jQuery("#list2").jqGrid({
     caption:"Серверы Astra" ,
 	onSelectRow: function(ids) {       
                                 $("#frames_info").html("");
-                                $("#pl").html("<img src=controller/server/astra/pic.php?astra_id="+ids+"&r="+getRandomInt(0,100)+" >");
+                                $("#pl").html("<img class='img-responsive img-thumbnail' src=controller/server/astra/pic.php?astra_id="+ids+"&r="+getRandomInt(0,100)+" >");
                                 GetSubGrid(ids);
 				jQuery("#frames").jqGrid('setGridParam',{url:"controller/server/astra/get_page_select.php?astra_id="+ids+"&orgid="+defaultorgid}).trigger('reloadGrid');				
 				jQuery("#frames").jqGrid('setGridParam',{editurl:"controller/server/astra/get_page_select.php?astra_id="+ids+"&orgid="+defaultorgid}).trigger('reloadGrid');				

@@ -29,15 +29,15 @@ if ($md->IsActive('smscenter') == 1) {
 			or die('Не могу прочитать настройки sms_center_config!'.mysqli_error($sqlcn->idsqlconnection));
 	while ($row = mysqli_fetch_array($result)) {
 		$fileagent = $row['fileagent'];
-		@include_once("inc/$fileagent");
+/*		@include_once("inc/$fileagent");
 		@include_once("../inc/$fileagent");
 		@include_once("../../inc/$fileagent");
 		@include_once("../../../inc/$fileagent");
 		@include_once("../../../../inc/$fileagent");
 		@include_once("../../../../../inc/$fileagent");
 		@include_once("../../../../../../inc/$fileagent");
-		@include_once("../../../../../../inc/$fileagent");
-		@include_once("/usr/local/www/apache22/ssl/data/inc/$fileagent");
+		@include_once("../../../../../../inc/$fileagent");*/
+		@include_once(WUO_ROOT."/inc/$fileagent");
 	}
 	unset($md);
 }

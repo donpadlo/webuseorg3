@@ -91,4 +91,93 @@ function GetTextColorById($id){
     }    
     return $color;      
 };
+//////////
+// Блок расчетов предварительных платежей
+//////////
+function GetBlockedDayByDay($vg_id,$user,$lb){
+   $sql="select blocked from vgroups where vg_id=$vg_id";
+   $res2 = $lb->ExecuteSQL($sql);
+   while ($row2 = mysqli_fetch_array($res2)) {$blocked=$row2["blocked"];};
+   for ($i=1; $i<=(date("t")); $i++) {
+       $user[$i]["blocked"] = $blocked;
+       $user[$i]["pay_day"]=0; //платежи за день
+   };     
+    // Прошедшие блокировки
+    $sql = "SELECT timefrom,timeto,block_type FROM vg_blocks WHERE vg_id=$vg_id AND ((DATE(timefrom) BETWEEN '".date("Y-m-01")."' AND '".date("Y-m-t")."') OR (DATE(timeto) BETWEEN '".date("Y-m-01")."' AND '".date("Y-m-t")."'))";        
+    $res2 = $lb->ExecuteSQL($sql);
+    while ($row2 = mysqli_fetch_array($res2)) { 
+        if (date("m-Y", strtotime($row2["timefrom"]))==date("m-Y")) {
+                $t1 = (int)intval(date("d", strtotime($row2["timefrom"])));
+            } else {
+                $t1 = 0;
+            }
+        if (date("m-Y", strtotime($row2["timeto"]))==date("m-Y")) {
+                $t2 = (int)intval(date("d", strtotime($row2["timeto"])))-1;
+            } else {
+                $t2 = intval(date("t"));
+            }
+        if ($row2["timefrom"]=="0000-00-00 00:00:00") $t1 = 1;
+        if (date("Y",strtotime($row2["timeto"]))=="9999" && $row2["block_type"]==10) {
+                $t2 = date("t");
+            }
+            elseif (date("Y",strtotime($row2["timeto"]))=="9999" && $row2["block_type"]!=10) $t2 = (int)date("t");
+        for ($i=$t1; $i<=$t2; $i++) $user[$i+0]["blocked"] = $row2["block_type"];
+    };
+    // Запланированные блокировки
+	    $sql = "SELECT change_time,blk_req FROM vg_blocks_rasp WHERE vg_id=$vg_id AND DATE(change_time) BETWEEN '".date("Y-m-01")."' AND '".date("Y-m-t")."'";	    
+	    $res2 = $lb->ExecuteSQL($sql);	    
+	    if (mysqli_num_rows($res2)!=0){
+		    while ($row2 = mysqli_fetch_array($res2)){
+			//echo $row2["timefrom"]." - ".$row2["timeto"]."<br>";
+			if (date("m-Y", strtotime($row2["change_time"]))==date("m-Y")){
+				$t1 = (int)intval(date("d", strtotime($row2["change_time"])));
+			    }
+			$t2 = intval(date("t"));
+			for ($i=$t1; $i<=$t2; $i++)
+			    $user[$i]["blocked"] = $row2["blk_req"];
+		    };
+		};      
+   return $user;
+};
+function GetTarsDayByDay($vg_id,$user,$lb){
+//тариф по умолчанию
+$sql="select tar_id from vgroups where vg_id=$vg_id";
+$res2 = $lb->ExecuteSQL($sql);
+while ($row2 = mysqli_fetch_array($res2)) {$tar_id=$row2["tar_id"];};
+//по умалчанию заполняем текущим тарифом
+for ($i=1; $i<=date("t"); $i++) {$users[$i]["tar_id"] = $tar_id;};
+//а теперь, если вдруг были переходы, то считаем что начисления уже были до дня перехода
+$sql = "SELECT * FROM tarifs_history WHERE vg_id=$vg_id AND DATE(rasp_time) BETWEEN '".date("Y-m-01")."' AND '".date("Y-m-t")."'";
+$res2 = $lb->ExecuteSQL($sql);
+        $t1 = 1;
+        while ($row2 = mysqli_fetch_array($res2)) { 
+            $t2 = date("d", strtotime($row2["rasp_time"]));            
+            for ($i=$t1; $i<$t2; $i++) {
+                $users[$i+0]["tar_id"] = $row2["tar_id_old"];                           
+                $users[$i]["pay_already"] =-1; //начисления за это время уже сделано!
+            };
+            for ($i=$t2; $i<=date("t"); $i++){                
+                $users[$i+0]["tar_id"] = $row2["tar_id_new"];
+            };    
+            $t1 = $t2;
+        };
+ 
+ return $users;     
+};
+function GetPredPlatByVg_id($vg_id,$lb){
+    $user=array();  
+    $user=GetBlockedDayByDay($vg_id,$user,$lb); //получаем блокировки пользователя днем за нем...
+    $user=GetTarsDayByDay($vg_id,$user,$lb);    //получаем тарифы пользователя день за днем...
+};
+function GetPredPlatByAgrmId($lb,$agrm_id){    
+    $rent=array();
+    $sql="select vg_id from vgroups where agrm_id='$agrm_id' and archive=0";
+    $result = $lb->ExecuteSQL($sql);                
+    while ($myrow = mysqli_fetch_array($result)){
+        $vg_id=$myrow["vg_id"];
+	$rent[$vg_id]=GetPredPlatByVg_id($vg_id);
+    };
+    return $rent;       
+    
+};
 ?>

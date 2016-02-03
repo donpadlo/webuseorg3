@@ -10,11 +10,18 @@
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 $md->Register("smscenter", "СМС-Центр", "Грибов Павел"); 
 if ($md->IsActive("smscenter")==1) { 
-    $this->Add("main","<i class='fa fa-mail fa-fw'> </i>СМС-Центр","СМС-Центр",3,"smscenter","");
-     $this->Add("smscenter","<i class='fa fa-mail fa-fw'> </i>Отправка СМС по списку","Отправка СМС по списку",3,"smscenter/sendbylist","smscenter/sendbylist");
-     $this->Add("smscenter","<i class='fa fa-tablet fa-fw'> </i>Статистика по СМС",">Статистика по СМС",3,"smscenter/smsstat","smscenter/smsstat");
-     $this->Add("smscenter","<i class='fa fa-cog fa-fw'> </i>Настройка агентов отправки СМС","Настройка агентов отправки СМС",3,"smscenter/smsconfig","smscenter/smsconfig");     
-     $this->Add("smscenter","<i class='fa fa-groups fa-fw'> </i>Отправка СМС группе","Отправка СМС группе",3,"smscenter/smsconfig","smscenter/sendgroupsms");     
-     $this->Add("smscenter","<i class='fa fa-cog fa-fw'> </i>Управление группами","Управление группами для отправки СМС",3,"smscenter/smsconfig","smscenter/sms");          
-}
+    $this->Add("main","<img src=controller/client/themes/$cfg->theme/ico/email.png> СМС-Центр","СМС-Центр",3,"smscenter","");
+     $this->Add("smscenter","Отправка СМС по списку","Отправка СМС по списку",3,"smscenter/sendbylist","smscenter/sendbylist");
+     $this->Add("smscenter","Статистика по СМС",">Статистика по СМС",3,"smscenter/smsstat","smscenter/smsstat");
+     $this->Add("smscenter","Настройка агентов отправки СМС","Настройка агентов отправки СМС",3,"smscenter/smsconfig","smscenter/smsconfig");     
+     $this->Add("smscenter","Отправка СМС группе","Отправка СМС группе",3,"smscenter/smsconfig","smscenter/sendgroupsms");     
+     $this->Add("smscenter","Управление группами","Управление группами для отправки СМС",3,"smscenter/smsconfig","smscenter/sms");          
+    if ($md->IsActive("lanbilling")==1) {
+      // Меню для СМС, то что касается LanBilling
+	 $this->Add("smscenter","Отправка СМС группе абонетов LanBilling","Отправка СМС группе абонетов LanBilling",3,"smscenter/sendgroup","lanbilling/sms/sendgroup");     
+	 $this->Add("smscenter","Шаблоны СМС для LanBilling",">Шаблоны СМС для LanBilling",3,"smscenter/smstemplates","lanbilling/smstemplates");
+	 $this->Add("smscenter","Статистика по СМС",">Статистика по СМС",3,"smscenter/smsstat","smscenter/smsstat");  
+      // end     
+    };     
+};
 unset($md);

@@ -45,6 +45,7 @@ $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать!".mysqli
 while($row = mysqli_fetch_array($result)) {    
   $id=$row["id"];  
   $mobile=$row["mobile"];  
+  $mobile='7'.$mobile;
   $smstxt=$row["smstxt"];  
     $res=$sms->sendSMS($mobile,$smstxt);
     if (is_array($res)==true){        
@@ -54,6 +55,7 @@ while($row = mysqli_fetch_array($result)) {
     };
     if ($res=="ok"){
       $res=$sms->getStatus($idmess);
+      //var_dump($res);
       $cost=$res[0]["smsPrice"];
       $lg->Save('2',$mobile."/".$smstxt."(group)",$cost,$blibase);  
       $res="ok";  

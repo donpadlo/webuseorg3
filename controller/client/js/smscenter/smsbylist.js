@@ -107,9 +107,11 @@ $( document ).ready(function() {
                 $("#list2").load('controller/server/smscenter/smsgroupsendprogress.php?orgid='+defaultorgid+"&blibase="+$("#blibase").val()+"&grp="+$("#grp").val());                                
             }, 2000);
                 // запускаю рассылку СМС
+		$("#message_send").html("<img src=controller/client/themes/"+theme+"/img/loading.gif><br>*выполнение запроса может занять некоторое время..");        
                 $.get("controller/server/smscenter/smsglistsend.php?orgid="+defaultorgid, {blibase:$("#blibase").val()} , function(data){                
                     clearInterval(timer);
                     jQuery("#list2").jqGrid().trigger('reloadGrid');                               
+		    $("#message_send").html("");       
                 });            
         }        
       }
