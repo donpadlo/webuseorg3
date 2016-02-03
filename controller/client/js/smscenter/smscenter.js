@@ -1,4 +1,3 @@
-GetGrid();
 function GetGrid(){
 jQuery("#list2").jqGrid({
    	url:'controller/server/smscenter/smscenter.php?orgid='+defaultorgid,
@@ -32,3 +31,12 @@ var addOptions={
 };
 jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:true,del:false,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true} );
 };
+$(document).ready(function() {
+    // загружаем табличку с агентами
+      GetGrid();    
+    // отображаем когда начинаем отправлять СМС
+    $("#time_to_cur_div").load("controller/server/smscenter/getsmsdatesend.php");
+    $('#setsendsms').click(function () {
+	$("#time_to_cur_div").load("controller/server/smscenter/getsmsdatesend.php?set=true&sec="+$("#time_to").val());
+    });
+});

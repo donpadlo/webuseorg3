@@ -20,7 +20,7 @@
   sms->GetBalanse();
   sms->sendsms(phone,txt)
  */
-
+if (defined('WUO_ROOT')==false){define('WUO_ROOT', dirname(__FILE__));};
 $md = new Tmod; // обьявляем переменную для работы с классом модуля
 
 if ($md->IsActive('smscenter') == 1) {
@@ -36,8 +36,12 @@ if ($md->IsActive('smscenter') == 1) {
 		@include_once("../../../../inc/$fileagent");
 		@include_once("../../../../../inc/$fileagent");
 		@include_once("../../../../../../inc/$fileagent");
-		@include_once("../../../../../../inc/$fileagent");*/
+		@include_once("../../../../../../inc/$fileagent");		*/
 		@include_once(WUO_ROOT."/inc/$fileagent");
+		@include_once(WUO_ROOT."/../inc/$fileagent");
+		@include_once(WUO_ROOT."/class/cconfig.php");
+		@include_once(WUO_ROOT."/../class/cconfig.php");
+		
 	}
 	unset($md);
 }

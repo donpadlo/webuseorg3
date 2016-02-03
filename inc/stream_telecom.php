@@ -89,6 +89,15 @@ public function getBalance(){
 	return json_decode($result,true);
 }
 public function sendSMS($phones,$text){
+$tsms=new Tcconfig();
+$dtsms=$tsms->GetByParam("datetimetosmssend");
+if ($dtsms==""){
+  $dtsms=microtime(true);  
+  $tsms->SetByParam("datetimetosmssend", $dtsms);
+};
+$nw=intval(round($dtsms-microtime(true),0));
+if ($nw>=0){    
+    
     $href = $this ->server.'Send/SendSms/';
     $src = 'sessionId='.$this->session_post.'&sourceAddress='.$this->sender.'&destinationAddress='.$phones.'&data='.$text.'&validity=';
     $result = $this -> PostConnect($src,$href);	
@@ -102,6 +111,10 @@ public function sendSMS($phones,$text){
       $res[] = array("phone"=>$phones, "id"=>$rz[0]);
     };
     return $res;   
+} else {
+        $res[] = array("phone"=>"non", "id"=>"non");
+	return $res;   
+};
 }
 
 public function getStatus($id){

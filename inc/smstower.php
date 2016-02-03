@@ -79,6 +79,14 @@ public function getBalance(){
 		}
 	}
 public function sendSMS($phones,$text){
+$tsms=new Tcconfig();
+$dtsms=$tsms->GetByParam("datetimetosmssend");
+if ($dtsms==""){
+  $dtsms=microtime(true);  
+  $tsms->SetByParam("datetimetosmssend", $dtsms);
+};
+$nw=intval(round($dtsms-microtime(true),0));
+if ($nw>=0){      
             $sender=$this->sender;
            // echo "!$sender!";
 		$result = array();
@@ -136,7 +144,10 @@ public function sendSMS($phones,$text){
 					return $data;
 				break;
 			}
-		}
+		} 
+} else {
+    return 'Ошибка: отправка приостановлена';
+}
 }
 //Запросить статус смс по $id (множественный выбор - через запятую)
 public function getStatus($id){

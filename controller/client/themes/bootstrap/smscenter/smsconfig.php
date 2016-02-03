@@ -22,6 +22,28 @@ if ($user->mode==1){
         ?>
             <h4>Текущий агент: <?php echo "$agnt";?> <h4>            
             <h4>Баланс по агенту: <?php echo "$bal";?> <h4>
+	
+	<div class="panel panel-primary">
+	    <div class="panel-heading">Отсрочка отправки</div>
+	    <div class="panel-body">
+	    Приостановить отправку СМС на:
+                                        <div id="time_to_div" name="time_to_div">
+					    <select name="time_to" id="time_to">
+						<option value=10>10 минут</option>
+						<option value=30>30 минут</option>
+						<option value=60>1 час</option>
+						<option value=120>2 часа</option>
+						<option value=180>3 часа</option>
+						<option value=360>6 часов</option>
+						<option value=720>12 часов</option>
+					    </select>
+					    <div id="time_to_cur_div" name="time_to_cur_div">
+						
+					    </div>
+					    <button type="submit" class="form-control" id="setsendsms" name="setsendsms">Установить</button>
+					</div>         
+	    </div>	    
+	</div>
         </div>  
     </div>
 </div>    

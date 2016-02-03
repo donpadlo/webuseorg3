@@ -23,7 +23,6 @@ sms->sendsms(phone,txt)
 sms->getStatus(id)       
  
 */
-
 class SmsAgent {
     
 var $last_id = 0;
@@ -70,7 +69,16 @@ $rez=trim($xml->money." ")+0;
 return $rez;
 	
 }
-public function sendSMS($phones,$text){
+public function sendSMS($phones,$text){    
+$tsms=new Tcconfig();
+$dtsms=$tsms->GetByParam("datetimetosmssend");
+if ($dtsms==""){
+  $dtsms=microtime(true);  
+  $tsms->SetByParam("datetimetosmssend", $dtsms);
+};
+$nw=intval(round($dtsms-microtime(true),0));
+if ($nw>=0){    
+
 $sender=$this->sender;
 $this->money=($this->getBalance()+0);
     $src='<?xml version="1.0" encoding="utf-8" ?>
@@ -106,6 +114,10 @@ $this->money=($this->getBalance()+0);
     $result[] = array("phone"=>(string)$phones, "id"=>(string)"non");
     //echo "--ok!";
     return $result;
+    } else {
+	$result=array();
+	$result[] = array("phone"=>(string)"non", "id"=>(string)"non");	
+    };   
 }
 //Запросить статус смс по $id (множественный выбор - через запятую)
 public function getStatus($id){
