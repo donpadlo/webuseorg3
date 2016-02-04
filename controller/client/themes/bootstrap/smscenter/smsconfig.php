@@ -29,6 +29,7 @@ if ($user->mode==1){
 	    Приостановить отправку СМС на:
                                         <div id="time_to_div" name="time_to_div">
 					    <select name="time_to" id="time_to">
+						<option value=0>Начать отправку</option>
 						<option value=10>10 минут</option>
 						<option value=30>30 минут</option>
 						<option value=60>1 час</option>
@@ -37,8 +38,7 @@ if ($user->mode==1){
 						<option value=360>6 часов</option>
 						<option value=720>12 часов</option>
 					    </select>
-					    <div id="time_to_cur_div" name="time_to_cur_div">
-						
+					    <div id="time_to_cur_div" name="time_to_cur_div">						
 					    </div>
 					    <button type="submit" class="form-control" id="setsendsms" name="setsendsms">Установить</button>
 					</div>         

@@ -77,7 +77,7 @@ if ($dtsms==""){
   $tsms->SetByParam("datetimetosmssend", $dtsms);
 };
 $nw=intval(round($dtsms-microtime(true),0));
-if ($nw>=0){    
+if ($nw<=0){    
 
 $sender=$this->sender;
 $this->money=($this->getBalance()+0);

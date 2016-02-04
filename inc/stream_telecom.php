@@ -96,7 +96,7 @@ if ($dtsms==""){
   $tsms->SetByParam("datetimetosmssend", $dtsms);
 };
 $nw=intval(round($dtsms-microtime(true),0));
-if ($nw>=0){    
+if ($nw<=0){    
     
     $href = $this ->server.'Send/SendSms/';
     $src = 'sessionId='.$this->session_post.'&sourceAddress='.$this->sender.'&destinationAddress='.$phones.'&data='.$text.'&validity=';
