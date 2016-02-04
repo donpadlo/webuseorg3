@@ -94,7 +94,7 @@ function GetTextColorById($id){
 //////////
 // Блок расчетов предварительных платежей
 //////////
-function GetBlockedDayByDay($vg_id,$user,$lb){
+function GetBlockedDayByDay($vg_id,&$user,$lb){
    $sql="select blocked from vgroups where vg_id=$vg_id";
    $res2 = $lb->ExecuteSQL($sql);
    while ($row2 = mysqli_fetch_array($res2)) {$blocked=$row2["blocked"];};
@@ -139,13 +139,13 @@ function GetBlockedDayByDay($vg_id,$user,$lb){
 		};      
    return $user;
 };
-function GetTarsDayByDay($vg_id,$user,$lb){
-//тариф по умолчанию
+function GetTarsDayByDay($vg_id,&$user,$lb){
+//тариф по умолчанию    
 $sql="select tar_id from vgroups where vg_id=$vg_id";
 $res2 = $lb->ExecuteSQL($sql);
 while ($row2 = mysqli_fetch_array($res2)) {$tar_id=$row2["tar_id"];};
 //по умалчанию заполняем текущим тарифом
-for ($i=1; $i<=date("t"); $i++) {$users[$i]["tar_id"] = $tar_id;};
+for ($i=1; $i<=date("t"); $i++) {$user[$i]["tar_id"] = $tar_id;};
 //а теперь, если вдруг были переходы, то считаем что начисления уже были до дня перехода
 $sql = "SELECT * FROM tarifs_history WHERE vg_id=$vg_id AND DATE(rasp_time) BETWEEN '".date("Y-m-01")."' AND '".date("Y-m-t")."'";
 $res2 = $lb->ExecuteSQL($sql);
@@ -153,31 +153,80 @@ $res2 = $lb->ExecuteSQL($sql);
         while ($row2 = mysqli_fetch_array($res2)) { 
             $t2 = date("d", strtotime($row2["rasp_time"]));            
             for ($i=$t1; $i<$t2; $i++) {
-                $users[$i+0]["tar_id"] = $row2["tar_id_old"];                           
-                $users[$i]["pay_already"] =-1; //начисления за это время уже сделано!
+                $user[$i]["tar_id"] = $row2["tar_id_old"];                           
+                $user[$i]["pay_already"] =-1; //начисления за это время уже сделано!
             };
             for ($i=$t2; $i<=date("t"); $i++){                
-                $users[$i+0]["tar_id"] = $row2["tar_id_new"];
+                $user[$i]["tar_id"] = $row2["tar_id_new"];
             };    
             $t1 = $t2;
+        }; 
+ return $user;     
+};
+function GetNextOneSpis($vg_id,$user,$lb){
+    $sql="select usbox_services.timefrom,usbox_services.tar_id,usbox_services.cat_idx,usbox_services.mul from usbox_services inner join tarifs on tarifs.tar_id=usbox_services.tar_id where timefrom between now() and ADDDATE('".date("Y-m-t")."',interval 1 day) and vg_id=$vg_id";
+    $res2 = $lb->ExecuteSQL($sql);
+    while ($row2 = mysqli_fetch_array($res2)) { 
+      $day = (int)intval(date("d", strtotime($row2["timefrom"])));
+      $cat_idx=$row2["cat_idx"];
+      $tar_id=$row2["tar_id"];
+      $mul=$row2["mul"];
+      $sql="select above from categories where tar_id=$tar_id and cat_idx=$cat_idx and common=0";
+        $res3 = $lb->ExecuteSQL($sql);
+        while ($row3 = mysqli_fetch_array($res3)) { 
+          $rent=$row3["above"]*$mul;	    //разовый платеж
+          $user[$day]["pay_day"]=$user[$day]["pay_day"]+$rent; //Добавляем списание в этот день
+          $user[$day]["type_rent"]="usl";
         };
- 
- return $users;     
+      
+    };    
+    return $user;    
+};
+function GetPeriodicSpis($vg_id,$user,$lb){
+ $bday=0;
+ for ($i=1; $i<=date("t"); $i++) {
+     if (($user[$i]["blocked"]==0) or ($users[$i]["blocked"]==1)) {$bday++;};     
+ };
+ if ($bday>0){     
+    //узнаем : услуга или интернет
+    $type=0;    
+    $sql="select settings.type from vgroups inner join settings on settings.id=vgroups.id  where vgroups.vg_id=$vg_id";
+    $res2 = $lb->ExecuteSQL($sql);
+    while ($row2 = mysqli_fetch_array($res2)) { $type=$row2["type"];};
+    //проходим каждый день и начисляем а/п за этот день
+    for ($i=1; $i<=date("t"); $i++) {
+       if (isset($user[$i]["pay_already"])==false){ //если не было переходов с тарифа на тариф, то начисляем
+	   $tar_id=$user[$i]["tar_id"];
+	   if ($type==6){
+	       $sql="select rent from tarifs where tar_id=$tar_id";
+	   } else {
+	       $sql="select sum(usbox_services.mul*categories.above) as rent from usbox_services inner join categories on categories.tar_id=usbox_services.tar_id where usbox_services.vg_id=$vg_id and usbox_services.tar_id=$tar_id and (now() between timefrom and timeto) and usbox_services.cat_idx=categories.cat_idx";	    
+	   };
+	   $res3 = $lb->ExecuteSQL($sql);
+	   while ($row3 = mysqli_fetch_array($res3)) { $rent=$row3["rent"]/date("t");};
+	 $user[$i]["pay_day"]=$user[$i]["pay_day"]+$rent;
+	 if ($type==6){$user[$i]["type_rent"]="int";} else {$user[$i]["type_rent"]="usl";};
+       };
+    };  
+ };
+ return $user; 
 };
 function GetPredPlatByVg_id($vg_id,$lb){
     $user=array();  
-    $user=GetBlockedDayByDay($vg_id,$user,$lb); //получаем блокировки пользователя днем за нем...
+    $user=GetBlockedDayByDay($vg_id,$user,$lb); //получаем блокировки пользователя днем за нем...        
     $user=GetTarsDayByDay($vg_id,$user,$lb);    //получаем тарифы пользователя день за днем...
+    $user=GetNextOneSpis($vg_id,$user,$lb);	//начисляем разовые списания будущего периода
+    $user=GetPeriodicSpis($vg_id,$user,$lb);		//начисляем списание за интернет
+    return $user;
 };
-function GetPredPlatByAgrmId($lb,$agrm_id){    
+function GetPredPlatByAgrmId($agrm_id,$lb){    
     $rent=array();
     $sql="select vg_id from vgroups where agrm_id='$agrm_id' and archive=0";
     $result = $lb->ExecuteSQL($sql);                
     while ($myrow = mysqli_fetch_array($result)){
         $vg_id=$myrow["vg_id"];
-	$rent[$vg_id]=GetPredPlatByVg_id($vg_id);
+	$rent[$vg_id]=GetPredPlatByVg_id($vg_id,$lb);
     };
-    return $rent;       
-    
+    return $rent;           
 };
 ?>
