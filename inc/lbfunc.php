@@ -185,7 +185,7 @@ function GetNextOneSpis($vg_id,$user,$lb){
 function GetPeriodicSpis($vg_id,$user,$lb){
  $bday=0;
  for ($i=1; $i<=date("t"); $i++) {
-     if (($user[$i]["blocked"]==0) or ($users[$i]["blocked"]==1)) {$bday++;};     
+     if (($user[$i]["blocked"]==0) or ($user[$i]["blocked"]==1)) {$bday++;};     
  };
  if ($bday>0){     
     //узнаем : услуга или интернет
