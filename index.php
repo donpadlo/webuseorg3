@@ -43,7 +43,6 @@ if (isset($_GET['route'])) {
 		}
 	}
 	// Получаем путь до скрипта ($route) и переданные ему параметры ($PARAMS)
-	$uri=  explode("&", $uri)[0]; //отсекаем из пути, всё что правее знака &
 	list($route, $p) = array_pad(explode('?', $uri, 2), 2, null);
 	if ($p) {
 		parse_str($p, $PARAMS);
