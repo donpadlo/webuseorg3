@@ -28,7 +28,7 @@ if ($user->id==""){
         <div class="col-xs-6 col-md-6 col-sm-6">              
                                         <div id="userpic" class="userpic">
                                             <div class="js-preview userpic__preview thumbnail">
-                                                <img width="100%"src="photos/<?php echo "$jpegphoto";?>">
+                                                <img width="100%" src="photos/<?php echo $jpegphoto; ?>">
                                             </div>
 						<div class="btn btn-success js-fileapi-wrapper">
 							<div class="js-browse">

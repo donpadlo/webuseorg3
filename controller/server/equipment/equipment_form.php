@@ -27,11 +27,14 @@ $step = GetDef('step');
 $sorgid = PostDef('sorgid');
 $splaces = PostDef('splaces');
 $suserid = PostDef('suserid');
+
 // Выполняем только при наличии у пользователя соответствующей роли
+// http://грибовы.рф/wiki/doku.php/основы:доступ:роли
+
 if (($user->TestRoles('1,4,5,6')) && ($step != '')) {    
 	if ($step != 'move') {
-		$dtpost = DateToMySQLDateTime2($_POST['dtpost'].' 00:00:00');
-		$dtendgar = DateToMySQLDateTime2($_POST['dtendgar'].' 00:00:00');
+		$dtpost = DateToMySQLDateTime2(PostDef('dtpost').' 00:00:00');
+		$dtendgar = DateToMySQLDateTime2(PostDef('dtendgar').' 00:00:00');
 		if ($dtpost == '') {
 			$err[] = 'Не выбрана дата!';
 		}
@@ -44,34 +47,34 @@ if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
 		if ($suserid == '') {
 			$err[] = 'Не выбран пользователь!';
 		}
-		$sgroupname = (isset($_POST['sgroupname'])) ? $_POST['sgroupname'] : '';
+		$sgroupname = PostDef('sgroupname');
 		if ($sgroupname == '') {
 			$err[] = 'Не выбрана группа номенклатуры!';
 		}
-		$svendid = (isset($_POST['svendid'])) ? $_POST['svendid'] : '';
+		$svendid = PostDef('svendid');
 		if ($svendid == '') {
 			$err[] = 'Не выбран производитель!';
 		}
-		$snomeid = (isset($_POST['snomeid'])) ? $_POST["snomeid"] : '';
+		$snomeid = PostDef('snomeid');
 		if ($snomeid == '') {
 			$err[] = 'Не выбрана номенклатура!';
 		}
-		$kntid = (isset($_POST['kntid'])) ? $_POST['kntid'] : '';
+		$kntid = PostDef('kntid');
 		if ($kntid == '') {
 			$err[] = 'Не выбран поставщик!';
 		}
 		$os = PostDef('os', '0');
 		$mode = PostDef('mode', '0');
 		$mapyet = PostDef('mapyet', '0');
-		$buhname = $_POST['buhname'];
-		$sernum = $_POST['sernum'];
-		$invnum = $_POST['invnum'];
-		$shtrihkod = $_POST['shtrihkod'];
-		$cost = $_POST['cost'];
-		$picphoto = $_POST['picname'];
-		$currentcost = $_POST['currentcost'];
-		$comment = $_POST['comment'];
-		$ip = $_POST['ip'];
+		$buhname = PostDef('buhname');
+		$sernum = PostDef('sernum');
+		$invnum = PostDef('invnum');
+		$shtrihkod = PostDef('shtrihkod');
+		$cost = PostDef('cost');
+		$picphoto = PostDef('picname');
+		$currentcost = PostDef('currentcost');
+		$comment = PostDef('comment');
+		$ip = PostDef('ip');
 	} else {
 		if ($sorgid == '') {
 			$err[] = "Не выбрана организация!";
@@ -87,7 +90,7 @@ if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
 		} else {
 			$tmcgo = '0';
 		}
-		$comment = $_POST['comment'];
+		$comment = PostDef('comment');
 	}
 
 	// Добавляем родимую

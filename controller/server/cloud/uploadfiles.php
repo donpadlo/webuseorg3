@@ -1,4 +1,5 @@
 <?php
+
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
 //   Грибов Павел,
@@ -15,7 +16,7 @@ $uploaddir = WUO_ROOT.'/files/';
 
 $userfile_name = basename($_FILES['filedata']['name']);
 if (in_array($userfile_name, $dis)) {
-	$rs = array('msg' => 'error');	
+	$rs = array('msg' => 'error');
 } else {
 	$orig_file = $_FILES['filedata']['name'];
 	$len = strlen($userfile_name);
@@ -40,5 +41,4 @@ if (in_array($userfile_name, $dis)) {
 	}
 }
 
-header('Content-type: application/json');
-echo json_encode($rs);
+jsonExit($rs);

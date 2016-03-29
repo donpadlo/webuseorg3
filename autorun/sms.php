@@ -1,7 +1,10 @@
 <?php
 
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
 /*
@@ -20,29 +23,32 @@
   sms->GetBalanse();
   sms->sendsms(phone,txt)
  */
-if (defined('WUO_ROOT')==false){define('WUO_ROOT', dirname(__FILE__));};
+if (defined('WUO_ROOT') == false) {
+	define('WUO_ROOT', dirname(__FILE__));
+}
+
 $md = new Tmod; // обьявляем переменную для работы с классом модуля
 
 if ($md->IsActive('smscenter') == 1) {
 	$sql = "SELECT * FROM sms_center_config WHERE sel='Yes'";
 	$result = $sqlcn->ExecuteSQL($sql)
-			or die('Не могу прочитать настройки sms_center_config!'.mysqli_error($sqlcn->idsqlconnection));
+			or die('Не могу прочитать настройки sms_center_config! '.mysqli_error($sqlcn->idsqlconnection));
 	while ($row = mysqli_fetch_array($result)) {
 		$fileagent = $row['fileagent'];
-/*		@include_once("inc/$fileagent");
-		@include_once("../inc/$fileagent");
-		@include_once("../../inc/$fileagent");
-		@include_once("../../../inc/$fileagent");
-		@include_once("../../../../inc/$fileagent");
-		@include_once("../../../../../inc/$fileagent");
-		@include_once("../../../../../../inc/$fileagent");
-		@include_once("../../../../../../inc/$fileagent");		*/
+		/*
+		  @include_once("inc/$fileagent");
+		  @include_once("../inc/$fileagent");
+		  @include_once("../../inc/$fileagent");
+		  @include_once("../../../inc/$fileagent");
+		  @include_once("../../../../inc/$fileagent");
+		  @include_once("../../../../../inc/$fileagent");
+		  @include_once("../../../../../../inc/$fileagent");
+		  @include_once("../../../../../../inc/$fileagent");
+		 */
 		@include_once(WUO_ROOT."/inc/$fileagent");
 		@include_once(WUO_ROOT."/../inc/$fileagent");
 		@include_once(WUO_ROOT."/class/cconfig.php");
 		@include_once(WUO_ROOT."/../class/cconfig.php");
-		
 	}
 	unset($md);
 }
-?>
