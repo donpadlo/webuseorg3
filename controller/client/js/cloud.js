@@ -61,7 +61,7 @@ function GetTree() {
 		autoCollapse: false,
 		minExpandLevel: 3,
 		initAjax: {
-			url: route + 'controller/server/cloud/gettree.php'
+			url: route + 'controller/server/cloud/gettree.php?'
 		},
 		onActivate: function(node) {
 			selectedkey = node.data.key;
