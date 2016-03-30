@@ -1,31 +1,25 @@
 <?php
-
 // Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
+// Разработчики:
+//   Грибов Павел,
+//   Сергей Солодягин (solodyagin@gmail.com)
+//   (добавляйте себя если что-то делали)
 // http://грибовы.рф
-if ($user->mode==1){
+
+if ($user->mode == 1):
 ?>
 <div class="well">
-    <button name=bdel id=bdel>Начать удаление</button></p>
-    <div id="infoblock"></div>
-    <hr>
+	<button name="bdel" id="bdel" class="btn btn-primary">Начать удаление</button></p>
+	<div id="infoblock"></div>
 </div>
 <script>
-       $("#bdel").click(function(){
-       $("#infoblock").load("controller/server/delete/delete.php");
-       return false;
-    });
+$('#bdel').click(function(){
+	$('#infoblock').load('controller/server/delete/delete.php');
+	return false;
+});
 </script>
-
-<?php
-}
- else {
-?>
+<?php else: ?>
 <div class="alert alert-error">
-  У вас нет доступа в данный раздел!
+	У вас нет доступа в данный раздел!
 </div>
-<?php
-    
-}
-
-?>
+<?php endif; ?>

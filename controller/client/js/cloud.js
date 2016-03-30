@@ -13,14 +13,13 @@ function ViewFileList(keyme) {
 	jQuery('#cloud_files').jqGrid({
 		url: route + 'controller/server/cloud/listfiles.php?cloud_dirs_id=' + keyme,
 		datatype: 'json',
-		colNames: ['Id', 'Скачать', 'Наименование документа', 'Файл', 'Дата', 'Размер', 'Действия'],
+		colNames: ['Id', 'Скачать', 'Наименование документа', 'Дата', 'Размер', 'Действия'],
 		colModel: [
 			{name: 'id', index: 'id', width: 25, hidden: true},
 			{name: 'ico', index: 'ico', width: 25, align: "center"},
 			{name: 'title', index: 'title', width: 265, editable: true},
-			{name: 'filename', index: 'filename', width: 120, hidden: true},
-			{name: 'dt', index: 'dt', width: 36},
-			{name: 'sz', index: 'sz', width: 90, hidden: true},
+			{name: 'dt', index: 'dt', width: 90},
+			{name: 'sz', index: 'sz', width: 50},
 			{name: 'myac', width: 80, fixed: true, sortable: false, resize: false,
 				formatter: 'actions', formatoptions: {keys: true}}
 

@@ -45,25 +45,45 @@ if ($oper == '') {
 	$i = 0;
 	while ($row = mysqli_fetch_array($result)) {
 		$responce->rows[$i]['id'] = $row['id'];
+/*
 		$ico = "<img src='controller/client/themes/$cfg->theme/ico/page_white_acrobat.png'>";
-		if (strpos($row['filename'], 'jpeg') != false) {
+		if (strpos($row['filename'], '.jpeg') != false) {
 			$ico = "<img src='controller/client/themes/$cfg->theme/ico/image.png'>";
 		}
-		if (strpos($row['filename'], 'jpg') != false) {
+		if (strpos($row['filename'], '.jpg') != false) {
 			$ico = "<img src='controller/client/themes/$cfg->theme/ico/image.png'>";
 		}
-		if (strpos($row['filename'], 'png') != false) {
+		if (strpos($row['filename'], '.png') != false) {
 			$ico = "<img src='controller/client/themes/$cfg->theme/ico/image.png'>";
 		}
-		if (strpos($row['filename'], 'xls') != false) {
+		if (strpos($row['filename'], '.xls') != false) {
 			$ico = "<img src='controller/client/themes/$cfg->theme/ico/exel.png'>";
 		}
-		if (strpos($row['filename'], 'doc') != false) {
+		if (strpos($row['filename'], '.doc') != false) {
 			$ico = "<img src='controller/client/themes/$cfg->theme/ico/office.png'>";
 		}
-		$ico = "<a target='_blank' href='files/".$row['filename']."'>".$ico."</a>";
-		$title = "<a target='_blank' href='files/".$row['filename']."'>".$row['title']."</a>";
-		$responce->rows[$i]['cell'] = array($row['id'], $ico, $title, $row['filename'], $row['dt'], $row['sz']);
+*/
+		switch (pathinfo($row['filename'], PATHINFO_EXTENSION)) {
+			case 'jpeg':
+			case 'jpg':
+			case 'png':
+				$ico = '<img src="controller/client/themes/'.$cfg->theme.'/ico/image.png">';
+				break;
+			case 'xls':
+			case 'ods':
+				$ico = '<img src="controller/client/themes/'.$cfg->theme.'/ico/exel.png">';
+				break;
+			case 'doc':
+			case 'odt':
+				$ico = '<img src="controller/client/themes/'.$cfg->theme.'/ico/office.png">';
+				break;
+			default:
+				$ico = '<img src="controller/client/themes/'.$cfg->theme.'/ico/page_white_acrobat.png">';
+		}
+		//$ico = "<a target='_blank' href='files/".$row['filename']."'>".$ico."</a>";
+		$ico = '<a target="_blank" href="index.php?route=/controller/server/cloud/download.php?id='.$row['id'].'">'.$ico.'</a>';
+		$title = $row['title'];
+		$responce->rows[$i]['cell'] = array($row['id'], $ico, $title, $row['dt'], human_sz($row['sz']));
 		$i++;
 	}
 	jsonExit($responce);

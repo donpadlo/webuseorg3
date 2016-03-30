@@ -9,35 +9,29 @@
 
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-$dis = array('.htaccess'); // Запрещённые для загрузки файлы
+// Проверяем: может ли пользователь добавлять файлы?
+$user->TestRoles('1,4') or die('Недостаточно прав');
 
 $selectedkey = $_POST['selectedkey'];
-$uploaddir = WUO_ROOT.'/files/';
+$orig_file = $_FILES['filedata']['name'];
+$dis = array('.htaccess'); // Запрещённые для загрузки файлы
 
-$userfile_name = basename($_FILES['filedata']['name']);
-if (in_array($userfile_name, $dis)) {
-	$rs = array('msg' => 'error');
-} else {
-	$orig_file = $_FILES['filedata']['name'];
-	$len = strlen($userfile_name);
-	//$ext_file = substr($userfile_name, $len - 4, $len);
-	$userfile_name = GetRandomId(5).$userfile_name;
-	$uploadfile = $uploaddir.$userfile_name;
+$rs = array('msg' => 'error'); // Ответ по умолчанию, если пойдёт что-то не так
 
-	$sr = $_FILES['filedata']['tmp_name'];
-	$dest = $uploadfile;
-
-	$res = move_uploaded_file($sr, $dest);
-	if ($res != false) {
-		$rs = array('msg' => "$userfile_name");
+if (!in_array($orig_file, $dis)) {
+	$userfile_name = GetRandomId(8).'.'.pathinfo($orig_file, PATHINFO_EXTENSION);
+	$src = $_FILES['filedata']['tmp_name'];
+	$dst = WUO_ROOT.'/files/'.$userfile_name;
+	$res = move_uploaded_file($src, $dst);
+	if ($res) {
+		$rs['msg'] = $userfile_name;
+		$sz = filesize($dst);
 		if ($selectedkey != '') {
 			$SQL = "INSERT INTO cloud_files (id, cloud_dirs_id, title, filename, dt, sz)
-				VALUES (null, '$selectedkey', '$orig_file', '$userfile_name', NOW(), 0)";
-			$sqlcn->ExecuteSQL($SQL) or
-					die('Не могу добавить файл! '.mysqli_error($sqlcn->idsqlconnection));
+				VALUES (null, '$selectedkey', '$orig_file', '$userfile_name', NOW(), $sz)";
+			$sqlcn->ExecuteSQL($SQL)
+					or die('Не могу добавить файл! '.mysqli_error($sqlcn->idsqlconnection));
 		}
-	} else {
-		$rs = array('msg' => 'error');
 	}
 }
 
