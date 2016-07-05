@@ -27,5 +27,8 @@ if ($md->IsActive("cables")==1) {
     $this->Add("libre","<i class='fa fa-archive fa-fw'> </i>Муфты","Муфты",10,"libre/muftes","cables/muftes");
     $this->Add("libre","<i class='fa fa-arrows-h fa-fw'> </i>Сплитера","Сплитера",10,"libre/spliters","cables/spliters");        
 }
-
+$md->Register("dop-pol", "Справочник дополнительных полей", "Грибов Павел"); 
+if ($md->IsActive("dop-pol")==1) {
+    $this->Add("libre","<i class='fa fa-cubes' aria-hidden='true'></i> Дополнительные поля","Справочник дополнительных полей для разных целей",10,"libre/dop-pol","dop-pol/dop-pol");    
+};
 unset($md);

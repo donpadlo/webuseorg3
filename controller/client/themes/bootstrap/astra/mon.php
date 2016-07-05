@@ -8,7 +8,7 @@
  */
 
 include_once ("inc/lbfunc.php");                    // загружаем функции LB
-if ($user->mode==1){
+if ($user->TestRoles("1,2,3,4,5,6")==1){
 ?>
 <div class="container-fluid">
 <div class="row-fluid">
@@ -24,6 +24,11 @@ if ($user->mode==1){
               parent.frame1.location.href= url;
 //              alert(url);  
             };
+            function openid(id){
+               //clearInterval(timer);                
+              $("#fr" ).load(route+"controller/server/astra/parse_mon_from_astra.php&id="+id);                                                                                           
+//              alert(url);  
+            };	    
             function openGeturl(url){
               // clearInterval(timer);                
               //parent.frame1.location.href= url;              

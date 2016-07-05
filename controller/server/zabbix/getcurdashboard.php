@@ -41,10 +41,13 @@ while($row = mysqli_fetch_array($result)) {
  $basename=$row["basename"];   
  $zb->connect($host,$username,$pass,$basename);
   //получаем информацию с dashboard
-  $sql="SELECT g.groupid,h.host,t.triggerid,g.name group_name,t.priority priority 
+  /*$sql="SELECT g.groupid,h.host,t.triggerid,g.name group_name,t.priority priority 
   FROM   hosts h,items i,hosts_groups hg,groups g,functions f, triggers t  
   WHERE  h.status = 0 AND h.hostid = i.hostid AND hg.groupid = g.groupid AND hg.hostid = h.hostid AND i.status = 0 AND i.itemid = f.itemid AND t.triggerid = f.triggerid AND t.VALUE = 1 AND t.status = 0
   GROUP  BY t.triggerid,g.name, t.priority";
+   * 
+   */
+ $sql="SELECT triggers.description,triggers.lastchange,triggers.comments,g.groupid,h.host,t.triggerid,g.name group_name,t.priority priority    FROM   hosts h,items i,hosts_groups hg,groups g,functions f, triggers t inner join triggers on triggers.triggerid=t.triggerid     WHERE  h.status = 0 AND h.hostid = i.hostid AND hg.groupid = g.groupid AND hg.hostid = h.hostid AND i.status = 0 AND i.itemid = f.itemid AND t.triggerid = f.triggerid AND t.VALUE = 1 AND t.status = 0   GROUP  BY t.triggerid,g.name, t.priority";
   $result2 = $zb->ExecuteSQL($sql) or die("Не могу выбрать список dashboard zabbix!".mysqli_error($zb->idsqlconnection));
   while($row2 = mysqli_fetch_array($result2)) {
       $gid=$row2["groupid"];
@@ -52,7 +55,11 @@ while($row = mysqli_fetch_array($result)) {
       $triggerid=$row2["triggerid"];
       $group_name=$row2["group_name"];
       $priority=$row2["priority"];
-       $sql="select * from triggers where triggerid=$triggerid";
+            $description=$row2["description"];
+            $lastchange=$row2["lastchange"];
+            $comments=$row2["comments"];
+      
+/*       $sql="select * from triggers where triggerid=$triggerid";
        //echo "$sql\n";
         $result3 = $zb->ExecuteSQL($sql) or die("Не могу выбрать подробности по триггеру!".mysqli_error($zb->idsqlconnection));
         while($row3 = mysqli_fetch_array($result3)) {
@@ -60,7 +67,7 @@ while($row = mysqli_fetch_array($result)) {
             $lastchange=$row3["lastchange"];
             $comments=$row3["comments"];
             //echo "!!!!";
-        };
+        };*/
         //проверяем подписку..
             $cuid=$user->id."_".$idz."_".$gid; //uid текущего события
             if ($par->GetByParam($cuid)!=""){            

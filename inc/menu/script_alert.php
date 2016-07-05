@@ -10,6 +10,6 @@
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 $md->Register("scriptalert", "Мониторинг выполнения скриптов", "Грибов Павел"); 
 if ($md->IsActive("scriptalert")==1) {    
- $this->Add("config", "<i class='fa fa-bell-o fa-fw'> </i>Мониторинг скриптов", "Мониторинг выполнения скриптов", 0, "config/scriptalert","scriptalert");                    
+ $this->Add("config", "<i class='fa fa-bell-o fa-fw'> </i>Мониторинг скриптов", "Мониторинг выполнения скриптов", 0, "config/scriptalert","scriptalert");                     
 };
 unset($md);

@@ -7,7 +7,7 @@
  * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
  */
 
-if (($user->mode==1)){
+if (($user->TestRoles("1,2,3,4,5,6,7,8")==1)){
 $zb=new Tsql();    
 $par=new Tcconfig();
 echo '<div class="container-fluid">';

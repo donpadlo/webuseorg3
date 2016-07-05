@@ -129,16 +129,18 @@ if ($muz_file==""){$fn="informer.ts";};
 $com="avconv -f image2 -i $path/$astra_id/pic/bk%d.jpg -an -aspect 16:9 -qscale 2 -g 100 -metadata service_provider='provider' -metadata service_name='informer' $path/$astra_id/$fn";
 echo "$com</br>";
 $rez=shell_exec($com);
-$com="ffmpeg -f image2 -i $path/$astra_id/pic/bk%d.jpg -an -aspect 16:9 -qscale 2 -g 100 -metadata service_provider='provider' -metadata service_name='informer' $path/$astra_id/$fn";
+echo "$rez</br>";
+$com="/usr/local/bin/ffmpeg -f image2 -i $path/$astra_id/pic/bk%d.jpg -an -aspect 16:9 -qscale 2 -g 100 -metadata service_provider='provider' -metadata service_name='informer' $path/$astra_id/$fn";
 echo "$com</br>";
 $rez=shell_exec($com);
+echo "$rez</br>";
 
 if ($muz_file!=""){
 //добавляем звук
     $com="avconv -i ../../../photos/$muz_file -i $path/$astra_id/informer_nosound.ts $path/$astra_id/informer.ts";
     echo "$com</br>";
     $rez=shell_exec($com);
-    $com="ffmpeg -i ../../../photos/$muz_file -i $path/$astra_id/informer_nosound.ts $path/$astra_id/informer.ts";
+    $com="/usr/local/bin/ffmpeg -i ../../../photos/$muz_file -i $path/$astra_id/informer_nosound.ts $path/$astra_id/informer.ts";
     echo "$com</br>";
     $rez=shell_exec($com);
 };

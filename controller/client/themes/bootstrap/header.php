@@ -11,7 +11,8 @@
 <html lang="ru-RU">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="Учет ТМЦ в организации и другие плюшки">
 	<meta name="author" content="(c) 2011-2016 by Gribov Pavel">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,9 +76,12 @@ echo "<script src='js/jquery.mmenu.min.all.js'></script>\n";
 	.chosen-container .chosen-results {
 		max-height:100px;
 	}
+	.popover{
+	    max-width: 100%; /* Max Width of the popover (depending on the container!) */
+	}	
 </style>
 </head>
-<body>
+<body style="font-size: <?php echo $cfg->fontsize ?>;">
 <?php if (!$printable): ?>
 	<div class="header">
 		<a href="#menu"></a>
@@ -93,6 +97,6 @@ for ($i = 0; $i < count($cfg->quickmenu); $i++) {
 		<span class="caret"></span>
 	</div>
 	<script>
-		$('#blob').popover({title: 'Быстрые ссылки', delay: {'show': 500, 'hide': 100}, html: true, content: '<?php echo $mm; ?>'});
+		$('#blob').popover({title: 'Быстрые ссылки', delay: {'show': 100, 'hide': 100}, html: true, content: '<?php echo $mm; ?>'});
 	</script>
 <?php endif; ?>

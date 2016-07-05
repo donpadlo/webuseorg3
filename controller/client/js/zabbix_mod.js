@@ -83,7 +83,7 @@ $(document).ready(function() {
 					}
 					document.cookie = 'zabbix_mod=' + cq;
 				});
-	}, 8000);
+	}, 16000);
 
 	$('#zabbix_mod_win').dialog({
 		autoOpen: false,

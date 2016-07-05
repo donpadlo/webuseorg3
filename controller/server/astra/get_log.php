@@ -14,7 +14,7 @@ $code = '';
 while(!feof($fh)) $code .= fread($fh, 1024);
 fclose($fh);
 $code=  str_replace("</br>", "\n", $code);
-echo "<textarea name='ttx' id='ttx' class='span12' rows=20>";
+echo "<textarea name='ttx' id='ttx' class='form-control' rows=20>";
 echo "$code";
 echo "</textarea>";
 ?>

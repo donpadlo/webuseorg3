@@ -7,5 +7,5 @@
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-$cfg->quickmenu[] = '<div><a href="index.php?content_page=equipment">Имущество</a></div>';
-$cfg->quickmenu[] = '<div><a href="index.php?content_page=eq_list">ТМЦ на рабочем месте</a></div>';
+$cfg->quickmenu[] = '<div><i class="fa fa-shopping-basket"></i> <a href="index.php?content_page=equipment">Имущество</a></div>';
+$cfg->quickmenu[] = '<div><i class="fa fa-tasks"></i> <a href="index.php?content_page=eq_list">ТМЦ на рабочем месте</a></div>';

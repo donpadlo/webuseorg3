@@ -4,6 +4,7 @@
  * Если исходный код найден в сети - значит лицензия GPL v.3 * 
  * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
  */
+
 function getRandomInt(min, max) {
 
 return Math.floor(Math.random()*(max + 1 - min)) + min;
@@ -17,8 +18,8 @@ var addOptions={
 jQuery("#frames").jqGrid({
 	height: 100,
 	autowidth: true,				
-   	url:'controller/server/astra/get_page_select.php?astra_id='+astra_id,
-        editurl:'controller/server/astra/get_page_select.php?astra_id='+astra_id,
+   	url:'controller/server/astra/get_page_select.php?astra_id='+astra_id+"&rand"+getRandomInt(1,200),
+        editurl:'controller/server/astra/get_page_select.php?astra_id='+astra_id+"&rand"+getRandomInt(1,200),
 	datatype: "json",
    	colNames:['Id', 'Действия'],        
    	colModel:[
@@ -33,7 +34,7 @@ jQuery("#frames").jqGrid({
 	sortorder: "asc",        
 	caption:"Страницы",
         onSelectRow: function(ids) {
-          $("#frames_info").load('controller/client/view/astra/get_frame.php?frame_id='+ids);  
+          $("#frames_info").load('controller/client/view/astra/get_frame.php?frame_id='+ids+"&rand"+getRandomInt(1,200));  
         }
         
 }).navGrid('#pager_frames',{add:true,edit:false,del:false,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true});
@@ -42,7 +43,7 @@ jQuery("#frames").jqGrid({
 
 function GetGrid(){
 jQuery("#list2").jqGrid({
-   	url:'controller/server/astra/config.php?orgid='+defaultorgid,
+   	url:'controller/server/astra/config.php?orgid='+defaultorgid+"&rand"+getRandomInt(1,200),
 	datatype: "json",
    	colNames:['Id','Имя сервера'],
    	colModel:[   		
@@ -57,7 +58,7 @@ jQuery("#list2").jqGrid({
 	autoheight: true,
     viewrecords: true,
     sortorder: "asc",
-    editurl:"controller/server/astra/config.php?orgid="+defaultorgid,
+    editurl:"controller/server/astra/config.php?orgid="+defaultorgid+"&rand"+getRandomInt(1,200),
     caption:"Серверы Astra" ,
 	onSelectRow: function(ids) {       
                                 $("#frames_info").html("");
@@ -75,21 +76,23 @@ jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:false,del:false,sear
 
     jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/television.png'>",                              
         title: "Собрать ролик",
+	buttonicon: 'none',
 	onClickButton:function(){
             var id = jQuery("#list2").jqGrid('getGridParam','selrow');
 	if (id)	{
             $("#console").html("<img src=controller/client/themes/"+theme+"/img/loading.gif>");        
-            $("#console").load("controller/server/astra/creatempg.php?astra_id="+id);          
+            $("#console").load("controller/server/astra/creatempg.php?astra_id="+id+"&rand"+getRandomInt(1,200));          
        } else {alert("Выберите астру!");};
 	} 
 });    
     jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/control_play.png'>",                              
         title: "Опубликовать",
+	buttonicon: 'none',
 	onClickButton:function(){
             var id = jQuery("#list2").jqGrid('getGridParam','selrow');
 	if (id)	{
             $("#console").html("<img src=controller/client/themes/"+theme+"/img/loading.gif>");        
-            $("#console").load("controller/server/astra/moveftp.php?astra_id="+id);          
+            $("#console").load("controller/server/astra/moveftp.php?astra_id="+id+"&rand"+getRandomInt(1,200));          
        } else {alert("Выберите астру!");};
 	} 
 });    

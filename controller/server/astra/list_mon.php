@@ -1,3 +1,6 @@
+ <style>
+   .pointer { cursor: pointer; }
+  </style>
 <?php
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
@@ -24,10 +27,12 @@ include_once("../../../inc/functions.php");		// загружаем функци�
 include_once("../../../inc/login.php");		// загружаем функции
 
 $astra_id=GetDef('astra_id');
+/*
 echo '<span class="label label-success">Мониторинг НОС</span>';
 echo "<div class='alert alert-success'><ul>";
 echo "<li><a onclick='openMonurl($astra_id)'>Посмотреть</a></li>";
 echo "</ul></div>";
+*/
 echo '<span class="label label-success">Внешний мониторинг</span>';
 $SQL = "SELECT * FROM astra_mon WHERE astra_id = '$astra_id' and type=1";
 $result = $sqlcn->ExecuteSQL($SQL) or die("Не могу выбрать список страниц!".mysqli_error($sqlcn->idsqlconnection));
@@ -36,7 +41,7 @@ while($row = mysqli_fetch_array($result)) {
     $id=$row["id"];
     $name=$row["name"];
     $url=$row["url"];
-    echo "<li><a title='Если пишет ошибку сертификата SSL - перейдите в браузере по ссылке $url и подтвердите исключение безопасности' onclick='openurl(\"$url\")'>$name</a></li>";
+    echo "<li><a class='pointer' onclick='openid(\"$id\")'>$name</a></li>";
 };
 echo "</ul></div>";
 echo '<span class="label label-info">Просмотр логов</span>';
@@ -47,7 +52,7 @@ while($row = mysqli_fetch_array($result)) {
     $id=$row["id"];
     $name=$row["name"];
     $url=$row["url"];
-    echo "<li><a onclick='openGeturl(\"$url\")'>$name</a></li>";
+    echo "<li><a class='pointer' onclick='openGeturl(\"$url\")'>$name</a></li>";
 };
 
 ?>

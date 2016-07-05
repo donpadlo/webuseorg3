@@ -1138,6 +1138,15 @@ if ($cfg->version == '3.73') {
 	ExecSQL($log, $sql, '166');
 	UpdateVer($vr, '167');
 }
+// Обновляем до 3.75
+if ($cfg->version == '3.74') {
+	$vr = '3.75';
+	$log = '- расширяю поле valueparam до TEXT в таблице config_common';
+	$sql = 'ALTER TABLE `config_common` CHANGE `valueparam` `valueparam` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL';
+	ExecSQL($log, $sql, '166');
+	UpdateVer($vr, '167');
+}
+
 
 echo 'Обновление закончено.<br>';
 echo 'Если сообщений об ошибках нет, удалите файл update.php.<br>';

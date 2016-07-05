@@ -343,8 +343,8 @@ class Mail {
             // разбиваем (FROM - от кого) на юзера и домен. домен понадобится в заголовке
             $user_domen = explode('@', $this->xheaders['From']);
 
-            $this->headers = "Date: " . date("D, j M Y G:i:s") . "\r\n";
-            $this->headers .= "Message-ID: <" . rand() . "." . date("YmjHis") . "@" . $user_domen[1] . ">\r\n";
+//            $this->headers = "Date: " . date("D, j M Y 10:i:s") . "\r\n";
+//            $this->headers .= "Message-ID: <" . rand() . "." . date("Ymj10is") . "@" . $user_domen[1] . ">\r\n";
 
 
             reset($this->xheaders);

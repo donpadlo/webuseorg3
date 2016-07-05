@@ -1,0 +1,111 @@
+/*
+// Данный код создан и распространяется по лицензии GPL v3
+// Изначальный автор данного кода - Грибов Павел
+// http://грибовы.рф
+*/
+
+
+.message_online{
+    -webkit-writing-mode: vertical-rl; 
+    writing-mode:tb-rl;    
+    background-color: green;
+    padding: 10px 4px;
+    z-index:11999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor:pointer;
+    display: none;
+    border: 1px solid #fff;  
+    border-radius: 10px;
+    color: aliceblue;
+}
+.chat_message_box{
+    background-color: green;    
+    z-index:11999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;     
+    height: 410px;
+    text-align: center;
+    border: 1px solid #fff;  
+    border-radius: 10px;
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.42857143;    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+.chat_title{
+    color: aliceblue;
+    padding: 10px 4px;    
+    background-color: green;
+    border: 1px solid #fff;  
+    border-radius: 10px;    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;    
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+}
+.chat_scroll_box{
+    background-color: #fff;  
+    margin: 10px 4px;    
+    height: 300px;    
+    border: 1px solid #0;  
+    overflow: scroll;
+    text-align: left;    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;    
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+}
+.chat_send_box{
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box; 
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+.chat_enter_text{
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    left: 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;    
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;    
+}
+.chat_button_send{
+    position: absolute;
+    top: 360px;
+    left: 307px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;    
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;    
+}
+.chat_button_close{
+    position: absolute;
+    top: 10px;
+    left: 376px;
+    color: aliceblue;
+    cursor:pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;    
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+}

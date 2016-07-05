@@ -28,6 +28,7 @@ class Tconfig {
 	var $navbar = array(); // навигационная последовательность 
 	var $quickmenu = array(); // "быстрое меню"
         var $style="Bootstrap";   //стиль грида по умолчанию  
+	var $fontsize="12px";   //стиль грида по умолчанию  
 
 	function GetConfigFromBase() {
 		global $sqlcn;
@@ -52,9 +53,15 @@ class Tconfig {
 			$this->sendemail = $myrow['sendemail'];  // а вообще будем посылать почту?
 			$this->version = $myrow['version'];
 			$this->urlsite = $myrow['urlsite'];
-                        if (isset($_COOKIE['stl'])) {
+
+			if (isset($_COOKIE['stl'])) {
                          $this->style=$_COOKIE['stl'];
                         } else {$this->style="Bootstrap";};
+
+			if (isset($_COOKIE['fontsize'])) {
+                         $this->fontsize=$_COOKIE['fontsize'];
+                        } else {$this->fontsize="12px";};
+			
 			if (isset($_COOKIE['defaultorgid'])) {
 				$this->defaultorgid = $_COOKIE['defaultorgid'];
 			} else {

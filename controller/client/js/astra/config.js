@@ -31,6 +31,36 @@ jQuery("#list3").jqGrid({
                 {name:'url',index:'url', width:55,editable:true},
 		{name: 'myac', width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true}}   		
    	],
+	onSelectRow: function(ids) {
+                    $("#list5").css('visibility','visible');
+                    //$("#uploadButton").css('visibility','visible');
+                    $("#simple-btn").css('visibility','visible');                    
+                    $('#simple-btn').fileapi('data', {'contractid':ids+100000});
+                    //$("#loadfiles").html('<div id="uploadButton" class="button">Загрузить</div>');
+                    jQuery("#list5").jqGrid('setGridParam',{url:"controller/server/knt/getfilescontrakts.php?idcontract="+(ids+100000)});
+                    jQuery("#list5").jqGrid('setGridParam',{editurl:"controller/server/knt/getfilescontrakts.php?idcontract="+(ids+100000)});
+                    jQuery("#list5").jqGrid({
+                        url:'controller/server/knt/getfilescontrakts.php?idcontract='+(ids+100000),
+                        datatype: "json",
+                        colNames:['Id','Имя файла','Действия'],
+                        colModel:[
+                            {name:'id',index:'id', width:55,hidden:true},
+                            {name:'filename',index:'filename', width:100},
+                            {name:'myac',  width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true},search: false}
+   	],
+        	autowidth: true,		                
+                height:100,
+                pager: '#pager5',
+                sortname: 'id',
+                scroll:1,
+                viewrecords: true,
+                sortorder: "asc",
+                editurl:'controller/server/knt/getfilescontrakts.php?idcontract='+(ids+100000),
+                caption:"Прикрепленные файлы"
+                }).trigger('reloadGrid');	
+                jQuery("#list5").jqGrid('navGrid','#pager5',{edit:false,add:false,del:false,search:false});
+	    
+	},
    	rowNum:5,   	
    	pager: '#pager3',
    	sortname: 'id',
@@ -90,6 +120,8 @@ jQuery("#list2").jqGrid({
     viewrecords: true,
     sortorder: "asc",
 	onSelectRow: function(ids) {                                       
+				$("#list5").css('visibility','hidden');
+				$("#simple-btn").css('visibility','hidden');	    
                                 GetSubGrid(ids);
                                 jQuery("#list3").jqGrid('setGridParam',{url:"controller/server/astra/get_page_mon.php?astra_id="+ids+"&orgid="+defaultorgid}).trigger('reloadGrid');				
                                 jQuery("#list3").jqGrid('setGridParam',{editurl:"controller/server/astra/get_page_mon.php?astra_id="+ids+"&orgid="+defaultorgid}).trigger('reloadGrid');				
@@ -120,3 +152,21 @@ jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/
 
        } else {alert("Выберите Астру!!");};                                    
 }}); 
+
+$('#simple-btn').fileapi({
+                        url: 'controller/server/common/uploadanyfiles.php',
+                        data: {'geteqid':0},
+                        multiple: true,
+                        maxSize: 20 * FileAPI.MB,
+                        autoUpload: true,
+                         onFileComplete: function (evt, uiEvt){                                                              
+                             if (uiEvt.result.msg!="error") {
+                                 jQuery("#list5").jqGrid().trigger('reloadGrid');
+                             } else {alert("Ошибка загрузки файла!");};                             
+                          },                         
+                          elements: {
+                                size: '.js-size',
+                                active: { show: '.js-upload', hide: '.js-browse' },
+                                progress: '.js-progress'
+                            }
+});   

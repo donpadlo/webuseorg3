@@ -21,5 +21,12 @@
                 <option <?php if ($cfg->style=="Bootstrap"){echo "selected";}; ?> value="<?php echo "Bootstrap"; ?>"><?php echo "Bootstrap"; ?></option>
                 <option <?php if ($cfg->style=="Normal"){echo "selected";}; ?> value="<?php echo "Normal"; ?>"><?php echo "Normal"; ?></option>
             </select>             
+            Размер шрифта:
+            <select class="form-control" name="fontsize" id="fontsize">
+		<option <?php if ($cfg->fontsize=="11px"){echo "selected";}; ?> value="<?php echo "11px"; ?>"><?php echo "11px"; ?></option>
+                <option <?php if ($cfg->fontsize=="12px"){echo "selected";}; ?> value="<?php echo "12px"; ?>"><?php echo "12px"; ?></option>
+		<option <?php if ($cfg->fontsize=="13px"){echo "selected";}; ?> value="<?php echo "13px"; ?>"><?php echo "13px"; ?></option>
+                <option <?php if ($cfg->fontsize=="14px"){echo "selected";}; ?> value="<?php echo "14px"; ?>"><?php echo "14px"; ?></option>
+            </select>             
             
 <script type="text/javascript" src="controller/client/js/memenu.js"></script>

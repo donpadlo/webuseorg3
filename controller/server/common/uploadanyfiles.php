@@ -46,6 +46,7 @@ if ($res!=false){
         $rs = array("msg" => "$userfile_name");    
         if ($contractid!=""){
      	$SQL = "INSERT INTO files_contract (id,idcontract,filename,userfreandlyfilename) VALUES (null,'$contractid','$userfile_name','$orig_file')";
+	//echo "$SQL!";
 	$result =$sqlcn->ExecuteSQL($SQL) or die("Не могу добавитьфайл!".mysqli_error($sqlcn->idsqlconnection));
         };
      } else {        $rs = array("msg" => 'error');    };

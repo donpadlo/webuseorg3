@@ -35,11 +35,10 @@ while($row = mysqli_fetch_array($result)) {
   $ftppass=$row["ftppass"];   
   $ip=$row["ip"];   
 };
-$zz="wget http://$ip/get_info.php";
+$zz="/usr/local/bin/wget http://$ip/get_info.php";
 echo "$zz</br>";
 $res=`$zz`;
 echo "$res";
-
 /*
   $connect = ftp_connect($ip);
   if(!$connect){
