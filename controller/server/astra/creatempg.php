@@ -109,8 +109,7 @@ while($row = mysqli_fetch_array($result)) {
       $pozy=0;
       for ($s=0;$s<count($ar_str);$s++){
         $ss=$ar_str[$s];
-        PutStr($ss);
-        
+        PutStr($ss);        
       };
       imagejpeg($image, "$path/$astra_id/pic/bk$n.jpg", 75);
       imagedestroy($image);      
@@ -122,33 +121,27 @@ while($row = mysqli_fetch_array($result)) {
 //формируем ролик
 $rez=`rm $path/$astra_id/informer.ts`;
 $rez=`rm $path/$astra_id/informer_nosound.ts`;
-
+$shell="/usr/local/bin/ffmpeg";
 $fn="informer_nosound.ts";
 if ($muz_file==""){$fn="informer.ts";};
 
-$com="avconv -f image2 -i $path/$astra_id/pic/bk%d.jpg -an -aspect 16:9 -qscale 2 -g 100 -metadata service_provider='provider' -metadata service_name='informer' $path/$astra_id/$fn";
-echo "$com</br>";
-$rez=shell_exec($com);
-echo "$rez</br>";
-$com="/usr/local/bin/ffmpeg -f image2 -i $path/$astra_id/pic/bk%d.jpg -an -aspect 16:9 -qscale 2 -g 100 -metadata service_provider='provider' -metadata service_name='informer' $path/$astra_id/$fn";
+$com="$shell -f image2 -i $path/$astra_id/pic/bk%d.jpg -an -aspect 16:9 -qscale 2 -g 100 -metadata service_provider='provider' -metadata service_name='informer' $path/$astra_id/$fn";
 echo "$com</br>";
 $rez=shell_exec($com);
 echo "$rez</br>";
 
 if ($muz_file!=""){
 //добавляем звук
-    $com="avconv -i ../../../photos/$muz_file -i $path/$astra_id/informer_nosound.ts $path/$astra_id/informer.ts";
+    $com="$shell -i ../../../photos/$muz_file -i $path/$astra_id/informer_nosound.ts -metadata service_provider='provider' -metadata service_name='informer' $path/$astra_id/informer.ts";
     echo "$com</br>";
-    $rez=shell_exec($com);
-    $com="/usr/local/bin/ffmpeg -i ../../../photos/$muz_file -i $path/$astra_id/informer_nosound.ts $path/$astra_id/informer.ts";
-    echo "$com</br>";
-    $rez=shell_exec($com);
+    $rez=shell_exec($com);   
 };
 
 //echo "$rez";
 
 echo "Видеофайл сформирован. Забрать можно сдесь: $path/$astra_id/informer.ts</br>";
-
+//убираю кадры
+//$rez=`rm $path/$astra_id/pic/* -f`;    
 ?>
 <script>
 $("#pl").html("<img src=controller/server/astra/pic.php?astra_id="+<?php echo "$astra_id";?>+"&r="+getRandomInt(0,100)+" >");
