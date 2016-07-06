@@ -43,6 +43,9 @@ if (isset($_GET['route'])) {
 		}
 	}
 	// Получаем путь до скрипта ($route) и переданные ему параметры ($PARAMS)
+	// иначе ссылка вида index.php?route=/controller/server/lanbilling/sos/vlan_hist.php&blibase=1
+	// обрабатывается не корректно!	
+	$uri=  explode("&", $uri)[0]; //отсекаем из пути, всё что правее знака &	
 	list($route, $p) = array_pad(explode('?', $uri, 2), 2, null);
 	if ($p) {
 		parse_str($p, $PARAMS);
