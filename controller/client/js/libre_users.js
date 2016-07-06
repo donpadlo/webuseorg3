@@ -54,7 +54,17 @@ jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {
 	title: 'Выбор колонок',
 	buttonicon: 'none',
 	onClickButton: function() {
-		jQuery('#list2').jqGrid('columnChooser');
+ 		jQuery('#list2').jqGrid('columnChooser', {
+			width: 550,
+			dialog_opts: {
+				modal: true,
+				minWidth: 470,
+				height: 470
+			},
+			msel_opts: {
+				dividerLocation: 0.5
+			}
+		});
 	}
 });
 jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controller/client/themes/' + theme + '/ico/user_add.png">',

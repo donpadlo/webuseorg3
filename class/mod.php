@@ -67,6 +67,26 @@ class Tmod {
 				or die('Неверный запрос Tmod.DeActivate: '.mysqli_error($sqlcn->idsqlconnection));
 	}
 
+
+/**
+	 * Отменяет регистрацию модуля
+	 * @global type $sqlcn
+	 * @param type $name
+	 */
+
+	function UnRegister($name) {
+		global $sqlcn;
+		$modname = 'modulename_' . $name;
+		$sqlcn->ExecuteSQL("DELETE FROM config_common WHERE nameparam = '$modname'")
+				or die('Неверный запрос Tmod.UnRegister: ' . mysqli_error($sqlcn->idsqlconnection));
+		$modcomment = 'modulecomment_' . $name;
+		$sqlcn->ExecuteSQL("DELETE FROM config_common WHERE nameparam = '$modcomment'")
+				or die('Неверный запрос Tmod.UnRegister: ' . mysqli_error($sqlcn->idsqlconnection));
+		$modcopy = 'modulecopy_' . $name;
+		$sqlcn->ExecuteSQL("DELETE FROM config_common WHERE nameparam = '$modcopy'")
+				or die('Неверный запрос Tmod.UnRegister: ' . mysqli_error($sqlcn->idsqlconnection));
+	}
+
 	/**
 	 * проверяем включен модуль или нет?
 	 * @global type $sqlcn

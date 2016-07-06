@@ -6,6 +6,7 @@
 //   Сергей Солодягин (solodyagin@gmail.com)
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
+defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 $cfg->quickmenu[] = '<div><i class="fa fa-home"></i> <a href="index.php">Главная</a></div>';
 $cfg->quickmenu[] = '<hr style="border-top:1px dotted #CCC;margin:2px 0">';

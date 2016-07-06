@@ -19,7 +19,7 @@ function LoadTable() {
 			'Производитель', 'Имя по бухгалтерии', 'Сер.№', 'Инв.№',
 			'Штрихкод', 'Организация', 'Мат.отв.', 'Оприходовано', 'Стоимость',
 			'Тек. стоимость', 'ОС', 'Списано', 'Карта', 'Комментарий', 'Ремонт',
-			'Гар.срок', 'Поставщик', ''],
+			'Гар.срок', 'Поставщик', 'Инструменты'],
 		colModel: [
 			{name: 'active', index: 'active', width: 20, search: false, frozen: true},
 			{name: 'equipment.id', index: 'equipment.id', width: 55, search: false, frozen: true, hidden: true},
@@ -216,7 +216,7 @@ function LoadTable() {
 		shrinkToFit: true,
 		pager: '#pg_nav',
 		sortname: 'equipment.id',
-		rowNum: 20,
+		rowNum: 40,
 		//loadonce: true,
 		//scroll: 1,
 		viewrecords: true,
@@ -224,7 +224,7 @@ function LoadTable() {
 		editurl: route + 'controller/server/equipment/equipment.php&sorgider=' + defaultorgid,
 		caption: 'Оргтехника'
 	});
-	jQuery('#tbl_equpment').jqGrid('setGridHeight', $(window).innerHeight() / 3);
+	jQuery('#tbl_equpment').jqGrid('setGridHeight', $(window).innerHeight()-285);
 	jQuery('#tbl_equpment').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: false});
 	jQuery('#tbl_equpment').jqGrid('bindKeys', '');
 	jQuery('#tbl_equpment').jqGrid('navGrid', '#pg_nav', {edit: false, add: false, del: false, search: false});
@@ -234,7 +234,17 @@ function LoadTable() {
 		title: 'Выбор колонок',
 		buttonicon: 'none',
 		onClickButton: function() {
-			jQuery('#tbl_equpment').jqGrid('columnChooser');
+		    jQuery('#tbl_equpment').jqGrid('columnChooser', {
+				width: 550,
+				dialog_opts: {
+					modal: true,
+					minWidth: 470,
+					height: 470
+				},
+				msel_opts: {
+					dividerLocation: 0.5
+				}
+			});
 		}
 	});
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {

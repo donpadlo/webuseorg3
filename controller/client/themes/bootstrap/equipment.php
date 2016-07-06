@@ -55,7 +55,7 @@ for ($i = 0; $i < count($morgs); $i++) {
 </div>
 <script src="controller/client/js/equipment.js"></script>
 <?php else: ?>
-<div class="alert alert-error">
+<div class="alert alert-danger">
 	У вас нет доступа в данный раздел! Не назначены роли!
 </div>
 <?php endif; ?>
