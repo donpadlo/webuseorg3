@@ -1,11 +1,3 @@
-/**
- * jqGrid English Translation
- * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
- * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
-**/
 /*global jQuery, define */
 (function( factory ) {
 	"use strict";
@@ -27,102 +19,102 @@ if(!$.jgrid.hasOwnProperty("regional")) {
 }
 $.jgrid.regional["en"] = {
 	defaults : {
-		recordtext: "View {0} - {1} of {2}",
-		emptyrecords: "No records to view",
-		loadtext: "Loading...",
-		savetext: "Saving...",
-		pgtext : "Page {0} of {1}",
-		pgfirst : "First Page",
-		pglast : "Last Page",
-		pgnext : "Next Page",
-		pgprev : "Previous Page",
-		pgrecs : "Records per Page",
-		showhide: "Toggle Expand Collapse Grid",
+		recordtext: "Shfaq {0} - {1}/{2}",
+		emptyrecords: "Nuk ka rreshta për të shfaqur",
+		loadtext: "Duke u ngarkuar...",
+		savetext: "Duke ruajtur...",
+		pgtext : "Faqja {0}/{1}",
+		pgfirst : "Faqja e parë",
+		pglast : "Faqja e fundit",
+		pgnext : "Faqja tjetër",
+		pgprev : "Faqja mëparshme",
+		pgrecs : "Rreshta për faqe",
+		showhide: "Shpalos ose mbyll tabelën",
 		// mobile
-		pagerCaption : "Grid::Page Settings",
-		pageText : "Page:",
-		recordPage : "Records per Page",
-		nomorerecs : "No more records...",
-		scrollPullup: "Pull up to load more...",
-		scrollPulldown : "Pull down to refresh...",
-		scrollRefresh : "Release to refresh..."
+		pagerCaption : "Tabela::Kruskoti i faqes",
+		pageText : "Faqja:",
+		recordPage : "Rreshta për faqe",
+		nomorerecs : "Nuk ka rreshta të tjerë...",
+		scrollPullup: "Tërhiq për lart për të tjerë...",
+		scrollPulldown : "Tërqiq për poshtë për rifreskim...",
+		scrollRefresh : "Lësho për rifreskim..."
 	},
 	search : {
-		caption: "Search...",
-		Find: "Find",
-		Reset: "Reset",
-		odata: [{ oper:'eq', text:'equal'},{ oper:'ne', text:'not equal'},{ oper:'lt', text:'less'},{ oper:'le', text:'less or equal'},{ oper:'gt', text:'greater'},{ oper:'ge', text:'greater or equal'},{ oper:'bw', text:'begins with'},{ oper:'bn', text:'does not begin with'},{ oper:'in', text:'is in'},{ oper:'ni', text:'is not in'},{ oper:'ew', text:'ends with'},{ oper:'en', text:'does not end with'},{ oper:'cn', text:'contains'},{ oper:'nc', text:'does not contain'},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}, {oper:'bt', text:'between'}],
-		groupOps: [{ op: "AND", text: "all" },{ op: "OR",  text: "any" }],
-		operandTitle : "Click to select search operation.",
-		resetTitle : "Reset Search Value"
+		caption: "Kërko...",
+		Find: "Gjej",
+		Reset: "Pastro",
+		odata: [{ oper:'eq', text:'baraz'},{ oper:'ne', text:'jo baraz'},{ oper:'lt', text:'me e vogel'},{ oper:'le', text:'me e vogel ose baraz'},{ oper:'gt', text:'me e madhe'},{ oper:'ge', text:'me e madhe ose baraz'},{ oper:'bw', text:'fillon me'},{ oper:'bn', text:'nuk fillon me'},{ oper:'in', text:'brenda'},{ oper:'ni', text:'jo brenda'},{ oper:'ew', text:'mbaron me'},{ oper:'en', text:'nuk mbaron me'},{ oper:'cn', text:'permban'},{ oper:'nc', text:'nuk permban'},{ oper:'nu', text:'eshte bosh'},{ oper:'nn', text:'nuk eshte bosh'}, {oper:'bt', text:'between'}],
+		groupOps: [{ op: "AND", text: "te gjithe" },{ op: "OR",  text: "cfaredo" }],
+		operandTitle : "Kliko per te zgjedhur veprimin.",
+		resetTitle : "Fshi vlerat e kerkimit"
 	},
 	edit : {
-		addCaption: "Add Record",
-		editCaption: "Edit Record",
-		bSubmit: "Submit",
-		bCancel: "Cancel",
-		bClose: "Close",
-		saveData: "Data has been changed! Save changes?",
-		bYes : "Yes",
-		bNo : "No",
-		bExit : "Cancel",
+		addCaption: "Shto rresht",
+		editCaption: "Fshi rresht",
+		bSubmit: "Vendos",
+		bCancel: "Anullo",
+		bClose: "Mbyll",
+		saveData: "Te dhenat jane ndryshuar! Deshironi ti ruani ndryshimet?",
+		bYes : "Po",
+		bNo : "Jo",
+		bExit : "Anullo",
 		msg: {
-			required:"Field is required",
-			number:"Please, enter valid number",
-			minValue:"value must be greater than or equal to ",
-			maxValue:"value must be less than or equal to",
-			email: "is not a valid e-mail",
-			integer: "Please, enter valid integer value",
-			date: "Please, enter valid date value",
-			url: "is not a valid URL. Prefix required ('http://' or 'https://')",
-			nodefined : " is not defined!",
-			novalue : " return value is required!",
-			customarray : "Custom function should return array!",
-			customfcheck : "Custom function should be present in case of custom checking!"
+			required:"Kjo fushe eshte e detyrueshme",
+			number:"Ju lutem, vendosni nje numer te vlefshem",
+			minValue:"vlera duhet te jete me e madhe ose e njejte me ",
+			maxValue:"vlera duhet te jete me e vogel ose e njejte me",
+			email: "nuk eshte adrese poste elektronike e vlefshme",
+			integer: "Ju lutem, vendosni nje numer te plote te vlefshem",
+			date: "Ju lutem, vendosni nje date te vlefshme",
+			url: "nuk eshte URL e vlefshme. Nevojitet prefiksi ('http://' ose 'https://')",
+			nodefined : " nuk eshte percaktuar!",
+			novalue : " vlera si pergjigje eshte e detyreshme!",
+			customarray : "Funksioni i personalizuar duhet te ktheje nje array!",
+			customfcheck : "unksioni i personalizuar duhet te egzistoje ne rast kontrolli te personalizuar!"
 			
 		}
 	},
 	view : {
-		caption: "View Record",
-		bClose: "Close"
+		caption: "Shfaq Rreshtin",
+		bClose: "Mbyll"
 	},
 	del : {
-		caption: "Delete",
-		msg: "Delete selected record(s)?",
-		bSubmit: "Delete",
-		bCancel: "Cancel"
+		caption: "Fshi",
+		msg: "Deshironi te fshini rreshtin/rreshtat e zgjedhur?",
+		bSubmit: "Fshi",
+		bCancel: "Anullo"
 	},
 	nav : {
 		edittext: "",
-		edittitle: "Edit selected row",
+		edittitle: "Modifiko rreshtin e zgjedhur",
 		addtext:"",
-		addtitle: "Add new row",
+		addtitle: "Shto rresht te ri",
 		deltext: "",
-		deltitle: "Delete selected row",
+		deltitle: "Fshi rreshtin e zgjedhur",
 		searchtext: "",
-		searchtitle: "Find records",
+		searchtitle: "Gjej rreshtat",
 		refreshtext: "",
-		refreshtitle: "Reload Grid",
-		alertcap: "Warning",
-		alerttext: "Please, select row",
+		refreshtitle: "Ringarko listen",
+		alertcap: "Paralajmerim",
+		alerttext: "Ju lutem, zgjidh nje rresht",
 		viewtext: "",
-		viewtitle: "View selected row",
+		viewtitle: "Shfaq rreshtin e zgjedhur",
 		savetext: "",
-		savetitle: "Save row",
+		savetitle: "Ruaj rreshtin",
 		canceltext: "",
-		canceltitle : "Cancel row editing",
-		selectcaption : "Actions..."
+		canceltitle : "Anullo modifikim rreshti",
+		selectcaption : "Veprime..."
 	},
 	col : {
-		caption: "Select columns",
+		caption: "Zgjidh kolona",
 		bSubmit: "Ok",
-		bCancel: "Cancel"
+		bCancel: "Anullo"
 	},
 	errors : {
-		errcap : "Error",
-		nourl : "No url is set",
-		norecords: "No records to process",
-		model : "Length of colNames <> colModel!"
+		errcap : "Gabim",
+		nourl : "Nuk eshte percaktuar asnje URL",
+		norecords: "Nuk ka rreshta per perpunim",
+		model : "Gjatesia e emrit te kolones <> modeli i kolones!"
 	},
 	formatter : {
 		integer : {thousandsSeparator: ",", defaultValue: '0'},
@@ -130,12 +122,12 @@ $.jgrid.regional["en"] = {
 		currency : {decimalSeparator:".", thousandsSeparator: ",", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
 		date : {
 			dayNames:   [
-				"Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat",
-				"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+				"Dje", "Hën", "Mar", "Mër", "Enj", "Pre", "Sht",
+				"Djelë", "Hënë", "Martë", "Mërkurë", "Enjte", "Premte", "Shtunë"
 			],
 			monthNames: [
-				"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-				"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+				"Jan", "Shk", "Mar", "Pri", "Maj", "Qer", "Kor", "Gus", "Sht", "Tet", "Nën", "Dhj",
+				"Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor", "Korrik", "Gusht", "Shtator", "Tetor", "Nëntor", "Dhjetor"
 			],
 			AmPm : ["am","pm","AM","PM"],
 			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th';},

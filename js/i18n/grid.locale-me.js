@@ -1,5 +1,5 @@
 /**
- * jqGrid Serbian latin Translation
+ * jqGrid Montenegrian Translation
  * Bild Studio info@bild-studio.net
  * http://www.bild-studio.com
  * Dual licensed under the MIT and GPL licenses:
@@ -25,11 +25,11 @@ $.jgrid = $.jgrid || {};
 if(!$.jgrid.hasOwnProperty("regional")) {
 	$.jgrid.regional = [];
 }
-$.jgrid.regional["sr-latin"] = {
+$.jgrid.regional["me"] = {
 	defaults : {
 		recordtext: "Pregled {0} - {1} od {2}",
 		emptyrecords: "Ne postoji nijedan zapis",
-		loadtext: "Učitavanje…",
+		loadtext: "Učitivanje...",
 		pgtext : "Strana {0} od {1}",
 		savetext: "Saving...",
 		pgfirst : "First Page",
@@ -58,27 +58,27 @@ $.jgrid.regional["sr-latin"] = {
 	},
 	edit : {
 		addCaption: "Dodaj zapis",
-		editCaption: "Izmeni zapis",
+		editCaption: "Izmjeni zapis",
 		bSubmit: "Pošalji",
 		bCancel: "Odustani",
 		bClose: "Zatvori",
-		saveData: "Podatak je izmenjen! Sačuvaj izmene?",
+		saveData: "Podatak je izmjenjen! Sačuvaj izmjene?",
 		bYes : "Da",
 		bNo : "Ne",
 		bExit : "Odustani",
 		msg: {
-			required: "Polje je obavezno",
-			number: "Unesite ispravan broj",
-			minValue: "vrednost mora biti veća od ili jednaka sa ",
-			maxValue: "vrednost mora biti manja ili jednaka sa",
-			email: "nije ispravna email adresa, nije valjda da ne umeš ukucati mail!?",
-			integer: "Unesi celobrojnu vrednost ",
+			required:"Polje je obavezno",
+			number:"Unesite ispravan broj",
+			minValue:"vrijednost mora biti veća od ili jednaka sa ",
+			maxValue:"vrijednost mora biti manja ili jednaka sa",
+			email: "nije ispravna email adresa, nije valjda da ne umiješ ukucati mail!?",
+			integer: "Ne zajebaji se unesi cjelobrojnu vrijednost ",
 			date: "Unesite ispravan datum",
 			url: "nije ispravan URL. Potreban je prefiks ('http://' or 'https://')",
 			nodefined : " nije definisan!",
-			novalue : " zahtevana je povratna vrednost!",
+			novalue : " zahtjevana je povratna vrijednost!",
 			customarray : "Prilagođena funkcija treba da vrati niz!",
-			customfcheck : "Prilagođena funkcija treba da bude prisutana u slučaju prilagođene provere!"
+			customfcheck : "Prilagođena funkcija treba da bude prisutana u slučaju prilagođene provjere!"
 			
 		}
 	},
@@ -94,7 +94,7 @@ $.jgrid.regional["sr-latin"] = {
 	},
 	nav : {
 		edittext: "",
-		edittitle: "Izmeni izabrani red",
+		edittitle: "Izmjeni izabrani red",
 		addtext:"",
 		addtitle: "Dodaj novi red",
 		deltext: "",

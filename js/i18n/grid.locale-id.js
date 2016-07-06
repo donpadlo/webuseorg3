@@ -1,26 +1,60 @@
-;(function($){
 /**
- * jqGrid English Translation
+ * jqGrid Indonesian Translation
  * Tony Tomov tony@trirand.com
  * http://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
 **/
+/*global jQuery, define */
+(function( factory ) {
+	"use strict";
+	if ( typeof define === "function" && define.amd ) {
+		// AMD. Register as an anonymous module.
+		define([
+			"jquery",
+			"../grid.base"
+		], factory );
+	} else {
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+
 $.jgrid = $.jgrid || {};
-$.extend($.jgrid,{
+if(!$.jgrid.hasOwnProperty("regional")) {
+	$.jgrid.regional = [];
+}
+$.jgrid.regional["id"] = {
 	defaults : {
 		recordtext: "Data {0} - {1} dari {2}",
 		emptyrecords: "Tidak ada data",
 		loadtext: "Memuat...",
-		pgtext : "Halaman {0} dari {1}"
+		pgtext : "Halaman {0} dari {1}",
+		savetext: "Saving...",
+		pgfirst : "First Page",
+		pglast : "Last Page",
+		pgnext : "Next Page",
+		pgprev : "Previous Page",
+		pgrecs : "Records per Page",
+		showhide: "Toggle Expand Collapse Grid",
+		// mobile
+		pagerCaption : "Grid::Page Settings",
+		pageText : "Page:",
+		recordPage : "Records per Page",
+		nomorerecs : "No more records...",
+		scrollPullup: "Pull up to load more...",
+		scrollPulldown : "Pull down to refresh...",
+		scrollRefresh : "Release to refresh..."
 	},
 	search : {
 		caption: "Pencarian",
 		Find: "Cari !",
 		Reset: "Segarkan",
-		odata: [{ oper:'eq', text:"sama dengan"},{ oper:'ne', text:"tidak sama dengan"},{ oper:'lt', text:"kurang dari"},{ oper:'le', text:"kurang dari atau sama dengan"},{ oper:'gt', text:"lebih besar"},{ oper:'ge', text:"lebih besar atau sama dengan"},{ oper:'bw', text:"dimulai dengan"},{ oper:'bn', text:"tidak dimulai dengan"},{ oper:'in', text:"di dalam"},{ oper:'ni', text:"tidak di dalam"},{ oper:'ew', text:"diakhiri dengan"},{ oper:'en', text:"tidak diakhiri dengan"},{ oper:'cn', text:"mengandung"},{ oper:'nc', text:"tidak mengandung"}],
-		groupOps: [	{ op: "AND", text: "all" },	{ op: "OR",  text: "any" }	]
+		odata: [{ oper:'eq', text:"sama dengan"},{ oper:'ne', text:"tidak sama dengan"},{ oper:'lt', text:"kurang dari"},{ oper:'le', text:"kurang dari atau sama dengan"},{ oper:'gt', text:"lebih besar"},{ oper:'ge', text:"lebih besar atau sama dengan"},{ oper:'bw', text:"dimulai dengan"},{ oper:'bn', text:"tidak dimulai dengan"},{ oper:'in', text:"di dalam"},{ oper:'ni', text:"tidak di dalam"},{ oper:'ew', text:"diakhiri dengan"},{ oper:'en', text:"tidak diakhiri dengan"},{ oper:'cn', text:"mengandung"},{ oper:'nc', text:"tidak mengandung"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}, {oper:'bt', text:'between'}],
+		groupOps: [	{ op: "AND", text: "all" },	{ op: "OR",  text: "any" }	],
+		operandTitle : "Click to select search operation.",
+		resetTitle : "Reset Search Value"
 	},
 	edit : {
 		addCaption: "Tambah Data",
@@ -72,7 +106,12 @@ $.extend($.jgrid,{
 		alertcap: "Warning",
 		alerttext: "Harap pilih baris",
 		viewtext: "",
-		viewtitle: "Tampilkan baris terpilih"
+		viewtitle: "Tampilkan baris terpilih",
+		savetext: "",
+		savetitle: "Save row",
+		canceltext: "",
+		canceltitle : "Cancel row editing",
+		selectcaption : "Actions..."
 	},
 	col : {
 		caption: "Pilih Kolom",
@@ -102,7 +141,7 @@ $.extend($.jgrid,{
 			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th';},
 			srcformat: 'Y-m-d',
 			newformat: 'n/j/Y',
-			parseRe : /[Tt\\\/:_;.,\t\s-]/,
+			parseRe : /[#%\\\/:_;.,\t\s-]/,
 			masks : {
 				// see http://php.net/manual/en/function.date.php for PHP format used in jqGrid
 				// and see http://docs.jquery.com/UI/Datepicker/formatDate
@@ -156,13 +195,26 @@ $.extend($.jgrid,{
 				//    F - A full textual representation of a month
 				YearMonth: "F, Y" // in jQuery UI Datepicker: "MMMM, yyyy"
 			},
-			reformatAfterEdit : false
+			reformatAfterEdit : false,
+			userLocalTime : false
 		},
 		baseLinkUrl: '',
 		showAction: '',
 		target: '',
 		checkbox : {disabled:true},
 		idName : 'id'
+	},
+	colmenu : {
+		sortasc : "Sort Ascending",
+		sortdesc : "Sort Descending",
+		columns : "Columns",
+		filter : "Filter",
+		grouping : "Group By",
+		ungrouping : "Ungroup",
+		searchTitle : "Get items with value that:",
+		freeze : "Freeze",
+		unfreeze : "Unfreeze",
+		reorder : "Move to reorder"
 	}
-});
-})(jQuery);
+};
+}));

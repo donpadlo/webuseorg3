@@ -1,4 +1,3 @@
-;(function($){
 /**
  * jqGrid Croatian Translation
  * Version 1.0.1 (developed for jQuery Grid 4.4)
@@ -8,20 +7,55 @@
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
 **/
+/*global jQuery, define */
+(function( factory ) {
+	"use strict";
+	if ( typeof define === "function" && define.amd ) {
+		// AMD. Register as an anonymous module.
+		define([
+			"jquery",
+			"../grid.base"
+		], factory );
+	} else {
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+
 $.jgrid = $.jgrid || {};
-$.extend($.jgrid,{
+if(!$.jgrid.hasOwnProperty("regional")) {
+	$.jgrid.regional = [];
+}
+$.jgrid.regional["hr"] = {
 	defaults : {
 		recordtext: "Pregled {0} - {1} od {2}",
 		emptyrecords: "Nema zapisa",
 		loadtext: "Učitavam...",
-		pgtext : "Stranica {0} od {1}"
+		pgtext : "Stranica {0} od {1}",
+		savetext: "Saving...",
+		pgfirst : "First Page",
+		pglast : "Last Page",
+		pgnext : "Next Page",
+		pgprev : "Previous Page",
+		pgrecs : "Records per Page",
+		showhide: "Toggle Expand Collapse Grid",
+		// mobile
+		pagerCaption : "Grid::Page Settings",
+		pageText : "Page:",
+		recordPage : "Records per Page",
+		nomorerecs : "No more records...",
+		scrollPullup: "Pull up to load more...",
+		scrollPulldown : "Pull down to refresh...",
+		scrollRefresh : "Release to refresh..."
 	},
 	search : {
 		caption: "Traži...",
 		Find: "Pretraživanje",
 		Reset: "Poništi",
-		odata: [{ oper:'eq', text:"jednak"},{ oper:'ne', text:"nije identičan"},{ oper:'lt', text:"manje"},{ oper:'le', text:"manje ili identično"},{ oper:'gt', text:"veće"},{ oper:'ge', text:"veše ili identično"},{ oper:'bw', text:"počinje sa"},{ oper:'bn', text:"ne počinje sa "},{ oper:'in', text:"je u"},{ oper:'ni', text:"nije u"},{ oper:'ew', text:"završava sa"},{ oper:'en', text:"ne završava sa"},{ oper:'cn', text:"sadrži"},{ oper:'nc', text:"ne sadrži"}],
-		groupOps: [	{ op: "I", text: "sve" },	{ op: "ILI",  text: "bilo koji" }	]
+		odata: [{ oper:'eq', text:"jednak"},{ oper:'ne', text:"nije identičan"},{ oper:'lt', text:"manje"},{ oper:'le', text:"manje ili identično"},{ oper:'gt', text:"veće"},{ oper:'ge', text:"veće ili identično"},{ oper:'bw', text:"počinje sa"},{ oper:'bn', text:"ne počinje sa "},{ oper:'in', text:"je u"},{ oper:'ni', text:"nije u"},{ oper:'ew', text:"završava sa"},{ oper:'en', text:"ne završava sa"},{ oper:'cn', text:"sadrži"},{ oper:'nc', text:"ne sadrži"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}, {oper:'bt', text:'between'}],
+		groupOps: [	{ op: "I", text: "sve" },	{ op: "ILI",  text: "bilo koji" }	],
+		operandTitle : "Click to select search operation.",
+		resetTitle : "Reset Search Value"
 	},
 	edit : {
 		addCaption: "Dodaj zapis",
@@ -60,20 +94,25 @@ $.extend($.jgrid,{
 		bCancel: "Odustani"
 	},
 	nav : {
-		edittext: " ",
+		edittext: "",
 		edittitle: "Promijeni obilježeni red",
-		addtext:" ",
+		addtext: "",
 		addtitle: "Dodaj novi red",
-		deltext: " ",
+		deltext: "",
 		deltitle: "Obriši obilježeni red",
-		searchtext: " ",
+		searchtext: "",
 		searchtitle: "Potraži zapise",
 		refreshtext: "",
 		refreshtitle: "Ponovo preuzmi podatke",
 		alertcap: "Upozorenje",
 		alerttext: "Molim, odaberi red",
 		viewtext: "",
-		viewtitle: "Pregled obilježenog reda"
+		viewtitle: "Pregled obilježenog reda",
+		savetext: "",
+		savetitle: "Save row",
+		canceltext: "",
+		canceltitle : "Cancel row editing",
+		selectcaption : "Actions..."
 	},
 	col : {
 		caption: "Obilježi kolonu",
@@ -89,21 +128,21 @@ $.extend($.jgrid,{
 	formatter : {
 		integer : {thousandsSeparator: ".", defaultValue: '0'},
 		number : {decimalSeparator:",", thousandsSeparator: ".", decimalPlaces: 2, defaultValue: '0,00'},
-		currency : {decimalSeparator:",", thousandsSeparator: ".", decimalPlaces: 2, prefix: "", suffix:" Kn", defaultValue: '0,00'},
+		currency : {decimalSeparator:",", thousandsSeparator: ".", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0,00'},
 		date : {
 			dayNames:   [
 				"Ned", "Pon", "Uto", "Sri", "Čet", "Pet", "Sub",
 				"Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"
 			],
 			monthNames: [
-				"Sij", "Vel", "Ožu", "Tra", "Svi", "Lip", "Srp", "Kol", "Ruj", "Lis", "Stu", "Pro",
+				"Sij", "Velj", "Ožu", "Tra", "Svi", "Lip", "Srp", "Kol", "Ruj", "Lis", "Stu", "Pro",
 				"Siječanj", "Veljača", "Ožujak", "Travanj", "Svibanj", "Lipanj", "Srpanj", "Kolovoz", "Rujan", "Listopad", "Studeni", "Prosinac"
 			],
 			AmPm : ["am","pm","AM","PM"],
 			S: function (j) {return ''},
 			srcformat: 'Y-m-d',
 			newformat: 'd.m.Y.',
-			parseRe : /[Tt\\\/:_;.,\t\s-]/,
+			parseRe : /[#%\\\/:_;.,\t\s-]/,
 			masks : {
 				// see http://php.net/manual/en/function.date.php for PHP format used in jqGrid
 				// and see http://docs.jquery.com/UI/Datepicker/formatDate
@@ -150,13 +189,26 @@ $.extend($.jgrid,{
 				//    Y - A full numeric representation of a year, 4 digits
 				YearMonth: "F Y" // in jQuery UI Datepicker: "MMMM yyyy"
 			},
-			reformatAfterEdit : false
+			reformatAfterEdit : false,
+			userLocalTime : false
 		},
 		baseLinkUrl: '',
 		showAction: '',
 		target: '',
 		checkbox : {disabled:true},
 		idName : 'id'
+	},
+	colmenu : {
+		sortasc : "Sort Ascending",
+		sortdesc : "Sort Descending",
+		columns : "Columns",
+		filter : "Filter",
+		grouping : "Group By",
+		ungrouping : "Ungroup",
+		searchTitle : "Get items with value that:",
+		freeze : "Freeze",
+		unfreeze : "Unfreeze",
+		reorder : "Move to reorder"
 	}
-});
-})(jQuery);
+};
+}));

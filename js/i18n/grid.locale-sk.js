@@ -1,4 +1,3 @@
-;(function($){
 /**
  * jqGrid Slovak Translation
  * Milan Cibulka
@@ -7,20 +6,55 @@
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
 **/
+/*global jQuery, define */
+(function( factory ) {
+	"use strict";
+	if ( typeof define === "function" && define.amd ) {
+		// AMD. Register as an anonymous module.
+		define([
+			"jquery",
+			"../grid.base"
+		], factory );
+	} else {
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+
 $.jgrid = $.jgrid || {};
-$.extend($.jgrid,{
+if(!$.jgrid.hasOwnProperty("regional")) {
+	$.jgrid.regional = [];
+}
+$.jgrid.regional["sk"] = {
 	defaults : {
 		recordtext: "Zobrazených {0} - {1} z {2} záznamov",
 	    emptyrecords: "Neboli nájdené žiadne záznamy",
 		loadtext: "Načítám...",
-		pgtext : "Strana {0} z {1}"
+		pgtext : "Strana {0} z {1}",
+		savetext: "Saving...",
+		pgfirst : "First Page",
+		pglast : "Last Page",
+		pgnext : "Next Page",
+		pgprev : "Previous Page",
+		pgrecs : "Records per Page",
+		showhide: "Toggle Expand Collapse Grid",
+		// mobile
+		pagerCaption : "Grid::Page Settings",
+		pageText : "Page:",
+		recordPage : "Records per Page",
+		nomorerecs : "No more records...",
+		scrollPullup: "Pull up to load more...",
+		scrollPulldown : "Pull down to refresh...",
+		scrollRefresh : "Release to refresh..."
 	},
 	search : {
 		caption: "Vyhľadávam...",
 		Find: "Hľadať",
 		Reset: "Reset",
-	    odata: [{ oper:'eq', text:"rovná sa"},{ oper:'ne', text:"nerovná sa"},{ oper:'lt', text:"menšie"},{ oper:'le', text:"menšie alebo rovnajúce sa"},{ oper:'gt', text:"väčšie"},{ oper:'ge', text:"väčšie alebo rovnajúce sa"},{ oper:'bw', text:"začína s"},{ oper:'bn', text:"nezačína s"},{ oper:'in', text:"je v"},{ oper:'ni', text:"nie je v"},{ oper:'ew', text:"končí s"},{ oper:'en', text:"nekončí s"},{ oper:'cn', text:"obahuje"},{ oper:'nc', text:"neobsahuje"}],
-	    groupOps: [	{ op: "AND", text: "všetkých" },	{ op: "OR",  text: "niektorého z" }	]
+	    odata: [{ oper:'eq', text:"rovná sa"},{ oper:'ne', text:"nerovná sa"},{ oper:'lt', text:"menšie"},{ oper:'le', text:"menšie alebo rovnajúce sa"},{ oper:'gt', text:"väčšie"},{ oper:'ge', text:"väčšie alebo rovnajúce sa"},{ oper:'bw', text:"začína s"},{ oper:'bn', text:"nezačína s"},{ oper:'in', text:"je v"},{ oper:'ni', text:"nie je v"},{ oper:'ew', text:"končí s"},{ oper:'en', text:"nekončí s"},{ oper:'cn', text:"obahuje"},{ oper:'nc', text:"neobsahuje"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}, {oper:'bt', text:'between'}],
+	    groupOps: [	{ op: "AND", text: "všetkých" },	{ op: "OR",  text: "niektorého z" }	],
+		operandTitle : "Click to select search operation.",
+		resetTitle : "Reset Search Value"
 	},
 	edit : {
 		addCaption: "Pridať záznam",
@@ -71,7 +105,12 @@ $.extend($.jgrid,{
 		alertcap: "Varovanie",
 		alerttext: "Prosím, vyberte riadok",
 		viewtext: "",
-		viewtitle: "Zobraziť vybraný riadok"
+		viewtitle: "Zobraziť vybraný riadok",
+		savetext: "",
+		savetitle: "Save row",
+		canceltext: "",
+		canceltitle : "Cancel row editing",
+		selectcaption : "Actions..."
 	},
 	col : {
 		caption: "Zobrazit/Skrýť stĺpce",
@@ -101,7 +140,7 @@ $.extend($.jgrid,{
 			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},
 			srcformat: 'Y-m-d',
 			newformat: 'd/m/Y',
-			parseRe : /[Tt\\\/:_;.,\t\s-]/,
+			parseRe : /[#%\\\/:_;.,\t\s-]/,
 			masks : {
 		        ISO8601Long:"Y-m-d H:i:s",
 		        ISO8601Short:"Y-m-d",
@@ -115,13 +154,26 @@ $.extend($.jgrid,{
 		        UniversalSortableDateTime: "Y-m-d H:i:sO",
 		        YearMonth: "F, Y"
 		    },
-		    reformatAfterEdit : false
+		    reformatAfterEdit : false,
+			userLocalTime : false
 		},
 		baseLinkUrl: '',
 		showAction: '',
 	    target: '',
 	    checkbox : {disabled:true},
 		idName : 'id'
+	},
+	colmenu : {
+		sortasc : "Sort Ascending",
+		sortdesc : "Sort Descending",
+		columns : "Columns",
+		filter : "Filter",
+		grouping : "Group By",
+		ungrouping : "Ungroup",
+		searchTitle : "Get items with value that:",
+		freeze : "Freeze",
+		unfreeze : "Unfreeze",
+		reorder : "Move to reorder"
 	}
-});
-})(jQuery);
+};
+}));

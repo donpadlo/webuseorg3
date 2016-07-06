@@ -1,4 +1,3 @@
-;(function($){
 /**
  * jqGrid Vietnamese Translation
  * Lê Đình Dũng dungtdc@gmail.com
@@ -7,20 +6,55 @@
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
 **/
+/*global jQuery, define */
+(function( factory ) {
+	"use strict";
+	if ( typeof define === "function" && define.amd ) {
+		// AMD. Register as an anonymous module.
+		define([
+			"jquery",
+			"../grid.base"
+		], factory );
+	} else {
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+
 $.jgrid = $.jgrid || {};
-$.extend($.jgrid,{
+if(!$.jgrid.hasOwnProperty("regional")) {
+	$.jgrid.regional = [];
+}
+$.jgrid.regional["vi"] = {
 	defaults : {
 		recordtext: "View {0} - {1} of {2}",
 		emptyrecords: "Không có dữ liệu",
 		loadtext: "Đang nạp dữ liệu...",
-		pgtext : "Trang {0} trong tổng số {1}"
+		pgtext : "Trang {0} trong tổng số {1}",
+		savetext: "Saving...",
+		pgfirst : "First Page",
+		pglast : "Last Page",
+		pgnext : "Next Page",
+		pgprev : "Previous Page",
+		pgrecs : "Records per Page",
+		showhide: "Toggle Expand Collapse Grid",
+		// mobile
+		pagerCaption : "Grid::Page Settings",
+		pageText : "Page:",
+		recordPage : "Records per Page",
+		nomorerecs : "No more records...",
+		scrollPullup: "Pull up to load more...",
+		scrollPulldown : "Pull down to refresh...",
+		scrollRefresh : "Release to refresh..."
 	},
 	search : {
 		caption: "Tìm kiếm...",
 		Find: "Tìm",
 		Reset: "Khởi tạo lại",
-		odata: [{ oper:'eq', text:"bằng"},{ oper:'ne', text:"không bằng"},{ oper:'lt', text:"bé hơn"},{ oper:'le', text:"bé hơn hoặc bằng"},{ oper:'gt', text:"lớn hơn"},{ oper:'ge', text:"lớn hơn hoặc bằng"},{ oper:'bw', text:"bắt đầu với"},{ oper:'bn', text:"không bắt đầu với"},{ oper:'in', text:"trong"},{ oper:'ni', text:"không nằm trong"},{ oper:'ew', text:"kết thúc với"},{ oper:'en', text:"không kết thúc với"},{ oper:'cn', text:"chứa"},{ oper:'nc', text:"không chứa"}],
-		groupOps: [	{ op: "VÀ", text: "tất cả" },	{ op: "HOẶC",  text: "bất kỳ" }	]
+		odata: [{ oper:'eq', text:"bằng"},{ oper:'ne', text:"không bằng"},{ oper:'lt', text:"bé hơn"},{ oper:'le', text:"bé hơn hoặc bằng"},{ oper:'gt', text:"lớn hơn"},{ oper:'ge', text:"lớn hơn hoặc bằng"},{ oper:'bw', text:"bắt đầu với"},{ oper:'bn', text:"không bắt đầu với"},{ oper:'in', text:"trong"},{ oper:'ni', text:"không nằm trong"},{ oper:'ew', text:"kết thúc với"},{ oper:'en', text:"không kết thúc với"},{ oper:'cn', text:"chứa"},{ oper:'nc', text:"không chứa"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}, {oper:'bt', text:'between'}],
+		groupOps: [	{ op: "VÀ", text: "tất cả" },	{ op: "HOẶC",  text: "bất kỳ" }	],
+		operandTitle : "Click to select search operation.",
+		resetTitle : "Reset Search Value"
 	},
 	edit : {
 		addCaption: "Thêm bản ghi",
@@ -72,7 +106,12 @@ $.extend($.jgrid,{
 		alertcap: "Cảnh báo",
 		alerttext: "Hãy chọn một dòng",
 		viewtext: "",
-		viewtitle: "Xem dòng đã chọn"
+		viewtitle: "Xem dòng đã chọn",
+		savetext: "",
+		savetitle: "Save row",
+		canceltext: "",
+		canceltitle : "Cancel row editing",
+		selectcaption : "Actions..."
 	},
 	col : {
 		caption: "Chọn cột",
@@ -102,7 +141,7 @@ $.extend($.jgrid,{
 			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th';},
 			srcformat: 'Y-m-d',
 			newformat: 'n/j/Y',
-			parseRe : /[Tt\\\/:_;.,\t\s-]/,
+			parseRe : /[#%\\\/:_;.,\t\s-]/,
 			masks : {
 				// see http://php.net/manual/en/function.date.php for PHP format used in jqGrid
 				// and see http://docs.jquery.com/UI/Datepicker/formatDate
@@ -156,13 +195,26 @@ $.extend($.jgrid,{
 				//    F - A full textual representation of a month
 				YearMonth: "F, Y" // in jQuery UI Datepicker: "MMMM, yyyy"
 			},
-			reformatAfterEdit : false
+			reformatAfterEdit : false,
+			userLocalTime : false
 		},
 		baseLinkUrl: '',
 		showAction: '',
 		target: '',
 		checkbox : {disabled:true},
 		idName : 'id'
+	},
+	colmenu : {
+		sortasc : "Sort Ascending",
+		sortdesc : "Sort Descending",
+		columns : "Columns",
+		filter : "Filter",
+		grouping : "Group By",
+		ungrouping : "Ungroup",
+		searchTitle : "Get items with value that:",
+		freeze : "Freeze",
+		unfreeze : "Unfreeze",
+		reorder : "Move to reorder"
 	}
-});
-})(jQuery);
+};
+}));

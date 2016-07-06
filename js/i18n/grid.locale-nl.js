@@ -1,20 +1,55 @@
-(function(a) {
-a.jgrid = a.jgrid || {};
-a.extend(a.jgrid,{
+//NETHERLANDS
+/*global jQuery, define */
+(function( factory ) {
+	"use strict";
+	if ( typeof define === "function" && define.amd ) {
+		// AMD. Register as an anonymous module.
+		define([
+			"jquery",
+			"../grid.base"
+		], factory );
+	} else {
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
+
+$.jgrid = $.jgrid || {};
+if(!$.jgrid.hasOwnProperty("regional")) {
+	$.jgrid.regional = [];
+}
+$.jgrid.regional["nl"] = {
         defaults:
         {
             recordtext: "regels {0} - {1} van {2}",
             emptyrecords: "Geen data gevonden.",
-            loadtext: "laden...",
-            pgtext: "pagina  {0}  van {1}"
+            loadtext: "Laden...",
+            pgtext: "pagina  {0}  van {1}",
+			savetext: "Saving...",
+			pgfirst : "Eerste Pagina",
+			pglast : "Laatste Pagina",
+			pgnext : "Volgende Pagina",
+			pgprev : "Vorige Pagina",
+			pgrecs : "Records per Pagina",
+			showhide: "Schakelen Uitklappen Inklappen Grid",
+			// mobile
+			pagerCaption : "Grid::Page Settings",
+			pageText : "Page:",
+			recordPage : "Records per Page",
+			nomorerecs : "No more records...",
+			scrollPullup: "Pull up to load more...",
+			scrollPulldown : "Pull down to refresh...",
+			scrollRefresh : "Release to refresh..."
         },
         search:
         {
             caption: "Zoeken...",
             Find: "Zoek",
             Reset: "Herstellen",
-            odata: [{ oper:'eq', text:"gelijk aan"},{ oper:'ne', text:"niet gelijk aan"},{ oper:'lt', text:"kleiner dan"},{ oper:'le', text:"kleiner dan of gelijk aan"},{ oper:'gt', text:"groter dan"},{ oper:'ge', text:"groter dan of gelijk aan"},{ oper:'bw', text:"begint met"},{ oper:'bn', text:"begint niet met"},{ oper:'in', text:"is in"},{ oper:'ni', text:"is niet in"},{ oper:'ew', text:"eindigd met"},{ oper:'en', text:"eindigd niet met"},{ oper:'cn', text:"bevat"},{ oper:'nc', text:"bevat niet"}],
-            groupOps: [{ op: "AND", text: "alle" }, { op: "OR", text: "een van de"}]
+            odata: [{ oper:'eq', text:"gelijk aan"},{ oper:'ne', text:"niet gelijk aan"},{ oper:'lt', text:"kleiner dan"},{ oper:'le', text:"kleiner dan of gelijk aan"},{ oper:'gt', text:"groter dan"},{ oper:'ge', text:"groter dan of gelijk aan"},{ oper:'bw', text:"begint met"},{ oper:'bn', text:"begint niet met"},{ oper:'in', text:"is in"},{ oper:'ni', text:"is niet in"},{ oper:'ew', text:"eindigt met"},{ oper:'en', text:"eindigt niet met"},{ oper:'cn', text:"bevat"},{ oper:'nc', text:"bevat niet"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}, {oper:'bt', text:'between'}],
+            groupOps: [{ op: "AND", text: "alle" }, { op: "OR", text: "een van de"}],
+			operandTitle : "Klik om de zoekterm te selecteren.",
+			resetTitle : "Herstel zoekterm"
         },
         edit:
         {
@@ -32,15 +67,15 @@ a.extend(a.jgrid,{
                 required: "Veld is verplicht",
                 number: "Voer a.u.b. geldig nummer in",
                 minValue: "Waarde moet groter of gelijk zijn aan ",
-                maxValue: "Waarde moet kleiner of gelijks zijn aan",
+                maxValue: "Waarde moet kleiner of gelijk zijn aan",
                 email: "is geen geldig e-mailadres",
                 integer: "Voer a.u.b. een geldig getal in",
                 date: "Voer a.u.b. een geldige waarde in",
                 url: "is geen geldige URL. Prefix is verplicht ('http://' or 'https://')",
-                nodefined : " is not defined!",
-                novalue : " return value is required!",
-                customarray : "Custom function should return array!",
-                customfcheck : "Custom function should be present in case of custom checking!"
+                nodefined : " is niet gedefineerd!",
+                novalue : " return waarde is verplicht!",
+                customarray : "Aangepaste functie moet array teruggeven!",
+                customfcheck : "Aangepaste function moet aanwezig zijn in het geval van aangepaste controle!"
             }
         },
         view:
@@ -70,7 +105,12 @@ a.extend(a.jgrid,{
             alertcap: "Waarschuwing",
             alerttext: "Selecteer a.u.b. een regel",
             viewtext: "",
-            viewtitle: "Openen"
+            viewtitle: "Openen",
+			savetext: "",
+			savetitle: "Save row",
+			canceltext: "",
+			canceltitle : "Cancel row editing",
+			selectcaption : "Actions..."
         },
         col:
         {
@@ -118,7 +158,7 @@ a.extend(a.jgrid,{
                 },
                 srcformat: "Y-m-d",
                 newformat: "d/m/Y",
-				parseRe : /[Tt\\\/:_;.,\t\s-]/,
+				parseRe : /[#%\\\/:_;.,\t\s-]/,
                 masks:
                 {
                     ISO8601Long: "Y-m-d H:i:s",
@@ -133,7 +173,8 @@ a.extend(a.jgrid,{
                     UniversalSortableDateTime: "Y-m-d H:i:sO",
                     YearMonth: "F, Y"
                 },
-                reformatAfterEdit: false
+                reformatAfterEdit: false,
+				userLocalTime : false
             },
             baseLinkUrl: "",
             showAction: "",
@@ -143,6 +184,18 @@ a.extend(a.jgrid,{
                 disabled: true
             },
             idName: "id"
-        }
-    });
-})(jQuery);
+        },
+	colmenu : {
+		sortasc : "Sort Ascending",
+		sortdesc : "Sort Descending",
+		columns : "Columns",
+		filter : "Filter",
+		grouping : "Group By",
+		ungrouping : "Ungroup",
+		searchTitle : "Get items with value that:",
+		freeze : "Freeze",
+		unfreeze : "Unfreeze",
+		reorder : "Move to reorder"
+	}
+    };
+}));
