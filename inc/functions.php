@@ -551,8 +551,3 @@ function NormalizePhone($nm){
   };
   return $nm;
 };
-function human_sz($sz) {
-	$units = array('Б', 'КБ', 'МБ', 'ГБ', 'ТБ');
-	$power = $sz > 0 ? floor(log($sz, 1024)) : 0;
-	return number_format($sz / pow(1024, $power), 2, ',', ' ') . ' ' . $units[$power];
-}
