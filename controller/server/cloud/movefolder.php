@@ -6,26 +6,14 @@
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-include_once ("../../../config.php");                    // загружаем первоначальные настройки
+defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-// загружаем классы
+// Проверяем может ли пользователь редактировать?
+$user->TestRoles('1,5') or die('Для редактирования не хватает прав!');
 
-include_once("../../../class/sql.php");               // загружаем классы работы с БД
-include_once("../../../class/config.php");		// загружаем классы настроек
-include_once("../../../class/users.php");		// загружаем классы работы с пользователями
-include_once("../../../class/employees.php");		// загружаем классы работы с профилем пользователя
+$nodekey = GetDef('nodekey'); 
+$srnodekey = GetDef('srnodekey'); 
 
-
-// загружаем все что нужно для работы движка
-
-include_once("../../../inc/connect.php");		// соеденяемся с БД, получаем $mysql_base_id
-include_once("../../../inc/config.php");              // подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once("../../../inc/functions.php");		// загружаем функции
-include_once("../../../inc/login.php");		// загружаем функции
-
-$nodekey=GetDef('nodekey'); 
-$srnodekey=GetDef('srnodekey'); 
-
-$sql="UPDATE cloud_dirs SET parent='$nodekey' where id='$srnodekey'";
-$result3 = $sqlcn->ExecuteSQL($sql) or die("Не могу обновить терево папок!".mysqli_error($sqlcn->idsqlconnection));        
-
+$sql = "UPDATE cloud_dirs SET parent = '$nodekey' WHERE id = '$srnodekey'";
+$sqlcn->ExecuteSQL($sql)
+		or die('Не могу обновить дерево папок! '.mysqli_error($sqlcn->idsqlconnection));        

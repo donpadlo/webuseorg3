@@ -15,7 +15,7 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid({
 		url: route + 'controller/server/equipment/equipment.php&sorgider=' + defaultorgid,
 		datatype: 'json',
-		colNames: [' ', 'Id', 'Помещение', 'Номенклатура', 'Группа', 'В пути',
+		colNames: [' ', 'Id', 'IP', 'Помещение', 'Номенклатура', 'Группа', 'В пути',
 			'Производитель', 'Имя по бухгалтерии', 'Сер.№', 'Инв.№',
 			'Штрихкод', 'Организация', 'Мат.отв.', 'Оприходовано', 'Стоимость',
 			'Тек. стоимость', 'ОС', 'Списано', 'Карта', 'Комментарий', 'Ремонт',
@@ -23,6 +23,7 @@ function LoadTable() {
 		colModel: [
 			{name: 'active', index: 'active', width: 20, search: false, frozen: true},
 			{name: 'equipment.id', index: 'equipment.id', width: 55, search: false, frozen: true, hidden: true},
+			{name: 'ip', index: 'ip', width: 100, hidden: true},
 			{name: 'placesid', index: 'placesid', width: 155, stype: 'select', frozen: true,
 				searchoptions: {dataUrl: route + 'controller/server/equipment/getlistplaces.php&addnone=true'}},
 			{name: 'nomename', index: 'getvendorandgroup.nomename', width: 155, frozen: true},

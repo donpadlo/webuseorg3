@@ -31,16 +31,16 @@ if ($user->TestRoles('1,3,4,6')):
 <script src="js/statics/jquery.modal.js"></script>
 <div class="container-fluid">
 	<div class="row-fluid">       
-		<div class="col-xs-4 col-md-4 col-sm-4"> 
+		<div class="col-xs-4 col-md-4 col-sm-4">
 			<div id="tree"></div>
 			<div class="form-inline">
 				<p>
-					<input name="foldername" id="foldername" type="text" placeholder="Имя папки">
+					<input name="foldername" id="foldername" type="text" placeholder="Имя папки" class="form-control">
 <?php if ($user->TestRoles('1,4')): ?>
 					<button name="newfolder" id="newfolder" class="btn btn-small btn-success" type="button">Новая папка</button>
 <?php endif; ?>
 <?php if ($user->TestRoles('1,6')): ?>
-					<button name="delfolder" id="delfolder"class="btn btn-small btn-danger" type="button">Удалить</button>
+					<button name="delfolder" id="delfolder" class="btn btn-small btn-danger" type="button">Удалить</button>
 <?php endif; ?>
 				</p>
 <?php if ($user->TestRoles('1,4')):	?>

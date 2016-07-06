@@ -8,8 +8,9 @@
 
 /**
  * Массив переданных скрипту параметров при загрузке его через index.php
- * Например, index.php?route=/script.php?name=value
- * $PARAMS['name']
+ * Например, index.php?route=/script.php?par1=value&par2=value2
+ * $PARAMS['par1'] = 'value'
+ * $PARAMS['par2'] = 'value2'
  */
 $PARAMS = array();
 
@@ -20,9 +21,9 @@ $PARAMS = array();
  * @return string
  */
 function GetDef($name, $def = '') {
-    global $_GET,$PARAMS;
-	if (isset($_GET["$name"])) {
-		return $_GET["$name"];
+	global $PARAMS;
+	if (isset($_GET[$name])) {
+		return $_GET[$name];
 	} else if (isset($PARAMS[$name])) {
 		return $PARAMS[$name];
 	} else {
@@ -37,7 +38,6 @@ function GetDef($name, $def = '') {
  * @return string
  */
 function PostDef($name, $def = '') {
-        global $_POST,$PARAMS;
 	return (isset($_POST[$name])) ? $_POST[$name] : $def;
 }
 
@@ -546,3 +546,8 @@ function NormalizePhone($nm){
   };
   return $nm;
 };
+function human_sz($sz) {
+	$units = array('Б', 'КБ', 'МБ', 'ГБ', 'ТБ');
+	$power = $sz > 0 ? floor(log($sz, 1024)) : 0;
+	return number_format($sz / pow(1024, $power), 2, ',', ' ') . ' ' . $units[$power];
+}

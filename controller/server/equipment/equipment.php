@@ -73,8 +73,9 @@ if ($oper == '') {
 	// Проверяем может ли пользователь просматривать?
 	$user->TestRoles('1,3,4,5,6') or die('Недостаточно прав');
 
-	$sql = "SELECT COUNT(*) as count, equipment.dtendgar,
+	$sql = "SELECT COUNT(*) AS count, equipment.dtendgar,
 		knt.name, getvendorandgroup.grnomeid, equipment.id AS eqid,
+		equipment.ip AS ip,
 		equipment.orgid AS eqorgid, org.name AS orgname,
 		getvendorandgroup.vendorname AS vname, 
 		getvendorandgroup.groupname AS grnome, places.name AS placesname,
@@ -94,7 +95,7 @@ if ($oper == '') {
 	INNER JOIN org ON org.id = equipment.orgid
 	INNER JOIN places ON places.id = equipment.placesid
 	INNER JOIN users_profile ON users_profile.usersid = equipment.usersid
-	LEFT JOIN knt ON knt.id = equipment.kntid ".$where." ";
+	LEFT JOIN knt ON knt.id = equipment.kntid $where";
 	$result = $sqlcn->ExecuteSQL($sql);
 	$row = mysqli_fetch_array($result);
 	$count = $row['count'];
@@ -110,8 +111,9 @@ if ($oper == '') {
 		$responce->records = 0;
 		jsonExit($responce);
 	}
-	$SQL = "SELECT equipment.dtendgar,tmcgo, knt.name as kntname,
-		getvendorandgroup.grnomeid,equipment.id AS eqid,
+	$SQL = "SELECT equipment.dtendgar, tmcgo, knt.name AS kntname,
+		getvendorandgroup.grnomeid, equipment.id AS eqid,
+		equipment.ip AS ip,
 		equipment.orgid AS eqorgid, org.name AS orgname,
 		getvendorandgroup.vendorname AS vname, 
 		getvendorandgroup.groupname AS grnome, places.name AS placesname,
@@ -131,7 +133,8 @@ if ($oper == '') {
 	INNER JOIN org ON org.id = equipment.orgid
 	INNER JOIN places ON places.id = equipment.placesid
 	INNER JOIN users_profile ON users_profile.usersid = equipment.usersid
-	LEFT JOIN knt ON knt.id = equipment.kntid ".$where." 
+	LEFT JOIN knt ON knt.id = equipment.kntid
+	$where
 	ORDER BY $sidx $sord LIMIT $start, $limit";
 	$result = $sqlcn->ExecuteSQL($SQL)
 			or die('Не получилось выбрать список оргтехники!'.
@@ -161,12 +164,12 @@ if ($oper == '') {
 		$row['tmcgo'] = ($row['tmcgo'] == 0) ? 'No' : 'Yes';
 
 		$responce->rows[$i]['cell'] = array(
-			$active, $row['eqid'], $row['placesname'], $row['nomename'],
-			$row['grnome'], $row['tmcgo'], $row['vname'], $row['buhname'],
-			$row['sernum'], $row['invnum'], $row['shtrihkod'], $row['orgname'],
-			$row['fio'], $dtpost, $row['cost'], $row['currentcost'], $os,
-			$eqmode, $row['eqmapyet'], $row['eqcomment'], $row['eqrepair'],
-			$dtendgar, $row['kntname']
+			$active, $row['eqid'], $row['ip'], $row['placesname'],
+			$row['nomename'], $row['grnome'], $row['tmcgo'], $row['vname'],
+			$row['buhname'], $row['sernum'], $row['invnum'], $row['shtrihkod'],
+			$row['orgname'], $row['fio'], $dtpost, $row['cost'],
+			$row['currentcost'], $os, $eqmode, $row['eqmapyet'],
+			$row['eqcomment'], $row['eqrepair'], $dtendgar, $row['kntname']
 		);
 		$i++;
 	}
