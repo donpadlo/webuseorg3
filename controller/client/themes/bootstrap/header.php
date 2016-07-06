@@ -75,7 +75,7 @@
 		}
 	</style>
 </head>
-<body>
+<body style="font-size: <?php echo $cfg->fontsize ?>;">
 <?php if (!$printable): ?>
 	<div class="header">
 		<a href="#menu"></a>
@@ -91,7 +91,7 @@ for ($i = 0; $i < count($cfg->quickmenu); $i++) {
 		<span class="caret"></span>
 	</div>
 	<script>
-		$('#blob').popover({title: 'Быстрые ссылки', delay: {'show': 500, 'hide': 100}, html: true, content: '<?php echo $mm; ?>'});
+		$('#blob').popover({title: 'Быстрые ссылки', delay: {'show': 100, 'hide': 100}, html: true, content: '<?php echo $mm; ?>'});
 	</script>
 <?php
 endif;
