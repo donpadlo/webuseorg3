@@ -104,8 +104,11 @@ fclose($server);
  * @param type $txt
  * @return type
  */
-function PrepareTextToSendChat($fd,$txt){
+function PrepareTextToSendChat($fd,$txt,$dt,$tm){
   global $sqlcn;  
+  if ($dt==""){$dt=date("H:i");} else {
+   $dt=MySQLDateTimeToDateTimeNoTime($dt);   
+  };
     $ret=[];
     //получаем логин отправителя
     $sql="select * from chat_users where id=$fd";
@@ -115,7 +118,8 @@ function PrepareTextToSendChat($fd,$txt){
 	$name=$row["name"];
     };
    $txt=str_replace("\n", "</br>", $txt);
-   $ret["txt"]="<b>$name:</b>".$txt."</br>";
+   if ($tm=="from"){$tm="chatloginfrom";} else {$tm="chatloginto";}
+   $ret["txt"]="<span class='chatdt'>[$dt]</span><span class='$tm'>$name:</span><span class='chatchat'>".$txt."</span></br>";
  return $ret;
 };
 
@@ -362,12 +366,14 @@ function onMessage($connect, $data,$info) {
 		    $frid=$row["from_id"];
 		    $toid=$row["to_id"];
 		    $txt=$row["txt"];
-   	            $pretext=PrepareTextToSendChat($frid,$txt);
+		    $dt=$row["dt"];
+		    if ($frid==$message->from_user_id){$tm="from";} else {$tm="to";};
+   	            $pretext=PrepareTextToSendChat($frid,$txt,$dt,$tm);
 		    $exmessage["txt"]=$exmessage["txt"].$pretext["txt"];				    
 		}; 	
 		//если истории нет, то выводим приветсвие!
 		if ($exmessage["txt"]==""){
-   	            $pretext=PrepareTextToSendChat($to_user_id,"Добрый день! Чем могу помочь?");
+   	            $pretext=PrepareTextToSendChat($to_user_id,$chat_wellcome,"","from");
 		    $exmessage["txt"]=$exmessage["txt"].$pretext["txt"];				    		    
 		};
 		$exmessage["command"]="GetHistory";
@@ -388,7 +394,7 @@ function onMessage($connect, $data,$info) {
 		echo "$sql\n";
 		$result = $sqlcn->ExecuteSQL($sql);
 		//обновляем окно чата того кто прислал
-		$pretext=PrepareTextToSendChat($from_user_id,$sendtext);
+		$pretext=PrepareTextToSendChat($from_user_id,$sendtext,"","from");
 		$exmessage=[];
 		$exmessage["command"]="AddEchoMessageToChat";
 		$exmessage["from_user_id"]=$from_user_id;		
@@ -398,7 +404,7 @@ function onMessage($connect, $data,$info) {
 		    foreach ($users as $key => $value) {
 		    if ($value["from_user_id"]==$to_user_id){
 			    RefreshContactList($to_user_id);
-			    $pretext=PrepareTextToSendChat($from_user_id,$sendtext);
+			    $pretext=PrepareTextToSendChat($from_user_id,$sendtext,"","to");
 			    $exmessage=[];
 			    $exmessage["command"]="AddEchoMessageToChat";
 			    $exmessage["from_user_id"]=$from_user_id;

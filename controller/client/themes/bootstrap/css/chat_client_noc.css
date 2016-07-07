@@ -21,19 +21,21 @@
     color: aliceblue;
 }
 .chat_box{
+    top: calc((100%-600)/2);
+    left: calc((100%-800)/2);
     display: none;
     background-color:  #5281ea;    
     position: fixed;
-    width: 500px;     
-    height: 400px;
+    width: 800px;     
+    height: 600px;
     border-radius: 10px;    
 }    
 .chat_contactlist_box{
     position: absolute;
     top: 2px;
     left:2px;
-    width: 120px;     
-    height: 396px;    
+    width: 220px;     
+    height: 596px;    
     background-color: #fff;    
     z-index:11999;
     text-align: left;
@@ -67,28 +69,50 @@
     padding: 5px;
     position: absolute;
     top: 20px;
-    left:123px;
-    width: 375px;     
-    height: 300px;       
-    background-color:  #e9ea52;    
-    z-index:11999;
+    left: 223px;
+    width: 575px;
+    height: 500px;
+    background-color: #e9ea52;
+    z-index: 11999;
     text-align: left;
-    border: 1px solid #fff;  
+    border: 1px solid #fff;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 13px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 1.42857143;    
+    line-height: 1.42857143;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     overflow: scroll;
+    background-image: url("/controller/client/themes/bootstrap/img/min.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-shadow: 1px 1px #ccddcc;
+    color: black;
 }
+.chatdt{
+    font-size: xx-small;
+    color: cadetblue;    
+}
+.chatloginfrom{
+    padding: 3px;
+    color: blue;
+    font-weight: bolder;
+}    
+.chatloginto{
+    padding: 3px;
+    color: red;
+    font-weight: bolder;
+}    
 
+.chatchat{
+font-style: italic;    
+}
 .chat_button_close{
     position: absolute;
     top: 2px;
-    left: 475px;
+    left: 775px;
     color: aliceblue;
     cursor:pointer;
     -webkit-box-sizing: border-box;
@@ -102,7 +126,7 @@
 .chat_user_select{
     position: absolute;
     top: 2px;
-    left: 125px;
+    left: 230px;
     color: aliceblue;
     cursor:pointer;
     -webkit-box-sizing: border-box;
@@ -113,26 +137,26 @@
 }
 
 .chat_enter_text{
-    width: 300px;
+    width: 450px;
     height: 78px;
     position: absolute;
-    left: 123px;
+    left: 223px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-size: 12px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    top: 320px;    
+    top: 520px;    
 }
 .chat_button_send{
     position: absolute;
-    top: 320px;
-    left: 423px;
+    top: 520px;
+    left: 673px;
     height: 78px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-size: 12px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    width: 76px;  
+    width: 126px;  
 }

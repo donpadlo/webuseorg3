@@ -133,6 +133,9 @@ function AddMessageToChat(txt){
 };
 //кого выбрали из списка контактов
 function ChangeToId(id,chlogin){
+    //рисуем заглушку на время загрузки
+    $("#chat_message_box").html("Загружаю диалоги..");
+    //
     if (change_to_id!=""){$('#chatuser'+change_to_id).css('background-color','#fff')};
     $('#chatuser'+id).css('background-color','#e9ea52')
     change_to_id=id;
@@ -216,6 +219,8 @@ function mainchat(){
 	  chatsocket.onclose = function(event) {
 	    if (event.wasClean) {console.log('Соединение закрыто чисто');} else {console.log('Обрыв соединения'); // например, "убит" процесс сервера}
 	    console.log('Код: ' + event.code + ' причина: ' + event.reason);
+	    //ну и снова пробуем начать всё с начала...	    
+	    mainchat();
 	  };};
 	  //реакция на входящее сообщения
 	  chatsocket.onmessage = function(event) {
