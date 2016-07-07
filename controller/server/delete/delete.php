@@ -1,5 +1,7 @@
 <?php
 
+
+
 // Данный код создан и распространяется по лицензии GPL v3
 // Изначальный автор данного кода - Грибов Павел
 // http://грибовы.рф
@@ -25,13 +27,20 @@ foreach ($mfiles1 as &$fname1) {
     if (strripos($fname1,".xml")!=FALSE){
     echo "-обрабатываю правила $fname1</br>";
     $xml = simplexml_load_file("../../../modules/deleterules/$fname1");    
+	//if (isset(simplexml_load_file("../../../modules/deleterules/$fname1")){
+	//		$xml = simplexml_load_file("../../../modules/deleterules/$fname1");
+	//	}
+	//	else {
+	//		echo "-- Файл пустой!";
+	//	}
      foreach($xml->entertable as $data){
             $entertable_name=$data["name"];
             $entertable_comment=$data["comment"];
             $entertable_key=$data["key"];
             echo "--таблица $entertable_name ($entertable_comment).Поиск зависимостей по ключу $entertable_key</br>";
             $result = $sqlcn->ExecuteSQL("SELECT * FROM $entertable_name where active=0");  
-            if ($result==''){echo '<b>Неверный запрос 1:</b> ' . mysqli_error($sqlcn->idsqlconnection).'<br>';};
+			// проверяется на пустой запрос или неверные данные в xml файле
+            if ($result=='' || strpos($result,'ERROR')==true){echo '<b>Неверный запрос 1:</b> ' . mysqli_error($sqlcn->idsqlconnection).'<br>';};
                 // листаем все записи таблицы помеченные на удаление
                 while ($myrow = mysqli_fetch_array($result)){                                
                     $entertable_id=$myrow["$entertable_key"];

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tables>
+    <entertable name="places" comment="Помещения" key="id">
+        <reqtable name="equipment" comment="Список ТМЦ" is_delete="no" key="placesid"></reqtable>
+    </entertable>
+</tables>
