@@ -269,7 +269,7 @@ function onClose($connect) {
 }
 
 function onMessage($connect, $data,$info) {    
-    global $sqlcn,$users;
+    global $sqlcn,$users,$chat_wellcome;
     $data=decodeSocket($data);   
     $message=json_decode($data["payload"]);
     echo "--пришло:\n";
