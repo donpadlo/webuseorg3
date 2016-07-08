@@ -14,7 +14,7 @@ if ($user->mode == 1):
 </div>
 <script>
 $('#bdel').click(function(){
-	$('#infoblock').load('controller/server/delete/delete.php');
+	$('#infoblock').load(route+'controller/server/delete/delete.php');
 	return false;
 });
 </script>

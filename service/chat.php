@@ -22,7 +22,7 @@ include_once(WUO_ROOT.'/../inc/functions.php'); // Загружаем функц
 include_once(WUO_ROOT.'/../inc/login.php'); // Создаём пользователя $user
 
 include_once(WUO_ROOT.'/../inc/func_chat.php'); // Загружаем рутинные функции для чата
-include_once(WUO_ROOT.'/Socket.php'); // Загружаем рутинные функции для чата
+
 //читаю настройки чата
 $vl=new Tcconfig();
 $ip_chat_server=$vl->GetByParam("ip-chat-server");
@@ -165,7 +165,7 @@ function OnlineStatus($connect){
     foreach ($users as $key => $value) {
 	if ($value["connect"]==$connect){
 	    $fromuserid=$value["from_user_id"];
-	    $sql="update chat_users set online=1 where id=$fromuserid";
+	    $sql="update chat_users set online=1,lastping=now() where id=$fromuserid";
 	    echo "$sql\n";
 	    $result = $sqlcn->ExecuteSQL($sql);
 	};
@@ -275,7 +275,7 @@ function onMessage($connect, $data,$info) {
     echo "--пришло:\n";
     var_dump($message);
     //отдаем клиенту новый ID
-    if (isset($message->command) and isset($message->client)){
+    if (isset($message->command) and isset($message->client)){	
 	//обновляю онлайн статус	
 	//если клиент - клиент чата поддержки
 	if ($message->client=="client"){	    
@@ -299,8 +299,7 @@ function onMessage($connect, $data,$info) {
 	    //отвечаем, есть ктонить онлайн?
 	    if ($message->command=="Online"){
 		$users[$message->from_user_id]["from_user_id"]=$message->from_user_id;
-		$users[$message->from_user_id]["connect"]=$connect;	    		
-		OnlineStatus($connect);
+		$users[$message->from_user_id]["connect"]=$connect;	    				
 		$exmessage=[];
 
 		$exmessage["result"]="yes";
@@ -316,8 +315,7 @@ function onMessage($connect, $data,$info) {
 	    if ($message->command=="GetContactList"){		
 		$users[$message->from_user_id]["from_user_id"]=$message->from_user_id;
 		$users[$message->from_user_id]["connect"]=$connect;	    		
-		$users[$message->from_user_id]["client"]=$message->client;
-		OnlineStatus($connect);	
+		$users[$message->from_user_id]["client"]=$message->client;		
 		$exmessage=[];
 		$exmessage["command"]="GetContactList";
 		$exmessage["result"]=GetContactList($message->from_user_id);
@@ -429,6 +427,7 @@ function onMessage($connect, $data,$info) {
 			};
 		    }		
 	    };	    
+	OnlineStatus($connect);	    
     };
     echo "--вышли из цикла\n";    
 }

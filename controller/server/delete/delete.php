@@ -6,41 +6,23 @@
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
 
-include_once ("../../../config.php");                    // загружаем первоначальные настройки
-
-// загружаем классы
-
-include_once("../../../class/sql.php");               // загружаем классы работы с БД
-include_once("../../../class/config.php");		// загружаем классы настроек
-include_once("../../../class/users.php");		// загружаем классы работы с пользователями
-include_once("../../../class/employees.php");		// загружаем классы работы с профилем пользователя
-
-
-// загружаем все что нужно для работы движка
-
-include_once("../../../inc/connect.php");		// соеденяемся с БД, получаем $mysql_base_id
-include_once("../../../inc/config.php");              // подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once("../../../inc/functions.php");		// загружаем функции
-
-$mfiles1=GetArrayFilesInDir("../../../modules/deleterules");
+$mfiles1=GetArrayFilesInDir("modules/deleterules");
 foreach ($mfiles1 as &$fname1) {
     if (strripos($fname1,".xml")!=FALSE){
-    echo "-обрабатываю правила $fname1</br>";
-    $xml = simplexml_load_file("../../../modules/deleterules/$fname1");    
-	//if (isset(simplexml_load_file("../../../modules/deleterules/$fname1")){
-	//		$xml = simplexml_load_file("../../../modules/deleterules/$fname1");
-	//	}
-	//	else {
-	//		echo "-- Файл пустой!";
-	//	}
+    echo "-обрабатываю правила $fname1</br>";    
+    $xml = simplexml_load_file("modules/deleterules/$fname1");
+    if ($xml===FALSE) {
+		    echo "-- Файл не корректен!";
+		    die();
+	    };
      foreach($xml->entertable as $data){
             $entertable_name=$data["name"];
             $entertable_comment=$data["comment"];
             $entertable_key=$data["key"];
             echo "--таблица $entertable_name ($entertable_comment).Поиск зависимостей по ключу $entertable_key</br>";
             $result = $sqlcn->ExecuteSQL("SELECT * FROM $entertable_name where active=0");  
-			// проверяется на пустой запрос или неверные данные в xml файле
-            if ($result=='' || strpos($result,'ERROR')==true){echo '<b>Неверный запрос 1:</b> ' . mysqli_error($sqlcn->idsqlconnection).'<br>';};
+	   // проверяется на пустой запрос или неверные данные в xml файле
+            if ($result==''){echo '<b>Неверный запрос 1:</b> ' . mysqli_error($sqlcn->idsqlconnection).'<br>';die();};
                 // листаем все записи таблицы помеченные на удаление
                 while ($myrow = mysqli_fetch_array($result)){                                
                     $entertable_id=$myrow["$entertable_key"];

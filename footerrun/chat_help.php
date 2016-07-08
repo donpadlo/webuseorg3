@@ -9,7 +9,6 @@
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 if ($md->IsActive("chat")==1) {
 ?>
- <script type="text/javascript" src="https://raw.githubusercontent.com/flouthoc/blinkTitle.js/master/index.js"></script>
  <link rel="stylesheet" href="controller/client/themes/bootstrap/css/chat_client_noc.css">
  <script type="text/javascript" src="chat_client/chat_client_noc.php"></script> 
  <div id='chat_message_tab' onclick='ViewContactListBox()' class='message_online'>Мессенджер</div> 

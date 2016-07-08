@@ -67,6 +67,33 @@ $( document ).ready(function() {
     });    
     
 });   
+var hold = "";
+function blinkTitle(msg1, msg2, delay, isFocus, timeout) {
+    if (isFocus == null) {isFocus = false;}
+    if (timeout == null) {timeout = false;}
+    if(timeout){setTimeout(blinkTitleStop, timeout);}
+    document.title = msg1;
+    if (isFocus == false) {
+        hold = window.setInterval(function() {
+            if (document.title == msg1) {document.title = msg2;} else {document.title = msg1;}
+        }, delay);
+    }
+    if (isFocus == true) {
+        var onPage = false;
+        var testflag = true;
+        var initialTitle = document.title;
+        window.onfocus = function() {onPage = true;};
+        window.onblur = function() {onPage = false;testflag = false;};
+        hold = window.setInterval(function() {
+            if (onPage == false) {
+                if (document.title == msg1) {document.title = msg2;} else {document.title = msg1;}
+            }
+        }, delay);
+    }
+}
+function blinkTitleStop() {
+    clearInterval(hold);
+}
 
 function beep(tp) {
     if (tp=="New"){	
@@ -147,7 +174,9 @@ function ChangeToId(id,chlogin){
     console.log("--спрашиваем, историю сообщений:",JSON.stringify(msg));
     chatsocket.send(JSON.stringify(msg));
     msg=[];	      		  
-    blinkTitleStop();    
+    blinkTitleStop();
+    blinkTitle("<?php echo $cfg->sitename ?>","<?php echo $cfg->sitename ?>",1);    
+    blinkTitleStop();
     //запрашиваем историю переписки
 };
 function RefreshContactList(cnt_list){ 
@@ -198,6 +227,7 @@ function NoWrite(to_id){
     $('#chatuser'+to_id).html(ht);         
 };    
 function mainchat(){
+ delete chatsocket;
  $( document ).ready(function() {         
     if (typeof chatsocket == 'undefined') {    
 	//соединяемся с сервером $chat_wss_url_noc
