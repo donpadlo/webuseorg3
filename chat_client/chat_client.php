@@ -52,7 +52,7 @@ window.onload=function(){
 		console.log("--еще не догрузился jquery..ждем..");
 	    } else {
 		dhtmlLoadScript("http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js");		
-		console.log("--вроде jquery загрузился, гружу juqry-ui..");		
+		console.log("--вроде jquery загрузился, гружу jquery-ui..");		
 		clearInterval(timerId);
 		var timerId2 = setInterval(function() {		
 		    if (typeof $.ui == 'undefined'){
