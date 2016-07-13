@@ -39,8 +39,6 @@ if ($ip_chat_server=="" or $ip_chat_port==""){ die("--укажите настр�
 $sql="update chat_users set online=0";
 $result = $sqlcn->ExecuteSQL($sql);
 
-
-
 if ($ssl_pem!=""){
     echo "-используем ssl\n";    
     $pemfile = $ssl_pem;
@@ -169,8 +167,11 @@ function OnlineStatus($connect){
 	    echo "$sql\n";
 	    $result = $sqlcn->ExecuteSQL($sql);
 	};
-    }
-    //RefreshContactList($connect); //обновляем контакт лист у пользователей NOC
+    };
+    //на всякий случай "гашу" тех, кто не обновлял lastping более 10 минут
+    //потом допишу..вроде не нада это..нет зависших
+    //    
+    
 };
 function RefreshContactList($to_id){
     global $sqlcn,$users;    
@@ -258,8 +259,7 @@ function GetContactList($me_id){
       $cnt["online"]=$myrow["online"];   
       $cnt["read"]=YetNoRead($myrow["id"],$me_id);
       $cnt_list[]=$cnt;		  
-    };
-    
+    };    
  return	$cnt_list;	
 };
 function onClose($connect) {
@@ -298,8 +298,8 @@ function onMessage($connect, $data,$info) {
 	    };
 	    //отвечаем, есть ктонить онлайн?
 	    if ($message->command=="Online"){
-		$users[$message->from_user_id]["from_user_id"]=$message->from_user_id;
-		$users[$message->from_user_id]["connect"]=$connect;	    				
+		$users[$connect]["from_user_id"]=$message->from_user_id;
+		$users[$connect]["connect"]=$connect;	    				
 		$exmessage=[];
 
 		$exmessage["result"]="yes";
@@ -313,9 +313,9 @@ function onMessage($connect, $data,$info) {
 	//если клиент - кто-то из NOC
 	if ($message->client=="noc"){
 	    if ($message->command=="GetContactList"){		
-		$users[$message->from_user_id]["from_user_id"]=$message->from_user_id;
-		$users[$message->from_user_id]["connect"]=$connect;	    		
-		$users[$message->from_user_id]["client"]=$message->client;		
+		$users[$connect]["from_user_id"]=$message->from_user_id;
+		$users[$connect]["connect"]=$connect;	    		
+		$users[$connect]["client"]=$message->client;		
 		$exmessage=[];
 		$exmessage["command"]="GetContactList";
 		$exmessage["result"]=GetContactList($message->from_user_id);
@@ -331,8 +331,8 @@ function onMessage($connect, $data,$info) {
 	    
 	    //отвечаем на ping
 	    if ($message->command=="ping"){
-		$users[$message->from_user_id]["from_user_id"]=$message->from_user_id;
-		$users[$message->from_user_id]["connect"]=$connect;		
+		$users[$connect]["from_user_id"]=$message->from_user_id;
+		$users[$connect]["connect"]=$connect;		
 		$exmessage=[];
 		$exmessage["command"]="ping";
 		$exmessage["result"]="pong";
@@ -340,9 +340,9 @@ function onMessage($connect, $data,$info) {
 	    };
 	    //помечаем, что сообщения пользователем прочитаны..
 	    if ($message->command=="AllMessagesRead"){
-		$users[$message->from_user_id]["from_user_id"]=$message->from_user_id;
-		$users[$message->from_user_id]["connect"]=$connect;		
-		$users[$message->from_user_id]["client"]=$message->client;		
+		$users[$connect]["from_user_id"]=$message->from_user_id;
+		$users[$connect]["connect"]=$connect;		
+		$users[$connect]["client"]=$message->client;		
 		$to_user_id=$message->to_user_id;	
 		$from_user_id=$message->from_user_id;
 		$sql="update chat set readly=0 where from_id=$to_user_id and to_id=$from_user_id";
@@ -351,9 +351,9 @@ function onMessage($connect, $data,$info) {
 	    }
 	    //получаем историю сообщений пользователя
 	    if ($message->command=="GetHistory"){
-		$users[$message->from_user_id]["from_user_id"]=$message->from_user_id;
-		$users[$message->from_user_id]["connect"]=$connect;		
-		$users[$message->from_user_id]["client"]=$message->client;		
+		$users[$connect]["from_user_id"]=$message->from_user_id;
+		$users[$connect]["connect"]=$connect;		
+		$users[$connect]["client"]=$message->client;		
 		$to_user_id=$message->to_user_id;
 		$from_user_id=$message->from_user_id;
 		$sql="select * from chat where (from_id='$from_user_id' and to_id='$to_user_id') or (from_id='$to_user_id' and to_id='$from_user_id') order by dt ";		
@@ -380,8 +380,8 @@ function onMessage($connect, $data,$info) {
 	    };
 	    //пользователь чтото прислал
 	    if ($message->command=="SendMessage"){
-		$users[$message->from_user_id]["from_user_id"]=$message->from_user_id;
-		$users[$message->from_user_id]["connect"]=$connect;
+		$users[$connect]["from_user_id"]=$message->from_user_id;
+		$users[$connect]["connect"]=$connect;
 		UpdateLastMessage($connect);
 		$sendtext=$message->sendtext;	//текст который прислал пользователь	
 		$from_user_id=$message->from_user_id; //кому он прислал		
@@ -399,9 +399,10 @@ function onMessage($connect, $data,$info) {
 		$exmessage["txt"]=$pretext["txt"];		
 		fwrite($connect, encodeSocket(json_encode($exmessage)));	
 		//и отправляем сообщение тому кому послано
+		//var_dump($users);
 		    foreach ($users as $key => $value) {
 		    if ($value["from_user_id"]==$to_user_id){
-			    RefreshContactList($to_user_id);
+			    RefreshContactList($to_user_id); //обновляем контакт лист получателя..
 			    $pretext=PrepareTextToSendChat($from_user_id,$sendtext,"","to");
 			    $exmessage=[];
 			    $exmessage["command"]="AddEchoMessageToChat";
@@ -427,6 +428,7 @@ function onMessage($connect, $data,$info) {
 			};
 		    }		
 	    };	    
+	//обновляем статус "онлайн" от того, от кого пришло..    
 	OnlineStatus($connect);	    
     };
     echo "--вышли из цикла\n";    
