@@ -106,7 +106,7 @@ jQuery("#workmen").jqGrid({
                 $.jgrid.gridUnload("#tbl_rep");
                 jQuery("#tbl_rep").jqGrid('setGridParam',{url:"controller/server/equipment/getrepinfo.php?eqid="+ids});              
                 jQuery("#tbl_rep").jqGrid({
-                     url:'controller/server/equipment/getrepinfo.php?eqid='+ids,
+                     url:route+'controller/server/equipment/getrepinfo.php?eqid='+ids,
                      datatype: "json",
                      colNames:['Id','Дата начала','Дата окончания','Организация','Стоимость','Комментарий','Статус','Отправитель','Получатель','Документ',''],
                      colModel:[
@@ -153,7 +153,7 @@ jQuery("#workmen").jqGrid({
                      viewrecords: true,
                      height: 200,
                      sortorder: "desc",
-                     editurl:"controller/server/equipment/getrepinfo.php?eqid="+ids,
+                     editurl:route+"controller/server/equipment/getrepinfo.php?eqid="+ids,
                      caption:"История ремонтов"
                      }).trigger('reloadGrid');       
                         jQuery("#tbl_rep").jqGrid('navGrid','#rp_nav',{edit:false,add:false,del:false,search:false});                     
