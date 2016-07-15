@@ -139,7 +139,7 @@ var addOptions={
 };
 jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:true,del:false,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true} );
 };
-jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/comment.png'> Загрузить каналы ",
+jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<i class=\"fa fa-comments\" aria-hidden=\"true\"></i> Загрузить каналы ",
      title: "Загрузить список каналов с астры..",
     onClickButton:function(){
      var id = jQuery("#list2").jqGrid('getGridParam','selrow');

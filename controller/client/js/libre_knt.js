@@ -121,7 +121,7 @@ jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:true,del:false,searc
 jQuery("#list2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
 jQuery("#list2").jqGrid('bindKeys',''); 
 jQuery("#list2").jqGrid('navButtonAdd','#pager2',{
-    caption: "<img src='controller/client/themes/"+theme+"/ico/tag.png'>",
+    caption: "<i class=\"fa fa-tag\" aria-hidden=\"true\"></i>",
     title: "Выбор колонок",
     buttonicon: 'none',
     onClickButton : function (){

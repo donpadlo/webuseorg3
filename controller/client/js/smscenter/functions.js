@@ -14,7 +14,7 @@ function showUsers()
 	    var html = '<table width="100%" class="table"><tr><td style="width:25px;" class="clear"></td><td class="clear">ФИО</td><td class="clear" style="text-align:center">Телефон</td><td style="width:25px;" class="clear"></td>';
 	    for (i=0;i<obj.c;i++)
 	    {
-		html = html + '<tr><td class="clear" align="center"><img src="controller/client/themes/bootstrap/ico/user.png"></td><td class="clear"><a href="#" title="Редактировать" onclick="editUser('+obj.data[i].id+');">'+obj.data[i].name+'</a></td><td style="text-align:center">'+obj.data[i].phone+'</td><td class="clear" align="center"><a href="#" onclick="deleteUser('+obj.data[i].id+');"><img src="controller/client/themes/bootstrap/ico/delete.png" title="Удалить"></a></td></tr>';
+		html = html + '<tr><td class="clear" align="center"><i class=\"fa fa-user\" aria-hidden=\"true\"></i></td><td class="clear"><a href="#" title="Редактировать" onclick="editUser('+obj.data[i].id+');">'+obj.data[i].name+'</a></td><td style="text-align:center">'+obj.data[i].phone+'</td><td class="clear" align="center"><a href="#" onclick="deleteUser('+obj.data[i].id+');"><i class=\"fa fa-trash \" aria-hidden=\"true\"></i></a></td></tr>';
 	    }
 	    html = html + '</table>';
 	    $('#content').html(html);
@@ -137,7 +137,7 @@ function showGroups()
 	    var html = '<table class="table" width="100%"><tr><td style="width:25px;"></td><td>Название</td><td style="width:25px;"></td>';
 	    for (i=0;i<obj.c;i++)
 	    {
-		html = html + '<tr><td align="center"><img src="controller/client/themes/bootstrap/ico/group.png"</td><td><a href="#" title="Редактировать" onclick="editGroup('+obj.data[i].id+');">'+obj.data[i].name+'</a></td><td align="center"><a href="#" onclick="deleteGroup('+obj.data[i].id+');"><img src="controller/client/themes/bootstrap/ico/delete.png" title="Удалить группу"></a></td></tr>';
+		html = html + '<tr><td align="center"><i class=\"fa fa-object-group\" aria-hidden=\"true\"></i></td><td><a href="#" title="Редактировать" onclick="editGroup('+obj.data[i].id+');">'+obj.data[i].name+'</a></td><td align="center"><a href="#" onclick="deleteGroup('+obj.data[i].id+');"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></a></td></tr>';
 	    }
 	    html = html + '</table>';
 	    $('#content').html(html);

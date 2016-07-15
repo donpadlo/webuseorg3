@@ -73,12 +73,12 @@ if ($oper == '') {
 		$mode = ($row['mode'] == '1') ? 'Да' : 'Нет';
 		if ($row['active'] == '1') {
 			$responce->rows[$i]['cell'] = array(
-				'<img src="controller/client/themes/'.$cfg->theme.'/ico/accept.png">',
+				'<i class="fa fa-check" aria-hidden="true"></i>',
 				$row['id'], $row['orgname'], $row['login'], 'скрыто', $row['email'], $mode
 			);
 		} else {
 			$responce->rows[$i]['cell'] = array(
-				'<img src="controller/client/themes/'.$cfg->theme.'/ico/cancel.png">',
+				'<i class="fa fa-ban" aria-hidden="true"></i>',
 				$row['id'], $row['orgname'], $row['login'], 'скрыто', $row['email'], $mode
 			);
 		}

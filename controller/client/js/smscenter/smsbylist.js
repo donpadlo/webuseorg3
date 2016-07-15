@@ -36,7 +36,7 @@ function GetGrid(){
     };
     jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:true,del:false,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true} );
 
-    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/icon_currency.gif'> Загрузить список",                              
+    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<i class=\"fa fa-plus-circle \" aria-hidden=\"true\"></i> Загрузить список",                              
             title: "Загрузить список телефонов и текстов СМС",
 	    buttonicon: 'none',
             onClickButton:function(){
@@ -44,7 +44,7 @@ function GetGrid(){
             } 
     });
 
-    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/icon_currency.gif'> Очистить",                              
+    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<i class=\"fa fa-plus-circle \" aria-hidden=\"true\"></i> Очистить",                              
             title: "Очистить список",
 	    buttonicon: 'none',
             onClickButton:function(){
@@ -53,7 +53,7 @@ function GetGrid(){
                 });
             } 
     });
-    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/comment.png'> СМС ",                              
+    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<i class=\"fa fa-comments\" aria-hidden=\"true\"></i>> СМС ",                              
          title: "Отправить СМС",
 	 buttonicon: 'none',
 	onClickButton:function(){

@@ -35,7 +35,7 @@ function LoadTable()
                      
     jQuery("#bp_xml").jqGrid('navGrid','#bp_xml_footer',{edit:false,add:false,del:false,search:false});                     
                      
-    jQuery("#bp_xml").jqGrid('navButtonAdd','#bp_xml_footer',{caption:"<img src='controller/client/themes/"+theme+"/ico/script_add.png'>",                              
+    jQuery("#bp_xml").jqGrid('navButtonAdd','#bp_xml_footer',{caption:"<i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i>",                              
         title: "Добавить бизнесс-процесс",        
 	onClickButton:function(){
             $("#bp_xml_info").dialog({autoOpen: false,height: 480,width: 640,modal:true,title: "Добавление/редактирование БП" });
@@ -43,7 +43,7 @@ function LoadTable()
             $("#bp_xml_info").load("controller/client/view/bp/bp_xml_form.php?mode=add");            
 	} 
     });                     
-    jQuery("#bp_xml").jqGrid('navButtonAdd','#bp_xml_footer',{caption:"<img src='controller/client/themes/"+theme+"/ico/script_edit.png'>",                              
+    jQuery("#bp_xml").jqGrid('navButtonAdd','#bp_xml_footer',{caption:"<i class=\"fa fa-pencil-square\" aria-hidden=\"true\"></i>",                              
         title: "Редактировать бизнесс-процесс",        
 	onClickButton:function(){
 		var gsr = jQuery("#bp_xml").jqGrid('getGridParam','selrow');
@@ -54,14 +54,14 @@ function LoadTable()
                 } else {alert("Сначала выберите строку!");};
 	} 
     });                     
-    jQuery("#bp_xml").jqGrid('navButtonAdd','#bp_xml_footer',{caption:"<img src='controller/client/themes/"+theme+"/ico/script_code_red.png'>",                              
+    jQuery("#bp_xml").jqGrid('navButtonAdd','#bp_xml_footer',{caption:"<i class=\"fa fa-codepen\" aria-hidden=\"true\"></i>",                              
         title: "Снять фильтр",        
 	onClickButton:function(){
            jQuery("#bp_xml"). setGridParam({url:'controller/server/bp/bp_xml.php?createdid='});
            jQuery("#bp_xml"). setGridParam({editurl:'controller/server/bp/bp_xml.php?createdid='}).trigger("reloadGrid");
 	} 
     });                     
-    jQuery("#bp_xml").jqGrid('navButtonAdd','#bp_xml_footer',{caption:"<img src='controller/client/themes/"+theme+"/ico/script_code.png'>",                              
+    jQuery("#bp_xml").jqGrid('navButtonAdd','#bp_xml_footer',{caption:"<i class=\"fa fa-codepen\" aria-hidden=\"true\"></i>",                              
         title: "Применить фильтр",        
 	onClickButton:function(){
            jQuery("#bp_xml"). setGridParam({url:'controller/server/bp/bp_xml.php?createdid='+defaultuserid});

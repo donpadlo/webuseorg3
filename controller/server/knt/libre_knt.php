@@ -78,8 +78,8 @@ if ($oper=='')
             if ($row['supplier']==0){$row['supplier']='No';} else {$row['supplier']='Yes';};
             if ($row['dog']==0){$row['dog']='No';} else {$row['dog']='Yes';};
 	    if ($row['active']=="1")                
-		{$responce->rows[$i]['cell']=array("<img src=controller/client/themes/".$cfg->theme."/ico/accept.png>",$row['id'],$row['name'],$row['INN'],$row['KPP'],$row['bayer'],$row['supplier'],$row['dog'],$row['ERPCode'],$row['comment']);} else
-		{$responce->rows[$i]['cell']=array("<img src=controller/client/themes/".$cfg->theme."/ico/cancel.png>",$row['id'],$row['name'],$row['INN'],$row['KPP'],$row['bayer'],$row['supplier'],$row['dog'],$row['ERPCode'],$row['comment']);};
+		{$responce->rows[$i]['cell']=array("<i class=\"fa fa-check-circle-o\" aria-hidden=\"true\"></i>",$row['id'],$row['name'],$row['INN'],$row['KPP'],$row['bayer'],$row['supplier'],$row['dog'],$row['ERPCode'],$row['comment']);} else
+		{$responce->rows[$i]['cell']=array("<i class=\"fa fa-ban\" aria-hidden=\"true\"></i>",$row['id'],$row['name'],$row['INN'],$row['KPP'],$row['bayer'],$row['supplier'],$row['dog'],$row['ERPCode'],$row['comment']);};
 	    $i++;
 	}
 	echo json_encode($responce);

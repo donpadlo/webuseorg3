@@ -55,8 +55,8 @@ if ($oper=='')
 	while($row = mysqli_fetch_array($result)) {
 	    $responce->rows[$i]['id']=$row['id'];
 	    if ($row['active']=="1")
-		{$responce->rows[$i]['cell']=array("<img src=controller/client/themes/".$cfg->theme."/ico/accept.png>",$row['id'],$row['opgroup'],$row['name'],$row['comment']);} else
-		{$responce->rows[$i]['cell']=array("<img src=controller/client/themes/".$cfg->theme."/ico/cancel.png>",$row['id'],$row['opgroup'],$row['name'],$row['comment']);};
+		{$responce->rows[$i]['cell']=array("<i class=\"fa fa-check-circle-o\" aria-hidden=\"true\"></i>",$row['id'],$row['opgroup'],$row['name'],$row['comment']);} else
+		{$responce->rows[$i]['cell']=array("<i class=\"fa fa-ban\" aria-hidden=\"true\"></i>",$row['id'],$row['opgroup'],$row['name'],$row['comment']);};
 	    $i++;
 	}
 	echo json_encode($responce);

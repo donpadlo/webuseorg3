@@ -74,7 +74,7 @@ var addOptions={
 };
 jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:false,del:false,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true} );
 
-    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/television.png'>",                              
+    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<i class=\"fa fa-television\" aria-hidden=\"true\"></i>",                              
         title: "Собрать ролик",
 	buttonicon: 'none',
 	onClickButton:function(){
@@ -85,7 +85,7 @@ jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:false,del:false,sear
        } else {alert("Выберите астру!");};
 	} 
 });    
-    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<img src='controller/client/themes/"+theme+"/ico/control_play.png'>",                              
+    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<i class=\"fa fa-play\" aria-hidden=\"true\"></i>",                              
         title: "Опубликовать",
 	buttonicon: 'none',
 	onClickButton:function(){

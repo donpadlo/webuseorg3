@@ -85,7 +85,7 @@ function ViewModules(cable_id){
         caption:"Модули"  
     });   
     jQuery("#list3").jqGrid('navGrid','#pager3',{edit:true,add:true,del:true,search:false},{},addOptions,{},{multipleSearch:false},{closeOnEscape:true} );        
-    jQuery("#list3").jqGrid('navButtonAdd','#pager3',{caption:"<img src='controller/client/themes/"+theme+"/ico/vcard.png'>",
+    jQuery("#list3").jqGrid('navButtonAdd','#pager3',{caption:"<i class=\"fa fa-clone\" aria-hidden=\"true\"></i>",
             title: "Размножить модуль",
             onClickButton:function(){
                   var mid = jQuery("#list3").jqGrid('getGridParam','selrow');

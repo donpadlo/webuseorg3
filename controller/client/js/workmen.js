@@ -157,7 +157,7 @@ jQuery("#workmen").jqGrid({
                      caption:"История ремонтов"
                      }).trigger('reloadGrid');       
                         jQuery("#tbl_rep").jqGrid('navGrid','#rp_nav',{edit:false,add:false,del:false,search:false});                     
-                        jQuery("#tbl_rep").jqGrid('navButtonAdd','#rp_nav',{caption:"<img src='controller/client/themes/"+theme+"/ico/computer_edit.png'>",                              
+                        jQuery("#tbl_rep").jqGrid('navButtonAdd','#rp_nav',{caption:"<i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>",                              
                         title: "Изменить статус ремонта",
                         buttonicon: 'none',
                             onClickButton:function(){
@@ -170,7 +170,7 @@ jQuery("#workmen").jqGrid({
                                     } else { alert("Выберите ТМЦ для изменения статуса ремонта!");}	
                                     } 
                         });                         
-                        jQuery("#tbl_rep").jqGrid('navButtonAdd',"#rp_nav",{caption:"<img src='controller/client/themes/"+theme+"/ico/disk.png'>",                              
+                        jQuery("#tbl_rep").jqGrid('navButtonAdd',"#rp_nav",{caption:"<i class=\"fa fa-floppy-o\" aria-hidden=\"true\"></i>",                              
                             title: "Экспорт в Excel",
                             buttonicon: 'none',
                                 onClickButton:function(){
@@ -205,7 +205,7 @@ jQuery("#workmen").jqGrid({
 jQuery("#workmen").jqGrid('navGrid','#workmen_footer',{edit:false,add:false,del:false,search:false});
 jQuery("#workmen").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
 
-jQuery("#workmen").jqGrid('navButtonAdd','#workmen_footer',{caption:"<img src='controller/client/themes/"+theme+"/ico/computer_error.png'>",                              
+jQuery("#workmen").jqGrid('navButtonAdd','#workmen_footer',{caption:"<i class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i>",                              
 title: "Отдать в ремонт ТМЦ",
 buttonicon: 'none',
      onClickButton:function(){

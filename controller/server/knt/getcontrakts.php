@@ -65,8 +65,8 @@ if ($oper=='')
             $dateend=$row['dateend'].' 00:00:00';
             $datestart=$row['datestart'].' 00:00:00';
 	    if ($row['active']=="1")                
-		{$responce->rows[$i]['cell']=array("<img src=controller/client/themes/".$cfg->theme."/ico/accept.png>",$row['id'],$row['num'],$row['name'],MySQLDateTimeToDateTime($datestart),MySQLDateTimeToDateTime($dateend),$row['work'],$row['comment']);} else
-		{$responce->rows[$i]['cell']=array("<img src=controller/client/themes/".$cfg->theme."/ico/cancel.png>",$row['id'],$row['num'],$row['name'],MySQLDateTimeToDateTime($datestart),MySQLDateTimeToDateTime($dateend),$row['work'],$row['comment']);};
+		{$responce->rows[$i]['cell']=array("<i class=\"fa fa-check-circle-o\" aria-hidden=\"true\"></i>",$row['id'],$row['num'],$row['name'],MySQLDateTimeToDateTime($datestart),MySQLDateTimeToDateTime($dateend),$row['work'],$row['comment']);} else
+		{$responce->rows[$i]['cell']=array("<i class=\"fa fa-ban\" aria-hidden=\"true\"></i>",$row['id'],$row['num'],$row['name'],MySQLDateTimeToDateTime($datestart),MySQLDateTimeToDateTime($dateend),$row['work'],$row['comment']);};
 	    $i++;
 	}
 	echo json_encode($responce);

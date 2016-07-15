@@ -57,8 +57,8 @@ if ($oper=='')
 	    $responce->rows[$i]['id']=$row['id'];    
             $zx=new Tusers;
             $zx->GetById($row['userid']);            
-	    if ($row['active']=="1") {$active="<img src=controller/client/themes/".$cfg->theme."/ico/accept.png>";} else
-				   {$active="<img src=controller/client/themes/".$cfg->theme."/ico/cancel.png>";};            
+	    if ($row['active']=="1") {$active="<i class=\"fa fa-check-circle-o\" aria-hidden=\"true\"></i>";} else
+				   {$active="<i class=\"fa fa-ban\" aria-hidden=\"true\"></i>";};            
             $responce->rows[$i]['cell']=array($active,$row['id'],$row['post'],$zx->fio);
 	    $i++;
 	}

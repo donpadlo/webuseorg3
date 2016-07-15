@@ -45,40 +45,23 @@ if ($oper == '') {
 	$i = 0;
 	while ($row = mysqli_fetch_array($result)) {
 		$responce->rows[$i]['id'] = $row['id'];
-/*
-		$ico = "<img src='controller/client/themes/$cfg->theme/ico/page_white_acrobat.png'>";
-		if (strpos($row['filename'], '.jpeg') != false) {
-			$ico = "<img src='controller/client/themes/$cfg->theme/ico/image.png'>";
-		}
-		if (strpos($row['filename'], '.jpg') != false) {
-			$ico = "<img src='controller/client/themes/$cfg->theme/ico/image.png'>";
-		}
-		if (strpos($row['filename'], '.png') != false) {
-			$ico = "<img src='controller/client/themes/$cfg->theme/ico/image.png'>";
-		}
-		if (strpos($row['filename'], '.xls') != false) {
-			$ico = "<img src='controller/client/themes/$cfg->theme/ico/exel.png'>";
-		}
-		if (strpos($row['filename'], '.doc') != false) {
-			$ico = "<img src='controller/client/themes/$cfg->theme/ico/office.png'>";
-		}
-*/
+
 		switch (pathinfo($row['filename'], PATHINFO_EXTENSION)) {
 			case 'jpeg':
 			case 'jpg':
 			case 'png':
-				$ico = '<img src="controller/client/themes/'.$cfg->theme.'/ico/image.png">';
+				$ico = '<i class=\"fa fa-file-image-o\" aria-hidden=\"true\"></i>';
 				break;
 			case 'xls':
 			case 'ods':
-				$ico = '<img src="controller/client/themes/'.$cfg->theme.'/ico/exel.png">';
+				$ico = '<i class=\"fa a-file-excel-o\" aria-hidden=\"true\"></i>';
 				break;
 			case 'doc':
 			case 'odt':
-				$ico = '<img src="controller/client/themes/'.$cfg->theme.'/ico/office.png">';
+				$ico = '<i class=\"fa fa-file-word-o\" aria-hidden=\"true\"></i>';
 				break;
 			default:
-				$ico = '<img src="controller/client/themes/'.$cfg->theme.'/ico/page_white_acrobat.png">';
+				$ico = '<i class=\"fa fa-file-pdf-o\" aria-hidden=\"true\"></i>';
 		}
 		//$ico = "<a target='_blank' href='files/".$row['filename']."'>".$ico."</a>";
 		$ico = '<a target="_blank" href="index.php?route=/controller/server/cloud/download.php?id='.$row['id'].'">'.$ico.'</a>';

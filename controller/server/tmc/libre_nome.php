@@ -69,8 +69,8 @@ if ($oper=='')
 	while($row = mysqli_fetch_array($result)) {
 	    $responce->rows[$i]['id']=$row['nomeid'];
 	    if ($row['nomeactive']=="1")
-		{$responce->rows[$i]['cell']=array("<img src=controller/client/themes/".$cfg->theme."/ico/accept.png>",$row['nomeid'],$row['groupname'],$row['vendorname'],$row['nomename']);} else
-		{$responce->rows[$i]['cell']=array("<img src=controller/client/themes/".$cfg->theme."/ico/cancel.png>",$row['nomeid'],$row['groupname'],$row['vendorname'],$row['nomename']);};
+		{$responce->rows[$i]['cell']=array("<i class=\"fa fa-check-circle-o\" aria-hidden=\"true\"></i>",$row['nomeid'],$row['groupname'],$row['vendorname'],$row['nomename']);} else
+		{$responce->rows[$i]['cell']=array("<i class=\"fa fa-ban\" aria-hidden=\"true\"></i>",$row['nomeid'],$row['groupname'],$row['vendorname'],$row['nomename']);};
 	    $i++;
 	}
 	echo json_encode($responce);

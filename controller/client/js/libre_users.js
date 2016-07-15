@@ -50,7 +50,7 @@ jQuery('#list2').jqGrid('setGridHeight', $(window).innerHeight() / 2);
 jQuery('#list2').jqGrid('navGrid', '#pager2', {edit: false, add: false, del: false, search: false});
 jQuery('#list2').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: false});
 jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {
-	caption: '<img src="controller/client/themes/' + theme + '/ico/tag.png">',
+	caption: '<i class=\"fa fa-tag\" aria-hidden=\"true\"></i>',
 	title: 'Выбор колонок',
 	buttonicon: 'none',
 	onClickButton: function() {
@@ -67,7 +67,7 @@ jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {
 		});
 	}
 });
-jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controller/client/themes/' + theme + '/ico/user_add.png">',
+jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<i class=\"fa fa-user-plus    \" aria-hidden=\"true\"></i>',
 	title: 'Добавить',
 	buttonicon: 'none',
 	onClickButton: function() {
@@ -76,7 +76,7 @@ jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controll
 		$('#add_edit').load('controller/client/view/users/user_add.php');
 	}
 });
-jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controller/client/themes/' + theme + '/ico/user_edit.png">',
+jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<i class=\"fa fa-user-md     \" aria-hidden=\"true\"></i>',
 	title: 'Изменить данные',
 	buttonicon: 'none',
 	onClickButton: function() {
@@ -91,7 +91,7 @@ jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controll
 		}
 	}
 });
-jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controller/client/themes/' + theme + '/ico/user_comment.png">',
+jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<i class=\"fa fa-users\" aria-hidden=\"true\"></i>',
 	title: 'Профиль',
 	buttonicon: 'none',
 	onClickButton: function() {
@@ -106,7 +106,7 @@ jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controll
 		}
 	}
 });
-jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<img src="controller/client/themes/' + theme + '/ico/vcard.png">',
+jQuery('#list2').jqGrid('navButtonAdd', '#pager2', {caption: '<i class=\"fa fa-credit-card\" aria-hidden=\"true\"></i>',
 	title: 'Бейджик',
 	buttonicon: 'none',
 	onClickButton: function() {

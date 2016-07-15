@@ -106,7 +106,7 @@ jQuery(list).jqGrid({
     caption:"Остатки комплектующих"
 }); 
 jQuery(list).jqGrid('navGrid',pager,{edit:false,add:false,del:false,search:false});
-jQuery(list).jqGrid('navButtonAdd',pager,{caption:"<img src='controller/client/themes/"+theme+"/ico/disk.png'>",                              
+jQuery(list).jqGrid('navButtonAdd',pager,{caption:"<i class=\"fa fa-floppy-o\" aria-hidden=\"true\"></i>",                              
         title: "Экспорт в Excel",
 	onClickButton:function(){
             exportExcel(list);
