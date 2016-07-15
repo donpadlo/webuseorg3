@@ -146,12 +146,12 @@ if ($oper == '') {
 	while ($row = mysqli_fetch_array($result)) {
 		$responce->rows[$i]['id'] = $row['eqid'];
 		if ($row['eqactive'] == '1') {
-			$active = '<img src="controller/client/themes/'.$cfg->theme.'/ico/accept.png">';
+			$active = '<i class="fa fa-check-circle" aria-hidden="true"></i>';
 		} else {
-			$active = '<img src="controller/client/themes/'.$cfg->theme.'/ico/cancel.png">';
+			$active = '<i class="fa fa-ban" aria-hidden="true"></i>';
 		}
 		if ($row['eqrepair'] == '1') {
-			$active = $active.'<img src="controller/client/themes/'.$cfg->theme.'/ico/error.png">';
+			$active = $active.'<i class="fa fa-exclamation-circle" aria-hidden="true"></i>';
 		}
 
 		$os = ($row['os'] == 0) ? 'No' : 'Yes';
