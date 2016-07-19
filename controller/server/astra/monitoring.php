@@ -68,7 +68,7 @@ while($row = mysqli_fetch_array($result)) {
 				echo "<td>$tname</td>";
 				echo "<td>";
 				if ($user->TestRoles("1")==true){
-				    echo "<a target=\"_blank\"href=\"$url\" class=\"btn btn-primary btn active\" role=\"button\">Панель управления</a>";      
+				    echo "<a target=\"_blank\" onClick=\"this.href='$url'\" href=\"\" class=\"btn btn-primary btn active\" role=\"button\">Панель управления</a>";      
 				};
 				echo "<div onclick='Reload(\"$id\")' class=\"btn btn-danger btn active\" role=\"button\">Перезагрузить</div></td>";
 				echo "</tr>";

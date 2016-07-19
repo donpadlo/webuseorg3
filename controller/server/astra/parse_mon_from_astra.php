@@ -23,22 +23,24 @@ while($row = mysqli_fetch_array($result)) {
 <h1><?php echo "$name" ?></h1>    
 <div class="row-fluid">
 <div class="col-xs-6 col-md-6 col-sm-6">    
-  <table class="table table-hover table-condensed">
-  <thead>	
-	<tr>
-	    <th>#</th>
-	    <th>Название</th>
-	    <th>Битрейд</th>
-	</tr> 
-  </thead>	
 <?php    
 $json = file_get_contents('/tmp/astra.json');
 $json_bit = file_get_contents('/tmp/astra_bit.json');
   $json_bit=json_decode($json_bit);
 if ($json==FALSE){
-  echo "<a target=\"_blank\"href=\"$url\" class=\"btn btn-primary btn active\" role=\"button\">Панель управления</a>";      
+  echo "<a target=\"_blank\" onClick=\"this.href='$url'\" href=\"\" class=\"btn btn-primary btn active\" role=\"button\">Панель управления</a>";      
 } else {
-    $obj = json_decode($json);
+    $obj = json_decode($json);    
+    if ($obj!=""){
+    echo '  <table class="table table-hover table-condensed">
+	<thead>	
+	      <tr>
+		  <th>#</th>
+		  <th>Название</th>
+		  <th>Битрейд</th>
+	      </tr> 
+	</thead>	
+      ';
     $cnt=0;$cnt_kan=0;
     foreach ($obj as $key => $kk) {
      $cnt++;
@@ -75,36 +77,41 @@ if ($json==FALSE){
 	    };
 	   };
      };
-
+     };
 	    };
     };
 };
 ?>
 </table>   
- <table class="table table-hover table-condensed">
-  <thead>	
-	<tr>
-	    <th>#</th>
-	    <th>Файл</th>
-	</tr> 
-  </thead>	
 <?php
     $zz=$id."100000";
     $sql="select * from files_contract where idcontract=$zz";
     //echo "$sql";
     $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать список страниц!".mysqli_error($sqlcn->idsqlconnection));
-    $cnt=0;
+    $cnt=0;$zxc="";
     while($row = mysqli_fetch_array($result)) {
 	$cnt++;
 	$filename=$row["filename"];
 	$userfreandlyfilename=$row["userfreandlyfilename"];
-	echo "<tr>";
-	 echo "<td>$cnt</td>";
-	 echo "<td><a target='_blank' href=files/$filename>$userfreandlyfilename</a></td>";
-	echo "</tr>";
+	$zxc=$zxc."<tr>";
+	 $zxc=$zxc."<td>$cnt</td>";
+	 $zxc=$zxc."<td><a target='_blank' href=files/$filename>$userfreandlyfilename</a></td>";
+	$zxc=$zxc."</tr>";
+    };
+    if ($zxc!=""){
+	echo ' <table class="table table-hover table-condensed">
+	  <thead>	
+		<tr>
+		    <th>#</th>
+		    <th>Файл</th>
+		</tr> 
+	  </thead>	
+	';	
+	echo "$zxc";
+	echo "  </table>    ";
     };
 ?>
-  </table>    
+
 </div>
 <?php
     echo "<div class=\"col-xs-6 col-md-6 col-sm-6\">";
@@ -113,9 +120,11 @@ if ($json==FALSE){
 } else { 
   echo "<div id=mm name=mm></div>";  
   if ($user->TestRoles("1")==true){
-    echo "<a target=\"_blank\"href=\"$url/#/stream/\" class=\"btn btn-primary btn active\" role=\"button\">Панель управления</a></br>";
+    echo "<a target=\"_blank\" onClick=\"this.href='$url/#/stream/'\" href=\"\" class=\"btn btn-primary btn active\" role=\"button\">Панель управления</a></br>";
   };
-  echo "<div onclick='Reload(\"$id\")' class=\"btn btn-danger btn active\" role=\"button\">Перезагрузить</div>";
+  if ($obj!=""){
+    echo "<div onclick='Reload(\"$id\")' class=\"btn btn-danger btn active\" role=\"button\">Перезагрузить</div>";
+  };
 };
     echo "</div>";
 ?>
