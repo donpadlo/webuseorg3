@@ -28,17 +28,17 @@ class PhoneGroups {
 	return $result;
     }
     
-    public function insertUser($name,$phone)
+    public function insertUser($name,$phone,$telegram)
     {
 	$res = $this->DB->queryRow("SELECT * FROM sms_users WHERE name=:name AND phone=:phone",array("name"=>$name,"phone"=>$phone));
 	if ($res!=false) return false;
-	$this->DB->insert("sms_users",array("name"=>$name,"phone"=>$phone));
+	$this->DB->insert("sms_users",array("name"=>$name,"phone"=>$phone,"telegram"=>$telegram));
 	return true;
     }
     
-    public function saveEditUser($id,$name,$phone)
+    public function saveEditUser($id,$name,$phone,$telegram)
     {
-	$res = $this->DB->update("sms_users",array("name"=>$name,"phone"=>$phone),"id=:id",array("id"=>$id));
+	$res = $this->DB->update("sms_users",array("name"=>$name,"phone"=>$phone,"telegram"=>$telegram),"id=:id",array("id"=>$id));
 	return;
     }
     

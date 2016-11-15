@@ -37,7 +37,8 @@ function insertUser()
     // Добавляем пользователя
     var name = $('#name').val();
     var phone = $('#phone').val();
-    $.post("controller/client/themes/bootstrap/smscenter/ajax.php",{'cat':'users','act':'insert','name':name,'phone':phone}, function(data)
+    var telegram = $('#telegram').val();
+    $.post("controller/client/themes/bootstrap/smscenter/ajax.php",{'cat':'users','act':'insert','name':name,'phone':phone,'telegram':telegram}, function(data)
     {
 	//console.log(data);
 	var obj = $.parseJSON(data);
@@ -80,6 +81,7 @@ function editUser(id)
 	    var obj = $.parseJSON(data);
 	    $('#name').val(obj.name);
 	    $('#phone').val(obj.phone);
+	    $('#telegram').val(obj.telegram);
 	    $('#window button').attr('onclick','saveUserData('+obj.id+');');
 	    $('#window button').html('Сохранить');
 	}
@@ -91,11 +93,12 @@ function saveUserData(id)
 {
     var name = $('#name').val();
     var phone = $('#phone').val();
+    var telegram = $('#telegram').val();
     $.ajax({
 	url:'controller/client/themes/bootstrap/smscenter/ajax.php',
 	type:'POST',
 	async: false,
-	data:{'cat':'users','act':'saveedituser','id':id,'name':name,'phone':phone},
+	data:{'cat':'users','act':'saveedituser','id':id,'name':name,'phone':phone,'telegram':telegram},
 	success: function(data){
 	    var obj = $.parseJSON(data);
 	    if (obj.error==0) { alert('Учетная запись отредактирована'); showUsers(); return; }

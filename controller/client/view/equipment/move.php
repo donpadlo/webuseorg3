@@ -124,9 +124,9 @@ $(document).ready(function() {
        });
 
     };
-    $("#sorgid").click(function(){
+    $('#sorgid').on('change', function(evt, params) {   
       $("#splaces").html="идет загрузка.."; // заглушка. Зачем?? каналы счас быстрые
-      $("#susers").html="идет загрузка..";
+      $("#susers").html="идет загрузка..";      
       GetListPlaces($("#sorgid :selected").val(),''); // перегружаем список помещений организации
       GetListUsers($("#sorgid :selected").val(),'') // перегружаем пользователей организации
       UpdateChosen();

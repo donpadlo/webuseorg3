@@ -9,18 +9,18 @@
 
 
 function handshakeSocket($connect) {
-    echo "-----------рукопожатие-----------";
-    echo "Connect:\n";
-    var_dump($connect);
+#    echo "-----------рукопожатие-----------";
+#    echo "Connect:\n";
+#    var_dump($connect);
     $info = array();
     $line = fgets($connect);
     
-    echo "Line:";
-    var_dump($line);
+#    echo "Line:";
+#    var_dump($line);
     
     $header = explode(' ', $line);
-    echo "Header:\n";
-    var_dump($header);
+#    echo "Header:\n";
+#    var_dump($header);
     $info['method'] = $header[0];
     $info['uri'] = $header[1];
 
@@ -209,3 +209,32 @@ function decodeSocket($data){
 
     return $decodedData;
 }
+
+function NameUserById($id){  
+global $sqlcn;
+    $res="";
+    $sql="select if (users_profile.fio is not NULL,users_profile.fio,chat_users.name) as name from chat_users left join users_profile on users_profile.usersid=chat_users.userid where chat_users.id=$id";
+    //echo "$sql\n";
+    $result = $sqlcn->ExecuteSQL($sql);
+    while($row = mysqli_fetch_array($result)) {
+	$res=$row["name"];
+    };
+    return $res;
+};
+function GetHistory($chat_user_id,$chat_opponent_id){
+global $sqlcn;
+    $res=array();
+    $sql="select * from chat where (from_id=$chat_user_id and to_id=$chat_opponent_id) or (to_id=$chat_user_id and from_id=$chat_opponent_id) order by dt";
+    echo "$sql\n";
+    $result = $sqlcn->ExecuteSQL($sql);
+    while($row = mysqli_fetch_array($result)) {
+	$id=$row["id"];
+	$res[$id]["dt"]=$row["dt"];
+	$res[$id]["from_id"]=$row["from_id"];
+	$res[$id]["from_name"]=NameUserById($row["from_id"]);
+	$res[$id]["to_id"]=$row["to_id"];
+	$res[$id]["to_name"]=NameUserById($row["to_id"]);
+	$res[$id]["txt"]=$row["txt"];
+    };
+    return $res;
+};

@@ -10,7 +10,7 @@
 
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 if ($md->IsActive("scriptalert")==1) {    
-    $cfg->quickmenu[]='<div><i class="fa fa-check-square-o"></i> <a href=index.php?content_page=scriptalert_mon>Мониторинг скриптов</a></div>'; 
+    $cfg->quickmenu[]='<a title="Мониторинг скриптов" href=index.php?content_page=scriptalert_mon><button type=\'button\' class=\'btn btn-default navbar-btn \'><i class="fa fa-check-square-o"></i></button></a>'; 
 };
 unset($md);
 ?>

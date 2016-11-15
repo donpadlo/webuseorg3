@@ -53,7 +53,7 @@
 	*display: inline;
 	position: relative;
 	overflow: hidden;
-	font-size: 20px;
+	
 	font-family: Arial, Helvetica, sans-serif;
 	border-radius: 4px;
 	vertical-align: middle;
@@ -220,8 +220,7 @@
 	*display: inline;
 	display: inline-block;
 	position: relative;
-	overflow: hidden;
-	font-size: 20px;
+	overflow: hidden;	
 	font-family: Arial;
 	border-radius: 4px;
 	vertical-align: middle;

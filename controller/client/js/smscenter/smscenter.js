@@ -39,4 +39,8 @@ $(document).ready(function() {
     $('#setsendsms').click(function () {
 	$("#time_to_cur_div").load("controller/server/smscenter/getsmsdatesend.php?set=true&sec="+$("#time_to").val());
     });
+    $('#settehsms').click(function () {
+	$("#mess_set").load(route+"controller/server/smscenter/set_sms_teh.php&mode=set&teh_sms="+$("#kmonth").val());
+    });
+    
 });

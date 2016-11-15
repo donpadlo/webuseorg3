@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>min-height</title>  
+ </head>
+ <body>
+ </body>
+</html>
+   <script>
+   (function(){	
+	help_url="http://127.0.1.2/chat_client/";
+	codepage="utf8";
+	var hcc = document.createElement("script");
+	hcc.type ="text/javascript";
+	hcc.async =true;
+	hcc.src =help_url+"chat_client.php?codepage="+codepage;
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(hcc, s.nextSibling);
+        var css_url=help_url+"chat_client.css";                
+        var tag_css = document.createElement('link');                
+	tag_css.rel = 'stylesheet';
+        tag_css.href = css_url;
+	tag_css.type = 'text/css';        
+	var tag_head = document.getElementsByTagName('head');
+	tag_head[0].appendChild(tag_css);                
+   })();   
+   </script>

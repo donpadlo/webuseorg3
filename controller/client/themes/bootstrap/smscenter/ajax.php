@@ -55,6 +55,7 @@ switch($cat) {
 		$mes = "";
 		$name = $_REQUEST["name"];
 		$phone = $_REQUEST["phone"];
+		$telegram = $_REQUEST["telegram"];
 		if (strlen($phone)!=11) $mes = "Неверно указан номер телефона.<br /> ";
 		if ($name=="") $mes = "Не указано ФИО. ";
 		if ($mes!="") { 
@@ -62,7 +63,7 @@ switch($cat) {
 		    }
 		else {
 		    //добавляем пользователя в базу  
-		    $res = $groups->insertUser($name,$phone);
+		    $res = $groups->insertUser($name,$phone,$telegram);
 		    if ($res!=false) {
 			echo json_encode(array("error"=>0,"errormes"=>$mes));
 			}
@@ -78,6 +79,7 @@ switch($cat) {
 		$id = $_REQUEST["id"];
 		$name = $_REQUEST["name"];
 		$phone = $_REQUEST["phone"];
+		$telegram = $_REQUEST["telegram"];
 		if (strlen($phone)!=11) $mes = "Неверно указан номер телефона.<br /> ";
 		if ($name=="") $mes = "Не указано ФИО. ";
 		if ($mes!="") { 
@@ -85,7 +87,7 @@ switch($cat) {
 		    }
 		else {
 		    //добавляем пользователя в базу  
-		    $res = $groups->saveEditUser($id,$name,$phone);
+		    $res = $groups->saveEditUser($id,$name,$phone,$telegram);
 		    echo json_encode(array("error"=>0,"errormes"=>$mes));
 		    }
 		break;

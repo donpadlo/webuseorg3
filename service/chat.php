@@ -6,6 +6,9 @@
 //   Грибов Павел,
 //   (добавляйте себя если что-то делали)
 // http://грибовы.рф
+// 
+// Сей файл - это серверная часть чата поддержки. Клиентская - на сайтах и в НОС
+// version 2.00
 
 define('WUO_ROOT', dirname(__FILE__));
 
@@ -56,14 +59,13 @@ if ($ssl_pem!=""){
 if (!$socket) {die("$errstr ($errno)\n");};
 
 echo "--демон чат сервера стартовал $ip_chat_server:$ip_chat_port \n";
+$user_array = array();
 $connects = array();
-$users=array();
 while (true) {
     //формируем массив прослушиваемых сокетов:
     $read = $connects;
     $read []= $socket;
     $write = $except = null;
-
     if (!stream_select($read, $write, $except, null)) {//ожидаем сокеты доступные для чтения (без таймаута)
         break;
     }
@@ -71,6 +73,7 @@ while (true) {
     if (in_array($socket, $read)) {//есть новое соединение
         //принимаем новое соединение и производим рукопожатие:
         if (($connect = stream_socket_accept($socket, -1)) && $info = handshakeSocket($connect)) {
+	    echo "---рукопожатие $connect\n";
             $connects[] = $connect;//добавляем его в список необходимых для обработки
             onOpen($connect, $info);//вызываем пользовательский сценарий
         }
@@ -84,7 +87,6 @@ while (true) {
             fclose($connect);
             unset($connects[ array_search($connect, $connects) ]);
             onClose($connect);//вызываем пользовательский сценарий
-	    OfflineStatus($connect);
             continue;
         }
 
@@ -93,193 +95,30 @@ while (true) {
 }
 fclose($server);
 
-/**
- * Возвращает заполненный массив логин-от, логин-кому, текст, дата
- * @global type $sqlcn
- * @param type $from_id
- * @param type $to_id
- * @param type $dt
- * @param type $txt
- * @return type
- */
-function PrepareTextToSendChat($fd,$txt,$dt,$tm){
-  global $sqlcn;  
-  if ($dt==""){$dt=date("H:i");} else {
-   $dt=MySQLDateTimeToDateTimeNoTime($dt);   
-  };
-    $ret=[];
-    //получаем логин отправителя
-    $sql="select * from chat_users where id=$fd";
-    echo "$sql\n";
-    $result = $sqlcn->ExecuteSQL($sql);
-    while($row = mysqli_fetch_array($result)) {
-	$name=$row["name"];
-    };
-   $txt=str_replace("\n", "</br>", $txt);
-   if ($tm=="from"){$tm="chatloginfrom";} else {$tm="chatloginto";}
-   $ret["txt"]="<span class='chatdt'>[$dt]</span><span class='$tm'>$name:</span><span class='chatchat'>".$txt."</span></br>";
- return $ret;
-};
-
-function WhoNOCOnline(){
-  $res="";
-  global $sqlcn,$users,$chat_admins;   
-  $ar=explode(";",$chat_admins);
-  foreach ($ar as $user) {
-     $sql="select * from chat_users where userid=$user and online=1"; 
-     echo "$sql\n";
-     $result = $sqlcn->ExecuteSQL($sql);
-     while($row = mysqli_fetch_array($result)) {
-	$res=$row["id"];
-     };     
-     if ($res!="") break;
-  };
-  return $res;
-};
-//пользовательские сценарии:
+function onClose($connect) {
+    OfflineStatus($connect);
+    echo "---close $connect\n";
+}
 
 function onOpen($connect, $info) {
-    echo "open\n";
-    var_dump($info);
+    echo "---open $connect\n";
+    //var_dump($info);
     $msg=[];
-    $msg["command"]="Hello";
+    $msg["command"]="GetOnline";
+    $msg["result"]=GetOnlineChatManagers();
     fwrite($connect, encodeSocket(json_encode($msg)));
-}
-function OfflineStatus($connect){
-    global $sqlcn,$users;
-    //var_dump($connect);
-    foreach ($users as $key => $value) {
-	if ($value["connect"]==$connect){
-	    $fromuserid=$value["from_user_id"];
-	    $sql="update chat_users set online=0 where id=$fromuserid";
-	    echo "$sql\n";
-	    unset($users[$fromuserid]);
-	    $result = $sqlcn->ExecuteSQL($sql);
-	};
-    }            
-};
-function OnlineStatus($connect){
-    global $sqlcn,$users;
-    foreach ($users as $key => $value) {
-	if ($value["connect"]==$connect){
-	    $fromuserid=$value["from_user_id"];
-	    $sql="update chat_users set online=1,lastping=now() where id=$fromuserid";
-	    echo "$sql\n";
-	    $result = $sqlcn->ExecuteSQL($sql);
-	};
-    };
-    //на всякий случай "гашу" тех, кто не обновлял lastping более 10 минут
-    //потом допишу..вроде не нада это..нет зависших
-    //    
-    
-};
-function RefreshContactList($to_id){
-    global $sqlcn,$users;    
-    foreach ($users as $key => $value) {
-	if ($value["from_user_id"]==$to_id){
-		$exmessage=[];
-		$exmessage["command"]="RefreshContactList";
-		$exmessage["result"]=GetContactList($to_id);
-		fwrite($value["connect"], encodeSocket(json_encode($exmessage)));					
-		echo "--выслал команду обновления списка контактов ",$value["connect"],$value["from_user_id"];	    
-	};
-    }
-    
-};
-function UpdateLastMessage($connect){
-    global $sqlcn,$users;
-    foreach ($users as $key => $value) {
-	if ($value["connect"]==$connect){
-	    $fromuserid=$value["from_user_id"];
-	    $sql="update chat_users set lastmessage=now() where id=$fromuserid";
-	    echo "$sql\n";
-	    $result = $sqlcn->ExecuteSQL($sql);
-	};
-    }
-};
-function YetNoRead($from_id,$to_id){
-global $sqlcn;        
-    $res=0;
-    $sql="select * from chat where readly=1 and from_id='$from_id' and to_id='$to_id'";
-    echo "$sql\n";
-    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист!: '.mysqli_error($sqlcn->idsqlconnection));
-    while ($myrow = mysqli_fetch_array($result)) {
-	$res=1;
-    };    
-    return $res;
-};
-function GetContactList($me_id){
- global $sqlcn,$users;    
-    $cnt_list=[];		
-    //online
-    //сначала получаем список участников НОС
-    //$sql="select * from chat_users where userid<>0 and id<>$me_id and online=1 order by online desc,lastmessage desc";
-    $sql="select users_profile.fio as name,chat_users.id,chat_users.userid,chat_users.lastmessage,chat_users.online from chat_users left join users_profile on users_profile.usersid=chat_users.userid where chat_users.userid<>0 and chat_users.id<>$me_id and chat_users.online=1 order by online desc,lastmessage desc";
-    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист!: '.mysqli_error($sqlcn->idsqlconnection));
-    while ($myrow = mysqli_fetch_array($result)) {
-      $cnt=[];   
-      $cnt["id"]=$myrow["id"];   
-      $cnt["name"]=$myrow["name"];   
-      $cnt["online"]=$myrow["online"];         
-      $cnt["read"]=YetNoRead($myrow["id"],$me_id);
-      $cnt_list[]=$cnt;		  
-    };
-    //а теперь получаем список тех, с кем переписывался 
-    $sql="select chat_users.* from chat_users inner join chat on chat.from_id=chat_users.id where  online=1 and userid=0  and chat.to_id=$me_id group by chat_users.id order by online desc,lastmessage desc";
-    echo "$sql\n";
-    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист!: '.mysqli_error($sqlcn->idsqlconnection));
-    while ($myrow = mysqli_fetch_array($result)) {
-      $cnt=[];   
-      $cnt["id"]=$myrow["id"];   
-      $cnt["name"]=$myrow["name"];   
-      $cnt["online"]=$myrow["online"];   
-      $cnt["read"]=YetNoRead($myrow["id"],$me_id);
-      $cnt_list[]=$cnt;		  
-    };
-    //offline
-    //сначала получаем список участников НОС
-    $sql="select users_profile.fio as name,chat_users.id,chat_users.userid,chat_users.lastmessage,chat_users.online from chat_users left join users_profile on users_profile.usersid=chat_users.userid where chat_users.userid<>0 and chat_users.id<>$me_id and chat_users.online=0 order by online desc,lastmessage desc";
-    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист!: '.mysqli_error($sqlcn->idsqlconnection));
-    while ($myrow = mysqli_fetch_array($result)) {
-      $cnt=[];   
-      $cnt["id"]=$myrow["id"];   
-      $cnt["name"]=$myrow["name"];   
-      $cnt["online"]=$myrow["online"];         
-      $cnt["read"]=YetNoRead($myrow["id"],$me_id);
-      $cnt_list[]=$cnt;		  
-    };
-    //а теперь получаем список тех, с кем переписывался 
-    $sql="select chat_users.* from chat_users inner join chat on chat.from_id=chat_users.id where  online=0 and userid=0  and chat.to_id=$me_id group by chat_users.id order by online desc,lastmessage desc";
-    echo "$sql\n";
-    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист!: '.mysqli_error($sqlcn->idsqlconnection));
-    while ($myrow = mysqli_fetch_array($result)) {
-      $cnt=[];   
-      $cnt["id"]=$myrow["id"];   
-      $cnt["name"]=$myrow["name"];   
-      $cnt["online"]=$myrow["online"];   
-      $cnt["read"]=YetNoRead($myrow["id"],$me_id);
-      $cnt_list[]=$cnt;		  
-    };    
- return	$cnt_list;	
-};
-function onClose($connect) {
-    //обновляем статус пользователя в оффлайн
-    OfflineStatus($connect);    
-    echo "close\n";
 }
 
 function onMessage($connect, $data,$info) {    
-    global $sqlcn,$users,$chat_wellcome;
+    global $sqlcn;
     $data=decodeSocket($data);   
     $message=json_decode($data["payload"]);
-    echo "--пришло:\n";
+    echo "---пришло: \n";
     var_dump($message);
-    //отдаем клиенту новый ID
-    if (isset($message->command) and isset($message->client)){	
-	//обновляю онлайн статус	
-	//если клиент - клиент чата поддержки
-	if ($message->client=="client"){	    
-	    if ($message->command=="Get_new_id_client"){
+    //обрабатываем команды WEB клиента
+    if (isset($message->client)){
+	if (isset($message->command)){
+	    if ($message->command=="GetMyId"){
 		//создаем нового пользователя
 		$sql="INSERT INTO chat_users (id, name) VALUES (NULL,'')";
 		$result = $sqlcn->ExecuteSQL($sql) or die('Не могу добавить абонента!: '.mysqli_error($sqlcn->idsqlconnection));
@@ -291,145 +130,293 @@ function onMessage($connect, $data,$info) {
 		$result = $sqlcn->ExecuteSQL($sql);		
 		//////////////////////
 		$exmessage=[];
-		$exmessage["command"]="Put_new_id_client";
-		$exmessage["result"]=$user_id;
+		$exmessage["command"]="GetMyId";
+		$exmessage["user_id"]=$user_id;
 		$exmessage["name"]=$username;
-		fwrite($connect, encodeSocket(json_encode($exmessage)));			
+		echo "---ушло:\n";
+		var_dump($exmessage);
+		fwrite($connect, encodeSocket(json_encode($exmessage)));		
 	    };
-	    //отвечаем, есть ктонить онлайн?
-	    if ($message->command=="Online"){
-		$users[$connect]["from_user_id"]=$message->from_user_id;
-		$users[$connect]["connect"]=$connect;	    				
-		$exmessage=[];
+	};		
+    };
+    //обрабатываем команды NOC
+    if (isset($message->clientNOC)){
+	if (isset($message->command)){
+	};	
+    };
+    //общие для всех команды
+    ParseCommon($message,$connect);
+    
+};    
 
-		$exmessage["result"]="yes";
-		$exmessage["to_user_id"]=WhoNOCOnline();//выбираем того, кто в NOC онлайн
-		if ($exmessage["to_user_id"]!=""){$exmessage["command"]="Online";} else {
-		 $exmessage["command"]="Offline";
-		};
-		fwrite($connect, encodeSocket(json_encode($exmessage)));	
-	    };
-	};
-	//если клиент - кто-то из NOC
-	if ($message->client=="noc"){
-	    if ($message->command=="GetContactList"){		
-		$users[$connect]["from_user_id"]=$message->from_user_id;
-		$users[$connect]["connect"]=$connect;	    		
-		$users[$connect]["client"]=$message->client;		
+///////////////////////
+
+//получаем ID менеджера который отвечает в чате поддержки. false - если никого нет
+function GetOnlineChatManagers(){
+  global $sqlcn,$users,$chat_admins;       
+  $mes=array();
+  $mes["user_id"]=false;
+  $mes["user_name"]="неизвстно";  
+  $ar=explode(";",$chat_admins);
+  foreach ($ar as $user) {
+     $sql="select users_profile.fio from chat_users inner join users_profile on users_profile.usersid=chat_users.userid where chat_users.id=$user and chat_users.online=1;"; 
+     echo "$sql\n";
+     $result = $sqlcn->ExecuteSQL($sql);
+     while($row = mysqli_fetch_array($result)) {	
+	  $mes["user_id"]=$user;
+	  $mes["user_name"]=$row["fio"];
+     };          
+  };  
+  return $mes;  
+};
+function OfflineStatus($connect){
+global $sqlcn,$user_array,$connects;
+#echo "Текущие соединения до удаления:";
+#var_dump($user_array);
+//если в нашем массиве есть соединение, которого быть не должно - удаляем его
+    $id=@$user_array[$connect]; //получили пользователя, у которого нужно убить соединение
+    unset($user_array[$connect]); // убираем...
+    //если больше соединений с этим пользователем нет, то ставим ему "оффлайн"
+      if (in_array($id, $user_array)==false){
+	    $sql="update chat_users set online=0,lastping=now() where id=$id";
+#	    echo "$sql\n";
+	    $result = $sqlcn->ExecuteSQL($sql);
+	    //разослать всем активным соединениям новый контакт лист
+	    echo "Текущие соединения для рассылки обновленного контакт листа:\n";
+	    //var_dump($connects);
+	    //echo "!!!!!!\n";
+	    foreach ($connects as $cn) {
 		$exmessage=[];
 		$exmessage["command"]="GetContactList";
-		$exmessage["result"]=GetContactList($message->from_user_id);
-		fwrite($connect, encodeSocket(json_encode($exmessage)));			
+		$exmessage["result"]=GetContactList($cn);
+		echo "---ушло для: $cn\n";
+		//var_dump($exmessage);
+		fwrite($cn, encodeSocket(json_encode($exmessage)));			    		
 	    };
-
-	};    
-	//общие для всех обработки сообщений
-	    //обновление списка контактов собеседника
-	    if ($message->command=="RefreshContactList"){
-		RefreshContactList($message->to_user_id);
-	    };
-	    
-	    //отвечаем на ping
-	    if ($message->command=="ping"){
-		$users[$connect]["from_user_id"]=$message->from_user_id;
-		$users[$connect]["connect"]=$connect;		
+	    //var_dump($connects);
+      };    
+#echo "Текущие соединения после удаления:";
+#var_dump($user_array); 
+}; 
+function OnlineStatus($id){
+global $sqlcn,$connects;
+    //если пользователь был оффлайн, то делаем всем рассылку
+    $sql="select online from chat_users where id=$id";
+    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист 1!: '.mysqli_error($sqlcn->idsqlconnection));
+    while ($myrow = mysqli_fetch_array($result)) {
+	$res=$myrow["online"];
+    };    
+    $sql="update chat_users set online=1,lastping=now() where id=$id";
+    //echo "$sql\n";
+    $result = $sqlcn->ExecuteSQL($sql);
+    if ($res==0){
+	    foreach ($connects as $cn) {
 		$exmessage=[];
-		$exmessage["command"]="ping";
-		$exmessage["result"]="pong";
-		fwrite($connect, encodeSocket(json_encode($exmessage)));	
-	    };
-	    //помечаем, что сообщения пользователем прочитаны..
-	    if ($message->command=="AllMessagesRead"){
-		$users[$connect]["from_user_id"]=$message->from_user_id;
-		$users[$connect]["connect"]=$connect;		
-		$users[$connect]["client"]=$message->client;		
-		$to_user_id=$message->to_user_id;	
-		$from_user_id=$message->from_user_id;
-		$sql="update chat set readly=0 where from_id=$to_user_id and to_id=$from_user_id";
-		echo "$sql\n";
-		$result = $sqlcn->ExecuteSQL($sql);
-	    }
-	    //получаем историю сообщений пользователя
-	    if ($message->command=="GetHistory"){
-		$users[$connect]["from_user_id"]=$message->from_user_id;
-		$users[$connect]["connect"]=$connect;		
-		$users[$connect]["client"]=$message->client;		
-		$to_user_id=$message->to_user_id;
-		$from_user_id=$message->from_user_id;
-		$sql="select * from chat where (from_id='$from_user_id' and to_id='$to_user_id') or (from_id='$to_user_id' and to_id='$from_user_id') order by dt ";		
-		$result = $sqlcn->ExecuteSQL($sql);
-		$exmessage=[];
-		$exmessage["txt"]="";
-		while($row = mysqli_fetch_array($result)) {
-		    $frid=$row["from_id"];
-		    $toid=$row["to_id"];
-		    $txt=$row["txt"];
-		    $dt=$row["dt"];
-		    if ($frid==$message->from_user_id){$tm="from";} else {$tm="to";};
-   	            $pretext=PrepareTextToSendChat($frid,$txt,$dt,$tm);
-		    $exmessage["txt"]=$exmessage["txt"].$pretext["txt"];				    
-		}; 	
-		//если истории нет, то выводим приветсвие!
-		if ($exmessage["txt"]==""){
-   	            $pretext=PrepareTextToSendChat($to_user_id,$chat_wellcome,"","from");
-		    $exmessage["txt"]=$exmessage["txt"].$pretext["txt"];				    		    
-		};
-		$exmessage["command"]="GetHistory";
-		fwrite($connect, encodeSocket(json_encode($exmessage)));			    
-		echo "--send: ",json_encode($exmessage);		
-	    };
-	    //пользователь чтото прислал
-	    if ($message->command=="SendMessage"){
-		$users[$connect]["from_user_id"]=$message->from_user_id;
-		$users[$connect]["connect"]=$connect;
-		UpdateLastMessage($connect);
-		$sendtext=$message->sendtext;	//текст который прислал пользователь	
-		$from_user_id=$message->from_user_id; //кому он прислал		
-		$to_user_id=$message->to_user_id; //кому он прислал		
-		$sendtext=mysqli_real_escape_string($sqlcn->idsqlconnection,$sendtext);
-		$sendtext=strip_tags($sendtext);
-		$sql="insert into chat (id,from_id,to_id,dt,txt,readly,session) values (null,'$from_user_id','$to_user_id',now(),'$sendtext',1,'')";
-		echo "$sql\n";
-		$result = $sqlcn->ExecuteSQL($sql);
-		//обновляем окно чата того кто прислал
-		$pretext=PrepareTextToSendChat($from_user_id,$sendtext,"","from");
-		$exmessage=[];
-		$exmessage["command"]="AddEchoMessageToChat";
-		$exmessage["from_user_id"]=$from_user_id;		
-		$exmessage["txt"]=$pretext["txt"];		
-		fwrite($connect, encodeSocket(json_encode($exmessage)));	
-		//и отправляем сообщение тому кому послано
-		//var_dump($users);
-		    foreach ($users as $key => $value) {
-		    if ($value["from_user_id"]==$to_user_id){
-			    RefreshContactList($to_user_id); //обновляем контакт лист получателя..
-			    $pretext=PrepareTextToSendChat($from_user_id,$sendtext,"","to");
-			    $exmessage=[];
-			    $exmessage["command"]="AddEchoMessageToChat";
-			    $exmessage["from_user_id"]=$from_user_id;
-			    $exmessage["to_user_id"]=$to_user_id;
-			    $exmessage["txt"]=$pretext["txt"];		
-			    fwrite($value["connect"], encodeSocket(json_encode($exmessage)));				
-			};
-		    }
+		$exmessage["command"]="GetContactList";
+		$exmessage["result"]=GetContactList($cn);
+		echo "---ушло для: $cn\n";
+		//var_dump($exmessage);
+		fwrite($cn, encodeSocket(json_encode($exmessage)));			    		
 	    };	
+    };
+    
+};
+//есть ли не прочитанные сообщения?
+function YetNoRead($from_id,$to_id){
+global $sqlcn;        
+    $res=0;
+    $sql="select count(*) as cnt from chat where readly=1 and from_id='$from_id' and to_id='$to_id'";
+    //echo "$sql\n";
+    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист 1!: '.mysqli_error($sqlcn->idsqlconnection));
+    while ($myrow = mysqli_fetch_array($result)) {
+	$res=$myrow["cnt"];
+    };    
+    return $res;
+};
+/**
+ * Узнаем сколько у пользователя не прочитанных сообщений
+ * @param type $to_id1
+ */
+function GetNotReadMessages($to_id){
+global $sqlcn;            
+    $res=0;
+    $sql="select count(*) as cnt from chat where readly=1 and to_id='$to_id'";
+    echo "$sql\n";
+    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить список сообщений (GetNotReadMessages)!: '.mysqli_error($sqlcn->idsqlconnection));
+    while ($myrow = mysqli_fetch_array($result)) {
+	$res=$myrow["cnt"];
+    };    
+    return $res;    
+};
+/**
+ * Помечаем прочитанными все сообщения пользователя
+ */
+function ReadAllMessages($to_user_id,$from_user_id){
+    global $sqlcn;
+    echo "--помечаем все сообщения прочитанными!";
+    $sql="update chat set readly=0 where readly=1 and from_id=$from_user_id and to_id='$to_user_id'";
+    echo "$sql\n";
+    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу обновить статус сообщений (ReadAllMessages)!: '.mysqli_error($sqlcn->idsqlconnection));    
+};
+function GetContactList($connect){
+ global $sqlcn,$user_array;    
+    echo "$connect\n";
+    var_dump($user_array);
+    $me_id=@$user_array[$connect]; //самого себя не отсылаем
+    $cnt_list=[];	
+    if ($me_id!=""){    	
+	    //online
+	    //сначала получаем список участников НОС
+	    //$sql="select * from chat_users where userid<>0 and id<>$me_id and online=1 order by online desc,lastmessage desc";
+	    $sql="select users_profile.fio as name,chat_users.id,chat_users.userid,chat_users.lastmessage,chat_users.online from chat_users left join users_profile on users_profile.usersid=chat_users.userid where chat_users.userid<>0 and chat_users.id<>$me_id and chat_users.online=1 order by online desc,lastmessage desc";
+	    echo "$sql\n";
+	    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист 2!: '.mysqli_error($sqlcn->idsqlconnection));
+	    while ($myrow = mysqli_fetch_array($result)) {
+	      $cnt=[];   
+	      $cnt["id"]=$myrow["id"];   
+	      $cnt["name"]=$myrow["name"];   
+	      $cnt["online"]=$myrow["online"];         
+	      $cnt["read"]=YetNoRead($myrow["id"],$me_id);
+	      $cnt_list[]=$cnt;		  
+	    };
+	    //а теперь получаем список тех, с кем переписывался 
+	    $sql="select chat_users.* from chat_users  where  online=1 and userid=0 group by chat_users.id order by online desc";
+	    echo "$sql\n";
+	    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист 3!: '.mysqli_error($sqlcn->idsqlconnection));
+	    while ($myrow = mysqli_fetch_array($result)) {
+	      $cnt=[];   
+	      $cnt["id"]=$myrow["id"];   
+	      $cnt["name"]=$myrow["name"];   
+	      $cnt["online"]=$myrow["online"];   
+	      $cnt["read"]=YetNoRead($myrow["id"],$me_id);
+	      $cnt_list[]=$cnt;		  
+	    };
+	    //offline
+	    //сначала получаем список участников НОС
+	    $sql="select users_profile.fio as name,chat_users.id,chat_users.userid,chat_users.lastmessage,chat_users.online from chat_users left join users_profile on users_profile.usersid=chat_users.userid where chat_users.userid<>0 and chat_users.id<>$me_id and chat_users.online=0 order by online desc,lastmessage desc";
+	    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист 4!: '.mysqli_error($sqlcn->idsqlconnection));
+	    while ($myrow = mysqli_fetch_array($result)) {
+	      $cnt=[];   
+	      $cnt["id"]=$myrow["id"];   
+	      $cnt["name"]=$myrow["name"];   
+	      $cnt["online"]=$myrow["online"];         
+	      $cnt["read"]=YetNoRead($myrow["id"],$me_id);
+	      $cnt_list[]=$cnt;		  
+	    };
+	    //а теперь получаем список тех, с кем переписывался 
+	    $sql="select chat_users.* from chat_users inner join chat on chat.from_id=chat_users.id where  online=0 and userid=0  and chat.to_id=$me_id group by chat_users.id order by online desc,lastmessage desc";
+	    echo "$sql\n";
+	    $result = $sqlcn->ExecuteSQL($sql) or die('Не могу получить контакт лист 5!: '.mysqli_error($sqlcn->idsqlconnection));
+	    while ($myrow = mysqli_fetch_array($result)) {
+	      $cnt=[];   
+	      $cnt["id"]=$myrow["id"];   
+	      $cnt["name"]=$myrow["name"];   
+	      $cnt["online"]=0;   
+	      $cnt["read"]=YetNoRead($myrow["id"],$me_id);
+	      $cnt_list[]=$cnt;		  
+	    };    
+    };
+ return	$cnt_list;	
+};
+//обрабатываем общие для всех команды
+function ParseCommon($message,$connect){
+    global $connects,$sqlcn,$user_array;
+    if (isset($message->command)){
+	//команда на закрытие соединения
+	if ($message->command=="close"){
+	    unset($connects[ array_search($connect, $connects) ]);
+	    onClose($connect);//вызываем пользовательский сценарий	
+	};
+	//получить историю переписки
+	if ($message->command=="GetHistory"){
+		$ret=GetHistory($message->chat_user_id,$message->chat_opponent_id);		
+		$exmessage=[];
+		$exmessage["command"]="GetHistory";
+		$exmessage["History"]=$ret;
+		echo "---ушло:\n";
+		//var_dump($exmessage);
+		fwrite($connect, encodeSocket(json_encode($exmessage)));		
+	};	
+	//пометить прочитанными сообщения переписки
+	if ($message->command=="ReadAllMessages"){
+		ReadAllMessages($message->to_user_id,$message->from_user_id);
+	};	
+	// принять сообщение, записать в базу и отослать копию собеседнику
+	if ($message->command=="SendMessage"){
+		$f=$message->from_user_id;
+		$t=$message->to_user_id;
+		$txt=$message->sendtext;
+		//записываем в историю, помечаем не прочитанным получаетелем 
+	    	$sql="insert into chat (id,from_id,to_id,dt,txt,readly) values (null,'$f','$t',now(),'$txt',1)";
+		#echo "$sql\n";
+		$result = $sqlcn->ExecuteSQL($sql);	    
+		//и отправляем еще и получателю, если он "Онлайн"		
+		echo "--перебираем список соединений получателя. Ищем получателя $t\n";
+		var_dump($connects);
+		var_dump($user_array);
+		foreach ($user_array as $key => $value) {
+		  if ($t==$value){
+		    echo "---этому отправим: $key,$value\n";  
+		    foreach ($connects as $cvalue) {
+			if (intval($cvalue)==$key){
+			    $exmessage=[];
+			    $exmessage["command"]="Message";
+			    $exmessage["from_user_id"]=$f;
+			    $exmessage["txt"]=$txt;
+			    echo "---ушло:\n";
+			    var_dump($exmessage);
+			    fwrite($cvalue, encodeSocket(json_encode($exmessage)));			  
+			};
+		    };
+		  };
+		};
+	};
 	    //пользователь что-то пишет...
 	    if ($message->command=="textwrite"){
 		$from_user_id=$message->from_user_id; //кому он прислал		
 		$to_user_id=$message->to_user_id; //кому он прислал		
 		//и отправляем сообщение тому кому послано
-		    foreach ($users as $key => $value) {
-		    if ($value["from_user_id"]==$to_user_id){
+		foreach ($user_array as $key => $value) {
+		  if ($to_user_id==$value){
+		    echo "---этому отправим: $key,$value\n";  
+		    foreach ($connects as $cvalue) {
+			if (intval($cvalue)==$key){
 			    $exmessage=[];
-			    $exmessage["command"]="textwrite";			    
+			    $exmessage["command"]="textwrite";
 			    $exmessage["to_user_id"]=$to_user_id;			    		
 			    $exmessage["from_user_id"]=$from_user_id;			    					    
-			    fwrite($value["connect"], encodeSocket(json_encode($exmessage)));				
+			    fwrite($cvalue, encodeSocket(json_encode($exmessage)));			  
 			};
-		    }		
+		    };
+		  };
+		};		
 	    };	    
-	//обновляем статус "онлайн" от того, от кого пришло..    
-	OnlineStatus($connect);	    
+	
+	//делаем соответствие id пользователя и его connect, заодно помечаем что юзер "онлайн"
+	//ну и до кучи сообщаем если для него не прочиатнные сообщения?
+	if ($message->command=="iamonline"){		  
+		@$user_array[$connect]=$message->chat_user_id;
+		OnlineStatus($message->chat_user_id);
+		$exmessage=[];
+		$exmessage["command"]="iamonline";
+		$exmessage["messages"]=GetNotReadMessages($message->chat_user_id);
+		echo "---ушло:\n";
+		var_dump($exmessage);
+		fwrite($connect, encodeSocket(json_encode($exmessage)));			  
+	};	
+	//команда на закрытие соединения
+	if ($message->command=="close"){
+	    unset($connects[ array_search($connect, $connects) ]);
+	    onClose($connect);//вызываем пользовательский сценарий	
+	};	
+	//получить список контактов
+	if ($message->command=="GetContactList"){
+		$exmessage=[];
+		$exmessage["command"]="GetContactList";
+		$exmessage["result"]=GetContactList($connect);
+		echo "---ушло:\n";
+		var_dump($exmessage);
+		fwrite($connect, encodeSocket(json_encode($exmessage)));			    
+	};	
     };
-    echo "--вышли из цикла\n";    
-}
+};

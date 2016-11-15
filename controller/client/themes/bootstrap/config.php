@@ -1,109 +1,135 @@
 <?php
+/*
+ * Данный код создан и распространяется по лицензии GPL v3
+ * Разработчики:
+ *   Грибов Павел,
+ *   Сергей Солодягин (solodyagin@gmail.com)
+ *   (добавляйте себя если что-то делали)
+ * http://грибовы.рф
+ */
 
-// Данный код создан и распространяется по лицензии GPL v3
-// Изначальный автор данного кода - Грибов Павел
-// http://грибовы.рф
+// Запрещаем прямой вызов скрипта.
+defined('WUO_ROOT') or die('Доступ запрещён');
 
-
-if ($user->mode==1){
+if ($user->mode != 1) {
+	die('<div class="alert alert-danger">У вас нет доступа в данный раздел!</div>');
+}
 ?>
 <div class="container-fluid">
-<div class="row">    
-    <div class="col-xs-12 col-md-12 col-sm-12">
-            <div class="alert alert-info">
+	<div class="row-fluid">
+		<div class="alert alert-info">
                 Ваша версия программы: <?php echo "$cfg->version";?><br>
                 Актуальные версии ПО: <a href="https://github.com/donpadlo/webuseorg3/releases" target="_blank">github.com</a><br>
                 Документация: <a href="http://www.грибовы.рф/?page_id=1202" target="_blank">здесь</a>
-            </div>
-            <form role="form" action="?content_page=config&config=save" method="post" name="form1" target="_self">                            
-                <div class="form-group">
-                    <label for="form_sitename">Имя сайта</label>    
-                    <input name="form_sitename" type="text" id="form_sitename" value="<?php echo "$cfg->sitename";?>" class="form-control" placeholder="Название сайта..."><br>    
-                    <label for="form_sitename">URL сайта</label>    
-                    <input name="urlsite" type="text" id="urlsite" value="<?php echo "$cfg->urlsite";?>" class="form-control" placeholder="http://где_мой_сайт" size=80><br>    
-                    <div class="row-fluid">
-                     <div class="col-xs-4 col-md-4 col-sm-4">
-                         <span class="help-block">Текущая тема</span>        
-                         <input class="form-control" name="form_cfg_theme" type="text" id="form_cfg_theme" readonly="readonly" value="<?php echo "$cfg->theme";?>">
-                     </div>
-                     <div class="col-xs-8 col-md-8 col-sm-8">
-                       <span class="help-block">Выберите</span>              
-                       <select class="form-control" name="form_cfg_theme_sl" id="form_cfg_theme_sl">
-                           <?php
-                           $arr_themes=GetArrayFilesInDir("controller/client/themes");
-                           for ($i=0;$i<count($arr_themes);$i++){
-                               echo "<option value='$arr_themes[$i]'";
-                               if ($cfg->theme==$arr_themes[$i]) echo ' selected="selected"';
-                               echo ">$arr_themes[$i]</option>";
-                           };        
-                       ?>
-                       </select>    
-                     </div>
-                    </div>                      
-               </div>                
-             </hr>   
-             <div class="row-fluid">
-              <div class="col-xs-4 col-md-4 col-sm-4">
-                  <span class="help-block">Сервер LDAP:</span>        
-                  <input class="form-control" name="form_cfg_ldap" type="text" id="form_cfg_ldap" value="<?php echo "$cfg->ldap";?>">
-                    <div class="checkbox">             
-                      <label>  
-                        <input type="checkbox" name="form_cfg_ad" value="1" <?php if ($cfg->ad=="1") {echo "checked";}?>>Вход через Active Directory                   
-                      </label>
-                    </div>                      
-              </div>
-              <div class="col-xs-4 col-md-4 col-sm-4">
-                <span class="help-block">Домен 1:</span>
-                <input class="form-control" name="form_cfg_domain1" type="text" id="form_cfg_domain1" value="<?php echo "$cfg->domain1";?>">
-              </div>
-              <div class="col-xs-4 col-md-4 col-sm-4">
-                <span class="help-block">Домен 2:</span>
-                <input class="form-control" name="form_cfg_domain2" type="text" id="form_cfg_domain2" value="<?php echo "$cfg->domain2";?>">
-              </div>  
-             </div>                  
-            </hr>            
-             <div class="row-fluid">    
-              <div class="col-xs-4 col-md-4 col-sm-4">
-                <span class="help-block">Сервер SMTP</span>
-                <input class="form-control" name="form_smtphost" type="text" id="form_smtphost" value="<?php echo "$cfg->smtphost";?>">
-                <span class="help-block">От кого почта:</span> 
-                <input class="form-control" name="form_emailadmin" type="text" id="form_emailadmin" value="<?php echo "$cfg->emailadmin";?>">
-                <span class="help-block">Куда шлем ответы:</span> 
-                <input class="form-control" name="form_emailreplyto" type="text" id="form_emailreplyto" value="<?php echo "$cfg->emailreplyto";?>">        
-              </div>  
-              <div class="col-xs-4 col-md-4 col-sm-4">
-                  <div class="checkbox">             
-                    <label>    
-                     <input type=checkbox name="form_smtpauth" id="form_smtpauth" value=1  <?php if ($cfg->smtpauth=="1") {echo "checked";}?>>Требуется аутенфикация SMTP
-                    </label>
-                  </div>    
-                <span class="help-block">SMTP имя пользователя:</span>    
-                <input class="form-control" name="form_smtpusername" type="text" id="form_smtpusername" value="<?php echo "$cfg->smtpusername";?>">
-                <span class="help-block">SMTP пароль пользователя:</span>
-                <input class="form-control" name="form_smtppass" type="password" id="form_smtppass" value="<?php echo "$cfg->smtppass";?>">      
-              </div>  
-              <div class="col-xs-4 col-md-4 col-sm-4">
-               <span class="help-block">SMTP порт:</span>
-               <input class="form-control" name="form_smtpport" type="text" id="form_smtpport" value="<?php echo "$cfg->smtpport";?>">      
-                   <div class="checkbox">             
-                        <label>  
-                         <input type=checkbox name="form_sendemail" id="form_sendemail" value=1 <?php if ($cfg->sendemail=="1") {echo "checked";}?>> Рассылать уведомления
-                       </label>       
-                   </div>
-              </div>    
-             </div>  
-            
-            <div align=center>
-                <input type="submit"  name="Submit" class="btn btn-primary" value="Сохранить изменения"></div>
-            </form>          
-    </div>                          
+		</div>
+		<form class="form-horizontal" role="form" action="?content_page=config&config=save" method="post" name="form1" target="_self">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Общие настройки</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label for="form_sitename" class="col-sm-2 control-label">Имя сайта:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="form_sitename" id="form_sitename" value="<?php echo $cfg->sitename; ?>" placeholder="Название сайта...">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="form_sitename" class="col-sm-2 control-label">URL сайта:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="urlsite" id="urlsite" value="<?php echo $cfg->urlsite; ?>" placeholder="http://где_мой_сайт" size="80">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Оформление</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label for="form_cfg_theme" class="col-sm-2 control-label">Текущая тема:</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" name="form_cfg_theme" id="form_cfg_theme" readonly="readonly" value="<?php echo $cfg->theme; ?>">
+						</div>
+						<label for="form_cfg_theme_sl" class="col-sm-2 control-label">Выберите тему:</label>
+						<div class="col-sm-6">
+							<select class="form-control" name="form_cfg_theme_sl" id="form_cfg_theme_sl">
+								<?php
+								$arr_themes = GetArrayFilesInDir(WUO_ROOT . '/controller/client/themes');
+								for ($i = 0; $i < count($arr_themes); $i++) {
+									$sl = ($arr_themes[$i] == $cfg->theme) ? 'selected' : '';
+									echo "<option value=\"$arr_themes[$i]\" $sl>$arr_themes[$i]</option>";
+								}
+								?>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Вход через Active Directory</h3>
+				</div>
+				<div class="panel-body">
+					<div class="col-sm-12 checkbox">
+						<label>
+							<?php $ch = ($cfg->ad == '1') ? 'checked' : ''; ?>
+							<input type="checkbox" name="form_cfg_ad" value="1" <?php echo $ch; ?>>Разрешить вход
+						</label>
+					</div>
+					<div class="col-sm-4">
+						<label for="form_cfg_ldap" class="control-label">Сервер LDAP:</label>
+						<input type="text" class="form-control" name="form_cfg_ldap" id="form_cfg_ldap" value="<?php echo $cfg->ldap; ?>" placeholder="ldaps://dc1.mydomain.tld">
+					</div>
+					<div class="col-sm-4">
+						<label for="form_cfg_domain1" class="control-label">Домен 1:</label>
+						<input type="text" class="form-control" name="form_cfg_domain1" id="form_cfg_domain1" value="<?php echo $cfg->domain1; ?>" placeholder="mydomain">
+					</div>
+					<div class="col-sm-4">
+						<label for="form_cfg_domain2" class="control-label">Домен 2:</label>
+						<input type="text" class="form-control" name="form_cfg_domain2" id="form_cfg_domain2" value="<?php echo $cfg->domain2; ?>" placeholder="tld">
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Уведомления</h3>
+				</div>
+				<div class="panel-body">
+					<div class="col-sm-12 checkbox">
+						<label>
+							<?php $ch = ($cfg->sendemail == '1') ? 'checked' : ''; ?>
+							<input type="checkbox" name="form_sendemail" id="form_sendemail" value="1" <?php echo $ch; ?>> Рассылать почтовые уведомления
+						</label>
+					</div>
+					<div class="col-sm-6">
+						<label for="form_smtphost" class="control-label">SMTP сервер:</label>
+						<input type="text" class="form-control" name="form_smtphost" id="form_smtphost" value="<?php echo $cfg->smtphost; ?>">
+						<div class="checkbox">
+							<label>
+								<?php $ch = ($cfg->smtpauth == '1') ? 'checked' : ''; ?>
+								<input type="checkbox" name="form_smtpauth" id="form_smtpauth" value="1" <?php echo $ch; ?>>Требуется аутенфикация SMTP
+							</label>
+						</div>
+						<label for="form_smtpusername" class="control-label">SMTP имя пользователя:</label>
+						<input type="text" class="form-control" name="form_smtpusername" id="form_smtpusername" value="<?php echo $cfg->smtpusername; ?>">
+						<label for="form_smtppass" class="control-label">SMTP пароль пользователя:</label>
+						<input type="password" class="form-control" name="form_smtppass" id="form_smtppass" value="<?php echo $cfg->smtppass; ?>">
+						<label for="form_smtpport" class="control-label">SMTP порт:</label>
+						<input type="text" class="form-control" name="form_smtpport" id="form_smtpport" value="<?php echo $cfg->smtpport; ?>">
+					</div>
+					<div class="col-sm-6">
+						<label for="form_emailadmin" class="control-label">От кого почта (From):</label>
+						<input type="text" class="form-control" name="form_emailadmin" id="form_emailadmin" value="<?php echo $cfg->emailadmin; ?>">
+						<label for="form_emailreplyto" class="control-label">Куда посылать ответы (Reply-To):</label>
+						<input type="text" class="form-control" name="form_emailreplyto" id="form_emailreplyto" value="<?php echo $cfg->emailreplyto; ?>">
+					</div>
+				</div>
+			</div>
+			<div align="center">
+				<button class="btn btn-primary" type="submit" name="Submit">Сохранить изменения</button>
+			</div>
+		</form>
+	</div>
 </div>
-</div>
-<?php
-} else {
-?>
-<div class="alert alert-error">
-  У вас нет доступа в данный раздел!
-</div>
-<?php    
-}

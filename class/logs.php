@@ -40,6 +40,7 @@ class Tlog {
 			$billingid = 'non';
 		}
 		$userid = (isset($user->id)) ? $user->id : '';
+		$txt=quotemeta($txt);
 		$sql = "INSERT INTO lanblog (loglevel,dt,txt,userid,billingid,cost) VALUES ('$loglevel',now(),'$txt','$userid','$billingid','$cost')";
 		//echo "$sql\n";
 		$result = $sqlcn->ExecuteSQL($sql)

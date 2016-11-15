@@ -7,6 +7,13 @@
  * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
  */
 
+$fl = fopen("/tmp/zabbix_noc.lock", "w"); 
+if( ! ( $fl && flock( $fl, LOCK_EX | LOCK_NB ) ) ) {
+    $errarr["result"]="error";
+    echo json_encode($errarr);
+    die();	
+};
+
 include_once ("../../../config.php");                    // загружаем первоначальные настройки
 
 // загружаем классы
@@ -93,5 +100,5 @@ while($row = mysqli_fetch_array($result)) {
             };
   }; 
 };
-
+$errarr["result"]="ok";
 echo json_encode($errarr);

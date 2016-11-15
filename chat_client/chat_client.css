@@ -109,3 +109,17 @@ box-sizing: border-box;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     
 }
+.chatdt{
+    font-size: xx-small;
+    color: cadetblue;    
+}
+.chatloginfrom{
+    padding: 3px;
+    color: blue;
+    font-weight: bolder;
+}    
+.chatloginto{
+    padding: 3px;
+    color: red;
+    font-weight: bolder;
+}    

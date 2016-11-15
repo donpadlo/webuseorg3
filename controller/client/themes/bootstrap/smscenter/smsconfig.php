@@ -6,6 +6,9 @@
 
 
 if ($user->mode==1){
+    $tsms=new Tcconfig();
+    $tehno=$tsms->GetByParam("settehsmsagent"); 
+    //echo "!$teh!";
 ?>
 
 <div class="container-fluid">
@@ -44,8 +47,18 @@ if ($user->mode==1){
 					</div>         
 	    </div>	    
 	</div>
-        </div>  
+	<div class="panel panel-primary">
+	    <div class="panel-heading">Технические SMS</div>
+		<div class="panel-body">
+		    <div id="mess_set" name="mess_set">						</div>
+		    <span class="help-block">Отправитель для технических СМС*:</span>
+		    <input name="kmonth" type="text" id="kmonth" value="<?php echo "$tehno";?>" class="span2" placeholder="Отправитель"><br>            
+		    <button type="submit" class="form-control" id="settehsms" name="settehsms">Установить</button>
+		    * если в очереди на отправку SMS находится СМС с отправителем совпадающим с указанным, то отправка идет от агента у котого отправитель совпадает с указанным.
+		</div>         
+	</div>	    	
     </div>
+    </div>	
 </div>    
 <?php
 } else {

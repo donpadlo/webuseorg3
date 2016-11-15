@@ -25,3 +25,5 @@
 /.htaccess
 /sbss/
 /chat_client/chat_client_win.php
+/controller/server/astra/
+/controller/client/themes/bootstrap/astra/

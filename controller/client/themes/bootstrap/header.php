@@ -80,18 +80,15 @@
 	<div class="header">
 		<a href="#menu"></a>
 	</div>
-	<div id="blob" data-placement="bottom" class="quickmenu" rel="popover">
-<?php
-$mm = '';
-for ($i = 0; $i < count($cfg->quickmenu); $i++) {
-	$mm .= $cfg->quickmenu[$i];
-}
-?>
-		<strong><?php echo $cfg->sitename; ?></strong>
-		<span class="caret"></span>
+	<div id="blob_menu" class="blob_menu" data-placement="bottom" rel="popover">		
+<?php		
+		for ($i = 0; $i < count($cfg->quickmenu); $i++) {
+			$mm= $cfg->quickmenu[$i];
+			echo "$mm";
+		};
+?>		
 	</div>
-	<script>
-		$('#blob').popover({title: 'Быстрые ссылки', delay: {'show': 100, 'hide': 100}, html: true, content: '<?php echo $mm; ?>'});
-	</script>
+    
+    
 <?php
 endif;

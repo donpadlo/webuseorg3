@@ -1147,6 +1147,14 @@ if ($cfg->version == '3.74') {
 	UpdateVer($vr, '167');
 }
 
+// Обновляем до 3.76
+if ($cfg->version == '3.75') {
+	$vr = '3.76';
+	$log = '- добавляю поле telegram в  в таблице sms_users';
+	$sql = 'ALTER TABLE `sms_users` ADD `telegram` VARCHAR(20) NOT NULL AFTER `phone`;';
+	ExecSQL($log, $sql, '167');
+	UpdateVer($vr, '168');
+}
 
 echo 'Обновление закончено.<br>';
 echo 'Если сообщений об ошибках нет, удалите файл update.php.<br>';

@@ -30,7 +30,6 @@ $(document).ready(function() {
 		console.log('Уведомления не поддерживаются в вашей версии браузера/операционной системы.');
 	}
 	$('<audio id="zabbix_sound"><source src="/media/notify.ogg" type="audio/ogg"><source src="/media/notify.mp3" type="audio/mpeg"><source src="/media/notify.wav" type="audio/wav"></audio>').appendTo('body');
-
 	txt = '<div id="zabbix_mod_button" style="left:100%;margin-left:-30px;position:absolute;top:10px;">';
 	txt = txt + '<img id="zab_img" onclick="DZopen();" src="controller/client/themes/bootstrap/img/zabbix.gif">';
 	txt = txt + '</div>';
@@ -46,31 +45,33 @@ $(document).ready(function() {
 					ht = ht + '<thead><tr><th>Группа</th><th>Хост</th><th>Проблема</th><th>Время</th><th>Приоритет</th><th>Комментарий</th><tr></thead><tbody>';
 					$('#zabbix_mod_win').html('');
 					zx = 0;
-					for (i in obj_for_load) {
-						pd = 'success';
-						switch (obj_for_load[i]['prinum']) {
-							case '0':
-								pd = 'success';
-								break;
-							case '1':
-								pd = 'info';
-								break;
-							case '2':
-								pd = 'warning';
-								break;
-							case '3':
-							case '4':
-							case '5':
-								pd = 'error';
-								break;
-						}
-						ht = ht + '<tr class=' + pd + '><td>' + obj_for_load[i]['group_name'] + '</td><td>' + obj_for_load[i]['hosterr'] + '</td><td>' + obj_for_load[i]['description'] + '</td><td>' + obj_for_load[i]['lastchange'] + '</td><td>' + obj_for_load[i]['priority'] + '</td><td>' + obj_for_load[i]['comment'] + '</td></tr>';
-						cq = cq + obj_for_load[i]['triggerid'];
-						zx++;
-					}
+					if (obj_for_load["result"]=="ok"){
+					    for (i in obj_for_load) {
+						    pd = 'success';
+						    switch (obj_for_load[i]['prinum']) {
+							    case '0':
+								    pd = 'success';
+								    break;
+							    case '1':
+								    pd = 'info';
+								    break;
+							    case '2':
+								    pd = 'warning';
+								    break;
+							    case '3':
+							    case '4':
+							    case '5':
+								    pd = 'error';
+								    break;
+						    }
+						    ht = ht + '<tr class=' + pd + '><td>' + obj_for_load[i]['group_name'] + '</td><td>' + obj_for_load[i]['hosterr'] + '</td><td>' + obj_for_load[i]['description'] + '</td><td>' + obj_for_load[i]['lastchange'] + '</td><td>' + obj_for_load[i]['priority'] + '</td><td>' + obj_for_load[i]['comment'] + '</td></tr>';
+						    cq = cq + obj_for_load[i]['triggerid'];
+						    zx++;
+					    }
+					};
 					ht = ht + '</tbody></table></br>Настройка подписок <a href="?content_page=zabbix_mon">тут</a>';
 					$('#zabbix_mod_win').html(ht);
-					if (zx > 0) {
+					if (zx > 1) {
 						$('#zab_img').css('border', 'red 3px solid');
 					} else {
 						$('#zab_img').css('border', 'green 1px solid');
@@ -78,8 +79,11 @@ $(document).ready(function() {
 					}
 					zabbix_mod = zab_getCookie('zabbix_mod');
 					if (zabbix_mod != cq) {
+					    if (zx>1){
 						DZopen();
+						//alert(zx);
 						$('#zabbix_sound')[0].play();
+					    };
 					}
 					document.cookie = 'zabbix_mod=' + cq;
 				});
