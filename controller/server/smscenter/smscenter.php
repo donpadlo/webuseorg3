@@ -21,6 +21,40 @@ include_once("../../../inc/config.php");              // подгружаем н
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
 
+//создаю структуру для этго модуля..
+$sql="CREATE TABLE IF NOT EXISTS `sms_users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(11) NOT NULL,
+  `telegram` varchar(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8";
+$result = $sqlcn->ExecuteSQL($sql);
+
+$sql="ALTER TABLE `sms_users` ADD PRIMARY KEY (`id`);";
+$result = $sqlcn->ExecuteSQL($sql);
+$sql="ALTER TABLE `sms_users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;";
+$result = $sqlcn->ExecuteSQL($sql);
+
+$sql = 'ALTER TABLE `sms_users` ADD `telegram` VARCHAR(20) NOT NULL AFTER `phone`;';
+$result = $sqlcn->ExecuteSQL($sql);
+
+$sql='CREATE TABLE IF NOT EXISTS `sms_groups` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8';
+$result = $sqlcn->ExecuteSQL($sql);
+$sql='ALTER TABLE `sms_groups`
+  ADD PRIMARY KEY (`id`);';
+$result = $sqlcn->ExecuteSQL($sql);
+$sql='ALTER TABLE `sms_groups`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;';
+$result = $sqlcn->ExecuteSQL($sql);
+$sql="CREATE TABLE IF NOT EXISTS `sms_group_members` (
+  `group_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8";
+$result = $sqlcn->ExecuteSQL($sql);
+////////////////////////////
 
 $page = _GET('page');
 $limit = _GET('rows');
@@ -36,8 +70,7 @@ $smsdiff=_POST('smsdiff');
 $sel=_POST('sel');
 $sender=_POST('sender');
 
-if ($oper=='')
-{
+if ($oper==''){
 	if(!$sidx) $sidx =1;
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count FROM sms_center_config");
 	$row = mysqli_fetch_array($result);

@@ -1150,9 +1150,7 @@ if ($cfg->version == '3.74') {
 // Обновляем до 3.76
 if ($cfg->version == '3.75') {
 	$vr = '3.76';
-	$log = '- добавляю поле telegram в  в таблице sms_users';
-	$sql = 'ALTER TABLE `sms_users` ADD `telegram` VARCHAR(20) NOT NULL AFTER `phone`;';
-	ExecSQL($log, $sql, '167');
+	//переместил создание структуры для sms_center в сам модуль..
 	UpdateVer($vr, '168');
 }
 
