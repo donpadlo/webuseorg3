@@ -35,7 +35,7 @@ function PutMenu($par) {
 		$url = ($path == '') ? 'javascript:void(0)' : "index.php?content_page=$path";
 		$sel = ($content_page == $path) ? ' class="Selected"' : '';
 		echo "<li$sel>";
-		echo "<a href=\"$url\">$nm</a>";
+		if ($path=="") {echo $nm;} else {echo "<a href=\"$url\">$nm</a>";};
 		if (count($gmenu->GetList($uid)) > 0) {
 			PutMenu($uid);
 		}

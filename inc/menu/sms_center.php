@@ -10,7 +10,7 @@
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 $md->Register("smscenter", "СМС-Центр", "Грибов Павел"); 
 if ($md->IsActive("smscenter")==1) {     
-    $this->Add("main","<i class=\"fa fa-commenting-o\" aria-hidden=\"true\"></i> СМС-Центр","СМС-Центр",3,"smscenter","");
+    $this->Add("main","<span><i class=\"fa fa-commenting-o\" aria-hidden=\"true\"></i> СМС-Центр</span>","СМС-Центр",3,"smscenter","");
      $this->Add("smscenter","<i class=\"fa fa-comments-o\" aria-hidden=\"true\"></i> Отправка СМС по списку","Отправка СМС по списку",3,"smscenter/sendbylist","smscenter/sendbylist");
      $this->Add("smscenter","<i class=\"fa fa-bar-chart\" aria-hidden=\"true\"></i> Статистика по СМС",">Статистика по СМС",3,"smscenter/smsstat","smscenter/smsstat");
      $this->Add("smscenter","<i class=\"fa fa-cogs\" aria-hidden=\"true\"></i> Настройка агентов отправки СМС","Настройка агентов отправки СМС",3,"smscenter/smsconfig","smscenter/smsconfig");     

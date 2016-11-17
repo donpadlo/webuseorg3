@@ -272,8 +272,7 @@ li.mm-vertical.mm-opened > .mm-panel {
   .mm-menu .mm-listview > li > a.mm-prev:after, .mm-menu .mm-listview > li > a.mm-next:before {
     border-color: rgba(0, 0, 0, 0.1); }
   .mm-menu .mm-listview > li.mm-selected > a:not(.mm-next),
-  .mm-menu .mm-listview > li.mm-selected > span {
-    background: rgba(255, 255, 255, 0.5); }
+  
   .mm-menu.mm-vertical .mm-listview li.mm-opened > a.mm-next,
   .mm-menu.mm-vertical .mm-listview li.mm-opened > .mm-panel,
   .mm-menu .mm-listview li.mm-opened.mm-vertical > a.mm-next,

@@ -11,7 +11,7 @@ $md=new Tmod; // обьявляем переменную для работы с 
 $md->Register("bprocess", "Бизнес-процессы", "Грибов Павел"); 
 
 
-$this->Add("main","<i class='fa fa-cog fa-fw'> </i>Инструменты","Инструменты",3,"tools","");
+$this->Add("main","<span><i class='fa fa-cog fa-fw'> </i>Инструменты</span>","Инструменты",3,"tools","");
 
 $md->Register("bprocess", "Бизнес-процессы", "Грибов Павел"); 
 if ($md->IsActive("bprocess")==1) {

@@ -12,7 +12,7 @@ if ($user->TestRoles("1,2,3,4,5,6")) {
 	$md->Register("astra", "Управление серверами Astra", "Грибов Павел");
 	if ($md->IsActive("astra") == 1) {
 		unset($md);
-		$this->Add("main", "<i class='fa fa-cog fa-fw'> </i>Astra", "Настройка серверов Астра", 2, "astra", "");
+		$this->Add("main", "<span><i class='fa fa-cog fa-fw'> </i>Astra</span>", "Настройка серверов Астра", 2, "astra", "");
 		$this->Add("astra", "<i class='fa fa-desktop fa-fw'> </i>Мониторинг", "Настройка серверов Астра", 2, "astra/mon", "astra/mon");
 		$this->Add("astra", "<i class='fa fa-desktop fa-fw'> </i>Внешний мониторинг", "Внешний мониторинг", 2, "astra/mon2", "astra/mon2");
 		$this->Add("astra", "<i class='fa fa-info fa-fw'> </i>Инфоканал", "Настройка серверов Астра", 2, "astra/pic", "astra/pic");
