@@ -6,9 +6,10 @@
 
 ?>
 <div class="container-fluid">
-        <form ENCTYPE="multipart/form-data" action="?content_page=reports&step=view" method="post" name="form1" target="_self">
-<div class="row-fluid">
-  <div class="col-xs-4 col-md-4 col-sm-4">
+<form ENCTYPE="multipart/form-data" action="?content_page=reports&step=view" method="post" name="form1" target="_self">
+ </form>
+<div class="row-fluid" style="padding-right: 0px;padding-left: 0px;">
+  <div class="col-xs-4 col-md-4 col-sm-4" style="padding-right: 0px;padding-left: 0px;">
         <label>Название отчета</label>
         <select class="form-control" name="sel_rep" id="sel_rep">
             <option value=1>Наличие ТМЦ</option>
@@ -17,7 +18,7 @@
         <label>Человек</label>
         <div name="sel_plp" id="sel_plp"></div>      
   </div>
-  <div class="col-xs-4 col-md-4 col-sm-4">
+  <div class="col-xs-4 col-md-4 col-sm-4" style="padding-right: 0px;padding-left: 0px;">
         <label>Организация</label>
         <select class='chosen-select' name="sel_orgid" id="sel_orgid">
             <?php
@@ -42,7 +43,7 @@
           </label>        
          </div>   
   </div>
-  <div class="col-xs-4 col-md-4 col-sm-4">
+  <div class="col-xs-4 col-md-4 col-sm-4" style="padding-right: 0px;padding-left: 0px;">
     <label>Помещение</label>
     <div name="sel_pom" id="sel_pom"></div>      
         <div class="checkbox">
@@ -56,7 +57,6 @@
     <input class="form-control" type="button" name=sbt id=sbt value="Сформировать">
     <input class="form-control" type="button" id=btprint value="Распечатать">
 </p>
-</form>
 <table id="list2"></table>
 <div id="pager2"></div>
 </div>

@@ -9,7 +9,7 @@
 <!-- saved from url=(0014)about:internet -->
 <!DOCTYPE html>
 <html lang="ru-RU">
-<head>
+<head id="idheader">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Учет ТМЦ в организации и другие плюшки">

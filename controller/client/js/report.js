@@ -3,7 +3,7 @@ function ListEqByPlaces(oid,pid,plpid){
 		jQuery("#list2").jqGrid({
 			url: 'controller/server/reports/report.php?curuserid='+plpid+'&curorgid='+oid+'&curplid='+pid+'&tpo='+$("#sel_rep :selected").val()+'&os='+$("#os").prop("checked")+'&mode='+$("#mode").prop("checked")+'&repair='+$("#repair").prop("checked"),
 			datatype: "json",
-			colNames:['Id','Помещение','Наименование','Группа','Инвентарник','Серийник','Штрихкод','Списан','ОС','Бух.имя'],
+			colNames:['Id','Помещение','Наименование','Группа','Инв.№','Сер.№','Штрихкод','Списан','ОС','Бух.имя'],
 			colModel:[
 				{name:'id',index:'id', width:20,hidden:true},
 				{name:'plname',index:'plname', width:110},
@@ -26,14 +26,13 @@ function ListEqByPlaces(oid,pid,plpid){
 			rowNum:1000,
 			scroll:1,
 			sortorder: 'asc',
-			caption:'Список имущества',
 			multiselect: true
 		});
 	} else {
 		jQuery("#list2").jqGrid({
 			url:'controller/server/reports/report.php?curuserid='+plpid+'&curorgid='+oid+'&curplid='+pid+'&tpo='+$("#sel_rep :selected").val()+'&os='+$("#os").prop("checked")+'&mode='+$("#mode").prop("checked")+'&repair='+$("#repair").prop("checked"),
 			datatype: "json",
-			colNames:['Id','Помещение','Наименование','Группа','Инвентарник','Серийник','Штрихкод','Списан','ОС','Бух.имя'],
+			colNames:['Id','Помещение','Наименование','Группа','Инв.№','Сер.№','Штрихкод','Списан','ОС','Бух.имя'],
 			colModel:[
 				{name:'id',index:'id', width:20,hidden:true},
 				{name:'plname',index:'plname', width:110},
@@ -61,8 +60,7 @@ function ListEqByPlaces(oid,pid,plpid){
 			viewrecords: true,
 			rowNum:1000,
 			scroll:1,
-			sortorder: "asc",    
-			caption:"Список имущества"
+			sortorder: "asc"
 		});
 	};
 	jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:false,del:false,search:false});
@@ -171,9 +169,11 @@ $("#sbt").click(function() {// обрабатываем отправку фор�
 $("#btprint").click(function() {// обрабатываем отправку формы
 var newWin3=window.open('','printWindow3','');
 newWin3.focus();
-newWin3.document.write('<table id="list222">');
-newWin3.document.write($("#list2").html());
-newWin3.document.write('</table>');
+newWin3.document.write($("#idheader").html());
+newWin3.document.write('<body>');
+newWin3.document.write($("#gview_list2").html());
+newWin3.document.write('</body></html>');
+//newWin3.document.write('</table>');
 });
 
 GetListUsers($("#sel_orgid :selected").val(),curuserid);
