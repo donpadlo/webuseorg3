@@ -46,7 +46,7 @@ function cuttingimg($zoom,$fn,$sz){
 //    return "ok";
 };
 
-
+@mkdir("../../../photos/maps");
 $geteqid=$_POST['geteqid'];
 $uploaddir = '../../../photos/maps/';
 
