@@ -160,10 +160,12 @@ if ($step=="edit"){
            <?php
                $result = $sqlcn->ExecuteSQL("SELECT * FROM org WHERE active=1 order by name;");
                while ($myrow = mysqli_fetch_array($result)){
-                   echo "<option value=".$myrow["id"];
-                   if ($myrow['id']==$orgid){echo " selected";};
-                   $nm=$myrow['name'];
-                   echo ">$nm</option>";
+		   if (($user->mode==1) or ($user->orgid==$myrow['id'])){
+			echo "<option value=".$myrow["id"];
+			if ($myrow['id']==$orgid){echo " selected";};
+			$nm=$myrow['name'];
+			echo ">$nm</option>";
+		   };
                   };
            ?>
            </select>

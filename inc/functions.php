@@ -187,17 +187,21 @@ function GetPostOrgByid($id) {
 }
 
 function GetArrayOrgs() { // Возврат - массив активных организаций  
-	global $sqlcn;
+	global $sqlcn,$user;
+	if (isset($user->mode)==false){$user->mode=0;};
+	if (isset($user->orgid)==false){$user->orgid=-1;};
 	$cnt = 0;
 	$mOrgs = array();
 	$result = $sqlcn->ExecuteSQL('SELECT * FROM org WHERE active=1 ORDER BY id ASC')
 			or die('Неверный запрос GetArrayOrgs: '.mysqli_error($sqlcn->idsqlconnection));
-	while ($myrow = mysqli_fetch_array($result)) {
-		$mOrgs[$cnt]['id'] = $myrow['id'];
-		$mOrgs[$cnt]['name'] = $myrow['name'];
-		$mOrgs[$cnt]['picnmap'] = $myrow['picmap'];
-		$mOrgs[$cnt]['active'] = $myrow['active'];
-		$cnt++;
+	while ($myrow = mysqli_fetch_array($result)) {	
+	    if (($user->mode==1) or ($user->orgid==$myrow['id'])){
+		    $mOrgs[$cnt]['id'] = $myrow['id'];
+		    $mOrgs[$cnt]['name'] = $myrow['name'];
+		    $mOrgs[$cnt]['picnmap'] = $myrow['picmap'];
+		    $mOrgs[$cnt]['active'] = $myrow['active'];
+		    $cnt++;
+	    }
 	}
 	return $mOrgs;
 }
