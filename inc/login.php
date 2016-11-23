@@ -21,6 +21,7 @@ if ($user->randomid != '') {
 	} else {
 		$user->randomid = '';
 		SetCookie('user_randomid_w3', '', 1, '/'); // удаляем куки
+		SetCookie('defaultorgid', '', 1, '/'); // удаляем куки
 	}
 }
 
@@ -30,6 +31,7 @@ if (isset($_GET['login_step'])) {
 		$user->id = '';
 		$user->randomid = '';		
 		SetCookie('user_randomid_w3', '', 1, '/');
+		SetCookie('defaultorgid', '', 1, '/'); // удаляем куки
 	}
 	if ($_GET['login_step'] == 'enter') { // если вход то пытаемся зайти
 		$enter_user_login = $_POST['enter_user_login'];
