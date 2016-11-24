@@ -4,7 +4,9 @@
 // Изначальный автор данного кода - Грибов Павел
 // http://грибовы.рф
 
-if ($user->mode==1){
+if (($user->mode==1) or ($user->TestRoles('1,3'))){
+// или админ, или локальный админ
+
 ?>
 <div class="container-fluid">
 <div class="row">            

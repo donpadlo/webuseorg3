@@ -30,7 +30,7 @@ $name="";
 $vendorid="";
 $groupid="";
 //echo "!$user->mode!";
-if ($user->TestRoles("1,4,5,6")==true) {
+if (($user->mode==1) or ($user->TestRoles('1,3'))){    
     
 if ($step=="edit"){
         $SQL = "SELECT * FROM nome WHERE id='$id'";  
@@ -135,9 +135,15 @@ $(document).ready(function() {
          <label for="namenome">Наименование</label>
         <input class="form-control" placeholder="Введите наименование номенклатуры" name="namenome" id="namenome" size=100 value="<?php echo "$name";?>">    
     </div>    
-     <div class="form-group">         
-         <input class="form-control" type="submit"  name="Submit" value="Сохранить">
-     </div> 
+<?php    
+    $view=false;
+    if ($step=="edit"){
+	if (($user->mode==1) or ($user->TestRoles('1,5'))){$view=true;};   
+    } else if (($user->mode==1) or ($user->TestRoles('1,4'))){$view=true;};   
+    if ($view==true){
+    echo '<div class="form-group"><input class="form-control" type="submit"  name="Submit" value="Сохранить"></div> ';
+    };
+?>    
     </form> 
 </div>    
 </div>        

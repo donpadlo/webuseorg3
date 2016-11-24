@@ -25,6 +25,9 @@ include_once("../../../../inc/functions.php");		// загружаем функц
 include_once("../../../../inc/login.php");		// логинимся
 
 
+//пускаем только: добавлять,полный доступ,редактировать,удаление,локальный админ
+if (($user->mode==1) or ($user->TestRoles('1,3'))){
+
 $id=$_GET["id"];
 $step=$_GET["step"];
 $comment="";
@@ -97,7 +100,15 @@ $(document).ready(function() {
               <div class="form-group">
                 <label>Комментарии: </label>
                 <textarea class="form-control" name=comment><?php echo "$comment";?></textarea>                
-                <input class="form-control" type="submit"  name="Submit" value="Сохранить">
+<?php	
+   $view=false;
+    if ($step=="edit"){
+	if (($user->mode==1) or ($user->TestRoles('1,5'))){$view=true;};   
+    } else if (($user->mode==1) or ($user->TestRoles('1,4'))){$view=true;};   
+    if ($view==true){	
+	echo '<input class="form-control" type="submit"  name="Submit" value="Сохранить">';
+    };
+?>	
               </div>
           </div>  
         </div> 
@@ -136,3 +147,11 @@ $(document).ready(function() {
  GetListPlaces(orgid,placesid);
  UpdateChosen();
 </script>    
+<?php
+} else {
+?>    
+<div class="alert alert-error">
+  У вас нет доступа в данный раздел!
+</div>     
+<?php	
+ };

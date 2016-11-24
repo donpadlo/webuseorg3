@@ -30,6 +30,7 @@ $sts = '<select name="rolesusers" id="rolesusers">
 	<option value="7">Отправка СМС</option>
 	<option value="8">Манипуляции с деньгами</option>
 	<option value="9">Редактирование карт</option>
+	<option value="10">Админ в пределах организации</option>
 </select>';
 
 echo $sts;

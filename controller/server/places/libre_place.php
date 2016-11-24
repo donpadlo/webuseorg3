@@ -34,8 +34,8 @@ if (isset($_POST["name"]))      {$name= $_POST['name'];}    else {$name="";};
 if (isset($_POST["comment"]))      {$comment= $_POST['comment'];}    else {$comment="";};
 if (isset($_POST["opgroup"]))      {$opgroup= $_POST['opgroup'];}    else {$opgroup="";};
 
-if ($oper=='')
-{
+if ($oper==''){
+    if (($user->mode==1) or ($user->TestRoles('1,3'))){    
 	if(!$sidx) $sidx =1;
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count FROM places WHERE orgid='$orgid'");
 	$row = mysqli_fetch_array($result);
@@ -60,22 +60,25 @@ if ($oper=='')
 	    $i++;
 	}
 	echo json_encode($responce);
+    };
 };
-if ($oper=='edit')
-{
-	$SQL = "UPDATE places SET opgroup='$opgroup',name='$name',comment='$comment' WHERE id='$id'";
-	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по помещениям!".mysqli_error($sqlcn->idsqlconnection));
+if ($oper=='edit'){
+    if (($user->mode==1) or ($user->TestRoles('1,5'))){    
+	    $SQL = "UPDATE places SET opgroup='$opgroup',name='$name',comment='$comment' WHERE id='$id'";
+	    $result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по помещениям!".mysqli_error($sqlcn->idsqlconnection));
+    };	
 };
-if ($oper=='add')
-{
+if ($oper=='add'){
+    if (($user->mode==1) or ($user->TestRoles('1,4'))){        
 	$SQL = "INSERT INTO places (id,orgid,opgroup,name,comment,active) VALUES (null,'$orgid','$opgroup','$name','$comment',1)";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу добавить помещение!".mysqli_error($sqlcn->idsqlconnection));
-
+    };
 };
-if ($oper=='del')
-{
+if ($oper=='del'){
+    if (($user->mode==1) or ($user->TestRoles('1,6'))){    
 	$SQL = "UPDATE places SET active=not active WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по помещению!".mysqli_error($sqlcn->idsqlconnection));
+    };
 };
 
 ?>

@@ -4,7 +4,7 @@
 // Изначальный автор данного кода - Грибов Павел
 // http://грибовы.рф
 
-if ($user->TestRoles("1,4,5,6")==true){
+if (($user->mode==1) or ($user->TestRoles('1,3'))){    
 ?>
 <div class="container-fluid">
 <div class="row">            

@@ -19,9 +19,8 @@ if ($user->randomid != '') {
 		$user->UpdateLastdt($user->id); // обновляем дату последнего входа пользователя
 		SetCookie('user_randomid_w3', "$user->randomid", strtotime('+30 days'), '/'); // ну и обновляем заодно время жизни печеньки
 	} else {
-		$user->randomid = '';
-		SetCookie('user_randomid_w3', '', 1, '/'); // удаляем куки
-		SetCookie('defaultorgid', '', 1, '/'); // удаляем куки
+		$user->randomid = '';		
+		UnsetAllCookies();
 	}
 }
 

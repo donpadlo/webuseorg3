@@ -32,9 +32,8 @@ $id = PostDef('id');
 $nomename= PostDef('nomename');
 $filters=GetDef("filters");
 
-if ($oper=='')
-{
-	
+if ($oper==''){
+    if (($user->mode==1) or ($user->TestRoles('1,3'))){    	
 	$flt=json_decode($filters,true);	
 	$cnt=count($flt['rules']);
 	$where="";
@@ -74,21 +73,25 @@ if ($oper=='')
 	    $i++;
 	}
 	echo json_encode($responce);
+    };
 };
-if ($oper=='edit')
-{
+if ($oper=='edit'){
+    if (($user->mode==1) or ($user->TestRoles('1,5'))){    
 	$SQL = "UPDATE nome SET name='$nomename' WHERE id='$id'";	
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по номенклатуре!".mysqli_error($sqlcn->idsqlconnection));
+    };
 };
-if ($oper=='add')
-{
+if ($oper=='add'){
+    if (($user->mode==1) or ($user->TestRoles('1,4'))){            
 	$SQL = "INSERT INTO knt (id,name,comment,active) VALUES (null,'$name','$comment',1)";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу добавить пользователя!".mysqli_error($sqlcn->idsqlconnection));
+    };
 
 };
-if ($oper=='del')
-{
+if ($oper=='del'){
+    if (($user->mode==1) or ($user->TestRoles('1,6'))){    
 	$SQL = "UPDATE nome SET active=not active WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по номенклатуре!".mysqli_error($sqlcn->idsqlconnection));
+    };
 };
 ?>

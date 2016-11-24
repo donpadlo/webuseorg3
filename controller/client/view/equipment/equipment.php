@@ -23,6 +23,7 @@ include_once("../../../../inc/config.php");              // подгружаем
 include_once("../../../../inc/functions.php");		// загружаем функции
 include_once("../../../../inc/login.php");		// логинимся
 
+if (($user->mode==1) or ($user->TestRoles('1,3'))){        
 echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/upload.css'>";
 ?>   
 <link href="js/jcrop/jquery.Jcrop.min.css" rel="stylesheet" type="text/css"/>
@@ -82,7 +83,6 @@ if (isset($_GET["id"])) {$id = $_GET['id'];};
 //$step=$_GET["step"];
 //$id=$_GET["id"];
 
-if ($user->TestRoles("1,4,5,6")==true){
 echo "<script>orgid=''</script>";
 echo "<script>placesid=''</script>";
 echo "<script>userid=''</script>";
@@ -251,9 +251,17 @@ if ($step=="edit"){
   </div>
   <div class="col-xs-8 col-md-8 col-sm-8">     
         <textarea class="form-control" name=comment rows="8"><?php echo "$comment";?></textarea>
-        <div align=center>
-            <input type="submit" class="form-control btn btn-primary" name="Submit" value="Сохранить">
-        </div>       
+<?php	
+   $view=false;
+    if ($step=="edit"){
+	if (($user->mode==1) or ($user->TestRoles('1,5'))){$view=true;};   
+    } else if (($user->mode==1) or ($user->TestRoles('1,4'))){$view=true;};   
+    if ($view==true){	
+	echo '<div align=center>
+		<input type="submit" class="form-control btn btn-primary" name="Submit" value="Сохранить">
+	      </div>       ';
+    };
+?>
   </div>
 </div> 
 </form>
@@ -537,6 +545,11 @@ examples.push(function (){
 	</script>
 
 <?php
-};
-
+} else {
+?>    
+<div class="alert alert-error">
+  У вас нет доступа в данный раздел!
+</div>     
+<?php	
+ };
 ?>

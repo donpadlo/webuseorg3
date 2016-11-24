@@ -34,8 +34,8 @@ $id = PostDef('id');
 $name= PostDef('name');
 // если выбрана группа, то обрабатываем, иначе ничего
 //echo "!$groupid!";
-if ($oper=='')
-{
+if ($oper==''){
+    if (($user->mode==1) or ($user->TestRoles('1,3'))){    
 	if(!$sidx) $sidx =1;
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count FROM group_param");
 	$row = mysqli_fetch_array($result);
@@ -61,24 +61,27 @@ if ($oper=='')
 	    $i++;
 	}
 	echo json_encode($responce);
+    };
 };
-if ($oper=='edit')
-{
+if ($oper=='edit'){
+    if (($user->mode==1) or ($user->TestRoles('1,5'))){    
 	$SQL = "UPDATE group_param SET name='$name' WHERE id='$id'";
         //echo "!$SQL!";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по группе!".mysqli_error($sqlcn->idsqlconnection));
+    };
 };
-if ($oper=='add')
-{
+if ($oper=='add'){
+    if (($user->mode==1) or ($user->TestRoles('1,4'))){            
 	if (($groupid=="") or ($name=="")) {die();};
 	$SQL = "INSERT INTO group_param (id,groupid,name,active) VALUES (null,'$groupid','$name',1)";
         //echo "!$SQL!";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу добавить параметр группы!".mysqli_error($sqlcn->idsqlconnection));
-
+    };
 };
-if ($oper=='del')
-{
+if ($oper=='del'){
+    if (($user->mode==1) or ($user->TestRoles('1,6'))){    
 	$SQL = "UPDATE group_param SET active=not active WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по параметрам группы!".mysqli_error($sqlcn->idsqlconnection));
+    };
 };
 ?>

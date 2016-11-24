@@ -555,3 +555,14 @@ function NormalizePhone($nm){
   };
   return $nm;
 };
+
+/**
+ * Чистим ВООБЩЕ все кукисы установленные
+ * @global type $_COOKIE
+ */
+function UnsetAllCookies(){
+    global $_COOKIE;
+    foreach ($_COOKIE as $key=>$value) {
+    SetCookie("$key","",time()+3600000,'/'); // трем  кукисы..
+    };
+};

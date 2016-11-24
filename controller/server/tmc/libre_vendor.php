@@ -32,8 +32,8 @@ $id = PostDef('id');
 $name= PostDef('name');
 $comment= PostDef('comment');
 
-if ($oper=='')
-{
+if ($oper==''){
+    if (($user->mode==1) or ($user->TestRoles('1,3'))){    
 	if(!$sidx) $sidx =1;
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count FROM vendor");
 	$row = mysqli_fetch_array($result);
@@ -58,22 +58,25 @@ if ($oper=='')
 	    $i++;
 	}
 	echo json_encode($responce);
+    };
 };
-if ($oper=='edit')
-{
-	$SQL = "UPDATE vendor SET name='$name',comment='$comment' WHERE id='$id'";
-	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по производителю!".mysqli_error($sqlcn->idsqlconnection));
+if ($oper=='edit'){    
+	if (($user->mode==1) or ($user->TestRoles('1,5'))){    
+	    $SQL = "UPDATE vendor SET name='$name',comment='$comment' WHERE id='$id'";
+	    $result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по производителю!".mysqli_error($sqlcn->idsqlconnection));
+	};    
 };
-if ($oper=='add')
-{
+if ($oper=='add'){
+    if (($user->mode==1) or ($user->TestRoles('1,4'))){            
 	$SQL = "INSERT INTO vendor (id,name,comment,active) VALUES (null,'$name','$comment',1)";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу добавить производителя!".mysqli_error($sqlcn->idsqlconnection));
-
+    };
 };
-if ($oper=='del')
-{
+if ($oper=='del'){
+    if (($user->mode==1) or ($user->TestRoles('1,6'))){    
 	$SQL = "UPDATE vendor SET active=not active WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по производителю!".mysqli_error($sqlcn->idsqlconnection));
+    };
 };
 
 ?>
