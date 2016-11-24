@@ -15,7 +15,14 @@
                                 if ($res<10000){                                        
                                     echo '<div class="col-sm-6 col-md-4">';
                                     echo "<div class=thumbnail>";
-                                    echo "<img src=photos/$jpegphoto>";
+					if (!file_exists("photos/$jpegphoto")) {	
+						    if (!file_exists("photos/$jpegphoto")) {
+							$jpegphoto = 'noimage.jpg';
+						    };
+					};				    
+				    if ($jpegphoto=="" ){} else {
+					echo "<img src=photos/$jpegphoto>";
+				    };
                                     echo "<p align=center>$fio</p>";
                                     echo "</div>";
                                     echo "</div>";                                    

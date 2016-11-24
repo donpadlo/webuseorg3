@@ -22,17 +22,24 @@ if ($user->id == ''):
 <div class="container-fluid">
 <?php
 $jpegphoto = $user->jpegphoto;
-if (!file_exists("photos/$jpegphoto")) {
-	$jpegphoto = 'noimage.jpg';
-}
+if (!file_exists("photos/$jpegphoto")) {	
+	    if (!file_exists("photos/$jpegphoto")) {
+		$jpegphoto = 'noimage.jpg';
+	    };
+};
 ?>
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-sm-6">
 			<div id="userpic" class="userpic">
 				<div class="js-preview userpic__preview thumbnail">
-					<img width="100%" src="photos/<?php echo $jpegphoto; ?>">
+				    <?php		
+				      if ($jpegphoto=="") {} else {
+					  echo "<img width=\"100%\" src=\"photos/$jpegphoto\" >";
+				      };
+					
+				     ?>
 				</div>
-				<div class="btn btn-success js-fileapi-wrapper">
+				<div class="btn btn-success js-fileapi-wrapper" style="width: 100%;">
 					<div class="js-browse">
 						<span class="btn-txt">Сменить фото</span>
 						<input type="file" name="filedata">
@@ -45,7 +52,7 @@ if (!file_exists("photos/$jpegphoto")) {
 					</div>
 				</div>
 			</div>
-			<p align="center"><?php echo $user->fio; ?></p>
+			<p align="left"><?php echo $user->fio; ?></p>
 			<input name="picname" id="picname" type="hidden" value="<?php echo $jpegphoto; ?>">
 		</div>
 		<div class="col-xs-6 col-md-6 col-sm-6">
