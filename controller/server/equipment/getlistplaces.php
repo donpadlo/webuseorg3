@@ -13,7 +13,7 @@ $orgid = $cfg->defaultorgid;
 $placesid = GetDef('placesid');
 $addnone = GetDef('addnone');
 $oldopgroup = '';
-if ($user->TestRoles('1,4,5,6')) {
+if ($user->TestRoles('1,3,4,5,6')) {
 	$SQL = "SELECT * FROM places WHERE orgid='$orgid' AND active=1 ORDER BY binary(opgroup), binary(name)";
 	$result = $sqlcn->ExecuteSQL($SQL)
 			or die('Не могу выбрать список помещений!'.mysqli_error($sqlcn->idsqlconnection));

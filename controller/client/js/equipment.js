@@ -13,7 +13,7 @@ $('#orgs').change(function() {
 
 function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid({
-		url: route + 'controller/server/equipment/equipment.php&sorgider=' + defaultorgid,
+		url: route + 'controller/server/equipment/equipment.php&sorgider=' + $('#orgs :selected').val(),
 		datatype: 'json',
 		colNames: [' ', 'Id', 'IP', 'Помещение', 'Номенклатура', 'Группа', 'В пути',
 			'Производитель', 'Имя по бухгалтерии', 'Сер.№', 'Инв.№',
@@ -221,7 +221,7 @@ function LoadTable() {
 		//scroll: 1,
 		viewrecords: true,
 		sortorder: 'asc',
-		editurl: route + 'controller/server/equipment/equipment.php&sorgider=' + defaultorgid,
+		editurl: route + 'controller/server/equipment/equipment.php&sorgider=' + $('#orgs :selected').val(),
 		caption: 'Оргтехника'
 	});
 	jQuery('#tbl_equpment').jqGrid('setGridHeight', $(window).innerHeight()-285);

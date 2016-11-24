@@ -12,7 +12,7 @@ defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещае
 $orgid = $cfg->defaultorgid;
 $addnone = GetDef('addnone');
 
-if ($user->TestRoles('1,4,5,6')) {
+if ($user->TestRoles('1,3,4,5,6')) {
 	$sts = '<select name="tmcgo" id="tmcgo">';
 	if ($addnone == 'true') {
 		$sts .= '<option value="-1">нет выбора</option>';

@@ -12,7 +12,7 @@ defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещае
 $orgid = $cfg->defaultorgid;
 $addnone = GetDef('addnone');
 
-if ($user->TestRoles('1,4,5,6')) {
+if ($user->TestRoles('1,3,4,5,6')) {
 	$SQL = 'SELECT * FROM group_nome WHERE active=1 ORDER BY binary(name)';
 	$result = $sqlcn->ExecuteSQL($SQL)
 			or die('Не могу выбрать список групп!'.mysqli_error($sqlcn->idsqlconnection));
