@@ -234,7 +234,13 @@ if ($step=="edit"){
   <div class="col-xs-4 col-md-4 col-sm-4">     
                                         <div id="userpic" class="userpic">
                                             <div class="js-preview userpic__preview thumbnail">
-                                                <img src="photos/<?php echo "$photo";?>">
+				    <?php		
+				      if ($photo=="") {} else {
+					  echo "<img width=\"100%\" src=\"photos/$photo\" >";
+				      };
+					
+				     ?>						
+                                    
                                             </div>
 						<div class="btn btn-success js-fileapi-wrapper">
 							<div class="js-browse">
