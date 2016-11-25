@@ -44,9 +44,16 @@
 	<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/bootstrap.min.js"></script>
 	<script>		
 	    <?php
-	     if (isset($user->orgid)==true){ echo "defaultorgid =$user->orgid;";} else {
-		 echo "defaultorgid =-1;";
-	     }
+	     if (isset($_COOKIE['defaultorgid'])==true){
+			$orgid=$_COOKIE['defaultorgid'];
+		 	echo "defaultorgid =$orgid;";		 
+	     } else {
+	     if (isset($user->orgid)==true){
+			echo "defaultorgid =$user->orgid;";		 
+		    } else {
+			echo "defaultorgid =-1;";
+		    }
+	     };
 	    ?>
 		theme = '<?php echo $cfg->theme; ?>';
 		defaultuserid = <?php echo ($user->id != '') ? $user->id : '-1'; ?>;
