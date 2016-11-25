@@ -42,9 +42,12 @@
 	<script src="js/jquery.toastmessage-min.js"></script>
 	<script src="js/jquery.form.js"></script>
 	<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/bootstrap.min.js"></script>
-	<script>
-		defaultorgid = <?php echo $cfg->defaultorgid; ?>;
-		defaultorgid = <?php echo $cfg->defaultorgid; ?>;
+	<script>		
+	    <?php
+	     if (isset($user->orgid)==true){ echo "defaultorgid =$user->orgid;";} else {
+		 echo "defaultorgid =-1;";
+	     }
+	    ?>
 		theme = '<?php echo $cfg->theme; ?>';
 		defaultuserid = <?php echo ($user->id != '') ? $user->id : '-1'; ?>;
 		route = '<?php echo ($userewrite == 1) ? '/route/' : 'index.php?route=/'; ?>';
