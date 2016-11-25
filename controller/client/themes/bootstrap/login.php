@@ -58,9 +58,11 @@ if (!file_exists("photos/$jpegphoto")) {
 		<div class="col-xs-6 col-md-6 col-sm-6">
 			<ul>
 				<li><?php echo $user->login; ?></li>
-				<li><?php echo "<a href='mailto:$user->email'>$user->email</a>"; ?></li>
-				<li><?php echo $user->telephonenumber; ?></li>
-				<li><?php echo $user->homephone; ?></li>
+				<?php
+				 if ($user->email!=""){echo "<a href='mailto:$user->email'>$user->email</a>";};
+				 if ($user->telephonenumber!=""){echo "<li>$user->telephonenumber</li>";};
+				 if ($user->homephone!=""){echo "<li>$user->homephone</li>";};
+				?>
 				<li><?php if ($user->mode == 0) {echo 'Пользователь';} else {echo 'Администратор';}; ?></li>
 			</ul>
 		</div>
