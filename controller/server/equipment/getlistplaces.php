@@ -9,7 +9,7 @@
 
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-$orgid = $cfg->defaultorgid;
+$orgid = $user->orgid;
 $placesid = GetDef('placesid');
 $addnone = GetDef('addnone');
 $oldopgroup = '';
@@ -20,24 +20,30 @@ if ($user->TestRoles('1,3,4,5,6')) {
 	$sts = '<select name="splaces" id="splaces">';
 	if ($addnone == 'true') {
 		$sts .= '<option value="-1">нет выбора</option>';
-	}
+	};
+
+	if (isset($user->mode)==false){$user->mode=0;};
+	if (isset($user->orgid)==false){$user->orgid=-1;};
+	
 	$flag = 0;
 	while ($row = mysqli_fetch_array($result)) {
 		$vl = $row['id'];
-		$opgroup = $row['opgroup'];
-		if ($opgroup != $oldopgroup) {
-			if ($flag != 0) {
-				$sts .= '</optgroup>';
-			}
-			$sts .= '<optgroup label="'.$opgroup.'">';
-			$flag = 1;
-		}
-		$sts .= '<option value="'.$vl.'" ';
-		if ($placesid == $row['id']) {
-			$sts .= 'selected';
-		}
-		$sts .= '>'.$row['name'].'</option>';
-		$oldopgroup = $opgroup;
+		if (($user->mode==1) or ($user->orgid==$row['orgid'])){
+		    $opgroup = $row['opgroup'];
+		    if ($opgroup != $oldopgroup) {
+			    if ($flag != 0) {
+				    $sts .= '</optgroup>';
+			    }
+			    $sts .= '<optgroup label="'.$opgroup.'">';
+			    $flag = 1;
+		    }
+		    $sts .= '<option value="'.$vl.'" ';
+		    if ($placesid == $row['id']) {
+			    $sts .= 'selected';
+		    }
+		    $sts .= '>'.$row['name'].'</option>';
+		    $oldopgroup = $opgroup;
+	    };
 	}
 	$sts .= '</optgroup>';
 	$sts .= '</select>';
