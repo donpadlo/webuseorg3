@@ -566,3 +566,14 @@ function UnsetAllCookies(){
     SetCookie("$key","",time()+3600000,'/'); // трем  кукисы..
     };
 };
+
+/**
+ * Обновляем ВООБЩЕ все кукисы установленные
+ * @global type $_COOKIE
+ */
+function UpdateAllCookies(){
+    global $_COOKIE;
+    foreach ($_COOKIE as $key=>$value) {
+      SetCookie("$key","$value",strtotime('+30 days'),'/');       
+    };
+};

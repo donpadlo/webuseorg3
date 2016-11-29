@@ -9,6 +9,7 @@
 
 $user = new Tusers;
 
+
 // Если есть печеньки, то получаем сессионный идентификатор
 $user->randomid = (isset($_COOKIE['user_randomid_w3'])) ? $_COOKIE['user_randomid_w3'] : '';
 
@@ -17,7 +18,10 @@ $user->randomid = (isset($_COOKIE['user_randomid_w3'])) ? $_COOKIE['user_randomi
 if ($user->randomid != '') {
 	if ($user->GetByRandomId($user->randomid)) {
 		$user->UpdateLastdt($user->id); // обновляем дату последнего входа пользователя
-		SetCookie('user_randomid_w3', "$user->randomid", strtotime('+30 days'), '/'); // ну и обновляем заодно время жизни печеньки
+		#SetCookie('user_randomid_w3', "$user->randomid", strtotime('+30 days'), '/'); // ну и обновляем заодно время жизни печеньки
+		//обновляем время жизни всех печенек
+		UpdateAllCookies();
+		
 	} else {
 		$user->randomid = '';		
 		UnsetAllCookies();
