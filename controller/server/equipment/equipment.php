@@ -53,6 +53,7 @@ for ($i = 0; $i < $cnt; $i++) {
 		if (($field == 'placesid') or ( $field == 'getvendorandgroup.grnomeid')) {
 			$where = $where."($field = '$data')";
 		} else {
+		        $data=  str_replace(" ", "%", $data);
 			$where = $where."($field LIKE '%$data%')";
 		}
 	} else {

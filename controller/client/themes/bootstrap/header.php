@@ -42,6 +42,7 @@
 	<script src="js/jquery.toastmessage-min.js"></script>
 	<script src="js/jquery.form.js"></script>
 	<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
 	<script>		
 	    <?php
 	     if (isset($_COOKIE['defaultorgid'])==true){

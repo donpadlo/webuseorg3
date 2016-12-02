@@ -24,8 +24,8 @@ function LoadTable() {
 			{name: 'active', index: 'active', width: 20, search: false, frozen: true},
 			{name: 'equipment.id', index: 'equipment.id', width: 55, search: false, frozen: true, hidden: true},
 			{name: 'ip', index: 'ip', width: 100, hidden: true},
-			{name: 'placesid', index: 'placesid', width: 155, stype: 'select', frozen: true,
-				searchoptions: {dataUrl: route + 'controller/server/equipment/getlistplaces.php&addnone=true'}},
+			{name: 'placesid', index: 'placesid', width: 155, stype: 'select',
+				searchoptions: {dataUrl: route + 'controller/server/equipment/getlistplaces.php&addnone=true&selorgid='+ $('#orgs :selected').val()}},
 			{name: 'nomename', index: 'getvendorandgroup.nomename', width: 155, frozen: true},
 			{name: 'getvendorandgroup.groupname', index: 'getvendorandgroup.grnomeid', width: 100, stype: 'select',
 				searchoptions: {dataUrl: route + 'controller/server/equipment/getlistgroupname.php&addnone=true'}},
@@ -58,7 +58,24 @@ function LoadTable() {
 			{name: 'myac', width: 80, fixed: true, sortable: false, resize: false, formatter: 'actions',
 				formatoptions: {keys: true}, search: false}
 		],
+		storeNavOptions : true,
+		gridComplete : function() {
+		   // alert("!");
+		   //$.jgrid.loadState("tbl_equpment");
+//		    $.jgrid.loadState("tbl_equpment",null, {
+//			afterSetGrid : function( jqGrid ) {
+//			   jqGrid.trigger('reloadGrid', [{current: true}]).trigger('resize');
+//			}
+//		     });
+		   //pg_nav=$("#pg_nav").html();
+		 //  $.jgrid.loadState("tbl_equpment");
+		   //$("#pg_nav").html(pg_nav); 		    
+		},
+		resizeStop: function() {
+		    $.jgrid.saveState("tbl_equpment")
+		},
 		onSelectRow: function(ids) {
+			$.jgrid.saveState("tbl_equpment");
 			$('#photoid').load(route + 'controller/server/equipment/getphoto.php&eqid=' + ids);
 			jQuery('#tbl_move').jqGrid('setGridParam', {url: route + 'controller/server/equipment/getmoveinfo.php&eqid=' + ids});
 			jQuery('#tbl_move').jqGrid({
@@ -224,6 +241,7 @@ function LoadTable() {
 		editurl: route + 'controller/server/equipment/equipment.php&sorgider=' + $('#orgs :selected').val(),
 		caption: 'Оргтехника'
 	});
+	
 	jQuery('#tbl_equpment').jqGrid('setGridHeight', $(window).innerHeight()-285);
 	jQuery('#tbl_equpment').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: false});
 	jQuery('#tbl_equpment').jqGrid('bindKeys', '');
@@ -338,20 +356,20 @@ function LoadTable() {
 			newWin2 = window.open(route + 'controller/server/equipment/export_xml.php', 'printWindow4');
 		}
 	});
-	jQuery('#tbl_equpment').jqGrid('setFrozenColumns');
+	jQuery('#tbl_equpment').jqGrid('setFrozenColumns');	
 }
 
 function GetListUsers(orgid, userid) {
 	$('#susers').load('controller/server/getlistusers.php?orgid=' + orgid + '&userid=' + userid);
 }
 
-function GetListPlaces(orgid, placesid) {
+function GetListPlaces(orgid, placesid) {    
 	$('#splaces').load(route + 'controller/server/getlistplaces.php&orgid=' + orgid + '&placesid=' + placesid);
 }
 
 $(document).ready(function() {
 	for (var selector in config) {
 		$(selector).chosen(config[selector]);
-	}
+	}	
 	LoadTable();
 });
