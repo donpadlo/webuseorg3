@@ -5,7 +5,11 @@
 // http://грибовы.рф
 
 header('Content-type: application/vnd.ms-excel');
-header("Content-Disposition: attachment; filename=file.xls");
+if (isset($_GET["csv"])==true){
+    header("Content-Disposition: attachment; filename=file.csv");
+} else {
+    header("Content-Disposition: attachment; filename=file.xls");
+};
 header("Pragma: no-cache");
 
 $buffer = $_POST['csvBuffer'];

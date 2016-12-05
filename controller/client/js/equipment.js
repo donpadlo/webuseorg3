@@ -21,61 +21,50 @@ function LoadTable() {
 			'Тек. стоимость', 'ОС', 'Списано', 'Карта', 'Комментарий', 'Ремонт',
 			'Гар.срок', 'Поставщик', 'Инструменты'],
 		colModel: [
-			{name: 'active', index: 'active', width: 20, search: false, frozen: true},
-			{name: 'equipment.id', index: 'equipment.id', width: 55, search: false, frozen: true, hidden: true},
-			{name: 'ip', index: 'ip', width: 100, hidden: true},
-			{name: 'placesid', index: 'placesid', width: 155, stype: 'select',
+			{name: 'active', index: 'active', width: 20, search: false, frozen: true,fixed:true},
+			{name: 'equipment.id', index: 'equipment.id', width: 55, search: false, frozen: true, hidden: true,fixed:true},
+			{name: 'ip', index: 'ip', width: 100, hidden: true,fixed:true},
+			{name: 'placesid', index: 'placesid', width: 155, stype: 'select',fixed:true,
 				searchoptions: {dataUrl: route + 'controller/server/equipment/getlistplaces.php&addnone=true&selorgid='+ $('#orgs :selected').val()}},
 			{name: 'nomename', index: 'getvendorandgroup.nomename', width: 155, frozen: true},
-			{name: 'getvendorandgroup.groupname', index: 'getvendorandgroup.grnomeid', width: 100, stype: 'select',
+			{name: 'getvendorandgroup.groupname', index: 'getvendorandgroup.grnomeid', width: 100, stype: 'select',fixed:true,
 				searchoptions: {dataUrl: route + 'controller/server/equipment/getlistgroupname.php&addnone=true'}},
-			{name: 'tmcgo', index: 'tmcgo', width: 80, search: true, stype: 'select',
+			{name: 'tmcgo', index: 'tmcgo', width: 80, search: true, stype: 'select',fixed:true,
 				searchoptions: {dataUrl: route + 'controller/server/equipment/getlisttmcgo.php&addnone=true'},
 				formatter: 'checkbox', edittype: 'checkbox', editoptions: {value: 'Yes:No'}, editable: true,hiddem:true
 			},
 			{name: 'getvendorandgroup.vendorname', index: 'getvendorandgroup.vendorname', width: 60},
 			{name: 'buhname', index: 'buhname', width: 155, editable: true},
-			{name: 'sernum', index: 'sernum', width: 100, editable: true},
-			{name: 'invnum', index: 'invnum', width: 100, editable: true},
-			{name: 'shtrihkod', index: 'shtrihkod', width: 100, editable: true},
+			{name: 'sernum', index: 'sernum', width: 100, editable: true,fixed:true},
+			{name: 'invnum', index: 'invnum', width: 100, editable: true,fixed:true},
+			{name: 'shtrihkod', index: 'shtrihkod', width: 100, editable: true,fixed:true},
 			{name: 'org.name', index: 'org.name', width: 155, hidden: true},
 			{name: 'fio', index: 'fio', width: 100},
-			{name: 'datepost', index: 'datepost', width: 80},
-			{name: 'cost', index: 'cost', width: 55, editable: true, hidden: true},
-			{name: 'currentcost', index: 'currentcost', width: 55, editable: true, hidden: true},
-			{name: 'os', index: 'os', width: 35, editable: true, formatter: 'checkbox', edittype: 'checkbox',
+			{name: 'datepost', index: 'datepost', width: 80,fixed:true},
+			{name: 'cost', index: 'cost', width: 55, editable: true, hidden: true,fixed:true},
+			{name: 'currentcost', index: 'currentcost', width: 55, editable: true, hidden: true,fixed:true},
+			{name: 'os', index: 'os', width: 35, editable: true, formatter: 'checkbox', edittype: 'checkbox',fixed:true,
 				editoptions: {value: 'Yes:No'}, search: false, hidden: true},
-			{name: 'mode', index: 'equipment.mode', width: 55, editable: true, formatter: 'checkbox', edittype: 'checkbox',
+			{name: 'mode', index: 'equipment.mode', width: 55, editable: true, formatter: 'checkbox', edittype: 'checkbox',fixed:true,
 				editoptions: {value: 'Yes:No'}, search: false, hidden: true},
-			{name: 'eqmapyet', index: 'eqmapyet', width: 55, editable: true, formatter: 'checkbox', edittype: 'checkbox',
+			{name: 'eqmapyet', index: 'eqmapyet', width: 55, editable: true, formatter: 'checkbox', edittype: 'checkbox',fixed:true,
 				editoptions: {value: 'Yes:No'}, search: false, hidden: true},
 			{name: 'comment', index: 'equipment.comment', width: 200, editable: true, edittype: 'textarea',
 				editoptions: {rows: '3', cols: '10'}, search: false, hidden: true},
 			{name: 'eqrepair', hidden: true, index: 'eqrepair', width: 35, editable: true, formatter: 'checkbox', edittype: 'checkbox',
-				editoptions: {value: 'Yes:No'}, search: false},
-			{name: 'dtendgar', index: 'dtendgar', width: 55, editable: false, hidden: true, search: false},
+				editoptions: {value: 'Yes:No'}, search: false,fixed:true},
+			{name: 'dtendgar', index: 'dtendgar', width: 55, editable: false, hidden: true, search: false,fixed:true},
 			{name: 'kntname', index: 'kntname', width: 55, editable: false, hidden: true, search: false},
 			{name: 'myac', width: 80, fixed: true, sortable: false, resize: false, formatter: 'actions',
 				formatoptions: {keys: true}, search: false}
-		],
-		storeNavOptions : true,
+		],		
 		gridComplete : function() {
-		   // alert("!");
-		   //$.jgrid.loadState("tbl_equpment");
-//		    $.jgrid.loadState("tbl_equpment",null, {
-//			afterSetGrid : function( jqGrid ) {
-//			   jqGrid.trigger('reloadGrid', [{current: true}]).trigger('resize');
-//			}
-//		     });
-		   //pg_nav=$("#pg_nav").html();
-		 //  $.jgrid.loadState("tbl_equpment");
-		   //$("#pg_nav").html(pg_nav); 		    
+		    $("#tbl_equpment").loadCommonParam("tbleq");
 		},
 		resizeStop: function() {
-		    $.jgrid.saveState("tbl_equpment")
+		    $("#tbl_equpment").saveCommonParam("tbleq");
 		},
-		onSelectRow: function(ids) {
-			$.jgrid.saveState("tbl_equpment");
+		onSelectRow: function(ids) {			
 			$('#photoid').load(route + 'controller/server/equipment/getphoto.php&eqid=' + ids);
 			jQuery('#tbl_move').jqGrid('setGridParam', {url: route + 'controller/server/equipment/getmoveinfo.php&eqid=' + ids});
 			jQuery('#tbl_move').jqGrid({
@@ -253,6 +242,9 @@ function LoadTable() {
 		buttonicon: 'none',
 		onClickButton: function() {
 		    jQuery('#tbl_equpment').jqGrid('columnChooser', {
+				done: function(perm) {
+				    $("#tbl_equpment").saveCommonParam("tbleq");
+				},
 				width: 550,
 				dialog_opts: {
 					modal: true,
