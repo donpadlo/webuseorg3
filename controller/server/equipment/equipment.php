@@ -79,7 +79,7 @@ if ($oper == '') {
 		equipment.ip AS ip,
 		equipment.orgid AS eqorgid, org.name AS orgname,
 		getvendorandgroup.vendorname AS vname, 
-		getvendorandgroup.groupname AS grnome, places.name AS placesname,
+		getvendorandgroup.groupname AS grnome, places.opgroup AS opgroup, places.name AS placesname,
 		users_profile.fio AS fio, getvendorandgroup.nomename AS nomename,
 		buhname, sernum, invnum, shtrihkod, datepost, cost, currentcost, os,
 		equipment.mode AS eqmode, equipment.mapyet AS eqmapyet,
@@ -117,7 +117,7 @@ if ($oper == '') {
 		equipment.ip AS ip,
 		equipment.orgid AS eqorgid, org.name AS orgname,
 		getvendorandgroup.vendorname AS vname, 
-		getvendorandgroup.groupname AS grnome, places.name AS placesname,
+		getvendorandgroup.groupname AS grnome, places.opgroup AS opgroup, places.name AS placesname,
 		users_profile.fio AS fio, getvendorandgroup.nomename AS nomename,
 		buhname, sernum, invnum, shtrihkod, datepost, cost, currentcost, os,
 		equipment.mode AS eqmode,equipment.mapyet AS eqmapyet,
@@ -170,7 +170,7 @@ if ($oper == '') {
 			$row['buhname'], $row['sernum'], $row['invnum'], $row['shtrihkod'],
 			$row['orgname'], $row['fio'], $dtpost, $row['cost'],
 			$row['currentcost'], $os, $eqmode, $row['eqmapyet'],
-			$row['eqcomment'], $row['eqrepair'], $dtendgar, $row['kntname']
+			$row['eqcomment'], $row['eqrepair'], $dtendgar, $row['kntname'],$row['opgroup']
 		);
 		$i++;
 	}
