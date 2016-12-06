@@ -108,6 +108,7 @@ $(document).ready(function() {
     if ($view==true){	
 	echo '<input class="form-control" type="submit"  name="Submit" value="Сохранить">';
     };
+    echo "Выбрано: $id";
 ?>	
               </div>
           </div>  

@@ -128,34 +128,38 @@ if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
 		if (count($err) == 0) {
 			$id = GetDef('id');
 			$etmc = new Tequipment;
-			$etmc->GetById($id);
-			$sql = "UPDATE equipment SET tmcgo='$tmcgo', mapmoved=1, orgid='$sorgid',
-				placesid='$splaces', usersid='$suserid' WHERE id='$id'";
-			$result = $sqlcn->ExecuteSQL($sql);
-			if ($result == '') {
-				$err[] = 'Не смог изменить регистр номенклатуры - перемещение!: '.mysqli_error($sqlcn->idsqlconnection);
-			}
-			$sql = "INSERT INTO move (id, eqid, dt, orgidfrom, orgidto, placesidfrom, placesidto, useridfrom, useridto, comment)
-					VALUES (NULL, '$id', NOW(), '$etmc->orgid', '$sorgid', '$etmc->placesid', '$splaces', '$etmc->usersid',
-					'$suserid', '$comment')";
-			$result = $sqlcn->ExecuteSQL($sql);
-			if ($result == '') {
-				$err[] = 'Не смог добавить перемещение!: '.mysqli_error($sqlcn->idsqlconnection);
-			}
-			if ($cfg->sendemail == 1) {
-				$touser = new Tusers;
-				$touser->GetById($suserid);
-				$url = $cfg->urlsite;
-				$tmcname = $etmc->tmcname;
-				$txt = "Внимание! На Вашу ответственность переведена новая единица ТМЦ ($tmcname). <a href=$url/index.php?content_page=eq_list&usid=$suserid>Подробности здесь.</a>";
-				smtpmail("$touser->email", "Уведомление о перемещении ТМЦ", $txt);   // отсылаем уведомление кому пришло
-				SendEmailByPlaces($etmc->placesid, "Изменился состав ТМЦ в помещении", "Внимание! В закрепленном за вами помещении изменился состав ТМЦ. <a href=$url/index.php?content_page=eq_list>Подробнее здесь.</a>");
-				SendEmailByPlaces($splaces, "Изменился состав ТМЦ в помещении", "Внимание! В закрепленном за вами помещении изменился состав ТМЦ. <a href=$url/index.php?content_page=eq_list>Подробнее здесь.</a>");
-				$touser = new Tusers;
-				$touser->GetById($etmc->usersid);
-				$txt = "Внимание! С вашей отвественности снята единица ТМЦ ($tmcname). <a href=$url/index.php?content_page=eq_list&usid=$etmc->usersid>Подробности здесь.</a>";
-				smtpmail("$touser->email", "Уведомление о перемещении ТМЦ", $txt);
-			}
+			$idar=explode(",",$id);
+			foreach ($idar as $id) {		    			
+			    $etmc->GetById($id);
+			    $sql = "UPDATE equipment SET tmcgo='$tmcgo', mapmoved=1, orgid='$sorgid',
+				    placesid='$splaces', usersid='$suserid' WHERE id='$id'";
+			    $result = $sqlcn->ExecuteSQL($sql);
+			    if ($result == '') {
+				    $err[] = 'Не смог изменить регистр номенклатуры - перемещение!: '.mysqli_error($sqlcn->idsqlconnection);
+			    }
+			    $sql = "INSERT INTO move (id, eqid, dt, orgidfrom, orgidto, placesidfrom, placesidto, useridfrom, useridto, comment)
+					    VALUES (NULL, '$id', NOW(), '$etmc->orgid', '$sorgid', '$etmc->placesid', '$splaces', '$etmc->usersid',
+					    '$suserid', '$comment')";
+			    $result = $sqlcn->ExecuteSQL($sql);
+			    if ($result == '') {
+				    $err[] = 'Не смог добавить перемещение!: '.mysqli_error($sqlcn->idsqlconnection);
+			    }
+			    if ($cfg->sendemail == 1) {
+				    $touser = new Tusers;
+				    $touser->GetById($suserid);
+				    $url = $cfg->urlsite;
+				    $tmcname = $etmc->tmcname;
+				    $txt = "Внимание! На Вашу ответственность переведена новая единица ТМЦ ($tmcname). <a href=$url/index.php?content_page=eq_list&usid=$suserid>Подробности здесь.</a>";
+				    smtpmail("$touser->email", "Уведомление о перемещении ТМЦ", $txt);   // отсылаем уведомление кому пришло
+				    SendEmailByPlaces($etmc->placesid, "Изменился состав ТМЦ в помещении", "Внимание! В закрепленном за вами помещении изменился состав ТМЦ. <a href=$url/index.php?content_page=eq_list>Подробнее здесь.</a>");
+				    SendEmailByPlaces($splaces, "Изменился состав ТМЦ в помещении", "Внимание! В закрепленном за вами помещении изменился состав ТМЦ. <a href=$url/index.php?content_page=eq_list>Подробнее здесь.</a>");
+				    $touser = new Tusers;
+				    $touser->GetById($etmc->usersid);
+				    $txt = "Внимание! С вашей отвественности снята единица ТМЦ ($tmcname). <a href=$url/index.php?content_page=eq_list&usid=$etmc->usersid>Подробности здесь.</a>";
+				    smtpmail("$touser->email", "Уведомление о перемещении ТМЦ", $txt);
+			    }
+			};
+			unset($etmc);
 		}
 	}
 }

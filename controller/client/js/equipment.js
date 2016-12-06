@@ -293,7 +293,8 @@ function LoadTable() {
 			if (gsr) {
 				$('#pg_add_edit').dialog({autoOpen: false, height: 440, width: 620, modal: true, title: 'Перемещение имущества'});
 				$('#pg_add_edit').dialog('open');
-				$('#pg_add_edit').load('controller/client/view/equipment/move.php?step=move&id=' + gsr);
+				s = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selarrrow');
+				$('#pg_add_edit').load('controller/client/view/equipment/move.php?step=move&id=' + s);
 			} else {
 				//alert('Сначала выберите строку!');
 				$().toastmessage('showWarningToast', 'Сначала выберите строку!');
