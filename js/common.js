@@ -39,9 +39,10 @@ $(function() {
     });  
     $.jgrid.extend({
 	saveCommonParam: function(stname){	    
+	    //информация о колонках
 	     colarray=$(this).jqGrid('getGridParam','colModel');
 	     localStorage.setItem(stname, JSON.stringify(colarray));
-	     console.log(JSON.stringify(colarray));	     
+	     console.log(JSON.stringify(colarray));	     	     
 	},
 	loadCommonParam: function(stname){	    	
 	    if (localStorage[stname]!=undefined) {

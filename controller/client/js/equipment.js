@@ -12,6 +12,14 @@ $('#orgs').change(function() {
 //jQuery.extend(jQuery.jgrid.defaults, {ajaxSelectOptions: {cache: false}});
 
 function LoadTable() {
+	if (localStorage["tblq_multiselect"]!=undefined) {	    
+	    if (localStorage["tblq_multiselect"]=='false'){
+		multiselect=false;
+	    } else {
+		multiselect=true;
+	    };	    
+	} else {multiselect=true;};
+	console.log("multiselect:",multiselect);
 	jQuery('#tbl_equpment').jqGrid({
 		url: route + 'controller/server/equipment/equipment.php&sorgider=' + $('#orgs :selected').val(),
 		datatype: 'json',
@@ -218,7 +226,7 @@ function LoadTable() {
 			jQuery('#' + subgrid_table_id).remove();
 		},
 		subGrid: true,
-		multiselect: true,		
+		multiselect: multiselect,		
 		autowidth: true,
 		shrinkToFit: true,
 		pager: '#pg_nav',
@@ -258,6 +266,20 @@ function LoadTable() {
 			});
 		}
 	});
+	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
+		caption: '<i class="fa fa-object-group " aria-hidden="true"></i>',
+		title: 'Мультиселект',
+		buttonicon: 'none',
+		onClickButton: function() {
+		    console.log("multiselect save:",multiselect);
+		    if (multiselect==false){
+			localStorage.setItem("tblq_multiselect", true); } else {
+			localStorage.setItem("tblq_multiselect", false);
+		    };		    
+		    $.jgrid.gridUnload("#tbl_equpment");
+		    LoadTable();
+		}
+	});	
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<i class="fa fa-plus-circle" aria-hidden="true"></i>',
 		title: "Добавить ТМЦ",
