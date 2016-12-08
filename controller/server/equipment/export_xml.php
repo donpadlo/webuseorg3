@@ -48,8 +48,7 @@ if ($mode==""){
 		$spisano = $orgtehnika->appendChild($dom->createElement('spisano'));
 		$spisano->appendChild($dom->createTextNode("$row[eqmode]"));
 		$os = $orgtehnika->appendChild($dom->createElement('os'));
-		$os->appendChild($dom->createTextNode("$row[os]"));
-		$content_csv=$content_csv.";".";".";".";".";".";".";".";".";".";".";".";".";".";".";".";"."\n";
+		$os->appendChild($dom->createTextNode("$row[os]"));		
 	};
 	$dom->formatOutput = true; // установка атрибута formatOutput
 
