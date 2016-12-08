@@ -369,13 +369,22 @@ function LoadTable() {
 		}
 	});
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-floppy-o" aria-hidden="true"></i>',
+		caption: '<i class="fa fa-floppy-o" aria-hidden="true"></i> xml',
 		title: 'Экспорт XML',
 		buttonicon: 'none',
 		onClickButton: function() {
 			newWin2 = window.open(route + 'controller/server/equipment/export_xml.php', 'printWindow4');
 		}
 	});
+	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
+		caption: '<i class="fa fa-floppy-o" aria-hidden="true"></i> csv',
+		title: 'Экспорт CSV',
+		buttonicon: 'none',
+		onClickButton: function() {
+			newWin2 = window.open(route + 'controller/server/equipment/export_xml.php&mode=csv', 'printWindow4');
+		}
+	});
+	
 	jQuery('#tbl_equpment').jqGrid('setFrozenColumns');	
 }
 

@@ -74,17 +74,7 @@ if ($oper == '') {
 	// Проверяем может ли пользователь просматривать?
 	$user->TestRoles('1,3,4,5,6') or die('Недостаточно прав');
 
-	$sql = "SELECT COUNT(*) AS count, equipment.dtendgar,
-		knt.name, getvendorandgroup.grnomeid, equipment.id AS eqid,
-		equipment.ip AS ip,
-		equipment.orgid AS eqorgid, org.name AS orgname,
-		getvendorandgroup.vendorname AS vname, 
-		getvendorandgroup.groupname AS grnome, places.opgroup AS opgroup, places.name AS placesname,
-		users_profile.fio AS fio, getvendorandgroup.nomename AS nomename,
-		buhname, sernum, invnum, shtrihkod, datepost, cost, currentcost, os,
-		equipment.mode AS eqmode, equipment.mapyet AS eqmapyet,
-		equipment.comment AS eqcomment, equipment.active AS eqactive,
-		equipment.repair AS eqrepair
+	$sql = "SELECT COUNT(*) AS count
 	FROM equipment
 	INNER JOIN (
 	SELECT nome.groupid AS grnomeid,nome.id AS nomeid, vendor.name AS vendorname,
@@ -137,6 +127,7 @@ if ($oper == '') {
 	LEFT JOIN knt ON knt.id = equipment.kntid
 	$where
 	ORDER BY $sidx $sord LIMIT $start, $limit";
+	`echo "$SQL" >/tmp/zz.sql`;
 	$result = $sqlcn->ExecuteSQL($SQL)
 			or die('Не получилось выбрать список оргтехники!'.
 					mysqli_error($sqlcn->idsqlconnection).' sql='.$SQL);
