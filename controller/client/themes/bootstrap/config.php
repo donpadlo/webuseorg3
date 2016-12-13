@@ -91,6 +91,23 @@ if ($user->mode != 1) {
 						<input type="text" class="form-control" name="form_cfg_domain2" id="form_cfg_domain2" value="<?php echo $cfg->domain2; ?>" placeholder="tld">
 					</div>
 				</div>
+			</div>		    
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Вход по SSL сертификату</h3>
+				</div>
+				<div class="panel-body">
+					<div class="col-sm-12 checkbox">
+						<label>
+							<?php $ch = ($cfg->from_ssl == '1') ? 'checked' : ''; ?>
+							<input type="checkbox" name="from_ssl" value="1" <?php echo $ch; ?>>Разрешить вход
+						</label>
+					</div>
+					<div class="col-sm-4">
+						<label for="SSL_SERVER_M_SERIAL" class="control-label">SSL_SERVER_M_SERIAL:</label>
+						<input type="text" class="form-control" name="SSL_SERVER_M_SERIAL" id="SSL_SERVER_M_SERIAL" value="<?php echo $cfg->SSL_SERVER_M_SERIAL; ?>" placeholder="9331CD91055C9Z6E">
+					</div>
+				</div>
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">

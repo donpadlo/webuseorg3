@@ -35,12 +35,13 @@ if ($user->mode == '1'):
 	$fio = $tmpuser->fio;
 	$photo = $tmpuser->jpegphoto;
 	if ($photo == '') {
-		$photo = WUO_ROOT."/controller/client/themes/$cfg->theme/img/noimage.jpg";
+		$photo = "noimage.jpg";
 	}
 	$code = $tmpuser->tab_num;
 	$post = $tmpuser->post;
 	$phone1 = $tmpuser->telephonenumber;
 	$phone2 = $tmpuser->homephone;
+	$sslusernum= $tmpuser->sslusernum;
 	unset($tmpuser);
 ?>
 <div class="container-fluid">
@@ -79,6 +80,9 @@ if ($user->mode == '1'):
 				</div>
 			</div>
 			<input name="picname" id="picname" type="hidden" value="<?php echo $photo; ?>">
+			<label for="phone2">№SSL сертификата</label>
+			<input class="form-control" placeholder="Номер SSL сертификата" name="sslusernum" id="sslusernum" value="<?php echo $sslusernum; ?>">            
+
 		</div>
 	</div>
 	<div class="form-group">

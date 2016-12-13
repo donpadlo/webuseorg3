@@ -26,7 +26,18 @@ if ($user->randomid != '') {
 		$user->randomid = '';		
 		UnsetAllCookies();
 	}
-}
+};
+
+//если пытаемся зайти по ssl сертификату
+if ($cfg->from_ssl==1){
+  if (isset($_SERVER['SSL_CLIENT_CERT_RFC4523_CEA'])==true){      
+    $tmp=  explode(',', $_SERVER['SSL_CLIENT_CERT_RFC4523_CEA']);
+    $seruser=trim(str_replace("serialNumber", "", $tmp[0]));
+    $seruser=trim(str_replace("{", "", $seruser));
+    //echo "!$seruser!";
+    $user->GetBySSLNum($seruser);
+  };
+};
 
 // обрабатываем попытку войти/зарегистрироваться
 if (isset($_GET['login_step'])) {

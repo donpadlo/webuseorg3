@@ -27,6 +27,7 @@ $tmpuser->post = $post;
 $tmpuser->tab_num = $code;
 $tmpuser->telephonenumber = $phone1;
 $tmpuser->homephone = $phone2;
+$tmpuser->sslusernum=PostDef('sslusernum');
 $tmpuser->Update();
 unset($tmpuser);
 

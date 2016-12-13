@@ -29,7 +29,35 @@ class Tconfig {
 	var $quickmenu = array(); // "быстрое меню"
         var $style="Bootstrap";   //стиль грида по умолчанию  
 	var $fontsize="12px";   //стиль грида по умолчанию  
+	var $from_ssl="";
+	var $SSL_SERVER_M_SERIAL="";
 
+	function SetByParam($nameparam, $paramvalue){
+	    global $sqlcn;
+	    if ($paramvalue!=""){
+		$result = $sqlcn->ExecuteSQL("SELECT * FROM config_common WHERE nameparam='$nameparam'") or die('Неверный запрос : '.mysqli_error($sqlcn->idsqlconnection));
+		$id="";
+		while ($myrow = mysqli_fetch_array($result)) {
+			$id = $myrow['id'];
+		};
+		if ($id==""){
+		    $sql="insert into config_common (id,nameparam,valueparam) values (null,'$nameparam','$paramvalue')";  
+		} else {
+		    $sql="update config_common set valueparam='$paramvalue' where id=$id";
+		};
+		$result = $sqlcn->ExecuteSQL($sql) or die('Неверный запрос SetByParam: '.mysqli_error($sqlcn->idsqlconnection));    
+	    };
+	}
+	function GetByParam($nameparam) {
+	    global $sqlcn;
+		// получаем данные по идентификатору	
+		$resz = "";
+		$result = $sqlcn->ExecuteSQL("SELECT * FROM config_common WHERE nameparam='$nameparam'") or die('Неверный запрос GetByParam: '.mysqli_error($sqlcn->idsqlconnection));
+		while ($myrow = mysqli_fetch_array($result)) {
+			$resz = $myrow['valueparam'];
+		}
+		return $resz;
+	}	
 	function GetConfigFromBase() {
 		global $sqlcn;
 		$result = $sqlcn->ExecuteSQL('SELECT * FROM config')
@@ -53,7 +81,8 @@ class Tconfig {
 			$this->sendemail = $myrow['sendemail'];  // а вообще будем посылать почту?
 			$this->version = $myrow['version'];
 			$this->urlsite = $myrow['urlsite'];
-
+			$this->from_ssl=$this->GetByParam("config-from-ssl-param");
+			$this->SSL_SERVER_M_SERIAL=$this->GetByParam("config-SSL-SERVER-M-SERIAL");
 			if (isset($_COOKIE['stl'])) {
                          $this->style=$_COOKIE['stl'];
                         } else {$this->style="Bootstrap";};
@@ -82,6 +111,8 @@ class Tconfig {
 		smtppass='$this->smtppass',emailreplyto='$this->emailreplyto',sendemail='$this->sendemail',urlsite='$this->urlsite'";
 		$sqlcn->ExecuteSQL($sql)
 				or die('Неверный запрос Tconfig.SetToBase: '.mysqli_error($sqlcn->idsqlconnection));
+		$this->SetByParam("config-SSL-SERVER-M-SERIAL", $this->SSL_SERVER_M_SERIAL);
+		$this->SetByParam("config-from-ssl-param", $this->from_ssl);
 		return true;
 	}
 

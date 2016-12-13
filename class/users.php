@@ -26,6 +26,7 @@ class Tusers {
 	var $jpegphoto; // фотография из папки photos
 	var $tab_num; // табельный номер
 	var $post; // должность
+	var $sslusernum; //номер ssl сертификата
 
 	/**
 	 * Проверяем соответствие роли
@@ -82,7 +83,7 @@ class Tusers {
 	 * @global type $sqlcn
 	 */
 	function Update() {
-		global $sqlcn;
+		global $sqlcn,$cfg;
 		// ToDo $sqlcn->escape() все параметры
 		$sqlcn->ExecuteSQL("UPDATE users SET orgid='$this->orgid', login='$this->login',"
 						." `password`='$this->password', salt='$this->salt',"
@@ -94,7 +95,8 @@ class Tusers {
 						." homephone='$this->homephone',jpegphoto='$this->jpegphoto',"
 						." code='$this->tab_num',post='$this->post'"
 						." WHERE usersid='$this->id'")
-				or die('Неверный запрос Tusers.Update (2): '.mysqli_error($sqlcn->idsqlconnection));
+				or die('Неверный запрос Tusers.Update (2): '.mysqli_error($sqlcn->idsqlconnection));		
+		$cfg->SetByParam("sslusernum-".$this->id, $this->sslusernum);
 	}
 
 	/**
@@ -103,7 +105,7 @@ class Tusers {
 	 * @param type $login
 	 */
 	function GetByLogin($login) {
-		global $sqlcn;
+		global $sqlcn,$cfg;
 		$login = $sqlcn->escape($login);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
@@ -127,6 +129,7 @@ class Tusers {
 			$this->fio = $myrow['fio'];
 			$this->tab_num = $myrow['code'];
 			$this->post = $myrow['post'];
+			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
 			return true;
 		}
 		return false;
@@ -139,7 +142,7 @@ class Tusers {
 	 * @param type $pass
 	 */
 	function GetByLoginPass($login, $pass) {
-		global $sqlcn;
+		global $sqlcn,$cfg;
 		$login = $sqlcn->escape($login);
 		$pass = $sqlcn->escape($pass);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
@@ -164,6 +167,7 @@ class Tusers {
 			$this->fio = $myrow['fio'];
 			$this->tab_num = $myrow['code'];
 			$this->post = $myrow['post'];
+			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
 			return true;
 		}
 		return false;
@@ -175,7 +179,7 @@ class Tusers {
 	 * @param type $idz
 	 */
 	function GetById($idz) {
-		global $sqlcn;
+		global $sqlcn,$cfg;
 		$idz = $sqlcn->escape($idz);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
@@ -199,6 +203,7 @@ class Tusers {
 			$this->fio = $myrow['fio'];
 			$this->tab_num = $myrow['code'];
 			$this->post = $myrow['post'];
+			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
 			return true;
 		}
 		return false;
@@ -211,7 +216,7 @@ class Tusers {
 	 * @return boolean
 	 */
 	function GetByRandomId($id) {
-		global $sqlcn;
+		global $sqlcn,$cfg;
 		$id = $sqlcn->escape($id);
 		//$result = $sqlcn->ExecuteSQL("SELECT * FROM users WHERE randomid='$id'");
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
@@ -236,6 +241,7 @@ class Tusers {
 			$this->fio = $myrow['fio'];
 			$this->tab_num = $myrow['code'];
 			$this->post = $myrow['post'];
+			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
 			return true;
 		}
 		return false;
@@ -248,7 +254,7 @@ class Tusers {
 	 * @return boolean
 	 */
 	function GetByRandomIdNoProfile($id) {
-		global $sqlcn;
+		global $sqlcn,$cfg;
 		$id = $sqlcn->escape($id);
 		$result = $sqlcn->ExecuteSQL("SELECT * FROM users WHERE randomid='$id'")
 				or die('Неверный запрос Tusers.GetByRandomId: '.mysqli_error($sqlcn->idsqlconnection));
@@ -263,6 +269,7 @@ class Tusers {
 			$this->mode = $myrow['mode'];
 			$this->lastdt = $myrow['lastdt'];
 			$this->active = $myrow['active'];
+			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
 			return true;
 		}
 		return false;
@@ -279,7 +286,7 @@ class Tusers {
 	 * @param string $mode
 	 */
 	function Add($randomid, $orgid, $login, $pass, $email, $mode) {
-		global $sqlcn;
+		global $sqlcn,$cfg;
 		$this->randomid = $randomid;
 		$this->orgid = $orgid;
 		$this->login = $login;
@@ -317,6 +324,8 @@ class Tusers {
 		} else {
 			die('Не найден пользователь по randomid Tusers.Add');
 		}
+		$cfg->SetByParam("sslusernum-".$zx->id, $this->sslusernum);
+		
 	}
 
 	/**
@@ -326,7 +335,7 @@ class Tusers {
 	 * @return boolean
 	 */
 	function GetByCode($code) {
-		global $sqlcn;
+		global $sqlcn,$cfg;
 		$code = $sqlcn->escape($code);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*
 			FROM users_profile
@@ -349,9 +358,21 @@ class Tusers {
 			$this->homephone = $myrow['homephone'];
 			$this->fio = $myrow['fio'];
 			$this->post = $myrow['post'];
+			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
 			return true;
 		}
 		return false;
+	}
+	function GetBySSLNum($num){
+	    global $sqlcn,$cfg;
+	    $rez=false;
+	    $sql="SELECT * FROM config_common where valueparam='$num' and nameparam like 'sslusernum-%'";
+	    $result = $sqlcn->ExecuteSQL($sql) or die('Неверный запрос Tusers.GetBySSLNum: '.mysqli_error($sqlcn->idsqlconnection));
+	    while ($myrow = mysqli_fetch_array($result)) {
+		$userid=  str_replace("sslusernum-","",$myrow['nameparam']);
+		$rez=$this->GetById($userid);		
+	    };
+	    return $rez;
 	}
 
 }
