@@ -49,17 +49,6 @@ class Tusers {
 
 	function TestRoles($roles) {
 		global $sqlcn;
-		/*$rol = explode(',', $roles);
-		$rz = false;
-		foreach ($rol as $key) {
-			$sql = "SELECT * FROM usersroles WHERE userid='$this->id' AND role='$key'";
-			$result = $sqlcn->ExecuteSQL($sql)
-					or die('Неверный запрос Tusers.TestRoles: '.mysqli_error($sqlcn->idsqlconnection));
-			while ($myrow = mysqli_fetch_array($result)) {
-				$rz = true;
-			}
-		}
-		return $rz;*/
 		$sql = "SELECT * FROM usersroles WHERE userid='$this->id' AND role IN ($roles)";
 		$result = $sqlcn->ExecuteSQL($sql)
 			or die('Неверный запрос Tusers.TestRoles: '.mysqli_error($sqlcn->idsqlconnection));
@@ -106,6 +95,7 @@ class Tusers {
 	 */
 	function GetByLogin($login) {
 		global $sqlcn,$cfg;
+		$rez=false;
 		$login = $sqlcn->escape($login);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
@@ -114,25 +104,10 @@ class Tusers {
 				or die('Неверный запрос Tusers.GetByLogin: '.mysqli_error($sqlcn->idsqlconnection));
 		while ($myrow = mysqli_fetch_array($result)) {
 			$this->id = $myrow['sid'];
-			$this->randomid = $myrow['randomid'];
-			$this->orgid = $myrow['orgid'];
-			$this->login = $myrow['login'];
-			$this->password = $myrow['password'];
-			$this->salt = $myrow['salt'];
-			$this->email = $myrow['email'];
-			$this->mode = $myrow['mode'];
-			$this->lastdt = $myrow['lastdt'];
-			$this->active = $myrow['active'];
-			$this->telephonenumber = $myrow['telephonenumber'];
-			$this->jpegphoto = $myrow['jpegphoto'];
-			$this->homephone = $myrow['homephone'];
-			$this->fio = $myrow['fio'];
-			$this->tab_num = $myrow['code'];
-			$this->post = $myrow['post'];
-			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
-			return true;
+			$rez=$this->GetById($this->id);		
+			return $rez;
 		}
-		return false;
+		return $rez;
 	}
 
 	/**
@@ -143,6 +118,7 @@ class Tusers {
 	 */
 	function GetByLoginPass($login, $pass) {
 		global $sqlcn,$cfg;
+		$rez=false;
 		$login = $sqlcn->escape($login);
 		$pass = $sqlcn->escape($pass);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
@@ -152,25 +128,10 @@ class Tusers {
 				or die('Неверный запрос Tusers.GetByLoginPass: '.mysqli_error($sqlcn->idsqlconnection));
 		while ($myrow = mysqli_fetch_array($result)) {
 			$this->id = $myrow['sid'];
-			$this->randomid = $myrow['randomid'];
-			$this->orgid = $myrow['orgid'];
-			$this->login = $myrow['login'];
-			$this->password = $myrow['password'];
-			$this->salt = $myrow['salt'];
-			$this->email = $myrow['email'];
-			$this->mode = $myrow['mode'];
-			$this->lastdt = $myrow['lastdt'];
-			$this->active = $myrow['active'];
-			$this->telephonenumber = $myrow['telephonenumber'];
-			$this->jpegphoto = $myrow['jpegphoto'];
-			$this->homephone = $myrow['homephone'];
-			$this->fio = $myrow['fio'];
-			$this->tab_num = $myrow['code'];
-			$this->post = $myrow['post'];
-			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
-			return true;
+			$rez=$this->GetById($this->id);		
+			return $rez;
 		}
-		return false;
+		return $rez;
 	}
 
 	/**
@@ -217,6 +178,7 @@ class Tusers {
 	 */
 	function GetByRandomId($id) {
 		global $sqlcn,$cfg;
+		$rez=false;
 		$id = $sqlcn->escape($id);
 		//$result = $sqlcn->ExecuteSQL("SELECT * FROM users WHERE randomid='$id'");
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
@@ -226,25 +188,10 @@ class Tusers {
 				or die('Неверный запрос Tusers.GetByRandomId: '.mysqli_error($sqlcn->idsqlconnection));
 		while ($myrow = mysqli_fetch_array($result)) {
 			$this->id = $myrow['sid'];
-			$this->randomid = $myrow['randomid'];
-			$this->orgid = $myrow['orgid'];
-			$this->login = $myrow['login'];
-			$this->password = $myrow['password'];
-			$this->salt = $myrow['salt'];
-			$this->email = $myrow['email'];
-			$this->mode = $myrow['mode'];
-			$this->lastdt = $myrow['lastdt'];
-			$this->active = $myrow['active'];
-			$this->telephonenumber = $myrow['telephonenumber'];
-			$this->jpegphoto = $myrow['jpegphoto'];
-			$this->homephone = $myrow['homephone'];
-			$this->fio = $myrow['fio'];
-			$this->tab_num = $myrow['code'];
-			$this->post = $myrow['post'];
-			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
-			return true;
+			$rez=$this->GetById($this->id);		
+			return $rez;
 		}
-		return false;
+		return $rez;
 	}
 
 	/**
@@ -255,24 +202,17 @@ class Tusers {
 	 */
 	function GetByRandomIdNoProfile($id) {
 		global $sqlcn,$cfg;
+		$rez=false;
 		$id = $sqlcn->escape($id);
 		$result = $sqlcn->ExecuteSQL("SELECT * FROM users WHERE randomid='$id'")
 				or die('Неверный запрос Tusers.GetByRandomId: '.mysqli_error($sqlcn->idsqlconnection));
 		while ($myrow = mysqli_fetch_array($result)) {
 			$this->id = $myrow['id'];
-			$this->randomid = $myrow['randomid'];
-			$this->orgid = $myrow['orgid'];
-			$this->login = $myrow['login'];
-			$this->password = $myrow['password'];
-			$this->salt = $myrow['salt'];
-			$this->email = $myrow['email'];
-			$this->mode = $myrow['mode'];
-			$this->lastdt = $myrow['lastdt'];
-			$this->active = $myrow['active'];
-			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
-			return true;
+			$rez=$this->GetById($this->id);		
+			return $rez;
+
 		}
-		return false;
+		return $rez;
 	}
 
 	/**
@@ -336,6 +276,7 @@ class Tusers {
 	 */
 	function GetByCode($code) {
 		global $sqlcn,$cfg;
+		$rez=false;
 		$code = $sqlcn->escape($code);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*
 			FROM users_profile
@@ -344,24 +285,10 @@ class Tusers {
 				or die('Неверный запрос Tusers.GetByCode: '.mysqli_error($sqlcn->idsqlconnection));
 		while ($myrow = mysqli_fetch_array($result)) {
 			$this->id = $myrow['usersid'];
-			$this->randomid = $myrow['randomid'];
-			$this->orgid = $myrow['orgid'];
-			$this->login = $myrow['login'];
-			$this->password = $myrow['password'];
-			$this->salt = $myrow['salt'];
-			$this->email = $myrow['email'];
-			$this->mode = $myrow['mode'];
-			$this->lastdt = $myrow['lastdt'];
-			$this->active = $myrow['active'];
-			$this->telephonenumber = $myrow['telephonenumber'];
-			$this->jpegphoto = $myrow['jpegphoto'];
-			$this->homephone = $myrow['homephone'];
-			$this->fio = $myrow['fio'];
-			$this->post = $myrow['post'];
-			$this->sslusernum=$cfg->GetByParam("sslusernum-".$this->id);
-			return true;
+			$rez=$this->GetById($this->id);		
+			return $rez;
 		}
-		return false;
+		return $rez;
 	}
 	function GetBySSLNum($num){
 	    global $sqlcn,$cfg;
