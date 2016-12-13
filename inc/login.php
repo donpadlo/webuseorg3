@@ -35,7 +35,10 @@ if ($cfg->from_ssl==1){
     $seruser=trim(str_replace("serialNumber", "", $tmp[0]));
     $seruser=trim(str_replace("{", "", $seruser));
     //echo "!$seruser!";
-    $user->GetBySSLNum($seruser);
+    if ($user->GetBySSLNum($seruser)==true){
+	$user->UpdateLastdt($user->id);
+	UpdateAllCookies();
+    };
   };
 };
 

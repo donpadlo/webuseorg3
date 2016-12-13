@@ -18,13 +18,13 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12 col-md-4 col-sm-4">
-			<div class="panel panel-primary">
+			<div class="panel panel-default">
 				<div class="panel-heading">Пользователь</div>
 				<div class="panel-body">
 					<?php include_once('login.php'); // форма входа или профиль ?>
 				</div>
 			</div>
-			<div class="panel panel-primary">
+			<div class="panel panel-default">
 				<div class="panel-heading">Личное меню</div>
 				<div class="panel-body">
 					<?php include_once('memenu.php'); // личное меню ?>
@@ -34,7 +34,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 		<div class="col-xs-12 col-md-4 col-sm-4">
 			<?php if ($mhome->IsActive('news') == 1): ?>
 				<!-- [Новости] -->
-				<div class="panel panel-primary">
+				<div class="panel panel-default">
 					<div class="panel-heading">Новости,обьявления</div>
 					<div class="panel-body">
 						<div class="well" id="newslist"></div>    
@@ -49,7 +49,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 			<?php endif; ?>
 			<?php if ($mhome->IsActive('tasks') == 1): ?>
 				<!-- [Задачи] -->
-				<div class="panel panel-primary">
+				<div class="panel panel-default">
 					<div class="panel-heading">Постановка задачи</div>
 					<div class="panel-body">
 						<?php include_once('tasks.php'); ?>
@@ -58,7 +58,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 				<!-- [/Задачи] -->
 			<?php endif; ?>
 			<?php if ($mhome->IsActive('usersfaze') == 1): ?>
-				<div class="panel panel-primary">
+				<div class="panel panel-default">
 					<div class="panel-heading">Состояние сотрудников</div>
 					<div class="panel-body">
 						<div class="well" id="usersfazelist"></div>
@@ -68,7 +68,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 			<?php endif; ?>
 			<?php if ($mhome->IsActive('whoonline') == 1): ?>
 				<!-- [Кто онлайн] -->
-				<div class="panel panel-primary">
+				<div class="panel panel-default">
 					<div class="panel-heading">Кто онлайн</div>
 					<div class="panel-body">
 						<?php include_once('whoonline.php'); ?>
@@ -84,7 +84,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 				if ($stiker['title'] != ''):
 					?>
 					<!-- [Закреплённые новости] -->
-					<div class="panel panel-primary">
+					<div class="panel panel-default">
 						<div class="panel-heading">
 							<?php echo $stiker['title']; ?>
 						</div>
@@ -97,7 +97,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 			<?php endif; ?>
 			<?php if (($mhome->IsActive('lastmoved') == 1) && ($user->id != '')): ?>
 				<!-- [Последние перемещения ТМЦ] -->
-				<div class="panel panel-primary">
+				<div class="panel panel-default">
 					<div class="panel-heading">Последние перемещения ТМЦ</div>
 					<div class="panel-body">
 						<table id="tbl_move"></table>
@@ -108,7 +108,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 				<!-- [/Последние перемещения ТМЦ] -->
 			<?php endif; ?>
 			<?php if (($mhome->IsActive('commits-widget') == 1) && ($user->mode == 1)): ?>
-				<div class="panel panel-primary">
+				<div class="panel panel-default">
 					<div class="panel-heading">Разработка</div>
 					<div class="panel-body">
 						<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=donpadlo&repo=webuseorg3&limit=5" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="250px"></iframe>
