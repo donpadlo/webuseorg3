@@ -23,7 +23,7 @@ jQuery("#list3").jqGrid({
                 {name:'type',index:'type', width:55,editable:true,
                     edittype: "select",
                          editoptions: {
-                             value: "Мониторинг:Мониторинг;Логи:Логи"
+                             value: "Мониторинг:Мониторинг;Логи:Логи;Url:Url"
                          }
                 },
                 {name:'url',index:'url', width:255,editable:true},

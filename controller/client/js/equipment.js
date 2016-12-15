@@ -361,13 +361,13 @@ function LoadTable() {
 		}
 	});
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-book" aria-hidden="true"></i>',
-		title: 'Отчеты',
+		caption: '<i class="fa fa-print" aria-hidden="true"></i>',
+		title: 'Печатная версия списка',
 		buttonicon: 'none',
 		onClickButton: function() {
-			newWin2 = window.open('?content_page=report_tmc', 'printWindow2');
+			Printable();
 		}
-	});
+	});	
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
 		caption: '<i class="fa fa-floppy-o" aria-hidden="true"></i> xml',
 		title: 'Экспорт XML',
@@ -396,6 +396,46 @@ function GetListPlaces(orgid, placesid) {
 	$('#splaces').load(route + 'controller/server/getlistplaces.php&orgid=' + orgid + '&placesid=' + placesid);
 }
 
+function Printable(){
+    start=1;
+    if (multiselect===true){start=2};
+    var newWin3=window.open('','Печатная форма','');
+    newWin3.focus();
+    newWin3.document.write($("#idheader").html());
+    newWin3.document.write('<body>');    
+    //newWin3.document.write($("#gview_tbl_equpment").html());    
+    colNames=jQuery("#tbl_equpment").jqGrid('getGridParam',"colNames"); //названия колонок
+    colModel=jQuery("#tbl_equpment").jqGrid('getGridParam',"colModel"); //параметры колонок
+    dataids=$("#tbl_equpment").getDataIDs(); //идентификаторы данных в таблице
+    //zxc=$("#tbl_equpment").getRowData("400"); данные
+    
+    //1) Рисуем табличку
+    table='<table class="table table-striped table-bordered table-condensed">';
+    table=table+'<thead><tr>';
+    for(i=start;i<colModel.length-1;i++){
+	//если колонка не скрыта - рисуем заголовок
+	if (colModel[i].hidden==false){
+	    table=table+'<th>'+colNames[i]+'</th>';
+	};
+    };
+    table=table+'</tr></thead>';
+    //заполняем данными
+    for(z=0;z<dataids.length;z++){
+	dat=$("#tbl_equpment").getRowData(dataids[z]); //данные
+	table=table+'<tr>';
+	for(i=start;i<colModel.length-1;i++){
+	    if (colModel[i].hidden==false){
+		table=table+'<td>'+dat[colModel[i].name]+'</td>';
+		//console.log(dat[i]);
+	    };
+	};
+	table=table+'</tr>';
+    };
+    
+    table=table+"</table>";
+    newWin3.document.write(table);
+    newWin3.document.write('</body></html>');    
+};
 $(document).ready(function() {
 	for (var selector in config) {
 		$(selector).chosen(config[selector]);
