@@ -144,7 +144,7 @@ class Tusers {
 		$idz = $sqlcn->escape($idz);
 		$result = $sqlcn->ExecuteSQL("SELECT users_profile.*, users.*,
 			users.id AS sid FROM users
-			INNER JOIN users_profile ON users_profile.usersid=users.id
+			left JOIN users_profile ON users_profile.usersid=users.id
 			WHERE users.id ='$idz'")
 				or die('Неверный запрос Tusers.GetById: '.mysqli_error($sqlcn->idsqlconnection));
 		while ($myrow = mysqli_fetch_array($result)) {
@@ -250,8 +250,7 @@ class Tusers {
 		$rid = $this->randomid;
 		$post = $this->post;
 
-		$zx = new Tusers;
-
+		$zx = new Tusers;		 
 		if ($zx->GetByRandomIdNoProfile($rid)) {
 			// добавляю профиль
 			$sql = "INSERT INTO users_profile (id, usersid, fio, code,
