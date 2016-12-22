@@ -59,6 +59,10 @@ if ($ssl_pem!=""){
 if (!$socket) {die("$errstr ($errno)\n");};
 
 echo "--демон чат сервера стартовал $ip_chat_server:$ip_chat_port \n";
+// $user_array
+// $user_array[idconnect]["user_id"]=user_id;
+// $user_array[idconnect]["connect"]=$connect
+
 $user_array = array();
 $connects = array();
 while (true) {
@@ -174,10 +178,14 @@ global $sqlcn,$user_array,$connects;
 #echo "Текущие соединения до удаления:";
 #var_dump($user_array);
 //если в нашем массиве есть соединение, которого быть не должно - удаляем его
-    $id=@$user_array[$connect]; //получили пользователя, у которого нужно убить соединение
-    unset($user_array[$connect]); // убираем...
+    $id=$user_array[intval($connect)]["user_id"]; //получили пользователя, у которого нужно убить соединение
+    unset($user_array[intval($connect)]); // убираем...
     //если больше соединений с этим пользователем нет, то ставим ему "оффлайн"
-      if (in_array($id, $user_array)==false){
+    $flag=0;
+    foreach ($user_array as $infc) {
+	if ($infc["user_id"]==$id){$flag=1;};
+    };
+      if ($flag==0){
 	    $sql="update chat_users set online=0,lastping=now() where id=$id";
 #	    echo "$sql\n";
 	    $result = $sqlcn->ExecuteSQL($sql);
@@ -258,11 +266,21 @@ function ReadAllMessages($to_user_id,$from_user_id){
     echo "$sql\n";
     $result = $sqlcn->ExecuteSQL($sql) or die('Не могу обновить статус сообщений (ReadAllMessages)!: '.mysqli_error($sqlcn->idsqlconnection));    
 };
+function RefreshStatusesBase(){
+ global $sqlcn,$user_array;        
+    foreach ($user_array as $value) {
+	$uid=$value["user_id"];
+	$sql="update chat_users set online=1 where id=$uid";
+	$result = $sqlcn->ExecuteSQL($sql) or die('Не могу обновить статусы: '.mysqli_error($sqlcn->idsqlconnection));
+    };
+};
 function GetContactList($connect){
  global $sqlcn,$user_array;    
+    // перед тем как отдать - обновим ка все статусы в базе...
+    RefreshStatusesBase();
     echo "$connect\n";
     var_dump($user_array);
-    $me_id=@$user_array[$connect]; //самого себя не отсылаем
+    $me_id=$user_array[intval($connect)]["user_id"]; //самого себя не отсылаем
     $cnt_list=[];	
     if ($me_id!=""){    	
 	    //online
@@ -321,11 +339,21 @@ function GetContactList($connect){
 //обрабатываем общие для всех команды
 function ParseCommon($message,$connect){
     global $connects,$sqlcn,$user_array;
+    RefreshStatusesBase();
     if (isset($message->command)){
+
+	//команда на закрытие соединения
+	if ($message->command=="showonlinetoconsole"){
+	    echo "################# КТО ОНЛАЙН ##############################\n";
+	    var_dump($user_array);
+	    echo "###########################################################\n";
+	};
+	
 	//команда на закрытие соединения
 	if ($message->command=="close"){
 	    unset($connects[ array_search($connect, $connects) ]);
 	    onClose($connect);//вызываем пользовательский сценарий	
+	    RefreshStatusesBase();
 	};
 	//получить историю переписки
 	if ($message->command=="GetHistory"){
@@ -354,11 +382,11 @@ function ParseCommon($message,$connect){
 		echo "--перебираем список соединений получателя. Ищем получателя $t\n";
 		var_dump($connects);
 		var_dump($user_array);
-		foreach ($user_array as $key => $value) {
-		  if ($t==$value){
-		    echo "---этому отправим: $key,$value\n";  
+		foreach ($user_array as $value) {
+		  if ($t==$value["user_id"]){
+		    echo "---этому отправим: ".$value['user_id']."\n";  
 		    foreach ($connects as $cvalue) {
-			if (intval($cvalue)==$key){
+			if (intval($cvalue)==intval($value['connect'])){
 			    $exmessage=[];
 			    $exmessage["command"]="Message";
 			    $exmessage["from_user_id"]=$f;
@@ -376,11 +404,11 @@ function ParseCommon($message,$connect){
 		$from_user_id=$message->from_user_id; //кому он прислал		
 		$to_user_id=$message->to_user_id; //кому он прислал		
 		//и отправляем сообщение тому кому послано
-		foreach ($user_array as $key => $value) {
-		  if ($to_user_id==$value){
-		    echo "---этому отправим: $key,$value\n";  
+		foreach ($user_array as $value) {
+		  if ($to_user_id==$value["user_id"]){
+		    echo "---этому отправим: ".$value['user_id']."\n";   
 		    foreach ($connects as $cvalue) {
-			if (intval($cvalue)==$key){
+			if (intval($cvalue)==intval($value['connect'])){
 			    $exmessage=[];
 			    $exmessage["command"]="textwrite";
 			    $exmessage["to_user_id"]=$to_user_id;			    		
@@ -395,7 +423,8 @@ function ParseCommon($message,$connect){
 	//делаем соответствие id пользователя и его connect, заодно помечаем что юзер "онлайн"
 	//ну и до кучи сообщаем если для него не прочиатнные сообщения?
 	if ($message->command=="iamonline"){		  
-		@$user_array[$connect]=$message->chat_user_id;
+		$user_array[intval($connect)]["user_id"]=$message->chat_user_id;
+		$user_array[intval($connect)]["connect"]=$connect;
 		OnlineStatus($message->chat_user_id);
 		$exmessage=[];
 		$exmessage["command"]="iamonline";

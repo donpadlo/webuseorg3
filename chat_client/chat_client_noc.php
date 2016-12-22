@@ -390,3 +390,9 @@ function NoWrite(to_id){
     ht=ht.replace('<i class="fa fa-pencil" aria-hidden="true"></i>',"");
     $('#chatuser'+to_id).html(ht);         
 };    
+
+function SendShowOnline(){
+    	    msg=[];
+	    msg={command:"showonlinetoconsole",from_user_id:chat_user_id,to_user_id:opponent_id};
+	    chatsocket.send(JSON.stringify(msg));
+}; 
