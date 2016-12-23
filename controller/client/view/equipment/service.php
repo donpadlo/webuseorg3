@@ -51,7 +51,7 @@ if ($step=='edit'){
 ?>
  <script>
  $(function(){
-        var field = new Array("dtpost","dt","kntid" );//поля обязательные
+        var field = new Array("dtpost","kntid" );//поля обязательные
         $("form").submit(function() {// обрабатываем отправку формы
             var error=0; // индекс ошибки
             $("form").find(":input").each(function() {// проверяем каждое поле в форме

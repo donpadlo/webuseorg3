@@ -33,8 +33,12 @@ if ($user->TestRoles("1,4,5,6")==true){
   if ($step=='add'){
 	$dtpost=DateToMySQLDateTime2($_POST["dtpost"]." 00:00:00");
 	if ($dtpost==""){$err[]="Не выбрана дата!";};   
-	$dt=DateToMySQLDateTime2($_POST["dt"]." 00:00:00");
-	if ($dt==""){$err[]="Не выбрана дата!";};   
+	$dt=$_POST["dt"];
+	if ($dt==""){
+	    $dt="9999-12-01 00:00:00";	    
+	} else {
+	    $dt=DateToMySQLDateTime2($dt." 00:00:00");
+	};
 	$kntid=$_POST["kntid"];
 	if ($kntid==""){$err[]="Не выбран контрагент!";};   
         if (isset($_POST["cst"]))        {$cst=$_POST["cst"];}           else {$cst="";};

@@ -55,6 +55,7 @@ console.log("--инициализация чата..");
 opponent_id="";	//кто выбран в списке контак листов
 cntwrite=0;	//счетчик нажатий на клавиши. Каждое 5 нажатие - сообщаем что что-то пишем..
 hold = "";
+blinked=0; //признак "мерцания"
 console.log('--загружаем звуки');
 $( document ).ready(function() {    
     var jqxhr = $.getJSON( "chat_client/sounds2.json", function() {  
@@ -205,6 +206,12 @@ function RefreshContactList(cnt_list){
  };
  //beep("On");
 };
+function BlinkStop(){
+	blinkTitleStop();
+	blinkTitle("<?php echo $cfg->sitename ?>","<?php echo $cfg->sitename ?>",1);    
+	blinkTitleStop();
+	blinked=0;
+};
 function ReadAllMessages(){
 	msg=[];
 	msg={"to_user_id":chat_user_id,"from_user_id":opponent_id,command:"ReadAllMessages"};
@@ -213,6 +220,7 @@ function ReadAllMessages(){
 	blinkTitleStop();
 	blinkTitle("<?php echo $cfg->sitename ?>","<?php echo $cfg->sitename ?>",1);    
 	blinkTitleStop();
+	blinked=0;
 	
 };
 //кого выбрали из списка контактов
@@ -235,6 +243,7 @@ function ChangeToId(id,chlogin){
 };
 
 function blinkTitle(msg1, msg2, delay, isFocus, timeout) {
+  if (blinked==0)  {
     if (isFocus == null) {isFocus = false;}
     if (timeout == null) {timeout = false;}
     if(timeout){setTimeout(blinkTitleStop, timeout);}
@@ -256,9 +265,12 @@ function blinkTitle(msg1, msg2, delay, isFocus, timeout) {
             }
         }, delay);
     }
+    blinked=1;
+   };
 }
 function blinkTitleStop() {
     clearInterval(hold);
+    blinked=0;
 }
 function beep(tp) {
     if (tp=="New"){	
@@ -330,6 +342,7 @@ function RedrawHistory(ha){
     $('#chat_message_box').scrollTop($('#chat_message_box')[0].scrollHeight);
     //помечаем, что все сообщения прочитаны..
     ReadAllMessages();
+    BlinkStop();
 };
 function NoMessage(to_id){
   ht=$('#chatuser'+to_id).html();  
