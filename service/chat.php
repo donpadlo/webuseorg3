@@ -342,6 +342,27 @@ function ParseCommon($message,$connect){
     RefreshStatusesBase();
     if (isset($message->command)){
 
+	//команда не мигать другим вкладкам браузер
+	if ($message->command=="blinkstop"){
+		$f=$message->from_user_id; //от кого сообщение?
+		// Перебираем все его активные соединения
+		foreach ($user_array as $value) {
+		  if ($f==$value["user_id"]){
+		    echo "---этому отправим: ".$value['user_id']."\n";  
+		    foreach ($connects as $cvalue) {
+			if (intval($cvalue)==intval($value['connect'])){
+			    $exmessage=[];
+			    $exmessage["command"]="StopBlink";
+			    echo "---ушло:\n";
+			    var_dump($exmessage);
+			    fwrite($cvalue, encodeSocket(json_encode($exmessage)));			  
+			};
+		    };
+		  };
+		};	    
+	};
+	
+	
 	//команда на закрытие соединения
 	if ($message->command=="showonlinetoconsole"){
 	    echo "################# КТО ОНЛАЙН ##############################\n";

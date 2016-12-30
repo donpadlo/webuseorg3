@@ -23,8 +23,7 @@ jQuery('#tbl_move').jqGrid({
 	viewrecords: true,
 	height: 200,
 	sortorder: 'desc',
-	editurl: route + 'controller/server/equipment/getmoveinfo.php?eqid=',
-	caption: 'История перемещений'
+	editurl: route + 'controller/server/equipment/getmoveinfo.php?eqid='	
 });
 jQuery('#tbl_move').jqGrid('destroyGroupHeader');
 jQuery('#tbl_move').jqGrid('setGroupHeaders', {

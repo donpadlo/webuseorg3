@@ -131,6 +131,12 @@ function parsechat(event){
 	chatsocket.send(JSON.stringify(msg));    	
 	msg=[];
     };    
+    //пришло сообщение перестать мигать
+    if (msg["command"]=="StopBlink"){
+	blinkTitleStop();
+	blinkTitle("<?php echo $cfg->sitename ?>","<?php echo $cfg->sitename ?>",1);    
+	blinkTitleStop();	
+    };
     //пришло сообщение об обновлении контакт-листа
     if (msg["command"]=="GetContactList"){
 	console.log("--пришел контакт лист ",msg["result"]);
@@ -211,15 +217,19 @@ function BlinkStop(){
 	blinkTitle("<?php echo $cfg->sitename ?>","<?php echo $cfg->sitename ?>",1);    
 	blinkTitleStop();
 	blinked=0;
+	//сообщаем другим вкладкам что мигать уже не нужно..
+	msg=[];
+	msg={command:"blinkstop",from_user_id:chat_user_id};
+	console.log("--отослали команду -не мигать-:",JSON.stringify(msg));
+	chatsocket.send(JSON.stringify(msg));
+	msg=[];	
 };
 function ReadAllMessages(){
 	msg=[];
 	msg={"to_user_id":chat_user_id,"from_user_id":opponent_id,command:"ReadAllMessages"};
 	console.log("---отсылаем на сервер текст:",JSON.stringify(msg));
 	chatsocket.send(JSON.stringify(msg));    
-	blinkTitleStop();
-	blinkTitle("<?php echo $cfg->sitename ?>","<?php echo $cfg->sitename ?>",1);    
-	blinkTitleStop();
+	BlinkStop();
 	blinked=0;
 	
 };

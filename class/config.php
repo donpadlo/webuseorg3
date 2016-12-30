@@ -83,9 +83,6 @@ class Tconfig {
 			$this->urlsite = $myrow['urlsite'];
 			$this->from_ssl=$this->GetByParam("config-from-ssl-param");
 			$this->SSL_SERVER_M_SERIAL=$this->GetByParam("config-SSL-SERVER-M-SERIAL");
-			if (isset($_COOKIE['stl'])) {
-                         $this->style=$_COOKIE['stl'];
-                        } else {$this->style="Bootstrap";};
 
 			if (isset($_COOKIE['fontsize'])) {
                          $this->fontsize=$_COOKIE['fontsize'];
