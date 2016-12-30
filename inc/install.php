@@ -31,6 +31,11 @@ if (mysqli_connect_errno()) {
 	echo "<div class='alert alert-danger'>Ошибка БД: $serr</div>";
 	die();
 }
+
+mysqli_query($this->idsqlconnection, "SET NAMES $codemysql");
+mysqli_query($this->idsqlconnection, "SET sql_mode=''");
+mysqli_set_charset($this->idsqlconnection, "$codemysql");
+
 $handle = file_get_contents(WUO_ROOT.'/webuser.sql', 'r');
 if ($handle == false) {
 	echo "<div class='alert alert-danger'>Ошибка открытия файла: webuser.sql</div>";

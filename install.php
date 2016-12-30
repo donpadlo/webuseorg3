@@ -16,6 +16,7 @@ if (file_exists(WUO_ROOT.'/config.php')) {
 
 $action = (isset($_GET['action'])) ? $_GET['action'] : '';
 if ($action == 'install') {
+	$codemysql = 'utf8';
 	include_once(WUO_ROOT.'/inc/install.php');
 	die();
 }
