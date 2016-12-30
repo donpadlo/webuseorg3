@@ -32,9 +32,9 @@ if (mysqli_connect_errno()) {
 	die();
 }
 
-mysqli_query($this->idsqlconnection, "SET NAMES $codemysql");
-mysqli_query($this->idsqlconnection, "SET sql_mode=''");
-mysqli_set_charset($this->idsqlconnection, "$codemysql");
+mysqli_query($idsqlconnection, "SET NAMES $codemysql");
+mysqli_query($idsqlconnection, "SET sql_mode=''");
+mysqli_set_charset($idsqlconnection, "$codemysql");
 
 $handle = file_get_contents(WUO_ROOT.'/webuser.sql', 'r');
 if ($handle == false) {
