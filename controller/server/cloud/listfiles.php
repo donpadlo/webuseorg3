@@ -50,18 +50,18 @@ if ($oper == '') {
 			case 'jpeg':
 			case 'jpg':
 			case 'png':
-				$ico = '<i class=\"fa fa-file-image-o\" aria-hidden=\"true\"></i>';
+				$ico = '<i class="fa fa-file-image-o" aria-hidden="true"></i>';
 				break;
 			case 'xls':
 			case 'ods':
-				$ico = '<i class=\"fa a-file-excel-o\" aria-hidden=\"true\"></i>';
+				$ico = '<i class="fa a-file-excel-o" aria-hidden="true"></i>';
 				break;
 			case 'doc':
 			case 'odt':
-				$ico = '<i class=\"fa fa-file-word-o\" aria-hidden=\"true\"></i>';
+				$ico = '<i class="fa fa-file-word-o" aria-hidden="true"></i>';
 				break;
 			default:
-				$ico = '<i class=\"fa fa-file-pdf-o\" aria-hidden=\"true\"></i>';
+				$ico = '<i class="fa fa-file-pdf-o" aria-hidden="true"></i>';
 		}
 		//$ico = "<a target='_blank' href='files/".$row['filename']."'>".$ico."</a>";
 		$ico = '<a target="_blank" href="index.php?route=/controller/server/cloud/download.php?id='.$row['id'].'">'.$ico.'</a>';

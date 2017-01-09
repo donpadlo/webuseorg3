@@ -39,8 +39,8 @@ if (isset($_POST["comment"]))        {$comment= $_POST['comment'];} else {$comme
 
 $where=" WHERE kntid='$idknt'";
 
-if ($oper=='')
-{
+if ($oper==''){
+    if ($user->TestRoles('1,3')){
 	if(!$sidx) $sidx =1;
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count FROM contract".$where);
 	$row = mysqli_fetch_array($result);
@@ -70,20 +70,21 @@ if ($oper=='')
 	    $i++;
 	}
 	echo json_encode($responce);
+    };
 };
-if ($oper=='edit')
-{
+if ($oper=='edit'){
+    if ($user->TestRoles('1,5')){
         if ($work=='Yes'){$work='1';} else {$work='0';};
         $datestart=DateToMySQLDateTime2($datestart);
         $dateend=DateToMySQLDateTime2($dateend);
     	$SQL = "UPDATE contract SET num='$num',name='$name',comment='$comment',datestart='$datestart',dateend='$dateend',work='$work' WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по договору!".mysqli_error($sqlcn->idsqlconnection));
         echo "!$SQL!";
-
+    };
 };
 
-if ($oper=='add')
-{
+if ($oper=='add'){
+    if ($user->TestRoles('1,4')){
         if ($work=='Yes'){$work='1';} else {$work='0';};
         $datestart=DateToMySQLDateTime2($datestart);
         $dateend=DateToMySQLDateTime2($dateend);
@@ -91,13 +92,13 @@ if ($oper=='add')
         //echo "!$SQL!";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу добавить данные по договору!".mysqli_error($sqlcn->idsqlconnection));
         
-
+    };
 };
-if ($oper=='del')
-{
+if ($oper=='del'){
+    if ($user->TestRoles('1,6')){
     	$SQL = "UPDATE contract SET active=not active WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не смог пометить на удаление договор!".mysqli_error($sqlcn->idsqlconnection));
-
+    };
 };
 
 

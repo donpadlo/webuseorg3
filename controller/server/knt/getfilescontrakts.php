@@ -33,8 +33,8 @@ if (isset($_POST["id"]))        {$id = $_POST['id'];} else {$id="";};
 if (isset($_GET["idcontract"]))        {$idcontract= $_GET['idcontract'];} else {$idcontract="";};
 $where=" WHERE idcontract='$idcontract'";
 
-if ($oper=='')
-{
+if ($oper==''){
+    if ($user->TestRoles('1,3')){
 	if(!$sidx) $sidx =1;
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count FROM files_contract".$where);
 	$row = mysqli_fetch_array($result);
@@ -61,11 +61,13 @@ if ($oper=='')
 	    $i++;
 	}
 	echo json_encode($responce);
+    };
 };
-if ($oper=='del')
-{
+if ($oper=='del'){
+    if ($user->TestRoles('1,6')){
        	$SQL = "DELETE FROM files_contract WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не смог удалить файл!".mysqli_error($sqlcn->idsqlconnection));    
+    };
 };
 
 ?>

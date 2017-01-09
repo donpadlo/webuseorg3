@@ -54,8 +54,8 @@ $flt=json_decode($filters,true);
 	};
 	if ($where!=""){$where="WHERE ".$where;};
 
-if ($oper=='')
-{
+if ($oper=='') {
+    if ($user->TestRoles('1,3')){
 	if(!$sidx) $sidx =1;
 	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count FROM knt");
 	$row = mysqli_fetch_array($result);
@@ -83,29 +83,33 @@ if ($oper=='')
 	    $i++;
 	}
 	echo json_encode($responce);
+    };
 };
-if ($oper=='edit')
-{
+if ($oper=='edit'){
+    if ($user->TestRoles('1,5')){
         if ($bayer=='Yes') {$bayer=1;} else {$bayer=0;};
         if ($supplier=='Yes') {$supplier=1;} else {$supplier=0;};
         if ($dog=='Yes') {$dog=1;} else {$dog=0;};
 	$SQL = "UPDATE knt SET name='$name',comment='$comment',INN='$INN',KPP='$KPP',bayer='$bayer',supplier='$supplier',dog='$dog',ERPCode='$ERPCode' WHERE id='$id'";
         echo "!$SQL!";        
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по контрагенту!".mysqli_error($sqlcn->idsqlconnection));
+    };
 };
-if ($oper=='add')
-{
+if ($oper=='add'){
+    if ($user->TestRoles('1,4')){
         if ($bayer=='Yes') {$bayer=1;} else {$bayer=0;};
         if ($supplier=='Yes') {$supplier=1;} else {$supplier=0;};
         if ($dog=='Yes') {$dog=1;} else {$dog=0;};    
 	$SQL = "INSERT INTO knt (id,name,INN,KPP,bayer,supplier,dog,ERPCode,comment,active) VALUES (null,'$name','$INN','$KPP','$bayer','$supplier','$dog','$ERPCode','$comment',1)";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу добавить контрагента!".mysqli_error($sqlcn->idsqlconnection));
+    };	
 
 };
-if ($oper=='del')
-{
+if ($oper=='del'){
+    if ($user->TestRoles('1,6')){
 	$SQL = "UPDATE knt SET active=not active WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу обновить данные по контрагенту!".mysqli_error($sqlcn->idsqlconnection));
+    };
 };
 
 ?>

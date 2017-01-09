@@ -6,7 +6,7 @@
 
 echo "<link rel='stylesheet' type='text/css' href='controller/client/themes/$cfg->theme/css/upload.css'>";
 
-if ($user->mode==1){
+if ($user->TestRoles('1,3,4,5,6')){
 ?>
 	<script src="js/FileAPI/FileAPI.min.js"></script>
 	<script src="js/FileAPI/FileAPI.exif.js"></script>
