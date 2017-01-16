@@ -24,11 +24,12 @@ class Tmenu {
 	 * @param type $uid     Некий идетификатор
 	 * @param type $path    Путь для запуска скрипта (подставляется как content_page=$path)
 	 */
-	function Add($parents, $name, $comment, $sort, $uid, $path) {
+	function Add($parents,$ico, $name, $comment, $sort, $uid, $path) {
 		// Если корневой уровень меню - то добавляем его   
 		if ($parents == 'main') {
 			$this->count++;
 			$this->arr_menu[$this->count]['sort'] = $sort;
+			$this->arr_menu[$this->count]['ico'] = $ico;
 			$this->arr_menu[$this->count]['id'] = $this->count;
 			$this->arr_menu[$this->count]['parents'] = 'main';
 			$this->arr_menu[$this->count]['name'] = $name;
@@ -41,6 +42,7 @@ class Tmenu {
 				if ($parents == $value['uid']) {
 					$this->count++;
 					$this->arr_menu[$this->count]['sort'] = $sort;
+					$this->arr_menu[$this->count]['ico'] = $ico;
 					$this->arr_menu[$this->count]['id'] = $this->count;
 					$this->arr_menu[$this->count]['parents'] = $value['uid'];
 					$this->arr_menu[$this->count]['name'] = $name;

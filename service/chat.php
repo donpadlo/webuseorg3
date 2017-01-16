@@ -279,7 +279,7 @@ function GetContactList($connect){
     // перед тем как отдать - обновим ка все статусы в базе...
     RefreshStatusesBase();
     echo "$connect\n";
-    var_dump($user_array);
+    //var_dump($user_array);
     $me_id=$user_array[intval($connect)]["user_id"]; //самого себя не отсылаем
     $cnt_list=[];	
     if ($me_id!=""){    	

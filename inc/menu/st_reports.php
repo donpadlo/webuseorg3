@@ -9,7 +9,7 @@
 
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 
-$this->Add("main","<span><i class='fa fa-bar-chart fa-fw'> </i>Отчеты</span>","Отчеты",3,"reports","");
+$this->Add("main","","<span><i class='fa fa-bar-chart fa-fw'> </i>Отчеты</span>","Отчеты",3,"reports","");
 
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 // регистрируем модуль. Если он уже зарегистрирован, то повторно он не зарегистрируется
@@ -22,20 +22,20 @@ $md->Register("zabbix-mon", "Мониторинг dashboard серверов Zab
 //$md->Activate("ping")
 
 if ($md->IsActive("workandplans")==1) {
-  $this->Add("reports","Оперативная обстановка","Оперативная обстановка",3,"reports/workandplans","workandplans");    
-  $this->Add("reports","Остатки продукции","Остатки продукции",3,"reports/sklad","sklad");    
-  $this->Add("reports","Остатки комплектующих","Остатки комплектующих",3,"reports/kmp2","operreports/kmp2");    
-  $this->Add("reports","Просроченные сертификаты","Просроченные сертификаты",3,"reports/sert","operreports/sert");    
+  $this->Add("reports","","Оперативная обстановка","Оперативная обстановка",3,"reports/workandplans","workandplans");    
+  $this->Add("reports","","Остатки продукции","Остатки продукции",3,"reports/sklad","sklad");    
+  $this->Add("reports","","Остатки комплектующих","Остатки комплектующих",3,"reports/kmp2","operreports/kmp2");    
+  $this->Add("reports","","Просроченные сертификаты","Просроченные сертификаты",3,"reports/sert","operreports/sert");    
 };
 
 if ($md->IsActive("worktime")==1) {
-    $this->Add("reports","График работы","График работы",3,"reports/users_info","users_info");    
+    $this->Add("reports","","График работы","График работы",3,"reports/users_info","users_info");    
 };
 if ($md->IsActive("zabbix-mon")==1) {
-    $this->Add("reports","<i class='fa fa-plug fa-fw'> </i>Dashboard Zabbix","Dashboard Zabbix",3,"reports/zabbix_mon","zabbix_mon");        
+    $this->Add("reports","<i class='fa fa-plug fa-fw'> </i>","Dashboard Zabbix","Dashboard Zabbix",3,"reports/zabbix_mon","zabbix_mon");        
 };
-$this->Add("reports","<i class='fa fa-map fa-fw'> </i>Размещение ТМЦ на карте","Размещение ТМЦ на карте",3,"reports/map","map");        
-$this->Add("reports","<i class='fa fa-empire fa-fw'> </i>Имущество","Отчеты по имуществу",3,"reports/report_tmc","report_tmc");        
+$this->Add("reports","<i class='fa fa-map fa-fw'> </i>","Размещение ТМЦ на карте","Размещение ТМЦ на карте",3,"reports/map","map");        
+$this->Add("reports","<i class='fa fa-empire fa-fw'> </i>","Имущество","Отчеты по имуществу",3,"reports/report_tmc","report_tmc");        
 
 unset($md);
 /*

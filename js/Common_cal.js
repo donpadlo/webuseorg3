@@ -78,6 +78,7 @@ function getiev() {
     else { v = -1; }
     return v;
 }
+
 $(document).ready(function() {
     var v = getiev()
     if (v > 0) {

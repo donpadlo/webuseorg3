@@ -35,6 +35,6 @@ if ($md->IsActive("chat")==1) {
  $result = $sqlcn->ExecuteSQL($sql);
  $sql="ALTER TABLE `chat_users` ADD `lastping` DATETIME NOT NULL AFTER `online`;";
  $result = $sqlcn->ExecuteSQL($sql);
- $this->Add("config","<i class='fa fa-paw fa-fw'> </i>Настройка Chat","Чат поддержки",3,"config/chat_config","chat_config");        
+ $this->Add("config","<i class='fa fa-paw fa-fw'> </i>","Настройка Chat","Чат поддержки",3,"config/chat_config","chat_config");        
 };
 unset($md);

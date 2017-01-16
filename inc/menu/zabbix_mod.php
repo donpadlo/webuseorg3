@@ -8,6 +8,6 @@
  */
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 if ($md->IsActive("zabbix-mon")==1) {
- $this->Add("config","Настройка серверов Zabbix","Dashboard Zabbix",3,"config/zabbix_mod_config","zabbix_mod_config");        
+ $this->Add("config","","Настройка серверов Zabbix","Dashboard Zabbix",3,"config/zabbix_mod_config","zabbix_mod_config");        
 };
 unset($md);

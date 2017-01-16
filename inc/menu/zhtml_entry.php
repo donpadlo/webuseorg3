@@ -10,7 +10,7 @@
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 $md->Register("htmlentry", "Произвольный html код на странице перед футером", "Грибов Павел"); 
 if ($md->IsActive("htmlentry")==1) {        
- $this->Add("config", "<i class='fa fa-html5 fa-fw'> </i>Произвольный html", "Вставляет произвольный html код перед футером", 0, "config/htmlentry","htmlentry");                    
+ $this->Add("config","<i class='fa fa-html5 fa-fw'> </i>", "Произвольный html", "Вставляет произвольный html код перед футером", 0, "config/htmlentry","htmlentry");                    
 };
 unset($md);
 ?>

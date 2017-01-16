@@ -1159,6 +1159,24 @@ if ($cfg->version == '3.76') {
 	UpdateVer($vr, '169');
 }
 
+// Обновляем до 3.81
+if ($cfg->version == '3.80') {
+	$vr = '3.81';	
+	$log = '- добавляю таблицу для сохранения "быстрого меню" пользователя';
+	$sql = 'CREATE TABLE `users_quick_menu` ( `id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `url` VARCHAR(255) NOT NULL , `userid` INT NOT NULL , PRIMARY KEY (`id`))';
+	ExecSQL($log, $sql, '170');	
+	UpdateVer($vr, '170');
+
+	$sql = 'ALTER TABLE `users_quick_menu` CHANGE `title` `title` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;';
+	ExecSQL($log, $sql, '171');	
+	UpdateVer($vr, '171');
+
+	$sql = 'ALTER TABLE `users_quick_menu` ADD `ico` VARCHAR(255) NOT NULL AFTER `userid`;';
+	ExecSQL($log, $sql, '172');	
+	UpdateVer($vr, '172');	
+}
+
+
 echo 'Обновление закончено.<br>';
 echo 'Если сообщений об ошибках нет, удалите файл update.php.<br>';
 ?>

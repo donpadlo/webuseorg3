@@ -57,7 +57,7 @@ if(isset($_GET["id"])){
     <link rel="stylesheet" href="/controller/client/themes/<?php echo "$cfg->theme"; ?>/css/dropdown.css">
     <link rel="stylesheet" href="/controller/client/themes/<?php echo "$cfg->theme"; ?>/css/colorselect.css">            
         
-    <script type='text/javascript' src='/js/Common.js'></script>
+    <script type='text/javascript' src='/js/Common_cal.js'></script>
     <script type='text/javascript' src='/js/jquery.alert.js'></script>
     <script type='text/javascript' src='/js/wdCalendar_lang_US.js'></script>
     <script type='text/javascript' src='/js/jquery.calendar.js'></script>

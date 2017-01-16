@@ -15,7 +15,14 @@
 	<meta name="description" content="Учет ТМЦ в организации и другие плюшки">
 	<meta name="author" content="(c) 2011-2016 by Gribov Pavel">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php echo $cfg->sitename ?></title>
+	<title><?php 
+	    if (is_array($cfg->navbar)==true){
+		if (count($cfg->navbar)>1){
+		echo $cfg->navbar[count($cfg->navbar)-1];} else {
+		    echo $cfg->sitename;
+		};
+	    } else {echo $cfg->sitename;};
+		?></title>
 	<meta name="generator" content="yarus">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -97,6 +104,7 @@
 			$mm= $cfg->quickmenu[$i];
 			echo "$mm";
 		};
+		echo "<div id='quick_div'></div>";	
 ?>		
 	</div>
     

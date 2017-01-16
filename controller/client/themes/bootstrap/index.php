@@ -6,6 +6,7 @@
 
 //печатня форма?
 if (isset($_GET["printable"])==true){$printable=$_GET["printable"];} else {$printable=false;};
+
 //есть альтернативный заголовок?
 if (isset($alterhead)){include_once($alterhead);} else include_once("header.php");     // заголовок страницы или из переменной alterhead или стандарный
 

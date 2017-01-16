@@ -1,14 +1,33 @@
-    function GetCookieJS(name) {
+function AddToNavBarQuick(title){
+    $.post(route+"controller/server/common/save_quick.php",{
+		title:title,
+		url:window.location.href,	
+		ico:current_page_ico
+	    }, function(data){
+		$().toastmessage('showWarningToast', data);
+		QuickMenuRedraw();
+    });       
+};
+
+function GetCookieJS(name) {
 	var matches = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
 	return matches ? decodeURIComponent(matches[1]) : undefined;
     };
-    function SaveCookiesJS(key,result,days){
+function SaveCookiesJS(key,result,days){
 	var exdate=new Date();
         exdate.setDate(exdate.getDate() + days);        
         document.cookie=key+"="+result+"; path=/; expires="+exdate.toUTCString();	
 	$.cookie(key,result);
     };
+function QuickMenuRedraw(){
+      $.get(route+'controller/server/common/quickmenuredraw.php', function( data ) {
+          $("#quick_div" ).html(data);                            
+      });    
+};    
 $(function() {         
+    //рисуем "быстрое меню"
+    QuickMenuRedraw();
+    //
     $.jgrid.extend({
 	setColWidth: function (iCol, newWidth, adjustGridWidth) {
 	    return this.each(function () {

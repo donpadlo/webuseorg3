@@ -3,11 +3,12 @@ if (count($cfg->navbar)>0){
 ?>
 <ul class="breadcrumb">
 <?php
- for ($i=0;$i<count($cfg->navbar);$i++){
+ for ($i=count($cfg->navbar)-1;$i>=0;$i--){
    $ntxt=$cfg->navbar[$i];  
    echo "<li>$ntxt <span class='divider'>/</span></li>";  
  };
-?>    
+ echo '<li><button onclick="AddToNavBarQuick(\''.$cfg->navbar[0].'\');" title="Прибить страницу в быстрых ссылках" type=\'button\' class=\'btn btn-default navbar-btn \'><i class="fa fa-link"></i></button></li>';
+?>        
 </ul>
 <?php
 };

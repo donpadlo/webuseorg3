@@ -54,7 +54,7 @@
 
     <script type="text/javascript" src="controller/client/themes/<?php echo "$cfg->theme";?>/js/bootstrap.min.js"></script>    
 
-    <script src="js/Common.js" type="text/javascript"></script>     
+    <script src="js/Common_cal.js" type="text/javascript"></script>     
     <script src="js/datepicker_lang_US.js" type="text/javascript"></script>     
     <script src="js/jquery.datepicker.js" type="text/javascript"></script>
 

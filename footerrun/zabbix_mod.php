@@ -8,8 +8,10 @@
  */
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 if ($md->IsActive("zabbix-mon")==1) {
-?>
- <script type="text/javascript" src="controller/client/js/zabbix_mod.js"></script>
-<?php
+    if (_GET("printable")!="true"){
+	?>
+	 <script type="text/javascript" src="controller/client/js/zabbix_mod.js"></script>
+	<?php
+    };
 };
 unset($md);
