@@ -53,7 +53,7 @@ function GetGrid(){
                 });
             } 
     });
-    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<i class=\"fa fa-comments\" aria-hidden=\"true\"></i>> СМС ",                              
+    jQuery("#list2").jqGrid('navButtonAdd',"#pager2",{caption:"<i class=\"fa fa-comments\" aria-hidden=\"true\"></i> СМС ",                              
          title: "Отправить СМС",
 	 buttonicon: 'none',
 	onClickButton:function(){
