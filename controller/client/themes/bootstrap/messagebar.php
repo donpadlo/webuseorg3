@@ -21,3 +21,4 @@ if (count($ok)!=0){
 }
         
  ?>
+<div id="common_messages_for_all"></div>
