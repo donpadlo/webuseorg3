@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `config` (
 --
 
 INSERT INTO `config` (`id`, `ad`, `domain1`, `domain2`, `ldap`, `usercanregistrate`, `useraddfromad`, `theme`, `sitename`, `emailadmin`, `smtphost`, `smtpauth`, `smtpport`, `smtpusername`, `smtppass`, `emailreplyto`, `sendemail`, `version`, `urlsite`) VALUES
-(1, 0, '', '', '', 1, 1, 'bootstrap', 'Учет ТМЦ в организации', '', '', 0, '25', '', '', '', 0, '3.80', 'http://localhost');
+(1, 0, '', '', '', 1, 1, 'bootstrap', 'Учет ТМЦ в организации', '', '', 0, '25', '', '', '', 0, '3.81', 'http://localhost');
 
 -- --------------------------------------------------------
 
@@ -1547,3 +1547,10 @@ ALTER TABLE `vendor`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE TABLE `users_quick_menu` ( `id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `url` VARCHAR(255) NOT NULL , `userid` INT NOT NULL , PRIMARY KEY (`id`));
+
+ALTER TABLE `users_quick_menu` CHANGE `title` `title` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
+
+ALTER TABLE `users_quick_menu` ADD `ico` VARCHAR(255) NOT NULL AFTER `userid`;
