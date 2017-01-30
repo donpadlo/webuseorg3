@@ -34,6 +34,7 @@ function PutMenu($par) {
 		$nm = $pmenu['name'];
 		$path = $pmenu['path'];
 		$uid = $pmenu['uid'];
+		$comment = $pmenu['comment'];
 		$ico=$pmenu['ico'];
 		$url = ($path == '') ? 'javascript:void(0)' : "index.php?content_page=$path";		
 		if ($content_page == $path){
@@ -44,9 +45,9 @@ function PutMenu($par) {
 		};
 		echo "<li$sel>";
 		if ($path=="") {
-		    echo "<span>$ico $nm</span>";		    
+		    echo "<span title='$comment'>$ico $nm</span>";		    
 		} else {
-		    echo "<a href=\"$url\">$ico $nm</a>";		    
+		    echo "<a title='$comment' href=\"$url\">$ico $nm</a>";		    
 		    if ($sel!=''){$sel_url["path"]=$path;$sel_url["uid"]=$uid;$sel_url["parents"]=$pmenu['parents'];$sel_url["name"]=$nm;};
 		};
 		if (count($gmenu->GetList($uid)) > 0) {
