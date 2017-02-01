@@ -73,7 +73,9 @@ function LoadTable() {
 		resizeStop: function() {
 		    $("#tbl_equpment").saveCommonParam("tbleq");
 		},
-		onSelectRow: function(ids) {			
+		onSelectRow: function(ids) {	
+			s = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selarrrow');
+			jQuery('#tbl_equpment').jqGrid("setCaption", "Оргтехника ("+s.length+")");
 			$('#photoid').load(route + 'controller/server/equipment/getphoto.php&eqid=' + ids);
 			jQuery('#tbl_move').jqGrid('setGridParam', {url: route + 'controller/server/equipment/getmoveinfo.php&eqid=' + ids});
 			jQuery('#tbl_move').jqGrid({
@@ -225,6 +227,8 @@ function LoadTable() {
 			subgrid_table_id = subgrid_id + '_t';
 			jQuery('#' + subgrid_table_id).remove();
 		},
+		rownumbers: true, // show row numbers
+                rownumWidth: 25, // the width of the row numbers columns		
 		subGrid: true,
 		multiselect: multiselect,		
 		autowidth: true,
