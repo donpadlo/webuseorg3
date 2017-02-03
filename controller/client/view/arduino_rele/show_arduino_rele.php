@@ -29,10 +29,11 @@ if ($id>0){
 		};
 		$pin=$value;		
 		$status=$cont->pinsstatus[$cnt];
+		$tmpc=$cnt+1;
 		if ($status==0){
-		  echo "<button onclick='ToggleArduino(\"$ip\",$cnt,1)' class='btn btn-success'>№ $cnt($pin)<br/>$comment</button>";
+		  echo "<button onclick='ToggleArduino(\"$ip\",$cnt,1)' class='btn btn-success'>№ $tmpc<br/>$comment</button>";
 		} else {
-		  echo "<button onclick='ToggleArduino(\"$ip\",$cnt,0)' class='btn btn-danger'>№ $cnt($pin)<br/>$comment</button>";
+		  echo "<button onclick='ToggleArduino(\"$ip\",$cnt,0)' class='btn btn-danger'>№ $tmpc<br/>$comment</button>";
 		};
 		$cnt++;
 	    };
@@ -47,9 +48,12 @@ if ($id>0){
 <br/>
 <script>
   function ToggleArduino(ip,pin,status){
-   $.get(route+'controller/server/arduino_rele/setstatus.php&ip='+ip+"&pin="+pin+"&status="+status, function( data ) {
-	$().toastmessage('showWarningToast', data);	
-	ShowArdulineRele($("#ardulinp_rele_list").val());  
-    });          
+       if (confirm('Вы уверенны, что хотите сделать то что хотите?')){
+	    $.get(route+'controller/server/arduino_rele/setstatus.php&ip='+ip+"&pin="+pin+"&status="+status, function( data ) {
+		 $().toastmessage('showWarningToast', data);	
+		 ShowArdulineRele($("#ardulinp_rele_list").val());  
+	     });          
+
+        };
   };
 </script>    
