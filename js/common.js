@@ -19,12 +19,17 @@ function SaveCookiesJS(key,result,days){
         document.cookie=key+"="+result+"; path=/; expires="+exdate.toUTCString();	
 	$.cookie(key,result);
     };
-function QuickMenuRedraw(){
+function QuickMenuRedraw(){    
+    if (printable==false){
       $.get(route+'controller/server/common/quickmenuredraw.php', function( data ) {
           $("#quick_div" ).html(data);                            
       });    
+  };
 };    
-$(function() {         
+$(function() {  
+    if (typeof printable!=="undefined"){
+
+    } else {printable=false;};
     //рисуем "быстрое меню"
     QuickMenuRedraw();
     //

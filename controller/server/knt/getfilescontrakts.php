@@ -20,13 +20,13 @@ include_once("../../../inc/connect.php");		// соеденяемся с БД, п
 include_once("../../../inc/config.php");              // подгружаем настройки из БД, получаем заполненый класс $cfg
 include_once("../../../inc/functions.php");		// загружаем функции
 include_once("../../../inc/login.php");		// загружаем функции
-
+$mode=_GET("mode");
 if (isset($_GET["page"]))       {$page = $_GET['page'];}    else {$page="";};
 if (isset($_GET["rows"]))       {$limit = $_GET['rows'];}   else {$limit="";};
 if (isset($_GET["sidx"]))       {$sidx = $_GET['sidx']; }   else {$sidx="";};
 if (isset($_GET["sord"]))       {$sord = $_GET['sord']; }   else {$sord="";};
 if (isset($_POST["oper"]))      {$oper= $_POST['oper'];}    else {$oper="";};
-
+if (isset($_POST["filename"]))  {$filename= $_POST['filename'];}    else {$filename="";};
 if (isset($_POST["id"]))        {$id = $_POST['id'];} else {$id="";};
 
 
@@ -57,7 +57,11 @@ if ($oper==''){
             $filename=$row['filename'];
             $userfreandlyfilename=$row['userfreandlyfilename'];
             if ($userfreandlyfilename==""){$userfreandlyfilename='Посмотреть';};
-            $responce->rows[$i]['cell']=array($row['id'],"<a target=_blank href='files/$filename'>$userfreandlyfilename</a>");
+	    if ($mode==""){
+		$responce->rows[$i]['cell']=array($row['id'],"<a target=_blank href='files/$filename'>$userfreandlyfilename</a>");
+	    } else {
+		$responce->rows[$i]['cell']=array($row['id'],"<a target=_blank href='files/$filename'>Скачать</a>","$userfreandlyfilename");
+	    };
 	    $i++;
 	}
 	echo json_encode($responce);
@@ -67,6 +71,15 @@ if ($oper=='del'){
     if ($user->TestRoles('1,6')){
        	$SQL = "DELETE FROM files_contract WHERE id='$id'";
 	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не смог удалить файл!".mysqli_error($sqlcn->idsqlconnection));    
+    };
+};
+if ($oper=='edit'){
+    if ($user->TestRoles('1,5')){
+	$filename=mysqli_real_escape_string($sqlcn->idsqlconnection,$filename);
+       	$SQL = "update files_contract set userfreandlyfilename='$filename' WHERE id='$id'";
+	$result = $sqlcn->ExecuteSQL( $SQL ) or die("Не смог изменить файл!".mysqli_error($sqlcn->idsqlconnection));    
+    } else {
+	echo "-не хватает прав!";
     };
 };
 

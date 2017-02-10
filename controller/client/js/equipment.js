@@ -405,8 +405,10 @@ function Printable(){
     if (multiselect===true){start=2};
     var newWin3=window.open('','Печатная форма','');
     newWin3.focus();
-    newWin3.document.write($("#idheader").html());
-    newWin3.document.write('<body>');    
+    newWin3.document.write('<html>'); 
+    newWin3.document.write("<script>printable=true;\x3C/script>"); 
+    newWin3.document.write($("#idheader").html());		    
+    newWin3.document.write('<body>');     
     //newWin3.document.write($("#gview_tbl_equpment").html());    
     colNames=jQuery("#tbl_equpment").jqGrid('getGridParam',"colNames"); //названия колонок
     colModel=jQuery("#tbl_equpment").jqGrid('getGridParam',"colModel"); //параметры колонок
@@ -438,7 +440,8 @@ function Printable(){
     
     table=table+"</table>";
     newWin3.document.write(table);
-    newWin3.document.write('</body></html>');    
+    newWin3.document.write('</body></html>');  
+    newWin3.document.close();
 };
 $(document).ready(function() {
 	for (var selector in config) {
