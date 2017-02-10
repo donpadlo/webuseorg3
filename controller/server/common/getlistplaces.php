@@ -14,7 +14,7 @@ $placesid = GetDef('placesid', '1');
 $addnone = GetDef('addnone');
 $oldopgroup = '';
 
-$SQL = "SELECT * FROM places WHERE orgid='$orgid' AND active=1 ORDER BY name";
+$SQL = "SELECT * FROM places WHERE orgid='$orgid' AND active=1 ORDER BY binary(opgroup),binary(name)";
 $result = $sqlcn->ExecuteSQL($SQL)
 		or die('Не могу выбрать список помещений! '.mysqli_error($sqlcn->idsqlconnection));
 $sts = '<select class="chosen-select" name="splaces" id="splaces">';
