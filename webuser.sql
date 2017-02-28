@@ -1552,5 +1552,5 @@ ALTER TABLE `vendor`
 CREATE TABLE `users_quick_menu` ( `id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `url` VARCHAR(255) NOT NULL , `userid` INT NOT NULL , PRIMARY KEY (`id`));
 
 ALTER TABLE `users_quick_menu` CHANGE `title` `title` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
-
+ALTER TABLE `users_quick_menu` CHANGE `url` `url` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
 ALTER TABLE `users_quick_menu` ADD `ico` VARCHAR(255) NOT NULL AFTER `userid`;
