@@ -158,7 +158,7 @@ if ($step=="edit"){
             <div id=sorg>
            <select class='chosen-select' name=sorgid id=sorgid>
            <?php
-               $result = $sqlcn->ExecuteSQL("SELECT * FROM org WHERE active=1 order by name;");
+               $result = $sqlcn->ExecuteSQL("SELECT * FROM org WHERE active=1 order by binary(name);");
                while ($myrow = mysqli_fetch_array($result)){
 		   if (($user->mode==1) or ($user->orgid==$myrow['id'])){
 			echo "<option value=".$myrow["id"];

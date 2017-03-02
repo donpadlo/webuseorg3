@@ -9,23 +9,14 @@
 
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
-$orgid = GetDef('orgid', '1');
-$placesid = GetDef('placesid', '1');
-$addnone = GetDef('addnone');
-$onchange = GetDef('onchange');
-$oldopgroup = '';
+$sql="SELECT nome.id,nome.name,group_nome.name as grname FROM `nome` inner join group_nome on group_nome.id=nome.groupid where nome.active=1 and group_nome.active=1 ORDER BY binary(grname),binary(nome.name)";
+$result = $sqlcn->ExecuteSQL($sql) or die('Не могу выбрать список ТМЦ! '.mysqli_error($sqlcn->idsqlconnection));
+$sts = '<select class="chosen-select" multiple name="stmc" id="stmc">';
 
-$SQL = "SELECT * FROM places WHERE orgid='$orgid' AND active=1 ORDER BY binary(opgroup),binary(name)";
-$result = $sqlcn->ExecuteSQL($SQL)
-		or die('Не могу выбрать список помещений! '.mysqli_error($sqlcn->idsqlconnection));
-$sts = '<select class="chosen-select" name="splaces" id="splaces">';
-if ($addnone == 'true') {
-	$sts .= '<option value="-1" >нет выбора</option>';
-}
 $flag = 0;
+$oldopgroup = '';
 while ($row = mysqli_fetch_array($result)) {
-	$opgroup = $row['opgroup'];
-	$opgroup = $row['opgroup'];
+	$opgroup = $row['grname'];
 	if ($opgroup != $oldopgroup) {
 		if ($flag != 0) {
 			$sts .= '</optgroup>';
@@ -34,15 +25,9 @@ while ($row = mysqli_fetch_array($result)) {
 		$flag = 1;
 	}	
 	$sts .= '<option value="'.$row['id'].'"';
-	if ($placesid == $row['id']) {
-		$sts .= ' selected';
-	}
 	$sts .= '>'.$row['name'].'</option>';
 	$oldopgroup = $opgroup;
 }
 $sts .= '</optgroup>';
 $sts .= '</select>';
-if ($onchange!=""){
-  $sts=$sts.'<script>$("#splaces").change(function() {'.$onchange.';});</script>';  
-};
 echo $sts;

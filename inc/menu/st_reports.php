@@ -36,6 +36,7 @@ if ($md->IsActive("zabbix-mon")==1) {
 };
 $this->Add("reports","<i class='fa fa-map fa-fw'> </i>","Размещение ТМЦ на карте","Размещение ТМЦ на карте",3,"reports/map","map");        
 $this->Add("reports","<i class='fa fa-empire fa-fw'> </i>","Имущество","Отчеты по имуществу",3,"reports/report_tmc","report_tmc");        
+$this->Add("reports","<i class='fa fa-line-chart'> </i>","Движение ТМЦ","Ведомость движения ТМЦ (по регистрам)",3,"reports/report_register_tmc","report_register_tmc");        
 
 unset($md);
 /*

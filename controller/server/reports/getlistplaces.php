@@ -18,13 +18,12 @@ $oldopgroup = '';
 $SQL = "SELECT * FROM places WHERE orgid='$orgid' AND active=1 ORDER BY binary(opgroup),binary(name)";
 $result = $sqlcn->ExecuteSQL($SQL)
 		or die('Не могу выбрать список помещений! '.mysqli_error($sqlcn->idsqlconnection));
-$sts = '<select class="chosen-select" name="splaces" id="splaces">';
+$sts = '<select class="chosen-select" multiple name="splaces" id="splaces">';
 if ($addnone == 'true') {
 	$sts .= '<option value="-1" >нет выбора</option>';
-}
+};
 $flag = 0;
 while ($row = mysqli_fetch_array($result)) {
-	$opgroup = $row['opgroup'];
 	$opgroup = $row['opgroup'];
 	if ($opgroup != $oldopgroup) {
 		if ($flag != 0) {

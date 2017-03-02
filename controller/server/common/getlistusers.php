@@ -27,9 +27,7 @@ if (isset($_GET["addnone"]))    {$addnone=$_GET["addnone"];}    else {$addnone="
 if (isset($_GET["dopname"]))    {$dopname=$_GET["dopname"];}    else {$dopname="";};
 if (isset($_GET["chosen"]))    {$chosen=$_GET["chosen"];}    else {$chosen="false";};
 
-    $SQL = "SELECT users.id, users.login, users_profile.fio
-FROM users
-INNER JOIN users_profile ON users.id = users_profile.usersid WHERE users.orgid='$orgid' AND users.active=1 ORDER BY users.login";
+    $SQL = "SELECT users.id, users.login, users_profile.fio FROM users INNER JOIN users_profile ON users.id = users_profile.usersid WHERE users.orgid='$orgid' AND users.active=1 ORDER BY users.login";
     $result = $sqlcn->ExecuteSQL( $SQL ) or die("Не могу выбрать список пользователей!".mysqli_error($sqlcn->idsqlconnection));
     $sts="<select class='chosen-select' name=suserid".$dopname." id=suserid".$dopname.">";
     if ($addnone=='true'){$sts=$sts."<option value='-1' >нет выбора</option>";};

@@ -7,8 +7,8 @@ $time_end = microtime(true);
 $time = $time_end - $time_start;
 ?>
       <footer class="">
-          <div class="row-fluid container-fluid">
-                <div class="span12" align="center">
+          <div class="container-fluid row-fluid">
+                <div class="col-xs-12 col-md-12 col-sm-12" align="center">
                     <p>&copy; <a href="http://грибовы.рф" target="_blank"> 2011-<?php echo date("Y");?></a>. Собрано за <?php echo "$time";?>сек.</p>
                 </div>
               </div>

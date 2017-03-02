@@ -17,7 +17,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 ?>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-12 col-md-4 col-sm-4">
+		<div class="col-xs-12 col-md-4 col-sm-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">Пользователь</div>
 				<div class="panel-body">
@@ -31,7 +31,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-12 col-md-4 col-sm-4">
+		<div class="col-xs-12 col-md-8 col-sm-6">
 			<?php if ($mhome->IsActive('news') == 1): ?>
 				<!-- [Новости] -->
 				<div class="panel panel-default">
@@ -47,6 +47,31 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 				</div>
 				<!-- [/Новости] -->
 			<?php endif; ?>
+			<?php if ($mhome->IsActive('stiknews') == 1): ?>
+				<?php
+				$stiker = GetStiker();
+				if ($stiker['title'] != ''):
+					?>
+					<!-- [Закреплённые новости] -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<?php echo $stiker['title']; ?>
+						</div>
+						<div class="panel-body">
+							<?php echo $stiker['body']; ?>
+						</div>
+					</div>
+					<!-- [/Закреплённые новости] -->
+				<?php endif; ?>
+			<?php endif; ?>
+			<?php if (($mhome->IsActive('commits-widget') == 1) && ($user->mode == 1)): ?>
+				<div class="panel panel-default">
+					<div class="panel-heading">Разработка</div>
+					<div class="panel-body">
+						<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=donpadlo&repo=webuseorg3&limit=5" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="250px"></iframe>
+					</div>
+				</div>
+			<?php endif; ?>				
 			<?php if ($mhome->IsActive('tasks') == 1): ?>
 				<!-- [Задачи] -->
 				<div class="panel panel-default">
@@ -66,58 +91,44 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 					</div>
 				</div>
 			<?php endif; ?>
-			<?php if ($mhome->IsActive('whoonline') == 1): ?>
-				<!-- [Кто онлайн] -->
-				<div class="panel panel-default">
-					<div class="panel-heading">Кто онлайн</div>
-					<div class="panel-body">
-						<?php include_once('whoonline.php'); ?>
-					</div>
-				</div>
-				<!-- [/Кто онлайн] -->
-			<?php endif; ?>
-		</div>
-		<div class="col-xs-12 col-md-4 col-sm-4">
-			<?php if ($mhome->IsActive('stiknews') == 1): ?>
-				<?php
-				$stiker = GetStiker();
-				if ($stiker['title'] != ''):
-					?>
-					<!-- [Закреплённые новости] -->
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<?php echo $stiker['title']; ?>
-						</div>
-						<div class="panel-body">
-							<?php echo $stiker['body']; ?>
-						</div>
-					</div>
-					<!-- [/Закреплённые новости] -->
-				<?php endif; ?>
-			<?php endif; ?>
-			<?php if (($mhome->IsActive('lastmoved') == 1) && ($user->id != '')): ?>
-				<!-- [Последние перемещения ТМЦ] -->
-				<div class="panel panel-default">
-					<div class="panel-heading">Последние перемещения ТМЦ</div>
-					<div class="panel-body">
-						<table id="tbl_move"></table>
-						<div id="mv_nav"></div>
-						<script src="controller/client/js/lastmoved.js"></script>
-					</div>
-				</div>
-				<!-- [/Последние перемещения ТМЦ] -->
-			<?php endif; ?>
-			<?php if (($mhome->IsActive('commits-widget') == 1) && ($user->mode == 1)): ?>
-				<div class="panel panel-default">
-					<div class="panel-heading">Разработка</div>
-					<div class="panel-body">
-						<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=donpadlo&repo=webuseorg3&limit=5" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="250px"></iframe>
-					</div>
-				</div>
-			<?php endif; ?>
 		</div>
 	</div>
+    
 </div>
+			<?php if (($mhome->IsActive('lastmoved') == 1) && ($user->id != '')): ?>
+				<!-- [Последние перемещения ТМЦ] -->
+				<div class="container-fluid">
+				<div class="row">
+				    <div class="col-xs-12 col-md-12 col-sm-12">				
+					<div class="panel panel-default">
+						<div class="panel-heading">Последние перемещения ТМЦ</div>
+						<div class="panel-body">
+							<table id="tbl_move"></table>
+							<div id="mv_nav"></div>
+							<script src="controller/client/js/lastmoved.js"></script>
+						</div>
+					</div>
+				     </div>
+				 </div>
+				 </div>					
+				<!-- [/Последние перемещения ТМЦ] -->
+			<?php endif; ?>
+			<?php if ($mhome->IsActive('whoonline') == 1): ?>
+				<!-- [Кто онлайн] -->
+				<div class="container-fluid">
+				<div class="row">
+				    <div class="col-xs-12 col-md-12 col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">Кто онлайн</div>
+						<div class="panel-body">
+							<?php include_once('whoonline.php'); ?>
+						</div>
+					</div>
+				     </div>
+				 </div>
+				 </div>
+				<!-- [/Кто онлайн] -->
+			<?php endif; ?>
 <?php
 unset($mhome);
 ?>
