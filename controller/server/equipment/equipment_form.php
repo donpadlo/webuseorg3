@@ -103,11 +103,17 @@ if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
 				'$mode', '$comment', '1', '$ip', '$mapyet', '$picphoto', '$kntid', '$dtendgar')";
 			$sqlcn->ExecuteSQL($sql)
 					or die('Не смог добавить номенклатуру!: '.mysqli_error($sqlcn->idsqlconnection));
+			$eqid=mysqli_insert_id($sqlcn->idsqlconnection);
+			//добавляем в регистр хранения инфу о добавлении
+			$sql="insert into register (id,dt,eqid,moveid,cnt,orgid,placesid,usersid) values (null,'$dtpost',$eqid,null,1,$sorgid,$splaces,$suserid)";
+			$sqlcn->ExecuteSQL($sql) or die('Не смог добавить в регистр!: '.mysqli_error($sqlcn->idsqlconnection));
+			
 			if ($cfg->sendemail == 1) {
 				// $txt="Внимание! На Вашу ответственность переведена новая единица ТМЦ. <a href=$url?content_page=eq_list&usid=$suserid>Подробности здесь.</a>";
 				// smtpmail("$touser->email","Уведомление о перемещении ТМЦ",$txt);
 				// SendEmailByPlaces($splaces,"Изменился состав ТМЦ в помещении","Внимание! В закрепленном за вами помещении изменился состав ТМЦ. <a href=$url?content_page=eq_list>Подробнее здесь.</a>");
-			}
+			};
+			
 		}
 	}
 
@@ -121,6 +127,10 @@ if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
 				mapyet='$mapyet', kntid='$kntid', dtendgar='$dtendgar' WHERE id='$id'";
 			$sqlcn->ExecuteSQL($sql)
 					or die('Не смог изменить номенклатуру!: '.mysqli_error($sqlcn->idsqlconnection));
+			//изменяем регистр
+			$sql="update register set dt='$dtpost',placesid=$splaces,usersid=$suserid where eqid=$id and moveid is null";
+			$sqlcn->ExecuteSQL($sql) or die('Не смог изменить регистр!: '.mysqli_error($sqlcn->idsqlconnection));
+			
 		}
 	}
 
@@ -143,7 +153,16 @@ if (($user->TestRoles('1,4,5,6')) && ($step != '')) {
 			    $result = $sqlcn->ExecuteSQL($sql);
 			    if ($result == '') {
 				    $err[] = 'Не смог добавить перемещение!: '.mysqli_error($sqlcn->idsqlconnection);
-			    }
+			    } else {
+				//двигаю регистры
+				//убавляю откуда переместили
+				$move_id=mysqli_insert_id($sqlcn->idsqlconnection);
+				$sql="insert into register (id,dt,eqid,moveid,cnt,orgid,placesid,usersid) values (null,now(),$id,$move_id,-1,'$etmc->orgid','$etmc->placesid','$etmc->usersid')";
+				$sqlcn->ExecuteSQL($sql) or die('Не смог убавить в регистре!: '.mysqli_error($sqlcn->idsqlconnection));				
+				//добавляю куда переместили
+				$sql="insert into register (id,dt,eqid,moveid,cnt,orgid,placesid,usersid) values (null,now(),$id,$move_id,1,'$sorgid','$splaces','$suserid')";
+				$sqlcn->ExecuteSQL($sql) or die('Не смог убавить в регистре!: '.mysqli_error($sqlcn->idsqlconnection));				
+			    };
 			    if ($cfg->sendemail == 1) {
 				    $touser = new Tusers;
 				    $touser->GetById($suserid);

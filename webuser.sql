@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `config` (
 --
 
 INSERT INTO `config` (`id`, `ad`, `domain1`, `domain2`, `ldap`, `usercanregistrate`, `useraddfromad`, `theme`, `sitename`, `emailadmin`, `smtphost`, `smtpauth`, `smtpport`, `smtpusername`, `smtppass`, `emailreplyto`, `sendemail`, `version`, `urlsite`) VALUES
-(1, 0, '', '', '', 1, 1, 'bootstrap', 'Учет ТМЦ в организации', '', '', 0, '25', '', '', '', 0, '3.81', 'http://localhost');
+(1, 0, '', '', '', 1, 1, 'bootstrap', 'Учет ТМЦ в организации', '', '', 0, '25', '', '', '', 0, '3.83', 'http://localhost');
 
 -- --------------------------------------------------------
 
@@ -672,7 +672,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 --
 
 INSERT INTO `news` (`id`, `dt`, `title`, `body`, `stiker`) VALUES
-(26, '2015-12-12 00:00:00', 'Учет оргтехники в WEB 3.xx', '<p>Добро пожаловать!</p><p>Представляю вам демо ПО для учета оргтехники в небольшой организации. Ну и плюс еще несколько "плюшек".</p><p>Домашняя страница проекта:&nbsp;<a href="http://xn--90acbu5aj5f.xn--p1ai/?page_id=1202">http://грибовы.рф</a></p><p>Контакты: skype: pvtuning icq:207074753</p>', 0);
+(26, '2017-03-02 00:00:00', 'Учет оргтехники в WEB 3.xx', '<p>Добро пожаловать!</p><p>Представляю вам демо ПО для учета оргтехники в небольшой организации. Ну и плюс еще несколько "плюшек".</p><p>Домашняя страница проекта:&nbsp;<a href="http://xn--90acbu5aj5f.xn--p1ai/?page_id=1202">http://грибовы.рф</a></p><p>Контакты: skype: pvtuning </p>', 0);
 
 -- --------------------------------------------------------
 
@@ -954,7 +954,7 @@ CREATE TABLE IF NOT EXISTS `users_profile` (
 --
 
 INSERT INTO `users_profile` (`id`, `usersid`, `fio`, `faza`, `code`, `enddate`, `post`, `res1`, `res2`, `res3`, `res4`, `telephonenumber`, `homephone`, `jpegphoto`) VALUES
-(2, 1, 'Администратор системы', 'Ð Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚', '88000280', '0001-01-01', 'Начальник', '115', 16, 0, '0000-00-00 00:00:00', '+79657400222', '+60222', '02264562403874636207.jpg');
+(2, 1, 'Администратор системы', 'Абырвалг', '88000280', '0001-01-01', 'Начальник', '115', 16, 0, '0000-00-00 00:00:00', '+79657400222', '+60222', 'noimage.jpg');
 
 -- --------------------------------------------------------
 
@@ -1554,3 +1554,9 @@ CREATE TABLE `users_quick_menu` ( `id` INT NOT NULL AUTO_INCREMENT , `title` VAR
 ALTER TABLE `users_quick_menu` CHANGE `title` `title` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
 ALTER TABLE `users_quick_menu` CHANGE `url` `url` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
 ALTER TABLE `users_quick_menu` ADD `ico` VARCHAR(255) NOT NULL AFTER `userid`;
+
+CREATE TABLE `register` ( `id` INT NOT NULL AUTO_INCREMENT , `dt` INT NOT NULL , `eqid` INT NOT NULL , `moveid` INT NOT NULL , `cnt` INT NOT NULL , PRIMARY KEY (`id`));
+
+ALTER TABLE `register` CHANGE `moveid` `moveid` INT(11) NULL;
+ALTER TABLE `register` ADD `orgid` INT NOT NULL AFTER `cnt`, ADD `placesid` INT NOT NULL AFTER `orgid`, ADD `usersid` INT NOT NULL AFTER `placesid`;
+ALTER TABLE `register` CHANGE `dt` `dt` DATETIME(6) NOT NULL;
