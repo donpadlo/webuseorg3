@@ -1176,6 +1176,46 @@ if ($cfg->version == '3.80') {
 	UpdateVer($vr, '172');	
 }
 
+// Обновляем до 3.82
+if ($cfg->version == '3.81') {
+	$vr = '3.82';	
+	$log = '- добавляю индексацию настроек';
+	$sql = 'ALTER TABLE `config_common` ADD INDEX(`nameparam`)';
+	ExecSQL($log, $sql, '173');	
+	UpdateVer($vr, '173');
+}
+
+// Обновляем до 3.83
+if ($cfg->version == '3.82') {
+	$vr = '3.83';	
+	$log = '- добавляю регистр перемещений';
+	$sql = 'CREATE TABLE `register` ( `id` INT NOT NULL AUTO_INCREMENT , `dt` INT NOT NULL , `eqid` INT NOT NULL , `moveid` INT NOT NULL , `cnt` INT NOT NULL , PRIMARY KEY (`id`))';
+	ExecSQL($log, $sql, '174');	
+	$sql = 'ALTER TABLE `register` CHANGE `moveid` `moveid` INT(11) NULL;';
+	ExecSQL($log, $sql, '175');	
+	
+	$sql="ALTER TABLE `register` ADD `orgid` INT NOT NULL AFTER `cnt`, ADD `placesid` INT NOT NULL AFTER `orgid`, ADD `usersid` INT NOT NULL AFTER `placesid`;";
+	ExecSQL($log, $sql, '176');
+
+	$sql="ALTER TABLE `register` CHANGE `dt` `dt` DATETIME;";	
+	ExecSQL($log, $sql, '177');
+
+	UpdateVer($vr, '178');
+	
+	//заполняю первоначальные значения регистров
+	$sql="select * from equipment";
+	$result = $sqlcn->ExecuteSQL($sql);                
+	while ($myrow = mysqli_fetch_array($result)){	
+	    $dt=$myrow["datepost"];
+	    $eqid=$myrow["id"];
+	    $orgid=$myrow["orgid"];
+	    $placesid=$myrow["placesid"];
+	    $usersid=$myrow["usersid"];
+	    $sql="insert into register (id,dt,eqid,moveid,cnt,orgid,placesid,usersid) values (null,'$dt',$eqid,null,1,$orgid,$placesid,$usersid)";
+	    //echo "$sql</br>";
+	    $result2 = $sqlcn->ExecuteSQL($sql);                
+	};	
+};
 
 echo 'Обновление закончено.<br>';
 echo 'Если сообщений об ошибках нет, удалите файл update.php.<br>';

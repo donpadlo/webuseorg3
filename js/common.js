@@ -1,3 +1,9 @@
+function UpdateChosen(){
+    for (var selector in config) {
+	$(selector).chosen({ width: '100%' });
+	$(selector).chosen(config[selector]);
+    };        
+};  
 function AddToNavBarQuick(title){
     $.post(route+"controller/server/common/save_quick.php",{
 		title:title,
