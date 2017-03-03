@@ -36,6 +36,7 @@
 	    <div id="id_for_tmc"></div>
   </div>    
     <button type="submit" class="form-control" id="viewwork" name="viewwork">Сформировать отчет</button>                        
+    <button type="submit" class="form-control" id="prnt" name="prnt">Распечатать отчет</button>                            
 </div>        
 </div>
 <div class="container-fluid">

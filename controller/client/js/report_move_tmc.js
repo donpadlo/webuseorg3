@@ -29,6 +29,18 @@ function onchangesplaces(){
  $("#sorgsname").change(function() {
     RefreshPlaces();     
  });
+  $("#prnt").click(function() {
+    var newWin3=window.open('','Печатная форма','');
+    newWin3.focus();
+    newWin3.document.write('<html>'); 
+    newWin3.document.write("<script>printable=true;\x3C/script>"); 
+    newWin3.document.write($("#idheader").html());		    
+    newWin3.document.write('<body>');     
+    newWin3.document.write($("#if_for_report").html());    
+    newWin3.document.write('</body></html>');  
+    newWin3.document.close();      
+      
+  });
  $("#viewwork").click(function() {
     $("#if_for_report").html("<img src=controller/client/themes/"+theme+"/img/loading.gif><br>*выполнение запроса может занять некоторое время..");        
     $("#if_for_report").load(route + "controller/client/view/reports/report_move_tmc.php&orgid="+$("#sorgsname").val()+"&speoples="+$("#speoples").val()+"&splaces="+$("#splaces").val()+"&stmc="+$("#stmc").val()+"&dtstart="+$("#dtstart").val()+"&dtend="+$("#dtend").val());        

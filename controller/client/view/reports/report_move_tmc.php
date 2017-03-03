@@ -67,7 +67,7 @@ echo "</dl>";
 ?>
 <table class="table table-hover table-condensed">
 <thead>
-    <tr>      
+    <tr class="success">      
       <th>№</th>	
       <th>Номенклатура</th>
       <th>Начало</th>
@@ -98,6 +98,8 @@ $cnt=0;
 $sql="select nome.name as nname,register.*,equipment.nomeid from register inner join equipment on equipment.id=register.eqid inner join nome on nome.id=equipment.nomeid where $where  group by equipment.nomeid";
 $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать список ТМЦ!!".mysqli_error($sqlcn->idsqlconnection));
 //echo "$sql";
+$itcntstart=0;
+$itcntend=0;
 while($row = mysqli_fetch_array($result)) {
   //  если на момент начала остаток не ноль, то вывожу в таблицу номенклатуру..
   $rnomeid=$row["nomeid"];  
@@ -105,12 +107,16 @@ while($row = mysqli_fetch_array($result)) {
   $reqid=$row["eqid"];  
 
   $cntstart=CountOnDate($dtstart,$orgid,$splaces,$speoples,$rnomeid);  
+  $itcntstart=$itcntstart+$cntstart;
   $cntend=CountOnDate($dtend,$orgid,$splaces,$speoples,$rnomeid);  
+  $itcntend=$itcntend+$cntend;
   $movecount=MoveCountBetween($dtstart,$dtend,$orgid,$splaces,$speoples,$rnomeid);
   $addcount=GetCountBetween($dtstart,$dtend,$orgid,$splaces,$speoples,$rnomeid,1);
   $addcountnull=GetCountBetween($dtstart,$dtend,$orgid,$splaces,$speoples,$rnomeid,0);
   $subcount=GetCountBetween($dtstart,$dtend,$orgid,$splaces,$speoples,$rnomeid,-1);
+  
   $addarr=GetBetweenArr($dtstart,$dtend,$orgid,$splaces,$speoples,$rnomeid,1);
+  $subarr=GetBetweenArr($dtstart,$dtend,$orgid,$splaces,$speoples,$rnomeid,-1);
   if (($cntstart>0) or ($cntend>0) or ($movecount>0)){
     $cnt++;  
     echo "<tr>";  
@@ -118,13 +124,16 @@ while($row = mysqli_fetch_array($result)) {
     echo "<td>$rnname</td>";
     echo "<td>$cntstart</td>";    
     echo "<td>$addcount";
+    if ($addcountnull!=0){	
+	echo "</br>Из них: ";
+    };
     //ищу оприходования за этот период
      if ($addcountnull!=0){	
-	echo "</br>Оприходовано: $addcountnull";
+	echo " оприходовано: $addcountnull";
      };
      if (count($addarr)>0){
 	 $cc=count($addarr);
-	 echo "</br>Перемещено:$cc<br/>";
+	 echo " перемещено:$cc<br/>";
 	 echo '<table class="table table-hover table-condensed">
 		<thead>
 		    <tr>      
@@ -145,14 +154,43 @@ while($row = mysqli_fetch_array($result)) {
 	 echo "</table>";
      };
     echo "</td>";
-    echo "<td>$subcount</td>";
+    echo "<td>";
+	 //echo "$subcount<br/>";
+	    if ($subcount>0){
+		echo '<table class="table table-hover table-condensed">
+		       <thead>
+			   <tr>      
+			     <th>id</th>
+			     <th>Куда</th>
+			     <th>Дата</th>
+			     <th>Комментарий</th>
+			   </tr>     
+			 </thead>';	 
+		foreach ($subarr as $value) {
+		    echo "<tr>";
+		    echo "<td>".$value["id"]."</td>";
+		    echo "<td>".$value["placename"]."</td>";
+		    echo "<td>".$value["dt"]."</td>";
+		    echo "<td>".$value["comment"]."</td>";
+		    echo "</tr>";
+		}; 
+		echo "</table>";
+	    };
+    echo "</td>";
     echo "<td>$cntend</td>";  
     echo "</tr>";  
   };
 };
+echo "<tr class='success'>";
+    echo "<td></td>";
+    echo "<td>ИТОГО:</td>";
+    echo "<td>$itcntstart</td>";
+    echo "<td></td>";
+    echo "<td></td>";
+    echo "<td>$itcntend</td>";
+echo "</tr>";
 ?>
 </table>
-
 
 <?php
 function GetBetweenArr($dtstart,$dtend,$orgid,$splaces,$speoples,$stmc,$type){
@@ -172,7 +210,11 @@ function GetBetweenArr($dtstart,$dtend,$orgid,$splaces,$speoples,$stmc,$type){
        $where=$where." and register.usersid in ($speoples) "; 
     };
   $cnt=0;
+  if ($type==1){
     $sql="select equipment.id,nome.name as namenome,places.name as placename,move.comment,move.dt from register inner join equipment on equipment.id=register.eqid inner join move on move.id=register.moveid inner join places on places.id=move.placesidfrom inner join nome on  nome.id=equipment.nomeid  where equipment.active=1  and register.dt between '$dtstart 00:00:00' and '$dtend 23:59:59' and register.cnt=$type and $where ";
+  } else {
+    $sql="select equipment.id,nome.name as namenome,places.name as placename,move.comment,move.dt from register inner join equipment on equipment.id=register.eqid inner join move on move.id=register.moveid inner join places on places.id=move.placesidto inner join nome on  nome.id=equipment.nomeid  where equipment.active=1  and register.dt between '$dtstart 00:00:00' and '$dtend 23:59:59' and register.cnt=$type and $where ";      
+  };
     //echo "$sql<br/>";
     $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать остаток!!".mysqli_error($sqlcn->idsqlconnection));
     $cnt=0;
