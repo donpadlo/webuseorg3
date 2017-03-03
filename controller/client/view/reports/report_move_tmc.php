@@ -124,7 +124,7 @@ while($row = mysqli_fetch_array($result)) {
     echo "<td>$rnname</td>";
     echo "<td>$cntstart</td>";    
     echo "<td>$addcount";
-    if ($addcountnull!=0){	
+    if ($addcount!=0){	
 	echo "</br>Из них: ";
     };
     //ищу оприходования за этот период
@@ -132,8 +132,9 @@ while($row = mysqli_fetch_array($result)) {
 	echo " оприходовано: $addcountnull";
      };
      if (count($addarr)>0){
-	 $cc=count($addarr);
-	 echo " перемещено:$cc<br/>";
+	 $cc=count($addarr);	 
+	 echo "<button type='button' class='btn' data-toggle='collapse' data-target='#clin$cnt'>перемещено $cc</button>\n";
+	 echo '<div id="clin'.$cnt.'" class="collapse">'."\n";
 	 echo '<table class="table table-hover table-condensed">
 		<thead>
 		    <tr>      
@@ -152,11 +153,13 @@ while($row = mysqli_fetch_array($result)) {
 	     echo "</tr>";
 	 }; 
 	 echo "</table>";
+	 echo "/div<>";
      };
     echo "</td>";
-    echo "<td>";
-	 //echo "$subcount<br/>";
+    echo "<td>\n";
+	 echo "<button type='button' class='btn' data-toggle='collapse' data-target='#cl$cnt'>$subcount</button>\n";
 	    if ($subcount>0){
+		echo '<div id="cl'.$cnt.'" class="collapse">'."\n";
 		echo '<table class="table table-hover table-condensed">
 		       <thead>
 			   <tr>      
@@ -174,7 +177,8 @@ while($row = mysqli_fetch_array($result)) {
 		    echo "<td>".$value["comment"]."</td>";
 		    echo "</tr>";
 		}; 
-		echo "</table>";
+		echo "</table>\n";
+		echo "</div>\n";
 	    };
     echo "</td>";
     echo "<td>$cntend</td>";  
