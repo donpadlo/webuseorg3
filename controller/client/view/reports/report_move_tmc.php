@@ -153,7 +153,7 @@ while($row = mysqli_fetch_array($result)) {
 	     echo "</tr>";
 	 }; 
 	 echo "</table>";
-	 echo "/div<>";
+	 echo "</div>";
      };
     echo "</td>";
     echo "<td>\n";
