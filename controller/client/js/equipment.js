@@ -27,7 +27,7 @@ function LoadTable() {
 			'Производитель', 'Имя по бухгалтерии', 'Сер.№', 'Инв.№',
 			'Штрихкод', 'Организация', 'Мат.отв.', 'Оприходовано', 'Стоимость',
 			'Тек. стоимость', 'ОС', 'Списано', 'Карта', 'Комментарий', 'Ремонт',
-			'Гар.срок', 'Поставщик','Подразделение', 'Инструменты'],
+			'Гар.срок', 'Поставщик','Подразделение',"Перемещено из", 'Инструменты'],
 		colModel: [
 			{name: 'active', index: 'active', width: 20, search: false, frozen: true,fixed:true},
 			{name: 'equipment.id', index: 'equipment.id', width: 55, search: false, frozen: true, hidden: true,fixed:true},
@@ -64,11 +64,14 @@ function LoadTable() {
 			{name: 'dtendgar', index: 'dtendgar', width: 55, editable: false, hidden: true, search: false,fixed:true},
 			{name: 'kntname', index: 'kntname', width: 55, editable: false, hidden: true, search: false,fixed:true},
 			{name: 'opgroup', index: 'places.opgroup', width: 55, editable: false, hidden: true, search: true,fixed:true},
+			{name: 'comefrom', index: 'comefrom', width: 100, editable: false, hidden: true, search: false},
 			{name: 'myac', width: 80, fixed: true, sortable: false, resize: false, formatter: 'actions',
 				formatoptions: {keys: true}, search: false}
 		],		
 		gridComplete : function() {
-		    $("#tbl_equpment").loadCommonParam("tbleq");
+		    $("#tbl_equpment").loadCommonParam("tbleq");		    
+		    jQuery('#tbl_equpment').jqGrid('setGridWidth',$(window).innerWidth()-20);
+		    
 		},
 		resizeStop: function() {
 		    $("#tbl_equpment").saveCommonParam("tbleq");
@@ -243,7 +246,6 @@ function LoadTable() {
 		editurl: route + 'controller/server/equipment/equipment.php&sorgider=' + $('#orgs :selected').val(),
 		caption: 'Оргтехника'
 	});
-	
 	jQuery('#tbl_equpment').jqGrid('setGridHeight', $(window).innerHeight()-285);
 	jQuery('#tbl_equpment').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: false});
 	jQuery('#tbl_equpment').jqGrid('bindKeys', '');

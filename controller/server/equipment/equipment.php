@@ -154,6 +154,19 @@ if ($oper == '') {
 		$dtendgar = MySQLDateToDate($row['dtendgar']);
 
 		$row['tmcgo'] = ($row['tmcgo'] == 0) ? 'No' : 'Yes';
+		
+		$mv="";
+		//получаю сведения о последнем перемещении ТМЦ
+		$sql="select move.comment,places.name from register left join move on move.id=register.moveid left join places on places.id=move.placesidfrom where register.eqid=".$row['eqid']." and register.cnt=1 order by register.id desc limit 1";
+		$resultp = $sqlcn->ExecuteSQL($sql) or die('Не получилось выбрать перемещения!'.mysqli_error($sqlcn->idsqlconnection).' sql='.$sql);
+		while ($rowp = mysqli_fetch_array($resultp)) {
+		    if ($rowp["name"]!=""){
+			$mv=$rowp["name"];
+			if ($rowp["comment"]!=""){
+			    $mv=$mv."(".$rowp["comment"].")";
+			};
+		    }
+		};
 
 		$responce->rows[$i]['cell'] = array(
 			$active, $row['eqid'], $row['ip'], $row['placesname'],
@@ -161,7 +174,7 @@ if ($oper == '') {
 			$row['buhname'], $row['sernum'], $row['invnum'], $row['shtrihkod'],
 			$row['orgname'], $row['fio'], $dtpost, $row['cost'],
 			$row['currentcost'], $os, $eqmode, $row['eqmapyet'],
-			$row['eqcomment'], $row['eqrepair'], $dtendgar, $row['kntname'],$row['opgroup']
+			$row['eqcomment'], $row['eqrepair'], $dtendgar, $row['kntname'],$row['opgroup'],$mv
 		);
 		$i++;
 	}
