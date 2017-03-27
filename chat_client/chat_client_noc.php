@@ -58,14 +58,17 @@ hold = "";
 blinked=0; //признак "мерцания"
 console.log('--загружаем звуки');
 $( document ).ready(function() {    
-    var jqxhr = $.getJSON( "chat_client/sounds2.json", function() {  
-    })
-    jqxhr.complete(function(data) {
-      console.log( "--ok");
-      sounds=JSON.parse(data.responseText);
-      mainchat();
-    });    
-    
+    if(isMobile.any()){
+     console.log("На мобильном чатик не доступен...");
+    } else {
+	var jqxhr = $.getJSON( "chat_client/sounds2.json", function() {  
+	})
+	jqxhr.complete(function(data) {
+	  console.log( "--ok");
+	  sounds=JSON.parse(data.responseText);
+	  mainchat();
+	});    
+    };
 });   
 function mainchat(){    
 	chat_user_id="<?php echo $from_user_id;?>";

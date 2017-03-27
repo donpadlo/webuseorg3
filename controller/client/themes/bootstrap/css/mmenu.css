@@ -1,3 +1,7 @@
+.ui-resizable-handle {
+        left: 0 !important;
+}
+
 #quick_div{
     display: inline;
 }
