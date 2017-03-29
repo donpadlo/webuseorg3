@@ -86,6 +86,12 @@ if ($dtsms==""){
   $tsms->SetByParam("datetimetosmssend", $dtsms);
 };
 $nw=intval(round($dtsms-microtime(true),0));
+    //проверяем, а нет ли глобального запрета по расписанию на отправку СМС?
+    if ($nw<=0){
+	$nw=GetCurrentStatusSchedule();
+	$nw=$nw["sms"];
+    };
+
 if ($nw<=0){      
             $sender=$this->sender;
            // echo "!$sender!";

@@ -577,3 +577,18 @@ function UpdateAllCookies(){
       SetCookie("$key","$value",strtotime('+30 days'),'/');       
     };
 };
+
+function GetCurrentStatusSchedule(){
+  global $sqlcn;
+  $cur["mail"]=0;
+  $cur["sms"]=0;
+	$sql="select * from schedule where now() between dtstart and dtend and (sms=1 or mail=1 or view=1)";
+	$result = $sqlcn->ExecuteSQL($sql);
+    	if ($result!==false){
+	    while($row = mysqli_fetch_array($result)) {
+		if ($row["sms"]==1){$cur["sms"]=$row["sms"];};
+		if ($row["mail"]==1){$cur["mail"]=$row["mail"];};
+	    };
+    };
+  return $cur;
+};
