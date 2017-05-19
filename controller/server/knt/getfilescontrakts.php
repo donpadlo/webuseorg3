@@ -55,12 +55,13 @@ if ($oper==''){
 	while($row = mysqli_fetch_array($result)) {
 	    $responce->rows[$i]['id']=$row['id'];      
             $filename=$row['filename'];
+	    $dt=$row['dt'];
             $userfreandlyfilename=$row['userfreandlyfilename'];
             if ($userfreandlyfilename==""){$userfreandlyfilename='Посмотреть';};
 	    if ($mode==""){
-		$responce->rows[$i]['cell']=array($row['id'],"<a target=_blank href='files/$filename'>$userfreandlyfilename</a>");
+		$responce->rows[$i]['cell']=array($row['id'],"<a target=_blank href='files/$filename'>$userfreandlyfilename</a>",$dt);
 	    } else {
-		$responce->rows[$i]['cell']=array($row['id'],"<a target=_blank href='files/$filename'>Скачать</a>","$userfreandlyfilename");
+		$responce->rows[$i]['cell']=array($row['id'],"<a target=_blank href='files/$filename'>Скачать</a>","$userfreandlyfilename",$dt);
 	    };
 	    $i++;
 	}

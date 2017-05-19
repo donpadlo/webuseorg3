@@ -1217,6 +1217,14 @@ if ($cfg->version == '3.82') {
 	};	
 };
 
+if ($cfg->version == '3.83') {
+	$vr = '3.84';	
+	$log = '- добавляю поле дата сохранения файлов для договоров';
+	$sql = 'ALTER TABLE `files_contract` ADD `dt` DATETIME NOT NULL AFTER `userfreandlyfilename`;';
+	ExecSQL($log, $sql, '179');	
+	UpdateVer($vr, '180');
+};
+
 echo 'Обновление закончено.<br>';
 echo 'Если сообщений об ошибках нет, удалите файл update.php.<br>';
 ?>
