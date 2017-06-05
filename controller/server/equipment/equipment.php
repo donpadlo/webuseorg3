@@ -62,11 +62,16 @@ for ($i = 0; $i < $cnt; $i++) {
 	if ($i < ($cnt - 1)) {
 		$where = $where.' AND ';
 	}
-}
-if ($where == '') {
-	$where = "WHERE equipment.orgid='$sorgider'";
+};
+if ($sorgider=="-1"){
+  $orgsql="equipment.orgid!='-1'";
 } else {
-	$where = "WHERE $where AND equipment.orgid='$sorgider'";
+   $orgsql="equipment.orgid='$sorgider'";
+};
+if ($where == '') {
+	$where = "WHERE $orgsql";
+} else {
+	$where = "WHERE $where AND $orgsql";
 }
 /////////////////////////////
 
