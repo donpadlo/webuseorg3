@@ -29,7 +29,10 @@ if (($user->mode==1) or ($user->TestRoles('1,3'))):
 			<select class="chosen-select" class="form-control" name="orgs" id="orgs">
 <?php
 $morgs = GetArrayOrgs(); // список активных организаций
-echo "<option value=-1>Не выбрано</option>";
+//если пользователь админ, то позволим ему видеть все организации
+if ($user->mode==1){
+    echo "<option value=-1>Не выбрано</option>";
+};
 for ($i = 0; $i < count($morgs); $i++) {
 	$idorg = $morgs[$i]['id'];
 	$nameorg = $morgs[$i]['name'];
