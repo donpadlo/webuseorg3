@@ -20,7 +20,7 @@ if ($user->mode != 1) {
 		<div class="alert alert-info">
                 Ваша версия программы: <?php echo "$cfg->version";?><br>
                 Актуальные версии ПО: <a href="https://github.com/donpadlo/webuseorg3/releases" target="_blank">github.com</a><br>
-                Документация: <a href="http://www.грибовы.рф/?page_id=1202" target="_blank">здесь</a>
+                Документация: <a href="http://грибовы.рф/wiki/doku.php" target="_blank">здесь</a>
 		</div>
 		<form class="form-horizontal" role="form" action="?content_page=config&config=save" method="post" name="form1" target="_self">
 			<div class="panel panel-default">
