@@ -100,8 +100,9 @@ $(function() {
 		if (colarray!=""){
 		    obj_for_load=JSON.parse(colarray);   // загружаем JSON в массив     
 		    for (i in obj_for_load) {
-			//console.log("name:",obj_for_load[i].name);
-			//console.log("width:",obj_for_load[i].width);			
+			console.log("name:",obj_for_load[i].name);
+			console.log("width:",obj_for_load[i].width);			
+			console.log("hidden:",obj_for_load[i].hidden);			
 			if  (obj_for_load[i].hidden==true){
 			   $(this).hideCol(obj_for_load[i].name);
 			} else {

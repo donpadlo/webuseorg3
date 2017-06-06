@@ -357,8 +357,12 @@ function LoadTable() {
 		onClickButton: function() {
 			var gsr = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 			if (gsr) {
+			    if (multiselect==true){
 				var s;
 				s = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selarrrow');
+			    } else {
+				s = gsr;
+			    };
 				newWin = window.open('inc/ean13print.php?mass=' + s, 'printWindow');
 			} else {
 				//alert('Сначала выберите строку!');
