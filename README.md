@@ -34,7 +34,8 @@ https://github.com/donpadlo/webuseorg3/releases
 1. Запустить инсталлятор _http://адрессайта/install.php_
 2. Переименовать файл `config.php.dist` в `config.php` и отредактировать.
 3. Поправить права на папки `files`, `photo`, `maps` на 0777
-4. Удалить инсталлятор  _http://адрессайта/install.php_
+4. На всякий случай выполнить http://адрессайта/update.php_
+5. Удалить инсталлятор  _http://адрессайта/install.php_
 
 Если используете пакет "Денвер", то необходимо в `httpd.conf` изменить кодироку по умолчанию: 
 `AddDefaultCharset utf-8`  
