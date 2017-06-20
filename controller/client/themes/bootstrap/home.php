@@ -119,7 +119,7 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 				<div class="row">
 				    <div class="col-xs-12 col-md-12 col-sm-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">Кто онлайн</div>
+						<div class="panel-heading"><i class="fa fa-firefox" aria-hidden="true"></i> Кто онлайн</div>
 						<div class="panel-body">
 							<?php include_once('whoonline.php'); ?>
 						</div>
@@ -127,6 +127,18 @@ $mhome->Register('commits-widget', 'Виджет разработки на githu
 				     </div>
 				 </div>
 				 </div>
+				<div class="container-fluid">
+				<div class="row">
+				    <div class="col-xs-12 col-md-12 col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading"><i class="fa fa-mobile" aria-hidden="true"></i> Доступны для сообщений</div>
+						<div class="panel-body">
+							<?php include_once('whoonlinemobile.php'); ?>
+						</div>
+					</div>
+				     </div>
+				 </div>
+				 </div>				
 				<!-- [/Кто онлайн] -->
 			<?php endif; ?>
 <?php

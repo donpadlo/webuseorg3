@@ -14,7 +14,7 @@ define('WUO_ROOT', dirname(__FILE__));
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Учет ТМЦ в организации и другие плюшки">
-	<meta name="author" content="(c) 2011-2015 by Gribov Pavel">
+	<meta name="author" content="(c) 2011-2017 by Gribov Pavel">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Учет оргтехники в организации</title>
 	<meta name="generator" content="yarus">
@@ -1224,6 +1224,59 @@ if ($cfg->version == '3.83') {
 	ExecSQL($log, $sql, '179');	
 	UpdateVer($vr, '180');
 };
+if ($cfg->version == '3.84') {
+	$vr = '3.85';	
+	$log = '- исправляю ошибку lastdt 0000-00-00';
+	$sql = 'update users set lastdt=now() where lastdt="0000-00-00 00:00:00";';
+	ExecSQL($log, $sql, '181');	
+	
+	$log = '- добавляю поле lastactivemob для опледеления когда последний раз был вход из мобильного приложения';
+	$sql = 'ALTER TABLE `users` ADD `lastactivemob` DATETIME NULL DEFAULT NULL AFTER `active`';
+	ExecSQL($log, $sql, '183');	
+	
+	$log = '- добавляю таблицу mobilemessages для сообщений пользователям';
+	$sql = 'CREATE TABLE mobilemessages ( `id` INT NOT NULL , `userid` INT NOT NULL , `title` TEXT NOT NULL , `body` TEXT NOT NULL , `dtwrite` DATETIME NULL DEFAULT NULL , `dtread` TIMESTAMP NULL DEFAULT NULL , PRIMARY KEY (`id`))';
+	ExecSQL($log, $sql, '183');	
+
+	$log = '- поправочка mobilemessages';
+	$sql = 'ALTER TABLE `mobilemessages` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT';
+	ExecSQL($log, $sql, '184');	
+	
+	UpdateVer($vr, '185');
+};
+
+if ($cfg->version == '3.85') {
+	$vr = '3.86';	
+	$log = '- добавляю поле связи с СМС';
+	$sql = 'ALTER TABLE `mobilemessages` ADD `idsms` INT NOT NULL AFTER `dtread`';
+	ExecSQL($log, $sql, '186');	
+		
+	UpdateVer($vr, '187');
+};
+if ($cfg->version == '3.86') {
+	$vr = '3.87';	
+	$log = '- поле координат пользователя';
+	$sql = 'ALTER TABLE `users` ADD `Longitude` VARCHAR(20) NOT NULL AFTER `lastactivemob`, ADD `Latitude` VARCHAR(20) NOT NULL AFTER `Longitude`;';
+	ExecSQL($log, $sql, '188');	
+		
+	UpdateVer($vr, '189');
+};
+if ($cfg->version == '3.87') {
+	$vr = '3.88';	
+	$log = '- история перемещения пользователя';
+	$sql = 'CREATE TABLE geouserhist ( `id` INT NOT NULL AUTO_INCREMENT , `userid` INT NOT NULL , `longitude` VARCHAR(20) NOT NULL , `latitude` VARCHAR(20) NOT NULL , `dt` DATETIME NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB';
+	ExecSQL($log, $sql, '190');			
+	UpdateVer($vr, '191');
+};
+if ($cfg->version == '3.88') {
+	$vr = '3.89';	
+	$log = '- история перемещения пользователя (расширение)';
+	$sql = 'ALTER TABLE `geouserhist` ADD `Nlongitude` VARCHAR(20) NOT NULL AFTER `dt`, ADD `Nlatitude` VARCHAR(20) NOT NULL AFTER `Nlongitude`;';
+	ExecSQL($log, $sql, '192');			
+	UpdateVer($vr, '193');
+};
+
+
 
 echo 'Обновление закончено.<br>';
 echo 'Если сообщений об ошибках нет, удалите файл update.php.<br>';
