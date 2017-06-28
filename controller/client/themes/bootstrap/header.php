@@ -39,6 +39,7 @@
 	<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/chosen.css">
 	<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/jquery.toastmessage-min.css">
 	<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/font-awesome.min.css">
+	<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/liKnopik.css">
 	<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/jquery-1.11.0.min.js"></script>
 	<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/jquery-ui.min.js"></script>
 	<script src="js/jquery.mmenu.min.all.js"></script>	
@@ -50,6 +51,10 @@
 	<script src="js/jquery.form.js"></script>
 	<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/bootstrap.min.js"></script>
 	<script src="js/common.js"></script>
+        <script src="js/jquery.cookie.js"></script>
+        <script src="js/jQueryRotate.3.1.js"></script>
+        <script src="js/jquery.liKnopik.js"></script>
+	
 	<script>		
 	    <?php
 	     if (isset($_COOKIE['defaultorgid'])==true){

@@ -1,0 +1,84 @@
+/*Plugin CSS*/
+.knopikWrap { 
+	position:fixed; 
+	top:50%; 
+	right:auto; 
+	left:0; 
+	max-width:500px;
+	z-index:999
+}
+.knopikWrap.hiddenMe { 
+	right:100%; 
+	left:auto;
+}
+.knopikWrap.sidePosRight {
+	right:0; 
+	left:auto;
+}
+.knopikWrap.sidePosRight.hiddenMe {
+	right:auto; 
+	left:100%;
+}
+.knopikCont { 
+	box-shadow:0 0 20px #999;
+	border-radius:10px;
+	padding:20px; 
+	border:3px solid #f1f1f1;
+	color:#fefefe;
+	margin:0 0 0 5px;
+	background-color:#244e71;
+	background-image: -webkit-linear-gradient(top, #020303, #244e71, #020303);
+	background-image: -moz-linear-gradient(top, #020303, #244e71, #020303);
+	background-image: -ms-linear-gradient(top, #020303, #244e71, #020303);
+	background-image: -o-linear-gradient(top, #020303, #244e71, #020303);
+	background-image: linear-gradient(top, #020303, #244e71, #020303);
+}
+.sidePosRight .knopikCont {
+	margin:0 5px 0 0
+}
+.knopikBut { 
+	padding:0; 
+	position:absolute; 
+	top:50%; 
+	border-radius:0 10px 10px 0;
+	cursor:pointer;
+	background-color: #244e71;
+	background-image: -webkit-linear-gradient(top, #020303, #244e71, #020303);
+	background-image: -moz-linear-gradient(top, #020303, #244e71, #020303);
+	background-image: -ms-linear-gradient(top, #020303, #244e71, #020303);
+	background-image: -o-linear-gradient(top, #020303, #244e71, #020303);
+	background-image: linear-gradient(top, #020303, #244e71, #020303); 
+}
+.knopikBut:hover {
+	background-color: #346a97;
+	background-image: -webkit-linear-gradient(top, #020303, #346a97, #020303);
+	background-image: -moz-linear-gradient(top, #020303, #346a97, #020303);
+	background-image: -ms-linear-gradient(top, #020303, #346a97, #020303);
+	background-image: -o-linear-gradient(top, #020303, #346a97, #020303);
+	background-image: linear-gradient(top, #020303, #346a97, #020303); 
+}
+.sidePosRight .knopikBut{
+	border-radius:10px 0 0 10px;
+}
+.knopikButPos {position:relative;}
+.knopikButText {
+	padding:7px 15px; 
+	white-space:nowrap; 
+	color:#fefefe; 
+	text-transform:uppercase; 
+	font:700 11px/1.2em Arial, Helvetica, sans-serif; 
+	letter-spacing:2px
+}
+
+/*User Style*/
+.kn_2 ul {
+	padding:0;
+	margin:0;
+	list-style:none
+}
+.knopikCont a {
+	color:#CCC
+}
+.knopikCont a:hover {
+	color:#fff;
+}

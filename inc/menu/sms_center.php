@@ -1,7 +1,7 @@
 <?php
 
 /* 
- * (с) 2011-2015 Грибов Павел
+ * (с) 2011-2017 Грибов Павел
  * http://грибовы.рф * 
  * Если исходный код найден в сети - значит лицензия GPL v.3 * 
  * В противном случае - код собственность ГК Яртелесервис, Мультистрим, Телесервис, Телесервис плюс * 
@@ -9,6 +9,10 @@
 
 $md=new Tmod; // обьявляем переменную для работы с классом модуля
 $md->Register("smscenter", "СМС-Центр", "Грибов Павел"); 
+$md->Register("viber", "отправка сообщений Viber", "Грибов Павел"); 
+if ($md->IsActive("viber")==1) {     
+    $this->Add("config","<i class='fa fa-commenting'> </i>","Настройка Viber", "Настройка отправки сообщений Viber", 0, "config/viber","viberconfig");                    
+};
 if ($md->IsActive("smscenter")==1) {     
     $this->Add("main","<i class='fa fa-commenting-o' aria-hidden='true'></i>","СМС-Центр","СМС-Центр",3,"smscenter","");
      $this->Add("smscenter","<i class='fa fa-comments-o' aria-hidden='true'></i>","Отправка СМС по списку","Отправка СМС по списку",3,"smscenter/sendbylist","smscenter/sendbylist");
