@@ -68,7 +68,31 @@ if (isset($_GET['route'])) {
 		die("На сервере отсутствует указанный путь '$route'");
 	}
 	exit();
-}
+};
+//если это ссылка вида ajax 
+if (isset($_GET['ajax'])) {
+	$uri = $_SERVER['REQUEST_URI'];
+	// Удаляем лишнее
+	if (strpos($uri, '/ajax') === 0) {
+		$uri = substr($uri, 5);
+	} else {
+		$pos = strpos($uri, '?ajax=');
+		if ($pos) {
+			$uri = substr($uri, $pos + 6);
+		}
+	};	
+	// Подключаем запрашиваемый скрипт		
+	if (is_file(WUO_ROOT."/controller/client/themes/".$cfg->theme."".$uri.".php")) {
+		// Загружаем необходимые классы
+		if ($user->id == '') {
+			die('Доступ ограничен');
+		}
+		include_once(WUO_ROOT."/controller/client/themes/".$cfg->theme."".$uri.".php");
+	} else {
+		die("На сервере отсутствует указанный путь:".WUO_ROOT."/controller/client/view/".$cfg->theme."/".$uri.".php");
+	};
+	exit();
+};
 
 // Загружаем классы
 include_once(WUO_ROOT.'/class/mod.php'); // Класс работы с модулями

@@ -35,7 +35,7 @@ function AddToNavBarQuick(title){
     });       
 };
 
-function GetCookieJS(name) {
+function GetCookieJS(name) {	
 	var matches = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
 	return matches ? decodeURIComponent(matches[1]) : undefined;
     };
@@ -52,6 +52,17 @@ function QuickMenuRedraw(){
       });    
   };
 };    
+function SetBreadcrumb(url){
+      $("#breadcrumb").html();  
+};
+function GetAjaxPage(url){
+      mmenuapi.close();
+      $("#ajaxpage").html("<img src=controller/client/themes/"+theme+"/img/loading.gif><br>*выполнение запроса может занять некоторое время..");        
+      $.get(ajax+url, function( data ) {
+          $("#ajaxpage" ).html(data);                            
+      });        
+      SetBreadcrumb(url);
+};
 $(function() {  
     if (typeof printable!=="undefined"){
 

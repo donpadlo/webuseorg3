@@ -71,7 +71,7 @@
 		theme = '<?php echo $cfg->theme; ?>';
 		defaultuserid = <?php echo ($user->id != '') ? $user->id : '-1'; ?>;
 		route = '<?php echo ($userewrite == 1) ? '/route/' : 'index.php?route=/'; ?>';
-
+		ajax='<?php echo ($userewrite == 1) ? '/ajax/' : 'index.php?ajax=/'; ?>';
 		var bootstrapButton = $.fn.button.noConflict();
 		$.fn.bootstrapBtn = bootstrapButton;
 

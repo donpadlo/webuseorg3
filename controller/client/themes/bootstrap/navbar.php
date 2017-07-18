@@ -1,7 +1,7 @@
 <?php
 if (count($cfg->navbar)>0){   
 ?>
-<ul class="breadcrumb">
+<ul class="breadcrumb" id="breadcrumb">
 <?php
  for ($i=count($cfg->navbar)-1;$i>=0;$i--){
    $ntxt=$cfg->navbar[$i];  

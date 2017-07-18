@@ -20,7 +20,9 @@
 				close: false
 			}
 		});
+		mmenuapi = $("#menu").data( "mmenu" );
 	});
+	 
 </script>            
 <nav id="menu">	                        
 <?php
@@ -36,7 +38,13 @@ function PutMenu($par) {
 		$uid = $pmenu['uid'];
 		$comment = $pmenu['comment'];
 		$ico=$pmenu['ico'];
-		$url = ($path == '') ? 'javascript:void(0)' : "index.php?content_page=$path";		
+		$ajax=$pmenu['ajax'];
+		//$url = ($path == '') ? 'javascript:void(0)' : "index.php?content_page=$path";		
+		if ($path==""){
+		    $url='javascript:void(0)';		    
+		} else {
+		    $url="index.php?content_page=$path";
+		};
 		if ($content_page == $path){
 		    $current_page_ico=$pmenu['ico'];		    
 		    $sel=' class="Selected"';
@@ -47,7 +55,11 @@ function PutMenu($par) {
 		if ($path=="") {
 		    echo "<span title='$comment'>$ico $nm</span>";		    
 		} else {
-		    echo "<a title='$comment' href=\"$url\">$ico $nm</a>";		    
+		    if ($ajax==false){
+		     echo "<a title='$comment' href=\"$url\">$ico $nm</a>";		    
+		    } else {
+		     echo "<a title='$comment' href=\"javascript:void(0)\" onclick='GetAjaxPage(\"$path\")'>$ico $nm</a>";		    
+		    };
 		    if ($sel!=''){$sel_url["path"]=$path;$sel_url["uid"]=$uid;$sel_url["parents"]=$pmenu['parents'];$sel_url["name"]=$nm;};
 		};
 		if (count($gmenu->GetList($uid)) > 0) {
