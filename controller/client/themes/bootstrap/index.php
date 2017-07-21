@@ -16,9 +16,9 @@ if ($printable==false){
     include_once("navbar.php");      // главное меню
     include_once("messagebar.php"); // отображение сообщений пользователю (если есть)
 };
-echo "<div id='ajaxpage'>";
+if ($printable==false) echo "<div id='ajaxpage'>";
 include_once("controller/client/themes/$cfg->theme/$content_page.php");            
-echo "</div>";
+if ($printable==false) echo "</div>";
 if ($printable==false){
     include_once("footer.php");     // подвал страницы    
 };
