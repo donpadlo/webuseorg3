@@ -47,7 +47,23 @@ for ($i = 0; $i < $cnt; $i++) {
 	$field = $flt['rules'][$i]['field'];
 	if ($field == 'org.name') {
 		$field = 'org.id';
-	}
+	};
+	if ($field == 'datepost') {
+		$ddt=  explode('.',$flt['rules'][$i]['data']);
+		$resd="";
+		//думаем что ищем по году
+		if ((isset($ddt[0])==true) and (isset($ddt[1])==false)){
+		    $flt['rules'][$i]['data']="$ddt[0]-%-%";
+		};
+		//думаем что ищем по году-месяцу
+		if ((isset($ddt[0])==true) and (isset($ddt[1])==true) and (isset($ddt[2])==false)){
+		    $flt['rules'][$i]['data']="%$ddt[1]%-%$ddt[0]%-%";
+		};
+		//думаем что ищем по полным данным
+		if ((isset($ddt[0])==true) and (isset($ddt[1])==true) and (isset($ddt[2])==true)){
+		    $flt['rules'][$i]['data']="%$ddt[2]%-%$ddt[1]%-%$ddt[0]%";
+		};
+	};	
 	$data = $flt['rules'][$i]['data'];
 	if ($data != '-1') {
 		if (($field == 'placesid') or ( $field == 'getvendorandgroup.grnomeid')) {
