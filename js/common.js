@@ -18,6 +18,23 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
+function PrintableView(){
+  var newWin3=window.open('','Печатная форма','');
+    newWin3.focus();
+    newWin3.document.write('<html>'); 
+    newWin3.document.write("<script>printable=true;\x3C/script>"); 
+    newWin3.document.write($("#idheader").html());		    
+    newWin3.document.write('<body>');     
+    report=$("#report").html();
+    if (report!=""){
+	newWin3.document.write(report);  
+    };
+    newWin3.print();
+    newWin3.document.write('</body></html>');  
+    newWin3.document.close();
+    
+  
+};
 function UpdateChosen(){
     for (var selector in config) {
 	$(selector).chosen({ width: '100%' });
@@ -46,10 +63,18 @@ function SaveCookiesJS(key,result,days){
 	$.cookie(key,result);
     };
 function QuickMenuRedraw(){    
-    if (printable==false){
-      $.get(route+'controller/server/common/quickmenuredraw.php', function( data ) {
-          $("#quick_div" ).html(data);                            
-      });    
+    if (printable==false){	
+	agent=window.navigator.userAgent;
+	//agent="NOC-agent";
+	if (agent=="NOC-agent") {
+	    $.get(route+'controller/server/common/quickmenuredraw.php&mode=menu', function( data ) {
+		 $("#menu").find(".mm-listview" ).append("<li><a title='Быстрые ссылки' href=\"javascript:void(0)\"><i class=\"fa fa-bolt\" aria-hidden=\"true\"></i> Быстрые ссылки</a><ul>"+data+"</ul></li>");
+	    });    	    
+	} else {
+	    $.get(route+'controller/server/common/quickmenuredraw.php', function( data ) {
+		$("#quick_div" ).html(data);     
+	    });
+	};
   };
 };    
 function SetBreadcrumb(url){

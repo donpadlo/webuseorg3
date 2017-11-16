@@ -1,52 +1,64 @@
 <?php
 
-
 // Данный код создан и распространяется по лицензии GPL v3
 // Изначальный автор данного кода - Грибов Павел
 // http://грибовы.рф
-
-include_once ("../../../../config.php");                    // загружаем первоначальные настройки
-
+include_once ("../../../../config.php"); // загружаем первоначальные настройки
+                                         
 // загружаем классы
 
-include_once("../../../../class/sql.php");               // загружаем классы работы с БД
-include_once("../../../../class/config.php");		// загружаем классы настроек
-include_once("../../../../class/users.php");		// загружаем классы работы с пользователями
-include_once("../../../../class/employees.php");		// загружаем классы работы с профилем пользователя
-
-
+include_once ("../../../../class/sql.php"); // загружаем классы работы с БД
+include_once ("../../../../class/config.php"); // загружаем классы настроек
+include_once ("../../../../class/users.php"); // загружаем классы работы с пользователями
+include_once ("../../../../class/employees.php"); // загружаем классы работы с профилем пользователя
+                                                 
 // загружаем все что нужно для работы движка
 
-include_once("../../../../inc/connect.php");		// соеденяемся с БД, получаем $mysql_base_id
-include_once("../../../../inc/config.php");              // подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once("../../../../inc/functions.php");		// загружаем функции
+include_once ("../../../../inc/connect.php"); // соеденяемся с БД, получаем $mysql_base_id
+include_once ("../../../../inc/config.php"); // подгружаем настройки из БД, получаем заполненый класс $cfg
+include_once ("../../../../inc/functions.php"); // загружаем функции
 
-if (isset($_GET["step"])) {$step=$_GET["step"];}
-if (isset($_GET["id"])) {$id=$_GET["id"];};
-$dtpost="";$title="";$txt="";
+if (isset($_GET["step"])) {
+    $step = $_GET["step"];
+}
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+}
+;
+$dtpost = "";
+$title = "";
+$txt = "";
 
-if ($step=='edit')
- {
-    $result =  $sqlcn->ExecuteSQL("SELECT * FROM news WHERE id='$id';");
-		       while ($myrow = mysqli_fetch_array($result)){
-			    $dtpost=MySQLDateTimeToDateTimeNoTime($myrow["dt"]);
-			    $title=$myrow["title"];
-			    $txt=$myrow["body"];			    
-		       };
- } else {$step="add";$id="";};
+if ($step == 'edit') {
+    $result = $sqlcn->ExecuteSQL("SELECT * FROM news WHERE id='$id';");
+    while ($myrow = mysqli_fetch_array($result)) {
+        $dtpost = MySQLDateTimeToDateTimeNoTime($myrow["dt"]);
+        $title = $myrow["title"];
+        $txt = $myrow["body"];
+    }
+    ;
+} else {
+    $step = "add";
+    $id = "";
+}
+;
 
 ?>
 <script type="text/javascript" src="js/tinymce/jquery.tinymce.min.js"></script>
-<div id="messenger"></div>    
-<form ENCTYPE="multipart/form-data" action="?content_page=news&step=<?php echo "$step&newsid=$id"; ?>" method="post" name="form1" target="_self">
-    <input name=dtpost id=dtpost value="<?php echo "$dtpost"; ?>"><br>
-    <input name=title  id=title value="<?php echo "$title";?>" class="span8" placeholder="Заголовок"><br>
-    <textarea class="span12" id="txt" name=txt  rows="15" placeholder="Введите новость">
+<div id="messenger"></div>
+<form ENCTYPE="multipart/form-data"
+	action="?content_page=news&step=<?php echo "$step&newsid=$id"; ?>"
+	method="post" name="form1" target="_self">
+	<input name=dtpost id=dtpost value="<?php echo "$dtpost"; ?>"><br> <input
+		name=title id=title value="<?php echo "$title";?>" class="span8"
+		placeholder="Заголовок"><br>
+	<textarea class="span12" id="txt" name=txt rows="15"
+		placeholder="Введите новость">
         <?php echo "$txt";?>
     </textarea>
-    
+
 </form>
- <script>
+<script>
 $( "#pg_add_edit" ).dialog({
   close: function() {$( "#dtpost" ).datepicker( "destroy" );
    tinymce.activeEditor.destroy();

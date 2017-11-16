@@ -3,18 +3,17 @@
 // Данный код создан и распространяется по лицензии GPL v3
 // Изначальный автор данного кода - Грибов Павел
 // http://грибовы.рф
-
 ?>
 <div class="row-fluid">
-    <div class="span12">        
-        <div class="well form-inline">
-            <select name="tmc_groups" id="tmc_groups">
-            </select>
-            <button type="submit" class="btn" id="viewwork" name="viewwork">Построить отчет</button>
-        </div>
-        <div class="well" id="tablesklad">
-        </div>    
-    </div>
+	<div class="span12">
+		<div class="well form-inline">
+			<select name="tmc_groups" id="tmc_groups">
+			</select>
+			<button type="submit" class="btn" id="viewwork" name="viewwork">Построить
+				отчет</button>
+		</div>
+		<div class="well" id="tablesklad"></div>
+	</div>
 </div>
 <script>
     $("#viewwork").click(function(){
@@ -26,7 +25,7 @@
        return false;
     });
 $("#tmc_groups").load("controller/client/view/opreports/get_tmc_group.php");    
-</script>    
+</script>
 <?php
 
 ?>

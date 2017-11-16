@@ -1,21 +1,25 @@
 table.tablesorter {
-	font-size: 12px;	
-	width: 100%;	
+	font-size: 12px;
+	width: 100%;
 }
+
 table.tablesorter th {
 	text-align: left;
 	padding: 5px;
-
 }
-table.tablesorter td {	
+
+table.tablesorter td {
 	padding: 5px;
 }
+
 table.tablesorter .even {
-
+	
 }
+
 table.tablesorter .odd {
-
+	
 }
+
 table.tablesorter .header {
 	background-image: url(img/bg.png);
 	background-repeat: no-repeat;
@@ -23,10 +27,12 @@ table.tablesorter .header {
 	padding-top: 8px;
 	height: auto;
 }
+
 table.tablesorter .headerSortUp {
 	background-image: url(img/asc.png);
 	background-repeat: no-repeat;
 }
+
 table.tablesorter .headerSortDown {
 	background-image: url(img/desc.png);
 	background-repeat: no-repeat;

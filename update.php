@@ -1276,6 +1276,10 @@ if ($cfg->version == '3.88') {
 	UpdateVer($vr, '193');
 };
 
+if ($cfg->version == '3.89') {
+	$vr = '3.90';	
+	UpdateVer($vr, '193');
+};
 
 
 echo 'Обновление закончено.<br>';

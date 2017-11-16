@@ -1,13 +1,15 @@
 <?php
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
-//   Грибов Павел,
-//   Сергей Солодягин (solodyagin@gmail.com)
-//   (добавляйте себя если что-то делали)
+// Грибов Павел,
+// Сергей Солодягин (solodyagin@gmail.com)
+// (добавляйте себя если что-то делали)
 // http://грибовы.рф
-
-if (in_array($user->mode, array(0, 1))):
-?>
+if (in_array($user->mode, array(
+    0,
+    1
+))) :
+    ?>
 <div class="container-fluid">
 	<div class="row-fluid">
 		<ul class="nav nav-tabs" id="myTab">
@@ -18,7 +20,9 @@ if (in_array($user->mode, array(0, 1))):
 	<div class="row-fluid">
 		<div class="col-xs-2 col-md-2 col-sm-2">
 			<div id="photoid" name="photoid" align="center">
-				<img src="controller/client/themes/<?php echo $cfg->theme; ?>/img/noimage.jpg" width="200">
+				<img
+					src="controller/client/themes/<?php echo $cfg->theme; ?>/img/noimage.jpg"
+					width="200">
 			</div>
 			<input name="geteqid" type="hidden" id="geteqid" value="">
 		</div>
@@ -36,7 +40,5 @@ if (in_array($user->mode, array(0, 1))):
 </div>
 <script src="controller/client/js/eq_list.js"></script>
 <?php else: ?>
-<div class="alert alert-error">
-	У вас нет доступа в данный раздел!
-</div>
+<div class="alert alert-error">У вас нет доступа в данный раздел!</div>
 <?php endif; ?>

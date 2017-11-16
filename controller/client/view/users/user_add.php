@@ -1,26 +1,25 @@
 <?php
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
-//   Грибов Павел,
-//   Сергей Солодягин (solodyagin@gmail.com)
-//   (добавляйте себя если что-то делали)
+// Грибов Павел,
+// Сергей Солодягин (solodyagin@gmail.com)
+// (добавляйте себя если что-то делали)
 // http://грибовы.рф
-
 include_once ('../../../../config.php'); // загружаем первоначальные настройки
-// загружаем классы
-include_once('../../../../class/sql.php');   // загружаем классы работы с БД
-include_once('../../../../class/config.php');  // загружаем классы настроек
-include_once('../../../../class/users.php');  // загружаем классы работы с пользователями
-include_once('../../../../class/employees.php');  // загружаем классы работы с профилем пользователя
-// загружаем все что нужно для работы движка
-include_once('../../../../inc/connect.php');  // соеденяемся с БД, получаем $mysql_base_id
-include_once('../../../../inc/config.php');  // подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once('../../../../inc/functions.php');  // загружаем функции
-include_once('../../../../inc/login.php');  // логинимся
-
+                                         // загружаем классы
+include_once ('../../../../class/sql.php'); // загружаем классы работы с БД
+include_once ('../../../../class/config.php'); // загружаем классы настроек
+include_once ('../../../../class/users.php'); // загружаем классы работы с пользователями
+include_once ('../../../../class/employees.php'); // загружаем классы работы с профилем пользователя
+                                                 // загружаем все что нужно для работы движка
+include_once ('../../../../inc/connect.php'); // соеденяемся с БД, получаем $mysql_base_id
+include_once ('../../../../inc/config.php'); // подгружаем настройки из БД, получаем заполненый класс $cfg
+include_once ('../../../../inc/functions.php'); // загружаем функции
+include_once ('../../../../inc/login.php'); // логинимся
+                                           
 // Если пользователь - "Администратор"
-if ($user->mode == '1'):
-?>
+if ($user->mode == '1') :
+    ?>
 <script>
 	$(function() {
 		var field = new Array('login', 'pass', 'email'); // поля обязательные
@@ -66,39 +65,43 @@ if ($user->mode == '1'):
 </script>
 <div class="container-fluid">
 	<div class="row">
-		<form role="form" id="myForm" enctype="multipart/form-data" action="index.php?route=/controller/server/users/libre_users_form.php?step=add" method="post" name="form1" target="_self">
+		<form role="form" id="myForm" enctype="multipart/form-data"
+			action="index.php?route=/controller/server/users/libre_users_form.php?step=add"
+			method="post" name="form1" target="_self">
 			<div class="form-group">
-				<label for="orgid">Организация</label>
-				<select class="form-control" name="orgid" id="orgid">
+				<label for="orgid">Организация</label> <select class="form-control"
+					name="orgid" id="orgid">
 <?php
-$morgs = GetArrayOrgs();
-for ($i = 0; $i < count($morgs); $i++) {
-	$idorg = $morgs[$i]['id'];
-	$nameorg = $morgs[$i]['name'];
-	$selected = ($idorg == $cfg->defaultorgid) ? 'selected' : '';
-	echo "<option $selected value=\"$idorg\">$nameorg</option>";
-}
-?>
-				</select>
-				<label for="mode">Права</label>
-				<select name="mode" id="mode" class="form-control">
+    $morgs = GetArrayOrgs();
+    for ($i = 0; $i < count($morgs); $i ++) {
+        $idorg = $morgs[$i]['id'];
+        $nameorg = $morgs[$i]['name'];
+        $selected = ($idorg == $cfg->defaultorgid) ? 'selected' : '';
+        echo "<option $selected value=\"$idorg\">$nameorg</option>";
+    }
+    ?>
+				</select> <label for="mode">Права</label> <select name="mode"
+					id="mode" class="form-control">
 					<option value="0" selected>Пользователь</option>
 					<option value="1">Администратор</option>
 				</select>
 			</div>
 			<div class="form-group">
-				<input class="form-control" placeholder="Логин" name="login" id="login" value="">
-				<input class="form-control" placeholder="Пароль" name="pass" id="pass"  type="password" value="">
-				<input class="form-control" placeholder="Email" name="email" id="email" size="16" value=""> 
+				<input class="form-control" placeholder="Логин" name="login"
+					id="login" value=""> <input class="form-control"
+					placeholder="Пароль" name="pass" id="pass" type="password" value="">
+				<input class="form-control" placeholder="Email" name="email"
+					id="email" size="16" value="">
 			</div>
 			<div align="center">
-				<input class="btn btn-default" type="submit" name="Submit" value="Сохранить">
+				<input class="btn btn-default" type="submit" name="Submit"
+					value="Сохранить">
 			</div>
 		</form>
 		<div id="messenger"></div>
 	</div>
 </div>
 <?php
-else:
-	echo 'Нужны права администратора!';
+else :
+    echo 'Нужны права администратора!';
 endif;

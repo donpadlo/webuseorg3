@@ -1,23 +1,27 @@
 <?php
-$userid=  _GET("userid");
+$userid = _GET("userid");
 $sql = "select * from geouserhist where longitude<>'' or Nlongitude<>'' and userid=$userid order by id desc limit 1;";
-$result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать последние координаты пользователя!".mysqli_error($sqlcn->idsqlconnection));
-$cnt=0;
-while($row = mysqli_fetch_array($result)) {
-    $cnt++;
-    $starty=$row["longitude"];
-    $startx=$row["latitude"];
-    if ($startx==""){
-	$starty=$row["Nlongitude"];
-	$startx=$row["Nlatitude"];	
-    };
-};
-if ($cnt==0){
-  die("У пользователя не ведутся логи координат!");  
-};
+$result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать последние координаты пользователя!" . mysqli_error($sqlcn->idsqlconnection));
+$cnt = 0;
+while ($row = mysqli_fetch_array($result)) {
+    $cnt ++;
+    $starty = $row["longitude"];
+    $startx = $row["latitude"];
+    if ($startx == "") {
+        $starty = $row["Nlongitude"];
+        $startx = $row["Nlatitude"];
+    }
+    ;
+}
+;
+if ($cnt == 0) {
+    die("У пользователя не ведутся логи координат!");
+}
+;
 ?>
 <div id="map"></div>
-<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"
+	type="text/javascript"></script>
 <script>
 route = '<?php echo ($userewrite == 1) ? '/route/' : 'index.php?route=/'; ?>';
 

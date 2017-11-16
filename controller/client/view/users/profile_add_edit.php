@@ -1,11 +1,10 @@
 <?php
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
-//   Грибов Павел,
-//   Сергей Солодягин (solodyagin@gmail.com)
-//   (добавляйте себя если что-то делали)
+// Грибов Павел,
+// Сергей Солодягин (solodyagin@gmail.com)
+// (добавляйте себя если что-то делали)
 // http://грибовы.рф
-
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 $userid = GetDef('userid');
@@ -28,71 +27,82 @@ $(document).ready(function() {
 });
 </script>
 <?php
-if ($user->mode == '1'):
-	$tmpuser = new Tusers();
-	$tmpuser->GetById($userid);
-	$id = $tmpuser->id;
-	$fio = $tmpuser->fio;
-	$photo = $tmpuser->jpegphoto;
-	if ($photo == '') {
-		$photo = "noimage.jpg";
-	}
-	$code = $tmpuser->tab_num;
-	$post = $tmpuser->post;
-	$phone1 = $tmpuser->telephonenumber;
-	$phone2 = $tmpuser->homephone;
-	$sslusernum= $tmpuser->sslusernum;
-	unset($tmpuser);
-?>
+if ($user->mode == '1') :
+    $tmpuser = new Tusers();
+    $tmpuser->GetById($userid);
+    $id = $tmpuser->id;
+    $fio = $tmpuser->fio;
+    $photo = $tmpuser->jpegphoto;
+    if ($photo == '') {
+        $photo = "noimage.jpg";
+    }
+    $code = $tmpuser->tab_num;
+    $post = $tmpuser->post;
+    $phone1 = $tmpuser->telephonenumber;
+    $phone2 = $tmpuser->homephone;
+    $sslusernum = $tmpuser->sslusernum;
+    unset($tmpuser);
+    ?>
 <div class="container-fluid">
-<div class="row">
-<div id="messenger"></div>
-<form role="form" id="myForm" enctype="multipart/form-data" action="index.php?route=/controller/server/users/libre_profile_users_form.php?<?php echo "userid=$userid"; ?>" method="post" name="form1" target="_self">
-	<div class="row-fluid">
-		<div class="col-xs-6 col-md-6 col-sm-6">
-			<div class="form-group">
-				<label for="fio">ФИО</label>
-				<input class="form-control" placeholder="ФИО" name="fio" id="fio" value="<?php echo $fio; ?>">
-				<label for="code">Табельный</label>
-				<input class="form-control" placeholder="Табельный номер" name="code" id="code" value="<?php echo $code; ?>">
-				<label for="post">Должность</label>
-				<input class="form-control" placeholder="Должность" name="post" id="post" value="<?php echo $post; ?>">
-				<label for="phone1">Сотовый:</label>
-				<input class="form-control" placeholder="Сотовый телефон" name="phone1" id="phone1" value="<?php echo $phone1; ?>">
-				<label for="phone2">Стационарный:</label>
-				<input class="form-control" placeholder="Стационарный телефон" name="phone2" id="phone2" value="<?php echo $phone2; ?>">            
-			</div>
-		</div>
-		<div class="col-xs-6 col-md-6 col-sm-6">
-			<div id="userpic" class="userpic">
-				<div class="js-preview userpic__preview thumbnail">
-					<img src="photos/<?php echo $photo; ?>">
-				</div>
-				<div class="btn btn-success js-fileapi-wrapper">
-					<div class="js-browse">
-						<span class="btn-txt">Сменить фото</span>
-						<input type="file" name="filedata"/>
-					</div>
-					<div class="js-upload" style="display: none;">
-						<div class="progress progress-success"><div class="js-progress bar"></div></div>
-						<span class="btn-txt">Загружаем</span>
+	<div class="row">
+		<div id="messenger"></div>
+		<form role="form" id="myForm" enctype="multipart/form-data"
+			action="index.php?route=/controller/server/users/libre_profile_users_form.php?<?php echo "userid=$userid"; ?>"
+			method="post" name="form1" target="_self">
+			<div class="row-fluid">
+				<div class="col-xs-6 col-md-6 col-sm-6">
+					<div class="form-group">
+						<label for="fio">ФИО</label> <input class="form-control"
+							placeholder="ФИО" name="fio" id="fio" value="<?php echo $fio; ?>">
+						<label for="code">Табельный</label> <input class="form-control"
+							placeholder="Табельный номер" name="code" id="code"
+							value="<?php echo $code; ?>"> <label for="post">Должность</label>
+						<input class="form-control" placeholder="Должность" name="post"
+							id="post" value="<?php echo $post; ?>"> <label for="phone1">Сотовый:</label>
+						<input class="form-control" placeholder="Сотовый телефон"
+							name="phone1" id="phone1" value="<?php echo $phone1; ?>"> <label
+							for="phone2">Стационарный:</label> <input class="form-control"
+							placeholder="Стационарный телефон" name="phone2" id="phone2"
+							value="<?php echo $phone2; ?>">
 					</div>
 				</div>
-			</div>
-			<input name="picname" id="picname" type="hidden" value="<?php echo $photo; ?>">
-			<label for="phone2">№SSL сертификата</label>
-			<input class="form-control" placeholder="Номер SSL сертификата" name="sslusernum" id="sslusernum" value="<?php echo $sslusernum; ?>">            
+				<div class="col-xs-6 col-md-6 col-sm-6">
+					<div id="userpic" class="userpic">
+						<div class="js-preview userpic__preview thumbnail">
+							<img src="photos/<?php echo $photo; ?>">
+						</div>
+						<div class="btn btn-success js-fileapi-wrapper">
+							<div class="js-browse">
+								<span class="btn-txt">Сменить фото</span> <input type="file"
+									name="filedata" />
+							</div>
+							<div class="js-upload" style="display: none;">
+								<div class="progress progress-success">
+									<div class="js-progress bar"></div>
+								</div>
+								<span class="btn-txt">Загружаем</span>
+							</div>
+						</div>
+					</div>
+					<input name="picname" id="picname" type="hidden"
+						value="<?php echo $photo; ?>"> <label for="phone2">№SSL
+						сертификата</label> <input class="form-control"
+						placeholder="Номер SSL сертификата" name="sslusernum"
+						id="sslusernum" value="<?php echo $sslusernum; ?>">
 
-		</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="submit" name="Submit"
+					value="Сохранить">
+			</div>
+		</form>
 	</div>
-	<div class="form-group">
-		<input class="form-control" type="submit"  name="Submit" value="Сохранить">
-	</div>
-</form>
-</div>
 </div>
 <div id="popup" class="popup" style="display: none;">
-	<div class="popup__body"><div class="js-img"></div></div>
+	<div class="popup__body">
+		<div class="js-img"></div>
+	</div>
 	<div style="margin: 0 0 5px; text-align: center;">
 		<div class="js-upload btn btn_browse btn_browse_small">Загрузить</div>
 	</div>

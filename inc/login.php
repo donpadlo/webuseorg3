@@ -13,6 +13,9 @@ $user = new Tusers;
 // Если есть печеньки, то получаем сессионный идентификатор
 $user->randomid = (isset($_COOKIE['user_randomid_w3'])) ? $_COOKIE['user_randomid_w3'] : '';
 
+//а вдруг в GET есть randomid?
+if (_GET("user_randomid_w3")!=""){$user->randomid=_GET("user_randomid_w3");};
+
 // если есть кукисы, то заполняем данные по пользователю ГЛОБАЛЬНО в переменную $user
 // если кукисов нет, или они не верные,то $user->randomid делаем пустым
 if ($user->randomid != '') {

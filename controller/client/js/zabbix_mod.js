@@ -46,7 +46,9 @@ $(document).ready(function() {
 					$('#zabbix_mod_win').html('');
 					zx = 0;
 					if (obj_for_load["result"]=="ok"){
-					    for (i in obj_for_load) {
+					    for (i in obj_for_load) {		
+						if (typeof obj_for_load[i]=="object") {
+						    //console.log(i);
 						    pd = 'success';
 						    switch (obj_for_load[i]['prinum']) {
 							    case '0':
@@ -67,11 +69,12 @@ $(document).ready(function() {
 						    ht = ht + '<tr class=' + pd + '><td>' + obj_for_load[i]['group_name'] + '</td><td>' + obj_for_load[i]['hosterr'] + '</td><td>' + obj_for_load[i]['description'] + '</td><td>' + obj_for_load[i]['lastchange'] + '</td><td>' + obj_for_load[i]['priority'] + '</td><td>' + obj_for_load[i]['comment'] + '</td></tr>';
 						    cq = cq + obj_for_load[i]['triggerid'];
 						    zx++;
-					    }
+						};
+					    };
 					};
 					ht = ht + '</tbody></table></br>Настройка подписок <a href="?content_page=zabbix_mon">тут</a>';
 					$('#zabbix_mod_win').html(ht);
-					if (zx > 1) {
+					if (zx >= 1) {
 						$('#zab_img').css('border', 'red 3px solid');
 					} else {
 						$('#zab_img').css('border', 'green 1px solid');

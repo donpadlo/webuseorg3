@@ -2,11 +2,10 @@
 
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
-//   Грибов Павел,
-//   Сергей Солодягин (solodyagin@gmail.com)
-//   (добавляйте себя если что-то делали)
+// Грибов Павел,
+// Сергей Солодягин (solodyagin@gmail.com)
+// (добавляйте себя если что-то делали)
 // http://грибовы.рф
-
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 $step = GetDef('step');
@@ -17,17 +16,17 @@ $photo = PostDef('picname');
 $code = PostDef('code');
 $phone1 = PostDef('phone1');
 $phone2 = PostDef('phone2');
-//echo "!$userid!";
+// echo "!$userid!";
 $tmpuser = new Tusers();
 $tmpuser->GetById($userid);
 $tmpuser->fio = $fio;
 $tmpuser->jpegphoto = $photo;
-//echo "$fio!$userid";
+// echo "$fio!$userid";
 $tmpuser->post = $post;
 $tmpuser->tab_num = $code;
 $tmpuser->telephonenumber = $phone1;
 $tmpuser->homephone = $phone2;
-$tmpuser->sslusernum=PostDef('sslusernum');
+$tmpuser->sslusernum = PostDef('sslusernum');
 $tmpuser->Update();
 unset($tmpuser);
 

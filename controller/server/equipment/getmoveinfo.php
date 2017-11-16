@@ -2,16 +2,15 @@
 
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
-//   Грибов Павел,
-//   Сергей Солодягин (solodyagin@gmail.com)
-//   (добавляйте себя если что-то делали)
+// Грибов Павел,
+// Сергей Солодягин (solodyagin@gmail.com)
+// (добавляйте себя если что-то делали)
 // http://грибовы.рф
-
 defined('WUO_ROOT') or die('Доступ запрещён'); // Запрещаем прямой вызов скрипта.
 
 $page = GetDef('page');
 if (empty($page)) {
-	$page = 1;
+    $page = 1;
 }
 $limit = GetDef('rows');
 $sidx = GetDef('sidx', '1');
@@ -23,13 +22,13 @@ $comment = PostDef('comment');
 
 // если не задано ТМЦ по которому показываем перемещения, то тогда просто листаем последние
 if ($eqid == '') {
-	$where = '';
+    $where = '';
 } else {
-	$where = "WHERE move.eqid='$eqid'";
+    $where = "WHERE move.eqid='$eqid'";
 }
 
 if ($oper == '') {
-	$result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count, mv.id, mv.eqid, mv.dt,
+    $result = $sqlcn->ExecuteSQL("SELECT COUNT(*) AS count, mv.id, mv.eqid, mv.dt,
 		mv.orgname1, org.name AS orgname2, mv.place1, places.name AS place2,
 		mv.user1, users_profile.fio AS user2,move.comment as comment
 		FROM move
@@ -43,15 +42,15 @@ if ($oper == '') {
 			) AS mv ON move.id = mv.id
 			INNER JOIN org ON org.id = move.orgidto
 			INNER JOIN places ON places.id = placesidto
-			INNER JOIN users_profile ON users_profile.usersid = useridto ".$where);
-	$row = mysqli_fetch_array($result);
-	$count = $row['count'];
-	$total_pages = ($count > 0) ? ceil($count / $limit) : 0;
-	if ($page > $total_pages) {
-		$page = $total_pages;
-	}
-	$start = $limit * $page - $limit;
-	$SQL = "SELECT mv.id, mv.eqid, nome.name, mv.nomeid,mv.dt, mv.orgname1,
+			INNER JOIN users_profile ON users_profile.usersid = useridto " . $where);
+    $row = mysqli_fetch_array($result);
+    $count = $row['count'];
+    $total_pages = ($count > 0) ? ceil($count / $limit) : 0;
+    if ($page > $total_pages) {
+        $page = $total_pages;
+    }
+    $start = $limit * $page - $limit;
+    $SQL = "SELECT mv.id, mv.eqid, nome.name, mv.nomeid,mv.dt, mv.orgname1,
 		org.name AS orgname2, mv.place1, places.name AS place2, mv.user1,
 		users_profile.fio AS user2,move.comment AS comment
 		FROM move
@@ -67,40 +66,46 @@ if ($oper == '') {
 			INNER JOIN org ON org.id = move.orgidto
 			INNER JOIN places ON places.id = placesidto
 			INNER JOIN users_profile ON users_profile.usersid = useridto
-			INNER JOIN nome ON nome.id = mv.nomeid ".$where."
+			INNER JOIN nome ON nome.id = mv.nomeid " . $where . "
 			ORDER BY $sidx $sord LIMIT $start, $limit";
-	$result = $sqlcn->ExecuteSQL($SQL)
-			or die('Не могу выбрать список перемещений!'.mysqli_error($sqlcn->idsqlconnection));
-	$responce = new stdClass();
-	$responce->page = $page;
-	$responce->total = $total_pages;
-	$responce->records = $count;
-	$i = 0;
-	while ($row = mysqli_fetch_array($result)) {
-		$responce->rows[$i]['id'] = $row['id'];
-		$responce->rows[$i]['cell'] = array($row['id'], $row['dt'],
-			$row['orgname1'], $row['place1'], $row['user1'], $row['orgname2'],
-			$row['place2'], $row['user2'], $row['name'], $row['comment']);
-		$i++;
-	}
-	jsonExit($responce);
+    $result = $sqlcn->ExecuteSQL($SQL) or die('Не могу выбрать список перемещений!' . mysqli_error($sqlcn->idsqlconnection));
+    $responce = new stdClass();
+    $responce->page = $page;
+    $responce->total = $total_pages;
+    $responce->records = $count;
+    $i = 0;
+    while ($row = mysqli_fetch_array($result)) {
+        $responce->rows[$i]['id'] = $row['id'];
+        $responce->rows[$i]['cell'] = array(
+            $row['id'],
+            $row['dt'],
+            $row['orgname1'],
+            $row['place1'],
+            $row['user1'],
+            $row['orgname2'],
+            $row['place2'],
+            $row['user2'],
+            $row['name'],
+            $row['comment']
+        );
+        $i ++;
+    }
+    jsonExit($responce);
 }
 
 if ($oper == 'edit') {
-	// Проверяем может ли пользователь редактировать?
-	$user->TestRoles('1,5') or die('Недостаточно прав');
-
-	$SQL = "UPDATE move SET comment='$comment' WHERE id='$id'";
-	$sqlcn->ExecuteSQL($SQL)
-			or die('Не могу обновить комментарий!'.mysqli_error($sqlcn->idsqlconnection));
-	exit;
+    // Проверяем может ли пользователь редактировать?
+    $user->TestRoles('1,5') or die('Недостаточно прав');
+    
+    $SQL = "UPDATE move SET comment='$comment' WHERE id='$id'";
+    $sqlcn->ExecuteSQL($SQL) or die('Не могу обновить комментарий!' . mysqli_error($sqlcn->idsqlconnection));
+    exit();
 }
 
 if ($oper == 'del') {
-	// Проверяем может ли пользователь удалять?
-	$user->TestRoles('1,6') or die('Недостаточно прав');
-
-	$SQL = "DELETE FROM move WHERE id='$id'";
-	$sqlcn->ExecuteSQL($SQL)
-			or die('Не могу удалить запись о перемещении!'.mysqli_error($sqlcn->idsqlconnection));
+    // Проверяем может ли пользователь удалять?
+    $user->TestRoles('1,6') or die('Недостаточно прав');
+    
+    $SQL = "DELETE FROM move WHERE id='$id'";
+    $sqlcn->ExecuteSQL($SQL) or die('Не могу удалить запись о перемещении!' . mysqli_error($sqlcn->idsqlconnection));
 }

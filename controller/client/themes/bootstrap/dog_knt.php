@@ -6,10 +6,10 @@
 ?>
 
 <div class="container-fluid">
-<div class="row-fluid">
-          <table id="list2"></table>
-          <div id="pager2"></div>            
-          <div id=info_contract>
-</div>
-</div>          
- <script type="text/javascript" src="controller/client/js/contract_control.js"></script>    
+	<div class="row-fluid">
+		<table id="list2"></table>
+		<div id="pager2"></div>
+		<div id=info_contract></div>
+	</div>
+	<script type="text/javascript"
+		src="controller/client/js/contract_control.js"></script>

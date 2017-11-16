@@ -1,48 +1,54 @@
 <?php
 // Данный код создан и распространяется по лицензии GPL v3
 // Разработчики:
-//   Грибов Павел,
-//   Сергей Солодягин (solodyagin@gmail.com)
-//   (добавляйте себя если что-то делали)
+// Грибов Павел,
+// Сергей Солодягин (solodyagin@gmail.com)
+// (добавляйте себя если что-то делали)
 // http://грибовы.рф
-
-if ($user->id == ''):
-?>
-<form role="form" action="index.php?content_page=home&login_step=enter" method="post" name="form1" target="_self">
+if ($user->id == '') :
+    ?>
+<form role="form" action="index.php?content_page=home&login_step=enter"
+	method="post" name="form1" target="_self">
 	<div class="form-group">
-		<input type="text" class="form-control" id="enter_user_login" name="enter_user_login" placeholder="Логин">
-		<input type="password" class="form-control" id="enter_user_pass" name="enter_user_pass" placeholder="Пароль">
+		<input type="text" class="form-control" id="enter_user_login"
+			name="enter_user_login" placeholder="Логин"> <input type="password"
+			class="form-control" id="enter_user_pass" name="enter_user_pass"
+			placeholder="Пароль">
 	</div>
 	<button type="submit" class="btn btn-primary">Войти</button>
 </form>
 <?php else: ?>
-<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/upload.css">
+<link rel="stylesheet"
+	href="controller/client/themes/<?php echo $cfg->theme; ?>/css/upload.css">
 <link rel="stylesheet" href="js/jcrop/jquery.Jcrop.min.css">
 <script>var examples = [];</script>
 <div class="container-fluid">
 <?php
-$jpegphoto = $user->jpegphoto;
-if (!file_exists("photos/$jpegphoto")) {	
-	    if (!file_exists("photos/$jpegphoto")) {
-		$jpegphoto = 'noimage.jpg';
-	    };
-};
-?>
+    $jpegphoto = $user->jpegphoto;
+    if (! file_exists("photos/$jpegphoto")) {
+        if (! file_exists("photos/$jpegphoto")) {
+            $jpegphoto = 'noimage.jpg';
+        }
+        ;
+    }
+    ;
+    ?>
 	<div class="row">
 		<div class="col-xs-6 col-md-6 col-sm-6">
 			<div id="userpic" class="userpic">
 				<div class="js-preview userpic__preview thumbnail">
-				    <?php		
-				      if ($jpegphoto=="") {} else {
-					  echo "<img width=\"100%\" src=\"photos/$jpegphoto\" >";
-				      };
-					
-				     ?>
+				    <?php
+    if ($jpegphoto == "") {} else {
+        echo "<img width=\"100%\" src=\"photos/$jpegphoto\" >";
+    }
+    ;
+    
+    ?>
 				</div>
 				<div class="btn btn-success js-fileapi-wrapper" style="width: 100%;">
 					<div class="js-browse">
-						<span class="btn-txt">Сменить фото</span>
-						<input type="file" name="filedata">
+						<span class="btn-txt">Сменить фото</span> <input type="file"
+							name="filedata">
 					</div>
 					<div class="js-upload" style="display: none;">
 						<div class="progress progress-success">
@@ -53,16 +59,26 @@ if (!file_exists("photos/$jpegphoto")) {
 				</div>
 			</div>
 			<p align="left"><?php echo $user->fio; ?></p>
-			<input name="picname" id="picname" type="hidden" value="<?php echo $jpegphoto; ?>">
+			<input name="picname" id="picname" type="hidden"
+				value="<?php echo $jpegphoto; ?>">
 		</div>
 		<div class="col-xs-6 col-md-6 col-sm-6">
 			<ul>
 				<li><?php echo $user->login; ?></li>
 				<?php
-				 if ($user->email!=""){echo "<a href='mailto:$user->email'>$user->email</a>";};
-				 if ($user->telephonenumber!=""){echo "<li>$user->telephonenumber</li>";};
-				 if ($user->homephone!=""){echo "<li>$user->homephone</li>";};
-				?>
+    if ($user->email != "") {
+        echo "<a href='mailto:$user->email'>$user->email</a>";
+    }
+    ;
+    if ($user->telephonenumber != "") {
+        echo "<li>$user->telephonenumber</li>";
+    }
+    ;
+    if ($user->homephone != "") {
+        echo "<li>$user->homephone</li>";
+    }
+    ;
+    ?>
 				<li><?php if ($user->mode == 0) {echo 'Пользователь';} else {echo 'Администратор';}; ?></li>
 			</ul>
 		</div>
@@ -75,7 +91,9 @@ if (!file_exists("photos/$jpegphoto")) {
 			<div class="js-upload btn btn_browse btn_browse_small">Загрузить</div>
 		</div>
 	</div>
-	<form class="form-horizontal" action="index.php?content_page=home&login_step=logout" method="post" name="form1" target="_self">
+	<form class="form-horizontal"
+		action="index.php?content_page=home&login_step=logout" method="post"
+		name="form1" target="_self">
 		<div class="form-group">
 			<div class="controls">
 				<button type="submit" class="btn btn-default">Выйти из <?php echo $user->login; ?></button>

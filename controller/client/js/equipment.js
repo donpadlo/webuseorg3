@@ -174,14 +174,22 @@ function LoadTable() {
 			}).trigger('reloadGrid');
 			jQuery('#tbl_rep').jqGrid('navGrid', '#rp_nav', {edit: false, add: false, del: false, search: false});
 			jQuery('#tbl_rep').jqGrid('navButtonAdd', '#rp_nav', {
-				caption: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>',
+				caption: '<i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>',
 				title: 'Отдать в ремонт ТМЦ',
 				buttonicon: 'none',
 				onClickButton: function() {
 					var id = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 					if (id) { // если выбрана строка ТМЦ который уже в ремонте, открываем список с фильтром по этому ТМЦ
 						jQuery('#tbl_equpment').jqGrid('getRowData', id);
-						$('#pg_add_edit').dialog({autoOpen: false, height: 380, width: 620, modal: true, title: 'Ремонт имущества'});
+						$('#pg_add_edit').dialog({
+						    position:['middle'],				    
+						    width: $("#wequipment").width(),
+						    height: 'auto',						
+						    resizable: true,
+						    autoOpen: false,
+						    draggable: true,
+						    modal: true,
+						    title: 'Ремонт имущества'});
 						$('#pg_add_edit').dialog('open');
 						$('#pg_add_edit').load('controller/client/view/equipment/repair.php?step=add&eqid=' + id);
 					} else {
@@ -252,7 +260,7 @@ function LoadTable() {
 	jQuery('#tbl_equpment').jqGrid('navGrid', '#pg_nav', {edit: false, add: false, del: false, search: false});
 	jQuery('#tbl_equpment').jqGrid('setFrozenColumns');
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-tag" aria-hidden="true"></i>',
+		caption: '<i class="fa fa-tag fa-2x" aria-hidden="true"></i>',
 		title: 'Выбор колонок',
 		buttonicon: 'none',
 		onClickButton: function() {
@@ -273,7 +281,7 @@ function LoadTable() {
 		}
 	});
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-object-group " aria-hidden="true"></i>',
+		caption: '<i class="fa fa-object-group fa-2x" aria-hidden="true"></i>',
 		title: 'Мультиселект',
 		buttonicon: 'none',
 		onClickButton: function() {
@@ -287,25 +295,41 @@ function LoadTable() {
 		}
 	});	
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-plus-circle" aria-hidden="true"></i>',
+		caption: '<i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>',
 		title: "Добавить ТМЦ",
 		buttonicon: 'none',
 		onClickButton: function() {
-			$('#pg_add_edit').dialog({autoOpen: false, height: 600, width: 780, modal: true, title: 'Добавление имущества'});
+			$('#pg_add_edit').dialog({
+						position:['middle'],				    
+						width: $("#wequipment").width(),
+						height: 'auto',						
+						resizable: true,
+						autoOpen: false,
+						draggable: true,
+						modal: true,
+						title: 'Добавление имущества'});
 			$('#pg_add_edit').dialog('open');
-			$('#pg_add_edit').load('controller/client/view/equipment/equipment.php?step=add&id=');
+			$('#pg_add_edit').load(route+'controller/client/view/equipment/equipment.php&step=add&id=');
 		}
 	});
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',
+		caption: '<i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>',
 		title: 'Редактировать ТМЦ',
 		buttonicon: 'none',
 		onClickButton: function() {
 			var gsr = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
-			if (gsr) {
-				$('#pg_add_edit').dialog({autoOpen: false, height: 600, width: 780, modal: true, title: 'Редактирование имущества'});
+			if (gsr) {				
+				$('#pg_add_edit').dialog({
+						position:['middle'],				    
+						width: $("#wequipment").width(),
+						height: 'auto',						
+						resizable: true,
+						autoOpen: false,
+						draggable: true,
+						modal: true,
+						title: 'Редактирование имущества'});												
 				$('#pg_add_edit').dialog('open');
-				$('#pg_add_edit').load('controller/client/view/equipment/equipment.php?step=edit&id=' + gsr);
+				$('#pg_add_edit').load(route+'controller/client/view/equipment/equipment.php&step=edit&id=' + gsr);				
 			} else {
 				//alert('Сначала выберите строку!');
 				$().toastmessage('showWarningToast', 'Сначала выберите строку!');
@@ -313,13 +337,21 @@ function LoadTable() {
 		}
 	});
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-arrows" aria-hidden="true"></i>',
+		caption: '<i class="fa fa-arrows fa-2x" aria-hidden="true"></i>',
 		title: 'Переместить ТМЦ',
 		buttonicon: 'none',
 		onClickButton: function() {
 			var gsr = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 			if (gsr) {
-				$('#pg_add_edit').dialog({autoOpen: false, height: 440, width: 620, modal: true, title: 'Перемещение имущества'});
+				$('#pg_add_edit').dialog({
+				    		position:['middle'],				    
+						width: $("#wequipment").width(),
+						height: 'auto',						
+						resizable: true,
+						autoOpen: false,
+						draggable: true,
+						modal: true,
+						title: 'Перемещение имущества'});
 				$('#pg_add_edit').dialog('open');
 				if (multiselect==true){
 				    s = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selarrrow');
@@ -334,14 +366,22 @@ function LoadTable() {
 		}
 	});
 	jQuery("#tbl_equpment").jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>',
+		caption: '<i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>',
 		title: 'Отдать в ремонт ТМЦ',
 		buttonicon: 'none',
 		onClickButton: function() {
 			var id = jQuery('#tbl_equpment').jqGrid('getGridParam', 'selrow');
 			if (id) { // если выбрана строка ТМЦ который уже в ремонте, открываем список с фильтром по этому ТМЦ
 				jQuery('#tbl_equpment').jqGrid('getRowData', id);
-				$('#pg_add_edit').dialog({autoOpen: false, height: 380, width: 620, modal: true, title: 'Ремонт имущества'});
+				$('#pg_add_edit').dialog({
+				    		position:['middle'],				    
+						width: $("#wequipment").width(),
+						height: 'auto',						
+						resizable: true,
+						autoOpen: false,
+						draggable: true,
+						modal: true,
+						title: 'Ремонт имущества'});
 				$('#pg_add_edit').dialog('open');
 				$('#pg_add_edit').load('controller/client/view/equipment/repair.php?step=add&eqid=' + id);
 			} else {
@@ -351,7 +391,7 @@ function LoadTable() {
 		}
 	});
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-table" aria-hidden="true"></i>',
+		caption: '<i class="fa fa-table fa-2x" aria-hidden="true"></i>',
 		title: 'Вывести штрихкоды ТМЦ',
 		buttonicon: 'none',
 		onClickButton: function() {
@@ -371,7 +411,7 @@ function LoadTable() {
 		}
 	});
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-print" aria-hidden="true"></i>',
+		caption: '<i class="fa fa-print fa-2x" aria-hidden="true"></i>',
 		title: 'Печатная версия списка',
 		buttonicon: 'none',
 		onClickButton: function() {
@@ -379,7 +419,7 @@ function LoadTable() {
 		}
 	});	
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-floppy-o" aria-hidden="true"></i> xml',
+		caption: '<i class="fa fa-floppy-o fa-2x" aria-hidden="true"></i> xml',
 		title: 'Экспорт XML',
 		buttonicon: 'none',
 		onClickButton: function() {
@@ -387,7 +427,7 @@ function LoadTable() {
 		}
 	});
 	jQuery('#tbl_equpment').jqGrid('navButtonAdd', '#pg_nav', {
-		caption: '<i class="fa fa-floppy-o" aria-hidden="true"></i> csv',
+		caption: '<i class="fa fa-floppy-o fa-2x" aria-hidden="true"></i> csv',
 		title: 'Экспорт CSV',
 		buttonicon: 'none',
 		onClickButton: function() {
