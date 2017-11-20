@@ -6,6 +6,13 @@
 <meta name="generator" content="yarus" />
 </head>
 <body>
+<style>
+   @media print {
+    .more {
+     page-break-after: always;
+    } 
+   } 
+ </style>    
 <?php
 
 // Данный код создан и распространяется по лицензии GPL v3
@@ -25,30 +32,50 @@ include_once("../inc/functions.php");		// загружаем функции
 
 
  $idmass=explode(",",$_GET['mass']);
- echo "<table border=1>";
- $rw=0;
- for ($i=0;$i<count($idmass);$i++) {
-  $idm=$idmass[$i];
-  $sql="SELECT equipment.shtrihkod,equipment.buhname,nome.name as nomename,equipment.invnum FROM equipment INNER JOIN nome ON nome.id=equipment.nomeid WHERE equipment.id='$idm'";
-  $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать!".mysqli_error($sqlcn->idsqlconnection));  
-   if ($rw==0) {echo "<tr>";};
-   echo "<td>";
-  while($row = mysqli_fetch_array($result)) {		
-	$shtrihkod=$row['shtrihkod'];
-	$buhname=$row['buhname'];
-	$nomename=$row['nomename'];
-	$invnum=$row['invnum'];
-	echo "<font size=1>Бух:$buhname<br>";
-	echo "ИТ:$nomename</font><br>";
-	echo "<img src='ean13.php?shtrihkod=$shtrihkod'><br>";	
-	echo "№$invnum<br>";	
+ $stiker=_GET('stiker');
+ 
+ if ($stiker!="true"){
+	echo "<table border=1>";
+	$rw=0;
+	for ($i=0;$i<count($idmass);$i++) {
+	 $idm=$idmass[$i];
+	 $sql="SELECT equipment.shtrihkod,equipment.buhname,nome.name as nomename,equipment.invnum FROM equipment INNER JOIN nome ON nome.id=equipment.nomeid WHERE equipment.id='$idm'";
+	 $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать!".mysqli_error($sqlcn->idsqlconnection));  
+	  if ($rw==0) {echo "<tr>";};
+	  echo "<td>";
+	 while($row = mysqli_fetch_array($result)) {		
+	       $shtrihkod=$row['shtrihkod'];
+	       $buhname=$row['buhname'];
+	       $nomename=$row['nomename'];
+	       $invnum=$row['invnum'];
+	       echo "<font size=1>Бух:$buhname<br>";
+	       echo "ИТ:$nomename</font><br>";
+	       echo "<img src='ean13.php?shtrihkod=$shtrihkod'><br>";	
+	       echo "№$invnum<br>";	
+	       };
+	   echo "</td>";	
+	       if ($rw==3) {echo "</tr>";};
+	       $rw++;
+	       if ($rw==4) {$rw=0;};	
+	       };
+       echo "</table>";		
+ } else {
+	for ($i=0;$i<count($idmass);$i++) {
+	 $idm=$idmass[$i];
+	 $sql="SELECT equipment.shtrihkod,equipment.buhname,nome.name as nomename,equipment.invnum FROM equipment INNER JOIN nome ON nome.id=equipment.nomeid WHERE equipment.id='$idm'";
+	 $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать!".mysqli_error($sqlcn->idsqlconnection));  
+	 while($row = mysqli_fetch_array($result)) {		
+	       $shtrihkod=$row['shtrihkod'];
+	       $buhname=$row['buhname'];
+	       $nomename=$row['nomename'];
+	       $invnum=$row['invnum'];
+	       echo "<p class=\"more\"><font size=1>Бух:$buhname<br>";
+	       echo "ИТ:$nomename</font><br>";
+	       echo "<img src='ean13.php?shtrihkod=$shtrihkod'><br>";	
+	       echo " №$invnum</p>";	
+	  };	   
 	};
-	echo "</td>";	
-	if ($rw==3) {echo "</tr>";};
-	$rw++;
-	if ($rw==4) {$rw=0;};	
-	};
-echo "</table>";		
+ };
 ?>
 </body>
 </html>

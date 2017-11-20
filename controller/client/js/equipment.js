@@ -403,7 +403,11 @@ function LoadTable() {
 			    } else {
 				s = gsr;
 			    };
-				newWin = window.open('inc/ean13print.php?mass=' + s, 'printWindow');
+			    	if (confirm('Печатать будем на принтере этикеток?')) {
+				    newWin = window.open('inc/ean13print.php?mass=' + s+"&stiker=true", 'printWindow');
+				} else {
+				    newWin = window.open('inc/ean13print.php?mass=' + s, 'printWindow');
+				};
 			} else {
 				//alert('Сначала выберите строку!');
 				$().toastmessage('showWarningToast', 'Сначала выберите строку!');
