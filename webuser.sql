@@ -1,49 +1,57 @@
--- phpMyAdmin SQL Dump
--- version 4.4.13.1deb1
--- http://www.phpmyadmin.net
+-- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
--- Хост: localhost
--- Время создания: Дек 30 2016 г., 12:31
--- Версия сервера: 5.6.31-0ubuntu0.15.10.1
--- Версия PHP: 5.6.11-1ubuntu3.4
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: webuser
+-- ------------------------------------------------------
+-- Server version	5.7.20-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- База данных: `test`
+-- Table structure for table `bp_accept`
 --
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `bp_accept`
---
-
-CREATE TABLE IF NOT EXISTS `bp_accept` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `bp_accept`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bp_accept` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
   `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `bodytxt` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
   `dt` datetime NOT NULL,
-  `randomid` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `randomid` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=574 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `bp_userlist`
+-- Dumping data for table `bp_accept`
 --
 
-CREATE TABLE IF NOT EXISTS `bp_userlist` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `bp_accept` WRITE;
+/*!40000 ALTER TABLE `bp_accept` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bp_accept` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bp_userlist`
+--
+
+DROP TABLE IF EXISTS `bp_userlist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bp_userlist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `bpid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `status` int(11) NOT NULL,
@@ -51,17 +59,29 @@ CREATE TABLE IF NOT EXISTS `bp_userlist` (
   `comment` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `dtend` datetime NOT NULL,
-  `randomid` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `randomid` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2712 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `bp_xml`
+-- Dumping data for table `bp_userlist`
 --
 
-CREATE TABLE IF NOT EXISTS `bp_xml` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `bp_userlist` WRITE;
+/*!40000 ALTER TABLE `bp_userlist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bp_userlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bp_xml`
+--
+
+DROP TABLE IF EXISTS `bp_xml`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bp_xml` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `ERPcode` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `userid` int(11) NOT NULL,
   `dt` datetime NOT NULL,
@@ -70,17 +90,29 @@ CREATE TABLE IF NOT EXISTS `bp_xml` (
   `status` int(11) NOT NULL,
   `node` int(11) NOT NULL,
   `xml` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `step` int(11) NOT NULL
+  `step` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=328 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `bp_xml_userlist`
+-- Dumping data for table `bp_xml`
 --
 
-CREATE TABLE IF NOT EXISTS `bp_xml_userlist` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `bp_xml` WRITE;
+/*!40000 ALTER TABLE `bp_xml` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bp_xml` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bp_xml_userlist`
+--
+
+DROP TABLE IF EXISTS `bp_xml_userlist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bp_xml_userlist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `bpid` int(11) NOT NULL,
   `dtstart` datetime NOT NULL,
   `dtend` datetime NOT NULL,
@@ -99,44 +131,80 @@ CREATE TABLE IF NOT EXISTS `bp_xml_userlist` (
   `status` int(11) NOT NULL,
   `result` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `node` int(11) NOT NULL,
-  `step` int(11) NOT NULL
+  `step` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=778 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `cloud_dirs`
+-- Dumping data for table `bp_xml_userlist`
 --
 
-CREATE TABLE IF NOT EXISTS `cloud_dirs` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `bp_xml_userlist` WRITE;
+/*!40000 ALTER TABLE `bp_xml_userlist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bp_xml_userlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cloud_dirs`
+--
+
+DROP TABLE IF EXISTS `cloud_dirs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cloud_dirs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_bin NOT NULL
+  `name` varchar(100) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `cloud_files`
+-- Dumping data for table `cloud_dirs`
 --
 
-CREATE TABLE IF NOT EXISTS `cloud_files` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `cloud_dirs` WRITE;
+/*!40000 ALTER TABLE `cloud_dirs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cloud_dirs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cloud_files`
+--
+
+DROP TABLE IF EXISTS `cloud_files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cloud_files` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `cloud_dirs_id` int(11) NOT NULL,
   `title` varchar(150) COLLATE utf8_bin NOT NULL,
   `filename` varchar(150) COLLATE utf8_bin NOT NULL,
   `dt` datetime NOT NULL,
-  `sz` int(12) NOT NULL
+  `sz` int(12) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `config`
+-- Dumping data for table `cloud_files`
 --
 
-CREATE TABLE IF NOT EXISTS `config` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `cloud_files` WRITE;
+/*!40000 ALTER TABLE `cloud_files` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cloud_files` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `config`
+--
+
+DROP TABLE IF EXISTS `config`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `config` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `ad` tinyint(1) NOT NULL,
   `domain1` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `domain2` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -154,112 +222,55 @@ CREATE TABLE IF NOT EXISTS `config` (
   `emailreplyto` varchar(40) CHARACTER SET latin1 NOT NULL,
   `sendemail` tinyint(1) NOT NULL,
   `version` varchar(10) CHARACTER SET latin1 NOT NULL,
-  `urlsite` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `urlsite` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `config`
+-- Dumping data for table `config`
 --
 
-INSERT INTO `config` (`id`, `ad`, `domain1`, `domain2`, `ldap`, `usercanregistrate`, `useraddfromad`, `theme`, `sitename`, `emailadmin`, `smtphost`, `smtpauth`, `smtpport`, `smtpusername`, `smtppass`, `emailreplyto`, `sendemail`, `version`, `urlsite`) VALUES
-(1, 0, '', '', '', 1, 1, 'bootstrap', 'Учет ТМЦ в организации', '', '', 0, '25', '', '', '', 0, '3.83', 'http://localhost');
-
--- --------------------------------------------------------
+LOCK TABLES `config` WRITE;
+/*!40000 ALTER TABLE `config` DISABLE KEYS */;
+INSERT INTO `config` VALUES (1,0,'','','',1,1,'bootstrap','Учет ТМЦ в организации','','',0,'25','','','',0,'3.90','http://localhost');
+/*!40000 ALTER TABLE `config` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `config_common`
+-- Table structure for table `config_common`
 --
 
-CREATE TABLE IF NOT EXISTS `config_common` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `config_common`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `config_common` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nameparam` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `valueparam` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `valueparam` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `config_common`
+-- Dumping data for table `config_common`
 --
 
-INSERT INTO `config_common` (`id`, `nameparam`, `valueparam`) VALUES
-(37, 'smsdiffres', '3'),
-(38, 'modulename_cloud', '1'),
-(39, 'modulecomment_cloud', 'Хранилище документов'),
-(40, 'modulecopy_cloud', 'Грибов Павел'),
-(41, 'modulename_devicescontrol', '0'),
-(42, 'modulecomment_devicescontrol', 'Управление устройствами'),
-(43, 'modulecopy_devicescontrol', 'Грибов Павел'),
-(44, 'modulename_cables', '0'),
-(45, 'modulecomment_cables', 'Справочник кабелей и муфт'),
-(46, 'modulecopy_cables', 'Грибов Павел'),
-(47, 'modulename_smscenter', '0'),
-(48, 'modulecomment_smscenter', 'СМС-Центр'),
-(49, 'modulecopy_smscenter', 'Грибов Павел'),
-(50, 'modulename_zabbix-mon', '0'),
-(51, 'modulecomment_zabbix-mon', 'Мониторинг dashboard серверов Zabbix'),
-(52, 'modulecopy_zabbix-mon', 'Грибов Павел'),
-(53, 'modulename_whoonline', '1'),
-(54, 'modulecomment_whoonline', 'Кто на сайте?'),
-(55, 'modulecopy_whoonline', 'Грибов Павел'),
-(56, 'modulename_commits-widget', '1'),
-(57, 'modulecomment_commits-widget', 'Виджет разработки на github.com на главной странице'),
-(58, 'modulecopy_commits-widget', 'Солодягин Сергей'),
-(59, 'modulename_worktime', '0'),
-(60, 'modulecomment_worktime', 'Вход и выход работников организации (турникет Орион)'),
-(61, 'modulecopy_worktime', 'Грибов Павел'),
-(62, 'modulename_ping', '1'),
-(63, 'modulecomment_ping', 'Проверка доступности ТМЦ по ping'),
-(64, 'modulecopy_ping', 'Грибов Павел'),
-(65, 'modulename_astra', '0'),
-(66, 'modulecomment_astra', 'Управление серверами Astra'),
-(67, 'modulecopy_astra', 'Грибов Павел'),
-(68, 'modulename_bprocess', '0'),
-(69, 'modulecomment_bprocess', 'Бизнес-процессы'),
-(70, 'modulecopy_bprocess', 'Грибов Павел'),
-(71, 'modulename_workandplans', '0'),
-(72, 'modulecomment_workandplans', 'Оперативная обстановка на заводе'),
-(73, 'modulecopy_workandplans', 'Грибов Павел'),
-(74, 'modulename_workmen', '1'),
-(75, 'modulecomment_workmen', 'Менеджер по обслуживанию '),
-(76, 'modulecopy_workmen', 'Грибов Павел'),
-(77, 'modulename_news', '1'),
-(78, 'modulecomment_news', 'Модуль новостей'),
-(79, 'modulecopy_news', 'Грибов Павел'),
-(80, 'modulename_stiknews', '1'),
-(81, 'modulecomment_stiknews', 'Закрепленные новости'),
-(82, 'modulecopy_stiknews', 'Грибов Павел'),
-(83, 'modulename_lastmoved', '1'),
-(84, 'modulecomment_lastmoved', 'Последние перемещения ТМЦ'),
-(85, 'modulecopy_lastmoved', 'Грибов Павел'),
-(86, 'modulename_usersfaze', '0'),
-(87, 'modulecomment_usersfaze', 'Где сотрудник?'),
-(88, 'modulecopy_usersfaze', 'Грибов Павел'),
-(89, 'modulename_ical', '0'),
-(90, 'modulecomment_ical', 'Календарь'),
-(91, 'modulecopy_ical', 'Грибов Павел'),
-(92, 'modulename_tasks', '0'),
-(93, 'modulecomment_tasks', 'Задачи'),
-(94, 'modulecopy_tasks', 'Грибов Павел'),
-(95, 'modulename_dop-pol', '0'),
-(96, 'modulecomment_dop-pol', 'Справочник дополнительных полей'),
-(97, 'modulecopy_dop-pol', 'Грибов Павел'),
-(98, 'modulename_scriptalert', '0'),
-(99, 'modulecomment_scriptalert', 'Мониторинг выполнения скриптов'),
-(100, 'modulecopy_scriptalert', 'Грибов Павел'),
-(101, 'modulename_chat', '0'),
-(102, 'modulecomment_chat', 'Чат поддержки/Общий чат'),
-(103, 'modulecopy_chat', 'Грибов Павел'),
-(104, 'modulename_htmlentry', '0'),
-(105, 'modulecomment_htmlentry', 'Произвольный html код на странице перед футером'),
-(106, 'modulecopy_htmlentry', 'Грибов Павел');
-
--- --------------------------------------------------------
+LOCK TABLES `config_common` WRITE;
+/*!40000 ALTER TABLE `config_common` DISABLE KEYS */;
+INSERT INTO `config_common` VALUES (119,'modulename_schedule','0'),(120,'modulecomment_schedule','Расписание уведомлений'),(121,'modulecopy_schedule','Грибов Павел'),(122,'modulename_arduinorele','0'),(123,'modulecomment_arduinorele','Управление реле Arduino'),(124,'modulecopy_arduinorele','Грибов Павел'),(125,'modulename_astra','0'),(126,'modulecomment_astra','Управление серверами Astra'),(127,'modulecopy_astra','Грибов Павел'),(128,'modulename_pbi','0'),(129,'modulecomment_pbi','Управление станциями PBI'),(130,'modulecopy_pbi','Грибов Павел'),(131,'modulename_cloud','1'),(132,'modulecomment_cloud','Хранилище документов'),(133,'modulecopy_cloud','Грибов Павел'),(134,'modulename_devicescontrol','0'),(135,'modulecomment_devicescontrol','Управление устройствами'),(136,'modulecopy_devicescontrol','Грибов Павел'),(137,'modulename_bprocess','0'),(138,'modulecomment_bprocess','Бизнес-процессы'),(139,'modulecopy_bprocess','Грибов Павел'),(140,'modulename_cables','0'),(141,'modulecomment_cables',''),(142,'modulecopy_cables','Справочник кабелей и муфт'),(143,'modulename_dop-pol','0'),(144,'modulecopy_dop-pol','Справочник дополнительных полей'),(145,'modulename_scriptalert','0'),(146,'modulecomment_scriptalert','Мониторинг выполнения скриптов'),(147,'modulecopy_scriptalert','Грибов Павел'),(148,'modulename_smscenter','0'),(149,'modulecomment_smscenter','СМС-Центр'),(150,'modulecopy_smscenter','Грибов Павел'),(151,'modulename_viber','0'),(152,'modulecomment_viber','отправка сообщений Viber'),(153,'modulecopy_viber','Грибов Павел'),(154,'modulename_worktime','0'),(155,'modulecomment_worktime','Вход и выход работников организации (турникет Орион)'),(156,'modulecopy_worktime','Грибов Павел'),(157,'modulename_workandplans','0'),(158,'modulecomment_workandplans','Оперативная обстановка на заводе'),(159,'modulecopy_workandplans','Грибов Павел'),(160,'modulename_zabbix-mon','0'),(161,'modulecomment_zabbix-mon','Мониторинг dashboard серверов Zabbix'),(162,'modulecopy_zabbix-mon','Грибов Павел'),(163,'modulename_ical','0'),(164,'modulecomment_ical','Календарь'),(165,'modulecopy_ical','Грибов Павел'),(166,'modulename_tasks','0'),(167,'modulecomment_tasks','Задачи'),(168,'modulecopy_tasks','Грибов Павел'),(169,'modulename_workmen','1'),(170,'modulecomment_workmen','Менеджер по обслуживанию '),(171,'modulecopy_workmen','Грибов Павел'),(172,'modulename_ping','1'),(173,'modulecomment_ping','Проверка доступности ТМЦ по ping'),(174,'modulecopy_ping','Грибов Павел'),(175,'modulename_chat','0'),(176,'modulecomment_chat','Чат поддержки/Общий чат'),(177,'modulecopy_chat','Грибов Павел'),(178,'modulename_htmlentry','0'),(179,'modulecomment_htmlentry','Произвольный html код на странице перед футером'),(180,'modulecopy_htmlentry','Грибов Павел'),(181,'modulename_news','1'),(182,'modulecomment_news','Модуль новостей'),(183,'modulecopy_news','Грибов Павел'),(184,'modulename_stiknews','0'),(185,'modulecomment_stiknews','Закрепленные новости'),(186,'modulecopy_stiknews','Грибов Павел'),(187,'modulename_lastmoved','1'),(188,'modulecomment_lastmoved','Последние перемещения ТМЦ'),(189,'modulecopy_lastmoved','Грибов Павел'),(190,'modulename_usersfaze','0'),(191,'modulecomment_usersfaze','Где сотрудник?'),(192,'modulecopy_usersfaze','Грибов Павел'),(193,'modulename_whoonline','0'),(194,'modulecomment_whoonline','Кто на сайте?'),(195,'modulecopy_whoonline','Грибов Павел'),(196,'modulename_commits-widget','1'),(197,'modulecomment_commits-widget','Виджет разработки на github.com на главной странице'),(198,'modulecopy_commits-widget','Солодягин Сергей');
+/*!40000 ALTER TABLE `config_common` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `contract`
+-- Table structure for table `contract`
 --
 
-CREATE TABLE IF NOT EXISTS `contract` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `contract`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contract` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kntid` int(11) NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `datestart` date NOT NULL,
@@ -267,29 +278,53 @@ CREATE TABLE IF NOT EXISTS `contract` (
   `work` int(11) NOT NULL,
   `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `active` int(11) NOT NULL,
-  `num` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `num` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=424 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `devgroups`
+-- Dumping data for table `contract`
 --
 
-CREATE TABLE IF NOT EXISTS `devgroups` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `contract` WRITE;
+/*!40000 ALTER TABLE `contract` DISABLE KEYS */;
+/*!40000 ALTER TABLE `contract` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `devgroups`
+--
+
+DROP TABLE IF EXISTS `devgroups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `devgroups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `dgname` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `dcomment` varchar(255) COLLATE utf8_bin DEFAULT NULL
+  `dcomment` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `devices`
+-- Dumping data for table `devgroups`
 --
 
-CREATE TABLE IF NOT EXISTS `devices` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `devgroups` WRITE;
+/*!40000 ALTER TABLE `devgroups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `devgroups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `devices`
+--
+
+DROP TABLE IF EXISTS `devices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `devices` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idbase` int(11) NOT NULL,
   `devname` varchar(255) COLLATE utf8_bin NOT NULL,
   `whereis` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -300,48 +335,103 @@ CREATE TABLE IF NOT EXISTS `devices` (
   `devid` int(11) NOT NULL,
   `stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `child` int(11) NOT NULL,
-  `active` int(11) NOT NULL
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `devnames`
+-- Dumping data for table `devices`
 --
 
-CREATE TABLE IF NOT EXISTS `devnames` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `devices` WRITE;
+/*!40000 ALTER TABLE `devices` DISABLE KEYS */;
+/*!40000 ALTER TABLE `devices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `devnames`
+--
+
+DROP TABLE IF EXISTS `devnames`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `devnames` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `dname` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `command` text COLLATE utf8_bin,
   `devid` int(11) DEFAULT NULL,
-  `bcolor` varchar(50) COLLATE utf8_bin NOT NULL
+  `bcolor` varchar(50) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `entropia`
+-- Dumping data for table `devnames`
 --
 
-CREATE TABLE IF NOT EXISTS `entropia` (
+LOCK TABLES `devnames` WRITE;
+/*!40000 ALTER TABLE `devnames` DISABLE KEYS */;
+/*!40000 ALTER TABLE `devnames` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `entropia`
+--
+
+DROP TABLE IF EXISTS `entropia`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `entropia` (
   `cnt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `entropia`
+-- Dumping data for table `entropia`
 --
 
-INSERT INTO `entropia` (`cnt`) VALUES
-(0);
-
--- --------------------------------------------------------
+LOCK TABLES `entropia` WRITE;
+/*!40000 ALTER TABLE `entropia` DISABLE KEYS */;
+INSERT INTO `entropia` VALUES (0);
+/*!40000 ALTER TABLE `entropia` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `equipment`
+-- Table structure for table `eq_param`
 --
 
-CREATE TABLE IF NOT EXISTS `equipment` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `eq_param`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `eq_param` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `grpid` int(11) NOT NULL,
+  `paramid` int(11) NOT NULL,
+  `eqid` int(11) NOT NULL,
+  `param` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eq_param`
+--
+
+LOCK TABLES `eq_param` WRITE;
+/*!40000 ALTER TABLE `eq_param` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eq_param` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `equipment`
+--
+
+DROP TABLE IF EXISTS `equipment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `equipment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `orgid` int(11) NOT NULL,
   `placesid` int(11) NOT NULL,
   `usersid` int(11) NOT NULL,
@@ -366,125 +456,190 @@ CREATE TABLE IF NOT EXISTS `equipment` (
   `mapyet` tinyint(4) NOT NULL DEFAULT '0',
   `kntid` int(11) NOT NULL,
   `dtendgar` date NOT NULL,
-  `tmcgo` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=398 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `eq_param`
---
-
-CREATE TABLE IF NOT EXISTS `eq_param` (
-  `id` int(11) NOT NULL,
-  `grpid` int(11) NOT NULL,
-  `paramid` int(11) NOT NULL,
-  `eqid` int(11) NOT NULL,
-  `param` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+  `tmcgo` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=400 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `exp_log`
+-- Dumping data for table `equipment`
 --
 
-CREATE TABLE IF NOT EXISTS `exp_log` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `equipment` WRITE;
+/*!40000 ALTER TABLE `equipment` DISABLE KEYS */;
+INSERT INTO `equipment` VALUES (398,1,46,1,151,'Коробочка с вентилятором','2017-12-12 00:00:00',0,0,'262546234623','211201714831','',0,0,'','',1,1,'10.12.13.14','','',0,0,1008,'2017-12-12',0),(399,1,46,1,152,'Черная штучка с лампочкой, пищит','2017-12-12 00:00:00',0,0,'24123412','2112017141022','4806785252001',0,0,'','',0,1,'','','',0,0,1008,'2017-12-12',0);
+/*!40000 ALTER TABLE `equipment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `exp_log`
+--
+
+DROP TABLE IF EXISTS `exp_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `exp_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `guid` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `TimeVal` datetime NOT NULL,
   `event` int(11) NOT NULL,
   `hozorgan` int(11) NOT NULL,
-  `mode` int(11) NOT NULL
+  `mode` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `guid` (`guid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=221645 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `files`
+-- Dumping data for table `exp_log`
 --
 
-CREATE TABLE IF NOT EXISTS `files` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `exp_log` WRITE;
+/*!40000 ALTER TABLE `exp_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `exp_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `files`
+--
+
+DROP TABLE IF EXISTS `files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `files` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `randomid` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `bpid` int(11) NOT NULL,
   `filename` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `files_contract`
+-- Dumping data for table `files`
 --
 
-CREATE TABLE IF NOT EXISTS `files_contract` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `files` WRITE;
+/*!40000 ALTER TABLE `files` DISABLE KEYS */;
+/*!40000 ALTER TABLE `files` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `files_contract`
+--
+
+DROP TABLE IF EXISTS `files_contract`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `files_contract` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idcontract` int(11) NOT NULL,
   `filename` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `userfreandlyfilename` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `userfreandlyfilename` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `dt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=935 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `group_nome`
+-- Dumping data for table `files_contract`
 --
 
-CREATE TABLE IF NOT EXISTS `group_nome` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `files_contract` WRITE;
+/*!40000 ALTER TABLE `files_contract` DISABLE KEYS */;
+/*!40000 ALTER TABLE `files_contract` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `geouserhist`
+--
+
+DROP TABLE IF EXISTS `geouserhist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `geouserhist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  `longitude` varchar(20) NOT NULL,
+  `latitude` varchar(20) NOT NULL,
+  `dt` datetime NOT NULL,
+  `Nlongitude` varchar(20) NOT NULL,
+  `Nlatitude` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `geouserhist`
+--
+
+LOCK TABLES `geouserhist` WRITE;
+/*!40000 ALTER TABLE `geouserhist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `geouserhist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `group_nome`
+--
+
+DROP TABLE IF EXISTS `group_nome`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `group_nome` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `comment` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `active` tinyint(1) NOT NULL
+  `active` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `group_nome`
+-- Dumping data for table `group_nome`
 --
 
-INSERT INTO `group_nome` (`id`, `name`, `comment`, `active`) VALUES
-(1, 'Мониторы', '', 1),
-(2, 'ИБП', '', 1),
-(3, 'Роутеры/Маршрутизаторы/Свичи', '', 1),
-(4, 'Системные блоки', '', 1),
-(5, 'Принтера', '', 1),
-(6, 'Столы', '', 1),
-(7, 'Стулья', '', 1),
-(8, 'Телевизоры', '', 1),
-(9, 'Чайники', '', 1),
-(10, 'Мышки', '', 1);
-
--- --------------------------------------------------------
+LOCK TABLES `group_nome` WRITE;
+/*!40000 ALTER TABLE `group_nome` DISABLE KEYS */;
+INSERT INTO `group_nome` VALUES (1,'Мониторы','',1),(2,'ИБП','',1),(3,'Роутеры/Маршрутизаторы/Свичи','',1),(4,'Системные блоки','',1),(5,'Принтера','',1),(6,'Столы','',1),(7,'Стулья','',1),(8,'Телевизоры','',1),(9,'Чайники','',1),(10,'Мышки','',1);
+/*!40000 ALTER TABLE `group_nome` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `group_param`
+-- Table structure for table `group_param`
 --
 
-CREATE TABLE IF NOT EXISTS `group_param` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `group_param`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `group_param` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `groupid` int(11) NOT NULL,
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `active` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `active` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `group_param`
+-- Dumping data for table `group_param`
 --
 
-INSERT INTO `group_param` (`id`, `groupid`, `name`, `active`) VALUES
-(22, 4, 'OS', 1),
-(23, 4, 'RAM', 1),
-(24, 4, 'HDD', 1),
-(25, 4, 'Ð¦ÐŸ', 1);
-
--- --------------------------------------------------------
+LOCK TABLES `group_param` WRITE;
+/*!40000 ALTER TABLE `group_param` DISABLE KEYS */;
+INSERT INTO `group_param` VALUES (22,4,'OS',1),(23,4,'RAM',1),(24,4,'HDD',1),(25,4,'Прочее',1),(28,5,'Модель катриджа',1),(29,10,'Тип разьема',1);
+/*!40000 ALTER TABLE `group_param` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `jqcalendar`
+-- Table structure for table `jqcalendar`
 --
 
-CREATE TABLE IF NOT EXISTS `jqcalendar` (
-  `Id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `jqcalendar`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `jqcalendar` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Subject` varchar(1000) CHARACTER SET utf8 DEFAULT NULL,
   `Location` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `Description` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -494,17 +649,29 @@ CREATE TABLE IF NOT EXISTS `jqcalendar` (
   `Color` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `RecurringRule` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
   `uidview` varchar(10) COLLATE utf8_bin NOT NULL,
-  `lbid` varchar(12) CHARACTER SET utf8 DEFAULT NULL
+  `lbid` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `knt`
+-- Dumping data for table `jqcalendar`
 --
 
-CREATE TABLE IF NOT EXISTS `knt` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `jqcalendar` WRITE;
+/*!40000 ALTER TABLE `jqcalendar` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jqcalendar` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `knt`
+--
+
+DROP TABLE IF EXISTS `knt`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `knt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `comment` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL,
@@ -514,134 +681,264 @@ CREATE TABLE IF NOT EXISTS `knt` (
   `KPP` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `bayer` int(11) NOT NULL,
   `supplier` int(11) NOT NULL,
-  `dog` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1009 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `dog` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1010 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `knt`
+-- Dumping data for table `knt`
 --
 
-INSERT INTO `knt` (`id`, `name`, `comment`, `active`, `fullname`, `ERPCode`, `INN`, `KPP`, `bayer`, `supplier`, `dog`) VALUES
-(1008, 'Основной контрагент', '', 1, '', 0, '352501001', '352501001', 0, 0, 1);
-
--- --------------------------------------------------------
+LOCK TABLES `knt` WRITE;
+/*!40000 ALTER TABLE `knt` DISABLE KEYS */;
+INSERT INTO `knt` VALUES (1008,'ООО \"Ракета\"','Закупка оргтехники',1,'',0,'352501001','352501001',0,0,1),(1009,'ООО \"Экспрес-сервис\"','Ремонт и заправка принтеров',1,'',0,'24243523452','',0,0,0);
+/*!40000 ALTER TABLE `knt` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `lib_cable_lines`
+-- Table structure for table `lib_cable_lines`
 --
 
-CREATE TABLE IF NOT EXISTS `lib_cable_lines` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `lib_cable_lines`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lib_cable_lines` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_calble_module` int(11) NOT NULL,
   `number` int(11) NOT NULL,
   `color1` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `color2` varchar(100) CHARACTER SET utf8 NOT NULL
+  `color2` varchar(100) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `lib_cable_modules`
+-- Dumping data for table `lib_cable_lines`
 --
 
-CREATE TABLE IF NOT EXISTS `lib_cable_modules` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `lib_cable_lines` WRITE;
+/*!40000 ALTER TABLE `lib_cable_lines` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lib_cable_lines` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lib_cable_modules`
+--
+
+DROP TABLE IF EXISTS `lib_cable_modules`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lib_cable_modules` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `cable_id` int(11) NOT NULL,
   `number` varchar(11) CHARACTER SET utf8 NOT NULL,
   `color` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `color1` varchar(20) CHARACTER SET utf8 NOT NULL
+  `color1` varchar(20) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `lib_cable_muft`
+-- Dumping data for table `lib_cable_modules`
 --
 
-CREATE TABLE IF NOT EXISTS `lib_cable_muft` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `lib_cable_modules` WRITE;
+/*!40000 ALTER TABLE `lib_cable_modules` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lib_cable_modules` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lib_cable_muft`
+--
+
+DROP TABLE IF EXISTS `lib_cable_muft`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lib_cable_muft` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `comment` varchar(255) CHARACTER SET utf8 NOT NULL
+  `comment` varchar(255) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `lib_cable_name_mark`
+-- Dumping data for table `lib_cable_muft`
 --
 
-CREATE TABLE IF NOT EXISTS `lib_cable_name_mark` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `lib_cable_muft` WRITE;
+/*!40000 ALTER TABLE `lib_cable_muft` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lib_cable_muft` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lib_cable_name_mark`
+--
+
+DROP TABLE IF EXISTS `lib_cable_name_mark`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lib_cable_name_mark` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `mark` varchar(255) CHARACTER SET utf8 NOT NULL
+  `mark` varchar(255) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `lib_cable_spliter`
+-- Dumping data for table `lib_cable_name_mark`
 --
 
-CREATE TABLE IF NOT EXISTS `lib_cable_spliter` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `lib_cable_name_mark` WRITE;
+/*!40000 ALTER TABLE `lib_cable_name_mark` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lib_cable_name_mark` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lib_cable_spliter`
+--
+
+DROP TABLE IF EXISTS `lib_cable_spliter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lib_cable_spliter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `exitcount` int(11) NOT NULL
+  `exitcount` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `lib_lines_in_muft`
+-- Dumping data for table `lib_cable_spliter`
 --
 
-CREATE TABLE IF NOT EXISTS `lib_lines_in_muft` (
-  `id` int(11) NOT NULL COMMENT 'Идентификатор волокна в муфте на карте',
+LOCK TABLES `lib_cable_spliter` WRITE;
+/*!40000 ALTER TABLE `lib_cable_spliter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lib_cable_spliter` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lib_lines_in_muft`
+--
+
+DROP TABLE IF EXISTS `lib_lines_in_muft`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lib_lines_in_muft` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор волокна в муфте на карте',
   `mufta_id` int(11) NOT NULL COMMENT 'Идентификатор муфты на карте',
   `obj_edit_id` int(11) NOT NULL COMMENT 'Идентификатор кабеля на карте',
   `lib_line_id` int(11) NOT NULL COMMENT 'ссылка на волокно из справочника',
   `start_id` int(11) NOT NULL COMMENT 'идентификатор стыковки начала волокна',
   `end_id` int(11) NOT NULL COMMENT 'идентификатор конца волокна',
   `type_obj` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `comment` varchar(255) CHARACTER SET utf8 NOT NULL
+  `comment` varchar(255) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `mailq`
+-- Dumping data for table `lib_lines_in_muft`
 --
 
-CREATE TABLE IF NOT EXISTS `mailq` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `lib_lines_in_muft` WRITE;
+/*!40000 ALTER TABLE `lib_lines_in_muft` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lib_lines_in_muft` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mailq`
+--
+
+DROP TABLE IF EXISTS `mailq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mailq` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `from` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `to` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `btxt` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `btxt` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=226 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `menu`
+-- Dumping data for table `mailq`
 --
 
-CREATE TABLE IF NOT EXISTS `menu` (
-  `id` int(11) NOT NULL COMMENT 'Уникальный идентификатор',
+LOCK TABLES `mailq` WRITE;
+/*!40000 ALTER TABLE `mailq` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mailq` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menu`
+--
+
+DROP TABLE IF EXISTS `menu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Уникальный идентификатор',
   `parents` int(11) NOT NULL COMMENT 'Родитель',
   `sort_id` int(11) NOT NULL COMMENT 'Сортировка',
   `name` varchar(200) CHARACTER SET utf8 NOT NULL COMMENT 'Название',
   `comment` varchar(200) CHARACTER SET utf8 NOT NULL COMMENT 'Пояснение',
-  `uid` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT 'некий идентификатор (можно использовать для автосоздания менюшек)'
+  `uid` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT 'некий идентификатор (можно использовать для автосоздания менюшек)',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `move`
+-- Dumping data for table `menu`
 --
 
-CREATE TABLE IF NOT EXISTS `move` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `menu` WRITE;
+/*!40000 ALTER TABLE `menu` DISABLE KEYS */;
+/*!40000 ALTER TABLE `menu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mobilemessages`
+--
+
+DROP TABLE IF EXISTS `mobilemessages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mobilemessages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `body` text NOT NULL,
+  `dtwrite` datetime DEFAULT NULL,
+  `dtread` timestamp NULL DEFAULT NULL,
+  `idsms` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mobilemessages`
+--
+
+LOCK TABLES `mobilemessages` WRITE;
+/*!40000 ALTER TABLE `mobilemessages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mobilemessages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `move`
+--
+
+DROP TABLE IF EXISTS `move`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `move` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `eqid` int(11) NOT NULL,
   `dt` datetime NOT NULL,
   `orgidfrom` int(11) NOT NULL,
@@ -650,134 +947,219 @@ CREATE TABLE IF NOT EXISTS `move` (
   `placesidto` int(11) NOT NULL,
   `useridfrom` int(11) NOT NULL,
   `useridto` int(11) NOT NULL,
-  `comment` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `comment` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=779 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `news`
+-- Dumping data for table `move`
 --
 
-CREATE TABLE IF NOT EXISTS `news` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `move` WRITE;
+/*!40000 ALTER TABLE `move` DISABLE KEYS */;
+/*!40000 ALTER TABLE `move` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `news`
+--
+
+DROP TABLE IF EXISTS `news`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `dt` datetime NOT NULL,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `body` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `stiker` tinyint(1) NOT NULL DEFAULT '0'
+  `stiker` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `news`
+-- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `dt`, `title`, `body`, `stiker`) VALUES
-(26, '2017-03-02 00:00:00', 'Учет оргтехники в WEB 3.xx', '<p>Добро пожаловать!</p><p>Представляю вам демо ПО для учета оргтехники в небольшой организации. Ну и плюс еще несколько "плюшек".</p><p>Домашняя страница проекта:&nbsp;<a href="http://xn--90acbu5aj5f.xn--p1ai/?page_id=1202">http://грибовы.рф</a></p><p>Контакты: skype: pvtuning </p>', 0);
-
--- --------------------------------------------------------
+LOCK TABLES `news` WRITE;
+/*!40000 ALTER TABLE `news` DISABLE KEYS */;
+INSERT INTO `news` VALUES (26,'2017-03-02 00:00:00','Учет оргтехники в WEB 3.xx','<p>Добро пожаловать!</p><p>Представляю вам демо ПО для учета оргтехники в небольшой организации. Ну и плюс еще несколько \"плюшек\".</p><p>Домашняя страница проекта:&nbsp;<a href=\"http://xn--90acbu5aj5f.xn--p1ai/?page_id=1202\">http://грибовы.рф</a></p><p>Контакты: skype: pvtuning </p>',0);
+/*!40000 ALTER TABLE `news` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `nome`
+-- Table structure for table `nome`
 --
 
-CREATE TABLE IF NOT EXISTS `nome` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `nome`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `nome` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `groupid` int(11) NOT NULL,
   `vendorid` int(11) NOT NULL,
   `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `active` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=152 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `active` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=153 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `nome`
+-- Dumping data for table `nome`
 --
 
-INSERT INTO `nome` (`id`, `groupid`, `vendorid`, `name`, `active`) VALUES
-(151, 4, 6, 'Системный блок Лидер-1', 1);
-
--- --------------------------------------------------------
+LOCK TABLES `nome` WRITE;
+/*!40000 ALTER TABLE `nome` DISABLE KEYS */;
+INSERT INTO `nome` VALUES (151,4,6,'Системный блок Лидер-1',1),(152,2,30,'ИБП SmartMaster 1200',1);
+/*!40000 ALTER TABLE `nome` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `org`
+-- Table structure for table `org`
 --
 
-CREATE TABLE IF NOT EXISTS `org` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `org`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `picmap` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `active` int(11) NOT NULL
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `org`
+-- Dumping data for table `org`
 --
 
-INSERT INTO `org` (`id`, `name`, `picmap`, `active`) VALUES
-(1, 'ООО Рога и Копыта', '06716875881465578757.PNG', 1);
-
--- --------------------------------------------------------
+LOCK TABLES `org` WRITE;
+/*!40000 ALTER TABLE `org` DISABLE KEYS */;
+INSERT INTO `org` VALUES (1,'ООО Рога и Копыта','06716875881465578757.PNG',1);
+/*!40000 ALTER TABLE `org` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `places`
+-- Table structure for table `places`
 --
 
-CREATE TABLE IF NOT EXISTS `places` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `places`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `places` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `orgid` int(11) NOT NULL,
   `name` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `comment` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL,
-  `opgroup` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `opgroup` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `places`
+-- Dumping data for table `places`
 --
 
-INSERT INTO `places` (`id`, `orgid`, `name`, `comment`, `active`, `opgroup`) VALUES
-(46, 1, 'Серверная', '', 1, 'АСУ');
-
--- --------------------------------------------------------
+LOCK TABLES `places` WRITE;
+/*!40000 ALTER TABLE `places` DISABLE KEYS */;
+INSERT INTO `places` VALUES (46,1,'Серверная','',1,'АСУ'),(47,1,'Главный бухгалтер','',1,'Бухгалтерия'),(48,1,'Зарплата','',1,'Бухгалтерия');
+/*!40000 ALTER TABLE `places` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `places_users`
+-- Table structure for table `places_users`
 --
 
-CREATE TABLE IF NOT EXISTS `places_users` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `places_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `places_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `placesid` int(11) NOT NULL,
-  `userid` int(11) NOT NULL
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `places_users`
+-- Dumping data for table `places_users`
 --
 
-INSERT INTO `places_users` (`id`, `placesid`, `userid`) VALUES
-(91, 46, 1);
-
--- --------------------------------------------------------
+LOCK TABLES `places_users` WRITE;
+/*!40000 ALTER TABLE `places_users` DISABLE KEYS */;
+INSERT INTO `places_users` VALUES (91,46,1);
+/*!40000 ALTER TABLE `places_users` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `post_users`
+-- Table structure for table `post_users`
 --
 
-CREATE TABLE IF NOT EXISTS `post_users` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `post_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `post_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `active` tinyint(1) NOT NULL,
   `orgid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
-  `post` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+  `post` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `repair`
+-- Dumping data for table `post_users`
 --
 
-CREATE TABLE IF NOT EXISTS `repair` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `post_users` WRITE;
+/*!40000 ALTER TABLE `post_users` DISABLE KEYS */;
+INSERT INTO `post_users` VALUES (26,1,1,408,'Системный администратор');
+/*!40000 ALTER TABLE `post_users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `register`
+--
+
+DROP TABLE IF EXISTS `register`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `register` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dt` datetime(6) NOT NULL,
+  `eqid` int(11) NOT NULL,
+  `moveid` int(11) DEFAULT NULL,
+  `cnt` int(11) NOT NULL,
+  `orgid` int(11) NOT NULL,
+  `placesid` int(11) NOT NULL,
+  `usersid` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `register`
+--
+
+LOCK TABLES `register` WRITE;
+/*!40000 ALTER TABLE `register` DISABLE KEYS */;
+INSERT INTO `register` VALUES (1,'2017-12-12 00:00:00.000000',398,NULL,1,1,46,1),(2,'2017-12-12 00:00:00.000000',399,NULL,1,1,46,1);
+/*!40000 ALTER TABLE `register` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `repair`
+--
+
+DROP TABLE IF EXISTS `repair`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `repair` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `dt` date NOT NULL,
   `kntid` int(11) NOT NULL,
   `eqid` int(11) NOT NULL,
@@ -787,76 +1169,137 @@ CREATE TABLE IF NOT EXISTS `repair` (
   `status` tinyint(1) NOT NULL,
   `userfrom` int(11) NOT NULL,
   `userto` int(11) NOT NULL,
-  `doc` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+  `doc` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `rss`
+-- Dumping data for table `repair`
 --
 
-CREATE TABLE IF NOT EXISTS `rss` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `repair` WRITE;
+/*!40000 ALTER TABLE `repair` DISABLE KEYS */;
+INSERT INTO `repair` VALUES (12,'2017-12-12',1009,398,0,'Не включается','2018-02-09',1,408,-1,'');
+/*!40000 ALTER TABLE `repair` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rss`
+--
+
+DROP TABLE IF EXISTS `rss`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rss` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `link` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `avtor` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `dt` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `descc` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `generator` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `generator` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=484 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `smslist`
---
-
-CREATE TABLE IF NOT EXISTS `smslist` (
-  `id` int(11) NOT NULL,
-  `mobile` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `smstxt` text CHARACTER SET utf8 NOT NULL,
-  `status` varchar(100) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `smsstat`
+-- Dumping data for table `rss`
 --
 
-CREATE TABLE IF NOT EXISTS `smsstat` (
-  `id` int(11) NOT NULL,
-  `phone` varchar(20) COLLATE utf8_bin NOT NULL,
-  `countok` int(10) NOT NULL,
-  `countfail` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+LOCK TABLES `rss` WRITE;
+/*!40000 ALTER TABLE `rss` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rss` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `sms_center_config`
+-- Table structure for table `sms_center_config`
 --
 
-CREATE TABLE IF NOT EXISTS `sms_center_config` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `sms_center_config`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sms_center_config` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `agname` varchar(50) COLLATE utf8_bin NOT NULL,
   `smslogin` varchar(50) COLLATE utf8_bin NOT NULL,
   `smspass` varchar(50) COLLATE utf8_bin NOT NULL,
   `fileagent` varchar(50) COLLATE utf8_bin NOT NULL,
   `smsdiff` varchar(10) COLLATE utf8_bin NOT NULL,
   `sel` varchar(10) COLLATE utf8_bin NOT NULL,
-  `sender` varchar(20) COLLATE utf8_bin NOT NULL
+  `sender` varchar(20) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `tasks`
+-- Dumping data for table `sms_center_config`
 --
 
-CREATE TABLE IF NOT EXISTS `tasks` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `sms_center_config` WRITE;
+/*!40000 ALTER TABLE `sms_center_config` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sms_center_config` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `smslist`
+--
+
+DROP TABLE IF EXISTS `smslist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `smslist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mobile` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `smstxt` text CHARACTER SET utf8 NOT NULL,
+  `status` varchar(100) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `smslist`
+--
+
+LOCK TABLES `smslist` WRITE;
+/*!40000 ALTER TABLE `smslist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `smslist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `smsstat`
+--
+
+DROP TABLE IF EXISTS `smsstat`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `smsstat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `phone` varchar(20) COLLATE utf8_bin NOT NULL,
+  `countok` int(10) NOT NULL,
+  `countfail` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `smsstat`
+--
+
+LOCK TABLES `smsstat` WRITE;
+/*!40000 ALTER TABLE `smsstat` DISABLE KEYS */;
+/*!40000 ALTER TABLE `smsstat` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tasks`
+--
+
+DROP TABLE IF EXISTS `tasks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tasks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
   `touserid` int(11) NOT NULL,
   `mainuseid` int(11) NOT NULL,
@@ -864,17 +1307,29 @@ CREATE TABLE IF NOT EXISTS `tasks` (
   `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `txt` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
-  `maxdate` datetime NOT NULL
+  `maxdate` datetime NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `users`
+-- Dumping data for table `tasks`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `tasks` WRITE;
+/*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `randomid` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `orgid` int(11) NOT NULL,
   `login` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -883,57 +1338,59 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `mode` int(11) NOT NULL,
   `lastdt` datetime NOT NULL,
-  `active` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=408 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `active` tinyint(1) NOT NULL,
+  `lastactivemob` datetime DEFAULT NULL,
+  `Longitude` varchar(20) COLLATE utf8_bin NOT NULL,
+  `Latitude` varchar(20) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=409 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `randomid`, `orgid`, `login`, `password`, `salt`, `email`, `mode`, `lastdt`, `active`) VALUES
-(1, '534742080754244214882660638232114002258853163157700475856647', 1, 'admin', 'c37738f04d21a5e461f36dbfae696265e3ea63e1', '=Oj(xazq', 'test@gmail.com', 1, '2016-12-30 12:28:44', 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `usersroles`
---
-
-CREATE TABLE IF NOT EXISTS `usersroles` (
-  `id` int(11) NOT NULL,
-  `userid` int(11) NOT NULL,
-  `role` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'534742080754244214882660638232114002258853163157700475856647',1,'test','1b3cfc8b4a0708a3421384020bb996003e1f76ac','BfYKz]uH','test@gmail.com',1,'2017-12-12 17:18:54',1,NULL,'',''),(408,'262673588340410612400811600225553821370215267348580681751784',1,'admin','53f1f258c1b5c017e43f7e8c9da32389bb3488b3','(vZA){5','asda@mail.ru',1,'2017-12-12 14:13:11',1,NULL,'','');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Дамп данных таблицы `usersroles`
+-- Table structure for table `users_ori`
 --
 
-INSERT INTO `usersroles` (`id`, `userid`, `role`) VALUES
-(1, 1, 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `users_ori`
---
-
-CREATE TABLE IF NOT EXISTS `users_ori` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users_ori`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_ori` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `ori_id` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `tabnumber` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `schedule` int(11) NOT NULL,
-  `fio` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `fio` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=256 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Структура таблицы `users_profile`
+-- Dumping data for table `users_ori`
 --
 
-CREATE TABLE IF NOT EXISTS `users_profile` (
-  `id` int(11) NOT NULL,
+LOCK TABLES `users_ori` WRITE;
+/*!40000 ALTER TABLE `users_ori` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users_ori` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users_profile`
+--
+
+DROP TABLE IF EXISTS `users_profile`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_profile` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `usersid` int(11) NOT NULL,
   `fio` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `faza` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -946,617 +1403,106 @@ CREATE TABLE IF NOT EXISTS `users_profile` (
   `res4` datetime NOT NULL,
   `telephonenumber` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `homephone` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `jpegphoto` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=390 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `jpegphoto` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=391 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `users_profile`
+-- Dumping data for table `users_profile`
 --
 
-INSERT INTO `users_profile` (`id`, `usersid`, `fio`, `faza`, `code`, `enddate`, `post`, `res1`, `res2`, `res3`, `res4`, `telephonenumber`, `homephone`, `jpegphoto`) VALUES
-(2, 1, 'Администратор системы', 'Абырвалг', '88000280', '0001-01-01', 'Начальник', '115', 16, 0, '0000-00-00 00:00:00', '+79657400222', '+60222', 'noimage.jpg');
-
--- --------------------------------------------------------
+LOCK TABLES `users_profile` WRITE;
+/*!40000 ALTER TABLE `users_profile` DISABLE KEYS */;
+INSERT INTO `users_profile` VALUES (2,1,'Администратор системы','Абырвалг','88000280','0001-01-01','Начальник','115',16,0,'0000-00-00 00:00:00','+79657400222','+60222','noimage.jpg'),(390,408,'admin','','','2017-12-12','','',0,0,'0000-00-00 00:00:00','','','');
+/*!40000 ALTER TABLE `users_profile` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Структура таблицы `vendor`
+-- Table structure for table `users_quick_menu`
 --
 
-CREATE TABLE IF NOT EXISTS `vendor` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users_quick_menu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_quick_menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `userid` int(11) NOT NULL,
+  `ico` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_quick_menu`
+--
+
+LOCK TABLES `users_quick_menu` WRITE;
+/*!40000 ALTER TABLE `users_quick_menu` DISABLE KEYS */;
+INSERT INTO `users_quick_menu` VALUES (1,'Имущество','http://demo.xn--90acbu5aj5f.xn--p1ai/index.php?content_page=equipment',1,'<i class=\'fa fa-empire fa-fw\'> </i>');
+/*!40000 ALTER TABLE `users_quick_menu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usersroles`
+--
+
+DROP TABLE IF EXISTS `usersroles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usersroles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  `role` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usersroles`
+--
+
+LOCK TABLES `usersroles` WRITE;
+/*!40000 ALTER TABLE `usersroles` DISABLE KEYS */;
+INSERT INTO `usersroles` VALUES (1,1,1);
+/*!40000 ALTER TABLE `usersroles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `vendor`
+--
+
+DROP TABLE IF EXISTS `vendor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vendor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(155) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `comment` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `active` tinyint(1) NOT NULL
+  `active` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Дамп данных таблицы `vendor`
+-- Dumping data for table `vendor`
 --
 
-INSERT INTO `vendor` (`id`, `name`, `comment`, `active`) VALUES
-(1, 'Cisco', '', 1),
-(2, 'Panasonic', '', 1),
-(3, 'LG', '', 1),
-(4, 'Citezen', '', 1),
-(6, 'Сборка', '', 1),
-(8, 'E-machines', '', 1),
-(9, 'HP', '', 1),
-(11, 'Xerox', '', 1),
-(12, 'Acer', '', 1),
-(13, 'Ubnt', '', 1),
-(16, 'Mustek', '', 1),
-(17, 'Canon', '', 1),
-(18, 'Genius', '', 1),
-(20, 'Epson', '', 1),
-(21, 'ViewSonic', '', 1),
-(22, 'MGE', '', 1),
-(23, 'BENQ', '', 1),
-(24, 'PLUS UPS Systems', '', 1),
-(26, 'ICON', '', 1),
-(28, 'Bay Networks', '', 1),
-(29, 'HardLink', '', 1),
-(30, 'Accorp', '', 1),
-(31, 'Kyosera', '', 1),
-(32, 'APC', '', 1),
-(34, 'Metrologic', '', 1),
-(35, 'Samsung', '', 1),
-(36, 'Planet', '', 1),
-(37, 'D-link', '', 1),
-(38, 'Tandberg', '', 1),
-(39, 'Sony', '', 1),
-(41, 'Sharp', '', 1),
-(42, 'Asus', '', 1),
-(43, 'TP-Link', '', 1),
-(44, 'DataMax', '', 1),
-(45, 'Logitech', '', 1),
-(46, 'Philips', '', 1),
-(47, 'QUATROCLIMAT', '', 1),
-(48, '3 Com', '', 1),
-(49, 'Fellowes', '', 1),
-(50, 'Toshiba', '', 1),
-(51, 'Western Digital', '', 1),
-(52, 'FunkWerk', '', 1),
-(53, 'Pascard Bell', '', 1);
+LOCK TABLES `vendor` WRITE;
+/*!40000 ALTER TABLE `vendor` DISABLE KEYS */;
+INSERT INTO `vendor` VALUES (1,'Cisco','',1),(2,'Panasonic','',1),(3,'LG','',1),(4,'Citezen','',1),(6,'Сборка','',1),(8,'E-machines','',1),(9,'HP','',1),(11,'Xerox','',1),(12,'Acer','',1),(13,'Ubnt','',1),(16,'Mustek','',1),(17,'Canon','',1),(18,'Genius','',1),(20,'Epson','',1),(21,'ViewSonic','',1),(22,'MGE','',1),(23,'BENQ','',1),(24,'PLUS UPS Systems','',1),(26,'ICON','',1),(28,'Bay Networks','',1),(29,'HardLink','',1),(30,'Accorp','',1),(31,'Kyosera','',1),(32,'APC','',1),(34,'Metrologic','',1),(35,'Samsung','',1),(36,'Planet','',1),(37,'D-link','',1),(38,'Tandberg','',1),(39,'Sony','',1),(41,'Sharp','',1),(42,'Asus','',1),(43,'TP-Link','',1),(44,'DataMax','',1),(45,'Logitech','',1),(46,'Philips','',1),(47,'QUATROCLIMAT','',1),(48,'3 Com','',1),(49,'Fellowes','',1),(50,'Toshiba','',1),(51,'Western Digital','',1),(52,'FunkWerk','',1),(53,'Pascard Bell','',1);
+/*!40000 ALTER TABLE `vendor` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `bp_accept`
---
-ALTER TABLE `bp_accept`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `bp_userlist`
---
-ALTER TABLE `bp_userlist`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `bp_xml`
---
-ALTER TABLE `bp_xml`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `bp_xml_userlist`
---
-ALTER TABLE `bp_xml_userlist`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `cloud_dirs`
---
-ALTER TABLE `cloud_dirs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `cloud_files`
---
-ALTER TABLE `cloud_files`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `config`
---
-ALTER TABLE `config`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `config_common`
---
-ALTER TABLE `config_common`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `contract`
---
-ALTER TABLE `contract`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `devgroups`
---
-ALTER TABLE `devgroups`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `devices`
---
-ALTER TABLE `devices`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `devnames`
---
-ALTER TABLE `devnames`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `equipment`
---
-ALTER TABLE `equipment`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `eq_param`
---
-ALTER TABLE `eq_param`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `exp_log`
---
-ALTER TABLE `exp_log`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `guid` (`guid`);
-
---
--- Индексы таблицы `files`
---
-ALTER TABLE `files`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `files_contract`
---
-ALTER TABLE `files_contract`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `group_nome`
---
-ALTER TABLE `group_nome`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `group_param`
---
-ALTER TABLE `group_param`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `jqcalendar`
---
-ALTER TABLE `jqcalendar`
-  ADD PRIMARY KEY (`Id`);
-
---
--- Индексы таблицы `knt`
---
-ALTER TABLE `knt`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `lib_cable_lines`
---
-ALTER TABLE `lib_cable_lines`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `lib_cable_modules`
---
-ALTER TABLE `lib_cable_modules`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `lib_cable_muft`
---
-ALTER TABLE `lib_cable_muft`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `lib_cable_name_mark`
---
-ALTER TABLE `lib_cable_name_mark`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `lib_cable_spliter`
---
-ALTER TABLE `lib_cable_spliter`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `lib_lines_in_muft`
---
-ALTER TABLE `lib_lines_in_muft`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `mailq`
---
-ALTER TABLE `mailq`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `menu`
---
-ALTER TABLE `menu`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `move`
---
-ALTER TABLE `move`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `news`
---
-ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `nome`
---
-ALTER TABLE `nome`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `org`
---
-ALTER TABLE `org`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `places`
---
-ALTER TABLE `places`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `places_users`
---
-ALTER TABLE `places_users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `post_users`
---
-ALTER TABLE `post_users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `repair`
---
-ALTER TABLE `repair`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `rss`
---
-ALTER TABLE `rss`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `smslist`
---
-ALTER TABLE `smslist`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `smsstat`
---
-ALTER TABLE `smsstat`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `sms_center_config`
---
-ALTER TABLE `sms_center_config`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `tasks`
---
-ALTER TABLE `tasks`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `usersroles`
---
-ALTER TABLE `usersroles`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `users_ori`
---
-ALTER TABLE `users_ori`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `users_profile`
---
-ALTER TABLE `users_profile`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `vendor`
---
-ALTER TABLE `vendor`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `bp_accept`
---
-ALTER TABLE `bp_accept`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=574;
---
--- AUTO_INCREMENT для таблицы `bp_userlist`
---
-ALTER TABLE `bp_userlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2712;
---
--- AUTO_INCREMENT для таблицы `bp_xml`
---
-ALTER TABLE `bp_xml`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=328;
---
--- AUTO_INCREMENT для таблицы `bp_xml_userlist`
---
-ALTER TABLE `bp_xml_userlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=778;
---
--- AUTO_INCREMENT для таблицы `cloud_dirs`
---
-ALTER TABLE `cloud_dirs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `cloud_files`
---
-ALTER TABLE `cloud_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `config`
---
-ALTER TABLE `config`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT для таблицы `config_common`
---
-ALTER TABLE `config_common`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=107;
---
--- AUTO_INCREMENT для таблицы `contract`
---
-ALTER TABLE `contract`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=424;
---
--- AUTO_INCREMENT для таблицы `devgroups`
---
-ALTER TABLE `devgroups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `devices`
---
-ALTER TABLE `devices`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `devnames`
---
-ALTER TABLE `devnames`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `equipment`
---
-ALTER TABLE `equipment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=398;
---
--- AUTO_INCREMENT для таблицы `eq_param`
---
-ALTER TABLE `eq_param`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=150;
---
--- AUTO_INCREMENT для таблицы `exp_log`
---
-ALTER TABLE `exp_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=221645;
---
--- AUTO_INCREMENT для таблицы `files`
---
-ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
---
--- AUTO_INCREMENT для таблицы `files_contract`
---
-ALTER TABLE `files_contract`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=935;
---
--- AUTO_INCREMENT для таблицы `group_nome`
---
-ALTER TABLE `group_nome`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
---
--- AUTO_INCREMENT для таблицы `group_param`
---
-ALTER TABLE `group_param`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
---
--- AUTO_INCREMENT для таблицы `jqcalendar`
---
-ALTER TABLE `jqcalendar`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `knt`
---
-ALTER TABLE `knt`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1009;
---
--- AUTO_INCREMENT для таблицы `lib_cable_lines`
---
-ALTER TABLE `lib_cable_lines`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT для таблицы `lib_cable_modules`
---
-ALTER TABLE `lib_cable_modules`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT для таблицы `lib_cable_muft`
---
-ALTER TABLE `lib_cable_muft`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `lib_cable_name_mark`
---
-ALTER TABLE `lib_cable_name_mark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT для таблицы `lib_cable_spliter`
---
-ALTER TABLE `lib_cable_spliter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `lib_lines_in_muft`
---
-ALTER TABLE `lib_lines_in_muft`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Идентификатор волокна в муфте на карте';
---
--- AUTO_INCREMENT для таблицы `mailq`
---
-ALTER TABLE `mailq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=226;
---
--- AUTO_INCREMENT для таблицы `menu`
---
-ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Уникальный идентификатор';
---
--- AUTO_INCREMENT для таблицы `move`
---
-ALTER TABLE `move`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=779;
---
--- AUTO_INCREMENT для таблицы `news`
---
-ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
---
--- AUTO_INCREMENT для таблицы `nome`
---
-ALTER TABLE `nome`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=152;
---
--- AUTO_INCREMENT для таблицы `org`
---
-ALTER TABLE `org`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT для таблицы `places`
---
-ALTER TABLE `places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
---
--- AUTO_INCREMENT для таблицы `places_users`
---
-ALTER TABLE `places_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=92;
---
--- AUTO_INCREMENT для таблицы `post_users`
---
-ALTER TABLE `post_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
---
--- AUTO_INCREMENT для таблицы `repair`
---
-ALTER TABLE `repair`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
---
--- AUTO_INCREMENT для таблицы `rss`
---
-ALTER TABLE `rss`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=484;
---
--- AUTO_INCREMENT для таблицы `smslist`
---
-ALTER TABLE `smslist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `smsstat`
---
-ALTER TABLE `smsstat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `sms_center_config`
---
-ALTER TABLE `sms_center_config`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `tasks`
---
-ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
---
--- AUTO_INCREMENT для таблицы `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=408;
---
--- AUTO_INCREMENT для таблицы `usersroles`
---
-ALTER TABLE `usersroles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT для таблицы `users_ori`
---
-ALTER TABLE `users_ori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=256;
---
--- AUTO_INCREMENT для таблицы `users_profile`
---
-ALTER TABLE `users_profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=390;
---
--- AUTO_INCREMENT для таблицы `vendor`
---
-ALTER TABLE `vendor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-
-CREATE TABLE `users_quick_menu` ( `id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `url` VARCHAR(255) NOT NULL , `userid` INT NOT NULL , PRIMARY KEY (`id`));
-
-ALTER TABLE `users_quick_menu` CHANGE `title` `title` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
-ALTER TABLE `users_quick_menu` CHANGE `url` `url` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
-ALTER TABLE `users_quick_menu` ADD `ico` VARCHAR(255) NOT NULL AFTER `userid`;
-
-CREATE TABLE `register` ( `id` INT NOT NULL AUTO_INCREMENT , `dt` INT NOT NULL , `eqid` INT NOT NULL , `moveid` INT NOT NULL , `cnt` INT NOT NULL , PRIMARY KEY (`id`));
-
-ALTER TABLE `register` CHANGE `moveid` `moveid` INT(11) NULL;
-ALTER TABLE `register` ADD `orgid` INT NOT NULL AFTER `cnt`, ADD `placesid` INT NOT NULL AFTER `orgid`, ADD `usersid` INT NOT NULL AFTER `placesid`;
-ALTER TABLE `register` CHANGE `dt` `dt` DATETIME(6) NOT NULL;
+-- Dump completed on 2017-12-12 14:19:01
