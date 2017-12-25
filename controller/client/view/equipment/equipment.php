@@ -177,14 +177,11 @@ $(document).ready(function() {
             echo "<option value=" . $myrow["id"];
             if ($myrow['id'] == $orgid) {
                 echo " selected";
-            }
-            ;
+            }            
             $nm = $myrow['name'];
             echo ">$nm</option>";
         }
-        ;
     }
-    ;
     ?>
            </select>
 						</div>
@@ -226,10 +223,8 @@ $(document).ready(function() {
         if ($groupid == $row["id"]) {
             $sts = $sts . "selected";
         }
-        ;
         $sts = $sts . ">" . $row["name"] . "</option>";
     }
-    ;
     $sts = $sts . "</select>";
     echo $sts;
     ?>
@@ -429,7 +424,13 @@ $(document).ready(function() {
         return false;
     });  
     // конец правки Мазур
-    load_dop_pol();
+  <?php
+	$md=new Tmod;
+	if ($md->IsActive("dop-pol")==1) {
+     ?>    
+	    load_dop_pol();
+    <?php };?>    
+
 
 }); 
     function load_dop_pol(){
