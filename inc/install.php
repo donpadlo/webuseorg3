@@ -76,6 +76,11 @@ if ($result == '') {
 	die();
 };
 
+// удаляю всякую "левоту"
+$sql = "delete from users_quick_menu";
+$result = mysqli_query($idsqlconnection, $sql);
+
+
 //чета не доверяю я проверке на ошибки.. Проверю ка руками!
 $sql="select * from config";
 $result = mysqli_query($idsqlconnection, $sql);
