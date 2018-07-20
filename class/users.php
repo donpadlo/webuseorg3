@@ -58,13 +58,13 @@ class Tusers
      * 7="Отправка СМС"
      * 8="Манипуляции с деньгами"
      * 9="Редактирование карт"
+     * 10="Обработка звонков"
      *
      * @global type $sqlcn
      * @param type $roles
      * @return boolean
      */
-    function TestRoles($roles)
-    {
+    function TestRoles($roles){
         global $sqlcn;
         $sql = "SELECT * FROM usersroles WHERE userid='$this->id' AND role IN ($roles)";
         $result = $sqlcn->ExecuteSQL($sql) or die('Неверный запрос Tusers.TestRoles: ' . mysqli_error($sqlcn->idsqlconnection));
@@ -190,8 +190,7 @@ class Tusers
      * @param type $id
      * @return boolean
      */
-    function GetByRandomId($id)
-    {
+    function GetByRandomId($id){
         global $sqlcn, $cfg;
         $rez = false;
         $id = $sqlcn->escape($id);

@@ -37,7 +37,7 @@ if (isset($_GET["filters"])) {
 }
 ; // получаем наложенные поисковые фильтры
 $flt = json_decode($filters, true);
-$cnt = count($flt['rules']);
+$cnt = @count($flt['rules']);
 $where = "";
 for ($i = 0; $i < $cnt; $i ++) {
     $field = $flt['rules'][$i]['field'];

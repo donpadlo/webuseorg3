@@ -18,6 +18,7 @@
  * 7 = 'Отправка СМС'
  * 8 = 'Манипуляции с деньгами'
  * 9 = 'Редактирование карт'
+ * 10="Обработка звонков"
  */
 $sts = '<select name="rolesusers" id="rolesusers">
 	<option value="1">Полный доступ</option>
@@ -29,6 +30,7 @@ $sts = '<select name="rolesusers" id="rolesusers">
 	<option value="7">Отправка СМС</option>
 	<option value="8">Манипуляции с деньгами</option>
 	<option value="9">Редактирование карт</option>	
+	<option value="10">Обработка звонков</option>	
 </select>';
 
 echo $sts;

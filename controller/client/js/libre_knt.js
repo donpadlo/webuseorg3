@@ -88,10 +88,10 @@ jQuery("#list3").jqGrid({
                     $("#simple-btn").css('visibility','visible');                    
                     $('#simple-btn').fileapi('data', {'contractid':ids});
                     //$("#loadfiles").html('<div id="uploadButton" class="button">Загрузить</div>');
-                    jQuery("#list4").jqGrid('setGridParam',{url:"controller/server/knt/getfilescontrakts.php?idcontract="+ids});
-                    jQuery("#list4").jqGrid('setGridParam',{editurl:"controller/server/knt/getfilescontrakts.php?idcontract="+ids});
+                    jQuery("#list4").jqGrid('setGridParam',{url:route+"controller/server/knt/getfilescontrakts.php&idcontract="+ids});
+                    jQuery("#list4").jqGrid('setGridParam',{editurl:route+"controller/server/knt/getfilescontrakts.php&idcontract="+ids});
                     jQuery("#list4").jqGrid({
-                        url:'controller/server/knt/getfilescontrakts.php?idcontract='+ids,
+                        url:route+'controller/server/knt/getfilescontrakts.php&idcontract='+ids,
                         datatype: "json",
                         colNames:['Id','Имя файла','Действия'],
                         colModel:[
@@ -106,7 +106,7 @@ jQuery("#list3").jqGrid({
                 scroll:1,
                 viewrecords: true,
                 sortorder: "asc",
-                editurl:'controller/server/knt/getfilescontrakts.php?idcontract='+ids,
+                editurl:route+'controller/server/knt/getfilescontrakts.php&idcontract='+ids,
                 caption:"Прикрепленные файлы"
                 }).trigger('reloadGrid');	
                 jQuery("#list4").jqGrid('navGrid','#pager4',{edit:false,add:false,del:false,search:false});

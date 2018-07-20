@@ -81,7 +81,7 @@ if ($mode == "") {
 	//
 	$content_csv = $content_csv .$dop."\n";
     }
-
+    $content_csv = iconv("UTF-8", "CP1251", $content_csv);
     header('Content-Type: text/plain');
     header('Content-Disposition: attachment; filename=export.csv');
     header('Content-Transfer-Encoding: binary');

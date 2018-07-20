@@ -19,7 +19,7 @@ $result = $sqlcn->ExecuteSQL($sql);
 $sql = "ALTER TABLE `arduino_rele_config` CHANGE `foot` `foot` TEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;";
 $result = $sqlcn->ExecuteSQL($sql);
 
-if ($user->mode == 1) {
+if (($user->mode == 1) or ($user->TestRoles("1") == true)) {
     ?>
 <div class="container-fluid">
 	<div class="row-fluid">
@@ -29,8 +29,7 @@ if ($user->mode == 1) {
 		</div>
 	</div>
 </div>
-<script type="text/javascript"
-	src="controller/client/js/arduino_rele/config.js"></script>
+<script type="text/javascript" src="controller/client/js/arduino_rele/config.js"></script>
 <?php
 } else {
     ?>

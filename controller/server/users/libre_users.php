@@ -29,7 +29,7 @@ if ($oper == '') {
     $user->TestRoles('1,3') or die('Недостаточно прав');
     
     $flt = json_decode($filters, true);
-    $cnt = count($flt['rules']);
+    $cnt = @count($flt['rules']);
     $where = '';
     for ($i = 0; $i < $cnt; $i ++) {
         $field = $flt['rules'][$i]['field'];

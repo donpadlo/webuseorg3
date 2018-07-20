@@ -23,7 +23,7 @@ function ViewConfigs(){
                     {name:'myac', width:80, fixed:true, sortable:false, resize:false, formatter:'actions',formatoptions:{keys:true}}
             ],
             autowidth: true,			
-            rowNum:10,	   	
+            rowNum:1000,	   	
             pager: '#pager2',
             sortname: 'id',
             scroll:1,

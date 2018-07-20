@@ -59,13 +59,7 @@
 }
 
 .btn-success {
-	border: 1px solid rgba(0, 0, 0, .2);
-	padding: 8px 20px;
-	background-color: #FFDC73;
-	background: -moz-linear-gradient(top, #FFE599 0%, #FFDC73);
-	background: -webkit-gradient(linear, left top, left bottom, from(#FFE599),
-		to(#FFDC73));
-	box-shadow: 0 1px 1px rgba(255, 255, 255, .5);
+
 }
 
 .btn-success.btn-small[aria-disabled], .btn-primary[disabled],

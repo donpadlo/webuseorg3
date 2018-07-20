@@ -442,6 +442,29 @@ function getLastDayOfMonth($dateInISO8601) {
 
 	return false;
 }
+/**
+ * Получить последний день месяца в формате 2018-01-31
+ * @param type входящая дата формат ГГГГ-ММ-ДД
+ * @return boolean
+ */
+function getLastDayOfMonthTrue($dateInISO8601){
+    $date = explode('-', $dateInISO8601);
+    $zx = $date;
+    if (! checkdate($date[1], $date[2], $date[0]))
+        return false;
+    $start = new DateTime($dateInISO8601);
+    $end = new DateTime($dateInISO8601);
+    $end->add(new DateInterval('P2M'));
+    $interval = new DateInterval('P1D');
+    $daterange = new DatePeriod($start, $interval, $end);
+    $prev = $start;
+    foreach ($daterange as $date) {
+        if ($prev->format('m') != $date->format('m'))
+            return $zx[0] . "-" . $zx[1] . "-" . (int) $prev->format('d');
+        $prev = $date;
+    }
+    return false;
+}
 
 function generateEAN($number) {
 	$code = '480'.str_pad($number, 9, '0');

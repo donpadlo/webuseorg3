@@ -18,5 +18,5 @@ $(document).ready(function() {
 	   $('#schedule_alert_info').html(data);	  
 	 };
      });
-    }, 10000);
+    }, 900000);
 });    

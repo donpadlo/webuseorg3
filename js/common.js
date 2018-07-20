@@ -128,11 +128,21 @@ $(function() {
 	    //информация о колонках
 	     colarray=$(this).jqGrid('getGridParam','colModel');
 	     localStorage.setItem(stname, JSON.stringify(colarray));
+	     atherparam = {};
+	     atherparam["height"]=$(this).jqGrid("getGridParam","height");
+	     localStorage.setItem(stname+"_ather", JSON.stringify(atherparam));
 	     //console.log(JSON.stringify(colarray));	     	     
 	},
 	loadCommonParam: function(stname){	    	
 	    if (localStorage[stname]!=undefined) {
-		colarray=localStorage[stname];
+		colarray=localStorage[stname];		
+		if (localStorage[stname+"_ather"]!=undefined) {
+		    atherparam=JSON.parse(localStorage[stname+"_ather"]);
+		    if (atherparam!=""){
+		       $(this).jqGrid("setGridHeight",atherparam["height"]); 
+		       console.log("--высота таблицы",atherparam["height"]);
+		    };
+		};
 		if (colarray!=""){
 		    obj_for_load=JSON.parse(colarray);   // загружаем JSON в массив     
 		    for (i in obj_for_load) {
@@ -155,3 +165,16 @@ $(function() {
 	}
     });
 });
+
+$(window).scroll(function(){
+    if ($(this).scrollTop() > 100) {
+	$('.scrollup').fadeIn();
+    } else {
+	$('.scrollup').fadeOut();
+    }
+});
+
+$('.scrollup').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+});  

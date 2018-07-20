@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_array($result)) {
 	$cnt=$row2["cnt"];
     };
     if ($cnt==0){
-	$sql="INSERT INTO dop_pol (id,name,name_id,comment,userid) VALUES (null,'$name','$name_id','$comment','$chosenmanager')";
+	$sql="INSERT INTO dop_pol (id,name,name_id,comment,userid) VALUES (null,'','$name_id','$comment','$chosenmanager')";
 	$result2 = $sqlcn->ExecuteSQL($sql) or die("Не могу добавить список дополнительных полей!" . mysqli_error($sqlcn->idsqlconnection));  
     };
 };

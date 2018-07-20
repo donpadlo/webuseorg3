@@ -14,8 +14,7 @@ function list_dop(){
 			{name: 'name_id', index: 'name_id', width: 100,editable:true},
 			{name: 'comment', index: 'comment', width: 100,editable:true},
 			{name: 'myac', width: 80, fixed: true, sortable: false, resize: false, formatter: 'actions', formatoptions: {keys: true}}
-		],
-		rowNum: 5,
+		],		
 		pager: '#pager2',
 		sortname: 'id',
 		scroll: 1,
@@ -39,8 +38,7 @@ function list_dop_users(chosenmanager){
 			{name: 'name_id', index: 'name_id', width: 100,editable:false},
 			{name: 'comment', index: 'comment', width: 100,editable:false},
 			{name: 'myac', width: 80, fixed: true, sortable: false, resize: false, formatter: 'actions', formatoptions: {keys: true}}
-		],
-		rowNum: 5,
+		],		
 		pager: '#pager3',
 		sortname: 'id',
 		scroll: 1,

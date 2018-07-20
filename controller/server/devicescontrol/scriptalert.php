@@ -39,7 +39,7 @@ if ($oper == '') {
     // получаем наложенные поисковые фильтры
     $filters = GetDef('filters');
     $flt = json_decode($filters, true);
-    $cnt = count($flt['rules']);
+    $cnt = @count($flt['rules']);
     $where = '';
     for ($i = 0; $i < $cnt; $i ++) {
         $field = $flt['rules'][$i]['field'];

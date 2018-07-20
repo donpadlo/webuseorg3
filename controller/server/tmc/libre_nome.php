@@ -33,7 +33,7 @@ $filters = GetDef("filters");
 if ($oper == '') {
     if (($user->mode == 1) or ($user->TestRoles('1,3'))) {
         $flt = json_decode($filters, true);
-        $cnt = count($flt['rules']);
+        $cnt = @count($flt['rules']);
         $where = "";
         for ($i = 0; $i < $cnt; $i ++) {
             $field = $flt['rules'][$i]['field'];

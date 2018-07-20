@@ -13,17 +13,14 @@ $foot = PostDef('foot');
 $id = PostDef('id');
 
 $page = GetDef('page');
-if ($page == 0) {
-    $page = 1;
-}
-;
+if ($page == 0) {$page = 1;}
+
 $limit = GetDef('rows');
 $sidx = GetDef('sidx');
 $sord = GetDef('sord');
 
 if ($oper == '') {
-    if (! $sidx)
-        $sidx = 1;
+    if (! $sidx) $sidx = 1;
     $sql = "SELECT COUNT(*) AS count FROM arduino_rele_config";
     // echo "!$sql!";
     $result = $sqlcn->ExecuteSQL($sql) or die("Не могу выбрать количество записей!" . mysqli_error($sqlcn->idsqlconnection));
@@ -63,14 +60,13 @@ if ($oper == "add") {
     $sql = "insert into arduino_rele_config (ip,roles,comment,foot) VALUES ('$ip','$roles','$comment','$foot')";
     $result = $sqlcn->ExecuteSQL($sql) or die("Не могу добавить реле!" . mysqli_error($sqlcn->idsqlconnection));
 }
-;
+
 if ($oper == "edit") {
     $sql = "update arduino_rele_config set roles='$roles',ip='$ip',comment='$comment',foot='$foot' where id='$id'";
     $result = $sqlcn->ExecuteSQL($sql) or die("Не могу обновить реле!" . mysqli_error($sqlcn->idsqlconnection));
 }
-;
+
 if ($oper == "del") {
     $sql = "delete from arduino_rele_config where id='$id'";
     $result = $sqlcn->ExecuteSQL($sql) or die("Не могу удалить реле!" . mysqli_error($sqlcn->idsqlconnection));
 }
-;

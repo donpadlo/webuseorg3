@@ -19,85 +19,19 @@ include_once ("../../../inc/config.php"); // подгружаем настрой
 include_once ("../../../inc/functions.php"); // загружаем функции
 include_once ("../../../inc/login.php"); // загружаем функции
 
-if (isset($_GET["page"])) {
-    $page = $_GET['page'];
-} else {
-    $page = "";
-}
-;
-if (isset($_GET["rows"])) {
-    $limit = $_GET['rows'];
-} else {
-    $limit = "";
-}
-;
-if (isset($_GET["sidx"])) {
-    $sidx = $_GET['sidx'];
-} else {
-    $sidx = "";
-}
-;
-if (isset($_GET["sord"])) {
-    $sord = $_GET['sord'];
-} else {
-    $sord = "";
-}
-;
-if (isset($_POST["oper"])) {
-    $oper = $_POST['oper'];
-} else {
-    $oper = "";
-}
-;
-
-if (isset($_GET["idknt"])) {
-    $idknt = $_GET['idknt'];
-} else {
-    $idknt = "";
-}
-;
-if (isset($_POST["id"])) {
-    $id = $_POST['id'];
-} else {
-    $id = "";
-}
-;
-if (isset($_POST["name"])) {
-    $name = $_POST['name'];
-} else {
-    $name = "";
-}
-;
-if (isset($_POST["num"])) {
-    $num = $_POST['num'];
-} else {
-    $num = "";
-}
-;
-if (isset($_POST["datestart"])) {
-    $datestart = $_POST['datestart'];
-} else {
-    $datestart = "";
-}
-;
-if (isset($_POST["dateend"])) {
-    $dateend = $_POST['dateend'];
-} else {
-    $dateend = "";
-}
-;
-if (isset($_POST["work"])) {
-    $work = $_POST['work'];
-} else {
-    $work = "";
-}
-;
-if (isset($_POST["comment"])) {
-    $comment = $_POST['comment'];
-} else {
-    $comment = "";
-}
-;
+$page=  _GET("page");
+$limit=  _GET("limit");
+$sidx=  _GET("sidx");
+$sord=  _GET("sord");
+$oper= _POST("oper");
+$idknt=  _GET("idknt");
+$id= _POST("id");
+$name= _POST("name");
+$num= _POST("num");
+$datestart= _POST("datestart");
+$dateend= _POST("dateend");
+$work= _POST("work");
+$comment= _POST("comment");
 
 $where = " WHERE kntid='$idknt'";
 
@@ -110,6 +44,7 @@ if ($oper == '') {
         $count = $row['count'];
         
         if ($count > 0) {
+	    if ($limit==0){$limit=1;};
             $total_pages = ceil($count / $limit);
         } else {
             $total_pages = 0;

@@ -41,7 +41,7 @@ $('#simple-btn').fileapi({
 	url: route + 'controller/server/cloud/uploadfiles.php?',
 	data: {'geteqid': 0},
 	multiple: true,
-	maxSize: 20 * FileAPI.MB,
+	maxSize: 10000 * FileAPI.MB,
 	autoUpload: true,
 	onFileComplete: function(evt, uiEvt) {
 		if (uiEvt.result.msg != 'error') {
@@ -175,3 +175,5 @@ $('#delfolder').click(function() {
 		}
 	}
 });
+
+

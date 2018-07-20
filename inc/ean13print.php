@@ -50,7 +50,7 @@ include_once("../inc/functions.php");		// загружаем функции
 	       $invnum=$row['invnum'];
 	       echo "<font size=1>Бух:$buhname<br>";
 	       echo "ИТ:$nomename</font><br>";
-	       echo "<img src='ean13.php?shtrihkod=$shtrihkod'><br>";	
+	       echo "<img height='120' src='ean13.php?shtrihkod=$shtrihkod'><br>";	
 	       echo "№$invnum<br>";	
 	       };
 	   echo "</td>";	
@@ -69,9 +69,9 @@ include_once("../inc/functions.php");		// загружаем функции
 	       $buhname=$row['buhname'];
 	       $nomename=$row['nomename'];
 	       $invnum=$row['invnum'];
-	       echo "<p class=\"more\"><font size=1>Бух:$buhname<br>";
-	       echo "ИТ:$nomename</font><br>";
-	       echo "<img src='ean13.php?shtrihkod=$shtrihkod'><br>";	
+	       echo "<p class=\"more\"><font size='2' face='Arial'>Бух:<b>$buhname</b><br>";
+	       echo "ИТ:<b>$nomename</b></font><br>";
+	       echo "<img height='120' src='ean13.php?shtrihkod=$shtrihkod'><br>";	
 	       echo " №$invnum</p>";	
 	  };	   
 	};

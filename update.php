@@ -1280,7 +1280,13 @@ if ($cfg->version == '3.89') {
 	$vr = '3.90';	
 	UpdateVer($vr, '193');
 };
-
+if ($cfg->version == '3.90') {
+	$vr = '3.91';	
+	$log = '- добавляю поле last_message_client_online для опледеления когда последний раз был запущен клиент сервиса message';
+	$sql = 'ALTER TABLE `users` ADD `last_message_client_online` DATETIME NULL DEFAULT NULL AFTER `active`';
+	ExecSQL($log, $sql, '194');		
+	UpdateVer($vr, '195');
+};
 
 echo 'Обновление закончено.<br>';
 echo 'Если сообщений об ошибках нет, удалите файл update.php.<br>';

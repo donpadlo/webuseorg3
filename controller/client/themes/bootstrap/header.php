@@ -35,37 +35,29 @@ echo $cfg->sitename;
 	<link rel="stylesheet"
 	href="controller/client/themes/<?php echo $cfg->theme; ?>/css/ui.jqgrid.css">
 <?php endif; ?>
-	<link rel="stylesheet"
-	href="controller/client/themes/<?php echo $cfg->theme; ?>/css/chosen.css">
-<link rel="stylesheet"
-	href="controller/client/themes/<?php echo $cfg->theme; ?>/css/jquery.toastmessage-min.css">
-<link rel="stylesheet"
-	href="controller/client/themes/<?php echo $cfg->theme; ?>/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="controller/client/themes/<?php echo $cfg->theme; ?>/css/liKnopik.css">
-<script
-	src="controller/client/themes/<?php echo $cfg->theme; ?>/js/jquery-1.11.0.min.js"></script>
-<script
-	src="controller/client/themes/<?php echo $cfg->theme; ?>/js/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/chosen.css">
+<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/jquery.toastmessage-min.css">
+<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/font-awesome.min.css">
+<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/liKnopik.css">
+<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/jquery-confirm.min.css">
+<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/jquery-1.11.0.min.js"></script>
+<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/jquery-ui.min.js"></script>
 <script src="js/jquery.mmenu.min.all.js"></script>
-<script
-	src="controller/client/themes/<?php echo $cfg->theme; ?>/plugins/ui.multiselect.js"></script>
-<script
-	src="controller/client/themes/<?php echo $cfg->theme; ?>/js/i18n/grid.locale-ru.js"></script>
-<script
-	src="controller/client/themes/<?php echo $cfg->theme; ?>/js/jquery.jqGrid.min.js"></script>
+<script src="controller/client/themes/<?php echo $cfg->theme; ?>/plugins/ui.multiselect.js"></script>
+<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/i18n/grid.locale-ru.js"></script>
+<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/jquery.jqGrid.min.js"></script>
 <script src="js/chosen.jquery.min.js"></script>
 <script src="js/jquery.toastmessage-min.js"></script>
 <script src="js/jquery.form.js"></script>
-<script
-	src="controller/client/themes/<?php echo $cfg->theme; ?>/js/bootstrap.min.js"></script>
+<script src="controller/client/themes/<?php echo $cfg->theme; ?>/js/bootstrap.min.js"></script>
+<script src="js/jquery-confirm.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/jQueryRotate.3.1.js"></script>
 <script src="js/jquery.liKnopik.js"></script>
 
 <script>		
-	    <?php
+<?php
     if (isset($_COOKIE['defaultorgid']) == true) {
         $orgid = $_COOKIE['defaultorgid'];
         echo "defaultorgid =$orgid;";
@@ -76,8 +68,7 @@ echo $cfg->sitename;
             echo "defaultorgid =-1;";
         }
     }
-    ;
-    ?>
+?>
 		theme = '<?php echo $cfg->theme; ?>';
 		defaultuserid = <?php echo ($user->id != '') ? $user->id : '-1'; ?>;
 		route = '<?php echo ($userewrite == 1) ? '/route/' : 'index.php?route=/'; ?>';
@@ -114,7 +105,7 @@ echo $cfg->sitename;
 }
 </style>
 </head>
-<body style="font-size: <?php echo $cfg->fontsize ?>;">
+<body style="font-size: <?php echo $cfg->fontsize ?>;color: #000000 !important;">
 <?php if (!$printable): ?>
 	<div class="header">
 		<a href="#menu"></a>
@@ -128,6 +119,7 @@ echo $cfg->sitename;
     }    
     echo "<div id='quick_div'></div>";
     ?>		
+	 <a href="#" class="scrollup">Наверх</a>
 	</div>
     
     

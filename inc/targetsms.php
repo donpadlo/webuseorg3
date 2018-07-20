@@ -142,6 +142,6 @@ public function getStatus($id){
     return $result;
 }
 function Destroy(){
-    unset($this);
+    #unset($this);
 }    
 };
