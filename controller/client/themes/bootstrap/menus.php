@@ -62,7 +62,7 @@ function PutMenu($par){
 		} else {
 		    if ($ajax == false) {
 			echo "<a title='$comment' href=\"$url\">$ico $nm</a>";
-		    } else {
+		    } else {			
 			echo "<a title='$comment' href=\"javascript:void(0)\" onclick='GetAjaxPage(\"$path\")'>$ico $nm</a>";
 		    }		
 		    if ($sel != '') {

@@ -196,8 +196,8 @@ class lMail
             }
         }
         
-        if ($this->checkAddress == true)
-            $this->CheckAdresses($this->sendto);
+        #if ($this->checkAddress == true)
+         #   $this->CheckAdresses($this->sendto);
     }
 
     /*
@@ -364,7 +364,8 @@ class lMail
             // $this->headers .= "Message-ID: <" . rand() . "." . date("Ymj10is") . "@" . $user_domen[1] . ">\r\n";
             
             reset($this->xheaders);
-            while (list ($hdr, $value) = each($this->xheaders)) {
+            //while (list ($hdr, $value) = each($this->xheaders)) {
+	    foreach ($this->xheaders as $hdr=>$value){
                 if ($hdr == "From" and strlen($this->names_email['from']))
                     $this->headers .= $hdr . ": =?" . $this->charset . "?Q?" . str_replace("+", "_", str_replace("%", "=", urlencode(strtr($this->names_email['from'], "\r\n", "  ")))) . "?= <" . $value . ">\r\n";
                 elseif ($hdr == "Reply-To" and strlen($this->names_email['Reply-To']))

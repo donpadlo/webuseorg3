@@ -5,52 +5,65 @@
 
 // данный код - это подгружаемая часть javascript кода,размещаемого на сайте "УЧЁТ ТМЦ и другие плюшки"
 // отрисовывает список контактов, и релизует переписку с ними
- 
 define('WUO_ROOT', dirname(__FILE__));
 
-include_once(WUO_ROOT.'/../config.php');
-include_once(WUO_ROOT.'/../class/sql.php'); // Класс работы с БД
-include_once(WUO_ROOT.'/../class/config.php'); // Класс настроек
-include_once(WUO_ROOT.'/../class/cconfig.php'); // Класс настроек
-include_once(WUO_ROOT.'/../class/users.php'); // Класс работы с пользователями
-
+include_once (WUO_ROOT . '/../config.php');
+include_once (WUO_ROOT . '/../class/sql.php'); // Класс работы с БД
+include_once (WUO_ROOT . '/../class/config.php'); // Класс настроек
+include_once (WUO_ROOT . '/../class/cconfig.php'); // Класс настроек
+include_once (WUO_ROOT . '/../class/users.php'); // Класс работы с пользователями
+                                              
 // Загружаем все что нужно для работы движка
-include_once(WUO_ROOT.'/../inc/connect.php'); // Соединяемся с БД, получаем $mysql_base_id
-include_once(WUO_ROOT.'/../inc/config.php'); // Подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once(WUO_ROOT.'/../inc/functions.php'); // Загружаем функции
-include_once(WUO_ROOT.'/../inc/login.php'); // Создаём пользователя $user
+include_once (WUO_ROOT . '/../inc/connect.php'); // Соединяемся с БД, получаем $mysql_base_id
+include_once (WUO_ROOT . '/../inc/config.php'); // Подгружаем настройки из БД, получаем заполненый класс $cfg
+include_once (WUO_ROOT . '/../inc/functions.php'); // Загружаем функции
+include_once (WUO_ROOT . '/../inc/login.php'); // Создаём пользователя $user
 
-include_once(WUO_ROOT.'/../inc/func_chat.php'); // Загружаем рутинные функции для чата
+include_once (WUO_ROOT . '/../inc/func_chat.php'); // Загружаем рутинные функции для чата
+                                                
+// читаю настройки чата
+$vl = new Tcconfig();
+$ip_chat_server = $vl->GetByParam("ip-chat-server");
+$ip_chat_port = $vl->GetByParam("ip-chat-port");
+$ssl_pem = $vl->GetByParam("ssl-pem");
+$ssl_pass = $vl->GetByParam("ssl-pass"); // ssl-pass
+$chat_wellcome = $vl->GetByParam("chat-wellcome"); //
+$chat_wss_url_noc = $vl->GetByParam("chat-wss-url-noc"); //
+$chat_wss_url_help = $vl->GetByParam("chat-wss-url-help"); //
 
-//читаю настройки чата
-$vl=new Tcconfig();
-$ip_chat_server=$vl->GetByParam("ip-chat-server");
-$ip_chat_port=$vl->GetByParam("ip-chat-port");
-$ssl_pem=$vl->GetByParam("ssl-pem");
-$ssl_pass=$vl->GetByParam("ssl-pass"); //ssl-pass
-$chat_wellcome=$vl->GetByParam("chat-wellcome"); //
-$chat_wss_url_noc=$vl->GetByParam("chat-wss-url-noc"); //
-$chat_wss_url_help=$vl->GetByParam("chat-wss-url-help"); //
+$printable = _GET("printable");
+if ($printable == "true") {
+    die();
+}
+;
 
-$printable=_GET("printable");
-if ($printable=="true"){die();};
-
-if ($ssl_pem!=""){$ssl_pem="wss";} else {$ssl_pem="ws";};
-if ($ip_chat_server=="" or $ip_chat_port==""){ die("--укажите настройки IP сервера и порта в настройках веб интерфейса чата!\n");};
-//узнаем соответствие user->id==from_user_id
-$sql="select * from chat_users where userid=$user->id";
-$result = $sqlcn->ExecuteSQL($sql) or die('Неверный запрос на получение from_user_id: '.mysqli_error($sqlcn->idsqlconnection));
-$from_user_id="";
+if ($ssl_pem != "") {
+    $ssl_pem = "wss";
+} else {
+    $ssl_pem = "ws";
+}
+;
+if ($ip_chat_server == "" or $ip_chat_port == "") {
+    die("--укажите настройки IP сервера и порта в настройках веб интерфейса чата!\n");
+}
+;
+// узнаем соответствие user->id==from_user_id
+$sql = "select * from chat_users where userid=$user->id";
+$result = $sqlcn->ExecuteSQL($sql) or die('Неверный запрос на получение from_user_id: ' . mysqli_error($sqlcn->idsqlconnection));
+$from_user_id = "";
 while ($myrow = mysqli_fetch_array($result)) {
-	$from_user_id = $myrow['id'];
-};
-if ($from_user_id==""){
- $sql="insert into chat_users (id,name,userid) values (null,'$user->login',$user->id)"; 
- $result = $sqlcn->ExecuteSQL($sql) or die('Не смог добавить нового участника чатов!: '.mysqli_error($sqlcn->idsqlconnection));
- $from_user_id=mysqli_insert_id($sqlcn->idsqlconnection); 
-};
+    $from_user_id = $myrow['id'];
+}
+;
+if ($from_user_id == "") {
+    $sql = "insert into chat_users (id,name,userid) values (null,'$user->login',$user->id)";
+    $result = $sqlcn->ExecuteSQL($sql) or die('Не смог добавить нового участника чатов!: ' . mysqli_error($sqlcn->idsqlconnection));
+    $from_user_id = mysqli_insert_id($sqlcn->idsqlconnection);
+}
+;
 ?>
-//<script>
+//
+<script>
 console.log("--инициализация чата..");
 opponent_id="";	//кто выбран в списке контак листов
 cntwrite=0;	//счетчик нажатий на клавиши. Каждое 5 нажатие - сообщаем что что-то пишем..

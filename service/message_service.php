@@ -146,18 +146,37 @@ function onMessage($connect, $data,$info) {
 		echo "--пришел звонок от vats!\n";
 		SendVatsCallToNoc($message);
 	    break;
-	
+	    //пришел пакет от обработчика виртуальной АТС о входящем звонке
+	    case "email_info_to_noc":
+		echo "--пришло сообщение о письме!\n";
+		SendEmailToNoc($message);
+	    break;
+
+        
 	    default:
 		break;
 	}
     };
+};
+function SendEmailToNoc($message){
+global $users_online;        
+ foreach ($users_online as $user) {
+     //если этот пользователь онлайн, то посылаем ему пакет с уведомлением...
+     if (isset($user["userid"])==true){
+	if ($user["userid"]==$message->to_user){
+	    echo "--отсылаю звонок НОС!\n";
+	    fwrite($user["connect"], encodeSocket(json_encode(array("command"=>"email_info_to_noc","packet"=>$message->packet))));		
+	};     
+     };
+ };    
+    
 };
 function SendVatsCallToNoc($message){
  global $users_online;        
  foreach ($users_online as $user) {
      //если этот пользователь онлайн, то посылаем ему пакет с уведомлением...
      if (isset($user["userid"])==true){
-	if (in_array($user["userid"], $message->to_user)==true){
+	if ($user["userid"]==$message->to_user){
 	    echo "--отсылаю звонок НОС!\n";
 	    fwrite($user["connect"], encodeSocket(json_encode(array("command"=>"call_to_noc","packet"=>$message->packet))));		
 	};     

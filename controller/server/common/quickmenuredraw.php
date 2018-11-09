@@ -18,7 +18,7 @@ while ($myrow = mysqli_fetch_array($result)) {
     if ($mode=="menu") {
 	echo "<li><a title='$title' href=\"$url\">$ico $title</a></li>";
     } else {
-	echo '<a title="' . $title . '" href="' . $url . '"><button type=\'button\' class=\'btn btn-default navbar-btn \'>' . $ico . '</button></a>';
+	echo '<a title="' . $title . '" href="' . $url . '"><button type=\'button\' class=\'btn btn-default navbar-btn btn-sm\'>' . $ico . '</button></a>';
     }    
 }
 

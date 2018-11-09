@@ -10,7 +10,7 @@ if ($user->mode == 1) {
     $md = new Tmod(); // обьявляем переменную для работы с классом модуля
     $md->Register("schedule", "Расписание уведомлений", "Грибов Павел");
     if ($md->IsActive("schedule") == 1) {
-        $cfg->quickmenu[] = '<a title="Расписание уведомлений" href=index.php?content_page=schedule><button type=\'button\' class=\'btn btn-info navbar-btn \'><i class="fa fa-bullhorn"></i></button></a>';
+  //      $cfg->quickmenu[] = '<a title="Расписание уведомлений" href=index.php?content_page=schedule><button type=\'button\' class=\'btn btn-info navbar-btn \'><i class="fa fa-bullhorn"></i></button></a>';
     }
     ;
     unset($mb);

@@ -57,22 +57,42 @@ function _POST($name) {
 	return (isset($_POST[$name])) ? $_POST[$name] : '';
 }
 
-/** на выходе - массив из папок в укзанной папке
+/** на выходе - массив из файлов в укзанной папке
  * @param type $dir
  * @return type
  */
 function GetArrayFilesInDir($dir) {
 	$includes_dir = opendir("$dir");
 	$files = array();
-	while (($inc_file = readdir($includes_dir)) != false) {
+	while (($inc_file = readdir($includes_dir)) != false) {            
 		if (($inc_file != '.') and ( $inc_file != '..')) {
+                    if (is_dir($dir."/$inc_file")==false){
 			$files[] = $inc_file;
+                    };
 		}
-	}
+	}        
 	closedir($includes_dir);
-	sort($files);
+	sort($files);        
 	return $files;
 }
+
+/** на выходе - массив из папок в укзанной папке
+ * @param type $dir
+ * @return type
+ */
+function GetArrayDir($dir) {
+	$includes_dir = opendir("$dir");
+	$files = array();
+	while (($inc_file = readdir($includes_dir)) != false) {            
+		if (($inc_file != '.') and ( $inc_file != '..')) {                 
+			$files[] = $inc_file;                 
+		}
+	}        
+	closedir($includes_dir);
+	sort($files);        
+	return $files;
+}
+
 
 // проверяем аутентификацию в AD 
 function check_LDAP_user($username, $password, $ladpserver, $domain1, $domain2) { // результат true если в AD такой пользователь есть

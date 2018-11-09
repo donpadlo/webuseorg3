@@ -138,7 +138,7 @@ $('#simple-btn').fileapi({
                         url: 'controller/server/astra/uploadmp3file.php',
                         data: { 'frame_id': "<?php echo "$frame_id";?>" },
                         multiple: true,
-                        maxSize: 200 * FileAPI.MB,
+                        maxSize: 900 * FileAPI.MB,
                         autoUpload: true,
                          onFileComplete: function (evt, uiEvt){                                                              
                              if (uiEvt.result.msg!="error") {

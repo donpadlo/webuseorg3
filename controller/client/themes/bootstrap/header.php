@@ -12,15 +12,11 @@
 <head id="idheader">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description"
-	content="Учет ТМЦ в организации и другие плюшки">
-<meta name="author" content="(c) 2011-2016 by Gribov Pavel">
+<meta name="description" content="Учет ТМЦ в организации и другие плюшки">
+<meta name="author" content="(c) 2011-<?php echo date("Y") ?> by Gribov Pavel">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title><?php
-echo $cfg->sitename;
-?>
-	</title>
 <meta name="generator" content="yarus">
+<title><?php echo $cfg->sitename;?></title>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/jquery-ui.min.css">
@@ -29,11 +25,9 @@ echo $cfg->sitename;
 <link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/plugins/ui.multiselect.css">
 <link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/bootstrap.min.css">
 <?php if ($cfg->style == 'Bootstrap'): ?>
-	<link rel="stylesheet"
-	href="controller/client/themes/<?php echo $cfg->theme; ?>/css/ui.jqgrid-bootstrap.css">
+	<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/ui.jqgrid-bootstrap.css">
 <?php elseif ($cfg->style == 'Normal'): ?>
-	<link rel="stylesheet"
-	href="controller/client/themes/<?php echo $cfg->theme; ?>/css/ui.jqgrid.css">
+	<link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/ui.jqgrid.css">
 <?php endif; ?>
 <link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/chosen.css">
 <link rel="stylesheet" href="controller/client/themes/<?php echo $cfg->theme; ?>/css/jquery.toastmessage-min.css">
@@ -112,13 +106,13 @@ echo $cfg->sitename;
 	</div>
 	<div id="blob_menu" class="blob_menu" data-placement="bottom"
 		rel="popover">		
-<?php
-    for ($i = 0; $i < count($cfg->quickmenu); $i ++) {
-        $mm = $cfg->quickmenu[$i];
-        echo "$mm";
-    }    
-    echo "<div id='quick_div'></div>";
-    ?>		
+		<?php
+		    for ($i = 0; $i < count($cfg->quickmenu); $i ++) {
+			$mm = $cfg->quickmenu[$i];
+			echo "$mm";
+		    }    
+		    echo "<div id='quick_div'></div>";
+		?>		
 	 <a href="#" class="scrollup">Наверх</a>
 	</div>
     

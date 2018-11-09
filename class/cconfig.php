@@ -52,7 +52,7 @@ class Tcconfig
         $valparam = mysqli_real_escape_string($sqlcn->idsqlconnection, $valparam);
         $result = $sqlcn->ExecuteSQL("SELECT * FROM config_common WHERE nameparam ='$nameparam'") or die('Неверный запрос Tcconfig.SetByParam: ' . mysqli_error($sqlcn->idsqlconnection));
         $row = mysqli_fetch_array($result);
-        $cnt = count($row);
+        $cnt = @count($row);
         // или добавляем настройки или выдаем параметр
         if ($cnt == 0) {
             $result = $sqlcn->ExecuteSQL("INSERT INTO config_common (nameparam,valueparam) VALUES ('$nameparam','')");

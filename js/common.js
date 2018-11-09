@@ -41,10 +41,11 @@ function UpdateChosen(){
 	$(selector).chosen(config[selector]);
     };        
 };  
-function AddToNavBarQuick(title){
+function AddToNavBarQuick(title,url){
+    if (url === undefined) {url = window.location.href;}   
     $.post(route+"controller/server/common/save_quick.php",{
 		title:title,
-		url:window.location.href,	
+		url:url,	
 		ico:current_page_ico
 	    }, function(data){
 		$().toastmessage('showWarningToast', data);
@@ -77,16 +78,19 @@ function QuickMenuRedraw(){
 	};
   };
 };    
-function SetBreadcrumb(url){
-      $("#breadcrumb").html();  
+function SetBreadcrumb(breadcrumb){        
+      $("#breadcrumb").html(breadcrumb);  
 };
 function GetAjaxPage(url){
+      console.log("--загружаю по технологии ajax новую страницу ",url);
       mmenuapi.close();
       $("#ajaxpage").html("<img src=controller/client/themes/"+theme+"/img/loading.gif><br>*выполнение запроса может занять некоторое время..");        
       $.get(ajax+url, function( data ) {
           $("#ajaxpage" ).html(data);                            
-      });        
-      SetBreadcrumb(url);
+      }); 
+      $.get(route+'controller/server/common/getBreadcrumb.php&url='+url, function( data ) {
+          SetBreadcrumb(data);
+      });             
 };
 $(function() {  
     if (typeof printable!=="undefined"){

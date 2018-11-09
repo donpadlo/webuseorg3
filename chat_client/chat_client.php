@@ -5,39 +5,47 @@
 
 // данный код - это подгружаемая часть javascript кода,размещаемого на сайте-клиенте, отвечает за отрисовку диалогового окна
 // беседы вопрошаеющего с оператором.
-
 define('WUO_ROOT', dirname(__FILE__));
 
-include_once(WUO_ROOT.'/../config.php');
-include_once(WUO_ROOT.'/../class/sql.php'); // Класс работы с БД
-include_once(WUO_ROOT.'/../class/config.php'); // Класс настроек
-include_once(WUO_ROOT.'/../class/cconfig.php'); // Класс настроек
-include_once(WUO_ROOT.'/../class/users.php'); // Класс работы с пользователями
-
+include_once (WUO_ROOT . '/../config.php');
+include_once (WUO_ROOT . '/../class/sql.php'); // Класс работы с БД
+include_once (WUO_ROOT . '/../class/config.php'); // Класс настроек
+include_once (WUO_ROOT . '/../class/cconfig.php'); // Класс настроек
+include_once (WUO_ROOT . '/../class/users.php'); // Класс работы с пользователями
+                                              
 // Загружаем все что нужно для работы движка
-include_once(WUO_ROOT.'/../inc/connect.php'); // Соединяемся с БД, получаем $mysql_base_id
-include_once(WUO_ROOT.'/../inc/config.php'); // Подгружаем настройки из БД, получаем заполненый класс $cfg
-include_once(WUO_ROOT.'/../inc/functions.php'); // Загружаем функции
-include_once(WUO_ROOT.'/../inc/login.php'); // Создаём пользователя $user
+include_once (WUO_ROOT . '/../inc/connect.php'); // Соединяемся с БД, получаем $mysql_base_id
+include_once (WUO_ROOT . '/../inc/config.php'); // Подгружаем настройки из БД, получаем заполненый класс $cfg
+include_once (WUO_ROOT . '/../inc/functions.php'); // Загружаем функции
+include_once (WUO_ROOT . '/../inc/login.php'); // Создаём пользователя $user
 
-include_once(WUO_ROOT.'/../inc/func_chat.php'); // Загружаем рутинные функции для чата
+include_once (WUO_ROOT . '/../inc/func_chat.php'); // Загружаем рутинные функции для чата
+                                                
+// читаю настройки чата
+$vl = new Tcconfig();
+$ip_chat_server = $vl->GetByParam("ip-chat-server");
+$ip_chat_port = $vl->GetByParam("ip-chat-port");
+$ssl_pem = $vl->GetByParam("ssl-pem");
+$ssl_pass = $vl->GetByParam("ssl-pass"); // ssl-pass
+$chat_wellcome = $vl->GetByParam("chat-wellcome"); //
+$chat_wss_url_noc = $vl->GetByParam("chat-wss-url-noc"); //
+$chat_wss_url_help = $vl->GetByParam("chat-wss-url-help"); //
 
-//читаю настройки чата
-$vl=new Tcconfig();
-$ip_chat_server=$vl->GetByParam("ip-chat-server");
-$ip_chat_port=$vl->GetByParam("ip-chat-port");
-$ssl_pem=$vl->GetByParam("ssl-pem");
-$ssl_pass=$vl->GetByParam("ssl-pass"); //ssl-pass
-$chat_wellcome=$vl->GetByParam("chat-wellcome"); //
-$chat_wss_url_noc=$vl->GetByParam("chat-wss-url-noc"); //
-$chat_wss_url_help=$vl->GetByParam("chat-wss-url-help"); //
-
-if ($ssl_pem!=""){$ssl_pem="wss";} else {$ssl_pem="ws";};
-if ($ip_chat_server=="" or $ip_chat_port==""){ die("--укажите настройки IP сервера и порта в настройках веб интерфейса чата!\n");};
-$codepage=_GET('codepage');
+if ($ssl_pem != "") {
+    $ssl_pem = "wss";
+} else {
+    $ssl_pem = "ws";
+}
+;
+if ($ip_chat_server == "" or $ip_chat_port == "") {
+    die("--укажите настройки IP сервера и порта в настройках веб интерфейса чата!\n");
+}
+;
+$codepage = _GET('codepage');
 
 ?>
-//<script>    
+//
+<script>    
 pingpong=false; // если true - будет раз в секунду "пинпонг" между клиентолм и сервером
 cntwrite=0;	//счетчик нажатий на клавиши. Каждое 5 нажатие - сообщаем что что-то пишем..
 window.onload=function(){

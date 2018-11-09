@@ -130,6 +130,20 @@ if ($ip_message_server == "" or $ip_message_port == "" or $message_wss_url == ""
 	    var snd = new Audio(sounds["New"]);  
 	    snd.play();
 	};
+        if (msg["command"]=="email_info_to_noc"){
+            console.log("-пришли сообщения от почтового сервера",msg["packet"]);            
+            $().toastmessage('showToast', {
+                    text     : 'В вашей почте '+msg["packet"].count_new_emails+" не прочитанных сообщений!",
+                    sticky   : false,
+                    position : 'top-right',
+                    stayTime:  3000, 
+                    type     : 'notice'                    
+                });
+                $("#mailtviinet").html("<i class=\"fa fa-envelope\"></i> <span class=\"badge\">"+msg["packet"].count_new_emails+"</span>");
+             	var snd = new Audio(sounds["New"]);  
+                snd.play();
+
+        };
 	if (msg["command"]=="zabbix_packet_to_noc"){	    
 		console.log("-пришли сообщения от заббикс",msg["packet"]);
 		if (JSON.stringify(old_zabbix_packet)!=JSON.stringify(msg["packet"])){
@@ -148,7 +162,8 @@ if ($ip_message_server == "" or $ip_message_port == "" or $message_wss_url == ""
 			snd.play();
 			$().toastmessage('showToast', {
 			    text     : "Для вас новый тикет!",
-			    sticky   : "true",
+			    sticky   : "false",
+                            stayTime:  12000, 
 			    position : 'top-right',
 			    type     : "warning"
 			});			
@@ -158,7 +173,8 @@ if ($ip_message_server == "" or $ip_message_port == "" or $message_wss_url == ""
 			snd.play();
 			$().toastmessage('showToast', {
 			    text     : "В Вашем подразделении новый тикет!",
-			    sticky   : "true",
+			    sticky   : "false",
+                            stayTime:  3000, 
 			    position : 'top-right',
 			    type     : "warning"
 			});			
@@ -200,8 +216,9 @@ if ($ip_message_server == "" or $ip_message_port == "" or $message_wss_url == ""
 	$('#call_sound')[0].play();
 	    $().toastmessage('showToast', {
 		text     : html,
-		sticky   : "true",
-		position : 'top-right',
+		sticky   : "false",
+                stayTime:  120000, 
+                position : 'top-right',
 		type     : "success"
 	    });
     };
